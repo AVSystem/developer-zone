@@ -1,0 +1,35 @@
+.md-header{
+    background-color:#000;
+}
+
+.yellow{
+
+}
+
+.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg{
+    width: unset;
+    height: 1.8rem;
+}
+
+.md-nav__item .md-nav__link--active{
+    color:#ffd100;
+}
+
+.md-nav__item .md-nav__link:hover,
+.md-nav__item .md-nav__link:active,
+.md-nav__item .md-nav__link:focus{
+    color:#ffd100;
+}
+
+.md-typeset .md-button{
+    color:#ffd100;
+    border-color:#ffd100;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:active,
+.md-typeset .md-button:focus{
+    background-color:#ffd100;
+    border-color:#ffd100;
+    color:#000;
+}

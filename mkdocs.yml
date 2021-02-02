@@ -1,0 +1,39 @@
+site_name: My Docs
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/images/logo.svg
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.superfences 
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - git-revision-date-localized
+
+google_analytics:
+  - UA-25246208-6 
+  - auto
+
+nav:
+  - Test: test.md
+  - Main: index.md
+  - Concepts: concepts.md
+  - Getting Started: getting-started.md
+  - XXXX to XXX: xxx.md
+  - Release notes: release-notes.md
+  - API Documentation: api-doc.md
+  - Support: support.md
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js 
