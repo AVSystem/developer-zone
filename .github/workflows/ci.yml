@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.x
       - run: npm install
-      - run: npm install --global gulp-cli
+      - run: npm install gulp-cli
       - run: gulp build 
       - run: pip install mkdocs-material
       - run: pip install mkdocs-git-revision-date-localized-plugin
