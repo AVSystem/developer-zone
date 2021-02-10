@@ -20,5 +20,5 @@ jobs:
       - run: mkdocs build
       - run: mkdir site/docs
       - run: cp -R site dist/docs
-      - run: ghp-import dist
+      - run: python ghpages.py
       #- run: mkdocs gh-deploy --force --clean --config-file ./mkdocs.yml
