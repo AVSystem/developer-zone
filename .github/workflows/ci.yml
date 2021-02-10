@@ -18,7 +18,7 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: mkdocs build
-      - run mkdir site/docs
-      - run cp -R site dist/docs
-      - run ghp-import dist
+      - run: mkdir site/docs
+      - run: cp -R site dist/docs
+      - run: ghp-import dist
       #- run: mkdocs gh-deploy --force --clean --config-file ./mkdocs.yml
