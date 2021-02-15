@@ -1,0 +1,23 @@
+.mainContentDescription{
+    padding-top:85px;
+    padding-bottom:85px;
+    margin:0 auto;
+    max-width: 720px;
+    @media(max-width:992px){
+      padding-top:50px;
+      padding-bottom:50px;
+    }
+  
+    &__text{
+      color: #000000;
+      font-family: Roboto;
+      font-size: 2.1rem;
+      letter-spacing: 0;
+      line-height: 36px;
+      text-align: center;
+      @media(max-width: 576px){
+        font-size: 1.8rem;
+      }
+    }
+
+}

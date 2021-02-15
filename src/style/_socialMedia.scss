@@ -1,0 +1,47 @@
+.socialMedia{
+    padding-top:20px;
+    &__text{
+        color:#979797;
+        text-transform: uppercase;
+        font-size:1.6rem;
+        padding-bottom:12px;
+
+        @media(max-width:1050px){
+            font-size:1.5rem;
+        }
+    }
+
+    &__icon{
+        margin-right: 20px;
+
+        @media(max-width:664px){
+            &:nth-child(1){
+                .socialMedia__svg{
+                    width: 10px;
+                }
+            }
+            &:nth-child(2){
+                .socialMedia__svg{
+                    width: 20px;
+                }
+            }
+            &:nth-child(3){
+                .socialMedia__svg{
+                    width: 20px;
+                }
+            }
+        }
+    }
+
+    &__svg{
+        path{
+            transition: .3s;
+        }
+        &:hover{
+            path{
+                fill:$yellow;
+            }
+            
+        }
+    }
+}
