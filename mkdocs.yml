@@ -22,7 +22,7 @@ plugins:
       enterprise_hostname: AVSystem
       repository: AVSystem/developer-zone
       branch: master
-      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
+      
   
 
 google_analytics:
