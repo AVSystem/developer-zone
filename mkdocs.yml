@@ -18,6 +18,10 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
+  - git-committers:
+      repository: AVSystem/developer-zone
+      branch: master
+      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
   
 
 google_analytics:
