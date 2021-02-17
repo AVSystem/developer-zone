@@ -145,6 +145,16 @@ def bubble_sort(items):
     }
     ```
 
-[Test button 1](#){: .md-button #event1 }
+[Subscribe to our mailing list](#){: .md-button .md-button--small }
 
+[Subscribe to our mailing list](#){: .md-button }
+
+[Subscribe to our mailing list](#){: .md-button .md-button--big }
+
+
+[Subscribe to our mailing list](#){: .md-button .md-button--small .md-button--primary }
+
+[Subscribe to our mailing list](#){: .md-button .md-button--primary }
+
+[Subscribe to our mailing list](#){: .md-button .md-button--big .md-button--primary }
 
