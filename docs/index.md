@@ -12,6 +12,19 @@
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
 
+
+## Screen 1
+
+![Placeholder](../assets/images/screen1.png){: loading=lazy }
+
+## Screen 2
+
+![Placeholder](../assets/images/screen2.png){: loading=lazy }
+
+## Screen 3
+
+![Placeholder](../assets/images/screen3.png){: loading=lazy }
+
 ## Project layout
 
     mkdocs.yml    # The configuration file.

@@ -250,3 +250,24 @@
     width:22px
 }
 
+
+.md-header-nav__button:not(.focus-visible){
+    margin-left: 50px;
+}
+
+.logoMobile{
+    position: absolute;
+    left: 9px;
+    margin-right: 50px;
+}
+
+@media(min-width:1220px){
+    .logoMobile{
+        display: none;
+    }
+
+    .md-header-nav__button.md-logo{
+        margin-left:0;
+    }
+}
+
