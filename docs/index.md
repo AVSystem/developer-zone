@@ -15,15 +15,15 @@
 
 ## Screen 1
 
-![Placeholder](../assets/images/screen1.png){: loading=lazy }
+![Placeholder](./assets/images/screen1.png){: loading=lazy }
 
 ## Screen 2
 
-![Placeholder](../assets/images/screen2.png){: loading=lazy }
+![Placeholder](./assets/images/screen2.png){: loading=lazy }
 
 ## Screen 3
 
-![Placeholder](../assets/images/screen3.png){: loading=lazy }
+![Placeholder](./assets/images/screen3.png){: loading=lazy }
 
 ## Project layout
 
