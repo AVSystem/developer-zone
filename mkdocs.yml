@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Azure IoT Integration Guide
 
 theme:
   name: material
@@ -31,13 +31,8 @@ google_analytics:
   - auto
 
 nav:
-  - Test: test.md
-  - Main: index.md
-  - Concepts: concepts.md
-  - Getting Started: getting-started.md
-  - XXXX to XXX: xxx.md
-  - Release notes: release-notes.md
-  - API Documentation: api-doc.md
+  - Getting Started: index.md
+  - Configuring Azure IoT integration extension: Configuring_Azure_IoT_integration_extension.md
   - Support: support.md
 
 extra_css:
