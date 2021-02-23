@@ -1,48 +1,89 @@
-# Sustinet non manet
+---
+hide:
+  - toc        # Hide table of contents
+---
 
-## Sustulerat Procris et ille aversos annis oblita
+# Configuring the Azure IoT integration extension
 
-Lorem markdownum *silicem*, porrigit cuique cumulemus lanigeris commissaque at
-lacesse! Scelus *aut nupta recondere* potius, attenuatus senta, lacerum
-spectantur graviora incognita: vita?
+=== "Azure IoT Hub"
 
-- Tellus et et versarunt sedula quod Aegyptia
-- Est saepe in foedus alebat timent
-- Arcum qui palmis conscia nostrae in flemus
+    ## Configure the Azure IoT Hub extension
 
-Adhibere arma graves in inpresso ingens, perque unda futuri lupus conceptus
-nympha pietatis putetis. Et defixa, ab, nectareis tepentibus matris ponit ferar
-accessit et titulum solent, aut ignea alto longi occasu! Arsuris sine est
-quamquam an orba oscula Oenides fatetur priorum, neque deus; membra madebit
-mendacem viri! Redde oblectamina culpa est; altus fama quam; tuta, voce.
+    ### Prerequisites:
 
-## Deum patientia fronde
+      - An active IoT Hub with hub owner access permissions.
+      - A Coiote DM user account with permissions to use the integration extension.
+    __________________
+    ### Get the IoT Hub connection string
 
-Similis concava, se leaena falsi Interea cinerem. Sidera multas. Ardor alas,
-moveoque solent pereat nunc; faciendus dare scopulus. Temeraria virum
-exploratum, quas exemplo nulla et rates non, [non](http://iussaconiugis.io/)
-Solis: cristis.
+    1. In your IoT Hub general view, go to **Shared access policies**:
 
-    javascript = scarewareTweet(caseDown.digital(macro, 1, username),
-            menuDataEmulation);
-    heat -= primary_pci_recycle + ivr + adslFreewareWddm;
-    torrent_username_user.rateNosql = smart;
-    ppc_user = t;
+        ![IoT Hub Shared access policies](images/azure_hub_credentials.png "IoT Hub Shared access policies")
 
-Promissaque mirata percutit: umor Pindo ab negandum, adveniens vestigia
-inpatiensque nullo. Naturalique deos tulit desere: excussit innocuos agitur
-dubitat lacertis orbe Cadmeida vulnera praerupta heros; mors? Amoris at sonum
-loqui verbaque homini potens dicturus, est cuius Caphereus mihi. Retentis area
-coepi animo pingit quae noxia, facite hos plurima herbas **et**. Pisce scinditur
-laudatve aeratas.
+    2. From the list of policies, select the `iothubowner` policy.
+    3. Under **Shared access keys**, click the copy icon for the *Connection string -- primary key* to save the value.
 
-Manus plangente extrema os imbres quicquid quae vocant interdum leviter erat.
-Illo nemus et Tenedos, spectavit auresque genitor dei quam genus non non, pectus
-occupat cornus **per** flumen ut.
+        ![IoT Hub Connection string](images/connection_string.png "IoT Hub Connection string")
 
-Mundi e acumine duobus placuit umbram *nec passa*, caedis ipsis? Cui cortice
-animi [inde](http://saturnia-subito.org/) sed, et monte, hoc mihi nondum nimium
-[haerens](http://aer-edentem.com/); muro honorem facit. Fatetur illa cepere
-suras quae, secto, vir tardarunt. Tenus ait discedite remota frondente [erat sub
-ferunt](http://undis-quamquam.io/) gravem plus pedum fugientis otia est infantem
-[prodes](http://erat-resolutum.io/), hic vix praemia.
+    !!! info
+        For detailed information about the IoT Hub permissions, please visit the [Control access to IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#access-control-and-permissions) section of the Azure IoT Hub documentation.
+    Now you need to use the credential in the Coiote DM platform.
+
+    ### Set up the **Azure IoT Hub Extension** using credentials.  
+
+    1. In your Coiote DM user account, go to **Administration --> Extensions**.
+    2. Find the **Azure IoT Hub** tab and click `Setup`.
+
+        ![Azure IoT Hub extension](images/azure_extension.png "Azure IoT Hub extension")
+
+    3. In the tab, paste the previously copied IoT Hub connection string.
+
+        ![Setting up the extension](images/extension_setup.png "Setting up the extension")
+
+        - use `Test connection` to see if the connection can be established correctly.
+
+        - click `Save` to keep the setting.
+
+=== "Azure IoT Central"
+
+    ##  Configure the Azure IoT Central extension
+
+    ### Prerequisites:
+
+     - An active IoT Central with hub owner access permissions.
+     - A Coiote DM user account with permissions to use the integration extension.
+    _______________
+    ### Get the Azure IoT Central integration credentials
+
+     1. In your Azure IoT Central account view, go to **Administration**:
+     2. Under **Your application**, copy the full *Application URL* (along with '.azureiotcentral.com') into Notepad or other place to keep it for later.
+
+         ![IoT Central Administration](images/azure_central_admin.png "IoT Hub Administration")
+
+     3. From the **Administration** menu, select **API tokens** and click *generate token*.
+
+         ![Azure IoT central API token generation](images/api_token.png "Azure IoT central API token generation")
+
+     4. In the pop-up window that appears, click the copy icon for the newly generated token.
+
+         ![token generated](images/generated_token.png "Generate token pop-up")
+
+     Now you need to use the obtained credentials in the Coiote DM platform.
+
+    ### Set up the **Azure IoT Hub Extension** using credentials.  
+
+     1. In your Coiote DM user account, go to **Administration --> Extensions**.
+     2. Find the **Azure IoT Central** tab and click `Setup`.
+
+        ![Azure IoT Central extension](images/azure_central_extension.png "Azure IoT Central extension")
+
+     3. Inside the tab:
+          - paste the previously copied Azure IoT Central *Application URL*,
+          - provide the API token and,
+          - if needed, enter your *Device Provisioning Service hostname* (however, the default address provided is  sufficient in most cases).
+
+        ![Setting up the Azure IoT Central extension](images/central_extension_setup.png "Setting up IoT Central extension")
+
+          - use `Test connection` to see if the connection can be established correctly.
+
+          - click `Save` to keep the setting.
