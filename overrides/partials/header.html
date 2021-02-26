@@ -1,8 +1,8 @@
 <!-- Mitigate bug: https://github.com/mkdocs/mkdocs/issues/2191 -->
-<!--{% set site_url = config.site_url | d(nav.homepage.url, true) | url %}-->
-<!--{% if not config.use_directory_urls and site_url[0] == site_url[-1] == "." %}-->
-<!--  {% set site_url = site_url ~ "/index.html" %}-->
-<!--{% endif %}-->
+{% set site_url = config.site_url | d(nav.homepage.url, true) | url %}
+{% if not config.use_directory_urls and site_url[0] == site_url[-1] == "." %}
+  {% set site_url = site_url ~ "/index.html" %}
+{% endif %}
 
 <!-- Application header -->
 <header class="md-header" data-md-component="header">
