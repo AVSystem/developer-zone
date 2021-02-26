@@ -23,6 +23,6 @@ jobs:
       - run: mkdocs build
       - run: cp site/index.html site/docs_index.html
       - run: rm -f site/index.html
-      - run: cp -R site dist
+      - run: cp -R site/* dist/
       - run: python ghpages.py
       #- run: mkdocs gh-deploy --force --clean --config-file ./mkdocs.yml
