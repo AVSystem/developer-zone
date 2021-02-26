@@ -21,7 +21,8 @@ jobs:
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: pip install ghp-import
       - run: mkdocs build
-      - run: mkdir site/docs
-      - run: cp -R site dist/docs
+      - run: cp site/index.html site/docs_index.html
+      - run: rm -f site/index.html
+      - run: cp -R site dist
       - run: python ghpages.py
       #- run: mkdocs gh-deploy --force --clean --config-file ./mkdocs.yml
