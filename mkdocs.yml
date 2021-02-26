@@ -10,14 +10,14 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.superfences 
-  - attr_list
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+#  - attr_list
+#  - admonition
+#  - pymdownx.details
+#  - pymdownx.superfences
 
 plugins:
-  - search
-  - git-revision-date-localized
+#  - search
+#  - git-revision-date-localized
       
   
 google_analytics:
