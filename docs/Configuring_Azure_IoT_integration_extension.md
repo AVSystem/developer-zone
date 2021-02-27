@@ -87,3 +87,9 @@ hide:
           - use `Test connection` to see if the connection can be established correctly.
 
           - click `Save` to keep the setting.
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> dc90ace7677b11e30d972fc8f39724db107f0ecc

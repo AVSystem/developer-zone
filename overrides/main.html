@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+
 {% block libs %}
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -10,29 +11,7 @@
     <!-- End Google Tag Manager -->
 {% endblock %}
 
-{% block disqus %}
-  <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
-    <li class="contributors-holder">
-      <span class="contributors-text">Contributors: </span>
-      <ul class="contributors" data-bi-name="contributors">
-        {%- for user in committers -%}
-        <li>
-          <a href="{{ user.repos }}" title="{{ user.name }}" data-bi-name="contributorprofile">
-            <img src="/img/contributor.svg" data-src="{{ user.avatar }}" alt="{{ user.name }}">
-          </a>
-        </li>
-        {%- endfor -%}
-      </ul>
-    </li>
-  </ul>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-      $( '.contributors img[data-src]' ).each( function() {
-          src = $(this).attr("data-src");
-          $(this).attr('src',src);
-      });  
-  </script>
-{% endblock %}
+
 
 {% block config %}
     <!-- Google Tag Manager (noscript) -->

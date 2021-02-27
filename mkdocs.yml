@@ -18,19 +18,17 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
-  - git-committers:
-      enterprise_hostname: AVSystem
-      repository: AVSystem/developer-zone
-      branch: master
-      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
       
   
-
 google_analytics:
   - UA-25246208-6 
   - auto
 
 nav:
+<<<<<<< HEAD
+=======
+  - Example page: example.md
+>>>>>>> dc90ace7677b11e30d972fc8f39724db107f0ecc
   - Getting Started: index.md
   - Configuring Azure IoT integration extension: Configuring_Azure_IoT_integration_extension.md
   - Support: support.md
