@@ -25,10 +25,7 @@ google_analytics:
   - auto
 
 nav:
-<<<<<<< HEAD
-=======
   - Example page: example.md
->>>>>>> dc90ace7677b11e30d972fc8f39724db107f0ecc
   - Getting Started: index.md
   - Configuring Azure IoT integration extension: Configuring_Azure_IoT_integration_extension.md
   - Support: support.md
