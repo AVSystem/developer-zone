@@ -18,7 +18,7 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
-      
+  
 google_analytics:
   - UA-25246208-6 
   - auto
@@ -28,6 +28,23 @@ nav:
   - Getting Started: index.md
   - Configuring Azure IoT integration extension: Configuring_Azure_IoT_integration_extension.md
   - Support: support.md
+
+pages:
+    - Getting started: index.md
+    - Azure IoT Hub integration:
+        - 'Configuring integration extension': 'Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md'
+        - 'Device operations': 
+            - 'Azure_IoT_Hub_integration/Device_operations/Syncing_devices_with_Coiote_DM.md'
+            - 'Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Azure_IoT_Hub.md'
+        - 'Concepts':
+            - 'Azure_IoT_Hub_integration/Concepts/Communication_flows.md'
+    - Azure IoT Central integration:
+        - 'Configuring integration extension': 'Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
+        - 'Device operations':
+            - 'Azure_IoT_Central_integration/Device_operations/Syncing_devices_with_Coiote_DM.md'
+            - 'Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Azure_IoT_Central.md'
+        - 'Concepts':
+            - 'Azure_IoT_Central_integration/Concepts/Communication_flows.md'
 
 extra_css:
   - stylesheets/extra.css

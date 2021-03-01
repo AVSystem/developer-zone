@@ -6,4 +6,6 @@ This guide will take you on a step-by-step journey through the integration proce
 
 Here’s how you can get started with the Coiote DM – Azure IoT integration:
 
-[Getting started](#){: .md-button .md-button--small }
+[Configure integration with Azure IoT Central](Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md){: .md-button .md-button--big }
+
+[Configure integration with Azure IoT Hub](Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md){: .md-button .md-button--big }
