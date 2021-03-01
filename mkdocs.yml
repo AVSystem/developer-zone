@@ -24,7 +24,7 @@ google_analytics:
   - UA-25246208-6 
   - auto
 
-pages:
+nav:
     - Getting started: index.md
     - Azure IoT Hub integration:
         - 'Configuring integration extension': 'Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md'
