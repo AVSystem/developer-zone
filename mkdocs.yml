@@ -4,6 +4,7 @@ theme:
   name: material
   custom_dir: overrides
   logo: assets/images/logo.svg
+  favicon: assets/favicon/favicon-32x32.png
 
 markdown_extensions:
   - pymdownx.highlight
@@ -17,9 +18,8 @@ markdown_extensions:
 
 plugins:
   - search
-        
+  - git-revision-date-localized
   
-
 google_analytics:
   - UA-25246208-6 
   - auto
@@ -40,6 +40,7 @@ nav:
             - 'Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Azure_IoT_Central.md'
         - 'Concepts':
             - 'Azure_IoT_Central_integration/Concepts/Communication_flows.md'
+
 extra_css:
   - stylesheets/extra.css
 

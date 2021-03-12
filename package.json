@@ -4,8 +4,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
     "autoprefixer": "^9.6.0",
     "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.26.7",

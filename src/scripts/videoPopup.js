@@ -8,7 +8,9 @@
         btnOpenVideoPopup.click(function(e){
             e.stopPropagation();
             const numberVideo = $(this).data('video');
-            $(`[data-videoPopup="${numberVideo}"]`).fadeIn();       
+            $(`[data-videoPopup="${numberVideo}"]`).fadeIn(); 
+            // console.log("OPEN:" + numberVideo);   
+            // console.log($(`[data-videoPopup="${numberVideo}"]`))
         })
 
         btnCloseVideoPopup.click(function(){
@@ -25,7 +27,13 @@
 
 
         function stopVideo(){
-            const videoSrc = iframeVideoPopup.attr("src");
-            iframeVideoPopup.attr("src","");
-            iframeVideoPopup.attr("src", videoSrc);
+            // const videoSrc = iframeVideoPopup.attr("src");
+            // iframeVideoPopup.attr("src","");
+            // iframeVideoPopup.attr("src", videoSrc);
+            videoPopup.each(function(){
+                const videoSrc = $(this).find('.videoPopup__inner iframe').attr("src");
+                const thisIframeVideoPopup = $(this).find('.videoPopup__inner iframe') ;
+                thisIframeVideoPopup.attr("src","");
+                thisIframeVideoPopup.attr("src", videoSrc);
+            })
         }
