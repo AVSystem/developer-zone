@@ -34,7 +34,7 @@ nav:
             - 'Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
             - 'Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
         - 'Concepts':
-            - 'Azure_IoT_Hub_integration/Concepts/Communication_flows.md'
+            - 'Azure_IoT_Hub_integration/Concepts/LwM2M_mappings.md'
     - Azure IoT Central integration:
         - 'Configuring integration extension': 'Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
         - 'Device operations':
@@ -42,7 +42,7 @@ nav:
             - 'Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
             - 'Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.md'
         - 'Concepts':
-            - 'Azure_IoT_Central_integration/Concepts/Communication_flows.md'
+            - 'Azure_IoT_Central_integration/Concepts/LwM2M_mappings.md'
 
 extra_css:
   - stylesheets/extra.css
