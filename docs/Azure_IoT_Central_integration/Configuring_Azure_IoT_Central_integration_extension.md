@@ -43,5 +43,5 @@ _______________
        - click `Save` to keep the setting.
 
 ## Next steps
- - [Syncing devices with Coiote DM](Device_operations/Syncing_devices_with_Coiote_DM.md)
- - [Importing devices to Azure IoT Central](Device_operations/Importing_devices_to_Azure_IoT_Central.md)
+ - [Importing devices to Coiote DM](Device_operations/Importing_devices_to_Coiote_DM.md)
+ - [Exporting devices to Azure IoT Central](Device_operations/Exporting_devices_to_Azure_IoT_Central.md)

@@ -27,22 +27,20 @@ google_analytics:
 
 nav:
     - Getting started: index.md
-    - Azure IoT Hub integration:
+    - Azure IoT Hub:
         - 'Configuring integration extension': 'Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md'
         - 'Device operations':
             - 'Azure_IoT_Hub_integration/Device_operations/Overview.md'
             - 'Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
             - 'Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
-        - 'Concepts':
-            - 'Azure_IoT_Hub_integration/Concepts/LwM2M_mappings.md'
-    - Azure IoT Central integration:
+    - Azure IoT Central:
         - 'Configuring integration extension': 'Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
         - 'Device operations':
             - 'Azure_IoT_Central_integration/Device_operations/Overview.md'
             - 'Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
             - 'Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.md'
-        - 'Concepts':
-            - 'Azure_IoT_Central_integration/Concepts/LwM2M_mappings.md'
+    - 'Concepts':
+        - 'Concepts/LwM2M_mappings.md'
 
 extra_css:
   - stylesheets/extra.css
