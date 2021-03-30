@@ -207,7 +207,7 @@
 
 @media(min-width:1500px){
     .md-main__inner:before{
-        left:-200px
+        left:-300px
     }
 }
 
@@ -373,9 +373,9 @@
     color: #ffd100 !important;
 }
 
-.md-navbottom__inner a:only-child {
+/* .md-navbottom__inner a:only-child {
     margin-left: auto;
-  }
+  } */
 
 .md-navbottom__inner{
     display: flex;
@@ -413,6 +413,16 @@
 
 .md-navbottom__link:hover > *{
     color:#000 !important;
+}
+
+.md-navbottom__link--prev{
+    margin-left:unset;
+    margin-right: auto;
+}
+
+.md-navbottom__link--next{
+    margin-left:auto;
+    margin-right: unset;
 }
 
 .md-footer-nav{
