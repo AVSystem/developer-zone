@@ -43,4 +43,11 @@ body{
           
       }
       
+      &--boldVersion{
+        font-weight: bold;
+        margin-bottom:50px;
+        &:after{
+          display: none;
+        }
+      }
   }

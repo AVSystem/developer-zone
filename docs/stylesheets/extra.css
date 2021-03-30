@@ -9,7 +9,7 @@
 .md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg{
     width: unset;
     height: 1.8rem;
-    margin-left:-10px;
+    margin-left:-8px;
 }
 
 
@@ -37,7 +37,7 @@
 
 .md-typeset .md-button--big{
     padding: 0.5em 1.4rem;
-    font-size: .85rem;
+    font-size: .8rem;
 }
 
 .md-typeset .md-button--primary{
@@ -117,8 +117,8 @@
 .md-sidebar--primary .md-nav__item .md-nav__link:hover,
 .md-sidebar--primary .md-nav__item .md-nav__link:active,
 .md-sidebar--primary .md-nav__item .md-nav__link:focus{
+    text-decoration: underline;
     color:#000;
-    font-weight: bold;
 }
 
 .md-sidebar--primary .md-nav__title{
@@ -126,12 +126,43 @@
     padding-bottom:.3rem;
 }
 
+.md-sidebar--secondary .md-nav__list{
+    padding-left:12px;
+}
+
+.md-sidebar--secondary .md-nav__item .md-nav__link[data-md-state=blur]{
+    color: var(--md-default-fg-color--light);
+}
+
+.md-sidebar--secondary .md-nav__item .md-nav__link{
+    color:#000;
+    position: relative;
+    overflow: unset;
+}
+
+.md-sidebar--secondary .md-nav__item .md-nav__link:before{
+    display: none;
+    content:'';
+    width: 2px;
+    border-radius: 5px;
+    background-color: #ffd100;
+    height: 85%;
+    left: -11px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
 .md-sidebar--secondary .md-nav__item .md-nav__link:hover{
-    color:#ffd100;
+    text-decoration: underline;
 }
 
 .md-sidebar--secondary .md-nav__item .md-nav__link--active{
-    color:#ffd100;
+    color:#ffd100 !important;
+}
+
+.md-sidebar--secondary .md-nav__item .md-nav__link--active:before{
+    display: inline-block;
 }
 
 .md-footer{
@@ -170,13 +201,13 @@
     }
 
     .md-header .md-ellipsis{
-        margin-left: 81px;
+        margin-left: 77px;
     }
 }
 
 @media(min-width:1500px){
     .md-main__inner:before{
-        left:-200px
+        left:-300px
     }
 }
 
@@ -265,7 +296,7 @@
     }
 
     .md-header-nav__button.md-logo{
-        margin-left:0;
+        margin-left:3px;
     }
 
     .md-content{
@@ -275,7 +306,125 @@
     .md-sidebar.md-sidebar--primary{
         width: 14rem;
     }
+
+    .md-sidebar--primary .md-nav__item .md-nav__link--active{
+        background-color: #f7f7f7;
+    }
+
+    .md-sidebar--primary .md-nav__item .md-nav__link{
+        margin-top: .5em;
+        padding: 4px 11px;
+    }
+
+    .md-nav__item{
+        padding-right: 0;
+    }
+}
+
+.md-grid{
+    max-width: 69rem;
+}
+
+.md-typeset{
+    font-size: 0.72rem;
+}
+
+.md-typeset h1{
+    font-size: 1.85em;
+    color: #000;
+}
+
+.md-typeset h2{
+    font-size:1.49em;
+    color: #000;
+}
+
+.md-nav__link{
+    color: #000;
+}
+
+.md-typeset p, .md-typeset ul, .md-typeset ol, .md-typeset dl, .md-typeset blockquote{
+    color: #000;
+}
+
+.md-typeset ul li p,
+ .md-typeset ul li blockquote, 
+ .md-typeset ol li p, 
+ .md-typeset ol li blockquote,
+ html .md-typeset .admonition>:last-child, 
+ html .md-typeset details>:last-child{
+    font-size: .7rem;
+}
+
+.md-footer-meta__inner{
+    align-items: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.md-footer-meta__link{
+    margin:0 23px;
+    color:#fff !important;
+    font-size: 0.7rem;
 }
 
 
+.md-footer-meta__link:hover{
+    color: #ffd100 !important;
+}
 
+/* .md-navbottom__inner a:only-child {
+    margin-left: auto;
+  } */
+
+.md-navbottom__inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0 0 0;
+ 
+}
+
+.md-navbottom__button svg{
+    fill:#ffd100;
+}
+
+.md-navbottom__title .md-navbottom__direction{
+    display: block;
+    color:#696969;
+    font-size:.65rem;
+    font-weight: 400;
+}
+
+.md-navbottom__title .md-ellipsis{
+    color:#000;
+    margin:5px 15px;
+    font-weight: bold;
+}
+
+.md-navbottom__link{
+    display: flex;
+    align-items: center;
+}
+
+.md-navbottom__link:hover{
+    text-decoration: underline;
+    color:#000 !important;
+}
+
+.md-navbottom__link:hover > *{
+    color:#000 !important;
+}
+
+.md-navbottom__link--prev{
+    margin-left:unset;
+    margin-right: auto;
+}
+
+.md-navbottom__link--next{
+    margin-left:auto;
+    margin-right: unset;
+}
+
+.md-footer-nav{
+    display: none;
+}
