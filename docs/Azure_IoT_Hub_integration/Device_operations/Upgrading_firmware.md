@@ -5,6 +5,10 @@ If you would like to upgrade the firmware of devices using the Azure IoT Hub, fo
 ## Prerequisites
 
  - At least one device with active Coiote DM - Azure IoT Hub [synchronization](../Importing_devices_to_Coiote_DM).
+ - A firmware file hosted on an HTTP server that is reachable by the Coiote DM server. 
+
+!!! note 
+     In this stage of integration, no authentication method is suported for this endpoint - it is required that the firmware is publicly available (or hosted in a private network but with access granted for the Coiote DM server).
 
 ## Invoking the *scheduleFirmwareUpdate* direct method
 
@@ -25,7 +29,7 @@ To initiate the firmware upgrade procedure for your device:
           ```
           {
           	"name": "anjay-firmware",
-          	"firmwareUrl": "https://repository.avsystem.com/artifactory/gitlfs/demo.fw-pkg",
+          	"firmwareUrl": "https://example.repository.com/artifactory/gitlfs/demo.fw-pkg",
           	// optional - default="1200s", any valid duration in format "<length><unit>"
           	"timeout": "1200s",
           	// optional - default="COAP"
@@ -72,7 +76,7 @@ To initiate the firmware upgrade procedure for your device:
       ```
       {
       "name": "anjay-firmware",
-      "firmwareUrl": "https://repository.avsystem.com/artifactory/gitlfs/demo.fw-pkg",
+      "firmwareUrl": "https://example.repository.com/artifactory/gitlfs/demo.fw-pkg",
       }
       ```
 
