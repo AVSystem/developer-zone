@@ -5,12 +5,22 @@ If you would like to upgrade the firmware of devices using the Azure IoT Hub, fo
 ## Prerequisites
 
  - At least one device with active Coiote DM - Azure IoT Hub [synchronization](../Importing_devices_to_Coiote_DM).
- - A firmware file hosted on an HTTP server that is reachable by the Coiote DM server. 
+ - A firmware file hosted on an HTTP server that is reachable by the Coiote DM server.
 
-!!! note 
-     In this stage of integration, no authentication method is suported for this endpoint - it is required that the firmware is publicly available (or hosted in a private network but with access granted for the Coiote DM server).
+!!! note
+     In this stage of integration, no authentication method is supported for this endpoint - it is required that the firmware is publicly available (or hosted in a private network but with access granted for the Coiote DM server).
 
-## Invoking the *scheduleFirmwareUpdate* direct method
+## Scheduling a firmware upgrade
+
+### Introduction
+
+The process of upgrading device firmware for Azure IoT Hub devices synchronized with Coiote DM is based on two main elements: the Azure Direct Method mechanism and the Coiote DM Firmware Upgrade task.
+In the process, the Azure *scheduleFirmwareUpdate* direct method is invoked, enabling the Coiote DM to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in Coiote DM and the upgrade is performed on the device.  
+
+!!! info
+    For firmware file recognition in Coiote, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then Coiote DM will be able to utilize the once downloaded resource without the need to download it again.
+
+### Step 1: Invoking the Azure *scheduleFirmwareUpdate* direct method
 
 To initiate the firmware upgrade procedure for your device:
 
@@ -80,7 +90,7 @@ To initiate the firmware upgrade procedure for your device:
       }
       ```
 
-## Checking Firmware upgrade status
+### Step 2: Checking the firmware upgrade result
 
 To check the status of a scheduled firmware upgrade, follow these steps:
 
@@ -100,7 +110,23 @@ To check the status of a scheduled firmware upgrade, follow these steps:
 
     ![FOTA status check result](images/direct_method_status_check.png "Direct Method result - status")
 
-## Cancelling the Firmware upgrade procedure
+### Step 3: Checking Coiote DM FOTA task execution
+
+Once you have executed the Azure-side steps of the procedure, you can check its status from the side of Coiote DM.
+
+1. Go to your Coiote DM account and in the **Device Inventory**, select your device.
+
+    ![Device inventory view](images/device_inventory_view.png "Device inventory view")
+
+2. In the Device Management Center, enter the **LwM2M firmware** tab.  
+3. Check the status of the FOTA task execution for your device:
+
+    - In the **Current firmware** section, check if the device firmware is updated to the newest version.
+    - In the **Installation history** section, check if the *lwm2mFirmwareUpdate* task invoked earlier by the Azure *scheduleFirmwareUpdate* direct method has been completed with success.
+
+    ![LwM2M firmware upgrade status](images/LwM2M_firmware_check.png "LwM2M firmware upgrade status")
+
+## Cancelling the firmware upgrade procedure
 
 To cancel the firmware upgrade procedure, follow these steps:
 
@@ -119,3 +145,7 @@ To cancel the firmware upgrade procedure, follow these steps:
 3. Check the direct method status in the Result field:
 
     ![FOTA Direct method cancellation](images/direct_method_cancel.png "Direct Method result - cancel")
+
+## See also
+
+See the relevant section of [LwM2M mappings](/Concepts/LwM2M_mappings/#lwm2m-executable-resources) to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.  
