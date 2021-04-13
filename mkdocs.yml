@@ -34,6 +34,7 @@ nav:
             - 'Azure_IoT_Hub_integration/Device_operations/Overview.md'
             - 'Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
             - 'Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
+            - 'Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
     - Azure IoT Central:
         - 'Configuring integration extension': 'Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
         - 'Device operations':
