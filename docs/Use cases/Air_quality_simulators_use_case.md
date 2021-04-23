@@ -1,4 +1,4 @@
-# Air quality monitoring - example use case
+# Air quality monitoring - use case
 
 The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization.
 
