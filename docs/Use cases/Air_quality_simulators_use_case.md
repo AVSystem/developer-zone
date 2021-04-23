@@ -1,4 +1,4 @@
-# Air quality monitoring - use case
+# Air quality monitoring - example use case
 
 The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization.
 
@@ -6,6 +6,8 @@ The Coiote DM and Azure IoT Hub integration lets you create custom use cases wit
 
 - An active Azure subscription.
 - An active Coiote DM account.
+- An active Microsoft Power BI account.
+- An OpenWeatherMap account with a free API token.
 
 ## Creating and configuring an Azure IoT hub and storage account
 
@@ -51,10 +53,10 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
     - In **Device inventory**, select **Sync with IoT platform -> Azure IoT Hub**.
     - In the pop-up, click **Sync devices**.
     - Devices should then be visible in **Device inventory**   
-3. Go to your command interpreter and register the device simulators:
+3. Go to your command line and register the device simulators:
     - Paste and run the following command to create a container group:
         ```
-         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID-air-quality-meter-example-0 SERVER_ADDRESS=lwm2m-test.avsystem.io OPEN_WEATHER_API_TOKEN=exampletoken
+         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID-air-quality-meter-example-0 SERVER_ADDRESS=eu.iot.avsystem.cloud OPEN_WEATHER_API_TOKEN=exampletoken
 
         ```
 
