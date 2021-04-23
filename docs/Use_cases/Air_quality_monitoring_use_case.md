@@ -1,6 +1,6 @@
 # Air quality monitoring - use case
 
-The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization.
+The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. Follow the tutorial below to see how to set up an inspiringly complex use case in just a few steps.
 
 ## Prerequisites
 
@@ -16,15 +16,17 @@ First you need to add a new IoT hub and a storage account in Azure. Here's how t
 ### Creating an IoT hub
 
 1. In your Azure portal home view, go to **IoT Hub** and select **Add**.
-
+![Adding an IoT hub](images/hub_add.png "Add iot hub")
     - In the **Basics** tab:
         - select your subscription and resource group,
         - pick your region,
         - provide a name for your IoT hub.
+![IoT hub basics tab](images/hub_basics.png "Iot hub basics")
     - In the **Management** tab:
         - in **Pricing and scale tier** select,
         - optionally, turn off **Defender for IoT**.
     - In the **Review + create** tab, click **Create**.
+![IoT hub management tab](images/hub_create.png "Iot hub management")
 
 ### Creating a storage account
 
