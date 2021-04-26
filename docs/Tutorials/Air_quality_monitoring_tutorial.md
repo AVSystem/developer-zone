@@ -14,7 +14,7 @@ The text version of the tutorial, complete with the necessary steps and code sni
 - An active Coiote DM account. Please refer to [Coiote DM home page](https://www.avsystem.com/products/coiote-iot-device-management-platform/) for details on how to get it.
 - An active Microsoft Power BI account.
 - An OpenWeatherMap account with a free API token.
-- An active and configured Azure CLI - please refer to the [Azure CLI configuration guide](https://docs.microsoft.com/en-us/cli/azure/azure-cli-configuration) for details.
+- An active and configured Azure CLI - please refer to the [Azure CLI installation guide](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) for details.
 
 ## Creating and configuring an Azure IoT hub and storage account
 
