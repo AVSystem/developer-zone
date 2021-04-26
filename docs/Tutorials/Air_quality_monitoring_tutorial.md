@@ -1,13 +1,20 @@
-# Air quality monitoring - use case
+# Air quality monitoring - tutorial
 
-The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. Follow the tutorial below to see how to set up an inspiringly complex use case in just a few steps.
+The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the Coiote DM - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.
+
+<figure class="video_container">
+  <iframe width="640" height="480"  src="https://www.youtube.com/embed/Ck0WJp4grb0" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+
+The text version of the tutorial, complete with the necessary steps and code snippets, is available below:
 
 ## Prerequisites
 
 - An active Azure subscription.
-- An active Coiote DM account.
+- An active Coiote DM account. Please refer to [Coiote DM home page](https://www.avsystem.com/products/coiote-iot-device-management-platform/) for details on how to get it.
 - An active Microsoft Power BI account.
 - An OpenWeatherMap account with a free API token.
+- An active and configured Azure CLI - please refer to the [Azure CLI configuration guide](https://docs.microsoft.com/en-us/cli/azure/azure-cli-configuration) for details.
 
 ## Creating and configuring an Azure IoT hub and storage account
 
@@ -33,27 +40,32 @@ First you need to add a new IoT hub and a storage account in Azure. Here's how t
 While your new IoT hub is deploying, you can add a new storage account:
 
 1. In the Azure portal, go to **Storage accounts** and select **Add**.
-
+![Adding a storage account](images/storage_add.png "Storage_add")
    - In the **Basics** tab:
        - select your subscription and resource group,
        - provide a name for your storage account,
        - pick your location.
+![Creating a storage account](images/storage_create.png "Storage_create")
    - In the **Review + create** tab, click **Create**.
 
 ## Configuring the Azure IoT Hub integration extension
 
 Once the deployments are complete, go to Coiote DM to set up the Azure IoT Hub extension.
-If you haven't done this yet, please follow the [instruction for the Azure IoT Hub integration configuration](../Configuring_Azure_IoT_Hub_integration_extension).
+If you haven't done this yet, please follow the [instruction for the Azure IoT Hub integration configuration](/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension).
 
 ## Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub
 1. Go to your Azure IoT Hub and add new devices:
     - Under **Explorers**, select **IoT Devices** and click **+ New**.
+    ![Adding new devices to IoT Hub](images/device_add.png "New_device_create")
     - Provide the name for your first device: ``air-quality-meter-example-0``.
     - Click **Save**.
+         ![Saving IoT Hub devices](images/device_save.png "New_device_save")
     - Repeat the procedure for the other 5 devices (increase the number included in the device name).
 2. Go to Coiote DM and sync the previously added devices:
     - In **Device inventory**, select **Sync with IoT platform -> Azure IoT Hub**.
+    ![Syncing IoT Hub devices](images/hub_sync_menu.png "Device_sync")
     - In the pop-up, click **Sync devices**.
+    ![Device sync](images/sync_devices.png "Device_sync2")
     - Devices should then be visible in **Device inventory**   
 3. Go to your command line and register the device simulators:
     - Paste and run the following command to create a container group:
@@ -66,13 +78,16 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
             Remember to change the command parameters accordingly so that they are in line with your naming and credentials.
 
      - once the command is executed, you should see a JSON payload that describes the content of the container instance.
+![Command line JSON payload](images/json_payload.png "JSON_payload")
 
 4. Go back to Coiote DM and in **Device inventory**, check if the devices have registered to the platform and if their data model has been updated.
 
     - Click the **Refresh data** icon if needed.
     - Click on a device and in the **Device Management Center**, select the **Actions** panel.
     - Select the **Refresh data model from device** link and confirm by clicking **Yes, execute task now**.
+    ![Refreshing data model](images/refresh_data_model.png "Data_model_refresh")
     - Go to the **Objects** panel to see if the data model for the device has been updated. You should be able to see objects such as ``3 Device`` (along with the ``Model number`` resource which shows the name of the city of the temperature reading), ``3303 Temperature``, and ``3428 Air quality``.
+    ![Device data model](images/objects.png "Data_model")
 ## Bidirectional communication using Device Twin
 
 ### From Coiote DM to Azure IoT Hub
