@@ -154,8 +154,7 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
               - **Not more often than once every** - set it to 5 seconds.
           - Click **Add new**.
 5. Go back to **Device inventory** and select a device of your group. In the **Dashboard view**, you should be able to see the value tracking parameters as in the picture below:
-
-![Value tracking tab in Device Dashboard tab](images/Dashboard_value_tracking.png "Dashboard value tracking")
+![Value tracking in Device Dashboard tab](images/dashboard_value_tracking.png "Dashboard value tracking")
 
 ### Configuring message routing for sending telemetry data in Azure IoT Hub
 
@@ -242,3 +241,5 @@ Once the query is finished, you can go to Power BI to create a visualization for
            - To the **Value** data field, drag and drop the ``pm10`` parameter from the **Fields** menu.
                - In the **Value** data field, expand the drop-down list and select **Average**.
        - To refresh the displayed data, click the **Refresh** button located in the upper navigation bar.
+
+![PowerBi air quality heatmap](images/powerbi.png "PowerBi_heatmap")
