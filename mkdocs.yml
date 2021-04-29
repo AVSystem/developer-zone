@@ -43,7 +43,8 @@ nav:
             - 'Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.md'
     - 'Concepts':
         - 'Concepts/LwM2M_mappings.md'
-
+    - 'Tutorials':
+        - 'Tutorials/Air_quality_monitoring_tutorial.md'
 extra_css:
   - stylesheets/extra.css
 
