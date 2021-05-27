@@ -1,4 +1,4 @@
-site_name: Azure IoT Integration Guide
+site_name: Coiote IoT Device Management Docs
 
 theme:
   name: material
@@ -27,24 +27,27 @@ google_analytics:
   - auto
 
 nav:
-    - Getting started: index.md
-    - Azure IoT Hub:
-        - 'Configuring integration extension': 'Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md'
-        - 'Device operations':
-            - 'Azure_IoT_Hub_integration/Device_operations/Overview.md'
-            - 'Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
-            - 'Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
-            - 'Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
-    - Azure IoT Central:
-        - 'Configuring integration extension': 'Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
-        - 'Device operations':
-            - 'Azure_IoT_Central_integration/Device_operations/Overview.md'
-            - 'Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
-            - 'Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.md'
-    - 'Concepts':
-        - 'Concepts/LwM2M_mappings.md'
-    - 'Tutorials':
-        - 'Tutorials/Air_quality_monitoring_tutorial.md'
+        - 'Interoperability tests guide':
+            - 'Interoperability_tests_guide/Test_case_actions.md'
+            - 'Interoperability_tests_guide/Configuring_test_cases.md'
+        - 'Azure IoT integration guide':
+            - Azure IoT Hub:
+                - 'Configuring integration extension': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md'
+                - 'Device operations':
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview.md'
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
+            - Azure IoT Central:
+                - 'Configuring integration extension': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
+                - 'Device operations':
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview.md'
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.md'
+            - 'Concepts':
+                - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings.md'
+            - 'Tutorials':
+                - 'Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.md'
 extra_css:
   - stylesheets/extra.css
 
