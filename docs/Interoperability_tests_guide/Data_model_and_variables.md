@@ -14,18 +14,21 @@ Coiote DM gives you the possibility to view and perform actions on the data mode
 4.	Division into objects.
 5.	The **info** icon - click it to see the object description.
 6.	Managing instances:
-
-![Instances](images/image063.png "Instances")
-   A. Use it to select another instance of an object if the object has instances.
-   B. Use it to add a new instance if an object allows it.
-   C. Use it to select another instance or remove it.
+![Instances](images/image063.png "Instances"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
+     - [A] - Use it to select another instance of an object if the object has instances.
+     - [B] - Use it to add a new instance if an object allows it.
+     - [C] - Use it to select another instance or remove it.
 7.	Search - use it to find a particular resource. To find the resource, type its name.
 8.	Use it to refresh data, track values (send an Observe task) and add additional attributes to a selected instance.
 9.	Use it to refresh data, track values (send an Observe task) and add additional attributes to a selected object.
 10.	The table with resources of an object instance.
-     !!! note
-         The icon displaying the status of execution is available after clicking one of the action buttons located in the **Actions** column. If you click it, you will see additional information on execution.
-Figure 68. Execution status icon
+
+    !!! note
+        The icon displaying the status of execution is available after clicking on one of the action buttons located in the **Actions** column. If you click it, you will see additional information about execution.
+
+    ![Execution status icon](images/image064.png "Execution status icon"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
+      Execution status icon
+
 11.	Use it to refresh the resource.
 12.	Value tracking - use it to send an Observe task to the device and configure monitoring to collect data.
 13.	Attributes - use it to edit resource attributes or add new ones.
@@ -34,14 +37,16 @@ Figure 68. Execution status icon
 
 ##	Managing device variables
 
-Use the **Variables** panel to add custom variables onto your device for the purpose of protocol tests and view the existing variables that the device has inherited. To enter the **Variables** panel, go to **Device Management Center** by clicking on a selected device name and choose the **Variables** tab.
+Use the **Variables** panel to add custom variables onto your device for the purpose of protocol tests and view the existing variables that the device has inherited.
+To enter the **Variables** panel, go to **Device Management Center** by clicking on a selected device name and choose the **Variables** tab.
 
+![Variables panel](images/image065.png "The variables panel")
 
-Figure 69. The variables panel
-1.	The Custom device variables list shows the variables that belong to this particular device.
-    - To add a variable, click on + Add variable, provide its name and value, and click Save.
-Note that every custom variable that you add will have the VARIABLE_ prefix.
-    - To delete a previously added variable, click the Trash bin icon and click Save.
+1.	The **Custom device variables** list shows the variables that belong to this particular device.
+    - To add a variable, click on **+ Add variable**, provide its name and value, and click **Save**. Note that every custom variable that you add will have the `VARIABLE_` prefix.
+    - To delete a previously added variable, click the **Trash bin** icon and click **Save**.
+2.	The **Inherited variables** list shows only the variables that the device inherits from the groups of devices that is belongs to. The list is view-only. To add a variable to this list, go to Device Groups and, in the Profiles panel, add an entry with the name beginning with `VARIABLE_`.
 
-2.	The Inherited variables list shows only the variables that the device inherits from the groups of devices that is belongs to. The list is view-only. To add a variable to this list, go to Device Groups and, in the Profiles panel, add an entry with the name beginning with `VARIABLE_`.
-To use your device variables, enter the expression context by typing ${variable.<variableName>} while defining a test case action. Remember that each variable is treated as a string, therefore, to use it as a different data type, you will have to cast it to the appropriate type. 
+### Using variables in test case actions
+
+To use your device variables, enter the expression context by typing ``${variable.<variableName>}`` while defining a test case action. Remember that each variable is treated as a string, therefore, to use it as a different data type, you will have to cast it to the appropriate type. 
