@@ -15,9 +15,11 @@ Read this section to learn about the main components that it comprises.
 1.	**Test case list** – views all the test cases available for a given device. It is searchable and can be filtered.
 2.	**Info icon** – hover over this icon to see test case description.
 3.	**'Select all' checkbox** – use this checkbox to select all items visible in the list. Note that if you filter or search the list, the previously made selection you will be kept nonetheless. In such case, the number of selected test cases visible in the Run selected button will be their total count, which may not correspond to the number of selections in your filtered list view.
-4.	**Filter** – use this field to filter your list view by test case status.
-5.	**Search** – use this field to search among the listed test cases by their name. Start typing to get matching results.
-6.	**'Run selected (_)' button** – use it to start the execution of previously selected tests. The number of tests to be run is shown in brackets.
+4.	**Status** – use this field to filter your list view by test case execution status.
+5. **Type** - use this field to filter your list view by test case type (*Automated* or *Semi-manual*).
+6.	**Search** – use this field to search among the listed test cases by their name. Start typing to get matching results.
+7. **Show report** - use this button to view a summary of tests commissioned for your devices along with test case success rate. To get the report in the CSV format, select the **Download summary file** button.
+8.	**'Run selected (_)' button** – use it to start the execution of previously selected tests. The number of tests to be run is shown in brackets.
 
 ##	Displaying test case description
 
