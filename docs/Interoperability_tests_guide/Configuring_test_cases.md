@@ -13,13 +13,15 @@ In this section you will learn about the layout and main features of the Protoco
 
 To enter the panel, in the navigation menu, select **Protocol tests configuration**.
 
-![Interoperability tests configuration panel](images/image020.png "Interoperability tests configuration panel")
+![Protocol tests tab](images/image019.png "Interoperability tests")
+
 
 1.	**Search** – use it to search the test case list.
 2.	**Import** – use it to import test cases.
 3.	**Add a new test case** – use it to add a new test case to the list.
 4.	**'Select all' checkbox** – use it to select or deselect all test cases visible in the list.
 5.	**'Delete selected' button** – use it to delete selected test cases.
+![Interoperability tests configuration panel](images/image020.png "Interoperability tests configuration panel")
 6.  **'Export selected' button** - use it to export selected test cases.
 7.	**Test case list** – it features all the test cases available for you at the moment, or all the test cases meeting the search criteria (if entered).
 8.	**Domain name** – it shows the names of domains and subdomains to which your test cases belong.
@@ -79,6 +81,9 @@ Read this section to learn how to add a new test case.
 ## Editing test cases
 
 Read this section to learn how to edit a test case.
+
+!!! note
+    If you edit a test case that was executed before, the existing historical results for this test case will no longer be available.  
 
 1.	From the navigation menu, select **Protocol tests configuration**.
 2.	From the list, choose the test case you want to edit and click on its name.
@@ -140,7 +145,7 @@ Read this section to learn how to export test cases.
        ![Export single test case button](images/image029.png "Export single test case button"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
     -	If you want to export a group of test cases, select all the test cases and click on the **export** icon appearing at the top of the list.
        ![Export selected test cases button](images/image030.png "Export selected test cases button"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
-3. The test case(s) will be saved to your drive in the ``.conf`` format.
+3. The test case(s) will be downloaded in the ``.conf`` format.
 
 !!! tip
     Edit the exported test cases using Windows Notepad or other standard text editor.

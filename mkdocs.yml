@@ -29,6 +29,7 @@ google_analytics:
 nav:
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
+            - 'Interoperability_tests_guide/Getting_started.md'
             - 'Interoperability_tests_guide/Test_case_actions.md'
             - 'Interoperability_tests_guide/Configuring_test_cases.md'
             - 'Interoperability_tests_guide/Data_model_and_variables.md'

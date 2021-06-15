@@ -43,10 +43,47 @@ To enter the **Variables** panel, go to **Device Management Center** by clicking
 ![Variables panel](images/image065.png "The variables panel")
 
 1.	The **Custom device variables** list shows the variables that belong to this particular device.
-    - To add a variable, click on **+ Add variable**, provide its name and value, and click **Save**. Note that every custom variable that you add will have the `VARIABLE_` prefix.
+    - To add a variable, click on **Add**, provide its name and value, and click **Save**. Note that every custom variable that you add will have the `VARIABLE_` prefix.
     - To delete a previously added variable, click the **Trash bin** icon and click **Save**.
 2.	The **Inherited variables** list shows only the variables that the device inherits from the groups of devices that is belongs to. The list is view-only. To add a variable to this list, go to Device Groups and, in the Profiles panel, add an entry with the name beginning with `VARIABLE_`.
 
 ### Using variables in test case actions
 
-To use your device variables, enter the expression context by typing ``${variable.<variableName>}`` while defining a test case action. Remember that each variable is treated as a string, therefore, to use it as a different data type, you will have to cast it to the appropriate type. 
+To use device variables, enter the expression context by typing ``${variable.<variableName>}`` while defining a test case action. Remember that each variable is treated as a string, therefore, to use it as a different data type, you will have to cast it to the appropriate type. 
+
+#### Using variables - example
+
+Learn how to use device variables in **Interoperability tests** in a few steps:
+
+Use case: Testing the **WRITE** action on the `LwM2M Server.1.Lifetime` resource.  
+
+1. Add the variable:
+     - In **Device inventory**, click on a selected device name to enter its **Device Management Center**.
+     - Select the **Variables** tab.
+
+        !!! tip
+            If the **Variables** tab is not visible in the menu, use the settings button under the menu to add it: drag it from **Available tabs** and drop it in **Selected tabs** and click **Confirm**.
+
+      ![Adding a variable](images/image105.png "Adding a variable")
+
+     - Click on **Add** and provide the following:
+         - Name: `lifetime120`.
+         - Value: `120`.
+     - Click **Save**.
+
+2. Create a test case and include the new variable in the appropriate format:
+     - To add a new test case, follow the steps in [Creating your first test case](../Getting_started/#create-your-first-test-case) section, but including the adjustments below:
+         - For example purposes, pick only the **Write** action.
+         - In the **Parameter name** field, type `LwM2M Server.1.Lifetime` (note that the path may vary slightly depending on your device data model).
+![Using a variable in a test case](images/image107.png "Using a variable in a test case")
+         - In the **Value** field, type `${variable.lifetime120.toInt}`.
+
+            !!! tip
+                By default, the variable value is rendered as a `string` data type. To cast it to the `integer` data type, `.toInt` suffix is added to the created expression, as seen above.
+
+3. Run the created test case and check if the variable works correctly:
+     -  To run the test case, follow the steps in [Running the test case on device](../Getting_started/#run-the-test-case-on-device) using the test case created in the previous step.
+     -  After the test case is finished, check if the *Lifetime* resource value has changed on the device:
+        - Go to the **Objects** panel of your device and under the **LwM2M Server** object, look for the **Lifetime** resource value:
+![Checking device data model](images/image106.png "Checking device data model")
+        - If the value has changed accordingly, the variable can be now reused and populated to any other test cases.    

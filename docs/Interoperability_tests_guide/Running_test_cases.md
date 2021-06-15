@@ -4,7 +4,10 @@ If you have test cases configured in the platform, you can run them on your devi
 
 ## Protocol tests panel description
 
-The protocol tests panel is available in the **Device Management Center** individually for each device. To access it, select a device in **Device Inventory** to enter its **Device Management Center** and select **Protocol tests** from the menu on the left.   
+The protocol tests panel is available in the **Device Management Center** individually for each device. To access it, select a device in **Device Inventory** to enter its **Device Management Center** and select **Protocol tests** from the menu on the left.
+
+!!! tip
+    If the **Protocol tests** tab is not visible in the menu, use the settings button under the menu to add it: drag it from **Available tabs** and drop it in **Selected tabs** and click **Confirm**. 
 
 ![Protocol tests tab in DMC](images/image101.png "Protocol tests tab in DMC")
 
