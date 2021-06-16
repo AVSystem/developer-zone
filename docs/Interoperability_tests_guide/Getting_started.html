@@ -9,19 +9,19 @@
       
       
       
-      <link rel="shortcut icon" href="assets/favicon/favicon-32x32.png">
+      <link rel="shortcut icon" href="../assets/favicon/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-6.2.6">
     
     
       
-        <title>Coiote IoT Device Management Docs</title>
+        <title>Getting started - Coiote IoT Device Management Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
       
     
@@ -54,7 +54,7 @@
     
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     
       
@@ -112,7 +112,7 @@
       target="_blank"
     >
       
-  <img src="assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
 
     </a>
 
@@ -220,9 +220,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="./index.html" title="Coiote IoT Device Management Docs" class="md-nav__button md-logo" aria-label="Coiote IoT Device Management Docs">
+    <a href="../index.html" title="Coiote IoT Device Management Docs" class="md-nav__button md-logo" aria-label="Coiote IoT Device Management Docs">
       
-  <img src="assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
 
     </a>
     Coiote IoT Device Management Docs
@@ -236,12 +236,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
       
       <label class="md-nav__link" for="nav-1">
         Interoperability tests guide
@@ -260,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Interoperability_tests_guide/Overview.html" class="md-nav__link">
+      <a href="Overview.html" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -270,11 +272,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="Interoperability_tests_guide/Getting_started.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Getting_started.html" class="md-nav__link md-nav__link--active">
         Getting started
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-first-test-case" class="md-nav__link">
+    Create your first test case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-test-case-on-device" class="md-nav__link">
+    Run the test case on device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-test-execution-details" class="md-nav__link">
+    Check test execution details
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -284,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Interoperability_tests_guide/Test_case_actions.html" class="md-nav__link">
+      <a href="Test_case_actions.html" class="md-nav__link">
         Test case actions
       </a>
     </li>
@@ -296,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Interoperability_tests_guide/Configuring_test_cases.html" class="md-nav__link">
+      <a href="Configuring_test_cases.html" class="md-nav__link">
         Configuring test cases
       </a>
     </li>
@@ -308,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Interoperability_tests_guide/Data_model_and_variables.html" class="md-nav__link">
+      <a href="Data_model_and_variables.html" class="md-nav__link">
         Device data model and variables
       </a>
     </li>
@@ -320,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Interoperability_tests_guide/Running_test_cases.html" class="md-nav__link">
+      <a href="Running_test_cases.html" class="md-nav__link">
         Running test cases
       </a>
     </li>
@@ -385,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.html" class="md-nav__link">
         Configuring integration extension
       </a>
     </li>
@@ -419,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview.html" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -431,7 +492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.html" class="md-nav__link">
         Importing devices to Coiote DM
       </a>
     </li>
@@ -443,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.html" class="md-nav__link">
         Exporting devices to Azure IoT Hub
       </a>
     </li>
@@ -455,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.html" class="md-nav__link">
         Upgrading device firmware
       </a>
     </li>
@@ -501,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.html" class="md-nav__link">
         Configuring integration extension
       </a>
     </li>
@@ -535,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview.html" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -547,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.html" class="md-nav__link">
         Importing devices to Coiote DM
       </a>
     </li>
@@ -559,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.html" class="md-nav__link">
         Exporting devices to Azure IoT Central
       </a>
     </li>
@@ -605,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings.html" class="md-nav__link">
         LwM2M mappings
       </a>
     </li>
@@ -645,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.html" class="md-nav__link">
+      <a href="../Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.html" class="md-nav__link">
         Air quality monitoring - tutorial
       </a>
     </li>
@@ -689,15 +750,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interoperability-tests-guide" class="md-nav__link">
-    Interoperability tests guide
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#azure-iot-integration-guide" class="md-nav__link">
-    Azure IoT integration guide
+  <a href="#create-your-first-test-case" class="md-nav__link">
+    Create your first test case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-test-case-on-device" class="md-nav__link">
+    Run the test case on device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-test-execution-details" class="md-nav__link">
+    Check test execution details
   </a>
   
 </li>
@@ -726,16 +801,113 @@
 
 <!-- Markdown content -->
 <h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h1>
-<h2 id="interoperability-tests-guide">Interoperability tests guide<a class="headerlink" href="#interoperability-tests-guide" title="Permanent link">#</a></h2>
-<p>This guide will walk you through the LwM2M protocol interoperability tests module available as part of Coiote IoT Device Management platform.</p>
-<p><a class="md-button md-button--big" href="Interoperability_tests_guide/Overview.html">Interoperability tests guide</a></p>
-<h2 id="azure-iot-integration-guide">Azure IoT integration guide<a class="headerlink" href="#azure-iot-integration-guide" title="Permanent link">#</a></h2>
-<p>With Coiote IoT Device Management platform, you can integrate your LwM2M devices with the Microsoft Azure IoT Hub and Azure IoT Central.</p>
-<p>This guide will take you on a step-by-step journey through the integration process to make it seamless and efficient.</p>
-<p>Here’s how you can get started with the Coiote DM – Azure IoT integration:</p>
-<p><a class="md-button md-button--big" href="Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.html">Configure integration with Azure IoT Central</a> <a class="md-button md-button--big" href="Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.html">Configure integration with Azure IoT Hub</a></p>
+<p>Start using the <strong>Interoperability tests</strong> feature right away. This short instruction will help you create your first test case, run it on a device and see the execution logs.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>A device that is added and registered in the platform.</li>
+</ul>
+<h2 id="create-your-first-test-case">Create your first test case<a class="headerlink" href="#create-your-first-test-case" title="Permanent link">#</a></h2>
+<ol>
+<li>From the navigation menu on the left, select <strong>Protocol tests configuration</strong>.
+<img alt="Protocol tests tab" src="images/image019.png" title="Interoperability tests" /></li>
+<li>Click the <strong>Add a new test case</strong> button in the top-right corner.
+<img alt="Adding a new test case" src="images/image102.png" title="Adding a new test case" />
+   Configure your test case:<ul>
+<li>Provide a name for your test case.</li>
+<li>Under the <strong>Action list</strong>, click the <strong>Add action</strong> button and select <strong>Write</strong> from the drop down list and provide data for the following fields:<ul>
+<li><strong>Parameter name</strong>: <code>Device.0.Manufacturer</code>,</li>
+<li><strong>Expected value</strong>: <code>Example_manufacturer</code>,</li>
+<li><strong>Expected response code</strong>: <code>4.05 MethodNotAllowed</code>.</li>
+</ul>
+</li>
+<li>Under the <strong>Action list</strong>, select <strong>Read</strong> from the drop down list and provide data for the following fields:<ul>
+<li><strong>Parameter name</strong>: <code>LwM2M Server.1.Binding</code>,</li>
+<li><strong>Expected value</strong>: <code>U</code>,</li>
+<li><strong>Expected response code</strong>: <code>2.05 Content</code>.</li>
+</ul>
+</li>
+<li>Select the <strong>Add a new test case</strong> button.</li>
+</ul>
+</li>
+</ol>
+<h2 id="run-the-test-case-on-device">Run the test case on device<a class="headerlink" href="#run-the-test-case-on-device" title="Permanent link">#</a></h2>
+<ol>
+<li>In the <strong>Device inventory</strong>, select a currently registered device and enter its <strong>Device Management Center</strong>.</li>
+<li>
+<p>In <strong>Device Management Center</strong>, select the <strong>Protocol tests</strong> tab.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the <strong>Protocol tests</strong> tab is not visible in the menu, use the settings button under the menu to add it: drag it from <strong>Available tabs</strong> and drop it in <strong>Selected tabs</strong> and click <strong>Confirm</strong>.</p>
+</div>
+</li>
+<li>
+<p>Tick the test case you have just created and click <strong>Run selected (1)</strong>.
+<img alt="Running a test case" src="images/image104.png" title="Running a test case" /></p>
+</li>
+<li>After a few moments, the execution should end and test case status changes from <code>In progress</code> to <code>Success</code>.  </li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code>Success</code> status of a test case is a measure of the correctness of the device response against the expected test case parameters. Depending on the device and tester's needs, there may be test cases that are <code>successful</code> when the device responds with a <em>Failure</em> message (similarly to the example presented in this section).</p>
+</div>
+<h2 id="check-test-execution-details">Check test execution details<a class="headerlink" href="#check-test-execution-details" title="Permanent link">#</a></h2>
+<p>To see test execution logs for your test case:</p>
+<ol>
+<li>While in the <strong>Protocol tests</strong> panel, find your test case and click on its name.</li>
+<li>Expand the <strong>Logs</strong> section using the <strong>^</strong> arrow icon to see execution details.</li>
+</ol>
+<p><img alt="Checking test case results" src="images/image103.png" title="Checking test case results" />
+3. Use the <strong>Check logs</strong> button for each action inside the test case to see the highlighted results for this action.   </p>
 
 <!-- Link to previous and/or next page -->
+
+<nav
+  class="md-navbottom__inner md-grid"
+  aria-label="Footer"
+>
+
+  <!-- Link to previous page -->
+  
+    <a
+      href="Overview.html"
+      class="md-navbottom__link md-navbottom__link--prev"
+      rel="prev"
+    >
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </div>
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Previous
+          </span>
+          Overview
+        </div>
+      </div>
+    </a>
+  
+
+  <!-- Link to next page -->
+  
+    <a
+      href="Test_case_actions.html"
+      class="md-navbottom__link md-navbottom__link--next"
+      rel="next"
+    >
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Next
+          </span>
+          Test case actions
+        </div>
+      </div>
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+      </div>
+    </a>
+  
+</nav>
 
 
 <!-- Last update of source file -->
@@ -747,7 +919,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 28, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2021</span>
     
   </small>
 </div>
@@ -766,6 +938,41 @@
       
         
   <footer class="md-footer">
+    
+      <div class="md-footer-nav">
+        <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+          
+            <a href="Overview.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Previous
+                  </span>
+                  Overview
+                </div>
+              </div>
+            </a>
+          
+          
+            <a href="Test_case_actions.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Next
+                  </span>
+                  Test case actions
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      </div>
     
     <div class="md-footer-meta md-typeset">
       <div class="md-footer-meta__inner md-grid ">
@@ -791,8 +998,8 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4PQWLB"
@@ -801,15 +1008,15 @@
 
       <script>
         app = initialize({
-          base: ".",
+          base: "..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.9c0e82ba.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="javascripts/extra.js"></script>
+        <script src="../javascripts/extra.js"></script>
       
     
   </body>
