@@ -4,7 +4,7 @@ If you would like to automate your interoperability tests, you can use the Coiot
 Follow the guide below to learn how to configure the integration, run tests and summarize your test execution using these tools.
 
 !!! note
-    The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - see the ................................ section.    
+    The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - for details, please see subsection on [GitLab](#gitlab).    
 
 ## Prerequisites
 
@@ -138,7 +138,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
     - Edit the script where required to adjust it to your environment:
 
         !!! note
-            Remember to change the name `example_filename.py` to your custom name that you will choose in the next step.
+            Remember to change the name `example_filename.py` to your custom name that you will choose in step 2.
 
       ```
       pipeline {
@@ -253,6 +253,38 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
 ### GitLab
 
+1. Upload the `gitlab-ci.yml` file that will define your GitLab pipeline to your GitLab project repository:
+    - Edit the script where required to adjust it to your environment:
+
+        !!! note
+            Remember to change the name `example_filename.py` to your custom name that you will choose in the next step.
+
+      ```
+      image:
+        name: example.repository.com/docker-local/linux_image
+
+      protocol-tests:
+        stage: test
+        script:
+          - python3 example_filename.py
+        artifacts:
+          when: always
+          paths:
+            - report.xml
+          reports:
+            junit: report.xml
+      ```
+
+    - Save the file as `gitlab-ci.yml` and upload it to the chosen branch of your GitLab project repository.
+
+2. Follow step 2 from [Creating a Jenkins multibranch pipeline](#jenkins) (uploading a file with python script to your GitLab repository).
+
+3. Run a created pipeline for your project:
+    - Go to your GitLab project and in the **Dashboard** view, select **CI/CD** from the menu on the left and click **Pipelines**.
+!!! attention
+    Note that to be able to run a pipeline, you will need to have the GitLab CI/CD toolset configured. For details, please check https://docs.gitlab.com/ee/ci/introduction/index.html.
+    - You should be able to see the branch with the uploaded `gitlab-ci.yml` file.
+    - Select the **Run pipeline** button
 
 
 ## Running the Jenkins multibranch pipeline
