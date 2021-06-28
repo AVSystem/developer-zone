@@ -1,14 +1,14 @@
-# Using Interop tests API - Jenkins/GitLab integration
+# Jenkins/GitLab integration with interop tests API
 
 If you would like to automate your interoperability tests, you can use the Coiote DM API and integrate it with a CI/CD environment like Jenkins or GitLab.
 Follow the guide below to learn how to configure the integration, run tests and summarize your test execution using these tools.
 
 !!! note
-    The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - for details, please see subsection on [GitLab](#gitlab).    
+    The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - for details, please see subsection on [GitLab](#gitlab-configure-and-run-pipeline).    
 
 ## Prerequisites
 
-- An active Jenkins/GitLab account.
+- An active Jenkins and GitLab account.
 - A GitLab project repository.
 - A working Coiote DM installation and a port for communication with the installation API.
 - A device registered in the platform (if the tests require the device to be registered).
@@ -102,19 +102,20 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 2. Create a pipeline for your project:
     - Go to your Jenkins account and in the **Dashboard** view, select **New Item** from the menu on the left.
-    - Enter a name for your pipeline and select **Pipeline**.
-
+    - Enter a name for your pipeline, select **Pipeline**, and confirm by clicking **OK**.
+![Creating a standard pipeline](images/image111.png "Creating a standard pipeline")
 3. Configure your pipeline:
     - Go to your newly created pipeline and select **Configure** from the menu on the left.
     - In the **Source Code Management** section, select the **Git** option and provide the following:
         - **Repository URL** - enter the URL address of your GitLab repository that hosts the python script file from step 1.  
+![Configuring a standard pipeline](images/image113.png "Configuring a standard pipeline")
         - **Credentials** - add the user name and password of your GitLab account.
         - **Branch Specifier** - choose the GitLab branch you want to use in the pipeline.
     - In the **Build** section, select the **Execute Shell** option from the drop-down list and provide the command to run the python script file from step 1:
         ```
-        python3 test_run.py
+        python3 example_filename.py
         ```
-
+![Configuring a standard pipeline - build](images/image114.png "Configuring a standard pipeline - build")
     - Additionally, in the **Post-build Actions** section, select the **Publish Junit test result report** to set up test result report generation:
         - Depending on your preferences, check or uncheck the **Allow empty results** option.
     - Click **Save**.
@@ -132,7 +133,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 Alternatively to the standard pipeline, you may configure a multibranch pipeline to run your test cases.
 
-### Jenkins
+### Jenkins - configure multibranch pipeline
 
 1. Upload the `Jenkinsfile` that will define your multibranch pipeline to your GitLab project repository:
     - Edit the script where required to adjust it to your environment:
@@ -241,23 +242,25 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
 2. Create a pipeline for your project:
     - Go to your Jenkins account and in the **Dashboard** view, select **New Item** from the menu on the left.
-    - Enter a name for your pipeline and select **Multibranch Pipeline**.
-
+    - Enter a name for your pipeline, select **Multibranch Pipeline** and confirm by clicking **OK**.
+![Creating a multibranch pipeline](images/image112.png "Creating a multibranch pipeline")
 3. Configure your pipeline:
     - Go to your newly created pipeline and select **Configure** from the menu on the left.
     - In the **Branch Sources** section, select the **Git** option and provide the following:
         - **Project Repository** - enter the URL address of your GitLab repository that hosts the `Jenkinsfile` and the python script file from step 2.  
+![Configuring a multibranch pipeline](images/image115.png "Configuring a multibranch pipeline")
         - **Credentials** - add the user name and password of your GitLab account.
     - In the **Build Configuration** section, select the **by Jenkinsfile** mode from the drop-down list and provide the GitLab path to the `Jenkinsfile` from step 1 (if the file is located in the GitLab root folder, it is enough to type `Jenkinsfile`)
+![Build configuration - multibranch pipeline](images/image116.png "Build configuration - multibranch pipeline")
     - Click **Save**.
 
-### GitLab
+### GitLab - configure and run pipeline
 
 1. Upload the `gitlab-ci.yml` file that will define your GitLab pipeline to your GitLab project repository:
     - Edit the script where required to adjust it to your environment:
 
         !!! note
-            Remember to change the name `example_filename.py` to your custom name that you will choose in the next step.
+            Remember to change the name `example_filename.py` to your custom name that you will choose in the next step. Also, keep in mind that running a pipeline in GitLab requires a docker image of a Linux distribution.
 
       ```
       image:
@@ -277,21 +280,30 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
     - Save the file as `gitlab-ci.yml` and upload it to the chosen branch of your GitLab project repository.
 
-2. Follow step 2 from [Creating a Jenkins multibranch pipeline](#jenkins) (uploading a file with python script to your GitLab repository).
+2. Follow step 2 from [Creating a Jenkins multibranch pipeline](#jenkins-configure-multibranch-pipeline) (uploading a file with python script to your GitLab repository).
 
 3. Run a created pipeline for your project:
     - Go to your GitLab project and in the **Dashboard** view, select **CI/CD** from the menu on the left and click **Pipelines**.
-!!! attention
-    Note that to be able to run a pipeline, you will need to have the GitLab CI/CD toolset configured. For details, please check https://docs.gitlab.com/ee/ci/introduction/index.html.
-    - You should be able to see the branch with the uploaded `gitlab-ci.yml` file.
-    - Select the **Run pipeline** button
 
+        !!! attention
+            Note that to be able to run a pipeline, you will need to have the GitLab CI/CD toolset configured. For details, please check https://docs.gitlab.com/ee/ci/introduction/index.html.
+
+    - You should be able to see the branch with the uploaded `gitlab-ci.yml` file.
+![Run GitLab pipeline](images/image118.png "Run GitLab pipeline")
+    - Select the **Run pipeline** button, then confirm again by clicking **Run pipeline**.
+    - Once the pipeline execution is finished, you should be able to see the results in the **Tests** tab of your pipeline.
+
+        !!! note
+            Viewing graphs with test results is not supported in GitLab by default as it requires additional plugins.
+
+![A pipeline build with test results](images/image110.png "Build with test result report")
 
 ## Running the Jenkins multibranch pipeline
 
 1. Before running the tests for a chosen branch, you have to perform a scan to detect available branches (those with a `Jenkinsfile`):
     - Go to your multibranch pipeline and select **Scan Multibranch Pipeline Now** option from the menu on the left.
     - Once the scan is completed, you will see a list of available branches.
+![Branch list](images/image119.png "Branch list")
 2. Enter a chosen branch by clicking on its name and select **Build Now**.
 
 !!! note
