@@ -9,7 +9,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 ## Prerequisites
 
 - An active Jenkins and GitLab account.
-- A GitLab project repository.
+- A Git project repository.
 - A working Coiote DM installation and a port for communication with the installation API.
 - A device registered in the platform (if the tests require the device to be registered).
 - A Coiote DM user with access to the device and the following permissions:
@@ -20,13 +20,11 @@ Follow the guide below to learn how to configure the integration, run tests and 
     - `rest.base.paths.devices.PUT_id`
     - `rest.base.paths.devices.find.details.GET`
     - `rest.base.paths.protocolTests.schedule.device.POST_device`
-    - `rest.base.paths.protocolTests.schedule.group.POST_group`
     - `rest.base.paths.protocolTests.report.device.POST_deviceId`
-    - `rest.base.paths.protocolTests.report.group.POST_groupId`
 
 ## Setting up a Jenkins standard pipeline
 
-1. Upload a file with python script used to run test cases to your GitLab project repository:
+1. Upload a file with python script used to run test cases to your project repository:
     - Edit the following python script where required to adjust it to your environment:
        ```
        #!/usr/bin/python
@@ -96,9 +94,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
           - `DEVICE_NAME` - type the endpoint name of your device.
           - `INSTALLATION_URL` - provide the URL of your Coiote DM installation.
           - `INSTALLATION_API_PORT` - provide the port for communication with the API. The default value is `8087`.
-          - `CREDENTIALS` - provide user name and password of the user used for logging in to the platform.
+          - `CREDENTIALS` - provide user name and password of your Coiote DM user account.
           - `TEST_NAMES` - type the names of the test cases that you want to execute on the device.
-    - Save the script as a .py file and upload it to your GitLab project repository.
+    - Save the script as a .py file and upload it to your project repository.
 
 2. Create a pipeline for your project:
     - Go to your Jenkins account and in the **Dashboard** view, select **New Item** from the menu on the left.
@@ -135,7 +133,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
 ### Jenkins - configure multibranch pipeline
 
-1. Upload the `Jenkinsfile` that will define your multibranch pipeline to your GitLab project repository:
+1. Upload the `Jenkinsfile` that will define your multibranch pipeline to your project repository:
     - Edit the script where required to adjust it to your environment:
 
         !!! note
@@ -164,9 +162,9 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
       }
       ```
 
-    - Save the file as `Jenkinsfile` and upload it to the chosen branch of your GitLab project repository.
+    - Save the file as `Jenkinsfile` and upload it to the chosen branch of your project repository.
 
-2. Upload a file with python script used to run test cases to your GitLab project repository:
+2. Upload a file with python script used to run test cases to your project repository:
     - Edit the following python script where required to adjust it to your environment:
        ```
        #!/usr/bin/python
@@ -236,9 +234,9 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
           - `DEVICE_NAME` - type the endpoint name of your device.
           - `INSTALLATION_URL` - provide the URL of your Coiote DM installation.
           - `INSTALLATION_API_PORT` - provide the port for communication with the API. The default value is `8087`.
-          - `CREDENTIALS` - provide user name and password of the user used for logging in to the platform.
+          - `CREDENTIALS` - provide user name and password of your Coiote DM user account.
           - `TEST_NAMES` - type the names of the test cases that you want to execute on the device.
-    - Save the script as a `.py` file (using the filename specified in the Jenkinsfile in the previous step) and upload it to your GitLab project repository.
+    - Save the script as a `.py` file (using the filename specified in the Jenkinsfile in the previous step) and upload it to your project repository.
 
 2. Create a pipeline for your project:
     - Go to your Jenkins account and in the **Dashboard** view, select **New Item** from the menu on the left.
@@ -247,7 +245,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 3. Configure your pipeline:
     - Go to your newly created pipeline and select **Configure** from the menu on the left.
     - In the **Branch Sources** section, select the **Git** option and provide the following:
-        - **Project Repository** - enter the URL address of your GitLab repository that hosts the `Jenkinsfile` and the python script file from step 2.  
+        - **Project Repository** - enter the URL address of your project repository that hosts the `Jenkinsfile` and the python script file from step 2.  
 ![Configuring a multibranch pipeline](images/image115.png "Configuring a multibranch pipeline")
         - **Credentials** - add the user name and password of your GitLab account.
     - In the **Build Configuration** section, select the **by Jenkinsfile** mode from the drop-down list and provide the GitLab path to the `Jenkinsfile` from step 1 (if the file is located in the GitLab root folder, it is enough to type `Jenkinsfile`)
@@ -256,11 +254,11 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
 ### GitLab - configure and run pipeline
 
-1. Upload the `gitlab-ci.yml` file that will define your GitLab pipeline to your GitLab project repository:
+1. Upload the `gitlab-ci.yml` file that will define your GitLab pipeline to your project repository:
     - Edit the script where required to adjust it to your environment:
 
         !!! note
-            Remember to change the name `example_filename.py` to your custom name that you will choose in the next step. Also, keep in mind that running a pipeline in GitLab requires a docker image of a Linux distribution.
+            Remember to change the name `example_filename.py` to your custom name that you will choose in the next step. Also, keep in mind that running a pipeline in GitLab requires a docker image of a Linux distribution (or any operating system that can run python script).
 
       ```
       image:
@@ -278,7 +276,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
             junit: report.xml
       ```
 
-    - Save the file as `gitlab-ci.yml` and upload it to the chosen branch of your GitLab project repository.
+    - Save the file as `gitlab-ci.yml` and upload it to the chosen branch of your project repository.
 
 2. Follow step 2 from [Creating a Jenkins multibranch pipeline](#jenkins-configure-multibranch-pipeline) (uploading a file with python script to your GitLab repository).
 
