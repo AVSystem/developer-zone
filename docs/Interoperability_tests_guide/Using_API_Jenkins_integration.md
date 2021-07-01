@@ -19,79 +19,147 @@ Follow the guide below to learn how to configure the integration, run tests and 
 ### Set up standard pipeline
 
 1. Upload a file with python script used to run test cases to your project repository:
-    - Edit the following python script where required to adjust it to your environment:
-       ``` python
-       #!/usr/bin/python
-       import requests
-       import json
-       import time
-       import xml.etree.cElementTree as ET
+    - Edit the following python script where required to adjust it to your environment (remember to select the appropriate tab with script depending on whether you want to run your tests on a single device or a device group).
+    === "Device"
+          ``` python
+          #!/usr/bin/python
+          import requests
+          import json
+          import time
+          import xml.etree.cElementTree as ET
 
-       # ___Edit below___ #
-       DEVICE_NAME = "test-device"
-       INSTALLATION_URL = "https://lwm2m-test.avsystem.io"
-       INSTALLATION_API_PORT = "8087"
-       CREDENTIALS=('user_login', 'password')
-       TEST_NAMES = {
-               "testCases":[
-                       "protocol_test_1",
-                       "protocol_test_2",
-                       "protocol_test_3",
-                       "protocol_test_4",
-                       "protocol_test_5",
-               ]
-       }
-       # ___Edit above___ #
+          # ___Edit below___ #
+          DEVICE_NAME = "test-device" # type the endpoint name of your device.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          TEST_NAMES = { # type the names of the test cases that you want to execute on the device.
+                  "testCases":[
+                          "protocol_test_1",
+                          "protocol_test_2",
+                          "protocol_test_3",
+                          "protocol_test_4",
+                          "protocol_test_5",
+                  ]
+          }
+          # ___Edit above___ #
 
-       SCHEDULE_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/schedule/device/" + DEVICE_NAME
-       REPORT_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/report/device/" + DEVICE_NAME
-       PARAMS = {
-               'accept' : 'application/json',
-               'Content-Type': 'application/json'
-       }
+          SCHEDULE_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/schedule/device/" + DEVICE_NAME
+          REPORT_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/report/device/" + DEVICE_NAME
+          PARAMS = {
+                  'accept' : 'application/json',
+                  'Content-Type': 'application/json'
+          }
 
-       root = ET.Element("testsuite")
+          root = ET.Element("testsuite")
 
-       result = requests.post(url=SCHEDULE_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
-       if result.status_code != 201:
-              print('Could not schedule the tests.')
-              print('Server returned: ' + str(result.status_code))
-              print('Error message: ' + str(result.json()['error']))
-              exit(1)
+          result = requests.post(url=SCHEDULE_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+          if result.status_code != 201:
+                 print('Could not schedule the tests.')
+                 print('Server returned: ' + str(result.status_code))
+                 print('Error message: ' + str(result.json()['error']))
+                 exit(1)
 
-       tests_running = True
-       while tests_running:
-               result = requests.post(url=REPORT_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
-               if result.status_code != 200:
-                       print('Could not read the tests status.')
-                       print('Server returned: ' + str(result.status_code))
-                       print('Error message: ' + str(result.json()['error']))
-                       exit(1)
-               tests_running = result.json()["waitingForExecution"]
-               time.sleep(15)
+          tests_running = True
+          while tests_running:
+                  result = requests.post(url=REPORT_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+                  if result.status_code != 200:
+                          print('Could not read the tests status.')
+                          print('Server returned: ' + str(result.status_code))
+                          print('Error message: ' + str(result.json()['error']))
+                          exit(1)
+                  tests_running = result.json()["waitingForExecution"]
+                  time.sleep(15)
 
-       for test in result.json()['failed']:
-           a = ET.SubElement(root, "testcase", classname="interop", name=test)
-           ET.SubElement(a, "failure", type="failure")
+          for test in result.json()['failed']:
+              a = ET.SubElement(root, "testcase", classname="interop", name=test)
+              ET.SubElement(a, "failure", type="failure")
 
-       for test in result.json()['passedWithWarning']:
-           b = ET.SubElement(root, "testcase", classname="interop", name=test)
-           ET.SubElement(b, "failure", type="warning")
+          for test in result.json()['passedWithWarning']:
+              b = ET.SubElement(root, "testcase", classname="interop", name=test)
+              ET.SubElement(b, "failure", type="warning")
 
-       for test in result.json()['passedSuccessfully']:
-           ET.SubElement(root, "testcase", classname="interop", name=test)
+          for test in result.json()['passedSuccessfully']:
+              ET.SubElement(root, "testcase", classname="interop", name=test)
 
-       tree = ET.ElementTree(root)
-       tree.write("report.xml")
-       ```
+          tree = ET.ElementTree(root)
+          tree.write("report.xml")
+          ```
+    === "Group"
+          ``` python
+          #!/usr/bin/python
+          import requests
+          import json
+          import time
+          import xml.etree.cElementTree as ET
 
-          - `DEVICE_NAME` - type the endpoint name of your device.
-          - `INSTALLATION_URL` - provide the URL of your Coiote DM installation.
-          - `INSTALLATION_API_PORT` - provide the port for communication with the API. The default value is `8087`.
-          - `CREDENTIALS` - provide user name and password of your Coiote DM user account.
-          - `TEST_NAMES` - type the names of the test cases that you want to execute on the device.
+          # ___Edit below___ #
+          DEVICE_GROUP = "root.mt.embedded.devicetypes.test.demo_client.2_9_0" # type the name of your device group.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          TEST_NAMES = { # type the names of the test cases that you want to execute on the group.
+                  "testCases":[
+                          "protocol_test_1",
+                          "protocol_test_2",
+                          "protocol_test_3",
+                          "protocol_test_4",
+                          "protocol_test_5",
+                  ]
+          }
+          # ___Edit above___ #
+
+          SCHEDULE_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/schedule/group/" + DEVICE_GROUP
+          REPORT_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/report/group/" + DEVICE_GROUP
+          PARAMS = {
+                  'accept' : 'application/json',
+                  'Content-Type': 'application/json'
+          }
+
+          root = ET.Element("testsuite")
+
+          result = requests.post(url=SCHEDULE_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+          if result.status_code != 201:
+                  print('Could not schedule the tests.')
+                  print('Server returned: ' + str(result.status_code))
+                  print('Error message: ' + str(result.json()['error']))
+                  exit(1)
+
+          tests_running = True
+          while tests_running:
+                  still_running = 0
+                  result = requests.post(url=REPORT_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+
+                  if result.status_code != 200:
+                          print('Could not read the tests status.')
+                          print('Server returned: ' + str(result.status_code))
+                          exit(1)
+
+                  for device in result.json():
+                          if not (result.json()[device]["waitingForExecution"] == []):
+                              still_running += 1
+
+                  if (still_running == 0):
+                         tests_running = False
+
+                  time.sleep(15)
+
+          for device in result.json():
+              for test in result.json()[device]['failed']:
+                   a = ET.SubElement(root, "testcase", classname="interop", name=test, device=device)
+                   ET.SubElement(a, "failure", type="failure")
+
+              for test in result.json()[device]['passedWithWarning']:
+                   b = ET.SubElement(root, "testcase", classname="interop", name=test, device=device)
+                   ET.SubElement(b, "failure", type="warning")
+
+              for test in result.json()[device]['passedSuccessfully']:
+                   ET.SubElement(root, "testcase", classname="interop", name=test, device=device)
+
+          tree = ET.ElementTree(root)
+          tree.write("report.xml")
+          ```
     - Save the script as a .py file and upload it to your project repository.
-
 2. Create a pipeline for your project:
     - Go to your Jenkins account and in the **Dashboard** view, select **New Item** from the menu on the left.
     - Enter a name for your pipeline, select **Pipeline**, and confirm by clicking **OK**.
@@ -159,79 +227,148 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
     - Save the file as `Jenkinsfile` and upload it to the chosen branch of your project repository.
 
 2. Upload a file with python script used to run test cases to your project repository:
-    - Edit the following python script where required to adjust it to your environment.
-       ``` python
-       #!/usr/bin/python
-       import requests
-       import json
-       import time
-       import xml.etree.cElementTree as ET
+    - Edit the following python script where required to adjust it to your environment (remember to select the appropriate tab with script depending on whether you want to run your tests on a single device or a device group).
+    === "Device"
+          ``` python
+          #!/usr/bin/python
+          import requests
+          import json
+          import time
+          import xml.etree.cElementTree as ET
 
-       # ___Edit below___ #
-       DEVICE_NAME = "test-device"
-       INSTALLATION_URL = "https://lwm2m-test.avsystem.io"
-       INSTALLATION_API_PORT = "8087"
-       CREDENTIALS=('user_login', 'password')
-       TEST_NAMES = {
-               "testCases":[
-                       "protocol_test_1",
-                       "protocol_test_2",
-                       "protocol_test_3",
-                       "protocol_test_4",
-                       "protocol_test_5",
-               ]
-       }
-       # ___Edit above___ #
+          # ___Edit below___ #
+          DEVICE_NAME = "test-device" # type the endpoint name of your device.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          TEST_NAMES = { # type the names of the test cases that you want to execute on the device.
+                  "testCases":[
+                          "protocol_test_1",
+                          "protocol_test_2",
+                          "protocol_test_3",
+                          "protocol_test_4",
+                          "protocol_test_5",
+                  ]
+          }
+          # ___Edit above___ #
 
-       SCHEDULE_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/schedule/device/" + DEVICE_NAME
-       REPORT_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/report/device/" + DEVICE_NAME
-       PARAMS = {
-               'accept' : 'application/json',
-               'Content-Type': 'application/json'
-       }
+          SCHEDULE_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/schedule/device/" + DEVICE_NAME
+          REPORT_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/report/device/" + DEVICE_NAME
+          PARAMS = {
+                  'accept' : 'application/json',
+                  'Content-Type': 'application/json'
+          }
 
-       root = ET.Element("testsuite")
+          root = ET.Element("testsuite")
 
-       result = requests.post(url=SCHEDULE_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
-       if result.status_code != 201:
-              print('Could not schedule the tests.')
-              print('Server returned: ' + str(result.status_code))
-              print('Error message: ' + str(result.json()['error']))
-              exit(1)
+          result = requests.post(url=SCHEDULE_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+          if result.status_code != 201:
+                 print('Could not schedule the tests.')
+                 print('Server returned: ' + str(result.status_code))
+                 print('Error message: ' + str(result.json()['error']))
+                 exit(1)
 
-       tests_running = True
-       while tests_running:
-               result = requests.post(url=REPORT_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
-               if result.status_code != 200:
-                       print('Could not read the tests status.')
-                       print('Server returned: ' + str(result.status_code))
-                       print('Error message: ' + str(result.json()['error']))
-                       exit(1)
-               tests_running = result.json()["waitingForExecution"]
-               time.sleep(15)
+          tests_running = True
+          while tests_running:
+                  result = requests.post(url=REPORT_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+                  if result.status_code != 200:
+                          print('Could not read the tests status.')
+                          print('Server returned: ' + str(result.status_code))
+                          print('Error message: ' + str(result.json()['error']))
+                          exit(1)
+                  tests_running = result.json()["waitingForExecution"]
+                  time.sleep(15)
 
-       for test in result.json()['failed']:
-           a = ET.SubElement(root, "testcase", classname="interop", name=test)
-           ET.SubElement(a, "failure", type="failure")
+          for test in result.json()['failed']:
+              a = ET.SubElement(root, "testcase", classname="interop", name=test)
+              ET.SubElement(a, "failure", type="failure")
 
-       for test in result.json()['passedWithWarning']:
-           b = ET.SubElement(root, "testcase", classname="interop", name=test)
-           ET.SubElement(b, "failure", type="warning")
+          for test in result.json()['passedWithWarning']:
+              b = ET.SubElement(root, "testcase", classname="interop", name=test)
+              ET.SubElement(b, "failure", type="warning")
 
-       for test in result.json()['passedSuccessfully']:
-           ET.SubElement(root, "testcase", classname="interop", name=test)
+          for test in result.json()['passedSuccessfully']:
+              ET.SubElement(root, "testcase", classname="interop", name=test)
 
-       tree = ET.ElementTree(root)
-       tree.write("report.xml")
-       ```
+          tree = ET.ElementTree(root)
+          tree.write("report.xml")
+          ```
+    === "Group"
+          ``` python
+          #!/usr/bin/python
+          import requests
+          import json
+          import time
+          import xml.etree.cElementTree as ET
 
-          - `DEVICE_NAME` - type the endpoint name of your device.
-          - `INSTALLATION_URL` - provide the URL of your Coiote DM installation.
-          - `INSTALLATION_API_PORT` - provide the port for communication with the API. The default value is `8087`.
-          - `CREDENTIALS` - provide user name and password of your Coiote DM user account.
-          - `TEST_NAMES` - type the names of the test cases that you want to execute on the device.
+          # ___Edit below___ #
+          DEVICE_GROUP = "root.mt.embedded.devicetypes.test.demo_client.2_9_0" # type the name of your device group.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          TEST_NAMES = { # type the names of the test cases that you want to execute on the group.
+                  "testCases":[
+                          "protocol_test_1",
+                          "protocol_test_2",
+                          "protocol_test_3",
+                          "protocol_test_4",
+                          "protocol_test_5",
+                  ]
+          }
+          # ___Edit above___ #
+
+          SCHEDULE_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/schedule/group/" + DEVICE_GROUP
+          REPORT_URL = INSTALLATION_URL + ":" + INSTALLATION_API_PORT + "/api/coiotedm/v3/protocolTests/report/group/" + DEVICE_GROUP
+          PARAMS = {
+                  'accept' : 'application/json',
+                  'Content-Type': 'application/json'
+          }
+
+          root = ET.Element("testsuite")
+
+          result = requests.post(url=SCHEDULE_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+          if result.status_code != 201:
+                  print('Could not schedule the tests.')
+                  print('Server returned: ' + str(result.status_code))
+                  print('Error message: ' + str(result.json()['error']))
+                  exit(1)
+
+          tests_running = True
+          while tests_running:
+                  still_running = 0
+                  result = requests.post(url=REPORT_URL, json=TEST_NAMES, auth=CREDENTIALS, params=PARAMS)
+
+                  if result.status_code != 200:
+                          print('Could not read the tests status.')
+                          print('Server returned: ' + str(result.status_code))
+                          exit(1)
+
+                  for device in result.json():
+                          if not (result.json()[device]["waitingForExecution"] == []):
+                              still_running += 1
+
+                  if (still_running == 0):
+                         tests_running = False
+
+                  time.sleep(15)
+
+          for device in result.json():
+              for test in result.json()[device]['failed']:
+                   a = ET.SubElement(root, "testcase", classname="interop", name=test, device=device)
+                   ET.SubElement(a, "failure", type="failure")
+
+              for test in result.json()[device]['passedWithWarning']:
+                   b = ET.SubElement(root, "testcase", classname="interop", name=test, device=device)
+                   ET.SubElement(b, "failure", type="warning")
+
+              for test in result.json()[device]['passedSuccessfully']:
+                   ET.SubElement(root, "testcase", classname="interop", name=test, device=device)
+
+          tree = ET.ElementTree(root)
+          tree.write("report.xml")
+          ```
     - Save the script as a `.py` file (using the filename specified in the Jenkinsfile in the previous step) and upload it to your project repository.
-    </a>
+
 3. Create a pipeline for your project:
     - Go to your Jenkins account and in the **Dashboard** view, select **New Item** from the menu on the left.
     - Enter a name for your pipeline, select **Multibranch Pipeline** and confirm by clicking **OK**.
