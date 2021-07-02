@@ -169,7 +169,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
     - In the **Source Code Management** section, select the **Git** option and provide the following:
         - **Repository URL** - enter the URL address of your GitLab repository that hosts the python script file from [Step 1](#set-up-standard-pipeline).  
 ![Configuring a standard pipeline](images/image113.png "Configuring a standard pipeline")
-        - **Credentials** - add the user name and password of your GitLab account.
+        - **Credentials** - add the user name and password of your git repository account.
         - **Branch Specifier** - choose the GitLab branch you want to use in the pipeline.
     - In the **Build** section, select the **Execute Shell** option from the drop-down list and provide the command to run the python script file from [Step 1](#set-up-standard-pipeline):
         ```
