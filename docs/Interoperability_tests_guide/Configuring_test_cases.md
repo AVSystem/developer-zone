@@ -4,7 +4,7 @@
 
 This chapter covers the configuration aspects of the interoperability tests. It explains how to list and view the configuration of test cases, and how to add, edit, delete, import, and export them.
 
-!!! info
+!!! note
     The configuration of test cases is device-independent, which means that all the configured test cases can be applied for all the devices that have registered to the platform.
 
 ## Interoperability tests configuration panel
