@@ -56,5 +56,7 @@ Now you are ready to export your devices.
     - select **Start export**.
 
 4. After a moment, the export operation should finish successfully. If there are any errors, you can check the credentials that you provided in the **Azure IoT Hub** extension setup.
-  ![Exported devices](images/exported_devices.png "Exported devices view")
+  ![Exported devices](images/exported_devices.png "Exported devices view"){:style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
+
+
 ## Next steps

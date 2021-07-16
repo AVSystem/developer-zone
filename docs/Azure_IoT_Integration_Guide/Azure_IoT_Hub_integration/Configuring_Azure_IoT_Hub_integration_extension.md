@@ -24,7 +24,7 @@ __________________
 
   Now you need to use the credential in the Coiote DM platform.
 
-## Set up the **Azure IoT Hub Extension** using credentials.  
+## Set up the **Azure IoT Hub Extension** using credentials
 
    1. In your Coiote DM user account, go to **Administration --> Extensions**.
    2. Find the **Azure IoT Hub** tab and click `Setup`.
