@@ -1,198 +1,91 @@
-# AWS Integration concepts
+# How AWS integration works
 
-
+Here's a walkthrough of the main concepts related to the AWS IoT Core - Coiote DM integration that will help you understand the role of each of the integration components and how they are employed for the benefit of LwM2M device management via the AWS services.
 
 ## Things
 
-Within the AWS IoT Core - Coiote DM integration, Things are representations of LwM2M device entities managed by the Coiote DM platform. They are used to mirror device state, as well as collect, process and act upon device data on the fly using a connection protocol of your choice.
+Within the AWS IoT Core - Coiote DM integration, things are the AWS representations of LwM2M device entities managed by the Coiote DM platform. They are used to mirror device state, as well as collect, process and act upon device data on the fly using a connection protocol of your choice.
+
+![Example Things](images/things.png "Example Things")
+
+!!! Note
+    Things are automatically added to AWS IoT Core upon completing the integration setup.
 
 ### Thing types
 
-Thing types are containers that store configuration and other device-related information shared by all things of the same type to simplify their bulk management. Within the integration, they are created automatically when a new device is added to AWS from Coiote DM and they are based on device **Manufacturer** and **Model name**. In case a new device with a specific Manufacturer and model name pair can be matched with an existing thing type, then it will be automatically associated with this thing type.
+Thing types are containers that store configuration and other device-related information shared by all Things of the same type to simplify their bulk management. Within the integration, they are created automatically when a new device is added to AWS from Coiote DM and they are based on device **Manufacturer** and **Model name**. In case a new device with a specific **Manufacturer** and model name pair can be matched with an existing thing type, then it will be associated with it automatically.
 
-Note that you cannot modify a once created thing type, but you can deprecate (allowing no new devices to be associated with it) or delete it when there are no things associated with a given thing type.
+![Example Thing types](images/thingtypes.png "Example Thing types")
+
+!!! note
+    Note that you cannot modify a once created thing type, but you can deprecate (allowing no new devices to be associated with it) or delete it when there are no things associated with a given Thing type.
 
 ## Device Shadows
 
-A device shadow is a structure that stores a device state and represents it in the form of a JSON file. Each thing has its own shadows: a default shadow
+A device shadow is a structure that stores the device state and represents it in the form of a JSON file, making the device data available to applications and services regardless of device connection to Coiote DM. To synchronize device state information between the Coiote DM and AWS IoT Core, shadows feature the mechanism of *reported* and *desired* values.
 
-### Unnamed shadow
+- **Reported values** section - presents the current device state as reported by the device itself (and mediated by Coiote DM) in a JSON file structure within a device shadow.
+- **Desired values** section - used for requesting changes in the reported section of the device [Operation shadow](#operation-shadow).
 
+![Integration Device Shadows](images/deviceshadows.png "Integration Device Shadows")
 
+For the purposes of the integration, a default of three different shadows is established for each connected thing: an unnamed shadow, a datamodel shadow and an operation shadow.
 
-### Datamodel shadow
+### Classic Shadow
 
-### Operation shadow
+The Classic shadow (also unnamed shadow) is used for storing connectivity parameters of a LwM2M device (such as registered lifetime, last lifetime refresh, queue mode, LwM2M URI, device registration status etc.). The `reported` state refreshes upon each change in these parameters that is reported by Coiote DM (**Register** or **Update** message from device).
 
-Rules and Lambdas
+### Operation Shadow
 
+The Operation Shadow is where you request your LwM2M operations to be executed. To this end, the `desired` values of the device state are used. Thus, you can perform any LwM2M 1.0 operation on the device by defining it inside the `desired` values section. Also, to check if the operation execution was successful, the `reported` values section of the Operation Shadow is used (but only in case of the READ, WRITE and READ COMPOSITE operations).
 
+#### Communication flow
 
-Once a device connects to Coiote DM, a thing type is created based on Manufacturer and model name, or if it is already created,
-a Thing is created automatically
+A value change using the `desired` device state is formulated as the one below:
 
-Shadow is a JSON data structure > unnamed shadow > AWS update unnamed shadow (informacje o connectivity = register lifetime, lkast odświeżenie lifetimeu, kolejkowy, server URI)
-
-Datamodel Shadow > all notifications and 'sends' are forwarded here, przechowuje datamodel
-
-Operation Shadow >, created upon Thing creation, updatowany gdy urządzenie robi register > wrzucamy tu operacje wykonywane na urządzeniu RED WRITE EXECUTE itp > sekcje desired i reported - rezultat operacji jest republikowany na shadow datamodelowy
-
-pojedyncze operacje z AWSa lecą do kojota jednym zapytaniem https
-
-Rules engine > coś przychodzi na shadow - można przekazać do Lambdy > event z operation shadow idzie do operationRequest a potem do Lambdy > 2 requesty schedule task i zainicjowanie sesji
-
-każdy shadow ma topic MQTT > info leci też z AWS na topic MQTT (można się zasubskrybować)
-
-# LwM2M mappings
-
-In this section you'll get to know how the mappings are arranged between the LwM2M protocol as used in Coiote DM and the data retrieval and processing mechanisms of the AWS IoT Core.
-
-## Introduction
-
-The LwM2M protocol data model is organized as a three-level tree that has the following structure:
-
- - **object** (e.g. a 'temperature sensor')
-    - **object instance** (e.g. 'temperature sensor #1', 'temperature sensor #2' etc.)
-        - **resource** (e.g. 'current temperature value')
-
-In terms of operations that can be performed on an LwM2M Client, an LwM2M Server can READ all of the data model entities, and, depending on their characteristics, may also WRITE to some of them, and EXECUTE some of them. Additionally, an LwM2M Server can also OBSERVE selected resources.
-
-!!! info
-    If you would like to dive deeper into the details of the Lightweight M2M protocol, please refer to [our brief introduction to LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html).
-
-
-
-## LwM2M readable and writable resources
-
-Within the Coiote DM - AWS integration, readable and writable resources are usually interpreted as part of .
-
-!!! note
-    To learn more about Device twins, go to the [Understand and use Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) section of the Azure IoT Hub documentation.
-
-For instance, the sample JSON snippet below is a tree with nested resources to represent a fragment of the LwM2M data model with path **/3/1/1**:
-
-```
-{
-  "deviceId": "airquality-0",
-   ...
-  "properties": {
-    "reported": {
-      "lwm2m": {
-        "1": {
-          "0": {
-            "0": {},
-            "1": {
-              "value": 90
-            },
-            "4": {},
-            "6": {},
-            "7": {},
-            "8": {}
-          }
-        },
-        "3": {
-          "1": {
-            "1": {
-              "value": "airquality-0-Valparaiso"
-            }
-          }
-        },
-   ...
-```
-
-### READ - Communication flow
-
-Data model resources that are read-only, such as `Manufacturer` (with ID **3/0/0**) will be mapped into the Device twin as a reported property.
-
-![Device twin READ](images/Device_twin_read.png "READ Manufacturer")
-
-### WRITE - Communication flow
-
-On the other hand, a writable resource, such as `Lifetime` (with ID **1/0/1**), apart from being represented as a reported property, can be additionally mapped as a desired property. This enables you to synchronize the device data model and configuration between Azure and Coiote DM.
-
-![Device twin WRITE Lifetime](images/Device_twin_write.png "WRITE Lifetime")
-
-Changing the value of a writable resource involves creating a properly formatted JSON snippet in the desired property field within the Device twin that introduces a value change:
-```
-...
-      "properties": {
-        "desired": {
-          "lwm2m": {
-            "1": {
-              "0": {
-                "0": {},
-                "1": {
-                  "value": 30
-                }
-              }
-            }
-          },
-...
-```
-After JSON is saved, Azure notifies Coiote DM of the desired change which is then transferred to the device in form of a WRITE command. Once the value is changed on the device, Coiote DM reports back to Azure that the value of the corresponding reported property should be updated in the Device twin JSON structure.
-
-## LwM2M executable resources
-
-As a rule, LwM2M resources that can be executable translate into Direct methods in Azure IoT Hub. This means that by invoking a direct method from Azure, you can trigger an EXECUTE operation on a chosen resource available for your device and the request will be transferred immediately by the LwM2M Server to the device.
-
-!!! note
-    To learn more about Direct methods, go to the [Understand Direct methods](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods) section of the Azure IoT Hub documentation.
-
-An executable LwM2M resource ID is mapped to a direct method in the following way:
-
-```
-    method name: execute
-    {
-       path: "object.objectInstance.resource",
-       [args: "optional arguments to execute"]
-    }
-```  
-
-Thus, for instance, to execute a factory reset on a device, you need to invoke a direct method with the **execute** name and the following payload:
-
-```
-    {
-       path: "3.0.5"
-    }
-```
-### EXECUTE - Communication flow
-
-Invoking a direct method from Azure IoT Hub and handling it by Coiote DM in the form of an EXECUTE operation passed to the device has the following flow:
-
-![Direct method EXECUTE Factory reset](images/Direct_Method_execute.png "EXECUTE Factory reset")
-
-## LwM2M observable resources
-
-In Coiote DM, some of the resources within the device data model can be observed for changes in value. These are generally resources related to telemetry data or other measurements. Their value changes can be monitored by Coiote DM and reported to the Azure IoT Hub Device-to-cloud mechanism.
-
-!!! note
-    To learn more about the Azure Device-to-cloud, go to [sending device-to-cloud messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c) section of the Azure IoT Hub documentation.
-
-### Observe - Communication flow
-
-Setting an Observe operation on a resource in Coiote DM, for instance a temperature reading, will result in a Notify message sent by the device upon value change that Coiote DM will transfer to the Device-to-cloud mechanism of Azure IoT Hub.
-
-![Device-to-cloud Observe Temperature](images/Device-to-cloud_observe.png "Observe Temperature")
-
-What is more, you can set observations on LwM2M resources from the Azure IoT Hub level by adding appropriate attributes to the resource as a Device twin desired property. For instance, an Observe operation on resource ID **3303/1/5700** is set in the following way:
-
-```
-...
-   "properties": {
-     "desired": {
-       "lwm2m": {
-         "3303": {
-          "1": {
-           "5700": {
-            "observed": true,
-            "attributes": {
-             "pmin": 60
-            }
-           }
-          }
+   ```json
+   {
+     "state": {
+         "desired": {
+           "operation": "write",
+           "keys": [
+             "LwM2M Server.1.Lifetime",
+             "Device.0.UTC Offset"
+           ],
+           "values": [
+             68,
+             "+02:00"
+           ]
          }
-        }
-...
-```
+       }
+   }
+   ```
 
-After JSON is saved, Azure notifies Coiote DM of the desired attribute setting which is then transferred to the device in form of an Observe operation. Once Coiote DM is notified of a value change, it is reported to the Azure Device-to-cloud mechanism.
+Once a value change in the `desired` section of the operation shadow is saved, a chain of events starts:
+
+   1. The *operationRequest* rule is triggered that sends a request to AWS Lambda,
+   2. AWS Lambda validates the request and forwards it as an event to Coiote DM, making it schedule a task and initiate a device session,  
+   3. Coiote DM communicates with the device and forwards the device response back to the Operation Shadow,
+   4. the results of the requested operation are published in the `reported` section of the Operation Shadow,
+   5. the results are then republished using the *operationResponse* rule to the [Datamodel shadow](#datamodel-shadow) (but only in case of the READ, WRITE and READ COMPOSITE operations).
+
+### Datamodel Shadow
+
+The Datamodel Shadow is the place where the cashed data model of the LwM2M device is stored. What this means is that it is a "read-only shadow" that keeps the most recent record of the device state as it has been reported by Coiote DM - no device operations can be performed from here.
+
+The Datamodel Shadow is updated in case of the following events:
+
+1. Device **Register** message that comes from Coiote DM,
+2. Device **Notify** and **Send** messages,
+3. Republishing operation results from the Operation shadow to the Datamodel shadow using the *operationResponse* rule.  
+
+### CloudWatch logs
+
+CloudWatch collects and keeps a record of all the logs generated on the AWS-side of the integration. You can use these data for analysis and troubleshooting in case of all the AWS integration components:
+
+![CloudWatch logs](images/cloudwatch.png "CloudWatch logs")
+
+- Device Shadows (the data plane),
+- Things and Thing types (the control plane),
+- The Rules mechanism,
+- AWS Lambda.
