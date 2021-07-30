@@ -6,26 +6,27 @@ Follow this section to integrate your AWS services with Coiote DM.
 
 - An active AWS subscription.
 - A Coiote DM user account with the **Cloud admin** role.
-- A Git tool (for example, <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
-- The AWS Command Line Interface (CLI) (<https://aws.amazon.com/cli/>).
-- Terraform (<https://learn.hashicorp.com/tutorials/terraform/install-cli>).
+- The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
+- The AWS CLI (<https://aws.amazon.com/cli/>).
+- Terraform CLI (<https://learn.hashicorp.com/tutorials/terraform/install-cli>).
 
 ## Create a Coiote DM REST user
 
-To start integrating AWS with Coiote DM, you first need to create a user account that will be mediating in the communication between Coiote DM and AWS services such as IoT Core and AWS Lambda. To do that:   
+To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:   
 
 1. Go to your Coiote DM account and from the **Administration** menu, select **Users management**.
-2. Select **+ Add** and in the pop-up window, fill in the form:
-![Add user button](images/add_button.png "Add user button")
-    - Provide **User login**, **Password** and select your domain from the **Domain** field.
-    - Remember to click the **Activate** link next to the **Status** field to activate the user.
-    - In the **Groups** tab, mark the **Cloud REST** role.
-![Add REST user](images/add_rest_user.png "Add REST user")
+2. Select **Add user** and in fill in the form:
+![Add user button](images/add_button2.png "Add user button")
+    - Provide **Email** for new user (which will be its user name) and select your domain from the **Domain path** drop-down list.
+    - Remember to switch on the **User Verified** and **User Enabled** toggle buttons.
+    - In the **Client Roles** field, pick the **admin-cli** role.
+![Add REST user](images/add_rest_user2.png "Add REST user")
     - Click **Save**.
+    - Go to the **Credentials** tab, type a password for your user (twice), select **Set password**, then confirm by clicking **Set password** in the pop-up.
 
 ## Copy tasks and provide credentials for your device group in Coiote DM
 
-The Coiote DM-side configuration of the integration is located in the dedicated `AWSiotCore` device group that is available by default in <https://lwm2m-test.avsystem.io> installation. To complete this side of the integration, log in as the user with the **Cloud admin** role and follow the steps below:
+The Coiote DM-side configuration of the integration is located in the dedicated `AWSiotCore` device group. To complete this side of the integration, log in as the user with the **Cloud admin** role and follow the steps below:
 
 1. Go to the **Device groups** panel and select a group:
     - For the default setting, select the **AWSiotCore** group which already contains all the necessary tasks and setting values.
@@ -100,7 +101,7 @@ To add the resources needed for the integration to your AWS services:
         ![Change vars file](images/change_vars_file.png "Change vars file")
         - For `coioteDMrestURL`, provide the URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.
         - For `coioteDMrestPassword`, provide the password set for your Coiote DM REST user.
-        - For `coioteDMrestUsername`, provide your Coiote DM REST user login.
+        - For `coioteDMrestUsername`, provide your Coiote DM REST user login (email address).
         - Save the file.
 3. Run Terraform:
     - Go back to your command line and paste the following:
@@ -184,3 +185,9 @@ To add the resources needed for the integration to your AWS services:
         ```
 
 4. Once the Terraform command is executed successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
+5. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
+![Migrated things](images/migrated_things.png "Migrated things")
+
+## Next steps
+
+To learn how to perform operations on your devices, please see the [Performing LwM2M operations](../AWS_Integration_Guide/Device_operations/Operation_types.md) chapter.

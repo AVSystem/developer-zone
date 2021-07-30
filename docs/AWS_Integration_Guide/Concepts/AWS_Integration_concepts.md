@@ -9,7 +9,7 @@ Within the AWS IoT Core - Coiote DM integration, things are the AWS representati
 ![Example Things](images/things.png "Example Things")
 
 !!! Note
-    Things are automatically added to AWS IoT Core upon completing the integration setup.
+    Things are automatically added to AWS IoT Core upon completing the integration setup and successful device connection.
 
 ### Thing types
 
@@ -63,11 +63,17 @@ A value change using the `desired` device state is formulated as the one below:
 
 Once a value change in the `desired` section of the operation shadow is saved, a chain of events starts:
 
-   1. The *operationRequest* rule is triggered that sends a request to AWS Lambda,
-   2. AWS Lambda validates the request and forwards it as an event to Coiote DM, making it schedule a task and initiate a device session,  
-   3. Coiote DM communicates with the device and forwards the device response back to the Operation Shadow,
-   4. the results of the requested operation are published in the `reported` section of the Operation Shadow,
-   5. the results are then republished using the *operationResponse* rule to the [Datamodel shadow](#datamodel-shadow) (but only in case of the READ, WRITE and READ COMPOSITE operations).
+   1. A change in the `desired` section triggers the *operationRequest* rule.
+   2. The *operationRequest* rule sends a request to **AWS Lambda**.
+   3. **AWS Lambda** validates the request and forwards it as an event to Coiote DM, making it schedule a task and initiate a device session.  
+   4. Coiote DM communicates with the device.
+   ![AWS - Coiote DM communication flow](images/communication_flow.png "AWS - Coiote DM communication flow")
+   5. The device responds to Coiote DM with the operation result.
+   6. Coiote DM forwards the device response back to the Operation Shadow and the results are published in the `reported` section.
+   7. The change in the `reported` section triggers the *operationResponse* rule.
+   8. The results are then republished using the *operationResponse* rule to the [Datamodel shadow](#datamodel-shadow) (but only in case of the READ, WRITE and READ COMPOSITE operations).
+
+
 
 ### Datamodel Shadow
 
