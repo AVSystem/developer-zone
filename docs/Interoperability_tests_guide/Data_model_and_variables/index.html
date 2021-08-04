@@ -9,19 +9,19 @@
       
       
       
-      <link rel="shortcut icon" href="/assets/favicon/favicon-32x32.png">
+      <link rel="shortcut icon" href="../../assets/favicon/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.6">
     
     
       
-        <title>Coiote IoT Device Management Docs</title>
+        <title>Device data model and variables - Coiote IoT Device Management Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
         
       
     
@@ -56,7 +56,7 @@
     
     
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
       
@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#device-data-model-and-variables" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
       target="_blank"
     >
       
-  <img src="/assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
 
     </a>
 
@@ -144,7 +149,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              
+              Device data model and variables
             
           </span>
         </div>
@@ -213,9 +218,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Coiote IoT Device Management Docs" class="md-nav__button md-logo" aria-label="Coiote IoT Device Management Docs">
+    <a href="../.." title="Coiote IoT Device Management Docs" class="md-nav__button md-logo" aria-label="Coiote IoT Device Management Docs">
       
-  <img src="/assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
 
     </a>
     Coiote IoT Device Management Docs
@@ -229,12 +234,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
       
       <label class="md-nav__link" for="nav-1">
         Interoperability tests guide
@@ -253,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Interoperability_tests_guide/Overview/" class="md-nav__link">
+      <a href="../Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -265,7 +272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Interoperability_tests_guide/Getting_started/" class="md-nav__link">
+      <a href="../Getting_started/" class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -277,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Interoperability_tests_guide/Test_case_actions/" class="md-nav__link">
+      <a href="../Test_case_actions/" class="md-nav__link">
         Test case actions
       </a>
     </li>
@@ -289,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Interoperability_tests_guide/Configuring_test_cases/" class="md-nav__link">
+      <a href="../Configuring_test_cases/" class="md-nav__link">
         Configuring test cases
       </a>
     </li>
@@ -299,11 +306,82 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/Interoperability_tests_guide/Data_model_and_variables/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Device data model and variables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Device data model and variables
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#displaying-device-data-model-and-running-simple-actions" class="md-nav__link">
+    Displaying device data model and running simple actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-device-variables" class="md-nav__link">
+    Managing device variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing device variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-variables-in-test-case-actions" class="md-nav__link">
+    Using variables in test case actions
+  </a>
+  
+    <nav class="md-nav" aria-label="Using variables in test case actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-variables-example" class="md-nav__link">
+    Using variables - example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -313,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Interoperability_tests_guide/Running_test_cases/" class="md-nav__link">
+      <a href="../Running_test_cases/" class="md-nav__link">
         Running test cases
       </a>
     </li>
@@ -325,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Interoperability_tests_guide/Using_API_Jenkins_integration/" class="md-nav__link">
+      <a href="../Using_API_Jenkins_integration/" class="md-nav__link">
         Jenkins/GitLab integration with interop tests API
       </a>
     </li>
@@ -390,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
         Configuring integration extension
       </a>
     </li>
@@ -424,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -436,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
         Importing devices to Coiote DM
       </a>
     </li>
@@ -448,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
         Exporting devices to Azure IoT Hub
       </a>
     </li>
@@ -460,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/" class="md-nav__link">
         Upgrading device firmware
       </a>
     </li>
@@ -506,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
         Configuring integration extension
       </a>
     </li>
@@ -540,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -552,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
         Importing devices to Coiote DM
       </a>
     </li>
@@ -564,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
         Exporting devices to Azure IoT Central
       </a>
     </li>
@@ -610,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/" class="md-nav__link">
         LwM2M mappings
       </a>
     </li>
@@ -650,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/" class="md-nav__link">
+      <a href="../../Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/" class="md-nav__link">
         Air quality monitoring - tutorial
       </a>
     </li>
@@ -699,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/AWS_Integration_Guide/Configuring_AWS_integration/" class="md-nav__link">
+      <a href="../../AWS_Integration_Guide/Configuring_AWS_integration/" class="md-nav__link">
         Configuring the integration
       </a>
     </li>
@@ -733,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/AWS_Integration_Guide/Device_operations/Operation_types/" class="md-nav__link">
+      <a href="../../AWS_Integration_Guide/Device_operations/Operation_types/" class="md-nav__link">
         Performing LwM2M operations
       </a>
     </li>
@@ -773,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/AWS_Integration_Guide/Concepts/AWS_Integration_concepts/" class="md-nav__link">
+      <a href="../../AWS_Integration_Guide/Concepts/AWS_Integration_concepts/" class="md-nav__link">
         How AWS integration works
       </a>
     </li>
@@ -799,11 +877,267 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#displaying-device-data-model-and-running-simple-actions" class="md-nav__link">
+    Displaying device data model and running simple actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-device-variables" class="md-nav__link">
+    Managing device variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing device variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-variables-in-test-case-actions" class="md-nav__link">
+    Using variables in test case actions
+  </a>
+  
+    <nav class="md-nav" aria-label="Using variables in test case actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-variables-example" class="md-nav__link">
+    Using variables - example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+
+<!-- Edit button -->
+
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Markdown content -->
+<h1 id="device-data-model-and-variables">Device data model and variables<a class="headerlink" href="#device-data-model-and-variables" title="Permanent link">#</a></h1>
+<h2 id="displaying-device-data-model-and-running-simple-actions">Displaying device data model and running simple actions<a class="headerlink" href="#displaying-device-data-model-and-running-simple-actions" title="Permanent link">#</a></h2>
+<p>Coiote DM gives you the possibility to view and perform actions on the data model of individual devices defined by the LwM2M protocol. This view is available under the <strong>Objects</strong> panel of your device. Read this chapter to learn how to use the panel.</p>
+<p><img alt="The Objects panel" src="../images/image062.png" title="The Objects panel" /></p>
+<ol>
+<li><strong>Search</strong> - use it to find a particular object. To find the object, type its name.</li>
+<li>If checked, the changes you make to device objects will be applied immediately. Otherwise, you will have to wait for the device to trigger action execution or use the <strong>Execute tasks</strong> button (for devices in non-queue mode).
+      !!! note
+          The <strong>Apply immediately</strong> option is only available for devices in non-queue mode.</li>
+<li>Use this button to add a new LwM2M object definition.</li>
+<li>Division into objects.</li>
+<li>The <strong>info</strong> icon - click it to see the object description.</li>
+<li>Managing instances:
+<img alt="Instances" src="../images/image063.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Instances" /><ul>
+<li>[A] - Use it to select another instance of an object if the object has instances.</li>
+<li>[B] - Use it to add a new instance if an object allows it.</li>
+<li>[C] - Use it to select another instance or remove it.</li>
+</ul>
+</li>
+<li>Search - use it to find a particular resource. To find the resource, type its name.</li>
+<li>Use it to refresh data, track values (send an Observe task) and add additional attributes to a selected instance.</li>
+<li>Use it to refresh data, track values (send an Observe task) and add additional attributes to a selected object.</li>
+<li>
+<p>The table with resources of an object instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The icon displaying the status of execution is available after clicking on one of the action buttons located in the <strong>Actions</strong> column. If you click it, you will see additional information about execution.</p>
+</div>
+<p><img alt="Execution status icon" src="../images/image064.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Execution status icon" />
+  Execution status icon</p>
+</li>
+<li>
+<p>Use it to refresh the resource.</p>
+</li>
+<li>Value tracking - use it to send an Observe task to the device and configure monitoring to collect data.</li>
+<li>Attributes - use it to edit resource attributes or add new ones.</li>
+<li>Use it to edit a value of a resource.</li>
+<li>Execute - use it to send an Execute task to the device. Click the icon next to the button to add additional parameters.</li>
+</ol>
+<h2 id="managing-device-variables">Managing device variables<a class="headerlink" href="#managing-device-variables" title="Permanent link">#</a></h2>
+<p>Use the <strong>Variables</strong> panel to add custom variables onto your device for the purpose of protocol tests and view the existing variables that the device has inherited.
+To enter the <strong>Variables</strong> panel, go to <strong>Device Management Center</strong> by clicking on a selected device name and choose the <strong>Variables</strong> tab.</p>
+<p><img alt="Variables panel" src="../images/image065.png" title="The variables panel" /></p>
+<ol>
+<li>The <strong>Custom device variables</strong> list shows the variables that belong to this particular device.<ul>
+<li>To add a variable, click on <strong>Add</strong>, provide its name and value, and click <strong>Save</strong>. Note that every custom variable that you add will have the <code>VARIABLE_</code> prefix.</li>
+<li>To delete a previously added variable, click the <strong>Trash bin</strong> icon and click <strong>Save</strong>.</li>
+</ul>
+</li>
+<li>The <strong>Inherited variables</strong> list shows only the variables that the device inherits from the groups of devices that is belongs to. The list is view-only. To add a variable to this list, go to Device Groups and, in the Profiles panel, add an entry with the name beginning with <code>VARIABLE_</code>.</li>
+</ol>
+<h3 id="using-variables-in-test-case-actions">Using variables in test case actions<a class="headerlink" href="#using-variables-in-test-case-actions" title="Permanent link">#</a></h3>
+<p>To use device variables, enter the expression context by typing <code>${variable.&lt;variableName&gt;}</code> while defining a test case action. Remember that each variable is treated as a string, therefore, to use it as a different data type, you will have to cast it to the appropriate type. </p>
+<h4 id="using-variables-example">Using variables - example<a class="headerlink" href="#using-variables-example" title="Permanent link">#</a></h4>
+<p>Learn how to use device variables in <strong>Interoperability tests</strong> in a few steps:</p>
+<p>Use case: Testing the <strong>WRITE</strong> action on the <code>LwM2M Server.1.Lifetime</code> resource.  </p>
+<ol>
+<li>
+<p>Add the variable:</p>
+<ul>
+<li>In <strong>Device inventory</strong>, click on a selected device name to enter its <strong>Device Management Center</strong>.</li>
+<li>
+<p>Select the <strong>Variables</strong> tab.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the <strong>Variables</strong> tab is not visible in the menu, use the settings button under the menu to add it: drag it from <strong>Available tabs</strong> and drop it in <strong>Selected tabs</strong> and click <strong>Confirm</strong>.</p>
+</div>
+</li>
+</ul>
+<p><img alt="Adding a variable" src="../images/image105.png" title="Adding a variable" /></p>
+<ul>
+<li>Click on <strong>Add</strong> and provide the following:<ul>
+<li>Name: <code>lifetime120</code>.</li>
+<li>Value: <code>120</code>.</li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Create a test case and include the new variable in the appropriate format:</p>
+<ul>
+<li>To add a new test case, follow the steps in <a href="../Getting_started/#create-your-first-test-case">Creating your first test case</a> section, but including the adjustments below:<ul>
+<li>For example purposes, pick only the <strong>Write</strong> action.</li>
+<li>In the <strong>Parameter name</strong> field, type <code>LwM2M Server.1.Lifetime</code> (note that the path may vary slightly depending on your device data model).
+<img alt="Using a variable in a test case" src="../images/image107.png" title="Using a variable in a test case" /></li>
+<li>
+<p>In the <strong>Value</strong> field, type <code>${variable.lifetime120.toInt}</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By default, the variable value is rendered as a <code>string</code> data type. To cast it to the <code>integer</code> data type, <code>.toInt</code> suffix is added to the created expression, as seen above.</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Run the created test case and check if the variable works correctly:</p>
+<ul>
+<li>To run the test case, follow the steps in <a href="../Getting_started/#run-the-test-case-on-device">Running the test case on device</a> using the test case created in the previous step.</li>
+<li>After the test case is finished, check if the <em>Lifetime</em> resource value has changed on the device:<ul>
+<li>Go to the <strong>Objects</strong> panel of your device and under the <strong>LwM2M Server</strong> object, look for the <strong>Lifetime</strong> resource value:
+<img alt="Checking device data model" src="../images/image106.png" title="Checking device data model" /></li>
+<li>If the value has changed accordingly, the variable can be now reused and populated to any other test cases.    </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+<!-- Link to previous and/or next page -->
+
+<nav
+  class="md-navbottom__inner md-grid"
+  aria-label="Footer"
+>
+
+  <!-- Link to previous page -->
+  
+    <a
+      href="../Configuring_test_cases/"
+      class="md-navbottom__link md-navbottom__link--prev"
+      rel="prev"
+    >
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </div>
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Previous
+          </span>
+          Configuring test cases
+        </div>
+      </div>
+    </a>
+  
+
+  <!-- Link to next page -->
+  
+    <a
+      href="../Running_test_cases/"
+      class="md-navbottom__link md-navbottom__link--next"
+      rel="next"
+    >
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Next
+          </span>
+          Running test cases
+        </div>
+      </div>
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+      </div>
+    </a>
+  
+</nav>
+
+
+<!-- Last update of source file -->
+
+  
+    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2021</span>
+    
+  </small>
+</div>
+  
+
+
+              
+                
+
 
               
             </article>
@@ -813,6 +1147,41 @@
       
         
   <footer class="md-footer">
+    
+      <div class="md-footer-nav">
+        <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+          
+            <a href="../Configuring_test_cases/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Previous
+                  </span>
+                  Configuring test cases
+                </div>
+              </div>
+            </a>
+          
+          
+            <a href="../Running_test_cases/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Next
+                  </span>
+                  Running test cases
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      </div>
     
     <div class="md-footer-meta md-typeset">
       <div class="md-footer-meta__inner md-grid ">
@@ -838,22 +1207,22 @@
       
     </div>
     
-      <script src="/assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="/assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
     
 
       <script>
         app = initialize({
-          base: "/",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "/assets/javascripts/worker/search.9c0e82ba.min.js"
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="/javascripts/extra.js"></script>
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

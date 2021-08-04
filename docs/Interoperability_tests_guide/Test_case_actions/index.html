@@ -1,0 +1,1524 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/favicon/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.6">
+    
+    
+      
+        <title>Test case actions - Coiote IoT Device Management Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1572272-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1572272-2');
+    </script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-25246208-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#test-case-actions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <!-- Mitigate bug: https://github.com/mkdocs/mkdocs/issues/2191 -->
+
+
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+   
+    <!-- Link to home -->
+    <a
+      href="https://www.avsystem.com/"
+      title="Coiote IoT Device Management Docs"
+      class="md-header-nav__button md-logo"
+      aria-label="Coiote IoT Device Management Docs"
+      target="_blank"
+    >
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+  
+    
+      <svg class="logoMobile" width="150px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 221 48">
+        <g>
+          <path style="fill: #FFD600;" d="M47.5,16.4c-3-7.2-10.1-12.3-18.3-12.3C18.2,4.1,9.3,13,9.3,23.9c0,1.8,0.2,3.5,0.7,5.1h2.2
+                  c0.6,0,1.4-0.7,1.6-1.2l3.9-9.8c0.5-1.2,1.7-2.1,3-2.1c1.3,0,2.5,0.8,3,2.1l6.2,15.6c0.3,0.7,1.1,1.2,1.7,1.2h1.3
+                  c0.3,0,0.6,0.2,0.8,0.5l0.5,1.4c0.1,0.3,0,0.5-0.3,0.5h-4.2c-1.8,0-3.9-1.5-4.6-3.3L20.7,23c-0.4-1.1-0.8-2.2-1.1-3.3
+                  c-0.3,1.1-0.6,2.2-1.1,3.3l-2.1,5.4c-0.7,1.7-2.6,3.1-4.4,3.1h-1.3c3,7.2,10.1,12.3,18.3,12.3c10.9,0,19.8-8.9,19.8-19.8
+                  c0-1.8-0.2-3.5-0.7-5.1h-2.2c-0.6,0-1.4,0.7-1.6,1.2l-3.9,9.8c-0.5,1.2-1.7,2.1-3,2.1c-1.3,0-2.5-0.8-3-2.1l-6.2-15.6
+                  c-0.3-0.7-1.1-1.2-1.7-1.2h-1.3c-0.3,0-0.6-0.2-0.8-0.5L24,11c-0.1-0.3,0-0.5,0.3-0.5h4.2c1.8,0,3.9,1.5,4.6,3.3l4.4,11.1
+                  c0.4,1.1,0.8,2.2,1.1,3.3c0.3-1.1,0.6-2.2,1.1-3.3l2.1-5.4c0.7-1.7,2.6-3.1,4.4-3.1H47.5z"/>
+        </g>
+      </svg>
+  
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+      <div class="md-header-nav__ellipsis">
+       
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Coiote IoT Device Management Docs
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Test case actions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coiote IoT Device Management Docs" class="md-nav__button md-logo" aria-label="Coiote IoT Device Management Docs">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Coiote IoT Device Management Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      
+      <label class="md-nav__link" for="nav-1">
+        Interoperability tests guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interoperability tests guide" data-md-level="1">
+        <label class="md-nav__title" for="nav-1">
+          <span class="md-nav__icon md-icon"></span>
+          Interoperability tests guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting_started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Test case actions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Test case actions
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-attributes" class="md-nav__link">
+    Action attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description-of-actions" class="md-nav__link">
+    Description of Actions
+  </a>
+  
+    <nav class="md-nav" aria-label="Description of Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    READ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    WRITE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute" class="md-nav__link">
+    EXECUTE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover" class="md-nav__link">
+    DISCOVER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    DELETE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    CREATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-attributes" class="md-nav__link">
+    WRITE ATTRIBUTES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-attributes" class="md-nav__link">
+    CLEAR ATTRIBUTES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observe" class="md-nav__link">
+    OBSERVE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-observe" class="md-nav__link">
+    CANCEL OBSERVE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-update" class="md-nav__link">
+    Firmware Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait" class="md-nav__link">
+    WAIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pause-response" class="md-nav__link">
+    Pause response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-for-uplink-request" class="md-nav__link">
+    Wait for uplink request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-paused-response" class="md-nav__link">
+    Send paused response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-notification-recording" class="md-nav__link">
+    Start Notification recording
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect-notification" class="md-nav__link">
+    Expect Notification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop-start" class="md-nav__link">
+    Loop start
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuring_test_cases/" class="md-nav__link">
+        Configuring test cases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_model_and_variables/" class="md-nav__link">
+        Device data model and variables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Running_test_cases/" class="md-nav__link">
+        Running test cases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using_API_Jenkins_integration/" class="md-nav__link">
+        Jenkins/GitLab integration with interop tests API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        Azure IoT integration guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT integration guide" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT integration guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" >
+      
+      <label class="md-nav__link" for="nav-2-1">
+        Azure IoT Hub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT Hub" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-1">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT Hub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
+        Configuring integration extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1-2" type="checkbox" id="nav-2-1-2" >
+      
+      <label class="md-nav__link" for="nav-2-1-2">
+        Device operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Device operations" data-md-level="3">
+        <label class="md-nav__title" for="nav-2-1-2">
+          <span class="md-nav__icon md-icon"></span>
+          Device operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
+        Importing devices to Coiote DM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
+        Exporting devices to Azure IoT Hub
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/" class="md-nav__link">
+        Upgrading device firmware
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+      
+      <label class="md-nav__link" for="nav-2-2">
+        Azure IoT Central
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT Central" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT Central
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
+        Configuring integration extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2" >
+      
+      <label class="md-nav__link" for="nav-2-2-2">
+        Device operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Device operations" data-md-level="3">
+        <label class="md-nav__title" for="nav-2-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Device operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
+        Importing devices to Coiote DM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
+        Exporting devices to Azure IoT Central
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
+      
+      <label class="md-nav__link" for="nav-2-3">
+        Concepts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/" class="md-nav__link">
+        LwM2M mappings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+      
+      <label class="md-nav__link" for="nav-2-4">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/" class="md-nav__link">
+        Air quality monitoring - tutorial
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        AWS IoT Core integration guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="AWS IoT Core integration guide" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          AWS IoT Core integration guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AWS_Integration_Guide/Configuring_AWS_integration/" class="md-nav__link">
+        Configuring the integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
+        Device operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Device operations" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Device operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AWS_Integration_Guide/Device_operations/Operation_types/" class="md-nav__link">
+        Performing LwM2M operations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3">
+        Concepts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AWS_Integration_Guide/Concepts/AWS_Integration_concepts/" class="md-nav__link">
+        How AWS integration works
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-attributes" class="md-nav__link">
+    Action attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description-of-actions" class="md-nav__link">
+    Description of Actions
+  </a>
+  
+    <nav class="md-nav" aria-label="Description of Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    READ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    WRITE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute" class="md-nav__link">
+    EXECUTE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover" class="md-nav__link">
+    DISCOVER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    DELETE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    CREATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-attributes" class="md-nav__link">
+    WRITE ATTRIBUTES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-attributes" class="md-nav__link">
+    CLEAR ATTRIBUTES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observe" class="md-nav__link">
+    OBSERVE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-observe" class="md-nav__link">
+    CANCEL OBSERVE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-update" class="md-nav__link">
+    Firmware Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait" class="md-nav__link">
+    WAIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pause-response" class="md-nav__link">
+    Pause response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-for-uplink-request" class="md-nav__link">
+    Wait for uplink request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-paused-response" class="md-nav__link">
+    Send paused response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-notification-recording" class="md-nav__link">
+    Start Notification recording
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect-notification" class="md-nav__link">
+    Expect Notification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop-start" class="md-nav__link">
+    Loop start
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+<!-- Edit button -->
+
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Markdown content -->
+<h1 id="test-case-actions">Test case actions<a class="headerlink" href="#test-case-actions" title="Permanent link">#</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
+<p>Based on the LwM2M 1.0 standard protocol operations, <strong>Actions</strong> are steps that can be defined within a test case. While some are used for the communication between the Server and the LwM2M test device, others help to define the test case logic. Read this chapter to learn how to use Actions in the configuration of customizable interoperability test cases.</p>
+<h2 id="action-attributes">Action attributes<a class="headerlink" href="#action-attributes" title="Permanent link">#</a></h2>
+<p>All the available Actions are defined using a set of configurable attributes that you can specify while adding or editing a test case. The attributes available under each action are determined by the type of given Action.
+However, to set up a test case, not all attributes are mandatory. The general rule is that if you leave an optional attribute’s field blank, the final test case result won’t be affected in any way.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>if you would like to make the test device ignore a particular attribute so that it doesn’t answer to the server request, type <code>None</code> in the optional attribute’s field.</p>
+</div>
+<h2 id="description-of-actions">Description of Actions<a class="headerlink" href="#description-of-actions" title="Permanent link">#</a></h2>
+<p>Within the Server simulator test cases, the following Actions are available (with mandatory attributes written in bold):</p>
+<ol>
+<li>READ</li>
+<li>WRITE</li>
+<li>EXECUTE</li>
+<li>DISCOVER</li>
+<li>DELETE</li>
+<li>CREATE</li>
+<li>WRITE ATTRIBUTES</li>
+<li>CLEAR ATTRIBUTES</li>
+<li>OBSERVE</li>
+<li>CANCEL OBSERVE</li>
+<li>Firmware Update</li>
+<li>Wait</li>
+<li>Pause response</li>
+<li>Wait for uplink request</li>
+<li>Send paused response</li>
+<li>Start Notification recording</li>
+<li>Expect Notification</li>
+<li>Loop start</li>
+</ol>
+<h3 id="read">READ<a class="headerlink" href="#read" title="Permanent link">#</a></h3>
+<p>READ is used to access the value of an object, object instances, a resource and single resource instances. You can define it using four attributes:</p>
+<p><img alt="READ action configuration" src="../images/image031.png" title="READ action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter you want to read. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Expected value – if the value you enter here equals the value read from the device, the test will be passed. If left blank, the value will only show up in the test case log and it will have no impact on the test case result. Note that this READ attribute works only for Resources and Resource Instances.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+<li>LwM2M: Requested content format – the content format of the device answer that you request for your read operation. If the device doesn’t support the requested format, the test will fail. If left blank, the device can decide what content format to use; any format will be accepted.</li>
+</ul>
+<h3 id="write">WRITE<a class="headerlink" href="#write" title="Permanent link">#</a></h3>
+<p>WRITE is used to change the value of a Resource. You can define it using four attributes:</p>
+<p><img alt="WRITE action configuration" src="../images/image032.png" title="WRITE action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter for which you want to set a new value or overwrite the existing one. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Value – the value you enter here sets a new value or overwrites the existing one. If left blank, the existing value will be kept and the test will be passed.</li>
+<li>LwM2M: Content format – the content format in which you send the write request to the device. If the device doesn’t support the specified format, the test will fail.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+</ul>
+<h3 id="execute">EXECUTE<a class="headerlink" href="#execute" title="Permanent link">#</a></h3>
+<p>EXECUTE is used to initiate some action and can only be performed on individual Resources. If the device receives an EXECUTE for an Object Instance(s) or Resource Instance(s), it will return an error. You can define it using two attributes:</p>
+<p><img alt="EXECUTE action configuration" src="../images/image033.png" title="EXECUTE action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter for which you will issue an execute. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Execute arguments – the execution arguments passed to the device expressed in Plain Text format.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+</ul>
+<h3 id="discover">DISCOVER<a class="headerlink" href="#discover" title="Permanent link">#</a></h3>
+<p>DISCOVER is used to discover LwM2M Attributes attached to an Object, Object Instances, and Resources. You can define it using two attributes:</p>
+<p><img alt="DISCOVER action configuration" src="../images/image034.png" title="DISCOVER action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter whose attributes you want to discover. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+</ul>
+<h3 id="delete">DELETE<a class="headerlink" href="#delete" title="Permanent link">#</a></h3>
+<p>DELETE is used for the server to delete an Object Instance within the LwM2M Client. Note that an Object Instance to be deleted must be an Object Instance that is announced by the Client to the Server using the Register and Update operations of the Client Registration Interface.</p>
+<p><img alt="DELETE action configuration" src="../images/image035.png" title="DELETE action configuration" /></p>
+<ul>
+<li>Object instance – the object instance that you want to delete. Note that it can be specified either using the full name in the string (e.g. ‘Device.0) or the numerical (e.g. 3.0) value of the parameter.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+</ul>
+<h3 id="create">CREATE<a class="headerlink" href="#create" title="Permanent link">#</a></h3>
+<p>CREATE is used by the Server simulator to create Object Instance(s) within the LwM2M Client. You can define the action using three parameters and a set of Object Instance-dependent values:</p>
+<p><img alt="CREATE action configuration" src="../images/image036.png" title="CREATE action configuration" /></p>
+<ul>
+<li>Object ID or name – the Object that you want to create an Instance for. Note that it can be specified either using the full name in the string (e.g. ‘Portfolio’) or the numerical (e.g. ‘16’) value of the parameter.</li>
+<li>LwM2M: Instance number – the number assigned to the Object Instance to be created. If left blank, the number will be chosen by the device.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+<li>Resources – click the Provide initial values button to view and specify the possible Resources and Resource Instances of the Object Instance to be created. Note that if the values marked as required are left blank, the action will fail for devices that correctly implement LwM2M.</li>
+</ul>
+<h3 id="write-attributes">WRITE ATTRIBUTES<a class="headerlink" href="#write-attributes" title="Permanent link">#</a></h3>
+<p>WRITE ATTRIBUTES is used to attach metadata containing parameters for Notifications to an Object, an Object Instance or a Resource. You can define it using seven attributes:</p>
+<p><img alt="WRITE ATTRIBUTES action configuration" src="../images/image037.png" title="WRITE ATTRIBUTES action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter for which you will write attributes. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+<li>Minimum period – the minimum time in seconds that the device waits between two notifications.</li>
+<li>Maximum period – the minimum time in seconds that the device waits between two notifications.</li>
+<li>Value greater than – notifications will be sent only when the monitored value crosses the threshold you set here. However, please note that the interpretation of this parameter may differ depending on the specific LwM2M Client implementation.</li>
+<li>Value less than – notifications will be sent only when the monitored value crosses the threshold you set here. However, please note that the interpretation of this parameter may differ depending on the specific LwM2M Client implementation.</li>
+<li>Step – the minimum change value between two notifications.</li>
+</ul>
+<h3 id="clear-attributes">CLEAR ATTRIBUTES<a class="headerlink" href="#clear-attributes" title="Permanent link">#</a></h3>
+<p>CLEAR ATTRIBUTES is used to clear the metadata attached to an Object, an Object Instance or a Resource which contain parameters for Notifications. You can define it using seven attributes:</p>
+<p><img alt="CLEAR ATTRIBUTES action configuration" src="../images/image038.png" title="CLEAR ATTRIBUTES action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter for which you will clear attributes. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+<li>Clear minimum period – if set to true, it clears the minimum time in seconds between two notifications. If set to false, the value is kept.</li>
+<li>Clear maximum period – if set to true, it clears the maximum time set between two notifications. If set to false, the value is kept.</li>
+<li>Clear value greater than – if set to true, it clears the threshold set for the monitored value. If set to false, the value is kept.</li>
+<li>Clear value less than – if set to true, it clears the threshold set for the monitored value. If set to false, the value is kept.</li>
+<li>Clear step – if set to true, it clears the minimum change value between two notifications. If set to false, the value is kept.</li>
+</ul>
+<h3 id="observe">OBSERVE<a class="headerlink" href="#observe" title="Permanent link">#</a></h3>
+<p>OBSERVE is used to initiate an observation request for changes of a specific Resource, Resources within an Object Instance or for all the Object Instances of an Object. You can define it using four attributes:</p>
+<p><img alt="OBSERVE action configuration" src="../images/image039.png" title="OBSERVE action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter whose value(s) you will observe. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+<li>Fail if already observed – if set to true, the test will fail in case there is an existing observation set on this parameter. In case there is no observation set, your observe request should be accepted and the test won’t fail. If set to false, any existing observations will be cancelled and requested again by this one and the test will be passed.</li>
+<li>LwM2M: Content format – the content format in which you send the OBSERVE request to the device. If the device doesn’t support the specified format, the test will fail.</li>
+</ul>
+<h3 id="cancel-observe">CANCEL OBSERVE<a class="headerlink" href="#cancel-observe" title="Permanent link">#</a></h3>
+<p>CANCEL OBSERVE is used to cancel an observation. You can define it using three attributes:</p>
+<p><img alt="CANCEL OBSERVE action configuration" src="../images/image040.png" title="CANCEL OBSERVE action configuration" /></p>
+<ul>
+<li>Parameter name – the name of the data model parameter for which you will cancel an existing observation. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.</li>
+<li>Cancel type – the mode in which the CANCEL OBSERVE will be sent to the device.
+o   ACTIVE - CANCEL OBSERVE is sent to the device immediately.
+o   PASSIVE - CoAP RESET is sent in response to the next notification message received from the device.</li>
+<li>Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.</li>
+</ul>
+<h3 id="firmware-update">Firmware Update<a class="headerlink" href="#firmware-update" title="Permanent link">#</a></h3>
+<p>Firmware Update is used to perform a firmware update operation on the test device. You can define it using five attributes:</p>
+<p><img alt="Firmware Update action configuration" src="../images/image041.png" title="Firmware Update action configuration" /></p>
+<ul>
+<li>Firmware – the ID of the resource used as the firmware source.</li>
+<li>Update timeout – the time period in seconds within which the firmware update should be completed. In case the timeout is up and the update process has not finished, the action will fail.</li>
+<li>Delivery method – The protocol and transfer method used to deliver the firmware file to the device.</li>
+<li>Use notifications – if set to true, an OBSERVE will be issued automatically for the ‘State’ and ‘Update result’ parameters while upgrading the device. The notifications returned by the device will be visible in the test case logs.</li>
+<li>Expected update result – if the update result you enter here equals the result returned by the device, the test will be passed. If left blank, the server will expect the default result defined by the LwM2M standard. You can choose among the ten update results defined as per the LwM2M protocol specification.</li>
+</ul>
+<h3 id="wait">WAIT<a class="headerlink" href="#wait" title="Permanent link">#</a></h3>
+<p>Wait is used to set the waiting time before executing the next action. You can define it using two attributes:</p>
+<p><img alt="Wait action configuration" src="../images/image042.png" title="Wait action configuration" /></p>
+<ul>
+<li>Waiting time – the interval set before the next action is executed.</li>
+<li>In progress message – a custom text that will be displayed as the test case progress message while waiting for the execution of the next action.</li>
+</ul>
+<h3 id="pause-response">Pause response<a class="headerlink" href="#pause-response" title="Permanent link">#</a></h3>
+<p>Pause response is used to delay a response to be sent to the device. If set, the server will wait before sending the response until the Send paused response action is executed.</p>
+<p><img alt="Pause response action configuration" src="../images/image046.png" title="Pause response action configuration" /></p>
+<ul>
+<li>Request type – the kind of request for which you want to pause the response.</li>
+</ul>
+<h3 id="wait-for-uplink-request">Wait for uplink request<a class="headerlink" href="#wait-for-uplink-request" title="Permanent link">#</a></h3>
+<p>Wait for uplink request is used to prevent the server from executing any tasks or actions until an uplink request arrives from the device. You can define the action using three attributes:</p>
+<p><img alt="Wait for uplink request action configuration" src="../images/image047.png" title="Wait for uplink request action configuration" /></p>
+<ul>
+<li>Request type to wait for – the kind of request you want to wait for.</li>
+<li>Timeout – the time period in seconds within which the uplink request should arrive. In case the timeout is up with no request, the action will fail.</li>
+<li>Waiting message – the message displayed during the test case execution while waiting for the arrival of the uplink request.</li>
+</ul>
+<h3 id="send-paused-response">Send paused response<a class="headerlink" href="#send-paused-response" title="Permanent link">#</a></h3>
+<p>Send paused response is used to send the previously paused response to the device.</p>
+<p><img alt="Send paused response action configuration" src="../images/image048.png" title="Send paused response action configuration" /></p>
+<ul>
+<li>Request type – the kind of request for which you want to send the previously paused response.</li>
+</ul>
+<h3 id="start-notification-recording">Start Notification recording<a class="headerlink" href="#start-notification-recording" title="Permanent link">#</a></h3>
+<p>Start Notification recording is used to make the Server simulator save all notifications received from the device in its memory. The limit of recorded notifications can be configured using the <code>ddscNotificationRecordingLimit</code> setting value. Once the limit is reached, new notifications are not recorded. Execute the Start Notification recording action again in the same test to clear the recording state and to be able to match more notifications than the recording limit.</p>
+<h3 id="expect-notification">Expect Notification<a class="headerlink" href="#expect-notification" title="Permanent link">#</a></h3>
+<p>Expect Notification is used to check if recorded Notifications match the required criteria. You can define it using five attributes:</p>
+<p><img alt="Expect Notification action configuration" src="../images/image049.png" title="Expect Notification action configuration" /></p>
+<ul>
+<li>Expected path – only notifications that were received on this path will be validated. In case of a notification with multiple paths and values, each path and value are treated as separate notifications.</li>
+<li>Expected value – use it to check if there is any notification that has a given value and matches all other criteria.</li>
+<li>Expected arrival order – use it to limit the validation only to one notification on a given path that arrived in a given order since the last Start Notification recording action. Note that the counting starts from 0 and that the Observe response is also counted if it is executed after the recording action started.</li>
+<li>Timeout – if the expected notification does not arrive within this time limit, the action will fail.</li>
+<li>Waiting message – a custom text that will be displayed as the test case progress message while waiting for the action execution.</li>
+</ul>
+<h3 id="loop-start">Loop start<a class="headerlink" href="#loop-start" title="Permanent link">#</a></h3>
+<p>Loop start is used to repeat an action or a set of actions within a test case. Note that when configuring the first action inside the loop, the Loop end action is added automatically.</p>
+<p><img alt="Loop start action configuration" src="../images/image050.png" title="Loop start action configuration" /></p>
+<ul>
+<li>Repetitions – the number of iterations of action(s) inside the loop.</li>
+</ul>
+
+<!-- Link to previous and/or next page -->
+
+<nav
+  class="md-navbottom__inner md-grid"
+  aria-label="Footer"
+>
+
+  <!-- Link to previous page -->
+  
+    <a
+      href="../Getting_started/"
+      class="md-navbottom__link md-navbottom__link--prev"
+      rel="prev"
+    >
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </div>
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Previous
+          </span>
+          Getting started
+        </div>
+      </div>
+    </a>
+  
+
+  <!-- Link to next page -->
+  
+    <a
+      href="../Configuring_test_cases/"
+      class="md-navbottom__link md-navbottom__link--next"
+      rel="next"
+    >
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Next
+          </span>
+          Configuring test cases
+        </div>
+      </div>
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+      </div>
+    </a>
+  
+</nav>
+
+
+<!-- Last update of source file -->
+
+  
+    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
+    
+  </small>
+</div>
+  
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+  <footer class="md-footer">
+    
+      <div class="md-footer-nav">
+        <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+          
+            <a href="../Getting_started/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Previous
+                  </span>
+                  Getting started
+                </div>
+              </div>
+            </a>
+          
+          
+            <a href="../Configuring_test_cases/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Next
+                  </span>
+                  Configuring test cases
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      </div>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid ">
+        <div class="md-footer-copyright">
+           &copy; Copyright 2021 <a href="https://www.avsystem.com/" target="_blank">AVSystem</a>
+        </div>
+        <div class="md-footer-meta__linksBox">
+          <a class="md-footer-meta__link" href="https://www.avsystem.com/tags/dev-topics/" target="_blank">
+              Our blog
+          </a>
+          <a class="md-footer-meta__link" href="https://iotdevzone.avsystem.com/" target="_blank">
+              IoT Developer Zone
+          </a>
+          <a class="md-footer-meta__link" href="https://www.avsystem.com/products/coiote-iot-device-management-platform/" target="_blank">
+              Coiote IoT DM Home
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+  
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+    
+
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
