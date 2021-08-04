@@ -152,8 +152,9 @@ To request a OBSERVE operation for a device, follow the steps 1-5 from the [READ
          }
      }
     ```
+
 !!! note
-    In the `attributes` section, you need to specify the full attribute list with their corresponding values for a given key, as the attributes that are left out will be overwritten with `null` (except for the `con` attribute).Alternatively, you can provide an empty value `{}` so that no attribute values are changed. On the other hand, if you only specify the `con` attribute for a given key, it will not affect any other attributes and their existing values won't be changed also.
+    In the `attributes` section, you need to specify the full attribute list with their corresponding values for a given key, as the attributes that are left out will be overwritten with `null` (except for the `con` attribute). Alternatively, you can provide an empty value `{}` so that no attribute values are changed. On the other hand, if you only specify the `con` attribute for a given key, it will not affect any other attributes and their existing values won't be changed also.
 
 To check the results of the OBSERVE operation, go to the `datamodel` Shadow of your device and see the `reported` section.
 

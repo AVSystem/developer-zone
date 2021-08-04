@@ -83,6 +83,7 @@ The Datamodel Shadow is updated in case of the following events:
 
 1. Device **Register** message that comes from Coiote DM,
 2. Device **Notify** and **Send** messages,
+      ![AWS - Coiote DM value change on device](images/device_value_change_diagram.png "AWS - Coiote DM value change on device")
 3. Republishing operation results from the Operation shadow to the Datamodel shadow using the *operationResponse* rule.  
 
 ### CloudWatch logs
