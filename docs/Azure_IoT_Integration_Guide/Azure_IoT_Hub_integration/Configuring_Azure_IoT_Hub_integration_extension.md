@@ -34,7 +34,7 @@ __________________
       - check `Enable automatic synchronization` to periodically synchronize any new devices that appear in the Azure IoT Hub.
       - use `Test connection` to see if the connection can be established correctly.
       - click `Save` to keep the setting.
-   4. Optionally, you can also provide the Azure Blob Storage connection string that will be required in case you would like to export devices from Coiote DM to Azure IoT Hub. [Click here](../Device_operations/Exporting_devices_to_Azure_IoT_Hub/#get-the-azure-blob-storage-connection-string) to learn how to obtain and apply it.
+   4. Optionally, you can also provide the Azure Blob Storage connection string that will be required in case you would like to export devices from Coiote DM to Azure IoT Hub. [Click here](../Device_operations/Exporting_devices_to_Azure_IoT_Hub#get-the-azure-blob-storage-connection-string) to learn how to obtain and apply it.
 
 ## Next steps
  - [Importing Azure IoT Hub devices to Coiote DM](Device_operations/Importing_devices_to_Coiote_DM.md)

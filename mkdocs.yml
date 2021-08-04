@@ -54,6 +54,12 @@ nav:
                 - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings.md'
             - 'Tutorials':
                 - 'Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.md'
+        - 'AWS IoT Core integration guide':
+            - 'Configuring the integration': 'AWS_Integration_Guide/Configuring_AWS_integration.md'
+            - 'Device operations':
+                - 'AWS_Integration_Guide/Device_operations/Operation_types.md'
+            - 'Concepts':
+                - 'AWS_Integration_Guide/Concepts/AWS_Integration_concepts.md'
 extra_css:
   - stylesheets/extra.css
 
