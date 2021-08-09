@@ -28,6 +28,9 @@ google_analytics:
   - auto
 
 nav:
+        - 'Device onboarding':
+            - 'Coiote_DM_Device_Onboarding/Quick_start.md'
+            - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
