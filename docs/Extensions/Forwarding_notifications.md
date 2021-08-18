@@ -4,13 +4,13 @@ Read this chapter to learn how to forward a message to a REST endpoint.
 
 To forward a notification:
 
-1. Go to **Administration --> Extensions**.
+1. Go to **Administration —> Extensions**.
 2. In the **My custom REST template** panel, click the **Setup** button.
 3. Configure your message:
 
 * From a list of groups, select a group to which you want to forward a message. If you want to add a new group, click the **click here** link.
 
-![Forwarding notifications](/images/Forwarding_notifications.png)
+![Forwarding notifications](images/Forwarding_notifications.png){: .center }
 
     *Fig. Forwarding notifications*
 
@@ -22,7 +22,7 @@ To forward a notification:
    * *${#path}* - a placeholder for a path of a resource, instance or object that is observed.
    * *${#value}* - a placeholder for an observed value sent in the notification.
 
-    !!! note
-     *${#path}* and *${#value}* are valid JSONs so due to the format they cannot be in additional quotation marks (if they will, the format of the entire message will be invalid). Other expressions need to be inside quotation marks.
+!!! note
+    *${#path}* and *${#value}* are valid JSONs so due to the format they cannot be in additional quotation marks (if they will, the format of the entire message will be invalid). Other expressions need to be inside quotation marks.
 
 4. Click the **Confirm** button. The properly configured task executes on a selected group of devices.

@@ -14,8 +14,8 @@ To configure the registration status action extension:
 
 4. In the **Edit** tab, define your action logic. The lists of registered and deregistered devices are available in the `${args.registeredDevices}` and `${args.deregisteredDevices}` expression contexts.
 
- !!! note
-Each newly executed action is performed on the list of devices that have registered/deregistered within the defined interval. Note that if the action execution fails, it will be retried within the subsequent time interval.
+!!! note
+    Each newly executed action is performed on the list of devices that have registered/deregistered within the defined interval. Note that if the action execution fails, it will be retried within the subsequent time interval.
 
 5. You can also specify how often the status of registered/deregistered devices should be checked and updated using the time interval and time unit dropdowns.
 6. After you have configured your registration status action, click **Save**. Action execution will start immediately.
@@ -52,7 +52,7 @@ Assuming that your config directory is called *my-config*:
   }
 ```
 !!! warning
- Note that you need to adjust *my-config* inside!
+    Note that you need to adjust *my-config* inside!
 
 3. Optionally, you can adjust the following entries in `my-config/cdm.conf` to your liking:
 
