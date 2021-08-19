@@ -838,43 +838,36 @@
 <!-- Markdown content -->
 <h1 id="monitoring-configuration">Monitoring configuration<a class="headerlink" href="#monitoring-configuration" title="Permanent link">#</a></h1>
 <p>Enabling monitoring requires preparation of monitoring configuration. Monitoring manager is available in the <strong>Monitoring &amp; Reporting</strong> menu.</p>
-<p><img alt="Monitoring interface" class="center" src="images/1.png" />
-   <em>Fig. Monitoring interface</em></p>
+<p><img alt="Monitoring interface" class="center" src="images/1.png" title="Monitoring interface" /></p>
 <ol>
 <li><strong>Monitoring type</strong> - information showing you which monitoring you selected.</li>
 <li>A list of available monitoring types.</li>
 <li>
 <p><strong>Basic configuration</strong>:</p>
-</li>
-<li>
-<p><strong>Name</strong> - a unique name of monitoring configuration.</p>
-</li>
+<ul>
+<li><strong>Name</strong> - a unique name of monitoring configuration.</li>
 <li><strong>Description</strong> - an optional description of monitoring configuration.</li>
 <li><strong>Execution condition</strong> - an additional condition that needs to be met to start the monitoring. You should use <a href=".../Device_management/Device_operations/Handling_device_data/Expressions.html#expressions">Expressions</a> in this field. Type <em>${</em> to get a hint.</li>
 <li><strong>Sampling interval</strong> - a time period (expressed in seconds) during which one sample should be collected. You can select the sampling interval from the list - <strong>Optimal</strong> (a predefined value) or <strong>Manual</strong> (you can set a value).</li>
 <li><strong>Health index metric</strong> - a selection of KPIs. To learn about KPIs of an individual monitoring, read the <a href="Monitoring_Type_Specific_Settings.html">Specific settings for monitoring</a> chapter.</li>
-<li><strong>Domain</strong> - a list of available domains. Select it if you want to restrict access only to particular users. To learn about domains, read the <a href=".../Administration/Managing_Multitenancy.html#ug-m-managing-multitenancy">Managing multitenancy</a> chapter.</li>
+<li><strong>Domain</strong> - a list of available domains. Select it if you want to restrict access only to particular users. To learn about domains, read the <a href="../../../Administration/Managing_Multitenancy.html">Managing multitenancy</a> chapter.</li>
 <li><strong>Enabled</strong> - a check box that allows you to enable or disable a monitoring. Samples are not collected for inactive monitoring, but already collected results can be still browsed.</li>
-<li>
-<p><strong>Group exclusion patterns</strong> - a list of regular expression patterns that are used to exclude groups from group aggregate collection.</p>
+<li><strong>Group exclusion patterns</strong> - a list of regular expression patterns that are used to exclude groups from group aggregate collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Actions</strong></p>
+<ul>
+<li><strong>Save</strong> - a button to save a new monitoring.</li>
+<li><strong>Delete</strong> - a button to delete the monitoring.</li>
+</ul>
 </li>
 <li>
-<p><strong>Save</strong> - a button to save a new monitoring.</p>
-</li>
+<p><strong>Advanced configuration</strong> - specific configuration for each monitoring. To learn about configuration of an individual monitoring, read the <a href="Monitoring_Type_Specific_Settings.html">Specific settings for monitoring</a> chapter.</p>
+<ul>
 <li>
-<p><strong>Delete</strong> - a button to delete the monitoring.</p>
-</li>
-<li>
-<p><strong>Advanced configuration</strong> - specific configuration for each monitoring. To learn about configuration of an individual monitoring, read the <a href=".../Monitoring_Module/Monitoring_Type_Specific_Settings.html">Specific settings for monitoring</a> chapter.</p>
-</li>
-<li>
-<p><strong>Import</strong> and <strong>Export</strong> buttons to export to or import from a XML file monitoring type specific configuration.</p>
-</li>
-<li>
-<p>The <strong>Advanced configuration</strong> can be divided into:</p>
+<p><strong>Import</strong> and <strong>Export</strong> buttons to export to or import from a XML file monitoring type specific configuration.
+   The <strong>Advanced configuration</strong> can be divided into:</p>
 </li>
 <li>
 <p>A panel with configuration fields specific for a particular monitoring.</p>
@@ -882,19 +875,20 @@
 <li><strong>Configure monitoring of custom resources</strong> with the <strong>Add resource</strong> icon - additional resources that you can add to be monitored. To learn how to configure additional resources, read the <a href="Adding_monitoring.html#adding-custom-monitoring">Custom monitoring</a> chapter.</li>
 <li><strong>Enable/disable alert status collection</strong> - a list of alerts that you can enable (click the check box next to the alert) or disable (clear the check box).</li>
 <li>
-<p><strong>Legend settings for monitoring map</strong> - for almost all monitoring types you can define legend settings for resources that are visible on a <a href="Monitoring_map/Monitoring_map">monitoring map</a>. You can select:</p>
-<ul>
-<li>Color schema - how values should be colored. You can select <strong>Red - Green</strong> - lower values will have a red color and higher will have a green color, or <strong>Green - Red</strong> - lower values will have a green color and higher will have a red color.</li>
+<p><strong>Legend settings for monitoring map</strong> - for almost all monitoring types you can define legend settings for resources that are visible on a <a href="Monitoring_map.html#monitoring-map">monitoring map</a>. You can select:</p>
+</li>
+<li>
+<p>Color schema - how values should be colored. You can select <strong>Red - Green</strong> - lower values will have a red color and higher will have a green color, or <strong>Green - Red</strong> - lower values will have a green color and higher will have a red color.</p>
+</li>
 <li>Range adjustment - how values will be computed. You can select <strong>Automatic</strong> - minimum and maximum values will be computed on the basis of monitoring values, or <strong>Manual</strong> - minimum and maximum values will be defined by a user.</li>
 <li>Unit - which unit will be used, for example, %, kbps, or ms.</li>
 </ul>
+<p><img alt="Settings of monitoring map legend" class="center" src="images/Monitoring_map_legend.png" title="Settings of monitoring map legend" /></p>
 </li>
-</ol>
-<p><img alt="Settings of monitoring map legend" class="center" src="images/Monitoring_map_legend.png" /></p>
-<p><em>Fig. Settings of monitoring map legend</em></p>
-<ol>
-<li><strong>Monitoring target groups</strong> - a monitoring groups selection option. Select monitoring groups by clicking <strong>Add</strong> and selecting particular groups from the list. You can select more than one group at the same time, just keep the window open. To stop adding groups, close the window.
-   To delete a group from monitoring, click the icon next to it.</li>
+<li>
+<p><strong>Monitoring target groups</strong> - a monitoring groups selection option. Select monitoring groups by clicking <strong>Add</strong> and selecting particular groups from the list. You can select more than one group at the same time, just keep the window open. To stop adding groups, close the window.
+   To delete a group from monitoring, click the icon next to it.</p>
+</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

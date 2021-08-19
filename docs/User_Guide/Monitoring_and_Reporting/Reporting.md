@@ -13,12 +13,12 @@ In this tab you can view all scheduled reports and their results.
 ![Reports](images/reporting_1.png)
    *Fig. Reports*
 
-1. Reports search input - you can filter reports by a column from a table. You can select a filtering column by clicking the :material-file-search-outline: icon in the table header.
+1. Reports search input - you can filter reports by a column from a table. You can select a filtering column by clicking the :mag: icon in the table header.
 2. The table contains most important information about scheduled reports:
 
- * :material-progress-check: - a report was generated successfully
- * :material-progress-clock: - a generation process is not finished yet
- * :material-progress-alert: - there were some problems with the report generation
+ * :white_check_mark: - a report was generated successfully
+ * :clock5: - a generation process is not finished yet
+ * :warning: - there were some problems with the report generation
 
 3. Configuration - you can read more about a configuration in the [Reporting Configuration Details](#reporting-configuration-details) section.
 4. Buttons:

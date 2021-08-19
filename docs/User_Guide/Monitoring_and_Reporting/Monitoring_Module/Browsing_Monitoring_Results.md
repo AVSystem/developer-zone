@@ -1,14 +1,13 @@
 # Browsing monitoring results
 
-As mentioned in [Monitoring module](.../monitoring-module), monitoring is applicable for two scopes - devices and groups. Consequently it is reflected by user interface structure for:
+As mentioned in [Monitoring](../Monitoring_Module.html), monitoring is applicable for two scopes - devices and groups. Consequently it is reflected by user interface structure for:
 
-* Groups in [Device groups](.../UIR_Monitoring)`
+* Groups in [Device groups](../../User_Interface_Reference/Device_Groups/Device_Groups.html#monitoring)
 * A single device in **Devices management center**.
 
 Those views are similar for all types of monitoring. Typically they look like that:
 
-![Basic filters](images/Basic_filters.png){: .center }
-   *Fig. Basic filters*
+![Basic filters](images/Basic_filters.png "Basic filters"){: .center }
 
 1. Predefined time ranges: **hour/day/week**.
 2. Custom time range beginning and end. Type your requested date or click the **Date** icon and select it from a calendar view.
@@ -16,8 +15,7 @@ Those views are similar for all types of monitoring. Typically they look like th
 
 A typical results chart looks like this:
 
-![Charts](images/7.png){: .center }
-   *Fig. Chart*
+![Charts](images/7.png "Chart"){: .center }
 
 It contains the following useful options:
 

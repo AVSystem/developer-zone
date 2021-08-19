@@ -855,13 +855,13 @@
 <p>Read this chapter to learn how to add a new monitoring.</p>
 <p>To add a monitoring:</p>
 <ol>
-<li>Go to <strong>Monitoring &amp; Reporting --&gt; Monitoring</strong>.</li>
+<li>Go to <strong>Monitoring &amp; Reporting —&gt; Monitoring</strong>.</li>
 <li>From the <strong>Available monitoring</strong> list, select a type of monitoring by clicking it.</li>
-<li>Configure basic settings. To learn about basic configuration, read the <a href=".../Monitoring_Configuration">Monitoring Configuration</a> chapter.</li>
-<li>From the <strong>Monitoring target groups</strong> list, select groups you want to monitor. To learn more about adding groups, read the step <strong>6</strong> in the <a href=".../Monitoring_Configuration">Monitoring Configuration</a> chapter.</li>
-<li>Configure advanced settings. To learn about configuration of an individual monitoring, read the <a href=".../Monitoring_Type_Specific_Settings">Specific settings for monitoring</a> chapter.</li>
-<li>Optional: Add additional resources. To learn about configuration of additional resources, read the <a href="#Adding_custom_monitoring">Adding custom monitoring</a> chapter.</li>
-<li>Select check boxes next to alerts you want to enable. To learn about alerts of an individual monitoring, read the <a href=".../Monitoring_Type_Specific_Settings">Specific settings for monitoring</a> chapter.</li>
+<li>Configure basic settings. To learn about basic configuration, read the <a href="Monitoring_Configuration.html">Monitoring Configuration</a> chapter.</li>
+<li>From the <strong>Monitoring target groups</strong> list, select groups you want to monitor. To learn more about adding groups, read the step <strong>6</strong> in the <a href="Monitoring_Configuration.html">Monitoring configuration</a> chapter.</li>
+<li>Configure advanced settings. To learn about configuration of an individual monitoring, read the <a href="Monitoring_Type_Specific_Settings.html">Specific settings for monitoring</a> chapter.</li>
+<li>Optional: Add additional resources. To learn about configuration of additional resources, read the <a href="#adding-custom-monitoring">Adding custom monitoring</a> chapter.</li>
+<li>Select check boxes next to alerts you want to enable. To learn about alerts of an individual monitoring, read the <a href="Monitoring_Type_Specific_Settings.html">Specific settings for monitoring</a> chapter.</li>
 <li>Click the <strong>Save</strong> button.</li>
 </ol>
 <div class="admonition tip">
@@ -876,25 +876,23 @@
 <p>Read this chapter to learn how to add custom monitoring that enables you to decide which resources you want to monitor.</p>
 <p>To add custom monitoring:</p>
 <ol>
-<li>Go to <strong>Monitoring &amp; Reporting --&gt; Monitoring</strong>.</li>
+<li>Go to <strong>Monitoring &amp; Reporting —&gt; Monitoring</strong>.</li>
 <li>From the <strong>Available monitoring</strong> list, select a <strong>Custom</strong> monitoring by clicking it.</li>
-<li>Configure basic settings. In this example, a name is defined, a sampling interval is set to <em>Manual</em> and its value is <em>300</em>, a domain is set to <em>/</em>, and the <strong>Enabled</strong> check box is selected.</li>
-</ol>
-<p><img alt="Basic configuration" class="center" src="images/Custom_monitoring.png" />
-    <em>Fig. Basic configuration</em></p>
-<ol>
-<li>In the <strong>Monitoring target groups</strong> panel, click the <strong>Add</strong> link and select proper groups.</li>
-</ol>
-<p><img alt="Selecting groups" class="center" src="images/Custom_monitoring_groups.png" />
-    <em>Fig. Selecting groups</em></p>
-<ol>
-<li>In the <strong>Advanced configuration</strong> panel, click the <strong>Add resource</strong> link to select a representative device. The representative device will be used to validate a configuration of monitoring. You will be warned if resources created by you are not available on the device. Each monitoring may monitor one or more resources, and for each resource an alert can be configured and a separate chart will be created.</li>
+<li>
+<p>Configure basic settings. In this example, a name is defined, a sampling interval is set to <em>Manual</em> and its value is <em>300</em>, a domain is set to <em>/</em>, and the <strong>Enabled</strong> check box is selected.</p>
+<p><img alt="Basic configuration" class="center" src="images/Custom_monitoring.png" /></p>
+</li>
+<li>
+<p>In the <strong>Monitoring target groups</strong> panel, click the <strong>Add</strong> link and select proper groups.</p>
+<p><img alt="Selecting groups" class="center" src="images/Custom_monitoring_groups.png" /></p>
+</li>
+<li>
+<p>In the <strong>Advanced configuration</strong> panel, click the <strong>Add resource</strong> link to select a representative device. The representative device will be used to validate a configuration of monitoring. You will be warned if resources created by you are not available on the device. Each monitoring may monitor one or more resources, and for each resource an alert can be configured and a separate chart will be created.</p>
+</li>
 <li>
 <p>Configure particular fields:</p>
-</li>
-<li>
-<p>From the <strong>Source</strong> list, select whether this resource will be based on a data model or on a setting value, and into the <strong>Data model</strong> field, type a proper path. In this example, the data model will be selected. The system prompts available objects which are marked in bold. If the device has any instances then the system displays their number on the list. If there are no instances on the selected device, the system cannot prompt them and you need to type object instances values manually (in the place marked as <strong>{i}</strong>).</p>
-</li>
+<ul>
+<li>From the <strong>Source</strong> list, select whether this resource will be based on a data model or on a setting value, and into the <strong>Data model</strong> field, type a proper path. In this example, the data model will be selected. The system prompts available objects which are marked in bold. If the device has any instances then the system displays their number on the list. If there are no instances on the selected device, the system cannot prompt them and you need to type object instances values manually (in the place marked as <strong>{i}</strong>).</li>
 <li>From the <strong>Its type</strong> list, select a proper type.</li>
 <li>
 <p>From the <strong>Collect for</strong> list, select if you want to collect data only for a group, device or for both group and device. Configure other related options:</p>
@@ -905,37 +903,39 @@
 <li>From the <strong>Device presentation</strong> / <strong>Group presentation</strong> lists, select how results will be presented, for example as a histogram or timeline.</li>
 <li>
 <p>Click the <strong>Options</strong> link to configure additional options. Fields available for configuration vary depending on your selection in the <strong>Source</strong> field:</p>
-<ul>
-<li><strong>X axis label</strong> - a name of the X axis, it will be visible on a chart.</li>
+</li>
+<li>
+<p><strong>X axis label</strong> - a name of the X axis, it will be visible on a chart.</p>
+</li>
 <li><strong>Y axis label</strong> - a name of the Y axis, it will be visible on the chart.</li>
-<li><strong>Aggregation mode</strong> - a way in which data will be presented, if it is a sum or an average of results.</li>
-</ul>
+<li>
+<p><strong>Aggregation mode</strong> - a way in which data will be presented, if it is a sum or an average of results.</p>
 </li>
 <li>
 <p>To create an alert for this resource, select the <strong>Create alert</strong> check box. Specify its name and define when it will be raised.</p>
 </li>
-</ol>
-<p><img alt="Configuring advanced settings" class="center" src="images/Custom_monitoring_configuration.png" />
-    <em>Fig. Configuring advanced settings</em></p>
-<ol>
-<li>In the <strong>Actions</strong> panel, click the <strong>Save</strong> button.</li>
+</ul>
+<p><img alt="Configuring advanced settings" class="center" src="images/Custom_monitoring_configuration.png" /></p>
+</li>
+<li>
+<p>In the <strong>Actions</strong> panel, click the <strong>Save</strong> button.</p>
+</li>
 <li>
 <p>After saving the additional panel <strong>Enable/disable alert status collection</strong> will appear where you can enable group alerts (informing you for how many devices (in %) a particular alert occurred). For each defined alert:</p>
+<ul>
+<li>In the <strong>Enable/disable alert status collection</strong>, click the <strong>enable group alert</strong> link next to the alert.</li>
+<li>Define severity levels using lists and define a number above which the particular severity occurs. To disable the particular severity, select <strong>not used</strong> instead of <strong>above</strong>.</li>
+</ul>
+<p><img alt="Enabling alerts" class="center" src="images/Custom_monitoring_alerts.png" /></p>
 </li>
 <li>
-<p>In the <strong>Enable/disable alert status collection</strong>, click the <strong>enable group alert</strong> link next to the alert.</p>
+<p>In the <strong>Actions</strong> panel, click the <strong>Save</strong> button. All resources and alerts will be visible in <strong>Device inventory —&gt; Monitoring</strong>. If you hover over a monitored resource’s graph in any place, you will see its value which was available at the corresponding time. If you hover over an alert’s graph, you will see periods of time the alert was raised/hidden.</p>
 </li>
-<li>Define severity levels using lists and define a number above which the particular severity occurs. To disable the particular severity, select <strong>not used</strong> instead of <strong>above</strong>.</li>
-</ol>
-<p><img alt="Enabling alerts" class="center" src="images/Custom_monitoring_alerts.png" />
-    <em>Fig. Enabling alerts</em></p>
-<ol>
-<li>In the <strong>Actions</strong> panel, click the <strong>Save</strong> button. All resources and alerts will be visible in <strong>Device inventory --&gt; Monitoring</strong>. If you hover over a monitored resource’s graph in any place, you will see its value which was available at the corresponding time. If you hover over an alert’s graph, you will see periods of time the alert was raised/hidden.</li>
 </ol>
 <p><strong>See also:</strong></p>
 <ul>
-<li><a href=".../monitoring-configuration">Monitoring Configuration</a></li>
-<li><a href=".../Monitoring_Type_Specific_Settings">Monitoring Type Specific Settings</a></li>
+<li><a href="Monitoring_Configuration.html">Monitoring Configuration</a></li>
+<li><a href="Monitoring_Type_Specific_Settings.html">Monitoring Type Specific Settings</a></li>
 </ul>
 
 <!-- Link to previous and/or next page -->
