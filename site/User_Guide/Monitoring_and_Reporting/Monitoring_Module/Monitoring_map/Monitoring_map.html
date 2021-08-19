@@ -886,43 +886,39 @@
 
 <!-- Markdown content -->
 <h1 id="monitoring-map">Monitoring map<a class="headerlink" href="#monitoring-map" title="Permanent link">#</a></h1>
-<p>To visualize monitoring that you configured in your system on a map, go to <strong>Monitoring &amp; Reporting --&gt; Monitoring map</strong>.</p>
+<p>To visualize monitoring that you configured in your system on a map, go to <strong>Monitoring &amp; Reporting —&gt; Monitoring map</strong>.</p>
 <h2 id="interface">Interface<a class="headerlink" href="#interface" title="Permanent link">#</a></h2>
-<p><img alt="Monitoring map" src="images/Monitoring_map_interface.png" />
-  <em>Fig. Monitoring map</em></p>
+<p><img alt="Monitoring map" src="images/Monitoring_map_interface.png" title="Monitoring map" /></p>
 <p>The <strong>Monitoring map</strong> view is divided into three main panels:</p>
 <ol>
 <li><strong>Time range</strong> - use it to set a time period for which you want to see visualization. To set a date, use the button or the calendar.</li>
 <li>
 <p><strong>Tabs</strong> - use the tabs to decide which monitoring and options you can see on the map:</p>
-</li>
-<li>
-<p><a href="#Monitoring">Monitoring</a></p>
-</li>
-<li><a href="#Options">Options</a></li>
-<li><a href="#Filters">Filters</a></li>
-<li>
-<p><a href="#Search">Search</a></p>
+<ul>
+<li><a href="#monitoring">Monitoring</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#filters">Filters</a></li>
+<li><a href="#search">Search</a></li>
+</ul>
 </li>
 <li>
 <p><strong>Map</strong> - use it to see monitoring data location.</p>
+<ul>
+<li>On the map you can click a group or a subgroup to see more details in a pop-up window. When the pop-up window opens, depending on displayed data, you can save it as an image or a CSV file. What is more, you can click the group name to go to <strong>Device groups</strong>.</li>
+<li>If there is any data collected for a selected resource, then a proper legend is displayed above the map. For some monitoring resources you will be able to edit the legend by clicking the <strong>Edit</strong> icon. To learn more about legend settings, read the <a href="../Monitoring_Configuration.html">Monitoring configuration</a> chapter. Changes you make on the monitoring map will be also implemented in monitoring configuration.</li>
+</ul>
 </li>
-<li>
-<p>On the map you can click a group or a subgroup to see more details in a pop-up window. When the pop-up window opens, depending on displayed data, you can save it as an image or a CSV file. What is more, you can click the group name to go to <strong>Device groups</strong>.</p>
-</li>
-<li>If there is any data collected for a selected resource, then a proper legend is displayed above the map. For some monitoring resources you will be able to edit the legend by clicking the <strong>Edit</strong> icon. To learn more about legend settings, read the <a href="#monitoring-configuration">Monitoring Configuration</a> chapter. Changes you make on the monitoring map will be also implemented in monitoring configuration.</li>
 </ol>
-<p><img alt="Editing the legend" src="images/Legend.png" />
-   <em>Fig. Editing the legend</em></p>
+<p><img alt="Editing the legend" src="images/Legend.png" title="Editing the legend" /></p>
 <ul>
 <li>Groups circles displayed on the map will be highlighted with colors depending on the collected value and according to the scale.</li>
 <li>To zoom the map, use the zoom slider or your mouse scroll wheel.</li>
-<li>A level in a group hierarchy depends on zoom on the map (thus when zoom is closer, you are able to see smaller groups or even devices). The default association between zoom and depth in the group hierarchy can be overridden by setting a proper SV. Learn how to do it in the <a href="#Overriding_a_default_zooming_feature_using_SV">Overriding a default zooming feature using SV</a>chapter.</li>
+<li>A level in a group hierarchy depends on zoom on the map (thus when zoom is closer, you are able to see smaller groups or even devices). The default association between zoom and depth in the group hierarchy can be overridden by setting a proper SV. Learn how to do it in the <a href="Overriding_a_default_zooming_feature_using_SV.html">Overriding a default zooming feature using SV</a> chapter.</li>
 </ul>
 <h3 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">#</a></h3>
 <p>Use the <strong>Monitoring</strong> section to select a group and monitoring that you want to display on the map.</p>
 <ul>
-<li><strong>Root group</strong> - select a group from which you want to display monitoring. Groups added in <strong>Administration --&gt; Import monitoring groups</strong> are available on the <strong>Root group</strong> list automatically. To add other groups use the <strong>Edit</strong> link (you can also use it to remove any groups). The group selected from the list will be used as a root of a hierarchy displayed below as a tree and as groups circles on the map. If you do not want to show all subgroups, hover over the subgroup and clear the check box next to it.</li>
+<li><strong>Root group</strong> - select a group from which you want to display monitoring. Groups added in <strong>Administration —&gt; Import monitoring groups</strong> are available on the <strong>Root group</strong> list automatically. To add other groups use the <strong>Edit</strong> link (you can also use it to remove any groups). The group selected from the list will be used as a root of a hierarchy displayed below as a tree and as groups circles on the map. If you do not want to show all subgroups, hover over the subgroup and clear the check box next to it.</li>
 <li><strong>Monitoring</strong> - click a monitoring name to display it on the map.</li>
 <li><strong>Resource</strong> - select what resource you want to display.</li>
 <li><strong>Aggregation</strong> - select a proper aggregation of values from the list.</li>
@@ -954,8 +950,8 @@
 <p>Use the <strong>Search</strong> section to find a particular device on the map. Type a device identity and click the <strong>Search</strong> icon. When the device is displayed on the map, you can click it to see more details.</p>
 <p><strong>See also:</strong></p>
 <ul>
-<li><a href="/Overriding_a_default_zooming_feature_using_SV">Overriding a default zooming feature using SV</a></li>
-<li><a href="/UIR_Importing_monitoring_groups_from_CSV">Importing monitoring groups from CSV</a></li>
+<li><a href="Overriding_a_default_zooming_feature_using_SV.html">Overriding a default zooming feature using SV</a></li>
+<li><a href="../../../User_Interface/Administration/Importing_monitoring_groups_from_CSV.html">Importing monitoring groups from CSV</a></li>
 </ul>
 
 <!-- Link to previous and/or next page -->

@@ -87,13 +87,13 @@ Determining a group set where aggregates are available might be a resource consu
 As aggregates are stored separately for every group under monitoring, in case there exist multi-level, wide hierarchy it may lead to excessive storage consumption. Let us consider a situation where devices are grouped by their location into country - region - city - area hierarchy. In such case, area level may not be very useful as it aggregates data from a few devices can be excluded from monitored groups in order to reduce required storage space. It is accomplished by usage of exclusion ﻿patterns expressed as a Java programming language regular expression. If a group name matches any of configured expressions, it will be excluded from monitoring.
 For hierarchy from previous paragraph, selection of root.lwm2m results in device samples collection for devices and aggregates storage for:
 
-| root.lwm2m
-| root.lwm2m.dsl
-| root.lwm2m.dsl.firmware v1
-| root.lwm2m.dsl.firmware v2
-| root.lwm2m.adsl
-| root.lwm2m.adsl.firmware v4
-| root.lwm2m.adsl.firmware v5
+    root.lwm2m
+		root.lwm2m.dsl
+		root.lwm2m.dsl.firmware v1
+		root.lwm2m.dsl.firmware v2
+		root.lwm2m.adsl
+		root.lwm2m.adsl.firmware v4
+		root.lwm2m.adsl.firmware v5
 
 Application of exclusion pattern: root\\.lwm2m\\..* reduces the monitored group set to group root.lwm2m.
 

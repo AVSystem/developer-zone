@@ -8,7 +8,7 @@ To configure the registration status action extension:
 2. In the **Devices registration status action** panel, click the **Setup** button.
 3. In the window that appears, configure your action:
 
-    ![Registration status action window](images/deregister.png "Registration status action window"){: .center }
+    ![Registration status action window](images/deregister.png "Registration status action window")
 
 4. In the **Edit** tab, define your action logic. The lists of registered and deregistered devices are available in the `${args.registeredDevices}` and `${args.deregisteredDevices}` expression contexts.
 
@@ -49,13 +49,12 @@ Assuming that your config directory is called *my-config*:
     map."com.avsystem.ump.core.db.entities.carp.Carp" = /my-config/entities/carp.conf
   }
     ```
-
     !!! warning
         Note that you need to adjust *my-config* inside!
 
 3. Optionally, you can adjust the following entries in `my-config/cdm.conf` to your liking:
 
-    ```
+```
  smg.mod.dataTransceiver {
    carpRegistrationStatusPostImportHook {
      # After a CARP is imported, the fist execution of the CARP job
@@ -68,4 +67,4 @@ Assuming that your config directory is called *my-config*:
      maximalInitialDelay = 2min
    }
  }
-     ```
+ ```

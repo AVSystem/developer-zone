@@ -976,30 +976,25 @@
 </ul>
 <h2 id="reports">Reports<a class="headerlink" href="#reports" title="Permanent link">#</a></h2>
 <p>In this tab you can view all scheduled reports and their results.</p>
-<p><img alt="Reports" src="images/reporting_1.png" />
-   <em>Fig. Reports</em></p>
+<p><img alt="Reports" src="images/reporting_1.png" title="Reports" /></p>
 <ol>
 <li>Reports search input - you can filter reports by a column from a table. You can select a filtering column by clicking the <img alt="🔍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f50d.svg" title=":mag:" /> icon in the table header.</li>
 <li>
 <p>The table contains most important information about scheduled reports:</p>
-</li>
-<li>
-<p><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> - a report was generated successfully</p>
-</li>
+<ul>
+<li><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> - a report was generated successfully</li>
 <li><img alt="🕔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f554.svg" title=":clock5:" /> - a generation process is not finished yet</li>
-<li>
-<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> - there were some problems with the report generation</p>
+<li><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> - there were some problems with the report generation</li>
+</ul>
 </li>
 <li>
 <p>Configuration - you can read more about a configuration in the <a href="#reporting-configuration-details">Reporting Configuration Details</a> section.</p>
 </li>
 <li>
 <p>Buttons:</p>
-</li>
-<li>
-<p><strong>Delete</strong> - use it to delete a report.</p>
-</li>
-</ol>
+<ul>
+<li><strong>Delete</strong> - use it to delete a report.</li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Reports are deleted without confirmation. If you click the <strong>Delete</strong> button, then the report will be deleted immediately.</p>
@@ -1013,40 +1008,38 @@
 </div>
 <ul>
 <li><strong>Modify</strong> - use it to modify a report.</li>
-<li>
-<p><strong>Create similar</strong> - use it to quickly create a new report on the basis of the report you view.</p>
+<li><strong>Create similar</strong> - use it to quickly create a new report on the basis of the report you view.</li>
+</ul>
 </li>
 <li>
 <p><strong>Results</strong> - use it to find all results files and to download them.</p>
 </li>
-</ul>
+</ol>
 <h2 id="schedule-report">Schedule report<a class="headerlink" href="#schedule-report" title="Permanent link">#</a></h2>
 <p>Reports can be customized in many ways. Read a short description of a layout and a detailed description of a configuration with examples.</p>
 <h3 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">#</a></h3>
-<p><img alt="Scheduling-report" src="images/reporting_2.png" />
-   <em>Fig. Scheduling a report</em></p>
+<p><img alt="Scheduling-report" src="images/reporting_2.png" title="Scheduling a report" /></p>
 <ol>
 <li><strong>Title</strong> - use it to name a report.</li>
-<li><strong>Template selection</strong> - use it to select a template of a report. You can find more about templates in the <a href="#reporting_templates">Templates</a> section.</li>
+<li><strong>Template selection</strong> - use it to select a template of a report. You can find more about templates in the <a href="#templates">Templates</a> section.</li>
 <li>
 <p><strong>Schedule</strong> - use it to select when the report will be created:</p>
-</li>
-<li>
-<p><strong>Immediate</strong> - use it to generate a report as soon as possible.</p>
-</li>
+<ul>
+<li><strong>Immediate</strong> - use it to generate a report as soon as possible.</li>
 <li><strong>Single execution</strong> - use it to generate a report once on selected date.</li>
-<li>
-<p><strong>Periodic execution</strong> - use it to generate a report periodically.</p>
+<li><strong>Periodic execution</strong> - use it to generate a report periodically.</li>
+</ul>
 </li>
 <li>
 <p><strong>Time interval</strong> - use it to select a period from which data will be used to generate the report.</p>
 </li>
-<li><strong>Output</strong> - use it to select a format of the report, for example, PDF, HTML or CSV.</li>
-</ol>
-<p><img alt="Schedule-report" src="images/reporting_3.png" />
-   <em>Fig. Scheduling a report - GUI</em></p>
-<ol>
-<li><strong>Transfers</strong> - use it to select how the generated report will be sent, for example, by email or uploaded to a remote server using FTP, SFTP or SCP.</li>
+<li>
+<p><strong>Output</strong> - use it to select a format of the report, for example, PDF, HTML or CSV.</p>
+<p><img alt="Scheduling a report" src="images/reporting_3.png" title="Scheduling a report - GUI" /></p>
+</li>
+<li>
+<p><strong>Transfers</strong> - use it to select how the generated report will be sent, for example, by email or uploaded to a remote server using FTP, SFTP or SCP.</p>
+</li>
 <li><strong>Parameters</strong> - use it to set detailed parameters of the report.</li>
 <li><strong>Retention policy</strong> - use it to set rules of cleaning up old report files.</li>
 <li><strong>Schedule</strong> - use this button to schedule a report.</li>
@@ -1112,22 +1105,20 @@ added at a beginning of a file name. If you do not select this option, then newe
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This rules concern only local report files, they do not affect files uploaded to a remote server using the <a href="#Reporting_Configuration_Details_Transfers">Transfers</a> feature.</p>
+<p>This rules concern only local report files, they do not affect files uploaded to a remote server using the <a href="#transfers">Transfers</a> feature.</p>
 </div>
 <h2 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">#</a></h2>
 <p>Here you can read more about report templates and a panel to manage them.</p>
 <h3 id="layout_1">Layout<a class="headerlink" href="#layout_1" title="Permanent link">#</a></h3>
-<p><img alt="Templates" src="images/reporting_4.png" />
-   <em>Fig. Templates</em></p>
+<p><img alt="Templates" src="images/reporting_4.png" title="Templates" /></p>
 <ol>
 <li><strong>Report templates</strong> - use it to browse through all report templates. Additionally, you can download, delete or check their details. If a report template has an invalid file format, then you will see information <em>Invalid file</em> in the <strong>`Structure</strong> column. What is more, you will not be able to use this template while scheduling a report.</li>
-<li><strong>Add new template</strong> - use it to open a creation form. Check :ref:<code>Reporting_Templates_Custom</code> for more details.</li>
+<li><strong>Add new template</strong> - use it to open a creation form. Check <a href="#custom-templates-creation">Custom templates section</a> for more details.</li>
 </ol>
 <p>When you select the report template from a table, an edition form will open. It looks exactly the same as the creation form.</p>
 <h3 id="custom-templates-creation">Custom templates creation<a class="headerlink" href="#custom-templates-creation" title="Permanent link">#</a></h3>
 <p>Look at the list below to find information about creating custom report templates.</p>
-<p><img alt="custom-templates-creation" src="images/reporting_5.png" />
-<em>Fig. Custom templates creation</em></p>
+<p><img alt="custom-templates-creation" src="images/reporting_5.png" title="Custom templates creation" /></p>
 <ol>
 <li><strong>Save</strong> - use it to save changes.</li>
 <li><strong>Cancel</strong> - use it to discard all changes.</li>
@@ -1141,17 +1132,17 @@ added at a beginning of a file name. If you do not select this option, then newe
 </ol>
 <h2 id="reports-configuration">Reports configuration<a class="headerlink" href="#reports-configuration" title="Permanent link">#</a></h2>
 <p>This panel allows you to configure default reports properties and make scheduling of new reports faster.</p>
-<p><img alt="Reports-configuration1" src="images/reporting_6.png" />
-   <em>Fig. Reports configuration - 1</em></p>
+<p><img alt="Reports-configuration1" src="images/reporting_6.png" title="Reports configuration - 1" /></p>
 <ol>
 <li><strong>Preferences target</strong> - use it to select if this settings should be visible only for you (<em>Current user</em>) or for everyone in UMP.</li>
-<li><strong>Output</strong> - use it to select default output formats. You can use CSV, DOC, HTML, PDF, PPT or XLS.</li>
-</ol>
-<p><img alt="Reports-configuration2" src="images/reporting_7.png" />
-   <em>Fig. Reports configuration - 2</em></p>
-<ol>
-<li><strong>Email address</strong> - use it to add email addresses to which reports will be sent.</li>
-<li><strong>Default retention policy</strong> - look at the :ref:<code>Reporting_Configuration_Details_Retention_Policy</code> section for details.</li>
+<li>
+<p><strong>Output</strong> - use it to select default output formats. You can use CSV, DOC, HTML, PDF, PPT or XLS.</p>
+<p><img alt="Reports-configuration2" src="images/reporting_7.png" title="Reports configuration - 2" /></p>
+</li>
+<li>
+<p><strong>Email address</strong> - use it to add email addresses to which reports will be sent.</p>
+</li>
+<li><strong>Default retention policy</strong> - look at the <a href="#retention-policy">Retention policy</a> section for details.</li>
 <li><strong>Save</strong> - click it to save changes in default reports settings.</li>
 </ol>
 

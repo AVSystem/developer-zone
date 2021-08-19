@@ -17,7 +17,7 @@ To schedule the report:
     * From the **Category** list, select **Monitoring reports**.
     * From the **Report template** list, select **Advanced CSV Report**.
 
-4. Configure settings such as a schedule, time interval, transfer and retention policy. Read how to configure these settings in the [Reporting](../reporting.html) chapter.
+4. Configure settings such as a schedule, time interval, transfer and retention policy. Read how to configure these settings in the [Reporting](reporting.html) chapter.
 5. In the **Parameters** panel:
 
     * Click the **Select group** link and from the list select a group on which you want to schedule the report.
@@ -40,4 +40,4 @@ To schedule the report:
     * An empty space instead of some data because there was no data to present.
     * The \- sign instead of data because there was no aggregation to present.
 
-**See also:** [DEA_Adding_monitoring_data_export_configurations](../User_Interface_Reference/Administration/CSV_Import_%26_Export_templates/Adding_CSV_export_configurations_for_monitoring.html#dea-adding-monitoring-data-export-configurations)
+**See also:** [DEA_Adding_monitoring_data_export_configurations](../User_Interface_Reference/Administration/CSV_Import_%26_Export_templates/Adding_CSV_export_configurations_for_monitoring.html)
