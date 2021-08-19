@@ -1,9 +1,8 @@
 # Custom
 
-Use the *Custom* monitoring to create a fully customized monitoring to satisfy your needs. The monitoring is based on data model parameters and on setting values, you decide what you want to use.
+Use the **Custom** monitoring to create a fully customized monitoring to satisfy your needs. The monitoring is based on data model parameters and on setting values, you decide what you want to use.
 
-![Monitoring - Custom](images/Custom_monitoring.png)
-   *Fig. Monitoring - Custom*
+![Monitoring - Custom](images/Custom_monitoring.png "Monitoring - Custom")
 
 Advanced configuration consists of the following fields:
 

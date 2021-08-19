@@ -36,7 +36,6 @@ Let's analyze this SV: **0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2** in the
 
 If you change last four 2 to 3 then you will get **0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3** and in this case, for last four most close zooms you will see devices.
 
-
 ## Procedure
 
 To override the default zooming feature using SV:
@@ -45,13 +44,12 @@ To override the default zooming feature using SV:
 2. From the group tree, select a group.
 3. Go to **Profiles** and add into:
 
- * The **Name** field, type *monitoringZoomLevelMapping*.
- * The **Value** field, type a comma separated list of 16 non-decreasing values.
+    * The **Name** field, type *monitoringZoomLevelMapping*.
+    * The **Value** field, type a comma separated list of 16 non-decreasing values.
 
-![Zooming the map using SV](images/Zooming_using_SV.png)
-    *Fig. Zooming the map using SV*
+    ![Zooming the map using SV](images/Zooming_using_SV.png "Zooming the map using SV")
 
 4. Click the **Save** link.
-5. To check if your configuration works, go to **Monitoring & Reporting --> Monitoring map**.
+5. To check if your configuration works, go to **Monitoring & Reporting —> Monitoring map**.
 
-**See also:** [Monitoring_map](.../monitoring-map.md)
+**See also:** [Monitoring_map](Monitoring_map.html)

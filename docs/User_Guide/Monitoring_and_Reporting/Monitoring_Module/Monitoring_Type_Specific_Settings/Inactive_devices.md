@@ -6,8 +6,7 @@ This monitoring does not have any contact with devices, it only inspects the sys
 
 **Prerequisites:** To execute the monitoring, the *expectedSessionRatio* (in %) and *periodicInformInterval* (in seconds) SVs must be set on a device or a group of devices.
 
-![Monitoring - Inactive devices](images/Inactive_devices_monitoring.png)
-   *Fig. Monitoring - Inactive devices*
+![Monitoring - Inactive devices](images/Inactive_devices_monitoring.png "Monitoring - Inactive devices")
 
 Alerts that can be triggered by this monitoring:
 
