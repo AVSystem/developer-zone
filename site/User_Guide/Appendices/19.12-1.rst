@@ -1,0 +1,25 @@
+.. _A_19.12-1:
+
+19.12-1
+=======
+
+New features
+------------
+
+ * **Base station command** action was added to enable the user to send base station commands via a proxy device.
+ * **Wait for uplink request** action was introduced as the extended version of **Wait for register response** action in customizable test cases.
+ * Possibility to loop actions in a test case was added.
+ * Optional modification of server response was added in the **Send paused response** action in customizable test cases.
+ * **Pause response** and **Send paused response** actions are the new extended versions of **Paused Register response** and **Send paused Register response** actions in the customizable test cases.
+ * Possibility to import/export a group of test cases was added.
+
+Bug fixes
+---------
+
+ * Simultaneous logging in from different machines to one account can now be disabled.
+
+Documentation
+-------------
+
+ * Description of default system tasks was added.
+ * Description of firewall requirements in the Administrator's Guide was updated.

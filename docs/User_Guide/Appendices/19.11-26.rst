@@ -1,0 +1,15 @@
+.. _A_19.11-26:
+
+19.11-26
+========
+
+New features
+------------
+
+ * Support was added for the WAIT command in customisable test cases.
+
+Bug fixes
+---------
+
+ * The `Referer` header validation now works properly in multi-node deployment.
+ * Redis database storage method was modified to restore access to device data model via the User Interface.

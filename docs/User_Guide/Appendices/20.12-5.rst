@@ -1,0 +1,14 @@
+.. _A_20.12-5:
+ 
+20.12-5
+========
+ 
+New features
+------------
+ 
+ * Device endpoint names can now be set using an expression built out of client certificate data.
+
+Bug fixes
+---------
+
+ * Resources assigned to a superdomain and marked as :guilabel:`Visible for subtenants` cannot be deleted by subtenants.

@@ -1,0 +1,21 @@
+.. _A_20.02-12:
+
+20.02-12
+========
+
+New features
+------------
+
+ * Possibility was added to configure multiple login pages for a single domain and multiple external login methods for a single provider on a single login page.
+ * User creation policies can be configured for individual login pages.
+
+Improvements
+------------
+
+ * Archived logs are now compressed by default to save disk space (only for VM/bare-metal installations).
+
+Documentation
+-------------
+
+ * Adding device certificates via the User Interface was described in the Administrator Guide.
+ * Configuring multiple login pages was described in the Managing domains chapter of the Administrator Guide.

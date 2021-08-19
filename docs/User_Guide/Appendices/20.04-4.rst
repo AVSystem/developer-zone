@@ -1,0 +1,12 @@
+.. _A_20.04-4:
+
+20.04-4
+========
+
+New features
+------------
+
+ * Access to REST API documentation can now be configured so that API user doesn't have to provide local account password upon entering.
+ * Possibility was added to track login page configuration changes in :guilabel:`Historical analysis --> User activity`.
+ * Administrator can now see the authentication methods assigned to users in the :guilabel:`Users management` panel.
+ * CoAP observations survive even after system restart.

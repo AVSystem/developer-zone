@@ -1,0 +1,16 @@
+.. _A_20.10-1:
+
+20.10-1
+=======
+
+New features
+------------
+ * New REST API method **/taskReports/findSince** was added used to return pageable TaskReport search results in a sorted order.
+ * Platform login policy allows creating different accounts for different domains for the same user.
+
+Bug fixes
+---------
+
+ * Default **Best Effort Refresh Task** now does not overwrite configuration edited by user upon system reboot.
+ * Address label is now displayed properly when entering Device Management Center.
+ * Issue was fixed with wrong registration status displaying in the Device Summary.

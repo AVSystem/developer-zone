@@ -1,0 +1,17 @@
+.. _A_20.06-34:
+
+20.06-34
+========
+
+New features
+------------
+
+ * Coiote DM now detects the non-IP transport protocol used by the device and displays the appropriate label in the :guilabel:`Device Summary` view.
+ * Improvements were introduced in logging the communication of non-IP devices.
+ * Option was added to select security policy for new users created in the Login page configuration.
+
+Bug fixes
+---------
+
+ * Integer values expressed in scientific notation (e.g.  *2e4*) and saved in JSON files are now read correctly by the platform.
+ * Properties set as a secrets and used in non-IP communication are now properly decrypted.

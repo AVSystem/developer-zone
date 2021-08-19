@@ -1,0 +1,12 @@
+.. _A_19.10-8:
+
+19.10-8
+=======
+
+New features
+------------
+
+ * New task status icons were introduced.
+ * A panel was added for creating customizable LwM2M protocol tests.
+ * Support was added for READ, WRITE and EXECUTE commands in customized test cases.
+ * GUI database usage in multi-site installations was optimised.

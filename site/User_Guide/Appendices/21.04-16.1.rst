@@ -1,0 +1,21 @@
+.. _A_21.04-16.1:
+
+21.04-16
+========
+
+New features
+------------
+
+ * Support for **OAuth2** authentication for REST requests was added in XMLTask. Client credentials, password and refresh token flows are now supported.
+ * Light sessions mechanism was added to prevent overload during peaks in LwM2M traffic:
+
+    * Light sessions do not run tasks, but Uplink requests are acknowledged,
+    * values of Notifications and Sends are made available in the next non-empty session.
+
+ * Adding group Value Tracking via configuration files was introduced.
+ * Added possibility to perform CoAP ping connectivity check on device before task execution via the Coiote DM API.
+
+Improvements
+------------
+
+ * Sensitive data can be now easily hidden in Coiote DM error logs if there are problems during data import.

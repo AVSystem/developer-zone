@@ -1,0 +1,28 @@
+.. _A_19.07-29:
+
+19.07-29
+========
+
+New features
+------------
+
+ * Coiote DM installation configuration was simplified.
+ * DEB, RPM, and docker image formats were updated to occupy less space and better integrate with host system.
+ * Assigned Device Properties functionality was introduced to keep business properties independent from device properties.
+ * A convenient panel was added for configuring bootstrap logic by tenants on any level.
+ * Support for authenticating users via LDAP was added.
+
+Bug fixes
+---------
+
+ * DNS resolution for Kubernetes environments was improved.
+ * Domain setting in LwM2M Servers configuration was simplified.
+ * Removal of Ad-Hoc monitoring in multitenant environment was improved.
+ * Queueing requests to device in the Objects panel was added to better support LwM2M queue mode.
+ * Support for WOR tag in the registration status extension was added.
+ * Validation when importing devices via CSV was improved.
+
+Documentation
+-------------
+
+ * Description of the Assigned Device Properties functionality was added.

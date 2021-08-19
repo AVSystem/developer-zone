@@ -1,0 +1,15 @@
+.. _A_19.12-18:
+
+19.12-18
+========
+
+New features
+------------
+
+ * Customizable test cases are now executed in the same order as displayed in the global editor.
+ * The `Gateway Devices CSV Report` was added to the Reporting module.
+ * Support was added for **Notify** and **Send** message parsing that can be used in REST calls and other tags.
+ * **Firmware update** action was added in the customizable test cases.
+ * Possibility was added to display the data model of a device from another site in multisite environments.
+ * Possibility to collect CoAP communication dump was added in Administrator view.
+ * Action execution statuses are now visible for individual acitons in customizable test cases.

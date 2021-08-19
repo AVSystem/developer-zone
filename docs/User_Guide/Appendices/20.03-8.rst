@@ -1,0 +1,17 @@
+.. _A_20.03-8:
+
+20.03-8
+========
+
+New features
+------------
+
+ * Customizable test cases: Support was added for the CREATE command.
+ * The Coiote DM Server can now accept Update messages even when device transport binding has changed.
+
+Bug fixes
+---------
+
+ * User can view the :guilabel:`Logs` panel of a device that has produced huge amounts of logs (since 20.03-8.7).
+ * Test logs are collected even for tests that span for over 24 hours (since 20.03-8.10).
+ * Customizable test cases: AT command and Base station command actions work correctly when multiple instances of them are run one after another (since 20.03-8.11)

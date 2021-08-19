@@ -1,0 +1,25 @@
+.. _A_19.08-9:
+
+19.08-9
+=======
+
+New features
+------------
+
+ * Support for CoAP(S) over TCP was added to FOTA and SOTA updates.
+ * Support was added for the LwM2M 1.1 bootstrap Read operation.
+ * Support was added for the Read, Write, Observe and Write operations on LwM2M 1.1 object resources.
+ * Missing endpoint name is now detected based on DTLS identity.
+
+Bug fixes
+---------
+
+ * The objects panel was improved in terms of object instance removal.
+ * ``Message timeout`` info is no longer displayed upon establishing DTLS connection when device connection is rejected.
+ * LwM2M Object / Resource names containing non-printable characters, new lines, dots, or trailing/heading spaces were disallowed to enhance dialect validation.
+ * The process of deleting observed Object Instance was fixed so that it does not affect the Observe-Composite operation.
+
+Documentation
+-------------
+
+ * Description of the LwM2M device firmware upgrade procedure was updated.

@@ -1,0 +1,9 @@
+.. _A_20.10-21:
+
+20.10-21
+========
+
+Bug fixes
+---------
+
+ * Coiote now allows sorting devices in :guilabel:`Device inventory` only by properties for which an index is set in DB collection.

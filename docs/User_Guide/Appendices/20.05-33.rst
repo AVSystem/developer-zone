@@ -1,0 +1,16 @@
+.. _A_20.05-33:
+
+20.05-33
+========
+
+New features
+------------
+
+ * Possibility was added to use **Send** for reporting Firmware Update states.
+ * Possibility was added for administrators to configure uplink and downlink block size within the block-wise transfer mechanism.
+ * It is now possible to set a customized Firmware Upgrade task template per device or device group.
+
+Bug fixes
+---------
+
+ * It is now possible to stylize multiple line descriptions for LwM2M protocol test cases.
