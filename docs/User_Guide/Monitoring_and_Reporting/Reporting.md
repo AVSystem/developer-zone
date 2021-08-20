@@ -60,7 +60,7 @@ Reports can be customized in many ways. Read a short description of a layout and
 8. **Retention policy** - use it to set rules of cleaning up old report files.
 9. **Schedule** - use this button to schedule a report.
 
-### Reporting Configuration Details
+### Reporting configuration details
 
 This part describes the report configuration in details.
 

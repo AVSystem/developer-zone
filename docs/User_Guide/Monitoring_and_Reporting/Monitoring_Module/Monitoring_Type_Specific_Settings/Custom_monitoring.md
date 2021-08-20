@@ -15,7 +15,7 @@ Advanced configuration consists of the following fields:
 
  * **Source** - defines if the resource is taken from the data model or from setting values. Select:
 
-   * **Data model** - to take the resource from the data model. The system prompts available resources, which are marked in bold. If a device has any instances then the system displays their number on the list. If there are no instances on the selected device, the system cannot prompt them and you need to type object instances values manually (type them in the place marked as **{i}**). Read more in [Data model key prompts](#Data_model_key_prompts).
+   * **Data model** - to take the resource from the data model. The system prompts available resources, which are marked in bold. If a device has any instances then the system displays their number on the list. If there are no instances on the selected device, the system cannot prompt them and you need to type object instances values manually (type them in the place marked as **{i}**). Read more in [Data model key prompts](../../../Device_management/Device_operations/Tasks/Task_Configuration.html#data-model-key-prompts).
    * **Setting value** - to take the resource from the setting values.
 
  * **Its type** - defines if a resource is expressed as text or as a number.

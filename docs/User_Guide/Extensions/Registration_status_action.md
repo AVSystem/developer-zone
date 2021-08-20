@@ -54,7 +54,7 @@ Assuming that your config directory is called *my-config*:
 
 3. Optionally, you can adjust the following entries in `my-config/cdm.conf` to your liking:
 
-```
+    ```
  smg.mod.dataTransceiver {
    carpRegistrationStatusPostImportHook {
      # After a CARP is imported, the fist execution of the CARP job
@@ -67,4 +67,4 @@ Assuming that your config directory is called *my-config*:
      maximalInitialDelay = 2min
    }
  }
- ```
+     ```

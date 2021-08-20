@@ -32,6 +32,29 @@ google_analytics:
   - auto
 
 nav:
+        - 'User guide':
+            - 'Monitoring and reporting':
+                -'Monitoring':
+                    -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Configuration.md'                 
+                    -'Specific settings for monitoring': 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings.md':
+                        -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings/Custom_monitoring.md'
+                        -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings/Inactive_devices.md'
+                    -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Adding_monitoring.md'
+                    -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Browsing_Monitoring_Results.md'
+                    -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_map':
+                        -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_map/Monitoring_map.md'
+                        -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_map/Overriding_a_default_zooming_feature_using_SV.md'            
+                    -'User_guide/Monitoring_and_reporting/Reporting.md'
+                    -'User_guide/Monitoring_and_reporting/Scheduling_Advanced_CSV_Report.md'
+                    -'User_guide/Monitoring_and_reporting/Reports_descriptions.md'
+                    -'User_guide/Monitoring_and_reporting/Monitoring_a_single_parameter_on_a_device.md'
+            - 'Extensions':
+                   -'User_guide/Extensions/Integrating_with_the_ThingWorx_platform.md'
+                   -'User_guide/Extensions/Integrating_with_Coiote_IoT_Data_Orchestration.md'
+                   -'User_guide/Extensions/Forwarding_notifications.md'
+                   -'User_guide/Extensions/Registration_status_action.md'
+            - 'Appendixes':
+                    -'User_guide/Appendixes/Third_party_software.md'
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
