@@ -32,6 +32,7 @@ google_analytics:
   - auto
 
 nav:
+<<<<<<< HEAD
         - 'User guide':
             - 'Monitoring and reporting':
                 - 'Monitoring':
@@ -57,6 +58,11 @@ nav:
                 - 'User_guide/Extensions/Registration_status_action.md'             
             - Appendixes:
                  - 'Third party software': 'User_guide/Appendixes/Third_party_software.md'
+=======
+        - 'Device onboarding':
+            - 'Coiote_DM_Device_Onboarding/Quick_start.md'
+            - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
+>>>>>>> f805f9f1b4735574f7ccd4ef74676ecf56a142e2
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
