@@ -18,7 +18,7 @@ In this tab you can view all scheduled reports and their results.
     * :clock5: - a generation process is not finished yet
     * :warning: - there were some problems with the report generation
 
-3. Configuration - you can read more about a configuration in the [Reporting Configuration Details](#reporting-configuration-details) section.
+3. Configuration - you can read more about a configuration in the [Reporting configuration details](#reporting-configuration-details) section.
 4. Buttons:
     * **Delete** - use it to delete a report.
 

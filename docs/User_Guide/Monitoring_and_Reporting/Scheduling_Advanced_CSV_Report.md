@@ -40,4 +40,4 @@ To schedule the report:
     * An empty space instead of some data because there was no data to present.
     * The \- sign instead of data because there was no aggregation to present.
 
-**See also:** [DEA_Adding_monitoring_data_export_configurations](../User_Interface_Reference/Administration/CSV_Import_%26_Export_templates/Adding_CSV_export_configurations_for_monitoring.html)
+**See also:** [Adding CSV monitoring data export configurations](../User_Interface_Reference/Administration/CSV_Import_%26_Export_templates/Adding_CSV_export_configurations_for_monitoring.html)
