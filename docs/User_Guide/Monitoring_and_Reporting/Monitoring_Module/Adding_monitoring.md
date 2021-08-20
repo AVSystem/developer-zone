@@ -6,7 +6,7 @@ To add a monitoring:
 
 1. Go to **Monitoring & Reporting —> Monitoring**.
 2. From the **Available monitoring** list, select a type of monitoring by clicking it.
-3. Configure basic settings. To learn about basic configuration, read the [Monitoring configuration](Monitoring_configuration.html) chapter.
+3. Configure basic settings. To learn about basic configuration, read the [Monitoring configuration](Monitoring_Configuration.html) chapter.
 4. From the **Monitoring target groups** list, select groups you want to monitor. To learn more about adding groups, read the step **6** in the [Monitoring configuration](Monitoring_Configuration.html) chapter.
 5. Configure advanced settings. To learn about configuration of an individual monitoring, read the [Specific settings for monitoring](Monitoring_Type_Specific_Settings.html) chapter.
 6. Optional: Add additional resources. To learn about configuration of additional resources, read the [Adding custom monitoring](#adding-custom-monitoring) chapter.
@@ -67,5 +67,5 @@ To add custom monitoring:
 
 **See also:**
 
-* [Monitoring configuration](Monitoring_configuration.html)
+* [Monitoring configuration](Monitoring_Configuration.html)
 * [Specific settings for monitoring](Monitoring_Type_Specific_Settings.html)

@@ -52,4 +52,4 @@ To override the default zooming feature using SV:
 4. Click the **Save** link.
 5. To check if your configuration works, go to **Monitoring & Reporting —> Monitoring map**.
 
-**See also:** [Monitoring_map](Monitoring_map.html)
+**See also:** [Monitoring map](Monitoring_map.html)
