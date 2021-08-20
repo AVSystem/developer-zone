@@ -36,7 +36,7 @@ nav:
             - 'Monitoring and reporting':
                 -'Monitoring':
                     -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Configuration.md'                 
-                    -'Specific settings for monitoring': 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings.md':
+                    -'Specific settings for monitoring': 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings.md'
                         -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings/Custom_monitoring.md'
                         -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings/Inactive_devices.md'
                     -'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Adding_monitoring.md'
