@@ -906,20 +906,20 @@ map."com.avsystem.ump.core.db.entities.carp.Carp" = /my-config/entities/carp.con
 </li>
 <li>
 <p>Optionally, you can adjust the following entries in <code>my-config/cdm.conf</code> to your liking:</p>
-</li>
-</ol>
 <p><code>smg.mod.dataTransceiver {
    carpRegistrationStatusPostImportHook {
-     # After a CARP is imported, the fist execution of the CARP job
-     # will be delayed by a random duration between the two provided
-     # This is meant as a form of preventing many computation- and I/O-
-     # intensive tasks from executing at once during system startup
-     # You can set both to the same value to eliminate randomness
-     # Or set both to "0s" to disable delay
-     minimalInitialDelay = 20s
-     maximalInitialDelay = 2min
+ # After a CARP is imported, the fist execution of the CARP job
+ # will be delayed by a random duration between the two provided
+ # This is meant as a form of preventing many computation- and I/O-
+ # intensive tasks from executing at once during system startup
+ # You can set both to the same value to eliminate randomness
+ # Or set both to "0s" to disable delay
+ minimalInitialDelay = 20s
+ maximalInitialDelay = 2min
    }
  }</code></p>
+</li>
+</ol>
 
 <!-- Link to previous and/or next page -->
 
