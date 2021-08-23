@@ -5,7 +5,7 @@ The below table presents all third party libraries with their licenses.
 <style>
     table {
 width: 90%;
-overflow-wrap: break-all;
+overflow-wrap: anywhere;
 word-break: break-all;
 
 </style>
