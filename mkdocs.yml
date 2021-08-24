@@ -11,7 +11,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.superfences
   - pymdownx.tabbed
-  - pymdownx.superfences 
+  - pymdownx.superfences
+  - pymdownx.smartsymbols  
   - attr_list
   - admonition
   - pymdownx.details
