@@ -16,6 +16,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.emoji
   - toc:
      permalink: "#"
 
@@ -28,6 +29,22 @@ google_analytics:
   - auto
 
 nav:
+        - 'User Guide':
+            - Device management:
+                - Configuring devices:
+                    - 'User_Guide/Device_management/Configuring_devices/Adding_an_image_of_a_device.md'
+                    - 'User_Guide/Device_management/Configuring_devices/Editing_security_settings.md'
+                    - 'User_Guide/Device_management/Configuring_devices/Selecting_dialects_for_devices_and_groups.md'
+                    - HOCON and VirtualDM:
+                        - 'User_Guide/Device_management/Configuring_devices/Dialects/HOCON.md'
+                        - Virtual Data Model:
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Overview.md'
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Live_Data_Model_strategies.md'
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/LWM2M.md'
+                            
+                            
+                        
+                        
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'

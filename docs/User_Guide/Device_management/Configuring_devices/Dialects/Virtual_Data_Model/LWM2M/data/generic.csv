@@ -1,0 +1,9 @@
+Subcategory;Parameter name ;Virtual Data Model ;Strictly required;Type;Unit/Values;R/W;Description;UMP feature;Standard;Example 
+Generic;MAC;MAC;yes;string;net.stripMac(value) ;R;;Identification ;;
+;OUI;OUI;yes;string;;R;;Identification;;
+;Serial;Serial;yes;string;;R;;Identification ;LWM2M_Device-v1_0;Device.0.Serial Number
+;HardwareVersion;HardwareVersion;;string;;R;;Identification ;;
+;SoftwareVersion;SoftwareVersion;yes;string;;R;;Identification;LWM2M_Device-v1_0;Device.0.Firmware Version
+;Manufacturer;Manufacturer;;string;;R;;Identification ;LWM2M_Device-v1_0;Device.0.Manufacturer
+;Product class;ProductClass;;string;;R;;Identification;;
+;Model name;Model;yes;string;;R;;Identification;LWM2M_Device-v1_0;Device.0.Model Number

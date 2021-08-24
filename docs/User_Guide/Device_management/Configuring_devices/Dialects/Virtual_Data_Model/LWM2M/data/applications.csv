@@ -1,0 +1,10 @@
+﻿Subcategory;Parameter name ;Virtual Data Model ;Strictly required;Type;Unit/Values;R/W;Description;UMP feature;Specification
+Applications;Name;Applications.{i}.Name;yes;string;;RO;Name of installed software;;Lightweight M2M – Software management Object
+;Application version;Applications.{i}.Version;yes;string;;RO;Version of installed software;;Lightweight M2M – Software management Object
+;Status;Applications.{i}.Status;;string;"* initial
+* download started
+* downloaded
+* delivered
+* installed";RO;Status of installation;;Lightweight M2M – Software management Object
+;Enable ;Applications.{i}.Enable;yes;string;"* enabled 
+* disabled";RO;Indicate if software is enabled ;;Lightweight M2M – Software management Object

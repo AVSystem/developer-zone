@@ -1,0 +1,3 @@
+Subcategory;Parameter name ;Virtual Data Model ;Strictly required;Type;Unit/Values;R/W;Description;UMP feature;Standard;Example 
+Resources;Avaliable RAM;Resources.RAMAvaliable ;;uint;MiB;R;The total physical RAM, in kilobytes, installed on the device;Monitoring;LWM2M_Device-v1_0;Device.0.Memory Total
+;Free RAM;Resources.RAMFree ;;uint;MiB;R;The free physical RAM, in kilobytes, currently available on the device;Monitoring;LWM2M_Device-v1_1;Device.0.Memory Free
