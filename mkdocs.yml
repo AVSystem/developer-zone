@@ -41,9 +41,13 @@ nav:
                             - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Overview.md'
                             - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Live_Data_Model_strategies.md'
                             - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/LWM2M.md'
-                            
-                            
-                        
+                - Setting panels:
+                    - 'User_Guide/Device_management/Setting_panels/Setting_panels.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_XML_Definition.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Content.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Editor.md'
+                    - 'User_Guide/Device_management/Setting_panels/Bundled_Setting_Panels.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Examples_-_Tips_and_Tricks.md'      
                         
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'

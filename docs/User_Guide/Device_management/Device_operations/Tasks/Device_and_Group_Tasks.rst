@@ -1,0 +1,84 @@
+.. include:: /icons.rst
+
+.. _UG_T_Device_and_group_tasks:
+
+======================
+Device and group tasks
+======================
+
+Tasks can be scheduled either for a single device or for
+:ref:`device groups <UIR_Device_Groups>`. In most real world scenarios, group tasks are more
+useful - however, it is a good development practice to create a task on a single
+device and then copy it to the desired group once it is well tested and production-ready.
+This approach minimizes the risk of mistakes - however, there
+are no technical obstacles to creating a task on a group level from scratch.
+The only difference between a group task and a device task is the target - all
+other configuration options are identical (except the
+:guilabel:`Applies to subgroups` option which makes no sense in a single device
+context).
+
+.. _UG_T_DGT_Group_tasks:
+
+-----------
+Group tasks
+-----------
+
+Tasks configured for a device group can be managed from :menuselection:`Device groups --> Group tasks`.
+
+.. tip:: Before you schedule a task on a group of devices, test it on a single device to see if your configuration is correct.
+
+.. figure:: images/group_tasks.*
+  :align: center
+
+1. :guilabel:`Recalculate device count` - use it to recalculate a number of devices on which tasks have been executed.
+   This is equivalent to clicking :guilabel:`Recalculate` in the :guilabel:`Device count` column of the task list.
+2. :guilabel:`Refresh` - use it to refresh the task list.
+3. :guilabel:`Show task statistics` - use it to display a number of all active and stopped tasks which can be grouped by task type.
+4. :guilabel:`Add task` - use it to configure a new task assigned to the group.
+5. Task list - a list of tasks currently scheduled for the group. Selecting an entry will display the bottom panel with task details and
+   editing controls. Some of tasks are tasks inherited from the parent
+   group. Their editing options are limited from the current view - to actually
+   edit them, go to the parent group they are defined in. You can disable group task execution for specific devices.
+
+.. _UG_T_DGT_Device_tasks:
+
+------------
+Device tasks
+------------
+
+Tasks configured for a specific device can be managed from :menuselection:`Device inventory --> Device tasks`.
+
+.. figure:: images/device_tasks.*
+  :align: center
+
+1. Search - it allows to enter a sub-string with which the list of tasks is filtered. By default, the entries are filtered by the column currently highlighted with
+   the green |icon_SEARCH_CURRENT_16| icon. The |icon_SEARCH_16| icon on the left can be used to toggle the advanced (criteria-based) :ref:`search <OG_Search>` window.
+2. The :guilabel:`Tasks at next session` check box - select this check box to filter the list so that is shows only the tasks
+   which will be executed during next management session between the device and server.
+   Note the fact that tasks may be scheduled depending on a date and time, the set of
+   tasks executed during a session may differ depending on the date and time as
+   well. In the :guilabel:`Tasks at next session` view, a hypothetical session execution at exactly the present time is assumed by default.
+   The :guilabel:`Session start time` widget will appear as well, it allows you to show which tasks will be executed, if the next session will occur at some
+   arbitrary specified time.
+
+ .. note:: If another session occurs before that time, the set of tasks executed may be different because some tasks may be already executed then.
+
+3. :guilabel:`Add new task` - use it to configure a new task assigned to the device.
+4. Export and statistic options:
+
+ * :guilabel:`Lightweight table view` - use it to export data to the HTML view.
+ * :guilabel:`CSV Export` - use it to export data to a CSV table.
+ * :guilabel:`Number of tasks` - it displays a number of tasks that has been started for the current device.
+ * :guilabel:`Current task statistics` - it shows a dialog box that displays a number of all, active and stopped tasks which can be grouped by a task type.
+
+ .. tip:: The above options, except :guilabel:`Current task statistics`, take the current list filter (that is, the search box and :guilabel:`Tasks at next session` check box) into account. However,
+           pagination is not considered - all tasks fulfilling the filter criteria are exported (or counted).
+
+5. Task list - a list of tasks currently scheduled for the device. Selecting an entry will display the bottom panel with task details and editing controls. This list includes both device and group tasks - all tasks affecting the selected device. They can be distinguished by the task ID - device tasks start with :guilabel:`d:` and group tasks start with :guilabel:`g:`.
+6. :guilabel:`Activate for` - use it to activate the task/:guilabel:`Deactivate for` - use it to deactivate group task execution for a single specific device while still allowing it to execute for all other devices in the assigned group.
+7. Task control - use these widgets to review and edit the task state and configuration.
+
+**See also:**
+ * You can also create, view and edit tasks from the :ref:`UG_UIR_DA_Tasks` panel in the :ref:`UIR_Device_Actions` menu.
+ * :ref:`UIR_Group_tasks`
+ * :ref:`UG_T_Adding_tasks_to_groups`
