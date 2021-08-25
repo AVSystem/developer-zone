@@ -48,6 +48,11 @@ nav:
                 - 'User_Guide/Monitoring_and_Reporting/Scheduling_Advanced_CSV_Report.md'              
                 - 'User_Guide/Monitoring_and_Reporting/Reports_descriptions.md'
                 - 'User_Guide/Monitoring_and_Reporting/Monitoring_a_single_parameter_on_a_device.md'
+            - 'REST API in Coiote DM':
+                   - 'User_Guide/REST_API/Limiting_the_number_of_REST_API_requests.md'
+                   - 'User_Guide/REST_API/REST_API_Authentication.md'
+                   - 'User_Guide/REST_API/Adding_user_API_authorization_tokens.md'
+                   - 'User_Guide/REST_API/Changing_REST_API_documentation_authentication_method.md'
             - 'Extensions':
                 - 'User_Guide/Extensions/Integrating_with_the_ThingWorx_platform.md'
                 - 'User_Guide/Extensions/Integrating_with_Coiote_IoT_Data_Orchestration.md'
