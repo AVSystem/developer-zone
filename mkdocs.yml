@@ -49,6 +49,9 @@ nav:
                     - 'User_Guide/Device_management/Setting_panels/Bundled_Setting_Panels.md'
                     - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Examples_-_Tips_and_Tricks.md'      
                         
+        - 'Device onboarding':
+            - 'Coiote_DM_Device_Onboarding/Quick_start.md'
+            - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
