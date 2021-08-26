@@ -53,6 +53,24 @@ nav:
                    - 'User_Guide/REST_API/REST_API_Authentication.md'
                    - 'User_Guide/REST_API/Adding_user_API_authorization_tokens.md'
                    - 'User_Guide/REST_API/Changing_REST_API_documentation_authentication_method.md'
+            - 'User Interface Reference':
+                - 'Administration':
+                   - 'User_Guide/User_Interface_Reference/Administration/Adding_terms_of_service.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_list.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_summary.md'
+                   - 'Dialects':
+                        - 'User_Guide/User_Interface_Reference/Administration/DTLS_TLS_Certificates.md'                   
+                   - 'User_Guide/User_Interface_Reference/Administration/DTLS_TLS_Certificates.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/Expressions_Sandbox.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/Importing_monitoring_groups_from_CSV.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/Licensing_Info.md'                   
+                   - 'User_Guide/User_Interface_Reference/Administration/LwM2M_servers.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates.md'
+                   - 'Managing exporting and importing entities':
+                        - 'User_Guide/User_Interface_Reference/Administration/DTLS_TLS_Certificates.md'                    
+                   - 'User_Guide/User_Interface_Reference/Administration/Predefined_Schedules_Editor.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/Resources.md'
+                   - 'User_Guide/User_Interface_Reference/Administration/Task_Templates.md'    
             - 'Extensions':
                 - 'User_Guide/Extensions/Integrating_with_the_ThingWorx_platform.md'
                 - 'User_Guide/Extensions/Integrating_with_Coiote_IoT_Data_Orchestration.md'
