@@ -29,7 +29,7 @@ google_analytics:
   - auto
 
 nav:
-        - 'User Guide':
+        - User Guide:
             - Device management:
                 - Configuring devices:
                     - 'User_Guide/Device_management/Configuring_devices/Adding_an_image_of_a_device.md'
@@ -47,11 +47,27 @@ nav:
                     - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Content.md'
                     - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Editor.md'
                     - 'User_Guide/Device_management/Setting_panels/Bundled_Setting_Panels.md'
-                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Examples_-_Tips_and_Tricks.md'      
-                        
-        - 'Device onboarding':
-            - 'Coiote_DM_Device_Onboarding/Quick_start.md'
-            - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Examples_-_Tips_and_Tricks.md'        
+                - Connecting devices:
+                    - 'User_Guide/Device_management/Connecting_devices/Device_onboarding/Quick_start.md'
+                    - 'User_Guide/Device_management/Connecting_devices/Device_onboarding/Device_onboarding.md'
+                    - 'User_Guide/Device_management/Connecting_devices/DM_Exporting_devices_to_CSV.md'
+                    - 'User_Guide/Device_management/Connecting_devices/DM_Importing_devices_from_CSV.md'
+                    - 'User_Guide/Device_management/Connecting_devices/Handling_invalid_messages_from_devices.md'
+                    - 'User_Guide/Device_management/Connecting_devices/LwM2M_servers_interface.md'
+                    - 'User_Guide/Device_management/Connecting_devices/Configuring_a_management_server.md'
+                    - Managing LwM2M bootstrap:
+                        - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/LwM2M_bootstrap.md'
+                        - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/LwM2M_Bootstrap_interface.md'
+                        - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/Configuring_a_bootstrap_server.md'
+                - Managing device groups:
+                    - 'User_Guide/Device_management/Managing_device_groups/Adding_devices_to_a_group.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Managing_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Managing_groups_documents.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Upgrading_firmware_for_LwM2M_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Managing_LwM2M_software_for_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Setting_resource_observation_on_device_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Viewing_monitoring_alerts.md'
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'

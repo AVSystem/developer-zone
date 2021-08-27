@@ -1,7 +1,4 @@
-.. _UG_MLB_LwM2M_bootstrap:
-
-LwM2M bootstrap
-===============
+# LwM2M bootstrap - overview
 
 Read this chapter to learn basic information about LwM2M bootstrap.
 
@@ -30,18 +27,6 @@ Only two last modes involve LwM2M Server.
  * The device accepts (or rejects) settings.
  * After the bootstrap procedure is finished, the device connects to the configured LwM2M Server. If the device cannot connect, then the whole procedure is restarted by sending the bootstrap request once again.
 
-.. figure:: images/Client_initiated_bootstrap.*
-   :align: center
-
-   *Fig. Client Initiated Bootstrap*
+![Client-initiated Bootstrap](images/Client_initiated_bootstrap.png "Client Initiated Bootstrap")
 
 **Server Initiated Bootstrap** is the same procedure but it does not involve the bootstrap request form the device to the server. It assumes that the server knows when to perform bootstrap from an external source (for example, it is notified by another system).
-
-Typical bootstrap use cases
----------------------------
-
- * :ref:`UG_MLB_Configuring_a_management_server`
- * :ref:`UG_MLB_Configuring_a_bootstrap_server`
- * :ref:`UG_MLB_Configuring_custom_bootstrap_procedure_with_additional_logic`
- * :ref:`UG_MLB_Configuring_a_custom_bootstrap_procedure_with_communication_with_an_external_service`
- * :ref:`UG_MLB_Configuring_a_custom_bootstrap_procedure_using_low_level_mechanisms`
