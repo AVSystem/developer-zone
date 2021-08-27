@@ -21,8 +21,8 @@ To add a CSV import configuration:
 
 7. Before importing the CSV file, you can validate it. For example, you can check if IP addresses of devices (they are in the third column in the file) are correct by selecting **Validate** from **Available operations** and typing into the **Forced value** field the following expression: *${net.isIp(columns.get(2))}*.
 
-If any IP address is incorrect, then the list will not be imported and a proper message will be shown in the **Import log** field. Add validation at the end of the import configuration if you do not want to skip content of any column from the CSV file or use this content as a validation condition.
-To use a current column content from the CSV file as the validation condition, use **Validate** with no value in the **Forced value** field.
+    If any IP address is incorrect, then the list will not be imported and a proper message will be shown in the **Import log** field. Add validation at the end of the import configuration if you do not want to skip content of any column from the CSV file or use this content as a validation condition.
+    To use a current column content from the CSV file as the validation condition, use **Validate** with no value in the **Forced value** field.
 
 8. After adding all columns you can remove, edit or move them:
 

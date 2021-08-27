@@ -1,0 +1,47 @@
+.. _DA_Importing_devices_from_CSV:
+
+Importing devices from CSV
+==========================
+
+Learn how to import a list of devices  from a CSV file. You can use import to, for example, upload additional data, change some configuration or groups for multiple devices at the same time.
+
+To import devices from a CSV file:
+
+1. Go to :menuselection:`Device actions --> Import devices from CSV`.
+2. From the list select whether you want to import devices.
+3. From the :guilabel:`Select import configuration` list, select a template that was previously created in :menuselection:`Administration --> CSV Import/Export templates`.
+4. If you do not use the template, click the :guilabel:`Show configuration editor` link and select one of editor modes:
+
+ * :guilabel:`Simple` - to add a column, click it in the :guilabel:`Available operations` table.
+ * :guilabel:`Expressions` - to add the column, click the :guilabel:`Add column` link and start typing expressions. To see expression suggestions for a device, use the :guilabel:`Select representative of imported devices` option.
+ * :guilabel:`Plain text` - to add the column, start typing expressions. You should type one expression per line.
+
+ .. tip:: * Remember to add a column that specifies an ID of a device.
+          * To set particular values for some columns and override values from a file, type them into the :guilabel:`Forced value` field.
+
+5. Before importing the CSV file, you can validate it. For example, you can check if IP addresses of devices (they are in the third column in the file) are correct by selecting :guilabel:`Validate` from :guilabel:`Available operations` and typing into the :guilabel:`Forced value` field the following expression: *${net.isIp(columns.get(2))}*.
+   If any IP address is incorrect, then the list will not be imported and a proper message will be shown in the :guilabel:`Import log` field. Add validation at the end of the import configuration if you do not want to skip content of any column from the CSV file or use this content as a validation condition.
+   To use a current column content from the CSV file as the validation condition, use :guilabel:`Validate` with no value in the :guilabel:`Forced value` field.
+6. After adding all columns you can remove, edit or move them:
+
+ * To remove a column in the :guilabel:`Expressions` or :guilabel:`Simple` tab, click the :guilabel:`Remove` icon next to it.
+ * To edit the column, go to the :guilabel:`Expressions` or :guilabel:`Plain text` tab, and make necessary changes.
+ * To change an order of columns, go to the :guilabel:`Simple` tab, and use the drag and drop functionality.
+
+.. note:: Remember that the order of columns in your template and in the file must be the same, otherwise data uploaded may be incorrect.
+
+7. If you do not want to add headers (headers are column names), select the :guilabel:`Skip CSV header (first line)` check box.
+8. If you want to only verify your CSV file, select the :guilabel:`Only verify` check box. Devices from the file will not be imported at this point.
+
+.. figure:: images/DA_Importing_devices_from_CSV.*
+   :align: center
+
+   *Fig. Importing devices from CSV*
+
+9. From the :guilabel:`Select import mode` list, decide what devices you want to import.
+10. To add imported devices to groups click the :guilabel:`Add devices to groups` link, and if you want to remove imported devices from groups, click the :guilabel:`Remove devices from groups` link.
+11. If you select the :guilabel:`Override domains` check box, all domains will be overridden by a domain you select from the list.
+12. To upload the file with a list of devices, click the :guilabel:`Upload` button.
+13. To import devices, click the :guilabel:`Perform import` button.
+
+.. tip:: You can also :ref:`import devices <DM_Importing_devices_from_CSV>` from the :guilabel:`Device inventory` menu using the :guilabel:`Import devices from CSV` icon.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+  <title>Oval</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g id="device-management" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+     transform="translate(-184.000000, -152.000000)">
+    <g id="device-summary" transform="translate(-2.000000, 40.000000)" fill="#47A662">
+      <circle id="Oval" cx="191" cy="117" r="5"></circle>
+    </g>
+  </g>
+</svg>
