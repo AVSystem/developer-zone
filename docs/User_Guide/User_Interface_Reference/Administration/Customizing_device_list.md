@@ -4,7 +4,7 @@ Read this chapter to learn how to customize the device list displayed in **Devic
 
 To customize device list:
 
-1. Go to **Administration —> Device inventory preferences**.
+1. Go to **Administration --> Device inventory preferences**.
 2. From the **Target** list, select the target.
 3. Configure the device list:
     * To change an order of entries, use the drag and drop functionality or in the **Priority** column, click the triangles to move the particular entry up or down.

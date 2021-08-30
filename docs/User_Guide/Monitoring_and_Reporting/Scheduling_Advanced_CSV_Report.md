@@ -1,6 +1,6 @@
 # Scheduling advanced CSV Report
 
-Read this section to learn how to schedule the report using the monitoring data export configuration prepared in **Administration —> CSV Import/Export templates**.
+Read this section to learn how to schedule the report using the monitoring data export configuration prepared in **Administration --> CSV Import/Export templates**.
 
 **Prerequisites:** In order to control report execution parallelism, the used thread pool size can be set in the `cdm.conf` file in the *smg.mod.gui.reportPoolSize=4* setting.
 

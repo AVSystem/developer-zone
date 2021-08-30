@@ -3,7 +3,7 @@
 Task templates are pre-configured tasks stencil that can be used as a foundation for specific task configuration.
 This is a feature intended to save your time, if you need to frequently schedule similar tasks or want to execute complicated ones.
 Common practice is to provide **Quick Fix** actions for common problems.
-The Task template editor is available in **Administration —> Task templates**.
+The Task template editor is available in **Administration --> Task templates**.
 
 ## Layout
 
@@ -50,7 +50,7 @@ A comprehensive description can be found in [Tasks](../../Device_management/Devi
 
 ## Adding a new task template
 
-To add the task template go to **Administration —> Task templates** and:
+To add the task template go to **Administration --> Task templates** and:
 
 1. Provide a name.
 2. Select a domain (more details in [Managing multitenancy](../../Managing_Multitenancy.html)).
@@ -72,9 +72,9 @@ To add the task template go to **Administration —> Task templates** and:
 
 Templates can be used in the following contexts:
 
-* Global - **Device actions —> Tasks —> Add new task**
-* Group -  **Device groups —> Group tasks —> Add task**
-* Device - **Device inventory —> Device Management Center —> Device tasks —> Add new task**
+* Global - **Device actions --> Tasks --> Add new task**
+* Group -  **Device groups --> Group tasks --> Add task**
+* Device - **Device inventory --> Device Management Center --> Device tasks --> Add new task**
 
 
 ## Executing Quick Fix

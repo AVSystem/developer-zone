@@ -4,7 +4,7 @@ Read this chapter to learn how to add new object definitions to your device dial
 
 To add a new object definition:
 
-1. Go to **Administration —> Device dialects**.
+1. Go to **Administration --> Device dialects**.
 2. In the **Device dialects** panel, click **Import LwM2M object definition**.
 
     ![Dialects GUI](images/add_new_object_definition_1.png "Dialects GUI"){: .center }

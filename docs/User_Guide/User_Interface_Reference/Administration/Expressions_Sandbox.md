@@ -2,8 +2,8 @@
 
 Use **Expressions sandbox** to test your expressions in a safe, read-only mode without waiting for provisioning session with a device. You can create a context in which your expression will be evaluated.
 
-Layout
-------
+## Layout
+
 On the left side of the panel, you can specify your expression and you can see the results. On the right side of the panel, you can specify the context in which the expression will be executed.
 
 ![Expressions sandbox GUI - 1](images/expressions_sandbox_1.png "Expressions sandbox GUI-1"){: .center }

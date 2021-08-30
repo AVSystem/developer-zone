@@ -4,7 +4,7 @@ The registration status action extension lets you configure actions performed on
 
 To configure the registration status action extension:
 
-1. Go to **Administration —> Extensions**.
+1. Go to **Administration --> Extensions**.
 2. In the **Devices registration status action** panel, click the **Setup** button.
 3. In the window that appears, configure your action:
 

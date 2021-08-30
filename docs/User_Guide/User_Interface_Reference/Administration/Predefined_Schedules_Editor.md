@@ -5,7 +5,7 @@ Schedules are used in many cases in UMP. For example, you can select time period
 
 ## Layout
 
-Use the **Predefined schedules editor** to manage all predefined schedules in the system. Go to **Administration —> Predefined schedules**.
+Use the **Predefined schedules editor** to manage all predefined schedules in the system. Go to **Administration --> Predefined schedules**.
 
 ![Predefined schedules](images/14.png "Predefined schedules"){: .center }
 

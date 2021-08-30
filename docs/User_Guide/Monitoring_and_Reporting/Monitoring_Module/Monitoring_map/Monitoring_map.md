@@ -1,6 +1,6 @@
 # Monitoring map
 
-To visualize monitoring that you configured in your system on a map, go to **Monitoring & Reporting —> Monitoring map**.
+To visualize monitoring that you configured in your system on a map, go to **Monitoring & Reporting --> Monitoring map**.
 
 ## Interface
 

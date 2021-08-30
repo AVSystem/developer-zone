@@ -4,7 +4,7 @@ Read this chapter to learn how to customize the device summary displayed in **De
 
 To customize device summary:
 
-1. Go to **Administration —> Device summary editor**.
+1. Go to **Administration --> Device summary editor**.
 2. From the **Target** list, select the target.
 3. Configure the device summary:
 

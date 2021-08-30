@@ -2,7 +2,7 @@
 
 Read this section to learn what reports are available in the system and what they display. Look at the table below to find out more.
 
-You can access all reports from **Monitoring & Reporting —> Reports**. To generate a report go to the **Schedule report** tab.
+You can access all reports from **Monitoring & Reporting --> Reports**. To generate a report go to the **Schedule report** tab.
 
 | Name                | Category           | Description                                                                                                                       |
 |---------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------|

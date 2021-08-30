@@ -4,7 +4,7 @@ As an administrator of the Coiote DM installation you can add and edit Terms of 
 
 To add Terms of Service:
 
-1. Go to **Administration —> Terms of Service**.
+1. Go to **Administration --> Terms of Service**.
 2. Click the **Create a new version** link.
 3. Type a proper text containing Terms of Service. You can use various formatting tools.
 

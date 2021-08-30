@@ -4,7 +4,7 @@ Read this chapter to learn how to forward a message to a REST endpoint.
 
 To forward a notification:
 
-1. Go to **Administration —> Extensions**.
+1. Go to **Administration --> Extensions**.
 2. In the **My custom REST template** panel, click the **Setup** button.
 3. Configure your message:
     * From a list of groups, select a group to which you want to forward a message. If you want to add a new group, click the **click here** link.
