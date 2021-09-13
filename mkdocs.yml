@@ -31,23 +31,6 @@ google_analytics:
 nav:
         - User Guide:
             - Device management:
-                - Configuring devices:
-                    - 'User_Guide/Device_management/Configuring_devices/Adding_an_image_of_a_device.md'
-                    - 'User_Guide/Device_management/Configuring_devices/Editing_security_settings.md'
-                    - 'User_Guide/Device_management/Configuring_devices/Selecting_dialects_for_devices_and_groups.md'
-                    - HOCON and VirtualDM:
-                        - 'User_Guide/Device_management/Configuring_devices/Dialects/HOCON.md'
-                        - Virtual Data Model:
-                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Overview.md'
-                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Live_Data_Model_strategies.md'
-                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/LWM2M.md'
-                - Setting panels:
-                    - 'User_Guide/Device_management/Setting_panels/Setting_panels.md'
-                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_XML_Definition.md'
-                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Content.md'
-                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Editor.md'
-                    - 'User_Guide/Device_management/Setting_panels/Bundled_Setting_Panels.md'
-                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Examples_-_Tips_and_Tricks.md'        
                 - Connecting devices:
                     - 'User_Guide/Device_management/Connecting_devices/Device_onboarding/Quick_start.md'
                     - 'User_Guide/Device_management/Connecting_devices/Device_onboarding/Device_onboarding.md'
@@ -60,6 +43,23 @@ nav:
                         - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/LwM2M_bootstrap.md'
                         - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/LwM2M_Bootstrap_interface.md'
                         - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/Configuring_a_bootstrap_server.md'
+                - Configuring devices:
+                    - 'User_Guide/Device_management/Configuring_devices/Adding_an_image_of_a_device.md'
+                    - 'User_Guide/Device_management/Configuring_devices/Editing_security_settings.md'
+                    - 'User_Guide/Device_management/Configuring_devices/Selecting_dialects_for_devices_and_groups.md'
+                    - HOCON and VirtualDM:
+                        - 'User_Guide/Device_management/Configuring_devices/Dialects/HOCON.md'
+                        - Virtual Data Model:
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Overview.md'
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Live_Data_Model_strategies.md'
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/LWM2M.md'
+                - Device operations:
+                    - 'User_Guide/Device_management/Device_operations/LwM2M_operations.md'
+                    - Handling device data:
+                        - 'User_Guide/Device_management/Device_operations/Handling_device_data/Expressions.md'
+                    - Firmware and software upgrades:
+                        - 'User_Guide/Device_management/Device_operations/Managing_LwM2M_software.md'
+                        - 'User_Guide/Device_management/Device_operations/Upgrading_firmware_for_LwM2M_devices.md'
                 - Managing device groups:
                     - 'User_Guide/Device_management/Managing_device_groups/Adding_devices_to_a_group.md'
                     - 'User_Guide/Device_management/Managing_device_groups/Managing_groups.md'
@@ -68,6 +68,13 @@ nav:
                     - 'User_Guide/Device_management/Managing_device_groups/Managing_LwM2M_software_for_groups.md'
                     - 'User_Guide/Device_management/Managing_device_groups/Setting_resource_observation_on_device_groups.md'
                     - 'User_Guide/Device_management/Managing_device_groups/Viewing_monitoring_alerts.md'
+                - Setting panels:
+                    - 'User_Guide/Device_management/Setting_panels/Setting_panels.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_XML_Definition.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Content.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Editor.md'
+                    - 'User_Guide/Device_management/Setting_panels/Bundled_Setting_Panels.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Examples_-_Tips_and_Tricks.md'        
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
