@@ -21,12 +21,13 @@ Enter the command line interface on your machine and paste the following command
 
 0. Connect the STM32L496G-DISCO board to a USB port of your machine.
 0. Go to the STM32CubeIDE.
-0. Import the project cloned in the previous step to your workspace.
+0. Import the project cloned in the previous step to your workspace:
     - From the navigation bar, select **File** and click **Import**.
     - From the **General** list, select **Existing Projects into Workspace** and click **Next**.
     - In **Select root directory**, indicate the catalog containing the cloned Anjay freeRTOS client repository.
-    - The the **Projects** field, select **Anjay-freertos-client-STM32L496G-BG96** and click **Finish**.
-0. In the Project Explorer, navigate to the **Anjay-freertos-client-STM32L496G-BG96** project
+    - In the **Projects** field, select **Anjay-freertos-client-STM32L496G-BG96** and click **Finish**.
+    ![Import project](images/import.PNG "Import project")
+0. In the Project Explorer, navigate to the **Anjay-freertos-client-STM32L496G-BG96** project:
     - Right-click on the project name and select **Build Project**. The build should take less than one minute to complete.
     - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
         - In the **Lauch Configuration Selection**, choose the **Anjay-freertos-client-STM32L496G-BG96** option and click **OK**.
@@ -40,6 +41,7 @@ Enter the command line interface on your machine and paste the following command
     ``Press any key in 3 seconds to enter config menu...``
 
 3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it .
+   ![Client configuration](images/config_menu.png "Client configuration"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
 ## Step 4: Connecting to the LwM2M Server
 
