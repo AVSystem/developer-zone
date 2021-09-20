@@ -54,12 +54,19 @@ nav:
                             - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Live_Data_Model_strategies.md'
                             - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/LWM2M.md'
                 - Device operations:
+                    - Setting values:
+                        - 'User_Guide/Device_management/Device_operations/Setting_Values/Setting_Values_overview.md'
+                        - 'User_Guide/Device_management/Device_operations/Setting_Values/Setting_values_for_devices.md'
                     - 'User_Guide/Device_management/Device_operations/LwM2M_operations.md'
-                    - Handling device data:
-                        - 'User_Guide/Device_management/Device_operations/Handling_device_data/Expressions.md'
+                    - 'User_Guide/Device_management/Device_operations/Managing_parameters_tree.md'
+                    - Expressions:
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Expressions.md'
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Common_Data_Types.md'
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Common_Utility_API.md'
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Provisioning_Expression_Context.md'
                     - Firmware and software upgrades:
-                        - 'User_Guide/Device_management/Device_operations/Managing_LwM2M_software.md'
-                        - 'User_Guide/Device_management/Device_operations/Upgrading_firmware_for_LwM2M_devices.md'
+                        - 'User_Guide/Device_management/Device_operations/Firmware_and_software_upgrades/Managing_LwM2M_software.md'
+                        - 'User_Guide/Device_management/Device_operations/Firmware_and_software_upgrades/Upgrading_firmware_for_LwM2M_devices.md'
                 - Managing device groups:
                     - 'User_Guide/Device_management/Managing_device_groups/Adding_devices_to_a_group.md'
                     - 'User_Guide/Device_management/Managing_device_groups/Managing_groups.md'
