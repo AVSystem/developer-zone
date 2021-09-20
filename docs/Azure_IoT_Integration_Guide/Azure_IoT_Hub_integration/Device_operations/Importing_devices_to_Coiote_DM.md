@@ -29,12 +29,7 @@ In order to establish communication and data flow between device entities in Azu
 
     ![Syncing Azure IoT Hub devices](images/sync_devices_hub.png "Syncing Azure IoT Hub devices")
 
-    - provide the *WHERE clause* of the device twin SQL query to filter your devices using chosen tags and properties (to read more about SQL query, check the [IoT Hub query language](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-query-language) section of Azure IoT Hub documentation. For instance, you can filter by device location region and device status with the following clause:
-
-        ``tags.location.region = 'US' AND status = 'enabled'``
-
-    - click **Count queried devices** to check the number of devices that meet the specified conditions (the number is shown inside the **Sync devices** button)
-    - to skip filtering and synchronize all the available devices, leave the *WHERE clause* input field empty.
+    - click **Count queried devices** to check the number of devices (the number is shown inside the **Sync devices** button)
     - click **Sync devices** to start the synchronization.
 
 After successful import, the devices should be listed in **Device inventory**.
