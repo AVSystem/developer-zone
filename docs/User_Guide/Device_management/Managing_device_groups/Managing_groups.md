@@ -1,5 +1,5 @@
 # Managing groups
-===============
+
 Learn how to add and edit a group and how to see how many devices are assigned to it.
 
 ## Adding groups
