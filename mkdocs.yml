@@ -67,6 +67,14 @@ nav:
                     - Firmware and software upgrades:
                         - 'User_Guide/Device_management/Device_operations/Firmware_and_software_upgrades/Managing_LwM2M_software.md'
                         - 'User_Guide/Device_management/Device_operations/Firmware_and_software_upgrades/Upgrading_firmware_for_LwM2M_devices.md'
+                    - Tasks:
+                        - 'User_Guide/Device_management/Device_operations/Tasks/Tasks.md'
+                        - 'User_Guide/Device_management/Device_operations/Tasks/Device_and_Group_Tasks.md'
+                        - 'User_Guide/Device_management/Device_operations/Tasks/Task_Configuration.md'
+                        - Task library: 
+                            - 'User_Guide/Device_management/Device_operations/Tasks/Task_library/General.md'
+                            - 'User_Guide/Device_management/Device_operations/Tasks/Task_library/CWMP.md'
+                            - 'User_Guide/Device_management/Device_operations/Tasks/Task_library/LWM2M.md'
                 - Managing device groups:
                     - 'User_Guide/Device_management/Managing_device_groups/Adding_devices_to_a_group.md'
                     - 'User_Guide/Device_management/Managing_device_groups/Managing_groups.md'
