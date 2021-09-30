@@ -33,32 +33,32 @@ google_analytics:
   - auto
 
 nav:
-        - 'User guide':
-            - 'Monitoring and reporting':
-                - 'Monitoring':
-                    - 'User_Guide/Monitoring_and_Reporting/Monitoring_module/Monitoring_Configuration.md'                 
-                    - 'Specific settings for monitoring': 'User_Guide/Monitoring_and_Reporting/Monitoring_module/Monitoring_Type_Specific_Settings.md'
+        - User Guide:
+            - Monitoring and reporting:
+                - Monitoring:
+                    - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Configuration.md'                 
+                    - Specific settings for monitoring: 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings.md'
                         
-                    - 'User_Guide/Monitoring_and_Reporting/Monitoring_module/Adding_monitoring.md'
-                    - 'User_Guide/Monitoring_and_Reporting/Monitoring_module/Browsing_Monitoring_Results.md'
-                    - 'Monitoring map':
-                        - 'User_Guide/Monitoring_and_Reporting/Monitoring_module/Monitoring_map/Monitoring_map.md'
-                        - 'User_Guide/Monitoring_and_Reporting/Monitoring_module/Monitoring_map/Overriding_a_default_zooming_feature_using_SV.md'
+                    - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Adding_monitoring.md'
+                    - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Browsing_Monitoring_Results.md'
+                    - Monitoring map:
+                        - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_map/Monitoring_map.md'
+                        - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_map/Overriding_a_default_zooming_feature_using_SV.md'
                 - 'User_Guide/Monitoring_and_Reporting/Reporting.md'
                 - 'User_Guide/Monitoring_and_Reporting/Scheduling_Advanced_CSV_Report.md'              
                 - 'User_Guide/Monitoring_and_Reporting/Reports_descriptions.md'
                 - 'User_Guide/Monitoring_and_Reporting/Monitoring_a_single_parameter_on_a_device.md'
-            - 'REST API in Coiote DM':
+            - REST API in Coiote DM:
                    - 'User_Guide/REST_API/Limiting_the_number_of_REST_API_requests.md'
                    - 'User_Guide/REST_API/REST_API_Authentication.md'
                    - 'User_Guide/REST_API/Adding_user_API_authorization_tokens.md'
                    - 'User_Guide/REST_API/Changing_REST_API_documentation_authentication_method.md'
-            - 'User Interface Reference':
-                - 'Administration':
+            - User Interface Reference:
+                - Administration:
                    - 'User_Guide/User_Interface_Reference/Administration/Adding_terms_of_service.md'
                    - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_list.md'
                    - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_summary.md'
-                   - 'Dialects':
+                   - Dialects:
                         - 'User_Guide/User_Interface_Reference/Administration/Dialects/Dialects_-_Introduction.md'
                         - 'User_Guide/User_Interface_Reference/Administration/Dialects/Device_dialects.md' 
                         - 'User_Guide/User_Interface_Reference/Administration/Dialects/Adding_new_object_definitions_to_device_dialects.md' 
@@ -68,7 +68,7 @@ nav:
                    - 'User_Guide/User_Interface_Reference/Administration/Importing_monitoring_groups_from_CSV.md'
                    - 'User_Guide/User_Interface_Reference/Administration/Licensing_Info.md'                   
                    - 'User_Guide/User_Interface_Reference/Administration/LwM2M_servers.md'
-                   - 'CSV Import/Export templates':
+                   - CSV Import/Export templates:
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/CSV_templates_overview.md'
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Adding_CSV_import_configurations.md'                
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Editing_CSV_import_configurations.md'
@@ -77,14 +77,14 @@ nav:
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Adding_CSV_export_configurations_for_monitoring.md'
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Editing_CSV_export_configurations.md'
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Deleting_CSV_export_configurations.md'                        
-                   - 'Managing exporting and importing entities':
+                   - Managing exporting and importing entities:
                         - 'User_Guide/User_Interface_Reference/Administration/Import_Export/Import_Export.md'
                         - 'User_Guide/User_Interface_Reference/Administration/Import_Export/Exporting_entities.md'
                         - 'User_Guide/User_Interface_Reference/Administration/Import_Export/Importing_entities.md'                        
                    - 'User_Guide/User_Interface_Reference/Administration/Predefined_Schedules_Editor.md'
                    - 'User_Guide/User_Interface_Reference/Administration/Resources.md'
                    - 'User_Guide/User_Interface_Reference/Administration/Task_Templates.md'    
-            - 'Extensions':
+            - Extensions:
                 - 'User_Guide/Extensions/Integrating_with_the_ThingWorx_platform.md'
                 - 'User_Guide/Extensions/Integrating_with_Coiote_IoT_Data_Orchestration.md'
                 - 'User_Guide/Extensions/Forwarding_notifications.md'

@@ -1,9 +1,0 @@
-.. _A_2021.4.0:
-
-2021.4.0
-========
-
-New features
-------------
-
- * TLS in CoAP+TCP now uses the DTLS/TLS Certificates panel instead of a truststore from a file. 

@@ -1,6 +1,6 @@
 # Browsing monitoring results
 
-As mentioned in [Monitoring](../Monitoring_Module.html), monitoring is applicable for two scopes - devices and groups. Consequently it is reflected by user interface structure for:
+As mentioned in [Monitoring](/Monitoring_Module.html), monitoring is applicable for two scopes - devices and groups. Consequently it is reflected by user interface structure for:
 
 * Groups in [Device groups](../../User_Interface_Reference/Device_Groups/Device_Groups.html#monitoring)
 * A single device in **Devices management center**.
