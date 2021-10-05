@@ -1,16 +1,16 @@
-# B-L475E-IOT01A
+# Thingy:91
 
-Integrate your B-L475E-IOT01A Discovery kit board.
+Integrate your Nordic Thingy:91 board.
 
 ## Prerequisites
 
-- The B-L475E-IOT01A board with a USB cable.
+- The Thingy:91 board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm (for Windows) or other serial communication program.
 - A user with access to the Coiote IoT Device Management platform and appropriate permissions.
 
 ## Step 1: Getting Zephyr and Python dependencies
 
-To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html)
+To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
 
 ## Step 2: Cloning the Anjay zephyr repository
 
@@ -22,16 +22,16 @@ Enter the command line interface on your machine, then paste and run the followi
 
 ## Step 3: Compiling the board
 
-0. Connect the STM32L496G-DISCO/MONARCH board to a USB port of your machine.
-0. Set West manifest path to `Anjay-zephyr-client/demo`, and manifest file to `west.yml` and do `west update`:
+0. Connect the Thingy:91 board to a USB port of your machine.
+0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
 
     ```
     west config manifest.path Anjay-zephyr-client/demo
-    west config manifest.file west.yml
+    west config manifest.file west-nrf.yml
     west update
     ```
 
-0. Compile the project for **B-L475E-IOT01A** using `west build -b disco_l475_iot1` in the demo directory.
+0. Compile the project for **Thingy:91** using `west build -b thingy91_nrf9160ns` in the demo directory.
 
 ## Step 4: Configuring the Client
 
