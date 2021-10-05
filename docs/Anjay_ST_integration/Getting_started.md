@@ -26,3 +26,11 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 ![B-L462E-CELL1/TYPE1SC](images/murata.jpg "B-L462E-CELL1/TYPE1SC")
 
 [Start integration](./B-L462E-CELL1-TYPE1SC.md){: .md-button .md-button--big }
+
+##  B-L475E-IOT01A
+
+Integrate your B-L475E-IOT01A Discovery kit board along with the TYPE 1SE module with built-in eSIM (ST4SIM-200M).
+
+![B-L475E-IOT01A](images/B_L475E_IOT01A1.jpg "B_L475E_IOT01A1")
+
+[Start integration](./B-L475E-IOT01A.md){: .md-button .md-button--big }
