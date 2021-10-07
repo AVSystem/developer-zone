@@ -781,15 +781,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edit-the-assignment" class="md-nav__link">
-    Edit the assignment
+  <a href="#edit-an-assignment" class="md-nav__link">
+    Edit an assignment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-the-assignment" class="md-nav__link">
-    Remove the assignment
+  <a href="#remove-an-assignment" class="md-nav__link">
+    Remove an assignment
   </a>
   
 </li>
@@ -1064,15 +1064,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edit-the-assignment" class="md-nav__link">
-    Edit the assignment
+  <a href="#edit-an-assignment" class="md-nav__link">
+    Edit an assignment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-the-assignment" class="md-nav__link">
-    Remove the assignment
+  <a href="#remove-an-assignment" class="md-nav__link">
+    Remove an assignment
   </a>
   
 </li>
@@ -1109,7 +1109,8 @@
 <!-- Markdown content -->
 <h1 id="configure-integration-templates">Configure integration templates<a class="headerlink" href="#configure-integration-templates" title="Permanent link">#</a></h1>
 <p>Integration templates define the format in which the data is exchanged between devices and Azure. The data can be either a property or a telemetry. Property describes the actual value — e.g., at 1:00 PM a thermometer shows 5 C, and only this value is sent. Telemetry is used to observe changes in values — e.g., it was 5 C at 1:00 PM, and one hour later it’s 6 C. In other words, you need to decide whether you want to send and receive historical data or not.</p>
-<p>Follow the instruction below to learn how to create integration templates and then assign them to <a href="https://lwm2m-test.avsystem.io/doc/user/User_Guide/Device_management/Managing_device_groups_toctree.html">device groups</a>. You can edit or remove the group assignment at any time.</p>
+<p>If you select the Property option, then Coiote DM reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/">LwM2M mappings</a> section.</p>
+<p>Follow the instruction below to learn how to create integration templates and then assign them to <a href="https://lwm2m-test.avsystem.io/doc/user/User_Guide/Device_management/Managing_device_groups_toctree.html">device groups</a>. You can edit or remove a group assignment at any time.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ol>
 <li>An active Azure IoT Central, IoT Hub, or DPS with hub owner access permissions.</li>
@@ -1139,17 +1140,16 @@
 <li>
 <p>The <strong>Data model scheme</strong> page displays the list of all LwM2M objects that are available on your reference device.</p>
 <ul>
-<li>To choose the objects and resources that you want to report to Azure, unfold the lists and check the respective boxes.</li>
+<li>To choose the objects and resources that you want to report to Azure, expand the lists and check the respective boxes.</li>
 <li>Select the format for each resource that needs to be reported: Telemetry, Property, or Command.</li>
 </ul>
 <p><img alt="Provide basic data" class="center" src="../images/datamodelscheme.png" title="Provide basic data" /></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><code>Manufacturer</code> is unlikely to change over time, so it is a <strong>Property</strong>. <code>Reboot</code> is an executable <strong>Command</strong>. <code>Battery Level</code> is more ambiguous: it can be a property if we just want to have the actual value. But because we want to have its historical values, it is a <strong>Telemetry</strong>.</p>
+</div>
 </li>
 </ol>
-<p>Let’s consider an example.  Manufacturer is unlikely to change over time, so it is a <strong>Property</strong>. Reboot is an executable <strong>Command</strong>. Battery Level is more ambiguous: it can be a property if we just want to have the actual value. But because we want to have its historical values, it is a <strong>Telemetry</strong>.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If you select the Property option, then Coiote DM reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/">LwM2M mappings</a> section.</p>
-</div>
 <p>Click <strong>Next step</strong>.</p>
 <p>Check the Summary and click <strong>Save template</strong>.</p>
 <h2 id="assign-a-template-to-a-group">Assign a template to a group<a class="headerlink" href="#assign-a-template-to-a-group" title="Permanent link">#</a></h2>
@@ -1166,14 +1166,14 @@
 <p>One template can be assigned to more than one group.</p>
 </div>
 <p>Now the devices in the <strong>group ‘anjay’</strong> will report data to Azure according to the way defined in the <strong>template ‘abc_test’</strong>.</p>
-<h2 id="edit-the-assignment">Edit the assignment<a class="headerlink" href="#edit-the-assignment" title="Permanent link">#</a></h2>
+<h2 id="edit-an-assignment">Edit an assignment<a class="headerlink" href="#edit-an-assignment" title="Permanent link">#</a></h2>
 <ol>
 <li>Go to <strong>Administration —&gt; Azure integration</strong> and see the list of Azure integration templates that exist in your domain.</li>
 <li>To assign the template to another group, click on the context menu next to the template name and select <strong>Edit group assignment</strong>.</li>
 <li>A pop-up window will appear asking you to specify a new group that needs to assigned to this template. Select and click <strong>Confirm</strong>.</li>
 </ol>
 <p><img alt="Remove or edit the assignment" class="center" src="../images/templ_remove.png" title="Remove or edit the assignment" /></p>
-<h2 id="remove-the-assignment">Remove the assignment<a class="headerlink" href="#remove-the-assignment" title="Permanent link">#</a></h2>
+<h2 id="remove-an-assignment">Remove an assignment<a class="headerlink" href="#remove-an-assignment" title="Permanent link">#</a></h2>
 <ol>
 <li>Go to <strong>Administration —&gt; Azure integration</strong> and see the list of Azure integration templates that exist in your domain.</li>
 <li>To unassign the template from the group, click on the context menu next to the template and select <strong>Remove from group</strong>. To confirm, click <strong>Remove</strong> in the pop-up window.</li>
@@ -1243,7 +1243,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2021</span>
     
   </small>
 </div>
