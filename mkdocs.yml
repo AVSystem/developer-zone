@@ -29,11 +29,16 @@ google_analytics:
   - auto
 
 nav:
-        - 'Anjay ST integration':
-            - 'Anjay_ST_integration/Getting_started.md'
-            - 'Anjay_ST_integration/STM32L496G-DISCOBG96.md'
-            - 'Anjay_ST_integration/STM32L496G-DISCO-MONARCH.md'
-            - 'Anjay_ST_integration/B-L462E-CELL1-TYPE1SC.md'
+        - 'Anjay integrations':
+            - 'Anjay_integrations/Getting_started.md'
+            - 'Anjay ST integration':
+                - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96.md'
+                - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH.md'
+                - 'Anjay_integrations/Anjay_ST_integration/B-L462E-CELL1-TYPE1SC.md'
+                - 'Anjay_integrations/Anjay_ST_integration/B-L475E-IOT01A.md'
+            - 'Anjay Nordic integration':
+                - 'Anjay_integrations/Anjay_Nordic_integration/Thingy91.md'
+                - 'Anjay_integrations/Anjay_Nordic_integration/nRF9160.md'
         - 'Device onboarding':
             - 'Coiote_DM_Device_Onboarding/Quick_start.md'
             - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
