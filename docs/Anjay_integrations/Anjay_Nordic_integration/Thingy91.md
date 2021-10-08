@@ -20,7 +20,7 @@ Enter the command line interface on your machine, then paste and run the followi
    git clone https://github.com/AVSystem/Anjay-zephyr-client
    ```
 
-## Step 3: Compiling the board
+## Step 3: Compiling the example
 
 0. Connect the Thingy:91 board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
@@ -32,6 +32,7 @@ Enter the command line interface on your machine, then paste and run the followi
     ```
 
 0. Compile the project for **Thingy:91** using `west build -b thingy91_nrf9160ns` in the demo directory.
+0. Program the board using an external programmer
 
 ## Step 4: Configuring the Client
 
