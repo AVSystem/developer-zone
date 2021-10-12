@@ -83,7 +83,11 @@ nav:
                         - 'User_Guide/User_Interface_Reference/Administration/Import_Export/Importing_entities.md'                        
                    - 'User_Guide/User_Interface_Reference/Administration/Predefined_Schedules_Editor.md'
                    - 'User_Guide/User_Interface_Reference/Administration/Resources.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Task_Templates.md'    
+                   - 'User_Guide/User_Interface_Reference/Administration/Task_Templates.md'   
+                - 'User_Guide/User_Interface_Reference/Device_Inventory.md'
+                - 'User_Guide/User_Interface_Reference/Historical_analysis.md'
+                - 'User_Guide/User_Interface_Reference/Navigator.md'
+                - 'User_Guide/User_Interface_Reference/Search.md'                   
             - Extensions:
                 - 'User_Guide/Extensions/Integrating_with_the_ThingWorx_platform.md'
                 - 'User_Guide/Extensions/Integrating_with_Coiote_IoT_Data_Orchestration.md'
