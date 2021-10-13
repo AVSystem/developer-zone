@@ -20,7 +20,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.emoji
   - toc:
      permalink: "#"
 
@@ -34,11 +33,74 @@ google_analytics:
 
 nav:
         - User Guide:
+            - Device management:
+                - Connecting devices:
+                    - 'User_Guide/Device_management/Connecting_devices/Device_onboarding/Quick_start.md'
+                    - 'User_Guide/Device_management/Connecting_devices/Device_onboarding/Device_onboarding.md'
+                    - 'User_Guide/Device_management/Connecting_devices/DM_Exporting_devices_to_CSV.md'
+                    - 'User_Guide/Device_management/Connecting_devices/DM_Importing_devices_from_CSV.md'
+                    - 'User_Guide/Device_management/Connecting_devices/Handling_invalid_messages_from_devices.md'
+                    - 'User_Guide/Device_management/Connecting_devices/LwM2M_servers_interface.md'
+                    - 'User_Guide/Device_management/Connecting_devices/Configuring_a_management_server.md'
+                    - Managing LwM2M bootstrap:
+                        - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/LwM2M_bootstrap.md'
+                        - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/LwM2M_Bootstrap_interface.md'
+                        - 'User_Guide/Device_management/Connecting_devices/Managing_LwM2M_bootstrap/Configuring_a_bootstrap_server.md'
+                - Configuring devices:
+                    - 'User_Guide/Device_management/Configuring_devices/Adding_an_image_of_a_device.md'
+                    - 'User_Guide/Device_management/Configuring_devices/Editing_security_settings.md'
+                    - 'User_Guide/Device_management/Configuring_devices/Selecting_dialects_for_devices_and_groups.md'
+                    - HOCON and VirtualDM:
+                        - 'User_Guide/Device_management/Configuring_devices/Dialects/HOCON.md'
+                        - Virtual Data Model:
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Overview.md'
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/Live_Data_Model_strategies.md'
+                            - 'User_Guide/Device_management/Configuring_devices/Dialects/Virtual_Data_Model/LWM2M.md'
+                - Device operations:
+                    - Setting values:
+                        - 'User_Guide/Device_management/Device_operations/Setting_Values/Setting_Values_overview.md'
+                        - 'User_Guide/Device_management/Device_operations/Setting_Values/Setting_values_for_devices.md'
+                    - 'User_Guide/Device_management/Device_operations/LwM2M_operations.md'
+                    - 'User_Guide/Device_management/Device_operations/Managing_parameters_tree.md'
+                    - Expressions:
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Expressions.md'
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Common_Data_Types.md'
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Common_Utility_API.md'
+                        - 'User_Guide/Device_management/Device_operations/Expressions/Provisioning_Expression_Context.md'
+                    - Firmware and software upgrades:
+                        - 'User_Guide/Device_management/Device_operations/Firmware_and_software_upgrades/Managing_LwM2M_software.md'
+                        - 'User_Guide/Device_management/Device_operations/Firmware_and_software_upgrades/Upgrading_firmware_for_LwM2M_devices.md'
+                    - Tasks:
+                        - 'User_Guide/Device_management/Device_operations/Tasks/Tasks.md'
+                        - 'User_Guide/Device_management/Device_operations/Tasks/Device_and_Group_Tasks.md'
+                        - 'User_Guide/Device_management/Device_operations/Tasks/Task_Configuration.md'
+                        - Task library: 
+                            - 'User_Guide/Device_management/Device_operations/Tasks/Task_Library/General.md'
+                            - 'User_Guide/Device_management/Device_operations/Tasks/Task_Library/CWMP.md'
+                            - 'User_Guide/Device_management/Device_operations/Tasks/Task_Library/LWM2M.md'
+                - Managing device groups:
+                    - 'User_Guide/Device_management/Managing_device_groups/Adding_devices_to_a_group.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Managing_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Managing_groups_documents.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Upgrading_firmware_for_LwM2M_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Managing_LwM2M_software_for_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Setting_resource_observation_on_device_groups.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Viewing_monitoring_alerts.md'
+                    - 'User_Guide/Device_management/Managing_device_groups/Migrations.md'
+                - Setting panels:
+                    - 'User_Guide/Device_management/Setting_panels/Setting_panels.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_XML_Definition.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Content.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Editor.md'
+                    - 'User_Guide/Device_management/Setting_panels/Bundled_Setting_Panels.md'
+                    - 'User_Guide/Device_management/Setting_panels/Setting_Panel_Examples_-_Tips_and_Tricks.md'        
             - Monitoring and reporting:
                 - Monitoring:
+                    - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module.md'
                     - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Configuration.md'                 
-                    - Specific settings for monitoring: 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings.md'
-                        
+                    - Specific settings for monitoring: 
+                        - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings/Custom_monitoring.md'
+                        - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Monitoring_Type_Specific_Settings/Inactive_devices.md'
                     - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Adding_monitoring.md'
                     - 'User_Guide/Monitoring_and_Reporting/Monitoring_Module/Browsing_Monitoring_Results.md'
                     - Monitoring map:
@@ -55,20 +117,20 @@ nav:
                    - 'User_Guide/REST_API/Changing_REST_API_documentation_authentication_method.md'
             - User Interface Reference:
                 - Administration:
-                   - 'User_Guide/User_Interface_Reference/Administration/Adding_terms_of_service.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_list.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_summary.md'
-                   - Dialects:
+                    - 'User_Guide/User_Interface_Reference/Administration/Adding_terms_of_service.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_list.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Customizing_device_summary.md'
+                    - Dialects:
                         - 'User_Guide/User_Interface_Reference/Administration/Dialects/Dialects_-_Introduction.md'
                         - 'User_Guide/User_Interface_Reference/Administration/Dialects/Device_dialects.md' 
                         - 'User_Guide/User_Interface_Reference/Administration/Dialects/Adding_new_object_definitions_to_device_dialects.md' 
                         - 'User_Guide/User_Interface_Reference/Administration/Dialects/Managing_unknown_device_objects_in_the_Objects_panel.md'                         
-                   - 'User_Guide/User_Interface_Reference/Administration/DTLS_TLS_Certificates.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Expressions_Sandbox.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Importing_monitoring_groups_from_CSV.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Licensing_Info.md'                   
-                   - 'User_Guide/User_Interface_Reference/Administration/LwM2M_servers.md'
-                   - CSV Import/Export templates:
+                    - 'User_Guide/User_Interface_Reference/Administration/DTLS_TLS_Certificates.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Expressions_Sandbox.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Importing_monitoring_groups_from_CSV.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Licensing_Info.md'                   
+                    - 'User_Guide/User_Interface_Reference/Administration/LwM2M_servers.md'
+                    - CSV Import/Export templates:
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/CSV_templates_overview.md'
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Adding_CSV_import_configurations.md'                
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Editing_CSV_import_configurations.md'
@@ -77,14 +139,29 @@ nav:
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Adding_CSV_export_configurations_for_monitoring.md'
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Editing_CSV_export_configurations.md'
                         - 'User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates/Deleting_CSV_export_configurations.md'                        
-                   - Managing exporting and importing entities:
+                    - Managing exporting and importing entities:
                         - 'User_Guide/User_Interface_Reference/Administration/Import_Export/Import_Export.md'
                         - 'User_Guide/User_Interface_Reference/Administration/Import_Export/Exporting_entities.md'
                         - 'User_Guide/User_Interface_Reference/Administration/Import_Export/Importing_entities.md'                        
-                   - 'User_Guide/User_Interface_Reference/Administration/Predefined_Schedules_Editor.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Resources.md'
-                   - 'User_Guide/User_Interface_Reference/Administration/Task_Templates.md'   
-                - 'User_Guide/User_Interface_Reference/Device_Inventory.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Predefined_Schedules_Editor.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Resources.md'
+                    - 'User_Guide/User_Interface_Reference/Administration/Task_Templates.md'   
+                    - User_Guide/User_Interface_Reference/Administration/CSV_Import_&_Export_templates.md
+                    - User_Guide/User_Interface_Reference/Administration/Import_Export/Adding_CSV_import_configurations.md
+                - Device actions:
+                    - User_Guide/User_Interface_Reference/Device_Actions/Access_Rules.md
+                    - User_Guide/User_Interface_Reference/Device_Actions/Assigned_device_properties.md
+                    - User_Guide/User_Interface_Reference/Device_Actions/DA_Importing_devices_from_CSV.md
+                    - User_Guide/User_Interface_Reference/Device_Actions/Group_Action_Trigger.md
+                    - User_Guide/User_Interface_Reference/Device_Actions/Tasks.md
+                    - User_Guide/User_Interface_Reference/Device_Actions/Unknown_and_Unauthorized_Devices.md
+                - Device groups: 
+                    - User_Guide/User_Interface_Reference/Device_Groups/Alerts.md
+                    - User_Guide/User_Interface_Reference/Device_Groups/Basic_Groups.md
+                    - User_Guide/User_Interface_Reference/Device_Groups/Device_Groups.md
+                - Device Inventory: 
+                    - User_Guide/User_Interface_Reference/Device_Inventory/Device_Inventory.md
+                    - User_Guide/User_Interface_Reference/Device_Inventory/Device_Management_Center.md
                 - 'User_Guide/User_Interface_Reference/Historical_analysis.md'
                 - 'User_Guide/User_Interface_Reference/Navigator.md'
                 - 'User_Guide/User_Interface_Reference/Search.md'                   
@@ -95,11 +172,6 @@ nav:
                 - 'User_Guide/Extensions/Registration_status_action.md'             
             - Appendixes:
                 - 'User_Guide/Appendixes/Third_party_software.md'                
-                 
-        - 'Device onboarding':
-            - 'Coiote_DM_Device_Onboarding/Quick_start.md'
-            - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
-
         - 'Interoperability tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
