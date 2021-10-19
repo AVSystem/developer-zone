@@ -79,9 +79,6 @@ Before you generate code for your application, you need to configure it as per t
 
 ### P-L496G-CELL02
 
-Start from board selector with STM32L496G-DISCO board, initialize all peripherals with their default mode.
-Apply following settings:
-
 - Connectivity tab:
     - SDMMC1 - Disable
     - USART1 - Enable DMA for RX/TX, enable global interrupts
