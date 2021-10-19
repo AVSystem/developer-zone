@@ -71,8 +71,8 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
             - Click **Save**.
         - For `AWSdataPlaneEndpointAddress`:
             - Open your command line and run the following command:
-
-              ```aws iot describe-endpoint --endpoint-type iot:Data-ATS
+              ```
+              aws iot describe-endpoint --endpoint-type iot:Data-ATS
               ```
 
             - Copy the returned result.
