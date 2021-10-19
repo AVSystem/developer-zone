@@ -32,6 +32,7 @@ nav:
         - 'Anjay integrations':
             - 'Anjay_integrations/Getting_started.md'
             - 'Anjay ST integration':
+                - 'Anjay_integrations/Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96.md'
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH.md'
                 - 'Anjay_integrations/Anjay_ST_integration/B-L462E-CELL1-TYPE1SC.md'
