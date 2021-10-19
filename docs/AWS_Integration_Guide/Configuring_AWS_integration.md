@@ -74,7 +74,6 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
               ```
               aws iot describe-endpoint --endpoint-type iot:Data-ATS
               ```
-
             - Copy the returned result.
               ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
             - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
