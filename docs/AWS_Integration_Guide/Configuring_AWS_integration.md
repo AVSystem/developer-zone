@@ -72,7 +72,8 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
         - For `AWSdataPlaneEndpointAddress`:
             - Open your command line and run the following command:
 
-              ```aws iot describe-endpoint --endpoint-type iot:Data-ATS
+              ```
+              aws iot describe-endpoint --endpoint-type iot:Data-ATS
               ```
 
             - Copy the returned result.
@@ -81,6 +82,27 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
             - Click **Save**.
 
 3. Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.
+
+## Add Coiote DM REST user credentials to AWS Secrets Manager
+
+1. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. Choose **Secrets Manager** from the services list.
+2. Create a new secret with **Store a new secret** button.
+3. Select **Other type of secrets** from provided secret types.
+   ![Select other type of secrets](images/secret_type.png "Select other type of secrets")
+4. Provide credentials to your Coiote DM REST user created before as key/value pairs. Desired keys and related values are specified in the table below. In order to add a new pair click **+ Add row**.
+
+   | Key | Value description |
+   |---|---|
+   | `url` | URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.|
+   | `password` | Password for your Coiote DM REST user.|
+   | `username` | Your Coiote DM REST user login (email address).|
+
+   ![Provide Coiote DM credentials](images/secret_values.png "Provide Coiote DM credentials")
+
+5. Proceed to next step with **Next** button.
+6. Set secret name to `coioteDMrest`.
+   ![Set secret name](images/secret_name.png "Set secret name")
+7. Go through creator's remaining steps and save your secret with **Store**.
 
 ## Add AWS resources using the integration repository
 
@@ -109,14 +131,11 @@ To add the resources needed for the integration to your AWS services:
     ```
     aws cloudformation package --template-file cloudFormation.json --s3-bucket <your-bucket-name> --output-template-file output.json --use-json
    ```
-5. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. Choose **CloudFormation** from the services list.
+5. Go to the AWS Console page. Make sure that you are in the right region. Choose **CloudFormation** from the services list.
 6. Create a new stack. Use the generated **output.json** file as a template for the stack.
    ![Choose template file](images/choose_template_file.png "Choose template file")
-7. Choose a name for the stack and change the default values of the parameters to the credentials of your REST user created in a previous step.
-   ![Change parameters](images/change_parameters.png "Change parameters")
-   - For `coioteDMrestURL`, provide the URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.
-   - For `coioteDMrestPassword`, provide the password set for your Coiote DM REST user.
-   - For `coioteDMrestUsername`, provide your Coiote DM REST user login (email address).
+7. Choose a name for the stack.
+   ![Change stack name](images/stack_name.png "Change stack name")
 8. Finalize configuring the stack and wait for its creation to finish.
 9. Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
 10. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
