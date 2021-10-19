@@ -9,19 +9,19 @@
       
       
       
-      <link rel="shortcut icon" href="../../../assets/favicon/favicon-32x32.png">
+      <link rel="shortcut icon" href="../../../../assets/favicon/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.2.6">
     
     
       
-        <title>Performing LwM2M operations - Coiote IoT Device Management Docs</title>
+        <title>Building LwM2M applications for STM boards with I-CUBE-Anjay - Coiote IoT Device Management Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.39b8e14a.min.css">
         
       
     
@@ -56,7 +56,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
     
       
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#performing-lwm2m-operations" class="md-skip">
+        <a href="#building-lwm2m-applications-for-stm-boards-with-i-cube-anjay" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
       target="_blank"
     >
       
-  <img src="../../../assets/images/logo.svg" alt="logo">
+  <img src="../../../../assets/images/logo.svg" alt="logo">
 
     </a>
 
@@ -149,7 +149,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Performing LwM2M operations
+              Building LwM2M applications for STM boards with I-CUBE-Anjay
             
           </span>
         </div>
@@ -218,9 +218,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Coiote IoT Device Management Docs" class="md-nav__button md-logo" aria-label="Coiote IoT Device Management Docs">
+    <a href="../../../.." title="Coiote IoT Device Management Docs" class="md-nav__button md-logo" aria-label="Coiote IoT Device Management Docs">
       
-  <img src="../../../assets/images/logo.svg" alt="logo">
+  <img src="../../../../assets/images/logo.svg" alt="logo">
 
     </a>
     Coiote IoT Device Management Docs
@@ -234,12 +234,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
       
       <label class="md-nav__link" for="nav-1">
         Anjay integrations
@@ -258,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Getting_started/" class="md-nav__link">
+      <a href="../../../Getting_started/" class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -268,12 +270,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
       
       <label class="md-nav__link" for="nav-1-2">
         Anjay ST integration
@@ -290,11 +294,97 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Building LwM2M applications for STM boards with I-CUBE-Anjay
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Building LwM2M applications for STM boards with I-CUBE-Anjay
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-installing-the-anjay-i-cube-software-pack" class="md-nav__link">
+    Step 1: Installing the Anjay I-CUBE software pack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configuring-the-anjay-i-cube-application" class="md-nav__link">
+    Step 2: Configuring the Anjay I-CUBE application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-generating-application-code" class="md-nav__link">
+    Step 3: Generating application code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specific-cubemx-settings" class="md-nav__link">
+    Specific CubeMX settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific CubeMX settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b-l462e-cell1" class="md-nav__link">
+    B-L462E-CELL1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-l496g-cell02" class="md-nav__link">
+    P-L496G-CELL02
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -304,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96/" class="md-nav__link">
+      <a href="../../STM32L496G-DISCOBG96/" class="md-nav__link">
         STM32L496G-DISCO/BG96
       </a>
     </li>
@@ -316,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH/" class="md-nav__link">
+      <a href="../../STM32L496G-DISCO-MONARCH/" class="md-nav__link">
         STM32L496G-DISCO/MONARCH
       </a>
     </li>
@@ -328,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Anjay_ST_integration/B-L462E-CELL1-TYPE1SC/" class="md-nav__link">
+      <a href="../../B-L462E-CELL1-TYPE1SC/" class="md-nav__link">
         B-L462E-CELL1/TYPE1SC
       </a>
     </li>
@@ -340,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Anjay_ST_integration/B-L475E-IOT01A/" class="md-nav__link">
+      <a href="../../B-L475E-IOT01A/" class="md-nav__link">
         B-L475E-IOT01A
       </a>
     </li>
@@ -380,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Anjay_Nordic_integration/Thingy91/" class="md-nav__link">
+      <a href="../../../Anjay_Nordic_integration/Thingy91/" class="md-nav__link">
         Thingy:91
       </a>
     </li>
@@ -392,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Anjay_integrations/Anjay_Nordic_integration/nRF9160/" class="md-nav__link">
+      <a href="../../../Anjay_Nordic_integration/nRF9160/" class="md-nav__link">
         nRF9160
       </a>
     </li>
@@ -441,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_DM_Device_Onboarding/Quick_start/" class="md-nav__link">
+      <a href="../../../../Coiote_DM_Device_Onboarding/Quick_start/" class="md-nav__link">
         Quick start
       </a>
     </li>
@@ -453,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_DM_Device_Onboarding/Device_onboarding/" class="md-nav__link">
+      <a href="../../../../Coiote_DM_Device_Onboarding/Device_onboarding/" class="md-nav__link">
         Device onboarding
       </a>
     </li>
@@ -496,7 +586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Interoperability_tests_guide/Overview/" class="md-nav__link">
+      <a href="../../../../Interoperability_tests_guide/Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -508,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Interoperability_tests_guide/Getting_started/" class="md-nav__link">
+      <a href="../../../../Interoperability_tests_guide/Getting_started/" class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -520,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Interoperability_tests_guide/Test_case_actions/" class="md-nav__link">
+      <a href="../../../../Interoperability_tests_guide/Test_case_actions/" class="md-nav__link">
         Test case actions
       </a>
     </li>
@@ -532,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Interoperability_tests_guide/Configuring_test_cases/" class="md-nav__link">
+      <a href="../../../../Interoperability_tests_guide/Configuring_test_cases/" class="md-nav__link">
         Configuring test cases
       </a>
     </li>
@@ -544,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Interoperability_tests_guide/Data_model_and_variables/" class="md-nav__link">
+      <a href="../../../../Interoperability_tests_guide/Data_model_and_variables/" class="md-nav__link">
         Device data model and variables
       </a>
     </li>
@@ -556,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Interoperability_tests_guide/Running_test_cases/" class="md-nav__link">
+      <a href="../../../../Interoperability_tests_guide/Running_test_cases/" class="md-nav__link">
         Running test cases
       </a>
     </li>
@@ -568,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Interoperability_tests_guide/Using_API_Jenkins_integration/" class="md-nav__link">
+      <a href="../../../../Interoperability_tests_guide/Using_API_Jenkins_integration/" class="md-nav__link">
         Jenkins/GitLab integration with interop tests API
       </a>
     </li>
@@ -633,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
         Configuring integration extension
       </a>
     </li>
@@ -667,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -679,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
         Importing devices to Coiote DM
       </a>
     </li>
@@ -691,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
         Exporting devices to Azure IoT Hub
       </a>
     </li>
@@ -703,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/" class="md-nav__link">
         Upgrading device firmware
       </a>
     </li>
@@ -749,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
         Configuring integration extension
       </a>
     </li>
@@ -783,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -795,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
         Importing devices to Coiote DM
       </a>
     </li>
@@ -807,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
         Exporting devices to Azure IoT Central
       </a>
     </li>
@@ -831,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/" class="md-nav__link">
         Configure integration templates
       </a>
     </li>
@@ -865,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/" class="md-nav__link">
         LwM2M mappings
       </a>
     </li>
@@ -905,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/" class="md-nav__link">
+      <a href="../../../../Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/" class="md-nav__link">
         Air quality monitoring - tutorial
       </a>
     </li>
@@ -930,14 +1020,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
       
       <label class="md-nav__link" for="nav-5">
         AWS IoT Core integration guide
@@ -956,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Configuring_AWS_integration/" class="md-nav__link">
+      <a href="../../../../AWS_Integration_Guide/Configuring_AWS_integration/" class="md-nav__link">
         Configuring the integration
       </a>
     </li>
@@ -966,14 +1054,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2" >
       
       <label class="md-nav__link" for="nav-5-2">
         Device operations
@@ -990,145 +1076,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Performing LwM2M operations
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../AWS_Integration_Guide/Device_operations/Operation_types/" class="md-nav__link">
         Performing LwM2M operations
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="In this article">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      In this article
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execute-lwm2m-operations-on-device" class="md-nav__link">
-    Execute LwM2M operations on device
-  </a>
-  
-    <nav class="md-nav" aria-label="Execute LwM2M operations on device">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#read" class="md-nav__link">
-    READ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#write" class="md-nav__link">
-    WRITE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observe" class="md-nav__link">
-    OBSERVE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execute" class="md-nav__link">
-    EXECUTE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-operations" class="md-nav__link">
-    Other operations
-  </a>
-  
-    <nav class="md-nav" aria-label="Other operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cancel-observe" class="md-nav__link">
-    Cancel Observe
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#write-attributes" class="md-nav__link">
-    Write Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observe-composite" class="md-nav__link">
-    Observe-Composite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read-composite" class="md-nav__link">
-    Read-Composite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cancel-observe-composite" class="md-nav__link">
-    Cancel Observe-Composite
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-logs-in-cloudwatch" class="md-nav__link">
-    Check logs in CloudWatch
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1166,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Concepts/AWS_Integration_concepts/" class="md-nav__link">
+      <a href="../../../../AWS_Integration_Guide/Concepts/AWS_Integration_concepts/" class="md-nav__link">
         How AWS integration works
       </a>
     </li>
@@ -1217,98 +1169,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#execute-lwm2m-operations-on-device" class="md-nav__link">
-    Execute LwM2M operations on device
+  <a href="#step-1-installing-the-anjay-i-cube-software-pack" class="md-nav__link">
+    Step 1: Installing the Anjay I-CUBE software pack
   </a>
-  
-    <nav class="md-nav" aria-label="Execute LwM2M operations on device">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#read" class="md-nav__link">
-    READ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#write" class="md-nav__link">
-    WRITE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observe" class="md-nav__link">
-    OBSERVE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execute" class="md-nav__link">
-    EXECUTE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-operations" class="md-nav__link">
-    Other operations
-  </a>
-  
-    <nav class="md-nav" aria-label="Other operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cancel-observe" class="md-nav__link">
-    Cancel Observe
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#write-attributes" class="md-nav__link">
-    Write Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observe-composite" class="md-nav__link">
-    Observe-Composite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read-composite" class="md-nav__link">
-    Read-Composite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cancel-observe-composite" class="md-nav__link">
-    Cancel Observe-Composite
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-logs-in-cloudwatch" class="md-nav__link">
-    Check logs in CloudWatch
+  <a href="#step-2-configuring-the-anjay-i-cube-application" class="md-nav__link">
+    Step 2: Configuring the Anjay I-CUBE application
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-generating-application-code" class="md-nav__link">
+    Step 3: Generating application code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specific-cubemx-settings" class="md-nav__link">
+    Specific CubeMX settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific CubeMX settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b-l462e-cell1" class="md-nav__link">
+    B-L462E-CELL1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-l496g-cell02" class="md-nav__link">
+    P-L496G-CELL02
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1335,339 +1239,136 @@
 
 
 <!-- Markdown content -->
-<h1 id="performing-lwm2m-operations">Performing LwM2M operations<a class="headerlink" href="#performing-lwm2m-operations" title="Permanent link">#</a></h1>
-<p>This section will give you an overview of how to perform LwM2M operations on devices in AWS IoT Core and check AWS CloudWatch logs.</p>
+<h1 id="building-lwm2m-applications-for-stm-boards-with-i-cube-anjay">Building LwM2M applications for STM boards with I-CUBE-Anjay<a class="headerlink" href="#building-lwm2m-applications-for-stm-boards-with-i-cube-anjay" title="Permanent link">#</a></h1>
+<p>Start prototyping custom LwM2M applications on your STMicroelectronics board with I-CUBE-Anjay using STM32CubeMX.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>A configured AWS integration.</li>
-<li>An active LwM2M device already migrated to AWS IoT Core.</li>
+<li>An STM board with a USB cable.</li>
+<li>Installed <strong>STM32CubeMX</strong>.</li>
+<li>Downloaded <strong>Anjay I-CUBE</strong> pack file.</li>
 </ul>
-<h2 id="execute-lwm2m-operations-on-device">Execute LwM2M operations on device<a class="headerlink" href="#execute-lwm2m-operations-on-device" title="Permanent link">#</a></h2>
-<p>Within the AWS - Coiote DM integration, LwM2M operations on devices are triggered by modifying the <code>desired</code> section of a device <a href="../../Concepts/AWS_Integration_concepts/#operation-shadow">Operation Shadow</a>. The changes, upon successful execution, are then reported back by Coiote DM and repopulated to the <code>reported</code> section of a device <a href="../../Concepts/AWS_Integration_concepts/#datamodel-shadow">Datamodel Shadow</a>.</p>
-<p>The integration supports the following LwM2M operations:</p>
-<h3 id="read">READ<a class="headerlink" href="#read" title="Permanent link">#</a></h3>
-<p>To send a request for a READ operation to a device:</p>
+<h2 id="step-1-installing-the-anjay-i-cube-software-pack">Step 1: Installing the <strong>Anjay I-CUBE</strong> software pack<a class="headerlink" href="#step-1-installing-the-anjay-i-cube-software-pack" title="Permanent link">#</a></h2>
 <ol>
-<li>Enter AWS IoT Core and go to <strong>Manage</strong> &gt; <strong>Things</strong>.</li>
-<li>From the list, select your device.</li>
-<li>Go to the <strong>Device Shadows</strong> section and select the <strong>operation</strong> Shadow.    </li>
-<li>
-<p>Click <strong>Edit</strong> and formulate the request inside the <strong>Device Shadow state</strong> field based on the example input given below:</p>
-<ul>
-<li>In the <code>operation</code> section, type the operation name</li>
-<li>In the <code>keys</code> section, type the LwM2M object and resource paths for which you want to execute the operation.</li>
-<li>In the <code>values</code> section, type the values for the specified <code>keys</code> (only for some operations).</li>
-</ul>
-<details class="read_request" open="open"><summary>Read_request</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-     &quot;desired&quot;: {
-       &quot;operation&quot;: &quot;read&quot;,
-       &quot;keys&quot;: [
-         &quot;LwM2M Server.1.Lifetime&quot;,
-         &quot;Portfolio.11.Identity.1&quot;,
-         &quot;Portfolio.5.Identity.1&quot;,
-         &quot;Device.0.UTC Offset&quot;,
-         &quot;Test object.0.Integer array.4&quot;
-       ]
-     }
-   }
- }
-</code></pre></div>
-</details>
-</li>
-<li>
-<p>Click <strong>Save</strong>.</p>
-</li>
-<li>
-<p>To see the operation results, check the <code>reported</code> section of the <strong>operation</strong> Shadow. An example response looks like this:</p>
-<details class="read_result" open="open"><summary>Read_result</summary><div class="highlight"><pre><span></span><code>{
-  &quot;reported&quot;: {
-    &quot;operation&quot;: &quot;read&quot;,
-    &quot;failedKeys&quot;: [
-      &quot;&quot;
-    ],
-    &quot;result&quot;: {
-      &quot;Device&quot;: {
-        &quot;0&quot;: {
-          &quot;UTC Offset&quot;: &quot;+02:00&quot;
-        }
-      },
-      &quot;LwM2M Server&quot;: {
-        &quot;1&quot;: {
-          &quot;Lifetime&quot;: &quot;68&quot;
-        }
-      },
-      &quot;Portfolio&quot;: {
-        &quot;5&quot;: {
-          &quot;Identity&quot;: {
-            &quot;1&quot;: &quot;AVS&quot;
-          }
-        },
-        &quot;11&quot;: {
-          &quot;Identity&quot;: {
-            &quot;1&quot;: &quot;your_ID&quot;
-          }
-        }
-      },
-      &quot;Test object&quot;: {
-        &quot;0&quot;: {
-          &quot;Integer array&quot;: {
-            &quot;4&quot;: &quot;256&quot;
-          }
-        }
-      }
-    }
-  }
-}
-</code></pre></div>
-</details>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To execute a READ operation on all the readable resources, enter <code>""/""</code> or <code>""all""</code> as the value in the <code>keys</code> section of the request.</p>
-</div>
-<h3 id="write">WRITE<a class="headerlink" href="#write" title="Permanent link">#</a></h3>
-<p>To request a WRITE operation for a device, follow the steps 1-5 from the <a href="#read">READ</a> subsection, but using the following example:</p>
-<details class="write_request" open="open"><summary>Write_request</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;write&quot;,
-         &quot;keys&quot;: [
-           &quot;LwM2M Server.1.Lifetime&quot;,
-           &quot;Portfolio.11.Identity.1&quot;,
-           &quot;Portfolio.5.Identity.1&quot;,
-           &quot;Device.0.UTC Offset&quot;,
-           &quot;Test object.0.Integer array.4&quot;
-         ],
-         &quot;values&quot;: [
-           68,
-           &quot;your_ID&quot;,
-           &quot;random_value&quot;,
-           &quot;+02:00&quot;,
-           256
-         ]
-       }
-     }
- }
-</code></pre></div>
-</details>
-<h3 id="observe">OBSERVE<a class="headerlink" href="#observe" title="Permanent link">#</a></h3>
-<p>To request a OBSERVE operation for a device, follow the steps 1-5 from the <a href="#read">READ</a> subsection, but using the following example:</p>
-<details class="observe_request" open="open"><summary>Observe_request</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;observe&quot;,
-         &quot;keys&quot;: [
-           &quot;Connectivity Monitoring.0.Radio Signal Strength&quot;,
-           &quot;LwM2M Server.1.Lifetime&quot;,
-           &quot;Portfolio.11.Identity.1&quot;,
-           &quot;Portfolio.5.Identity.1&quot;,
-           &quot;Device.0.UTC Offset&quot;,
-           &quot;Test object.0.Integer array&quot;
-         ],
-         &quot;attributes&quot;: [
-           {&quot;epmin&quot;:5,&quot;gt&quot;:-65.5,&quot;lt&quot;:-105.5,&quot;st&quot;:4.0},
-           {&quot;pmin&quot;:30,&quot;pmax&quot;:35},
-           {},
-           {&quot;epmax&quot;:40},
-           {},
-           {&quot;pmax&quot;:20}
-         ]
-       }
-     }
- }
-</code></pre></div>
-</details>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the <code>attributes</code> section, you need to specify the full attribute list with their corresponding values for a given key, as the attributes that are left out will be overwritten with <code>null</code> (except for the <code>con</code> attribute). Alternatively, you can provide an empty value <code>{}</code> so that no attribute values are changed. On the other hand, if you only specify the <code>con</code> attribute for a given key, it will not affect any other attributes and their existing values won't be changed also.</p>
-</div>
-<p>To check the results of the OBSERVE operation, go to the <code>datamodel</code> Shadow of your device and see the <code>reported</code> section.</p>
-<h3 id="execute">EXECUTE<a class="headerlink" href="#execute" title="Permanent link">#</a></h3>
-<p>To request an EXECUTE operation for a device, follow the steps 1-5 from the <a href="#read">READ</a> subsection, but using the following example:</p>
-<details class="execute_request" open="open"><summary>Execute_request</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;execute&quot;,
-         &quot;keys&quot;: [
-           &quot;Device.0.Reboot&quot;
-         ]
-       }
-     }
- }
-</code></pre></div>
-</details>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>With the EXECUTE operation, you can specify only one key for each request.</p>
-</div>
-<h3 id="other-operations">Other operations<a class="headerlink" href="#other-operations" title="Permanent link">#</a></h3>
-<p>Here are example inputs for other operations supported by the integration: READ COMPOSITE, OBSERVE COMPOSITE, WRITE ATTRIBUTES, CANCEL OBSERVE, CANCEL OBSERVE COMPOSITE.</p>
-<h4 id="cancel-observe">Cancel Observe<a class="headerlink" href="#cancel-observe" title="Permanent link">#</a></h4>
-<details class="cancel_observe"><summary>Cancel_observe</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;cancelObserve&quot;,
-         &quot;keys&quot;: [
-           &quot;Connectivity Monitoring.0.Radio Signal Strength&quot;,
-           &quot;LwM2M Server.1.Lifetime&quot;,
-           &quot;Portfolio.11.Identity.1&quot;,
-           &quot;Portfolio.5.Identity.1&quot;,
-           &quot;Device.0.UTC Offset&quot;,
-           &quot;Test object.0.Integer array&quot;
-         ],
-       }
-     }
- }
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To cancel all the current OBSERVE requests, type <code>"all"</code> in the <code>keys</code> section.</p>
-</div>
-</details>
-<h4 id="write-attributes">Write Attributes<a class="headerlink" href="#write-attributes" title="Permanent link">#</a></h4>
-<details class="write_attributes"><summary>Write_attributes</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;writeAttributes&quot;,
-         &quot;keys&quot;: [
-           &quot;Connectivity Monitoring.0.Radio Signal Strength&quot;,
-           &quot;LwM2M Server.1.Lifetime&quot;,
-           &quot;Portfolio.11.Identity.1&quot;,
-           &quot;Portfolio.5.Identity.1&quot;,
-           &quot;Device.0.UTC Offset&quot;,
-           &quot;Test object.0.Integer array&quot;
-         ],
-         &quot;attributes&quot;: [
-           {
-             &quot;epmin&quot;: 5,
-             &quot;gt&quot;: -65.5,
-             &quot;lt&quot;: -105.5,
-             &quot;st&quot;: 4,
-             &quot;con&quot;: 1
-           },
-           {
-             &quot;pmin&quot;: 30,
-             &quot;pmax&quot;: 35,
-             &quot;con&quot;: &quot;&quot;
-           },
-           {},
-           {
-             &quot;epmax&quot;: 40
-           },
-           {
-             &quot;con&quot;: null
-           },
-           {
-             &quot;pmax&quot;: 20
-           }
-         ]
-       }
-     }
- }
-</code></pre></div>
-</details>
-<h4 id="observe-composite">Observe-Composite<a class="headerlink" href="#observe-composite" title="Permanent link">#</a></h4>
-<details class="observe_composite"><summary>Observe_composite</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;observeComposite&quot;,
-         &quot;keys&quot;: [
-           &quot;Connectivity Monitoring.0.Radio Signal Strength&quot;,
-           &quot;LwM2M Server.1.Lifetime&quot;,
-           &quot;Portfolio.11.Identity.1&quot;,
-           &quot;Portfolio.5.Identity.1&quot;,
-           &quot;Device.0.UTC Offset&quot;,
-           &quot;Test object.0.Integer array&quot;
-         ],
-         &quot;attributes&quot;: [
-           {
-             &quot;epmin&quot;: 5,
-             &quot;gt&quot;: -65.5,
-             &quot;lt&quot;: -105.5,
-             &quot;st&quot;: 4,
-             &quot;con&quot;: 1
-           },
-           {
-             &quot;pmin&quot;: 30,
-             &quot;pmax&quot;: 35,
-             &quot;con&quot;: &quot;&quot;
-           },
-           {},
-           {
-             &quot;epmax&quot;: 40
-           },
-           {
-             &quot;con&quot;: null
-           },
-           {
-             &quot;pmax&quot;: 20
-           }
-         ]
-       }
-     }
- }
-</code></pre></div>
-</details>
-<h4 id="read-composite">Read-Composite<a class="headerlink" href="#read-composite" title="Permanent link">#</a></h4>
-<details class="read_composite"><summary>Read_composite</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;readComposite&quot;,
-         &quot;keys&quot;: [
-           &quot;Connectivity Monitoring.0.Radio Signal Strength&quot;,
-           &quot;LwM2M Server.1.Lifetime&quot;,
-           &quot;Portfolio.11.Identity.1&quot;,
-           &quot;Portfolio.5.Identity.1&quot;,
-           &quot;Device.0.UTC Offset&quot;,
-           &quot;Test object.0.Integer array&quot;
-         ],
-       }
-     }
- }
-</code></pre></div>
-</details>
-<h4 id="cancel-observe-composite">Cancel Observe-Composite<a class="headerlink" href="#cancel-observe-composite" title="Permanent link">#</a></h4>
-<details class="cancelobserve_composite"><summary>Cancelobserve_composite</summary><div class="highlight"><pre><span></span><code> {
-   &quot;state&quot;: {
-       &quot;desired&quot;: {
-         &quot;operation&quot;: &quot;cancelObserveComposite&quot;,
-         &quot;keys&quot;: [
-           &quot;Connectivity Monitoring.0.Radio Signal Strength&quot;,
-           &quot;LwM2M Server.1.Lifetime&quot;,
-           &quot;Portfolio.11.Identity.1&quot;,
-           &quot;Portfolio.5.Identity.1&quot;,
-           &quot;Device.0.UTC Offset&quot;,
-           &quot;Test object.0.Integer array&quot;
-         ],
-       }
-     }
- }
-</code></pre></div>
-</details>
-<h2 id="check-logs-in-cloudwatch">Check logs in CloudWatch<a class="headerlink" href="#check-logs-in-cloudwatch" title="Permanent link">#</a></h2>
-<p>If you encounter difficulties when forwarding your requests to Coiote DM, it may be helpful to check the logs collected by AWS CloudWatch for all the components of the integration.</p>
-<ol>
-<li>
-<p>To check logs for AWS Lambda:</p>
-<ul>
-<li>Go to AWS CloudWatch and select <strong>Logs</strong> &gt; <strong>Log groups</strong>.</li>
-<li>From the <strong>Log groups</strong> list, select the <code>/aws/lambda/lwm2mOperation</code> group.</li>
+<li>Open STM32CUBEMX and in the New project section, select <strong>ACCESS TO BOARD SELECTOR</strong>.
+<img alt="Start project" src="../images/start_project.png" title="Start project" /></li>
+<li>From the list of STM boards, select your board, click <strong>Start project</strong> and click <strong>Yes</strong> in the <strong>Initialize all peripherals with their default mode</strong> pop-up that appears.<br />
+<img alt="Select board menu" src="../images/select_board.png" title="select_board" /></li>
+<li>In the <strong>Pinout &amp; Configuration</strong> tab, click <strong>Software Packs</strong> and select <strong>Manage Software Packs</strong>.
+<img alt="Software Packs" src="../images/software_packs_select.png" title="software_packs_select" /><ul>
+<li>Click <strong>From local</strong> and select your Anjay I-Cube pack from your local disk.
+<img alt="Anjay I-CUBE pack" src="../images/pack.png" title="pack" /></li>
+<li>After reading the license agreement, check the license agreement checkbox and click <strong>Finish</strong>. The pack will be installed in a few seconds.</li>
 </ul>
 </li>
-<li>
-<p>To check logs for all integration components in one place:</p>
-<ul>
-<li>Go to AWS CloudWatch and select <strong>Logs</strong> &gt; <strong>Log groups</strong>.</li>
-<li>From the <strong>Log groups</strong> list, select the <code>AWSIotLogsV2</code> group.</li>
-<li>Select all the logs from the list by checking the box next to <strong>Log stream</strong> and click <strong>Search all</strong>.
-  <img alt="Search in all logs" src="../images/all_logs.png" title="Search in all logs" /></li>
-<li>Expand a log stream to see its details by clicking the arrow icon <strong><code>&gt;</code></strong>.
-  <img alt="Expand log stream" src="../images/expand_log.png" title="Expand log stream" /></li>
+<li>Back in the <strong>Pinout &amp; Configuration</strong> tab, click <strong>Software Packs</strong> and select <strong>Select Components</strong>.
+<img alt="Select Components menu" src="../images/select_components.png" title="select_components" /></li>
+<li>From the list of packs, click <strong>AVSystem.I-CUBE-Anjay</strong> to expand a list of boards.<ul>
+<li>From the list, find your board and check it in the <strong>Selection</strong> column.</li>
+<li>From the list, find the <strong>LwM2M Anjay</strong> component and check it in the <strong>Selection</strong> column.</li>
+<li>In the <strong>Device Application</strong> component, select <strong>anjay</strong> in the <strong>Selection</strong> column to enable your demo application.</li>
 </ul>
 </li>
 </ol>
+<h2 id="step-2-configuring-the-anjay-i-cube-application">Step 2: Configuring the <strong>Anjay I-CUBE</strong> application<a class="headerlink" href="#step-2-configuring-the-anjay-i-cube-application" title="Permanent link">#</a></h2>
+<p>Before you generate code for your application, you need to configure it as per the specific requirements for your board:</p>
+<ol>
+<li>Back in the <strong>Pinout &amp; Configuration</strong> tab, expand the <strong>Software Packs</strong> tab that has appeared in the side menu and click <strong>AVSystem.I-CUBE-Anjay.x.xx.x</strong>:<ul>
+<li>In the <strong>Mode</strong> window that appears, check all three boxes next to the LwM2M Anjay, Device Application and Board Support <your_board_name> options.
+ <img alt="Mode boxes" src="../images/mode_settings.png" title="mode_settings" /></li>
+<li>In the <strong>Configuration</strong> window:<ul>
+<li>Go to the <strong>Parameter Settings</strong> tab and configure your Anjay Library. For a detailed description of all Anjay library configuration options, see <a href="https://avsystem.github.io/Anjay-doc/api/anjay__config_8h.html">here</a>.
+ <img alt="Parameter settings" src="../images/parameter_settings.png" title="parameter_settings" /></li>
+<li>Go to the <strong>Client Settings</strong> tab and configure your LwM2M Client parameters like Endpoint name, PSK, PSK identity, server URI and others.
+ <img alt="Client settings" src="../images/client_settings.png" title="client_settings" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the <strong>Pinout &amp; Configuration</strong> tab:<ul>
+<li>Expand the <strong>Connectivity</strong> tab:<ul>
+<li>Configure connectivity options (like <em>USART</em>) according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.
+ <img alt="Connectivity settings" src="../images/dma_settings.png" title="dma_settings" /></li>
+</ul>
+</li>
+<li>Expand the <strong>Middleware</strong> tab:<ul>
+<li>Configure middleware options according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.
+ <img alt="Middleware settings" src="../images/middleware.png" title="middleware" /></li>
+</ul>
+</li>
+<li>Expand the <strong>Security</strong> tab:<ul>
+<li>Configure security options according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-3-generating-application-code">Step 3: Generating application code<a class="headerlink" href="#step-3-generating-application-code" title="Permanent link">#</a></h2>
+<ol>
+<li>Back in your project overview, select the <strong>Project Manager</strong> tab:<ul>
+<li>In the <strong>Project</strong> tab:<ul>
+<li>In the <strong>Project Name</strong> field, provide a name for your project.</li>
+<li>From the Toolchain/IDE expandable list, select <strong>STM32CubeIDE</strong>.</li>
+</ul>
+</li>
+<li>In the <strong>Code Generator</strong> tab:<ul>
+<li>Check the <strong>Generate peripheral initialization as a pair of '.c/.h' files per peripheral</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Click <strong>GENERATE CODE</strong> and confirm by clicking <strong>Yes</strong> in the pop-up.
+<img alt="Generate code button" src="../images/generate_code.png" title="generate_code" /></li>
+<li>After the project is generated, you can use it further in the CubeIDE as per the specific instructions for your board in the <a href="/Anjay_integrations/Getting_started/#stmicroelectronics-boards">Anjay ST integration guide</a>.</li>
+</ol>
+<h2 id="specific-cubemx-settings">Specific CubeMX settings<a class="headerlink" href="#specific-cubemx-settings" title="Permanent link">#</a></h2>
+<h3 id="b-l462e-cell1">B-L462E-CELL1<a class="headerlink" href="#b-l462e-cell1" title="Permanent link">#</a></h3>
+<ul>
+<li>Connectivity tab:<ul>
+<li>USART1 - Enable DMA for RX/TX, enable global interrupts</li>
+<li>USART2 - Enable DMA for RX/TX, enable global interrupts</li>
+<li>USART3 - Enable DMA for RX/TX, enable global interrupts</li>
+<li>USB - Disable</li>
+</ul>
+</li>
+<li>Middleware tab:<ul>
+<li>FreeRTOS</li>
+<li>Interface - CMSIS_V1</li>
+<li>TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)</li>
+<li>USE_COUNTING_SEMAPHORES - Enabled</li>
+</ul>
+</li>
+<li>Project Manager:<ul>
+<li>Code Generator - Enable Generate peripheral initialization as a pair of '.c/.h' files per peripheral.</li>
+</ul>
+</li>
+</ul>
+<h3 id="p-l496g-cell02">P-L496G-CELL02<a class="headerlink" href="#p-l496g-cell02" title="Permanent link">#</a></h3>
+<p>Start from board selector with STM32L496G-DISCO board, initialize all peripherals with their default mode.
+Apply following settings:</p>
+<ul>
+<li>Connectivity tab:<ul>
+<li>SDMMC1 - Disable</li>
+<li>USART1 - Enable DMA for RX/TX, enable global interrupts</li>
+<li>USART2 - Enable DMA for RX/TX, enable global interrupts</li>
+<li>USB_OTG_FS - Disable</li>
+</ul>
+</li>
+<li>Security tab:<ul>
+<li>RNG - Enable</li>
+</ul>
+</li>
+<li>Middleware tab:<ul>
+<li>FreeRTOS</li>
+<li>Interface - CMSIS_V1</li>
+<li>TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)</li>
+<li>USE_COUNTING_SEMAPHORES - Enabled</li>
+</ul>
+</li>
+<li>Project Manager:<ul>
+<li>Code Generator - Enable Generate peripheral initialization as a pair of '.c/.h' files per peripheral.</li>
+</ul>
+</li>
+</ul>
 
 <!-- Link to previous and/or next page -->
 
@@ -1679,7 +1380,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../../Configuring_AWS_integration/"
+      href="../../../Getting_started/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1691,7 +1392,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Configuring the integration
+          Getting started
         </div>
       </div>
     </a>
@@ -1700,7 +1401,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../../Concepts/AWS_Integration_concepts/"
+      href="../../STM32L496G-DISCOBG96/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -1709,7 +1410,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          How AWS integration works
+          STM32L496G-DISCO/BG96
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -1729,7 +1430,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2021</span>
     
   </small>
 </div>
@@ -1752,7 +1453,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../../Configuring_AWS_integration/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../../../Getting_started/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -1761,19 +1462,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Configuring the integration
+                  Getting started
                 </div>
               </div>
             </a>
           
           
-            <a href="../../Concepts/AWS_Integration_concepts/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../../STM32L496G-DISCOBG96/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  How AWS integration works
+                  STM32L496G-DISCO/BG96
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
@@ -1808,22 +1509,22 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
     
 
       <script>
         app = initialize({
-          base: "../../..",
+          base: "../../../..",
           features: [],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
+            worker: "../../../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="../../../javascripts/extra.js"></script>
+        <script src="../../../../javascripts/extra.js"></script>
       
     
   </body>
