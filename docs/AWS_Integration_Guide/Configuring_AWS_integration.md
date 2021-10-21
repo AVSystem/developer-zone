@@ -7,7 +7,7 @@ Follow this section to integrate your AWS services with Coiote DM.
 - An active AWS subscription.
 - An AWS S3 bucket.
 - A Coiote DM user account with the **Cloud admin** role.
-- The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>). 
+- The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
 - The Python package installer (<https://pypi.org/project/pip/>).
 - The AWS CLI (<https://aws.amazon.com/cli/>).
 
@@ -96,26 +96,26 @@ To add the resources needed for the integration to your AWS services:
        git checkout main
        cd coiote-aws-iot-cloud-formation
        ```
-2. Use Python package installer in command line to install all the required dependencies:
+2. Use the Python package installer in command line to install all the required dependencies:
     ```
-   python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
+    python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
     ```
 3. If you want to create a new S3 bucket for the lambda code use the following command:
     ```
-   aws s3 mb s3://<your-bucket-name> --region <region-name, e.g. us-west-1>
-   ```
+    aws s3 mb s3://<your-bucket-name> --region <region-name, e.g. us-west-1>
+    ```
 4. Package the code to your AWS S3 bucket and change the current CloudFormation template using the following command:
     ```
     aws cloudformation package --template-file cloudFormation.json --s3-bucket <your-bucket-name> --output-template-file output.json --use-json
-   ```
-5. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. Choose **CloudFormation** from the services list.
-6. Create a new stack. Use the generated **output.json** file as a template for the stack.
+    ```
+5. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
+6. Create a new stack. Use the generated **output.json** file as the template for the stack.
    ![Choose template file](images/choose_template_file.png "Choose template file")
 7. Choose a name for the stack and change the default values of the parameters to the credentials of your REST user created in a previous step.
-   ![Change parameters](images/change_parameters.png "Change parameters")
-   - For `coioteDMrestURL`, provide the URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.
-   - For `coioteDMrestPassword`, provide the password set for your Coiote DM REST user.
-   - For `coioteDMrestUsername`, provide your Coiote DM REST user login (email address).
+    ![Change parameters](images/change_parameters.png "Change parameters")
+    - For `coioteDMrestURL`, provide the URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.
+    - For `coioteDMrestPassword`, provide the password set for your Coiote DM REST user.
+    - For `coioteDMrestUsername`, provide your Coiote DM REST user login (email address).
 8. Finalize configuring the stack and wait for its creation to finish.
 9. Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
 10. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
