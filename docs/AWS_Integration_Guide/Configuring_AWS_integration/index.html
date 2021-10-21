@@ -1202,10 +1202,11 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An active AWS subscription.</li>
+<li>An AWS S3 bucket.</li>
 <li>A Coiote DM user account with the <strong>Cloud admin</strong> role.</li>
 <li>The Git tool (<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a>).</li>
+<li>The Python package installer (<a href="https://pypi.org/project/pip/">https://pypi.org/project/pip/</a>).</li>
 <li>The AWS CLI (<a href="https://aws.amazon.com/cli/">https://aws.amazon.com/cli/</a>).</li>
-<li>Terraform CLI (<a href="https://learn.hashicorp.com/tutorials/terraform/install-cli">https://learn.hashicorp.com/tutorials/terraform/install-cli</a>).</li>
 </ul>
 <h2 id="create-a-coiote-dm-rest-user">Create a Coiote DM REST user<a class="headerlink" href="#create-a-coiote-dm-rest-user" title="Permanent link">#</a></h2>
 <p>To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:   </p>
@@ -1213,9 +1214,9 @@
 <li>Go to your Coiote DM account and from the <strong>Administration</strong> menu, select <strong>Users management</strong>.</li>
 <li>Select <strong>Add user</strong> and in fill in the form:
 <img alt="Add user button" src="../images/add_button2.png" title="Add user button" /><ul>
-<li>Provide <strong>Email</strong> for new user (which will be its user name) and select your domain from the <strong>Domain path</strong> drop-down list.</li>
+<li>Provide <strong>Email</strong> for new user (which will be its username) and select your domain from the <strong>Domain path</strong> drop-down list.</li>
 <li>Remember to switch on the <strong>User Verified</strong> and <strong>User Enabled</strong> toggle buttons.</li>
-<li>In the <strong>Client Roles</strong> field, pick the <strong>admin-cli</strong> role.
+<li>In the <strong>Client Roles</strong> fields, pick the <strong>CoioteDM</strong> client and <strong>cloudtenant</strong> role.
 <img alt="Add REST user" src="../images/add_rest_user2.png" title="Add REST user" /></li>
 <li>Click <strong>Save</strong>.</li>
 <li>Go to the <strong>Credentials</strong> tab, type a password for your user (twice), select <strong>Set password</strong>, then confirm by clicking <strong>Set password</strong> in the pop-up.</li>
@@ -1236,6 +1237,7 @@
 <li>Select the <strong>AWSiotCore</strong> group and go to <strong>Group tasks</strong>, select the first <strong>AWS</strong> task and click <strong>Copy</strong>.
   <img alt="Copy task" src="../images/copy_task.png" title="Copy task" /></li>
 <li>In the pop-up window, click <strong>Select group</strong> in the <strong>Task target</strong> field and choose your custom integration group from the list.</li>
+<li>Remember to select the <strong>Domain</strong> of the user you created earlier.</li>
 <li>In the <strong>Actions</strong> field, select <strong>Add new task</strong>.
   <img alt="Copy task pop-up" src="../images/copy_task_popup.png" title="Copy task pop-up" /></li>
 <li>Repeat the action for the remaining five tasks.</li>
@@ -1281,13 +1283,10 @@
 <li>Click <strong>Save</strong>.</li>
 </ul>
 </li>
-<li>
-<p>For <code>AWSdataPlaneEndpointAddress</code>:</p>
-<ul>
-<li>Open your command line and run the following command:</li>
-</ul>
-<p><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS</code></p>
-<ul>
+<li>For <code>AWSdataPlaneEndpointAddress</code>:<ul>
+<li>Open your command line and run the following command:
+  <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS
+</code></pre></div></li>
 <li>Copy the returned result.
   <img alt="Copy data plane endpoint address" src="../images/dataplane.png" title="Copy data plane endpoint address" /></li>
 <li>In Coiote DM, go to the <strong>Profiles</strong> tab of your integration group and paste the result as the value for <code>AWSdataPlaneEndpointAddress</code>.</li>
@@ -1303,117 +1302,40 @@
 </li>
 </ol>
 <h2 id="add-aws-resources-using-the-integration-repository">Add AWS resources using the integration repository<a class="headerlink" href="#add-aws-resources-using-the-integration-repository" title="Permanent link">#</a></h2>
-<p>All the AWS-side configuration needed for the integration to work is stored in a publicly available git repository (<a href="https://github.com/AVSystem/iot-examples/tree/main/coiote-aws-iot-terraform">https://github.com/AVSystem/iot-examples/tree/main/coiote-aws-iot-terraform</a>).</p>
+<p>All the AWS-side configuration needed for the integration to work is stored in a publicly available git repository (<a href="https://github.com/AVSystem/iot-examples/tree/main/coiote-aws-iot-cloud-formation">https://github.com/AVSystem/iot-examples/tree/main/coiote-aws-iot-cloud-formation</a>).</p>
 <p>To add the resources needed for the integration to your AWS services:</p>
 <ol>
-<li>Clone the repository into your local drive and check out on the <code>coiote-aws-iot-terraform</code> branch:<ul>
+<li>Clone the repository into your local drive and check out on the <code>coiote-aws-iot-cloud-formation</code> branch:<ul>
 <li>Run your command line and paste the following commands:
    <div class="highlight"><pre><span></span><code>git clone --no-checkout https://github.com/AVSystem/iot-examples.git
 cd iot-examples
-git sparse-checkout set coiote-aws-iot-terraform
+git sparse-checkout set coiote-aws-iot-cloud-formation
 git checkout main
-cd coiote-aws-iot-terraform
+cd coiote-aws-iot-cloud-formation
 </code></pre></div></li>
 </ul>
 </li>
-<li>Insert your REST user credentials into the <code>vars.py</code> file:<ul>
-<li>In the catalog of your local repository, find the <code>vars.py</code> file and open it using a program that enables file edition.</li>
-<li>Change the default values of the variables to the credentials of your REST user created in a previous step.
-    <img alt="Change vars file" src="../images/change_vars_file.png" title="Change vars file" /><ul>
+<li>Use the Python package installer in command line to install all the required dependencies:
+    <div class="highlight"><pre><span></span><code>python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
+</code></pre></div></li>
+<li>If you want to create a new S3 bucket for the lambda code, use the following command:
+    <div class="highlight"><pre><span></span><code>aws s3 mb s3://&lt;your-bucket-name&gt; --region &lt;region-name, e.g. us-west-1&gt;
+</code></pre></div></li>
+<li>Package the code to your AWS S3 bucket and change the current CloudFormation template using the following command:
+    <div class="highlight"><pre><span></span><code>aws cloudformation package --template-file cloudFormation.json --s3-bucket &lt;your-bucket-name&gt; --output-template-file output.json --use-json
+</code></pre></div></li>
+<li>Go to the AWS Console page (<a href="https://console.aws.amazon.com/console/home">https://console.aws.amazon.com/console/home</a>) and sign in. Make sure that you are in the right region. From the list of services, select <strong>CloudFormation</strong> .</li>
+<li>Create a new stack. Use the generated <strong>output.json</strong> file as the template for the stack.
+   <img alt="Choose template file" src="../images/choose_template_file.png" title="Choose template file" /></li>
+<li>Choose a name for the stack and change the default values of the parameters to the credentials of your REST user created in a previous step.
+    <img alt="Change parameters" src="../images/change_parameters.png" title="Change parameters" /><ul>
 <li>For <code>coioteDMrestURL</code>, provide the URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.</li>
 <li>For <code>coioteDMrestPassword</code>, provide the password set for your Coiote DM REST user.</li>
 <li>For <code>coioteDMrestUsername</code>, provide your Coiote DM REST user login (email address).</li>
-<li>Save the file.</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<p>Run Terraform:</p>
-<ul>
-<li>Go back to your command line and paste the following:
-    <div class="highlight"><pre><span></span><code>terraform init
-terraform apply
-</code></pre></div></li>
-<li>
-<p>Run the command. It will copy all the 16 resources contained in the <code>main.tf</code> file from the repository into your AWS services. Among the key resources that enable the integration, there are: the <code>iam_for_lambda</code> role, the <code>lwm2mOperation</code> Lambda function, and the <code>operationRequest</code> and <code>operationResponse</code> rules. See the contents of the <code>main.tf</code> file below or refer to the Concepts chapter for more details.</p>
-<div class="highlight"><pre><span></span><code><span class="err">resource</span> <span class="s2">&quot;aws_iam_role&quot;</span> <span class="s2">&quot;iam_for_lambda&quot;</span> <span class="p">{</span>
-  <span class="kc">na</span><span class="err">me</span> <span class="err">=</span> <span class="s2">&quot;iam_for_lambda&quot;</span>
-
-  <span class="err">assume_role_policy</span> <span class="err">=</span> <span class="err">&lt;&lt;EOF</span>
-<span class="p">{</span>
-  <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="s2">&quot;sts:AssumeRole&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Principal&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Service&quot;</span><span class="p">:</span> <span class="s2">&quot;lambda.amazonaws.com&quot;</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
-<span class="err">EOF</span>
-<span class="p">}</span>
-
-<span class="err">resource</span> <span class="s2">&quot;aws_iam_policy_attachment&quot;</span> <span class="s2">&quot;policy_attachment&quot;</span> <span class="p">{</span>
-  <span class="kc">na</span><span class="err">me</span> <span class="err">=</span> <span class="s2">&quot;attachment&quot;</span>
-  <span class="err">roles</span> <span class="err">=</span> <span class="p">[</span><span class="err">aws_iam_role.iam_</span><span class="kc">f</span><span class="err">or_lambda.</span><span class="kc">na</span><span class="err">me</span><span class="p">]</span>
-  <span class="err">policy_ar</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole&quot;</span>
-<span class="p">}</span>
-
-
-<span class="err">resource</span> <span class="s2">&quot;random_string&quot;</span> <span class="s2">&quot;r&quot;</span> <span class="p">{</span>
-  <span class="err">le</span><span class="kc">n</span><span class="err">g</span><span class="kc">t</span><span class="err">h</span> <span class="err">=</span> <span class="mi">16</span>
-  <span class="err">special</span> <span class="err">=</span> <span class="kc">false</span>
-<span class="p">}</span>
-
-<span class="err">da</span><span class="kc">ta</span> <span class="s2">&quot;archive_file&quot;</span> <span class="s2">&quot;lambda_zip&quot;</span> <span class="p">{</span>
-  <span class="kc">t</span><span class="err">ype</span> <span class="err">=</span> <span class="s2">&quot;zip&quot;</span>
-  <span class="err">source_dir</span> <span class="err">=</span> <span class="s2">&quot;lwm2mOperation&quot;</span>
-  <span class="err">ou</span><span class="kc">t</span><span class="err">pu</span><span class="kc">t</span><span class="err">_pa</span><span class="kc">t</span><span class="err">h</span> <span class="err">=</span> <span class="s2">&quot;lwm2mOperation.zip&quot;</span>
-  <span class="err">depe</span><span class="kc">n</span><span class="err">ds_o</span><span class="kc">n</span> <span class="err">=</span> <span class="p">[</span><span class="err">ra</span><span class="kc">n</span><span class="err">dom_s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g.r</span><span class="p">]</span>
-<span class="p">}</span>
-
-<span class="err">resource</span> <span class="s2">&quot;aws_lambda_function&quot;</span> <span class="s2">&quot;lwm2mOperation&quot;</span> <span class="p">{</span>
-  <span class="kc">f</span><span class="err">ile</span><span class="kc">na</span><span class="err">me</span>      <span class="err">=</span> <span class="s2">&quot;lwm2mOperation.zip&quot;</span>
-  <span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span> <span class="err">=</span> <span class="s2">&quot;lwm2mOperation&quot;</span>
-  <span class="err">role</span>          <span class="err">=</span> <span class="err">aws_iam_role.iam_</span><span class="kc">f</span><span class="err">or_lambda.ar</span><span class="kc">n</span>
-  <span class="err">ha</span><span class="kc">n</span><span class="err">dler</span>       <span class="err">=</span> <span class="s2">&quot;lambda_function.lambda_handler&quot;</span>
-
-  <span class="err">source_code_hash</span> <span class="err">=</span> <span class="err">da</span><span class="kc">ta</span><span class="err">.archive_</span><span class="kc">f</span><span class="err">ile.lambda_zip.ou</span><span class="kc">t</span><span class="err">pu</span><span class="kc">t</span><span class="err">_base</span><span class="mi">64</span><span class="err">sha</span><span class="mi">256</span>
-
-  <span class="err">ru</span><span class="kc">nt</span><span class="err">ime</span> <span class="err">=</span> <span class="s2">&quot;python3.8&quot;</span>
-  <span class="err">e</span><span class="kc">n</span><span class="err">viro</span><span class="kc">n</span><span class="err">me</span><span class="kc">nt</span> <span class="p">{</span>
-    <span class="err">variables</span> <span class="err">=</span> <span class="p">{</span>
-      <span class="err">coio</span><span class="kc">te</span><span class="err">DMres</span><span class="kc">t</span><span class="err">Password</span> <span class="err">=</span> <span class="err">var.coio</span><span class="kc">te</span><span class="err">DMres</span><span class="kc">t</span><span class="err">Password</span>
-      <span class="err">coio</span><span class="kc">te</span><span class="err">DMres</span><span class="kc">t</span><span class="err">Uri</span> <span class="err">=</span> <span class="err">var.coio</span><span class="kc">te</span><span class="err">DMres</span><span class="kc">t</span><span class="err">URL</span>
-      <span class="err">coio</span><span class="kc">te</span><span class="err">DMres</span><span class="kc">t</span><span class="err">User</span><span class="kc">na</span><span class="err">me</span> <span class="err">=</span> <span class="err">var.coio</span><span class="kc">te</span><span class="err">DMres</span><span class="kc">t</span><span class="err">User</span><span class="kc">na</span><span class="err">me</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-
-<span class="err">module</span> <span class="s2">&quot;iot_rule_1&quot;</span> <span class="p">{</span>
-  <span class="kc">na</span><span class="err">me</span> <span class="err">=</span> <span class="s2">&quot;operationRequest&quot;</span>
-  <span class="err">sql_query</span> <span class="err">=</span> <span class="s2">&quot;SELECT state.desired.operation AS operation, state.desired.keys AS keys, state.desired.values AS values, state.desired.attributes AS attributes, state.desired.arguments AS arguments, topic(3) AS thingName FROM &#39;$aws/things/+/shadow/name/operation/update/accepted&#39; WHERE isUndefined(state.desired.operation) = false&quot;</span>
-  <span class="err">source</span>  <span class="err">=</span> <span class="s2">&quot;git::https://github.com/Passarinho4/terraform-aws-iot-topic-rule.git?ref=master&quot;</span>
-  <span class="err">lambda</span> <span class="err">=</span> <span class="p">[</span><span class="s2">&quot;lwm2mOperation&quot;</span><span class="p">]</span>
-  <span class="err">depe</span><span class="kc">n</span><span class="err">ds_o</span><span class="kc">n</span> <span class="err">=</span> <span class="p">[</span><span class="err">aws_lambda_</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">.lwm</span><span class="mi">2</span><span class="err">mOpera</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">]</span>
-<span class="p">}</span>
-
-<span class="err">module</span> <span class="s2">&quot;iot_rule_2&quot;</span> <span class="p">{</span>
-  <span class="kc">na</span><span class="err">me</span> <span class="err">=</span> <span class="s2">&quot;operationResponse&quot;</span>
-  <span class="err">sql_query</span> <span class="err">=</span> <span class="s2">&quot;SELECT state.reported.result AS state.reported FROM &#39;$aws/things/+/shadow/name/operation/update/accepted&#39; WHERE (CASE isUndefined(state.reported.operation) WHEN true THEN false ELSE CASE state.reported.operation = &#39;read&#39; OR state.reported.operation = &#39;write&#39; OR state.reported.operation = &#39;readComposite&#39; when true THEN true ELSE false END END) = true&quot;</span>
-  <span class="err">source</span> <span class="err">=</span> <span class="s2">&quot;git::https://github.com/Passarinho4/terraform-aws-iot-topic-rule.git?ref=master&quot;</span>
-  <span class="err">republish</span> <span class="err">=</span> <span class="p">[{</span><span class="kc">t</span><span class="err">opic</span> <span class="err">=</span> <span class="s2">&quot;$$aws/things/$${topic(3)}/shadow/name/datamodel/update&quot;</span><span class="p">}]</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p>Once the Terraform command is executed successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.</p>
-</li>
+<li>Finalize configuring the stack and wait for its creation to finish.</li>
+<li>Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.</li>
 <li>To check if your integration works correctly, go to AWS IoT Core, and from the menu, select <strong>Manage</strong> &gt; <strong>Things</strong>, then see if your devices are listed as in here:
 <img alt="Migrated things" src="../images/migrated_things.png" title="Migrated things" /></li>
 </ol>
@@ -1480,7 +1402,7 @@ terraform apply
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 30, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2021</span>
     
   </small>
 </div>
