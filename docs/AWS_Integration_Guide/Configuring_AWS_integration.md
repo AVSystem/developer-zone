@@ -100,7 +100,7 @@ To add the resources needed for the integration to your AWS services:
     ```
     python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
     ```
-3. If you want to create a new S3 bucket for the lambda code use the following command:
+3. If you want to create a new S3 bucket for the lambda code, use the following command:
     ```
     aws s3 mb s3://<your-bucket-name> --region <region-name, e.g. us-west-1>
     ```
