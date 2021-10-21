@@ -135,3 +135,6 @@ To edit or delete an Observation, you need to create a new job.
     3. To delete an Observation, turn off the toggle to **False**.
 
 ![Edit or delete an Observation](images-observation/observation-central10.png "Edit or delete an Observation in Job properties")
+
+## Next steps
+[Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)
