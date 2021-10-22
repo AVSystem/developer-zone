@@ -1,4 +1,4 @@
-# Set an Observation in IoT Central
+# Set an Observation in Azure IoT Central
 
 This section describes how to set an Observation in your Azure IoT Central application.
 
@@ -78,7 +78,7 @@ After running a query, you will see the list of devices that are associated with
 
 ## Set up an Observation
 
-Let’s set an Observe operation on resource ID **6/0/2**. This is Altitude, and the data is sent as Telemetry.
+Let’s set an Observation operation on resource ID **6/0/2**. This is Altitude, and the data is sent as Telemetry.
 
 To add an Observation, you need to use the **Jobs** tab.
 
@@ -95,6 +95,9 @@ To add an Observation, you need to use the **Jobs** tab.
        * Click **Next**.
 
     ![Job properties](images-observation/observation-central6.png "Set an Observation and its attributes in Job properties")
+
+    !!! note
+        Read more about other possible attributes in our [Brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
 
 3. In **Delivery options**, click **Next**.
 4. In **Schedule**, click **Next**.

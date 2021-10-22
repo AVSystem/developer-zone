@@ -53,13 +53,14 @@ nav:
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
+                - 'Set an Observation': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Setting_an_Observation_Azure_IoT_Hub.md'
             - Azure IoT Central:
                 - 'Configuring integration extension': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
                 - 'Device operations':
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central.md'
-                - 'Set an Observation': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Setting_an_Observation_Azure_IoT_Central.html#Download_LwM2M_template_in_Coiote_DM.md'    
+                - 'Set an Observation': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Setting_an_Observation_Azure_IoT_Central.md'    
             - 'Configure integration templates': 'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md'
             - 'Concepts':
                 - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings.md'
