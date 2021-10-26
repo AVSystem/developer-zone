@@ -4,6 +4,8 @@ Start developing LwM2M applications on your ST devices in just a few clicks usin
 
 ## STMicroelectronics boards
 
+Build a LwM2M application for your ST board using I-Cube Anjay from scratch by following our [I-CUBE-Anjay guide](../Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/).
+
 ### STM32L496G-DISCO/BG96
 
 Integrate your P-L496G-CELL02 Discovery kit board along with the default-provided Quectel BG96 modem using our Anjay LwM2M Client based on freeRTOS.

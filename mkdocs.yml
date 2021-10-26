@@ -32,6 +32,7 @@ nav:
         - 'Anjay integrations':
             - 'Anjay_integrations/Getting_started.md'
             - 'Anjay ST integration':
+                - 'Anjay_integrations/Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96.md'
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH.md'
                 - 'Anjay_integrations/Anjay_ST_integration/B-L462E-CELL1-TYPE1SC.md'
@@ -70,6 +71,7 @@ nav:
             - 'Tutorials':
                 - 'Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.md'
         - 'AWS IoT Core integration guide':
+            - 'AWS_Integration_Guide/Overview.md'
             - 'Configuring the integration': 'AWS_Integration_Guide/Configuring_AWS_integration.md'
             - 'Device operations':
                 - 'AWS_Integration_Guide/Device_operations/Operation_types.md'
