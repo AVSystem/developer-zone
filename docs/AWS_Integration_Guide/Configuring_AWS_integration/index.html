@@ -1020,6 +1020,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-coiote-dm-rest-user-credentials-to-aws-secrets-manager" class="md-nav__link">
+    Add Coiote DM REST user credentials to AWS Secrets Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-aws-resources-using-the-integration-repository" class="md-nav__link">
     Add AWS resources using the integration repository
   </a>
@@ -1173,6 +1180,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-coiote-dm-rest-user-credentials-to-aws-secrets-manager" class="md-nav__link">
+    Add Coiote DM REST user credentials to AWS Secrets Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-aws-resources-using-the-integration-repository" class="md-nav__link">
     Add AWS resources using the integration repository
   </a>
@@ -1313,6 +1327,43 @@
 <p>Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.</p>
 </li>
 </ol>
+<h2 id="add-coiote-dm-rest-user-credentials-to-aws-secrets-manager">Add Coiote DM REST user credentials to AWS Secrets Manager<a class="headerlink" href="#add-coiote-dm-rest-user-credentials-to-aws-secrets-manager" title="Permanent link">#</a></h2>
+<ol>
+<li>Go to the AWS Console page (<a href="https://console.aws.amazon.com/console/home">https://console.aws.amazon.com/console/home</a>) and sign in. Make sure that you are in the right region. Choose <strong>Secrets Manager</strong> from the services list.</li>
+<li>Create a new secret by clicking the <strong>Store a new secret</strong> button.</li>
+<li>From the group of secret types, select <strong>Other type of secrets</strong>.
+   <img alt="Selecting other type of secrets" src="../images/secret_type.png" title="Select other type of secrets" /></li>
+<li>Provide credentials to your Coiote DM REST user created before as key/value pairs. Desired keys and related values are specified in the table below. To add a new pair, click <strong>+ Add row</strong>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password for your Coiote DM REST user.</td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Your Coiote DM REST user login (email address).</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Provide Coiote DM credentials" src="../images/secret_values.png" title="Provide Coiote DM credentials" /></p>
+<ol>
+<li>After adding the credentials, proceed by clicking <strong>Next</strong>.</li>
+<li>Set the secret name to <code>coioteDMrest</code>.
+   <img alt="Set secret name" src="../images/secret_name.png" title="Set secret name" /></li>
+<li>Go through creator's remaining steps the default  and save your secret by clicking <strong>Store</strong>.</li>
+</ol>
 <h2 id="add-aws-resources-using-the-integration-repository">Add AWS resources using the integration repository<a class="headerlink" href="#add-aws-resources-using-the-integration-repository" title="Permanent link">#</a></h2>
 <p>All the AWS-side configuration needed for the integration to work is stored in a publicly available git repository (<a href="https://github.com/AVSystem/iot-examples/tree/main/coiote-aws-iot-cloud-formation">https://github.com/AVSystem/iot-examples/tree/main/coiote-aws-iot-cloud-formation</a>).</p>
 <p>To add the resources needed for the integration to your AWS services:</p>
@@ -1339,13 +1390,8 @@ cd coiote-aws-iot-cloud-formation
 <li>Go to the AWS Console page (<a href="https://console.aws.amazon.com/console/home">https://console.aws.amazon.com/console/home</a>) and sign in. Make sure that you are in the right region. From the list of services, select <strong>CloudFormation</strong> .</li>
 <li>Create a new stack. Use the generated <strong>output.json</strong> file as the template for the stack.
    <img alt="Choose template file" src="../images/choose_template_file.png" title="Choose template file" /></li>
-<li>Choose a name for the stack and change the default values of the parameters to the credentials of your REST user created in a previous step.
-    <img alt="Change parameters" src="../images/change_parameters.png" title="Change parameters" /><ul>
-<li>For <code>coioteDMrestURL</code>, provide the URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.</li>
-<li>For <code>coioteDMrestPassword</code>, provide the password set for your Coiote DM REST user.</li>
-<li>For <code>coioteDMrestUsername</code>, provide your Coiote DM REST user login (email address).</li>
-</ul>
-</li>
+<li>Choose a name for the stack.
+   <img alt="Change stack name" src="../images/stack_name.png" title="Change stack name" /></li>
 <li>Finalize configuring the stack and wait for its creation to finish.</li>
 <li>Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.</li>
 <li>To check if your integration works correctly, go to AWS IoT Core, and from the menu, select <strong>Manage</strong> &gt; <strong>Things</strong>, then see if your devices are listed as in here:
@@ -1414,7 +1460,7 @@ cd coiote-aws-iot-cloud-formation
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2021</span>
     
   </small>
 </div>
