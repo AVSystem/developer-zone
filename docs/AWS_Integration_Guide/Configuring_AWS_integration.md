@@ -117,20 +117,20 @@ To add the resources needed for the integration to your AWS services:
        git checkout main
        cd coiote-aws-iot-cloud-formation
        ```
-2. Use Python package installer in command line to install all the required dependencies:
+2. Use the Python package installer in command line to install all the required dependencies:
     ```
-   python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
+    python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
     ```
-3. If you want to create a new S3 bucket for the lambda code use the following command:
+3. If you want to create a new S3 bucket for the lambda code, use the following command:
     ```
-   aws s3 mb s3://<your-bucket-name> --region <region-name, e.g. us-west-1>
-   ```
+    aws s3 mb s3://<your-bucket-name> --region <region-name, e.g. us-west-1>
+    ```
 4. Package the code to your AWS S3 bucket and change the current CloudFormation template using the following command:
     ```
     aws cloudformation package --template-file cloudFormation.json --s3-bucket <your-bucket-name> --output-template-file output.json --use-json
-   ```
-5. Go to the AWS Console page. Make sure that you are in the right region. Choose **CloudFormation** from the services list.
-6. Create a new stack. Use the generated **output.json** file as a template for the stack.
+    ```
+5. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
+6. Create a new stack. Use the generated **output.json** file as the template for the stack.
    ![Choose template file](images/choose_template_file.png "Choose template file")
 7. Choose a name for the stack.
    ![Change stack name](images/stack_name.png "Change stack name")
