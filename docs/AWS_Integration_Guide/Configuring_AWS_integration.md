@@ -7,7 +7,7 @@ Follow this section to integrate your AWS services with Coiote DM.
 - An active AWS subscription.
 - An AWS S3 bucket.
 - A Coiote DM user account with the **Cloud admin** role.
-- The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>). 
+- The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
 - The Python package installer (<https://pypi.org/project/pip/>).
 - The AWS CLI (<https://aws.amazon.com/cli/>).
 
@@ -84,10 +84,10 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
 ## Add Coiote DM REST user credentials to AWS Secrets Manager
 
 1. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. Choose **Secrets Manager** from the services list.
-2. Create a new secret with **Store a new secret** button.
-3. Select **Other type of secrets** from provided secret types.
-   ![Select other type of secrets](images/secret_type.png "Select other type of secrets")
-4. Provide credentials to your Coiote DM REST user created before as key/value pairs. Desired keys and related values are specified in the table below. In order to add a new pair click **+ Add row**.
+2. Create a new secret by clicking the **Store a new secret** button.
+3. From the group of secret types, select **Other type of secrets**.
+   ![Selecting other type of secrets](images/secret_type.png "Select other type of secrets")
+4. Provide credentials to your Coiote DM REST user created before as key/value pairs. Desired keys and related values are specified in the table below. To add a new pair, click **+ Add row**.
 
    | Key | Value description |
    |---|---|
@@ -97,10 +97,10 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
 
    ![Provide Coiote DM credentials](images/secret_values.png "Provide Coiote DM credentials")
 
-5. Proceed to next step with **Next** button.
-6. Set secret name to `coioteDMrest`.
+5. After adding the credentials, proceed by clicking **Next**.
+6. Set the secret name to `coioteDMrest`.
    ![Set secret name](images/secret_name.png "Set secret name")
-7. Go through creator's remaining steps and save your secret with **Store**.
+7. Go through creator's remaining steps the default  and save your secret by clicking **Store**.
 
 ## Add AWS resources using the integration repository
 
