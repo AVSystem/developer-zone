@@ -1,4 +1,4 @@
-# Set an Observation in Azure IoT Hub
+# Set an Observation
 
 This section describes how to set an Observation in your Azure IoT Hub.
 
@@ -52,7 +52,7 @@ In Azure IoT Hub, value changes for both Telemetry and Property are stored in **
                         "13": {
                             "observed": true,
                             "attributes": {
-                                "pmin": 5
+                                "pmin": 1
                             }
                         }
                     }
@@ -60,16 +60,36 @@ In Azure IoT Hub, value changes for both Telemetry and Property are stored in **
             },
 ```
 
-The line with `“observed”: true` sets an Observation. The line with `“attributes”` specifies the conditions under which notifications will be sent: `“pmin”: 5` means that notifications will never be sent more often than once every 5 seconds. Read more about other possible attributes in our [Brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
+The line with `“observed”: true` sets an Observation. The line with `“attributes”` specifies the conditions under which notifications will be sent: `“pmin”: 1` means that notifications will be sent every second.
+
+!!! info
+    * **pmin** - the minimum time in seconds between two notifications.
+    * **pmax** - the maximum time in seconds between two notifications. The notification is sent even if the value didn't change.
+
+    Read more about other attributes in our [Brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
 
 Click **Save**.
 
 
-## See how it works
+## See value changes
 
 ### In Azure IoT Hub
 
-The value changes for the observed object and resource are displayed in the same JSON snippet where you set an Observation. Scroll down to the **Reported** property. You will see how the value of `pmin` is growing. If you don’t see any changes, click **Refresh**.
+The value changes for the observed object and resource are displayed in the same JSON snippet where you set an Observation. Scroll down to the **Reported** property and find the `value` line.
+
+```
+ "13": {
+                            "value": 1634653218000,
+                            "attributes": {
+                                "pmin": "1"
+                            },
+                            "observed": true
+                        }
+```
+Because we have specified in the **Desired** properties that the maximum time between two notifications for the **Current time (3/0/13)** resource is 1 second (`pmax: 1`), the number next to `value` will be changing every 1 second. E.g., 163465321**8**000 will become 163465321**9**000.
+
+If you don’t see any changes, click **Refresh**. If it doesn’t help, you can check whether observation has been set in Coiote DM as well.
+
 
 ### In Coiote DM
 
