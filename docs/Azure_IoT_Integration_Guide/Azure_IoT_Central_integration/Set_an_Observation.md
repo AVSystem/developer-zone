@@ -1,14 +1,14 @@
-# Set an Observation in Azure IoT Central
+# Set an Observation
 
 This section describes how to set an Observation in your Azure IoT Central application.
 
-Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote DM, which in turn will transfer it to Azure IoT Hub and then to Azure IoT Central.
+Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote DM, which in turn will transfer it to Azure IoT Central.
 
 In this section, you learn how to:
-* Assign a device template that acts as a translator between Coiote DM, Azure IoT Hub and Central.
-* Create a device group, because an Observation is set at the group level.
-* Run Jobs to add, edit or delete Observations.
-* See the value changes for the observed resources.
+* Assign a device template that acts as a translator between Coiote DM and Azure IoT Central
+* Create a device group, because an Observation is set at the group level
+* Run Jobs to add, edit or delete Observations
+* See value changes for the observed resources
 
 ## Prerequisites
 
@@ -20,15 +20,19 @@ In this section, you learn how to:
 5. [A connected device](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview/).
 
 ## Assign a device template
-A device template in Azure IoT Central will be based on the default LwM2M template exported from Coiote DM.
 
-### Download LwM2M template in Coiote DM
+To enable correct communication between Coiote DM and Azure IoT Central, you need two templates. The first template configures Coiote DM integration with Azure. (Follow [this instruction](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central, e.g., that a given resource is temperature and is measured in Celsius.
 
-1. In Coiote DM, go to **Administration → Device dialects**.
-2. From the menu on the left, select the **default** lwm2m dialect ``(./lwm2m/default).``
-3. Click **Export Azure Device Templates** to download a JSON file.
+### Download LwM2M template in Coiote DM (UPDATE!!!)
 
-![Device dialects](images-observation/observation-central1.png "Export the default lwm2m device dialect")
+1. In Coiote DM, go to **Administration → Azure integration**.
+2. In the list of templates, find the one from which you want to generate the IoT Central template.
+3. Click **Generate IoT Central template** (??) to download the template as a JSON file.
+
+![Device dialects](images-observation/observation-central1.png "Export the default lwm2m device dialect") - UPDATE!!!!!!
+
+!!! info
+    Two templates -- **Default rich LwM2M schema** and **Default minimal LwM2M schema** are the default Azure integration templates that you can use to generate the template for IoT Central. As any other template, they need to be assigned to a group before you generate the Central template.
 
 ### Create a device template in Azure IoT Central
 1. In your Azure IoT Central account, go to **My apps** from the left pane and click the **CoioteDM Lwm2m Test** tile.
@@ -91,19 +95,22 @@ To add an Observation, you need to use the **Jobs** tab.
    * **Job properties**:
        * Set **Job type** as `Property`.
        * Under the **Name** field, select the resource you want to put the observation for and turn the toggle to **True**.
-       * To add parameters to this observation, click **+ Add** and select the respective parameters in the drop-down menu. Specify the attribute in the pop-up window that appears, e.g., `pmax`.
+       * To add parameters to this observation, click **+ Add** and select the respective parameters in the drop-down menu. Specify the attribute in the pop-up window that appears, e.g., `pmin`.
        * Click **Next**.
 
     ![Job properties](images-observation/observation-central6.png "Set an Observation and its attributes in Job properties")
 
-    !!! note
-        Read more about other possible attributes in our [Brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
+    !!! info
+        * **pmin** - the minimum time in seconds between two notifications.
+        * **pmax** - the maximum time in seconds between two notifications. The notification is sent even if the value didn't change.
+
+        Read more about other attributes in our [Brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
 
 3. In **Delivery options**, click **Next**.
 4. In **Schedule**, click **Next**.
 5. Review and click **Run**.
 
-## See how it works
+## See value changes
 
 1. In Azure IoT Central, go to **Devices** from the left pane and click on the device you observe. You will see the list of messages that notify about any changes in the desired and reported properties for this device.
 
