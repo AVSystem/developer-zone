@@ -81,3 +81,8 @@ extra_css:
 
 extra_javascript:
   - javascripts/extra.js 
+
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
