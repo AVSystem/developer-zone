@@ -32,7 +32,7 @@ To enable correct communication between Coiote DM and Azure IoT Central, you nee
 ![Device dialects](images-observation/observation-central1.png "Export the default lwm2m device dialect") - UPDATE!!!!!!
 
 !!! info
-    Two templates -- **Default rich LwM2M schema** and **Default minimal LwM2M schema** are the default Azure integration templates that you can use to generate the template for IoT Central. As any other template, they need to be assigned to a group before you generate the Central template.
+     **Default minimal LwM2M schema** and **Default rich LwM2M schema** are the default Azure integration templates that you can use to generate a template for Azure IoT Central. **Default minimal LwM2M schema** contains only two objects: `LwM2M Server` and `Device` that are necessary to connect a device to a LwM2M server. **Default rich LwM2M schema** contains some additional objects that describe the current state of a device. You can use these default templates to test your integration or for some basic operations. If you have a more complex case (e.g., your device contains other LwM2M objects), then you need to create a new template or copy and edit the default template.
 
 ### Create a device template in Azure IoT Central
 1. In your Azure IoT Central account, go to **My apps** from the left pane and click the **CoioteDM Lwm2m Test** tile.

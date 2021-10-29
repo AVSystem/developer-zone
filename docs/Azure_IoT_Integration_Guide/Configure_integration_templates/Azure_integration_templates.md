@@ -58,6 +58,9 @@ A pop-up window will appear asking you to specify the group that needs to be ass
 
 Now the devices in the **group ‘anjay’** will report data to Azure according to the way defined in the **template ‘abc_test’**.
 
+!!! info
+    **Default minimal LwM2M schema** and **Default rich LwM2M schema** are the default Azure integration templates that you can use to generate a template for Azure IoT Central. **Default minimal LwM2M schema** contains only two objects: `LwM2M Server` and `Device` that are necessary to connect a device to a LwM2M server. **Default rich LwM2M schema** contains some additional objects that describe the current state of a device, as well as objects related to [FOTA](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/). You can use these default templates to test your integration or for some basic operations. If you have a more complex case (e.g., your device contains other LwM2M objects), then you need to create a new template or copy and edit the default template.
+
 ## Edit an assignment
 
 1. Go to **Administration —> Azure integration** and see the list of Azure integration templates that exist in your domain.
