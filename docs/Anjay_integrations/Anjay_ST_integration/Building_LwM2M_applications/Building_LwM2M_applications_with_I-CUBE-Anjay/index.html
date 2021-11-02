@@ -1257,13 +1257,13 @@
 <ul>
 <li>An STM board with a USB cable.</li>
 <li>Installed <strong>STM32CubeMX</strong>.</li>
-<li>Downloaded <strong>Anjay I-CUBE</strong> pack file.</li>
+<li>Downloaded (<strong>Anjay I-CUBE</strong> pack file)[https://www.google.com/url?q=https://github.com/AVSystem/I-CUBE-Anjay&amp;sa=D&amp;source=docs&amp;ust=1635860560367000&amp;usg=AOvVaw3SRpv0DubVZl_rYpXkeI9d].</li>
 </ul>
 <h2 id="step-1-installing-the-anjay-i-cube-software-pack">Step 1: Installing the <strong>Anjay I-CUBE</strong> software pack<a class="headerlink" href="#step-1-installing-the-anjay-i-cube-software-pack" title="Permanent link">#</a></h2>
 <ol>
 <li>Open STM32CUBEMX and in the New project section, select <strong>ACCESS TO BOARD SELECTOR</strong>.
 <img alt="Start project" src="../images/start_project.png" title="Start project" /></li>
-<li>From the list of STM boards, select your board, click <strong>Start project</strong> and click <strong>Yes</strong> in the <strong>Initialize all peripherals with their default mode</strong> pop-up that appears.<br />
+<li>From the list of STM boards, select your board, click <strong>Start project</strong> and click <strong>No</strong> in the <strong>Initialize all peripherals with their default mode</strong> pop-up that appears.<br />
 <img alt="Select board menu" src="../images/select_board.png" title="select_board" /></li>
 <li>In the <strong>Pinout &amp; Configuration</strong> tab, click <strong>Software Packs</strong> and select <strong>Manage Software Packs</strong>.
 <img alt="Software Packs" src="../images/software_packs_select.png" title="software_packs_select" /><ul>
@@ -1275,8 +1275,9 @@
 <li>Back in the <strong>Pinout &amp; Configuration</strong> tab, click <strong>Software Packs</strong> and select <strong>Select Components</strong>.
 <img alt="Select Components menu" src="../images/select_components.png" title="select_components" /></li>
 <li>From the list of packs, click <strong>AVSystem.I-CUBE-Anjay</strong> to expand a list of boards.<ul>
-<li>From the list, find your board and check it in the <strong>Selection</strong> column.</li>
-<li>From the list, find the <strong>LwM2M Anjay</strong> component and check it in the <strong>Selection</strong> column.</li>
+<li>In the list, find your board and check it in the <strong>Selection</strong> column.</li>
+<li>In the list, find your modem device and check it in the <strong>Selection</strong> column.</li>
+<li>In the list, find the <strong>LwM2M Anjay</strong> component and check it in the <strong>Selection</strong> column.</li>
 <li>In the <strong>Device Application</strong> component, select <strong>anjay</strong> in the <strong>Selection</strong> column to enable your demo application.</li>
 </ul>
 </li>
@@ -1285,7 +1286,7 @@
 <p>Before you generate code for your application, you need to configure it as per the specific requirements for your board:</p>
 <ol>
 <li>Back in the <strong>Pinout &amp; Configuration</strong> tab, expand the <strong>Software Packs</strong> tab that has appeared in the side menu and click <strong>AVSystem.I-CUBE-Anjay.x.xx.x</strong>:<ul>
-<li>In the <strong>Mode</strong> window that appears, check all three boxes next to the LwM2M Anjay, Device Application and Board Support <your_board_name> options.
+<li>In the <strong>Mode</strong> window that appears, check all the boxes next to the LwM2M Anjay, Device Application, Device Modem and Board Support <your_board_name> options.
  <img alt="Mode boxes" src="../images/mode_settings.png" title="mode_settings" /></li>
 <li>In the <strong>Configuration</strong> window:<ul>
 <li>Go to the <strong>Parameter Settings</strong> tab and configure your Anjay Library. For a detailed description of all Anjay library configuration options, see <a href="https://avsystem.github.io/Anjay-doc/api/anjay__config_8h.html">here</a>.
@@ -1334,51 +1335,75 @@
 </ol>
 <h2 id="specific-cubemx-settings">Specific CubeMX settings<a class="headerlink" href="#specific-cubemx-settings" title="Permanent link">#</a></h2>
 <h3 id="b-l462e-cell1">B-L462E-CELL1<a class="headerlink" href="#b-l462e-cell1" title="Permanent link">#</a></h3>
+<p>Start from board selector with B-L462E-CELL1 board, do not initialize all peripherals with their default mode.</p>
+<p>Through Select Components menu choose desired components from the pack, in this example select:</p>
+<ul>
+<li>LwM2M Anjay</li>
+<li>Device TYPE1SC</li>
+<li>Device Application - anjay</li>
+<li>Board Support B-L462E-CELL1</li>
+</ul>
+<p>Apply the following settings:</p>
 <ul>
 <li>Connectivity tab:<ul>
-<li>USART1 - Enable DMA for RX/TX, enable global interrupts</li>
-<li>USART2 - Enable DMA for RX/TX, enable global interrupts</li>
-<li>USART3 - Enable DMA for RX/TX, enable global interrupts</li>
-<li>USB - Disable</li>
+<li>I2C1 - Enable</li>
+<li>USART1 - Enable, enable global interrupts</li>
+<li>USART2 - Enable, enable global interrupts</li>
+<li>USART3 - Enable, enable global interrupts</li>
 </ul>
 </li>
 <li>Middleware tab:<ul>
-<li>FreeRTOS</li>
+<li>FreeRTOS<ul>
 <li>Interface - CMSIS_V1</li>
 <li>TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)</li>
 <li>USE_COUNTING_SEMAPHORES - Enabled</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Project Manager:<ul>
 <li>Code Generator - Enable Generate peripheral initialization as a pair of '.c/.h' files per peripheral.</li>
 </ul>
 </li>
+<li>Software Packs:<ul>
+<li>I-CUBE-Anjay - select all enabled components and modify Client Settings with connection parameters. Parameter settings can be modified to alter Anjay LwM2M Library configuration.</li>
 </ul>
+</li>
+</ul>
+<p>Generate the project and open in <strong>STM32CubeIDE</strong>.</p>
+<p>Right click on the project <strong>Build Configurations -&gt; Set Active -&gt; Release</strong>.</p>
+<p>Select generated project and modify <strong>Properties -&gt; C/C++ Build -&gt; Settings -&gt; MCU Settings</strong></p>
+<p>Change <strong>Runtime library</strong> to <strong>Standard C</strong>, and check <code>Use float with printf from newlin-nano (-u _printf_float)</code></p>
+<p>Flash the project using <strong>Run As -&gt; STM32 Cortex-M C\C++ Application</strong>.</p>
 <h3 id="p-l496g-cell02">P-L496G-CELL02<a class="headerlink" href="#p-l496g-cell02" title="Permanent link">#</a></h3>
+<p>Start from board selector with STM32L496G-DISCO board, do not initialize all peripherals with their default mode.</p>
+<p>Through Select Components menu choose desired components from the pack, in this example select:</p>
 <ul>
-<li>Connectivity tab:<ul>
-<li>SDMMC1 - Disable</li>
-<li>USART1 - Enable DMA for RX/TX, enable global interrupts</li>
-<li>USART2 - Enable DMA for RX/TX, enable global interrupts</li>
-<li>USB_OTG_FS - Disable</li>
+<li>LwM2M Anjay</li>
+<li>Device TYPE1SC</li>
+<li>Device Application - anjay</li>
+<li>Board Support B-L462E-CELL1</li>
 </ul>
-</li>
-<li>Security tab:<ul>
-<li>RNG - Enable</li>
-</ul>
-</li>
-<li>Middleware tab:<ul>
-<li>FreeRTOS</li>
-<li>Interface - CMSIS_V1</li>
-<li>TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)</li>
-<li>USE_COUNTING_SEMAPHORES - Enabled</li>
-</ul>
-</li>
-<li>Project Manager:<ul>
-<li>Code Generator - Enable Generate peripheral initialization as a pair of '.c/.h' files per peripheral.</li>
-</ul>
-</li>
-</ul>
+<p>Apply the following settings:
+- Connectivity tab:
+    - I2C1 - Enable
+    - USART1 - Enable, enable global interrupts
+    - USART2 - Enable, enable global interrupts
+- Security tab:
+    - RNG - Enable
+- Middleware tab:
+    - FreeRTOS
+        - Interface - CMSIS_V1
+        - TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)
+        - USE_COUNTING_SEMAPHORES - Enabled
+- Project Manager:
+    - Code Generator - Enable Generate peripheral initialization as a pair of '.c/.h' files per peripheral.
+- Software Packs:
+    - I-CUBE-Anjay - select all enabled components and modify Client Settings with connection parameters. Parameter settings can be modified to alter Anjay LwM2M Library configuration.</p>
+<p>Generate the project and open in <strong>STM32CubeIDE</strong>.</p>
+<p>Select generated project and modify <strong>Properties -&gt; C/C++ Build -&gt; Settings -&gt; MCU Settings</strong></p>
+<p>Change <strong>Runtime library</strong> to <strong>Standard C</strong>, and check <code>Use float with printf from newlin-nano (-u _printf_float)</code></p>
+<p>Flash the project using <strong>Run As -&gt; STM32 Cortex-M C\C++ Application</strong>.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -1440,7 +1465,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2021</span>
     
   </small>
 </div>
