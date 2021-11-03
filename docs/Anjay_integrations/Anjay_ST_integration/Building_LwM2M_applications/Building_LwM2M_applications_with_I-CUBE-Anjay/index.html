@@ -1257,7 +1257,7 @@
 <ul>
 <li>An STM board with a USB cable.</li>
 <li>Installed <strong>STM32CubeMX</strong>.</li>
-<li>Downloaded (<strong>Anjay I-CUBE</strong> pack file)[https://www.google.com/url?q=https://github.com/AVSystem/I-CUBE-Anjay&amp;sa=D&amp;source=docs&amp;ust=1635860560367000&amp;usg=AOvVaw3SRpv0DubVZl_rYpXkeI9d].</li>
+<li>Downloaded <a href="https://www.google.com/url?q=https://github.com/AVSystem/I-CUBE-Anjay&amp;sa=D&amp;source=docs&amp;ust=1635860560367000&amp;usg=AOvVaw3SRpv0DubVZl_rYpXkeI9d"><strong>Anjay I-CUBE</strong> pack file</a>.</li>
 </ul>
 <h2 id="step-1-installing-the-anjay-i-cube-software-pack">Step 1: Installing the <strong>Anjay I-CUBE</strong> software pack<a class="headerlink" href="#step-1-installing-the-anjay-i-cube-software-pack" title="Permanent link">#</a></h2>
 <ol>
@@ -1384,22 +1384,36 @@
 <li>Device Application - anjay</li>
 <li>Board Support B-L462E-CELL1</li>
 </ul>
-<p>Apply the following settings:
-- Connectivity tab:
-    - I2C1 - Enable
-    - USART1 - Enable, enable global interrupts
-    - USART2 - Enable, enable global interrupts
-- Security tab:
-    - RNG - Enable
-- Middleware tab:
-    - FreeRTOS
-        - Interface - CMSIS_V1
-        - TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)
-        - USE_COUNTING_SEMAPHORES - Enabled
-- Project Manager:
-    - Code Generator - Enable Generate peripheral initialization as a pair of '.c/.h' files per peripheral.
-- Software Packs:
-    - I-CUBE-Anjay - select all enabled components and modify Client Settings with connection parameters. Parameter settings can be modified to alter Anjay LwM2M Library configuration.</p>
+<p>Apply the following settings:</p>
+<ul>
+<li>Connectivity tab:<ul>
+<li>I2C1 - Enable</li>
+<li>USART1 - Enable, enable global interrupts</li>
+<li>USART2 - Enable, enable global interrupts</li>
+</ul>
+</li>
+<li>Security tab:<ul>
+<li>RNG - Enable</li>
+</ul>
+</li>
+<li>Middleware tab:<ul>
+<li>FreeRTOS<ul>
+<li>Interface - CMSIS_V1</li>
+<li>TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)</li>
+<li>USE_COUNTING_SEMAPHORES - Enabled</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Project Manager:<ul>
+<li>Code Generator - Enable Generate peripheral initialization as a pair of '.c/.h' files per peripheral.</li>
+</ul>
+</li>
+<li>Software Packs:<ul>
+<li>I-CUBE-Anjay - select all enabled components and modify Client Settings with connection parameters. Parameter settings can be modified to alter Anjay LwM2M Library configuration.</li>
+</ul>
+</li>
+</ul>
 <p>Generate the project and open in <strong>STM32CubeIDE</strong>.</p>
 <p>Select generated project and modify <strong>Properties -&gt; C/C++ Build -&gt; Settings -&gt; MCU Settings</strong></p>
 <p>Change <strong>Runtime library</strong> to <strong>Standard C</strong>, and check <code>Use float with printf from newlin-nano (-u _printf_float)</code></p>
@@ -1465,7 +1479,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2021</span>
     
   </small>
 </div>
