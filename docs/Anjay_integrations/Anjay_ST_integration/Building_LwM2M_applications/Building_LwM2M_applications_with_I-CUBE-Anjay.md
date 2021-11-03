@@ -6,7 +6,7 @@ Start prototyping custom LwM2M applications on your STMicroelectronics board wit
 
 - An STM board with a USB cable.
 - Installed **STM32CubeMX**.
-- Downloaded (**Anjay I-CUBE** pack file)[https://www.google.com/url?q=https://github.com/AVSystem/I-CUBE-Anjay&sa=D&source=docs&ust=1635860560367000&usg=AOvVaw3SRpv0DubVZl_rYpXkeI9d].
+- Downloaded [**Anjay I-CUBE** pack file](https://www.google.com/url?q=https://github.com/AVSystem/I-CUBE-Anjay&sa=D&source=docs&ust=1635860560367000&usg=AOvVaw3SRpv0DubVZl_rYpXkeI9d).
 
 ## Step 1: Installing the **Anjay I-CUBE** software pack
 
@@ -111,6 +111,7 @@ Through Select Components menu choose desired components from the pack, in this 
 - Board Support B-L462E-CELL1
 
 Apply the following settings:
+
 - Connectivity tab:
     - I2C1 - Enable
     - USART1 - Enable, enable global interrupts
