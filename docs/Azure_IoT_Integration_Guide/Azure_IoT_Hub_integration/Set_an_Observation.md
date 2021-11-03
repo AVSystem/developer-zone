@@ -16,14 +16,14 @@ In this section, you learn how to:
 2. A Coiote DM user account with permissions to use the integration extension.
 3. A device group created in Coiote DM.
 4. [A configured extension between Coiote DM and Azure Iot Hub](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/).
-5. [A configured integration template in Coiote DM](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+5. [A configured integration template in Coiote DM, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
 5. [A connected device](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/).
 
 ## Set an Observation and define its attributes
 
 Let’s set two Observations: one on the whole object with ID **1/1 (1 LwM2M Server, 1 Lifetime)** and on the resource with ID **3/0/13** (3 Device, 13 Current time). Both of them are Properties.
 
-In Azure IoT Hub, value changes for both Telemetry and Property are stored in **Device twin**, because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:
+In Azure IoT Hub, value changes for both Telemetry and Property are stored in [Device twin](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/#lwm2m-readable-and-writable-resources), because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:
 
 1. In your Azure IoT Hub account, go to **Devices** from the left pane.
 
@@ -33,11 +33,9 @@ In Azure IoT Hub, value changes for both Telemetry and Property are stored in **
 
 3. Find the **desired** property in the JSON snippet. This is where you define what needs to be observed.
 
-4. To set an Observation on object **1/1 (Lifetime)** and resource **3/0/13 (Current time)**, add the following fragment starting from `lwm2m`:
+4. To set an Observation on object **1/1 (Lifetime)** and resource **3/0/13 (Current time)**, add the following fragment under the ` "desired": {` property:
 
 ```
-        "properties": {
-         "desired": {
             "lwm2m": {
                 "1": {
                     "1": {
@@ -104,7 +102,7 @@ This step is optional. If you want to make sure the Observation has been correct
 
     ![Observed resource in Coiote DM](images-observation/observation-hub3.png "Observed object in Coiote DM")
 
-4. Click **Value tracking**. You will see `pmin` set to 5, which is the same as you defined in the JSON in Azure IoT Hub.
+4. Click **Value tracking**. You will see `pmin` set to 1, which is the same as you defined in the JSON in Azure IoT Hub.
 
 You have successfully set an Observation on LwM2M object and resource. To add another Observation, add the lines in the same JSON snippet, as described in [Step 4](/#Set_an_Observation_and_define_its_attributes).
 
