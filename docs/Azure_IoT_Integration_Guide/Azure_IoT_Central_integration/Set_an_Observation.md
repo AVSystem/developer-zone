@@ -16,20 +16,20 @@ In this section, you learn how to:
 2. A Coiote DM user account with permissions to use the integration extension.
 3. A device group created in Coiote DM.
 4. [A configured extension between Coiote DM and Azure Iot Central](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/).
-5. [A configured integration template in Coiote DM](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+5. [A configured integration template in Coiote DM, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
 5. [A connected device](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview/).
 
 ## Assign a device template
 
-To enable correct communication between Coiote DM and Azure IoT Central, you need two templates. The first template configures Coiote DM integration with Azure. (Follow [this instruction](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central, e.g., that a given resource is temperature and is measured in Celsius.
+To enable correct communication between Coiote DM and Azure IoT Central, you need two templates. The first template configures the Coiote DM integration with Azure. (Follow [this instruction](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central, e.g., that a given resource is temperature and is measured in Celsius.
 
-### Download LwM2M template in Coiote DM (UPDATE!!!)
+### Download LwM2M template in Coiote DM
 
-1. In Coiote DM, go to **Administration → Azure integration**.
+1. In Coiote DM, go to **Administration → Hyperscaler Integration Center** and select the **Templates** tab.
 2. In the list of templates, find the one from which you want to generate the IoT Central template.
-3. Click **Generate IoT Central template** (??) to download the template as a JSON file.
+3. Click **Generate Azure IoT Central template** to download the template as a JSON file.
 
-![Device dialects](images-observation/observation-central1.png "Export the default lwm2m device dialect") - UPDATE!!!!!!
+![Generate IoT Central dialect](images-observation/observation-central11.png "Generate IoT Central dialect")
 
 !!! info
      **Default minimal LwM2M schema** and **Default rich LwM2M schema** are the default Azure integration templates that you can use to generate a template for Azure IoT Central. **Default minimal LwM2M schema** contains only two objects: `LwM2M Server` and `Device` that are necessary to connect a device to a LwM2M server. **Default rich LwM2M schema** contains some additional objects that describe the current state of a device. You can use these default templates to test your integration or for some basic operations. If you have a more complex case (e.g., your device contains other LwM2M objects), then you need to create a new template or copy and edit the default template.
@@ -37,7 +37,7 @@ To enable correct communication between Coiote DM and Azure IoT Central, you nee
 ### Create a device template in Azure IoT Central
 1. In your Azure IoT Central account, go to **My apps** from the left pane and click the **CoioteDM Lwm2m Test** tile.
 
-    ![CoioteDM Lwm2m Test](images-observation/observation-central2.png "Select the CoioteDM Lwm2m Test tile")
+    ![CoioteDM Lwm2m Test](images-observation/observation-central2.png "Select the Coiote DM Lwm2m Test tile")
 
 2. To add a new device template, go to **Device templates** from the left pane and then click **+ New**.
 
@@ -49,7 +49,7 @@ To enable correct communication between Coiote DM and Azure IoT Central, you nee
 
 5. On the **Review** page, click **Create**.
 
-6. On the **Create a model** page, select the **Import a model** tile. This is where you need to import the .csv file you exported from Coiote DM.
+6. On the **Create a model** page, select the **Import a model** tile. This is where you need to import the .JSON file you exported from Coiote DM.
 
 7. On the **Model** page, click **Publish** to publish this device template to the application. In the pop-up window that appears, click **Publish**.
 
