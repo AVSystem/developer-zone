@@ -31,6 +31,7 @@ google_analytics:
 nav:
         - 'Anjay integrations':
             - 'Anjay_integrations/Getting_started.md'
+            - 'Anjay_integrations/Implementing_LwM2M_objects_on_RaspberryPi.md'
             - 'Anjay ST integration':
                 - 'Anjay_integrations/Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96.md'
