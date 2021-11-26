@@ -43,11 +43,11 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 
     `cd ./BrickPi/Setup_Files`
 
-3. The install script is called install.sh. Make it executable:
+3. The installation script is called install.sh. Make it executable:
 
     `sudo chmod +x install.sh`
 
-4. Run the install script
+4. Run the installation script:
 
     `sudo ./install.sh`
 
@@ -150,7 +150,7 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 !!! note
     Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid.  
 
-## Step 5: Implement the LwM2M temperature object (3303)
+## Step 4: Implement the LwM2M temperature object (3303)
 
 0. Disable the Svetovid service:
 
@@ -239,6 +239,8 @@ $ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --
           ResourceHandler_3303_5700().main()
       ```
 
+0. Plug in the temperature sensor to digital port D4 of the GrovePi.
+
 0. Restart the Svetovid service:
 
     `sudo systemctl restart svetovid.service --now`
@@ -247,8 +249,9 @@ $ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --
 
    ![Temperature object](images/raspi.png "3303")
 
-## Step 6: LwM2M object implementation (/ID3345)
-Object Push Button (/ID3345)
+## Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object (/ID3345)
+
+Now you can implement the Push Button object based on the OMA DM Multiple Axis Joystick object (/ID3345).
 
 0. Type in the terminal:
       ```
@@ -263,7 +266,9 @@ Analyze the resource implementation in the `/etc/svetovid/dm/3345` folder. For m
 
 You should be able to see a default value reported in the command-line terminal.
 
-0. In home directory, create the file ~/button_object_forwarder.py:
+0. In home directory, create the file ~/button_object_forwarder.py and paste the following into it:
+
+=== "SenseHat"
 
       ```
       from sense_hat import SenseHat
@@ -283,78 +288,206 @@ You should be able to see a default value reported in the command-line terminal.
       	if event.action == "pressed":
         	if event.direction == "middle":
           	sense.show_letter("M")
-      #    	KvStore(namespace=3345).set('state', True)
+          	KvStore(namespace=3345).set('state', True)
 
-      #    	if released_before:
-      #        	counter = KvStore(namespace=3345).get('counter')
-      #        	KvStore(namespace=3345).set('counter', counter+1)
+          	if released_before:
+              	counter = KvStore(namespace=3345).get('counter')
+              	KvStore(namespace=3345).set('counter', counter+1)
 
           	released_before = False
 
       	elif event.action == "released":
         	if event.direction == "middle":
           	sense.show_letter("m")
-      #    	KvStore(namespace=3345).set('state', False)
+          	KvStore(namespace=3345).set('state', False)
           	released_before = True
       	else:
           	sense.clear()
 
       	# Wait and clear the screen
-      #	sleep(0.5)
-      #	sense.clear()
+      	sleep(0.5)
+      	sense.clear()
       ```
 
-0. Modify the /etc/svetovid/dm/3345/resources/5500 file:
+=== "GrovePi"
 
       ```
-      #!/usr/bin/env python3
-      # -*- encoding: utf-8 -*-
+      from time import sleep
+      import grovepi
+      from fsdm import KvStore
 
-      from fsdm import ResourceHandler, CoapError, DataType, KvStore
+      button = 3
 
+      KvStore(namespace=3345).set('counter', 0)
+      KvStore(namespace=3345).set('state', False)
 
-      class ResourceHandler_3345_5500(ResourceHandler):
-      	NAME = "Digital Input State"
-      	DESCRIPTION = '''\
-      The current state of a digital input.'''
-      	DATATYPE = DataType.BOOLEAN
-      	EXTERNAL_NOTIFY = False
+      released_before = False
+      counter = 0
 
-      	def read(self,
-               	instance_id,        	# int
-               	resource_instance_id):  # int for multiple resources, None otherwise
-          	# TODO: print value to stdout
-          	print(0)
+      grovepi.pinMode(button, "INPUT")
 
-      if __name__ == '__main__':
-      	ResourceHandler_3345_5500().main()
+      while True:
+          try:
+              state = grovepi.digitalRead(button)
+              KvStore(namespace=3345).set('state', True)
+
+              print("State:{}".format(state))
+
+              if state == 1:
+
+                  if released_before:
+                      counter = counter + 1
+                      print("Counter:{}".format(counter))
+                      KvStore(namespace=3345).set('counter', counter+1)
+                      released_before = False    
+                  KvStore(namespace=3345).set('state', True)
+              else:
+                  released_before = True
+                  KvStore(namespace=3345).set('state', False)
+
+              sleep(.2)
+
+          except IOError:
+              print("Error")
       ```
 
-0. Modify the /etc/svetovid/dm/3345/resources/5501 file:
-
+0. Modify the python script in the ``/etc/svetovid/dm/3345/Digital_Input_Counter.py`` file. Open the file, replace the contents with the following script and click **Save**:
       ```
-      #!/usr/bin/env python3
+      #!/usr/bin/env python
       # -*- encoding: utf-8 -*-
 
       from fsdm import ResourceHandler, CoapError, DataType, KvStore
 
 
       class ResourceHandler_3345_5501(ResourceHandler):
-      	NAME = "Digital Input Counter"
-      	DESCRIPTION = '''\
+          NAME = "Digital Input Counter"
+          DESCRIPTION = '''\
       The cumulative value of active state detected.'''
-      	DATATYPE = DataType.INTEGER
-      	EXTERNAL_NOTIFY = False
+          DATATYPE = DataType.INTEGER
+          EXTERNAL_NOTIFY = False
 
-      	def read(self,
-               	instance_id,        	# int
-               	resource_instance_id):  # int for multiple resources, None otherwise
-          	# TODO: print value to stdout
-          	print(0)
+          def read(self,
+                   instance_id,            # int
+                   resource_instance_id):  # int for multiple resources, None otherwise
+              value = KvStore(namespace=3345).get('counter')
+              if value is None:
+                  # The value was not set, so it's not found.
+                  # raise CoapError.NOT_FOUND
+                  value = 0
+
+              print(value)
+      	# TODO: print value to stdout
+              # print(0)
+
+
+
 
       if __name__ == '__main__':
-      	ResourceHandler_3345_5501().main()
+          ResourceHandler_3345_5501().main()
       ```
+0. Modify the python script in the ``/etc/svetovid/dm/3345/Digital_Input_State.py`` file. Open the file, replace the contents with the following script and click **Save**:
+
+      ```
+      #!/usr/bin/env python
+      # -*- encoding: utf-8 -*-
+
+      from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+      class ResourceHandler_3345_5500(ResourceHandler):
+          NAME = "Digital Input State"
+          DESCRIPTION = '''\
+      The current state of a digital input.'''
+          DATATYPE = DataType.BOOLEAN
+          EXTERNAL_NOTIFY = False
+
+          def read(self,
+                   instance_id,            # int
+                   resource_instance_id):  # int for multiple resources, None otherwise
+      	state = KvStore(namespace=3345).get('state')
+              if state is None:
+                  # The value was not set, so it's not found.
+                  raise CoapError.NOT_FOUND
+                  #state = False
+              print(state)
+
+              # TODO: print value to stdout
+              #print(0)
+
+
+
+
+      if __name__ == '__main__':
+          ResourceHandler_3345_5500().main()
+      ```
+
+0. Modify the /etc/svetovid/dm/3345/resources/5500 file:
+
+      ```
+      #!/usr/bin/env python
+      # -*- encoding: utf-8 -*-
+
+      from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+      class ResourceHandler_3345_5500(ResourceHandler):
+          NAME = "Digital Input State"
+          DESCRIPTION = '''\
+      The current state of a digital input.'''
+          DATATYPE = DataType.BOOLEAN
+          EXTERNAL_NOTIFY = False
+
+          def read(self,
+                   instance_id,            # int
+                   resource_instance_id):  # int for multiple resources, None otherwise
+      	state = KvStore(namespace=3345).get('state')
+              if state is None:
+                  # The value was not set, so it's not found.
+                  raise CoapError.NOT_FOUND
+                  #state = False
+              print(state)
+
+              # TODO: print value to stdout
+              #print(0)
+
+      if __name__ == '__main__':
+          ResourceHandler_3345_5500().main()
+
+      ```
+
+0. Modify the /etc/svetovid/dm/3345/resources/5501 file:
+
+      ```
+      #!/usr/bin/env python
+      # -*- encoding: utf-8 -*-
+
+      from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+      class ResourceHandler_3345_5501(ResourceHandler):
+          NAME = "Digital Input Counter"
+          DESCRIPTION = '''\
+      The cumulative value of active state detected.'''
+          DATATYPE = DataType.INTEGER
+          EXTERNAL_NOTIFY = False
+
+          def read(self,
+                   instance_id,            # int
+                   resource_instance_id):  # int for multiple resources, None otherwise
+              value = KvStore(namespace=3345).get('counter')
+              if value is None:
+                  # The value was not set, so it's not found.
+                  # raise CoapError.NOT_FOUND
+                  value = 0
+
+              print(value)
+      	# TODO: print value to stdout
+              # print(0)
+
+      if __name__ == '__main__':
+          ResourceHandler_3345_5501().main()
+      ```
+
+0. Plug in the push button to digital port D3 of the GrovePi/SenseHat.
 
 0. Restart Svetovid:
 
