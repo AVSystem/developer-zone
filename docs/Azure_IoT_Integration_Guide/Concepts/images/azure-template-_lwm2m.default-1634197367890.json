@@ -1,0 +1,5151 @@
+{
+  "@id": "dtmi:com:avsystem:coiotedm:lwm2m:default;5",
+  "displayName": "LwM2M Device template: /lwm2m.default",
+  "description": "LwM2M Device template: /lwm2m.default",
+  "contents": [
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n10",
+      "schema": "string",
+      "displayName": "eDRX parameters for A/Gb mode (1)",
+      "description": "Extended DRX parameters (Paging Time Window and eDRX value) for A/Gb mode which the UE can request from the network. This resource is encoded as octet 3 in [3GPP-TS_24.008, clause 10.5.5.32].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n10_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "eDRX parameters for A/Gb mode (1) attributes",
+      "description": "Attributes for n10n0n10",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n8",
+      "schema": "string",
+      "displayName": "eDRX parameters for WB-S1 mode (1)",
+      "description": "Extended DRX parameters (Paging Time Window and eDRX value) for WB-S1 mode which the UE can request from the network. This resource is encoded as octet 3 in [3GPP-TS_24.008, clause 10.5.5.32].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n8_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "eDRX parameters for WB-S1 mode (1) attributes",
+      "description": "Attributes for n10n0n8",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n9",
+      "schema": "string",
+      "displayName": "eDRX parameters for NB-S1 mode (1)",
+      "description": "Extended DRX parameters (Paging Time Window and eDRX value) for NB-S1 mode which the UE can request from the network. This resource is encoded as octet 3 in [3GPP-TS_24.008, clause 10.5.5.32].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n9_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "eDRX parameters for NB-S1 mode (1) attributes",
+      "description": "Attributes for n10n0n9",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n0",
+      "schema": "string",
+      "displayName": "SMSC address",
+      "description": "E.164 address of SMSC.\nApplicable for 3GPP2 networks where SMSC is not available from a smart card, or for 3GPP/3GPP2 networks to provide the application with a customer specific SMSC.  The application decides how to use this parameter, e.g. precedence over UICC based SMSC address.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMSC address attributes",
+      "description": "Attributes for n10n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n4",
+      "schema": "integer",
+      "displayName": "PSM Timer (1)",
+      "description": "Power saving mode (PSM) timer as defined in [3GPP-TS_23.682].\nPSM Timer = Extended T3412.\nMax interval between periodic TAU if there is no other transmission from the device. During most of this time the device is considered as unreachable and can therefore go into a deep sleep mode while keeping the PDN connection(s) active.",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n4_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "PSM Timer (1) attributes",
+      "description": "Attributes for n10n0n4",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n11",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Activated Profile Names",
+      "description": "Links to instances of the “APN connection profile” object representing every APN connection profile that has an activated connection to a PDN.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n11_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Activated Profile Names attributes",
+      "description": "Attributes for n10n0n11",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n1",
+      "schema": "integer",
+      "displayName": "Disable radio period",
+      "description": "Time period for which the device shall disconnect from cellular radio (PS detach, CS detach if applicable).\nCan be used to handle network overload situations.\nThe value is a positive integer (0 to 65535), duration can be from 1 minute to 65535 minutes (approximately 45 days).\nAs soon the server writes a value which is >0 the device SHALL disconnect. When the period has elapsed the device MAY reconnect.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Disable radio period attributes",
+      "description": "Attributes for n10n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n5",
+      "schema": "integer",
+      "displayName": "Active Timer (1)",
+      "description": "Active timer = T3324 as defined in [3GPP-TS_24.008].\nThe time the UE has to remain reachable after transitioning to idle state in case there is pending data from the NW to send out. At the end of T3324 UE can go into a deep sleep mode while keeping the PDN connection(s) active.",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Active Timer (1) attributes",
+      "description": "Attributes for n10n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n2",
+      "schema": "string",
+      "displayName": "Module activation code",
+      "description": "Configurable in case the application needs to issue a code (e.g. via AT command) to activate the module. e.g. “*98”.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Module activation code attributes",
+      "description": "Attributes for n10n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n7",
+      "schema": "string",
+      "displayName": "eDRX parameters for Iu mode (1)",
+      "description": "Extended DRX parameters (Paging Time Window and eDRX value) for Iu mode which the UE can request from the network. This resource is encoded as octet 3 in [3GPP-TS_24.008, clause 10.5.5.32].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n7_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "eDRX parameters for Iu mode (1) attributes",
+      "description": "Attributes for n10n0n7",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n3",
+      "schema": "string",
+      "displayName": "Vendor specific extensions",
+      "description": "Links to a vendor specific object.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Vendor specific extensions attributes",
+      "description": "Attributes for n10n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n10n0n6",
+      "schema": "integer",
+      "displayName": "Serving PLMN Rate control",
+      "description": "Only for when using Signalling Radio Bearers (c.f. Data over NAS), it indicates the maximum the number of allowed uplink PDU transmissions per 6 minute interval aggregated across all PDN connections. See [3GPP-TS_23.401], octet 3 to 4 of the Serving PLMN rate control IE.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n10n0n6_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Serving PLMN Rate control attributes",
+      "description": "Attributes for n10n0n6",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n7",
+      "schema": "string",
+      "displayName": "SMS Binding Key Parameters",
+      "description": "Stores the KIc, KID, SPI and TAR. The format is defined in Section E.1.2 of the LwM2M version 1.0 specification.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n7_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMS Binding Key Parameters attributes",
+      "description": "Attributes for n0n0n7",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n9",
+      "schema": "string",
+      "displayName": "LwM2M Server SMS Number",
+      "description": "MSISDN used by the LwM2M Client to send messages to the LwM2M Server via the SMS binding.\nThe LwM2M Client SHALL silently ignore any SMS originated from unknown MSISDN",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n9_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "LwM2M Server SMS Number attributes",
+      "description": "Attributes for n0n0n9",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n10",
+      "schema": "integer",
+      "displayName": "Short Server ID",
+      "description": "This identifier uniquely identifies each LwM2M Server configured for the LwM2M Client.\nThis Resource MUST be set when the Bootstrap-Server Resource has false value.\nSpecific ID:0 and ID:65535 values MUST NOT be used for identifying the LwM2M Server (Section 6.3 of the LwM2M version 1.0 specification).",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n10_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Short Server ID attributes",
+      "description": "Attributes for n0n0n10",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n11",
+      "schema": "integer",
+      "displayName": "Client Hold Off Time",
+      "description": "Relevant information for a Bootstrap-Server only.\nThe number of seconds to wait before initiating a Client Initiated Bootstrap once the LwM2M Client has determined it should initiate this bootstrap mode.\nIn case client initiated bootstrap is supported by the LwM2M Client, this resource MUST be supported.",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n11_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Client Hold Off Time attributes",
+      "description": "Attributes for n0n0n11",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n1",
+      "schema": "boolean",
+      "displayName": "Bootstrap-Server",
+      "description": "Determines if the current instance concerns a LwM2M Bootstrap-Server (true) or a standard LwM2M Server (false)",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Bootstrap-Server attributes",
+      "description": "Attributes for n0n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n12",
+      "schema": "integer",
+      "displayName": "Bootstrap-Server Account Timeout",
+      "description": "The LwM2M Client MUST purge the LwM2M Bootstrap-Server Account after the timeout value given by this resource. The lowest timeout value is 1.\nIf the value is set to 0, or if this resource is not instantiated, the Bootstrap-Server Account lifetime is infinite.",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n12_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Bootstrap-Server Account Timeout attributes",
+      "description": "Attributes for n0n0n12",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n4",
+      "schema": "string",
+      "displayName": "Server Public Key",
+      "description": "Stores the LwM2M Server’s or LwM2M Bootstrap-Server’s Certificate (Certificate mode), public key (RPK mode). The format is defined in Section E.1.1 of the LwM2M version 1.0 specification.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n4_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Server Public Key attributes",
+      "description": "Attributes for n0n0n4",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n6",
+      "schema": "integer",
+      "displayName": "SMS Security Mode",
+      "description": "Determines which SMS security mode is used (see section 7.2 of the LwM2M version 1.0 specification)\n0: Reserved for future use\n1: DTLS mode (Device terminated) PSK mode assumed\n2: Secure Packet Structure mode (Smartcard terminated)\n3: NoSec mode\n4: Reserved mode (DTLS mode with multiplexing Security Association support)\n5-203 : Reserved for future use\n204-255: Proprietary modes",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n6_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMS Security Mode attributes",
+      "description": "Attributes for n0n0n6",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n3",
+      "schema": "string",
+      "displayName": "Public Key or Identity",
+      "description": "Stores the LwM2M Client’s Certificate (Certificate mode), public key (RPK mode) or PSK Identity (PSK mode). The format is defined in Section E.1.1 of the LwM2M version 1.0 specification.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Public Key or Identity attributes",
+      "description": "Attributes for n0n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n0",
+      "schema": "string",
+      "displayName": "LwM2M Server URI",
+      "description": "Uniquely identifies the LwM2M Server or LwM2M Bootstrap-Server. The format of the CoAP URI is defined in Section 6 of RFC 7252.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "LwM2M Server URI attributes",
+      "description": "Attributes for n0n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n8",
+      "schema": "string",
+      "displayName": "SMS Binding Secret Keys",
+      "description": "Stores the values of the key(s) for the SMS binding.\nThis resource MUST only be changed by a bootstrap-server and MUST NOT be readable by any server.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n8_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMS Binding Secret Keys attributes",
+      "description": "Attributes for n0n0n8",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n2",
+      "schema": "integer",
+      "displayName": "Security Mode",
+      "description": "Determines which UDP payload security mode is used\n0: Pre-Shared Key mode\n1: Raw Public Key mode\n2: Certificate mode\n3: NoSec mode\n4: Certificate mode with EST",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Security Mode attributes",
+      "description": "Attributes for n0n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n0n0n5",
+      "schema": "string",
+      "displayName": "Secret Key",
+      "description": "Stores the secret key or private key of the security mode. The format of the keying material is defined by the security mode in Section E.1.1 of the LwM2M version 1.0 specification. This Resource MUST only be changed by a bootstrap-server and MUST NOT be readable by any server.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n0n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Secret Key attributes",
+      "description": "Attributes for n0n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n1",
+      "schema": "integer",
+      "displayName": "Lifetime",
+      "description": "Specify the lifetime of the registration in seconds (see Section 5.3 Registration).",
+      "writable": true,
+      "unit": "second",
+      "@type": [
+        "Property",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Lifetime attributes",
+      "description": "Attributes for n1n1n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n1n1n7",
+      "schema": "string",
+      "displayName": "Binding",
+      "description": "This Resource defines the transport binding configured for the LwM2M Client.\nIf the LwM2M Client supports the binding specified in this Resource, the LwM2M Client MUST use that transport for the Current Binding Mode.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n7_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Binding attributes",
+      "description": "Attributes for n1n1n7",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n1n1n3",
+      "schema": "integer",
+      "displayName": "Default Maximum Period",
+      "description": "The default value the LwM2M Client should use for the Maximum Period of an Observation in the absence of this parameter being included in an Observation.",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Default Maximum Period attributes",
+      "description": "Attributes for n1n1n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n1n1n0",
+      "schema": "integer",
+      "displayName": "Short Server ID",
+      "description": "Used as link to associate server Object Instance.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Short Server ID attributes",
+      "description": "Attributes for n1n1n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n1n1n6",
+      "schema": "boolean",
+      "displayName": "Notification Storing When Disabled or Offline",
+      "description": "If true, the LwM2M Client stores “Notify” operations to the LwM2M Server while the LwM2M Server account is disabled or the LwM2M Client is offline. After the LwM2M Server account is enabled or the LwM2M Client is online, the LwM2M Client reports the stored “Notify” operations to the Server.\nIf false, the LwM2M Client discards all the “Notify” operations or temporarily disables the Observe function while the LwM2M Server is disabled or the LwM2M Client is offline.\nThe default value is true.\nThe maximum numbe",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n6_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Notification Storing When Disabled or Offline attributes",
+      "description": "Attributes for n1n1n6",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n1n1n8",
+      "displayName": "Registration Update Trigger",
+      "description": "If this Resource is executed the LwM2M Client MUST perform an “Update” operation with this LwM2M Server using that transport for the Current Binding Mode.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n1n1n2",
+      "schema": "integer",
+      "displayName": "Default Minimum Period",
+      "description": "The default value the LwM2M Client should use for the Minimum Period of an Observation in the absence of this parameter being included in an Observation.\nIf this Resource doesn’t exist, the default value is 0.",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Default Minimum Period attributes",
+      "description": "Attributes for n1n1n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n1n1n4",
+      "displayName": "Disable",
+      "description": "If this Resource is executed, this LwM2M Server Object is disabled for a certain period defined in the Disabled Timeout Resource. After receiving “Execute” operation, LwM2M Client MUST send response of the operation and perform de-registration process, and underlying network connection between the Client and Server MUST be disconnected to disable the LwM2M Server account.\nAfter the above process, the LwM2M Client MUST NOT send any message to the Server and ignore all the messages from the LwM2M Server for t",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n1n1n5",
+      "schema": "integer",
+      "displayName": "Disable Timeout",
+      "description": "A period to disable the Server. After this period, the LwM2M Client MUST perform registration process to the Server. If this Resource is not set, a default timeout value is 86400 (1 day).",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n1n1n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Disable Timeout attributes",
+      "description": "Attributes for n1n1n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n2n0n1",
+      "schema": "integer",
+      "displayName": "Object Instance ID",
+      "description": "See Table 20: LwM2M Identifiers.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n2n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Object Instance ID attributes",
+      "description": "Attributes for n2n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n2n0n0",
+      "schema": "integer",
+      "displayName": "Object ID",
+      "description": "The Object ID and The Object Instance ID are applied for.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n2n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Object ID attributes",
+      "description": "Attributes for n2n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n2n0n3",
+      "schema": "integer",
+      "displayName": "Access Control Owner",
+      "description": "Short Server ID of a certain LwM2M Server; only such an LwM2M Server can manage the Resources of this Object Instance.\nThe specific value MAX_ID=65535 means this Access Control Object Instance is created and modified during a Bootstrap phase only.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n2n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Access Control Owner attributes",
+      "description": "Attributes for n2n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n2n0n2",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "integer"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "ACL",
+      "description": "The Resource Instance ID MUST be the Short Server ID of a certain LwM2M Server for which associated access rights are contained in the Resource Instance value.\nThe Resource Instance ID 0 is a specific ID, determining the ACL Instance which contains the default access rights.\nEach bit set in the Resource Instance value, grants an access right to the LwM2M Server to the corresponding operation.\nThe bit order is specified as below.\n1st LSB: R(Read, Observe, Discover, Write-Attributes)\n2nd LSB: W(Write)\n3rd LSB",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n2n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "ACL attributes",
+      "description": "Attributes for n2n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n0",
+      "schema": "string",
+      "displayName": "Manufacturer",
+      "description": "Human readable manufacturer name",
+      "writable": false,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Manufacturer attributes",
+      "description": "Attributes for n3n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n1",
+      "schema": "string",
+      "displayName": "Model Number",
+      "description": "A model identifier (manufacturer specified string)",
+      "writable": false,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Model Number attributes",
+      "description": "Attributes for n3n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n20",
+      "schema": "integer",
+      "displayName": "Battery Status",
+      "description": "This value is only valid for the Device Internal Battery if present (one Available Power Sources Resource Instance value is 1).\nBattery\nStatus\tMeaning\tDescription\n0\tNormal\tThe battery is operating normally and not on power.\n1\tCharging\tThe battery is currently charging.\n2\tCharge Complete\tThe battery is fully charged and still on power.\n3\tDamaged\tThe battery has some problem.\n4\tLow Battery\tThe battery is low on charge.\n5\tNot Installed\tThe battery is not installed.\n6\tUnknown\tThe battery information is not avai",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n20_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Battery Status attributes",
+      "description": "Attributes for n3n0n20",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n11",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "integer"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Error Code",
+      "description": "0=No error\n1=Low battery power\n2=External power supply off\n3=GPS module failure\n4=Low received signal strength\n5=Out of memory\n6=SMS failure\n7=IP connectivity failure\n8=Peripheral malfunction\n\nWhen the single Device Object Instance is initiated, there is only one error code Resource Instance whose value is equal to 0 that means no error. When the first error happens, the LwM2M Client changes error code Resource Instance to any non-zero value to indicate the error type. When any other error happens, a new er",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n11_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Error Code attributes",
+      "description": "Attributes for n3n0n11",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n22",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "ExtDevInfo",
+      "description": "Reference to external “Device” object instance containing information. For example, such an external device can be a Host Device, which is a device into which the Device containing the LwM2M client is embedded. This Resource may be used to retrieve information about the Host Device.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n22_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "ExtDevInfo attributes",
+      "description": "Attributes for n3n0n22",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n10",
+      "schema": "integer",
+      "displayName": "Memory Free",
+      "description": "Estimated current available amount of storage space which can store data and software in the LwM2M Device (expressed in kilobytes).",
+      "unit": "kibibyte",
+      "@type": [
+        "Telemetry",
+        "DataSize"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n10_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Memory Free attributes",
+      "description": "Attributes for n3n0n10",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n14",
+      "schema": "string",
+      "displayName": "UTC Offset",
+      "description": "Indicates the UTC offset currently in effect for this LwM2M Device. UTC+X [ISO 8601].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n14_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "UTC Offset attributes",
+      "description": "Attributes for n3n0n14",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n3",
+      "schema": "string",
+      "displayName": "Firmware Version",
+      "description": "Current firmware version of the Device.The Firmware Management function could rely on this resource.",
+      "writable": false,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Firmware Version attributes",
+      "description": "Attributes for n3n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n21",
+      "schema": "integer",
+      "displayName": "Memory Total",
+      "description": "Total amount of storage space which can store data and software in the LwM2M Device (expressed in kilobytes).",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n21_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Memory Total attributes",
+      "description": "Attributes for n3n0n21",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n3n0n5",
+      "displayName": "Factory Reset",
+      "description": "Perform factory reset of the LwM2M Device to make the LwM2M Device to go through initial deployment sequence where provisioning and bootstrap sequence is performed. This requires client ensuring post factory reset to have minimal information to allow it to carry out one of the bootstrap methods specified in section 5.2.3.\nWhen this Resource is executed, “De-register” operation MAY be sent to the LwM2M Server(s) before factory reset of the LwM2M Device.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n17",
+      "schema": "string",
+      "displayName": "Device Type",
+      "description": "Type of the device (manufacturer specified string: e.g., smart meters / dev Class…)",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n17_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Device Type attributes",
+      "description": "Attributes for n3n0n17",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n19",
+      "schema": "string",
+      "displayName": "Software Version",
+      "description": "Current software version of the device (manufacturer specified string). On elaborated LwM2M device, SW could be split in 2 parts: a firmware one and a higher level software on top.\nBoth pieces of Software are together managed by LwM2M Firmware Update Object (Object ID 5)",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n19_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Software Version attributes",
+      "description": "Attributes for n3n0n19",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n3n0n4",
+      "displayName": "Reboot",
+      "description": "Reboot the LwM2M Device to restore the Device from unexpected firmware failure.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n16",
+      "schema": "string",
+      "displayName": "Supported Binding and Modes",
+      "description": "Indicates which bindings and modes are supported in the LwM2M Client. The possible values of Resource are combination of \"U\" or \"UQ\" and \"S\" or \"SQ\".",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n16_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Supported Binding and Modes attributes",
+      "description": "Attributes for n3n0n16",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n8",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "integer"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Power Source Current",
+      "description": "Present current for each Available Power Source.",
+      "unit": "milliampere",
+      "@type": [
+        "Telemetry",
+        "Current"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n8_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Power Source Current attributes",
+      "description": "Attributes for n3n0n8",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n2",
+      "schema": "string",
+      "displayName": "Serial Number",
+      "description": "Serial Number",
+      "writable": false,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Serial Number attributes",
+      "description": "Attributes for n3n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n7",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "integer"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Power Source Voltage",
+      "description": "Present voltage for each Available Power Sources Resource Instance.",
+      "unit": "millivolt",
+      "@type": [
+        "Telemetry",
+        "Voltage"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n7_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Power Source Voltage attributes",
+      "description": "Attributes for n3n0n7",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n9",
+      "schema": "integer",
+      "displayName": "Battery Level",
+      "description": "Contains the current battery level as a percentage (with a range from 0 to 100). This value is only valid for the Device internal Battery if present (one Available Power Sources Resource Instance is 1).",
+      "writable": false,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n9_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Battery Level attributes",
+      "description": "Attributes for n3n0n9",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n18",
+      "schema": "string",
+      "displayName": "Hardware Version",
+      "description": "Current hardware version of the device",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n18_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Hardware Version attributes",
+      "description": "Attributes for n3n0n18",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n13",
+      "schema": "time",
+      "displayName": "Current Time",
+      "description": "Current UNIX time of the LwM2M Client.\nThe LwM2M Client should be responsible to increase this time value as every second elapses.\nThe LwM2M Server is able to write this Resource to make the LwM2M Client synchronized with the LwM2M Server.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n13_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Current Time attributes",
+      "description": "Attributes for n3n0n13",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n3n0n15",
+      "schema": "string",
+      "displayName": "Timezone",
+      "description": "Indicates in which time zone the LwM2M Device is located, in IANA Timezone (TZ) database format.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n15_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Timezone attributes",
+      "description": "Attributes for n3n0n15",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n6",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "integer"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Available Power Sources",
+      "description": "0 – DC power\n1 – Internal Battery\n2 – External Battery\n4 – Power over Ethernet\n5 – USB\n6 – AC (Mains) power\n7 – Solar\nThe same Resource Instance ID MUST be used to associate a given Power Source (Resource ID:6) with its Present Voltage (Resource ID:7) and its Present Current (Resource ID:8)",
+      "writable": false,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n3n0n6_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Available Power Sources attributes",
+      "description": "Attributes for n3n0n6",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n3n0n12",
+      "displayName": "Reset Error Code",
+      "description": "Delete all error code Resource Instances and create only one zero-value error code that implies no error.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n7",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "APN",
+      "description": "Access Point Name in case Network Bearer Resource is a Cellular Network.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n7_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "APN attributes",
+      "description": "Attributes for n4n0n7",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n3",
+      "schema": "integer",
+      "displayName": "Link Quality",
+      "description": "This contains received link quality  e.g. LQI for IEEE 802.15.4 (range 0...255), RxQual Downlink for GSM (range 0...7, refer to [3GPP 44.018] for more details on Network Measurement Report encoding), RSRQ for LTE, (refer to [3GPP 36.214]), NRSRQ for NB-IoT (refer to [3GPP 36.214]).",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Link Quality attributes",
+      "description": "Attributes for n4n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n5",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Router IP Addresses",
+      "description": "The IP address of the next-hop IP router, on each of the interfaces specified in resource 4 (IP Addresses).\nNote: This IP Address doesn’t indicate the Server IP address.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Router IP Addresses attributes",
+      "description": "Attributes for n4n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n6",
+      "schema": "integer",
+      "displayName": "Link Utilization",
+      "description": "The percentage indicating the average utilization of the link to the next-hop IP router.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n6_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Link Utilization attributes",
+      "description": "Attributes for n4n0n6",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n8",
+      "schema": "integer",
+      "displayName": "Cell ID",
+      "description": "Serving Cell ID in case Network Bearer Resource is a Cellular Network.\nAs specified in TS [3GPP 23.003] and in [3GPP. 24.008]. Range (0...65535) in GSM/EDGE\nUTRAN Cell ID has a length of 28 bits.\nCell Identity in WCDMA/TD-SCDMA. Range: (0...268435455).\nLTE Cell ID has a length of 28 bits.\nParameter definitions in [3GPP 25.331].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n8_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Cell ID attributes",
+      "description": "Attributes for n4n0n8",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n2",
+      "schema": "integer",
+      "displayName": "Radio Signal Strength",
+      "description": "Indicates the average value of the received signal strength indication used in the\ncurrent network bearer (as indicated by Resource 0 of this Object). For the following network bearers the signal strength parameters indicated below are represented by this resource:\nGSM:    RSSI\nUMTS:   RSCP\nLTE:    RSRP\nNB-IoT: NRSRP\n\nFor more details on Network Measurement Report, refer to the appropriate Cellular or Wireless Network standards, (e.g. for LTE Cellular Network\nrefer to 3GPP TS 36.133 specification).",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Radio Signal Strength attributes",
+      "description": "Attributes for n4n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n1",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "integer"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Available Network Bearer",
+      "description": "Indicates a list of current available network bearer. Each Resource Instance has a value from the network bearer list.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Available Network Bearer attributes",
+      "description": "Attributes for n4n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n9",
+      "schema": "integer",
+      "displayName": "SMNC",
+      "description": "Serving Mobile Network Code. This is applicable when the Network Bearer Resource value is referring to a cellular network.\nAs specified in TS [3GPP 23.003].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n9_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMNC attributes",
+      "description": "Attributes for n4n0n9",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n4",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "IP Addresses",
+      "description": "The IP addresses assigned to the connectivity interface. (e.g. IPv4, IPv6, etc.)",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n4_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "IP Addresses attributes",
+      "description": "Attributes for n4n0n4",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n0",
+      "schema": "integer",
+      "displayName": "Network Bearer",
+      "description": "Indicates the network bearer used for the current LwM2M communication session from the network bearer list below.\nThe number range is split into three categories:\n0 - 20 are Cellular Bearers\n21 - 40 are Wireless Bearers\n41 - 50 are Wireline Bearers\n\nMore specifically:\n0: GSM cellular network\n1: TD-SCDMA cellular network\n2: WCDMA cellular network\n3: CDMA2000 cellular network\n4: WiMAX cellular network\n5: LTE-TDD cellular network\n6: LTE-FDD cellular network\n7: NB-IoT\n8 - 20: Reserved for other types of cellula",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Network Bearer attributes",
+      "description": "Attributes for n4n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n4n0n10",
+      "schema": "integer",
+      "displayName": "SMCC",
+      "description": "Serving Mobile Country Code. This is applicable when the Network Bearer Resource value is referring to a cellular network.\nAs specified in TS [3GPP 23.003].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n4n0n10_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMCC attributes",
+      "description": "Attributes for n4n0n10",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n1",
+      "schema": "string",
+      "displayName": "Package URI",
+      "description": "URI from where the device can download the firmware package by an alternative mechanism. As soon the device has received the Package URI it performs the download at the next practical opportunity.\nThe URI format is defined in RFC 3986. For example, coaps://example.org/firmware is a syntactically valid URI. The URI scheme determines the protocol to be used. For CoAP this endpoint MAY be a LwM2M Server but does not necessarily need to be. A CoAP server implementing block-wise transfer is sufficient as a serve",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Package URI attributes",
+      "description": "Attributes for n5n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n5n0n2",
+      "displayName": "Update",
+      "description": "Updates firmware by using the firmware package stored in Package, or, by using the firmware downloaded from the Package URI.\nThis Resource is only executable when the value of the State Resource is Downloaded.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n5",
+      "schema": "integer",
+      "displayName": "Update Result",
+      "description": "Contains the result of downloading or updating the firmware\n0: Initial value. Once the updating process is initiated (Download /Update), this Resource MUST be reset to Initial value.\n1: Firmware updated successfully,\n2: Not enough flash memory for the new firmware package.\n3. Out of RAM during downloading process.\n4: Connection lost during downloading process.\n5: Integrity check failure for new downloaded package.\n6: Unsupported package type.\n7: Invalid URI\n8: Firmware update failed\n9: Unsupported protocol.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Update Result attributes",
+      "description": "Attributes for n5n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n3",
+      "schema": "integer",
+      "displayName": "State",
+      "description": "Indicates current state with respect to this firmware update. This value is set by the LwM2M Client.\n0: Idle (before downloading or after successful updating)\n1: Downloading (The data sequence is on the way)\n2: Downloaded\n3: Updating\nIf writing the firmware package to Package Resource is done, or, if the device has downloaded the firmware package from the Package URI the state changes to Downloaded.\nWriting an empty string to Package Resource or to Package URI Resource, resets the Firmware Update State Mach",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "State attributes",
+      "description": "Attributes for n5n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n9",
+      "schema": "integer",
+      "displayName": "Firmware Update Delivery Method",
+      "description": "The LwM2M Client uses this resource to indicate its support for transferring firmware images to the client either via the Package Resource (=push) or via the Package URI Resource (=pull) mechanism.\n0 – Pull only\n1 – Push only\n2 – Both. In this case the LwM2M Server MAY choose the preferred mechanism for conveying the firmware image to the LwM2M Client.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n9_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Firmware Update Delivery Method attributes",
+      "description": "Attributes for n5n0n9",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n0",
+      "schema": "string",
+      "displayName": "Package",
+      "description": "Firmware package",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Package attributes",
+      "description": "Attributes for n5n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n8",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "integer"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Firmware Update Protocol Support",
+      "description": "This resource indicates what protocols the LwM2M Client implements to retrieve firmware images. The LwM2M server uses this information to decide what URI to include in the Package URI. A LwM2M Server MUST NOT include a URI in the Package URI object that uses a protocol that is unsupported by the LwM2M client.\nFor example, if a LwM2M client indicates that it supports CoAP and CoAPS then a LwM2M Server must not provide an HTTP URI in the Packet URI.\nThe following values are defined by this version of the spec",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n8_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Firmware Update Protocol Support attributes",
+      "description": "Attributes for n5n0n8",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n6",
+      "schema": "string",
+      "displayName": "PkgName",
+      "description": "Name of the Firmware Package",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n6_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "PkgName attributes",
+      "description": "Attributes for n5n0n6",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n5n0n7",
+      "schema": "string",
+      "displayName": "PkgVersion",
+      "description": "Version of the Firmware package",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n5n0n7_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "PkgVersion attributes",
+      "description": "Attributes for n5n0n7",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n6n0n3",
+      "schema": "float",
+      "displayName": "Radius",
+      "description": "The value in the Radius Resource indicates the size in meters of a circular area around a point of geometry.",
+      "unit": "metre",
+      "@type": [
+        "Telemetry",
+        "Distance"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Radius attributes",
+      "description": "Attributes for n6n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n6n0n5",
+      "schema": "time",
+      "displayName": "Timestamp",
+      "description": "The timestamp of when the location measurement was performed.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Timestamp attributes",
+      "description": "Attributes for n6n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n0",
+      "schema": "float",
+      "displayName": "Latitude",
+      "description": "The decimal notation of latitude, e.g., -43.5723 [World Geodetic System 1984].",
+      "writable": false,
+      "unit": "degreeOfArc",
+      "@type": [
+        "Property",
+        "Angle"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Latitude attributes",
+      "description": "Attributes for n6n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n6n0n2",
+      "schema": "float",
+      "displayName": "Altitude",
+      "description": "The decimal notation of altitude in meters above sea level.",
+      "unit": "metre",
+      "@type": [
+        "Telemetry",
+        "Distance"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Altitude attributes",
+      "description": "Attributes for n6n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n6n0n4",
+      "schema": "string",
+      "displayName": "Velocity",
+      "description": "The velocity in the LwM2M Client is defined in [3GPP-TS_23.032].",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n4_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Velocity attributes",
+      "description": "Attributes for n6n0n4",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n6n0n6",
+      "schema": "float",
+      "displayName": "Speed",
+      "description": "Speed is the time rate of change in position of a LwM2M Client without regard for direction: the scalar component of velocity.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n6_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Speed attributes",
+      "description": "Attributes for n6n0n6",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n1",
+      "schema": "float",
+      "displayName": "Longitude",
+      "description": "The decimal notation of longitude, e.g., 153.21760 [World Geodetic System 1984].",
+      "writable": false,
+      "unit": "degreeOfArc",
+      "@type": [
+        "Property",
+        "Angle"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n6n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Longitude attributes",
+      "description": "Attributes for n6n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n7n0n2",
+      "schema": "integer",
+      "displayName": "Tx Data",
+      "description": "Indicate the total amount of data transmitted during the collection period.",
+      "unit": "kibibyte",
+      "@type": [
+        "Telemetry",
+        "DataSize"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n7n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Tx Data attributes",
+      "description": "Attributes for n7n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n7n0n8",
+      "schema": "integer",
+      "displayName": "Collection Period",
+      "description": "The default collection period in seconds. The value 0 indicates that the collection period is not set.",
+      "unit": "second",
+      "@type": [
+        "Telemetry",
+        "TimeSpan"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n7n0n8_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Collection Period attributes",
+      "description": "Attributes for n7n0n8",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n7n0n7",
+      "displayName": "Stop",
+      "description": "Stop collecting information, but do not reset resources 0-5.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n7n0n5",
+      "schema": "integer",
+      "displayName": "Average Message Size",
+      "description": "The average message size that is used during the collection period.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n7n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Average Message Size attributes",
+      "description": "Attributes for n7n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n7n0n1",
+      "schema": "integer",
+      "displayName": "SMS Rx Counter",
+      "description": "Indicate the total number of SMS successfully received during the collection period.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n7n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMS Rx Counter attributes",
+      "description": "Attributes for n7n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n7n0n4",
+      "schema": "integer",
+      "displayName": "Max Message Size",
+      "description": "The maximum message size that is used during the collection period.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n7n0n4_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Max Message Size attributes",
+      "description": "Attributes for n7n0n4",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n7n0n3",
+      "schema": "integer",
+      "displayName": "Rx Data",
+      "description": "Indicate the total amount of data received during the collection period.",
+      "unit": "kibibyte",
+      "@type": [
+        "Telemetry",
+        "DataSize"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n7n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Rx Data attributes",
+      "description": "Attributes for n7n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n7n0n0",
+      "schema": "integer",
+      "displayName": "SMS Tx Counter",
+      "description": "Indicate the total number of SMS successfully transmitted during the collection period.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n7n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "SMS Tx Counter attributes",
+      "description": "Attributes for n7n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n7n0n6",
+      "displayName": "Start",
+      "description": "Reset resources 0-5 to 0 and start to collect information, If resource 8 (Collection Period) value is 0, the client will keep collecting information until resource 7 (Stop) is executed, otherwise the client will stop collecting information after specified period ended.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n8n0n4",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Wipe target",
+      "description": "To specify one or several targets for the wipe operation. This allows selecting specific data, or, memory areas for the wipe operation.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n8n0n4_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Wipe target attributes",
+      "description": "Attributes for n8n0n4",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n8n0n5",
+      "schema": "integer",
+      "displayName": "Lock or Wipe Operation Result",
+      "description": "Contains the result of a lock and wipe operation\n0: Default\n1: Partially Lock operation successful\n2: Fully Lock operation successful\n3: Unlock operation successful\n4: Wipe operation successful\n5: Partially Lock operation failed\n6: Fully Lock operation failed\n7: Unlock operation failed 8: Wipe operation failed\nThis Resource MAY be reported by sending Observe operation.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n8n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Lock or Wipe Operation Result attributes",
+      "description": "Attributes for n8n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n8n0n3",
+      "displayName": "Wipe",
+      "description": "To permanently erase data from the device.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n8n0n0",
+      "schema": "integer",
+      "displayName": "State",
+      "description": "State of the device:\n0: unlocked state Normal operation.\n1: partially locked state\nTo render the device inoperable the device has been partially locked. The “lock target” resource allows specifying the target(s) for this operation.\n2: fully locked state\nTo render the device fully inoperable the device has been fully locked.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n8n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "State attributes",
+      "description": "Attributes for n8n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n8n0n2",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Wipe item",
+      "description": "Indicates which data can be wiped from the device. This resource could be e.g. representing a directory.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n8n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Wipe item attributes",
+      "description": "Attributes for n8n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n8n0n1",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "id",
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "displayName": "value",
+            "name": "value",
+            "schema": "string"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Lock target",
+      "description": "To specify one or several targets for the lock operation. This allows partially locking the device by selecting specific components or interfaces to be locked.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n8n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Lock target attributes",
+      "description": "Attributes for n8n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n9n0n4",
+      "displayName": "Install",
+      "description": "Installs software from the package either stored in Package resource, or, downloaded from the Package URI. This Resource is only executable when the value of the State Resource is DELIVERED.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n14",
+      "schema": "string",
+      "displayName": "User Name",
+      "description": "User Name for access to SW Update Package in pull mode.\nKey based mechanism can alternatively use for talking to the component server instead of user name and password combination.\n",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n14_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "User Name attributes",
+      "description": "Attributes for n9n0n14",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n8",
+      "schema": "boolean",
+      "displayName": "Update Supported Objects",
+      "description": "If this value is true, the LwM2M Client MUST inform the registered LwM2M Servers of Objects and Object Instances parameter by sending an Update or Registration message after the software update operation at the next practical opportunity if supported Objects in the LwM2M Client have changed, in order for the LwM2M Servers to promptly manage newly installed Objects.\nIf false, Objects and Object Instances parameter MUST be reported at the next periodic Update message.\nThe default value is false.\n",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n8_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Update Supported Objects attributes",
+      "description": "Attributes for n9n0n8",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n2",
+      "schema": "string",
+      "displayName": "Package",
+      "description": "Software package\nThe package can be in one single software component, or any delivery material used by the Device to determine the software component(s) and proceed to their installation.\nCan be archive file, executable, manifest. This resource to be used when it is single block of delivery.\n",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n2_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Package attributes",
+      "description": "Attributes for n9n0n2",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n5",
+      "schema": "string",
+      "displayName": "Checkpoint",
+      "description": "Link to a Checkpoint“ object which allows to specify conditions/dependencies for a software update. E.g. power connected, sufficient memory, target system.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n5_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Checkpoint attributes",
+      "description": "Attributes for n9n0n5",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n0",
+      "schema": "string",
+      "displayName": "PkgName",
+      "description": "Name of the software package",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n0_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "PkgName attributes",
+      "description": "Attributes for n9n0n0",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n13",
+      "schema": "string",
+      "displayName": "Package Settings",
+      "description": "Link to “Package Settings” object which allows to modify at any time software configuration settings. This is an application specific object.\nNote: OMA might provide a template for a Package Settings object in a future release of this specification.\n",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n13_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Package Settings attributes",
+      "description": "Attributes for n9n0n13",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n9",
+      "schema": "integer",
+      "displayName": "Update Result",
+      "description": "Contains the result of downloading or installing/uninstalling the software\n0: Initial value. Prior to download any new package in the Device, Update Result MUST be reset to this initial value. One side effect of executing the Uninstall resource is to reset Update Result to this initial value “0”.\n1: Downloading. The package downloading process is on-going.\n2: Software successfully installed.\n3: Successfully Downloaded and package integrity verified\n(( 4-49, for expansion, of other scenarios))\n50: Not enough",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n9_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Update Result attributes",
+      "description": "Attributes for n9n0n9",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n15",
+      "schema": "string",
+      "displayName": "Password",
+      "description": "Password for access to SW Update Package in pull mode.",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n15_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Password attributes",
+      "description": "Attributes for n9n0n15",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n3",
+      "schema": "string",
+      "displayName": "Package URI",
+      "description": "URI from where the device can download the software package by an alternative mechanism. As soon the device has received the Package URI it performs the download at the next practical opportunity.\nCan be direct link to a single software component or link to archive file, executable, or manifest, used by the Device to determine, then access to the software component(s). This resource to be used when it is single block of delivery.\n",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n3_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Package URI attributes",
+      "description": "Attributes for n9n0n3",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n9n0n6",
+      "displayName": "Uninstall",
+      "description": "Uninstalls the software package.\nThis executable resource may have one argument.\nIf used with no argument or argument is 0, the Package is removed i from the Device. If the argument is 1 (“ForUpdate”), the Client MUST prepare itself for receiving a Package used to upgrade the Software already in place. Update State is set back to INITIAL state.\n",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n1",
+      "schema": "string",
+      "displayName": "PkgVersion",
+      "description": "Version of the software package",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n1_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "PkgVersion attributes",
+      "description": "Attributes for n9n0n1",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n9n0n11",
+      "displayName": "Deactivate",
+      "description": "This action deactivates softwareif the Package Installation State Machine is currently in the INSTALLED state.",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n12",
+      "schema": "boolean",
+      "displayName": "Activation State",
+      "description": "Indicates the current activation state of this software:\n0: DISABLED\nActivation State is DISABLED if the Software Activation State Machine is in the INACTIVE state or not alive.\n1: ENABLED\nActivation State is ENABLED only if the Software Activation State Machine is in the ACTIVE state\n",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n12_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Activation State attributes",
+      "description": "Attributes for n9n0n12",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    },
+    {
+      "comment": "Command",
+      "name": "n9n0n10",
+      "displayName": "Activate",
+      "description": "This action activates the software previously successfully installed (the Package Installation State Machine is currently in the INSTALLED state)",
+      "@type": [
+        "Command"
+      ]
+    },
+    {
+      "comment": "Telemetry",
+      "name": "n9n0n7",
+      "schema": "integer",
+      "displayName": "Update State",
+      "description": "Indicates current state with respect to this software update. This value is set by the LwM2M Client.\n0: INITIAL\nBefore downloading.\n(see 5.1.2.1)\n1: DOWNLOAD STARTED\nThe downloading process has started and is on-going.\n(see 5.1.2.2)\n2: DOWNLOADED\nThe package has been completely downloaded\n(see 5.1.2.3)\n3: DELIVERED\nIn that state, the package has been correctly downloaded and is ready to be installed.\n(see 5.1.2.4)\nIf executing the Install Resource failed, the state remains at DELIVERED.\nIf executing the Ins",
+      "@type": [
+        "Telemetry"
+      ]
+    },
+    {
+      "comment": "Property",
+      "name": "n9n0n7_attributes",
+      "schema": {
+        "fields": [
+          {
+            "displayName": "Observation attributes",
+            "name": "attributes",
+            "schema": {
+              "mapKey": {
+                "name": "name",
+                "schema": "string"
+              },
+              "mapValue": {
+                "name": "value",
+                "schema": "float"
+              },
+              "@type": "Map"
+            }
+          },
+          {
+            "displayName": "Observed",
+            "name": "observed",
+            "schema": "boolean"
+          }
+        ],
+        "@type": "Object"
+      },
+      "displayName": "Update State attributes",
+      "description": "Attributes for n9n0n7",
+      "writable": true,
+      "@type": [
+        "Property"
+      ]
+    }
+  ],
+  "@context": "dtmi:dtdl:context;2",
+  "@type": "Interface"
+}
