@@ -712,6 +712,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Hub_integration/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -811,6 +823,18 @@
     <li class="md-nav__item">
       <a href="../../Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
         Exporting devices to Azure IoT Central
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Azure_IoT_Central_integration/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
       </a>
     </li>
   
@@ -940,8 +964,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Concepts/LwM2M_mappings/" class="md-nav__link">
-        LwM2M mappings
+      <a href="../../Concepts/LwM2M_mappings_Hub/" class="md-nav__link">
+        LwM2M mappings - Azure IoT Hub
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/LwM2M_mappings_Central/" class="md-nav__link">
+        LwM2M mappings - Azure IoT Central
       </a>
     </li>
   
@@ -1282,6 +1318,10 @@
 <p>One template can be assigned to more than one group.</p>
 </div>
 <p>Now the devices in the <strong>group ‘anjay’</strong> will report data to Azure according to the way defined in the <strong>template ‘abc_test’</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>Default minimal LwM2M schema</strong> and <strong>Default rich LwM2M schema</strong> are the default Azure integration templates that you can use to generate a template for Azure IoT Central. <strong>Default minimal LwM2M schema</strong> contains only two objects: <code>LwM2M Server</code> and <code>Device</code> that are necessary to connect a device to a LwM2M server. <strong>Default rich LwM2M schema</strong> contains some additional objects that describe the current state of a device, as well as objects related to <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/">FOTA</a>. You can use these default templates to test your integration or for some basic operations. If you have a more complex case (e.g., your device contains other LwM2M objects), then you need to create a new template or copy and edit the default template.</p>
+</div>
 <h2 id="edit-an-assignment">Edit an assignment<a class="headerlink" href="#edit-an-assignment" title="Permanent link">#</a></h2>
 <ol>
 <li>Go to <strong>Administration —&gt; Azure integration</strong> and see the list of Azure integration templates that exist in your domain.</li>
@@ -1309,7 +1349,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../../Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/"
+      href="../../Azure_IoT_Central_integration/Set_an_Observation/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1321,7 +1361,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Exporting devices to Azure IoT Central
+          Set an Observation
         </div>
       </div>
     </a>
@@ -1330,7 +1370,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../../Concepts/LwM2M_mappings/"
+      href="../../Concepts/LwM2M_mappings_Hub/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -1339,7 +1379,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          LwM2M mappings
+          LwM2M mappings - Azure IoT Hub
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -1359,7 +1399,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 29, 2021</span>
     
   </small>
 </div>
@@ -1382,7 +1422,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../../Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../../Azure_IoT_Central_integration/Set_an_Observation/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -1391,19 +1431,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Exporting devices to Azure IoT Central
+                  Set an Observation
                 </div>
               </div>
             </a>
           
           
-            <a href="../../Concepts/LwM2M_mappings/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../../Concepts/LwM2M_mappings_Hub/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  LwM2M mappings
+                  LwM2M mappings - Azure IoT Hub
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">

@@ -710,6 +710,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -814,6 +826,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -865,8 +889,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/" class="md-nav__link">
-        LwM2M mappings
+      <a href="../../../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/" class="md-nav__link">
+        LwM2M mappings - Azure IoT Hub
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Central/" class="md-nav__link">
+        LwM2M mappings - Azure IoT Central
       </a>
     </li>
   
@@ -1370,7 +1406,9 @@
 <li>In the <code>keys</code> section, type the LwM2M object and resource paths for which you want to execute the operation.</li>
 <li>In the <code>values</code> section, type the values for the specified <code>keys</code> (only for some operations).</li>
 </ul>
-<details class="read_request" open="open"><summary>Read_request</summary><div class="highlight"><pre><span></span><code> {
+<details class="read_request" open="open">
+<summary>Read_request</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
      &quot;desired&quot;: {
        &quot;operation&quot;: &quot;read&quot;,
@@ -1392,7 +1430,9 @@
 </li>
 <li>
 <p>To see the operation results, check the <code>reported</code> section of the <strong>operation</strong> Shadow. An example response looks like this:</p>
-<details class="read_result" open="open"><summary>Read_result</summary><div class="highlight"><pre><span></span><code>{
+<details class="read_result" open="open">
+<summary>Read_result</summary>
+<div class="highlight"><pre><span></span><code>{
   &quot;reported&quot;: {
     &quot;operation&quot;: &quot;read&quot;,
     &quot;failedKeys&quot;: [
@@ -1441,7 +1481,9 @@
 </div>
 <h3 id="write">WRITE<a class="headerlink" href="#write" title="Permanent link">#</a></h3>
 <p>To request a WRITE operation for a device, follow the steps 1-5 from the <a href="#read">READ</a> subsection, but using the following example:</p>
-<details class="write_request" open="open"><summary>Write_request</summary><div class="highlight"><pre><span></span><code> {
+<details class="write_request" open="open">
+<summary>Write_request</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;write&quot;,
@@ -1466,7 +1508,9 @@
 </details>
 <h3 id="observe">OBSERVE<a class="headerlink" href="#observe" title="Permanent link">#</a></h3>
 <p>To request a OBSERVE operation for a device, follow the steps 1-5 from the <a href="#read">READ</a> subsection, but using the following example:</p>
-<details class="observe_request" open="open"><summary>Observe_request</summary><div class="highlight"><pre><span></span><code> {
+<details class="observe_request" open="open">
+<summary>Observe_request</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;observe&quot;,
@@ -1498,7 +1542,9 @@
 <p>To check the results of the OBSERVE operation, go to the <code>datamodel</code> Shadow of your device and see the <code>reported</code> section.</p>
 <h3 id="execute">EXECUTE<a class="headerlink" href="#execute" title="Permanent link">#</a></h3>
 <p>To request an EXECUTE operation for a device, follow the steps 1-5 from the <a href="#read">READ</a> subsection, but using the following example:</p>
-<details class="execute_request" open="open"><summary>Execute_request</summary><div class="highlight"><pre><span></span><code> {
+<details class="execute_request" open="open">
+<summary>Execute_request</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;execute&quot;,
@@ -1517,7 +1563,9 @@
 <h3 id="other-operations">Other operations<a class="headerlink" href="#other-operations" title="Permanent link">#</a></h3>
 <p>Here are example inputs for other operations supported by the integration: READ COMPOSITE, OBSERVE COMPOSITE, WRITE ATTRIBUTES, CANCEL OBSERVE, CANCEL OBSERVE COMPOSITE.</p>
 <h4 id="cancel-observe">Cancel Observe<a class="headerlink" href="#cancel-observe" title="Permanent link">#</a></h4>
-<details class="cancel_observe"><summary>Cancel_observe</summary><div class="highlight"><pre><span></span><code> {
+<details class="cancel_observe">
+<summary>Cancel_observe</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;cancelObserve&quot;,
@@ -1539,7 +1587,9 @@
 </div>
 </details>
 <h4 id="write-attributes">Write Attributes<a class="headerlink" href="#write-attributes" title="Permanent link">#</a></h4>
-<details class="write_attributes"><summary>Write_attributes</summary><div class="highlight"><pre><span></span><code> {
+<details class="write_attributes">
+<summary>Write_attributes</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;writeAttributes&quot;,
@@ -1581,7 +1631,9 @@
 </code></pre></div>
 </details>
 <h4 id="observe-composite">Observe-Composite<a class="headerlink" href="#observe-composite" title="Permanent link">#</a></h4>
-<details class="observe_composite"><summary>Observe_composite</summary><div class="highlight"><pre><span></span><code> {
+<details class="observe_composite">
+<summary>Observe_composite</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;observeComposite&quot;,
@@ -1623,7 +1675,9 @@
 </code></pre></div>
 </details>
 <h4 id="read-composite">Read-Composite<a class="headerlink" href="#read-composite" title="Permanent link">#</a></h4>
-<details class="read_composite"><summary>Read_composite</summary><div class="highlight"><pre><span></span><code> {
+<details class="read_composite">
+<summary>Read_composite</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;readComposite&quot;,
@@ -1641,7 +1695,9 @@
 </code></pre></div>
 </details>
 <h4 id="cancel-observe-composite">Cancel Observe-Composite<a class="headerlink" href="#cancel-observe-composite" title="Permanent link">#</a></h4>
-<details class="cancelobserve_composite"><summary>Cancelobserve_composite</summary><div class="highlight"><pre><span></span><code> {
+<details class="cancelobserve_composite">
+<summary>Cancelobserve_composite</summary>
+<div class="highlight"><pre><span></span><code> {
    &quot;state&quot;: {
        &quot;desired&quot;: {
          &quot;operation&quot;: &quot;cancelObserveComposite&quot;,
