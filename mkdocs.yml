@@ -63,7 +63,8 @@ nav:
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation.md'    
             - 'Configure integration templates': 'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md'
             - 'Concepts':
-                - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings.md'
+                - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub.md'
+                - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Central.md'
             - 'Tutorials':
                 - 'Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.md'
         - 'AWS IoT Core integration guide':
