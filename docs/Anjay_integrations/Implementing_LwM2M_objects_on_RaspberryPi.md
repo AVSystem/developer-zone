@@ -9,8 +9,8 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 
 ## Prerequisites
 
-- Raspberry Pi 3 or 4 with a configured operating system and WiFi.
-- A [Sense Hat](https://www.raspberrypi.org/products/sense-hat/) or a [Grove Pi](https://www.seeedstudio.com/GrovePi.html) with a temperature sensor ([DHT11](https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/) or similar) and a push button ([Grove-button](https://wiki.seeedstudio.com/Grove-Button/) or similar).
+- Raspberry Pi 3 or 4 with a configured [operating system](https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-05-28/2021-05-07-raspios-buster-armhf.zip) and WiFi.
+- A [SenseHat](https://www.raspberrypi.org/products/sense-hat/) or a [GrovePi](https://www.seeedstudio.com/GrovePi.html) with a temperature sensor ([DHT11](https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/) or similar) and a push button ([Grove-button](https://wiki.seeedstudio.com/Grove-Button/) or similar).
 - An active Coiote IoT Device Management user account with Cloud admin permissions.
 
 ## Step 1: Prepare your SenseHat/GrovePi
@@ -35,32 +35,23 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 
 ### GrovePi
 
-1. Open the command-line terminal and clone the Dexter Industries BrickPi repository:
+1. To install the GrovePi repository, paste and execute the following commands:
 
-    `git clone https://github.com/DexterInd/BrickPi.git`
+    ```
+    mkdir ~/Dexter
+    cd /home/pi/Dexter
+    git clone https://github.com/DexterInd/GrovePi
+    cd /home/pi/Dexter/GrovePi/Script
+    bash ./update_grovepi.sh
+    ```
+2. Check if the GrovePi libraries are working correctly:
+    - Connect a LED module to GrovePi port D4.
+    - In the terminal, type:
 
-2. A folder named BrickPi should appear in you current working directory. Open it and go to setup files directory:
-
-    `cd ./BrickPi/Setup_Files`
-
-3. The installation script is called install.sh. Make it executable:
-
-    `sudo chmod +x install.sh`
-
-4. Run the installation script:
-
-    `sudo ./install.sh`
-
-5. Follow the onscreen instructions and the script will install all the dependencies and will restart upon completion.
-
-6. Clone the Github repository at the appropriate location by executing the following command:
-
-    `git clone https://github.com/DexterInd/GrovePi.git`
-
-7. Paste and execute the following commands:
-
-    `curl -kL dexterindustries.com/update_grovepi | bash
-    sudo reboot`
+        ```
+        cd /home/pi/Dexter/GrovePi/Software/Python python grove_led_blink.py
+        ```
+    - The LED should start blinking.
 
 ## Step 2: Install Svetovid
 
@@ -76,6 +67,8 @@ sudo dpkg -i svetovid_20.11-raspberry_armhf.deb
 sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
 sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 ```
+
+2. In file `/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py`, find the `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test` entry and replace it with `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod`.
 
 ## Step 3: Register your device in Coiote DM
 
@@ -150,7 +143,7 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 !!! note
     Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid.  
 
-## Step 4: Implement the LwM2M temperature object (3303)
+## Step 4: Implement the LwM2M temperature object `3303` (only for GrovePi)
 
 0. Disable the Svetovid service:
 
@@ -249,9 +242,9 @@ $ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --
 
    ![Temperature object](images/raspi.png "3303")
 
-## Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object (/ID3345)
+## Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object `3345`
 
-Now you can implement the Push Button object based on the OMA DM Multiple Axis Joystick object (/ID3345).
+Now you can implement the Push Button module based on the OMA DM Multiple Axis Joystick object (3345).
 
 0. Type in the terminal:
       ```
@@ -266,14 +259,14 @@ Analyze the resource implementation in the `/etc/svetovid/dm/3345` folder. For m
 
 You should be able to see a default value reported in the command-line terminal.
 
-0. In home directory, create the file ~/button_object_forwarder.py and paste the following into it:
+0. In home directory, create the file ``~/button_object_forwarder.py` and paste the following into it:
 
 === "SenseHat"
 
       ```
       from sense_hat import SenseHat
       from time import sleep
-      #from fsdm import KvStore
+      from fsdm import KvStore
       sense = SenseHat()
 
       sense.clear()
@@ -282,6 +275,7 @@ You should be able to see a default value reported in the command-line terminal.
       #KvStore(namespace=3345).set('state', False)
 
       released_before = False
+      counter = 0
 
       while True:
         for event in sense.stick.get_events():
@@ -291,8 +285,8 @@ You should be able to see a default value reported in the command-line terminal.
           	KvStore(namespace=3345).set('state', True)
 
           	if released_before:
-              	counter = KvStore(namespace=3345).get('counter')
-              	KvStore(namespace=3345).set('counter', counter+1)
+              	counter = counter + 1
+              	KvStore(namespace=3345).set('counter', counter)
 
           	released_before = False
 
