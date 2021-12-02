@@ -6,7 +6,7 @@ const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const del = require('del');
 const postcss = require('gulp-postcss');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
