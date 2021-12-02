@@ -14,7 +14,7 @@
     
     
       
-        <title>Running test cases - Coiote IoT Device Management Docs</title>
+        <title>Tutorial: Implementing LwM2M objects on RaspberryPi - Coiote IoT Device Management Docs</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-test-cases" class="md-skip">
+        <a href="#tutorial-implementing-lwm2m-objects-on-raspberrypi" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Running test cases
+              Tutorial: Implementing LwM2M objects on RaspberryPi
             
           </span>
         </div>
@@ -234,12 +234,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
       
       <label class="md-nav__link" for="nav-1">
         Anjay integrations
@@ -258,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Getting_started/" class="md-nav__link">
+      <a href="../Getting_started/" class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -268,11 +270,111 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Implementing_LwM2M_objects_on_RaspberryPi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tutorial: Implementing LwM2M objects on RaspberryPi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Tutorial: Implementing LwM2M objects on RaspberryPi
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-prepare-your-sensehatgrovepi" class="md-nav__link">
+    Step 1: Prepare your SenseHat/GrovePi
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Prepare your SenseHat/GrovePi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensehat" class="md-nav__link">
+    SenseHat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grovepi" class="md-nav__link">
+    GrovePi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-svetovid" class="md-nav__link">
+    Step 2: Install Svetovid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-register-your-device-in-coiote-dm" class="md-nav__link">
+    Step 3: Register your device in Coiote DM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" class="md-nav__link">
+    Step 4: Implement the LwM2M temperature object 3303 (only for GrovePi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" class="md-nav__link">
+    Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object 3345
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -304,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/" class="md-nav__link">
+      <a href="../Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/" class="md-nav__link">
         Building LwM2M applications for STM boards with I-CUBE-Anjay
       </a>
     </li>
@@ -316,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96/" class="md-nav__link">
+      <a href="../Anjay_ST_integration/STM32L496G-DISCOBG96/" class="md-nav__link">
         STM32L496G-DISCO/BG96
       </a>
     </li>
@@ -328,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH/" class="md-nav__link">
+      <a href="../Anjay_ST_integration/STM32L496G-DISCO-MONARCH/" class="md-nav__link">
         STM32L496G-DISCO/MONARCH
       </a>
     </li>
@@ -340,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Anjay_ST_integration/B-L462E-CELL1-TYPE1SC/" class="md-nav__link">
+      <a href="../Anjay_ST_integration/B-L462E-CELL1-TYPE1SC/" class="md-nav__link">
         B-L462E-CELL1/TYPE1SC
       </a>
     </li>
@@ -352,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Anjay_ST_integration/B-L475E-IOT01A/" class="md-nav__link">
+      <a href="../Anjay_ST_integration/B-L475E-IOT01A/" class="md-nav__link">
         B-L475E-IOT01A
       </a>
     </li>
@@ -392,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Anjay_Nordic_integration/Thingy91/" class="md-nav__link">
+      <a href="../Anjay_Nordic_integration/Thingy91/" class="md-nav__link">
         Thingy:91
       </a>
     </li>
@@ -404,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Anjay_integrations/Anjay_Nordic_integration/nRF9160/" class="md-nav__link">
+      <a href="../Anjay_Nordic_integration/nRF9160/" class="md-nav__link">
         nRF9160
       </a>
     </li>
@@ -484,14 +586,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
       
       <label class="md-nav__link" for="nav-3">
         Interoperability tests guide
@@ -510,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Overview/" class="md-nav__link">
+      <a href="../../Interoperability_tests_guide/Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -522,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Getting_started/" class="md-nav__link">
+      <a href="../../Interoperability_tests_guide/Getting_started/" class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -534,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Test_case_actions/" class="md-nav__link">
+      <a href="../../Interoperability_tests_guide/Test_case_actions/" class="md-nav__link">
         Test case actions
       </a>
     </li>
@@ -546,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Configuring_test_cases/" class="md-nav__link">
+      <a href="../../Interoperability_tests_guide/Configuring_test_cases/" class="md-nav__link">
         Configuring test cases
       </a>
     </li>
@@ -558,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Data_model_and_variables/" class="md-nav__link">
+      <a href="../../Interoperability_tests_guide/Data_model_and_variables/" class="md-nav__link">
         Device data model and variables
       </a>
     </li>
@@ -568,97 +668,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Running test cases
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Interoperability_tests_guide/Running_test_cases/" class="md-nav__link">
         Running test cases
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="In this article">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      In this article
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#protocol-tests-panel-description" class="md-nav__link">
-    Protocol tests panel description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#displaying-test-case-description" class="md-nav__link">
-    Displaying test case description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#starting-test-cases" class="md-nav__link">
-    Starting test cases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-test-cases" class="md-nav__link">
-    Stopping test cases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-case-statuses-and-logs" class="md-nav__link">
-    Test case statuses and logs
-  </a>
-  
-    <nav class="md-nav" aria-label="Test case statuses and logs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#test-case-statuses" class="md-nav__link">
-    Test case statuses
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-case-logs" class="md-nav__link">
-    Test case logs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -668,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Using_API_Jenkins_integration/" class="md-nav__link">
+      <a href="../../Interoperability_tests_guide/Using_API_Jenkins_integration/" class="md-nav__link">
         Jenkins/GitLab integration with interop tests API
       </a>
     </li>
@@ -1220,57 +1234,71 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#protocol-tests-panel-description" class="md-nav__link">
-    Protocol tests panel description
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#displaying-test-case-description" class="md-nav__link">
-    Displaying test case description
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starting-test-cases" class="md-nav__link">
-    Starting test cases
+  <a href="#step-1-prepare-your-sensehatgrovepi" class="md-nav__link">
+    Step 1: Prepare your SenseHat/GrovePi
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-test-cases" class="md-nav__link">
-    Stopping test cases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-case-statuses-and-logs" class="md-nav__link">
-    Test case statuses and logs
-  </a>
-  
-    <nav class="md-nav" aria-label="Test case statuses and logs">
+    <nav class="md-nav" aria-label="Step 1: Prepare your SenseHat/GrovePi">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#test-case-statuses" class="md-nav__link">
-    Test case statuses
+  <a href="#sensehat" class="md-nav__link">
+    SenseHat
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#test-case-logs" class="md-nav__link">
-    Test case logs
+  <a href="#grovepi" class="md-nav__link">
+    GrovePi
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-svetovid" class="md-nav__link">
+    Step 2: Install Svetovid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-register-your-device-in-coiote-dm" class="md-nav__link">
+    Step 3: Register your device in Coiote DM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" class="md-nav__link">
+    Step 4: Implement the LwM2M temperature object 3303 (only for GrovePi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" class="md-nav__link">
+    Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object 3345
+  </a>
   
 </li>
       
@@ -1297,86 +1325,511 @@
 
 
 <!-- Markdown content -->
-<h1 id="running-test-cases">Running test cases<a class="headerlink" href="#running-test-cases" title="Permanent link">#</a></h1>
-<p>If you have test cases configured in the platform, you can run them on your device using the <strong>Protocol tests</strong> panel. Read this chapter to learn how to display test case descriptions, start and stop test case execution and view test results and logs.</p>
-<h2 id="protocol-tests-panel-description">Protocol tests panel description<a class="headerlink" href="#protocol-tests-panel-description" title="Permanent link">#</a></h2>
-<p>The protocol tests panel is available in the <strong>Device Management Center</strong> individually for each device. To access it, select a device in <strong>Device Inventory</strong> to enter its <strong>Device Management Center</strong> and select <strong>Protocol tests</strong> from the menu on the left.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If the <strong>Protocol tests</strong> tab is not visible in the menu, use the settings button under the menu to add it: drag it from <strong>Available tabs</strong> and drop it in <strong>Selected tabs</strong> and click <strong>Confirm</strong>. </p>
-</div>
-<p><img alt="Protocol tests tab in DMC" src="../images/image101.png" title="Protocol tests tab in DMC" /></p>
-<p>Read this section to learn about the main components that it comprises.</p>
-<p><img alt="The protocol tests panel" src="../images/image066.png" title="The protocol tests panel" /></p>
+<h1 id="tutorial-implementing-lwm2m-objects-on-raspberrypi">Tutorial: Implementing LwM2M objects on RaspberryPi<a class="headerlink" href="#tutorial-implementing-lwm2m-objects-on-raspberrypi" title="Permanent link">#</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
+<p>Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for RaspberryPi-based IoT devices. The Python programming language is used to implement LwM2M objects. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
+It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.</p>
+<p>This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.  </p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>Raspberry Pi 3 or 4 with a configured <a href="https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-05-28/2021-05-07-raspios-buster-armhf.zip">operating system</a> and a set-up WiFi connection.</li>
+<li>A <a href="https://www.raspberrypi.org/products/sense-hat/">SenseHat</a> or a <a href="https://www.seeedstudio.com/GrovePi.html">GrovePi</a> with a temperature sensor (<a href="https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/">DHT11</a> or similar) and a push button (<a href="https://wiki.seeedstudio.com/Grove-Button/">Grove-button</a> or similar).</li>
+<li>An active Coiote IoT Device Management user account with Cloud admin permissions.</li>
+</ul>
+<h2 id="step-1-prepare-your-sensehatgrovepi">Step 1: Prepare your SenseHat/GrovePi<a class="headerlink" href="#step-1-prepare-your-sensehatgrovepi" title="Permanent link">#</a></h2>
+<h3 id="sensehat">SenseHat<a class="headerlink" href="#sensehat" title="Permanent link">#</a></h3>
 <ol>
-<li><strong>Test case list</strong> – views all the test cases available for a given device. It is searchable and can be filtered.</li>
-<li><strong>Info icon</strong> – hover over this icon to see test case description.</li>
-<li><strong>'Select all' checkbox</strong> – use this checkbox to select all items visible in the list. Note that if you filter or search the list, the previously made selection you will be kept nonetheless. In such case, the number of selected test cases visible in the Run selected button will be their total count, which may not correspond to the number of selections in your filtered list view.</li>
-<li><strong>Status</strong> – use this field to filter your list view by test case execution status.</li>
-<li><strong>Type</strong> - use this field to filter your list view by test case type (<em>Automated</em> or <em>Semi-manual</em>).</li>
-<li><strong>Search</strong> – use this field to search among the listed test cases by their name. Start typing to get matching results.</li>
-<li><strong>Show report</strong> - use this button to view a summary of tests commissioned for your devices along with test case success rate. To get the report in the CSV format, select the <strong>Download summary file</strong> button.</li>
-<li><strong>'Run selected (_)' button</strong> – use it to start the execution of previously selected tests. The number of tests to be run is shown in brackets.</li>
-</ol>
-<h2 id="displaying-test-case-description">Displaying test case description<a class="headerlink" href="#displaying-test-case-description" title="Permanent link">#</a></h2>
-<p>Read this section to learn how to display details of test cases.</p>
-<ol>
-<li>In <strong>Device Inventory</strong>, find your device in the list and click on its name.</li>
-<li>In <strong>Device Management Center</strong>, select the <strong>Protocol tests</strong> tab.</li>
-<li>Select a test case and click on its name to enter the detailed view.</li>
-</ol>
-<h2 id="starting-test-cases">Starting test cases<a class="headerlink" href="#starting-test-cases" title="Permanent link">#</a></h2>
-<p>Read this section to learn how to start the execution of test cases on a device.</p>
-<ol>
-<li>In <strong>Device Inventory</strong>, find your device in the list and click on its name.</li>
-<li>In <strong>Device Management Center</strong>, select the <strong>Protocol tests</strong> tab.</li>
-<li>Select the test cases you want to run and click <strong>Run selected (_)</strong>.</li>
+<li>
+<p>Install SenseHat packages:
+<code>sudo apt-get install sense-hat</code></p>
+</li>
+<li>
+<p>Check if SenseHat is working correctly:</p>
+</li>
+<li>Create a <code>hello_world.py</code> file:
+                <div class="highlight"><pre><span></span><code>from sense_hat import SenseHat
+sense = SenseHat()
+sense.show_message(&quot;Hello World!&quot;)
+</code></pre></div></li>
+<li>Run the program:
+<code>python hello_world.py</code></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Even if you leave the <strong>Protocol tests</strong> panel, tests once run will continue until all are finished or stopped.</p>
+<p>A tutorial on SenseHat is available here: https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat</p>
 </div>
-<h2 id="stopping-test-cases">Stopping test cases<a class="headerlink" href="#stopping-test-cases" title="Permanent link">#</a></h2>
-<p>Read this section to learn how to stop the execution of test cases on a device.</p>
+<h3 id="grovepi">GrovePi<a class="headerlink" href="#grovepi" title="Permanent link">#</a></h3>
 <ol>
-<li>With the tests running, go to <strong>Device Inventory</strong>.</li>
-<li>Find your device in the list and click on its name.</li>
-<li>In <strong>Device Management Center</strong>, select the <strong>Protocol tests</strong> tab.</li>
-<li>Click the <strong>Cancel all tests</strong> button located inside the footer bar.</li>
-<li>Test execution will be stopped.</li>
+<li>
+<p>To install the GrovePi repository, paste and execute the following commands:</p>
+<p><div class="highlight"><pre><span></span><code>mkdir ~/Dexter
+cd /home/pi/Dexter
+git clone https://github.com/DexterInd/GrovePi
+cd /home/pi/Dexter/GrovePi/Script
+bash ./update_grovepi.sh
+</code></pre></div>
+2. Check if the GrovePi libraries are working correctly:
+- Connect a LED module to GrovePi port D4.
+- In the terminal, type:</p>
+<div class="highlight"><pre><span></span><code>```
+cd /home/pi/Dexter/GrovePi/Software/Python python grove_led_blink.py
+```
+</code></pre></div>
+<ul>
+<li>The LED should start blinking.</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-2-install-svetovid">Step 2: Install Svetovid<a class="headerlink" href="#step-2-install-svetovid" title="Permanent link">#</a></h2>
+<ol>
+<li>To install Svetovid, paste and execute the following commands into your command-line terminal:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkdir ~/AVSystem
+cd /home/pi/AVSystem
+git clone https://github.com/AVSystem/Svetovid-raspberry-client.git
+cd /home/pi/AVsystem/Svetovid-raspberry-client
+cd ~/AVSystem/Svetovid-raspberry-client
+sudo dpkg -i svetovid_20.11-raspberry_armhf.deb
+sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
+sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
+</code></pre></div>
+<ol>
+<li>In file <code>/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py</code>, find the <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test</code> entry and replace it with <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod</code>.</li>
+</ol>
+<h2 id="step-3-register-your-device-in-coiote-dm">Step 3: Register your device in Coiote DM<a class="headerlink" href="#step-3-register-your-device-in-coiote-dm" title="Permanent link">#</a></h2>
+<ol>
+<li>
+<p>Disable the Svetovid service:</p>
+<p><code>sudo systemctl disable svetovid.service --now</code></p>
+</li>
+<li>
+<p>Set the server connection details:</p>
+<ul>
+<li>
+<p>in <code>/etc/svetovid/config/security.json</code>:
+        <div class="highlight"><pre><span></span><code>    {
+        &quot;1&quot;:
+        {
+            &quot;ssid&quot;: &quot;1&quot;,
+            &quot;server_uri&quot;: &quot;coaps://lwm2m-test.avsystem.io:5684&quot;,
+            &quot;is_bootstrap&quot;: &quot;0&quot;,
+            &quot;security_mode&quot;: &quot;psk&quot;,
+            &quot;pubkey_or_identity_hex&quot;: &quot;XXXX&quot;,
+            &quot;privkey_or_psk_hex&quot;: &quot;XXXX&quot;,
+            &quot;server_pubkey_hex&quot;: &quot;&quot;,
+            &quot;holdoff_s&quot;: &quot;0&quot;,
+            &quot;bs_timeout_s&quot;: &quot;0&quot;
+        }
+    }
+</code></pre></div></p>
+<ul>
+<li>in <code>/etc/svetovid/config/svd.json</code>:
+    <div class="highlight"><pre><span></span><code>    {
+        &quot;device&quot;: {
+            &quot;endpoint_name&quot;: &quot;YYYY&quot;,
+            &quot;udp_listen_port&quot;: 1234
+        },
+        &quot;logging&quot;: {
+            &quot;default_log_level&quot;: &quot;trace&quot;,
+            &quot;log_level&quot;: {
+                &quot;svd&quot;: &quot;trace&quot;
+            }
+        },
+        &quot;lwm2m_version_config&quot;: {
+            &quot;min&quot;: &quot;1.0&quot;,
+            &quot;max&quot;: &quot;1.1&quot;
+        },
+        &quot;in_buffer_size_b&quot;: 1024,
+        &quot;out_buffer_size_b&quot;: 1024,
+        &quot;msg_cache_size_b&quot;: 65536
+    }
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Tests completed before you hit the <strong>Cancel all tests</strong> button will display their execution status.</p>
+<p>XXXX and YYYY should be replaced by the chosen values of endpoint name, PSK identity and PSK key.</p>
 </div>
-<h2 id="test-case-statuses-and-logs">Test case statuses and logs<a class="headerlink" href="#test-case-statuses-and-logs" title="Permanent link">#</a></h2>
-<h3 id="test-case-statuses">Test case statuses<a class="headerlink" href="#test-case-statuses" title="Permanent link">#</a></h3>
-<p>Test case statuses are labels attached to test cases that help to identify their state in each stage of their execution. There are eight available test case statuses:</p>
-<ul>
-<li><strong>New</strong> – a test case that has been recently added and has not been scheduled nor executed.</li>
-<li><strong>NotScheduled</strong> – a test case that has never been picked for execution.</li>
-<li><strong>NotTested</strong> – a test case that has been picked for execution, but its execution has not started due to some error or test case execution interruption.</li>
-<li><strong>Pending</strong> – a test case whose execution is pending.</li>
-<li><strong>In progress</strong> – a test case whose execution is under way.</li>
-<li><strong>Halted</strong> – a test case whose execution is under way.</li>
-<li><strong>Warning</strong> – a test case that has finished with error(s).</li>
-<li><strong>Success</strong> – a test case that has finished with success.</li>
-</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Statuses are available both for test cases after execution as well as for individual actions inside a test case. To view test results for individual actions, enter the finished test case and see the action list.</p>
+<p>XXXX values are in hex. To convert your plain text, use the following:
+<code>echo -n 'text-value' | xxd -p</code></p>
 </div>
-<h3 id="test-case-logs">Test case logs<a class="headerlink" href="#test-case-logs" title="Permanent link">#</a></h3>
-<p>Logs store detailed information on the test case execution and can be displayed after its completion. To display the logs for an individual test case, enter the test case and click <strong>Check logs</strong> or expand the <strong>Logs</strong> list.</p>
+<ol>
+<li>
+<p>Restart the Svetovid service:</p>
+<p><code>sudo systemctl start svetovid.service --now</code></p>
+</li>
+<li>
+<p>Create a device instance in Coiote DM:</p>
 <ul>
-<li>If there are many logs from a selected period of time, use <strong>Scroll to the bottom</strong> and <strong>Scroll to the top</strong> links to navigate.</li>
-<li>If a log entry is long, not all lines are displayed at once. To see more lines, click the <strong>Show … lines/characters more</strong> link.</li>
-<li>To display only particular logs and logs of a higher level, use <strong>Show from level list</strong>.</li>
-<li>To wrap words of logs, select the <strong>Word wrap</strong> checkbox.</li>
-<li>To format messages in a more readable way, select the <strong>Format messages</strong> checkbox.</li>
-<li>To see which messages were received (green color) and which were sent (blue color), select the <strong>Color messages</strong> checkbox.</li>
-<li>To download logs from a particular period of time matching with used filters, click the <strong>Download</strong> button.</li>
+<li>When logged into your Coiote DM user account, go to Device Inventory and click <strong>Add device</strong>.
+  <img alt="Add device" src="../images/add_device.png" title="add_device" /></li>
+<li>Provide Device ID, Key Identity and Key values as in the Svetovid config files from the earlier step.
+  <img alt="Add device credentials" src="../images/creds.png" title="Credentials" /></li>
+<li>Wait for the connection.</li>
 </ul>
+</li>
+<li>
+<p>Analyze the objects exposed by the device.
+    <img alt="Device objects" src="../images/rasp.png" title="Objects" /></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid.  </p>
+</div>
+<h2 id="step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi">Step 4: Implement the LwM2M temperature object <code>3303</code> (only for GrovePi)<a class="headerlink" href="#step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" title="Permanent link">#</a></h2>
+<ol>
+<li>
+<p>Disable the Svetovid service:</p>
+<p><code>sudo systemctl disable svetovid.service --now</code></p>
+</li>
+<li>
+<p>Generate a stub object in your <code>dm</code> (data model) Svetovid folder by pasting and executing the following command in the terminal:
+$ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --generator python</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can analyze the resource implementation in the /etc/svetovid/dm/3303 folder. For more details, see here: https://github.com/AVSystem/Svetovid-raspberry-client.</p>
+</div>
+<ol>
+<li>
+<p>Modify the python script in the <code>/etc/svetovid/dm/3303/Sensor_Value.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:
+      <div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+import grovepi
+import math
+# Connect the Grove Temperature &amp; Humidity Sensor Pro to digital port D4
+# This example uses the blue colored sensor.
+# SIG,NC,VCC,GND
+sensor = 4  # The Sensor goes on digital port 4.
+
+# temp_humidity_sensor_type
+# Grove Base Kit comes with the blue sensor.
+blue = 0    # The Blue colored sensor.
+white = 1   # The White colored sensor.
+
+class ResourceHandler_3303_5700(ResourceHandler):
+    NAME = &quot;Sensor Value&quot;
+    DESCRIPTION = &#39;&#39;&#39;\
+Last or Current Measured Value from the Sensor.&#39;&#39;&#39;
+    DATATYPE = DataType.FLOAT
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        # print(0.0)
+        [temp,humidity] = grovepi.dht(sensor,blue)  
+        print(&quot;%.02f&quot;%(temp))
+
+if __name__ == &#39;__main__&#39;:
+    ResourceHandler_3303_5700().main()
+</code></pre></div></p>
+</li>
+<li>
+<p>Modify the python script in the <code>/etc/svetovid/dm/3303/resources/5700.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:</p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+import grovepi
+import math
+# Connect the Grove Temperature &amp; Humidity Sensor Pro to digital port D4
+# This example uses the blue colored sensor.
+# SIG,NC,VCC,GND
+sensor = 4  # The Sensor goes on digital port 4.
+
+# temp_humidity_sensor_type
+# Grove Base Kit comes with the blue sensor.
+blue = 0    # The Blue colored sensor.
+white = 1   # The White colored sensor.
+
+class ResourceHandler_3303_5700(ResourceHandler):
+    NAME = &quot;Sensor Value&quot;
+    DESCRIPTION = &#39;&#39;&#39;\
+Last or Current Measured Value from the Sensor.&#39;&#39;&#39;
+    DATATYPE = DataType.FLOAT
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        # print(0.0)
+        [temp,humidity] = grovepi.dht(sensor,blue)  
+        print(&quot;%.02f&quot;%(temp))
+
+if __name__ == &#39;__main__&#39;:
+    ResourceHandler_3303_5700().main()
+</code></pre></div>
+</li>
+<li>
+<p>Plug in the temperature sensor to digital port D4 of the GrovePi.</p>
+</li>
+<li>
+<p>Restart the Svetovid service:</p>
+<p><code>sudo systemctl restart svetovid.service --now</code></p>
+</li>
+<li>
+<p>Refresh device state in Coiote and see if the Temperature object <code>3303</code> has appeared in the Objects tab and values are reported for  for the Sensor Value <code>5700</code> resource:</p>
+</li>
+</ol>
+<p><img alt="Temperature object" src="images/raspi.png" title="3303" /></p>
+<h2 id="step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345">Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object <code>3345</code><a class="headerlink" href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" title="Permanent link">#</a></h2>
+<p>Now you can implement the Push Button module based on the OMA DM Multiple Axis Joystick object (3345).</p>
+<ol>
+<li>
+<p>Type in the terminal:
+      <div class="highlight"><pre><span></span><code>$ sudo svetovid-fsdmtool generate --object 3345 --output-dir /etc/svetovid/dm --generator python`
+</code></pre></div>
+Analyze the resource implementation in the <code>/etc/svetovid/dm/3345</code> folder. For more details, see (https://github.com/AVSystem/Svetovid-raspberry-client).</p>
+</li>
+<li>
+<p>Type in the terminal:</p>
+<p><code>cd /etc/svetovid/dm/3345/resources
+ ./5550 read</code></p>
+</li>
+</ol>
+<p>You should be able to see a default value reported in the command-line terminal.</p>
+<ol>
+<li>In home directory, create the file <code>`~/button_object_forwarder.py</code> and paste the following into it:</li>
+</ol>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">SenseHat</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>from sense_hat import SenseHat
+from time import sleep
+from fsdm import KvStore
+sense = SenseHat()
+
+sense.clear()
+
+#KvStore(namespace=3345).set(&#39;counter&#39;, 0)
+#KvStore(namespace=3345).set(&#39;state&#39;, False)
+
+released_before = False
+counter = 0
+
+while True:
+  for event in sense.stick.get_events():
+  if event.action == &quot;pressed&quot;:
+      if event.direction == &quot;middle&quot;:
+      sense.show_letter(&quot;M&quot;)
+      KvStore(namespace=3345).set(&#39;state&#39;, True)
+
+      if released_before:
+          counter = counter + 1
+          KvStore(namespace=3345).set(&#39;counter&#39;, counter)
+
+      released_before = False
+
+  elif event.action == &quot;released&quot;:
+      if event.direction == &quot;middle&quot;:
+      sense.show_letter(&quot;m&quot;)
+      KvStore(namespace=3345).set(&#39;state&#39;, False)
+      released_before = True
+  else:
+      sense.clear()
+
+  # Wait and clear the screen
+  sleep(0.5)
+  sense.clear()
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">GrovePi</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>from time import sleep
+import grovepi
+from fsdm import KvStore
+
+button = 3
+
+KvStore(namespace=3345).set(&#39;counter&#39;, 0)
+KvStore(namespace=3345).set(&#39;state&#39;, False)
+
+released_before = False
+counter = 0
+
+grovepi.pinMode(button, &quot;INPUT&quot;)
+
+while True:
+    try:
+        state = grovepi.digitalRead(button)
+        KvStore(namespace=3345).set(&#39;state&#39;, True)
+
+        print(&quot;State:{}&quot;.format(state))
+
+        if state == 1:
+
+            if released_before:
+                counter = counter + 1
+                print(&quot;Counter:{}&quot;.format(counter))
+                KvStore(namespace=3345).set(&#39;counter&#39;, counter+1)
+                released_before = False    
+            KvStore(namespace=3345).set(&#39;state&#39;, True)
+        else:
+            released_before = True
+            KvStore(namespace=3345).set(&#39;state&#39;, False)
+
+        sleep(.2)
+
+    except IOError:
+        print(&quot;Error&quot;)
+</code></pre></div>
+</div>
+</div>
+<ol>
+<li>Modify the python script in the <code>/etc/svetovid/dm/3345/Digital_Input_Counter.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:
+      <div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3345_5501(ResourceHandler):
+    NAME = &quot;Digital Input Counter&quot;
+    DESCRIPTION = &#39;&#39;&#39;\
+The cumulative value of active state detected.&#39;&#39;&#39;
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        value = KvStore(namespace=3345).get(&#39;counter&#39;)
+        if value is None:
+            # The value was not set, so it&#39;s not found.
+            # raise CoapError.NOT_FOUND
+            value = 0
+
+        print(value)
+  # TODO: print value to stdout
+        # print(0)
+
+
+
+
+if __name__ == &#39;__main__&#39;:
+    ResourceHandler_3345_5501().main()
+</code></pre></div></li>
+<li>
+<p>Modify the python script in the <code>/etc/svetovid/dm/3345/Digital_Input_State.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:</p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3345_5500(ResourceHandler):
+    NAME = &quot;Digital Input State&quot;
+    DESCRIPTION = &#39;&#39;&#39;\
+The current state of a digital input.&#39;&#39;&#39;
+    DATATYPE = DataType.BOOLEAN
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+  state = KvStore(namespace=3345).get(&#39;state&#39;)
+        if state is None:
+            # The value was not set, so it&#39;s not found.
+            raise CoapError.NOT_FOUND
+            #state = False
+        print(state)
+
+        # TODO: print value to stdout
+        #print(0)
+
+
+
+
+if __name__ == &#39;__main__&#39;:
+    ResourceHandler_3345_5500().main()
+</code></pre></div>
+</li>
+<li>
+<p>Modify the /etc/svetovid/dm/3345/resources/5500 file:</p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3345_5500(ResourceHandler):
+    NAME = &quot;Digital Input State&quot;
+    DESCRIPTION = &#39;&#39;&#39;\
+The current state of a digital input.&#39;&#39;&#39;
+    DATATYPE = DataType.BOOLEAN
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+  state = KvStore(namespace=3345).get(&#39;state&#39;)
+        if state is None:
+            # The value was not set, so it&#39;s not found.
+            raise CoapError.NOT_FOUND
+            #state = False
+        print(state)
+
+        # TODO: print value to stdout
+        #print(0)
+
+if __name__ == &#39;__main__&#39;:
+    ResourceHandler_3345_5500().main()
+</code></pre></div>
+</li>
+<li>
+<p>Modify the /etc/svetovid/dm/3345/resources/5501 file:</p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+class ResourceHandler_3345_5501(ResourceHandler):
+    NAME = &quot;Digital Input Counter&quot;
+    DESCRIPTION = &#39;&#39;&#39;\
+The cumulative value of active state detected.&#39;&#39;&#39;
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        value = KvStore(namespace=3345).get(&#39;counter&#39;)
+        if value is None:
+            # The value was not set, so it&#39;s not found.
+            # raise CoapError.NOT_FOUND
+            value = 0
+
+        print(value)
+  # TODO: print value to stdout
+        # print(0)
+
+if __name__ == &#39;__main__&#39;:
+    ResourceHandler_3345_5501().main()
+</code></pre></div>
+</li>
+<li>
+<p>Plug in the push button to digital port D3 of the GrovePi/SenseHat.</p>
+</li>
+<li>
+<p>Restart Svetovid:</p>
+<p><code>sudo systemctl restart svetovid.service --now</code></p>
+</li>
+<li>
+<p>Refresh device state in Coiote and see if the Multiple Axis Joystick object <code>3345</code> has appeared in the Objects tab and values are reported for the Digital Input State <code>5500</code> and Digital Input Counter <code>5501</code> resources:</p>
+<p><img alt="Joystick button object" src="../images/button.png" title="3345" /></p>
+</li>
+</ol>
 
 <!-- Link to previous and/or next page -->
 
@@ -1388,7 +1841,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../Data_model_and_variables/"
+      href="../Getting_started/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1400,7 +1853,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Device data model and variables
+          Getting started
         </div>
       </div>
     </a>
@@ -1409,7 +1862,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../Using_API_Jenkins_integration/"
+      href="../Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -1418,7 +1871,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          Jenkins/GitLab integration with interop tests API
+          Building LwM2M applications for STM boards with I-CUBE-Anjay
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -1438,7 +1891,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2021</span>
     
   </small>
 </div>
@@ -1461,7 +1914,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../Data_model_and_variables/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../Getting_started/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -1470,19 +1923,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Device data model and variables
+                  Getting started
                 </div>
               </div>
             </a>
           
           
-            <a href="../Using_API_Jenkins_integration/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  Jenkins/GitLab integration with interop tests API
+                  Building LwM2M applications for STM boards with I-CUBE-Anjay
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
