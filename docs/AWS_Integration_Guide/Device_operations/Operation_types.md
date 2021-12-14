@@ -347,7 +347,7 @@ If you encounter difficulties when forwarding your requests to Coiote DM, it may
     - Go to AWS CloudWatch and select **Logs** > **Log groups**.
     - From the **Log groups** list, select the `/aws/lambda/lwm2mOperation` group.
 
-2. To check logs for all integration components in one place:
+2. To check error logs for all integration components in one place:
     - Go to AWS CloudWatch and select **Logs** > **Log groups**.
     - From the **Log groups** list, select the `AWSIotLogsV2` group.
     - Select all the logs from the list by checking the box next to **Log stream** and click **Search all**.
