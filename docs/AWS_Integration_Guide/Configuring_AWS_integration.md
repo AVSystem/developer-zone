@@ -4,7 +4,7 @@ Follow this section to integrate your AWS services with Coiote DM.
 
 ## Prerequisites
 
-- An active AWS subscription with access to IoT Core, CloudFormation and CloudWatch.
+- An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager.
 - An AWS S3 bucket.
 - A Coiote DM user account with the **Cloud admin** role.
 - The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
