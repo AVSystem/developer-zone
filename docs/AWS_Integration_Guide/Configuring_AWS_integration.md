@@ -127,3 +127,15 @@ To add the resources needed for the integration to your AWS services:
 ## Next steps
 
 To learn how to perform operations on your devices, please see the [Performing LwM2M operations](../AWS_Integration_Guide/Device_operations/Operation_types.md) chapter.
+
+## Removing the integration
+
+To remove the integration of AWS and Coiote DM, follow the following steps:
+
+1. In **CoioteDM** remove all the devices from the **AWSiotCoreCertAuth** group.
+2. Go to the **CloudFormation** service in **AWS** and select the stack that was created while setting up the integration.
+3. Delete the stack.
+   ![Delete stack](images/stack_delete.png "Delete stack")
+4. Go to the **S3** service in **AWS** and select the bucket with the lambda code files.
+5. Delete the files.
+   ![Delete files](images/s3_delete.png "Delete files")
