@@ -6,7 +6,7 @@ Follow this section to integrate your AWS services with Coiote DM.
 
 - An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager.
 - An AWS S3 bucket.
-- A Coiote DM user account with the **Cloud admin** role.
+- A Coiote DM user account with the **awsiottenant** role.
 - The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
 - The Python package installer (<https://pypi.org/project/pip/>).
 - The AWS CLI (<https://aws.amazon.com/cli/>).
@@ -27,7 +27,7 @@ To start integrating AWS with Coiote DM, you first need to create a user account
 
 ## Copy tasks and provide credentials for your device group in Coiote DM
 
-The Coiote DM-side configuration of the integration is located in the dedicated `AWSiotCoreCertAuth` device group. To complete this side of the integration, log in as the user with the **awsiottenant** role (only if that user was created in the Root **Domain**. If not, they can not access the root groups and the tasks have to be copied from the **Cloud admin** account.). 
+The Coiote DM-side configuration of the integration is located in the dedicated `AWSiotCoreCertAuth` device group. To complete this side of the integration, log in as the user with the **awsiottenant** role (only if that user was created in the Root **Domain**. If not, they can not access the root groups and the tasks have to be copied from the **Cloud admin** account.).
 Then follow the steps below:
 
 1. Go to the **Device groups** panel and select a group:
