@@ -4,9 +4,9 @@ Follow this section to integrate your AWS services with Coiote DM.
 
 ## Prerequisites
 
-- An active AWS subscription.
+- An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager.
 - An AWS S3 bucket.
-- A Coiote DM user account with the **Cloud admin** role.
+- A Coiote DM user account with the **awsiottenant** role.
 - The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
 - The Python package installer (<https://pypi.org/project/pip/>).
 - The AWS CLI (<https://aws.amazon.com/cli/>).
@@ -20,22 +20,23 @@ To start integrating AWS with Coiote DM, you first need to create a user account
 ![Add user button](images/add_button2.png "Add user button")
     - Provide **Email** for new user (which will be its username) and select your domain from the **Domain path** drop-down list.
     - Remember to switch on the **User Verified** and **User Enabled** toggle buttons.
-    - In the **Client Roles** fields, pick the **CoioteDM** client and **cloudtenant** role.
+    - In the **Client Roles** fields, pick the **CoioteDM** client and **awsiottenant** role.
 ![Add REST user](images/add_rest_user2.png "Add REST user")
     - Click **Save**.
     - Go to the **Credentials** tab, type a password for your user (twice), select **Set password**, then confirm by clicking **Set password** in the pop-up.
 
 ## Copy tasks and provide credentials for your device group in Coiote DM
 
-The Coiote DM-side configuration of the integration is located in the dedicated `AWSiotCore` device group. To complete this side of the integration, log in as the user with the **Cloud admin** role and follow the steps below:
+The Coiote DM-side configuration of the integration is located in the dedicated `AWSiotCoreCertAuth` device group. To complete this side of the integration, log in as the user with the **awsiottenant** role (only if that user was created in the Root **Domain**. If not, they can not access the root groups and the tasks have to be copied from the **Cloud admin** account.).
+Then follow the steps below:
 
 1. Go to the **Device groups** panel and select a group:
-    - For the default setting, select the **AWSiotCore** group which already contains all the necessary tasks and setting values.
+    - For the default setting, select the **AWSiotCoreCertAuth** group which already contains all the necessary tasks and setting values.
     - Alternatively, create a new group and migrate the required tasks and setting values:
         - Select the **Add** button, name your group and click **Add**.
         ![Add group button](images/add_group_button.png "Add group button")
         - Migrate all the six tasks that have the **AWS** prefix in their task name:
-            - Select the **AWSiotCore** group and go to **Group tasks**, select the first **AWS** task and click **Copy**.
+            - Select the **AWSiotCoreCertAuth** group and go to **Group tasks**, select the first **AWS** task and click **Copy**.
               ![Copy task](images/copy_task.png "Copy task")
             - In the pop-up window, click **Select group** in the **Task target** field and choose your custom integration group from the list.
             - Remember to select the **Domain** of the user you created earlier.
@@ -50,7 +51,7 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
               ![Copy setting values pop-up](images/copy_sv_popup.png "Copy setting values pop-up")
 
 2. Enter your AWS subscription credentials in Coiote DM:
-     - Go to **Device groups**, select your custom integration group (or the **AWSiotCore** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting values with your **AWS** credentials:
+     - Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting values with your **AWS** credentials:
         - For `AWSaccessKeyID` and `AWSsecretAccessKey`:
             - Go to **AWS Identity and Access Management**, click **Users** and select your user name from the list.
             - Select the **Security credentials** tab and, under the **Access keys** section, click **Create access key**.
@@ -77,30 +78,10 @@ The Coiote DM-side configuration of the integration is located in the dedicated 
             - Copy the returned result.
               ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
             - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
+            - Append `:8443` port to the pasted value.
             - Click **Save**.
 
 3. Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.
-
-## Add Coiote DM REST user credentials to AWS Secrets Manager
-
-1. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. Choose **Secrets Manager** from the services list.
-2. Create a new secret by clicking the **Store a new secret** button.
-3. From the group of secret types, select **Other type of secrets**.
-   ![Selecting other type of secrets](images/secret_type.png "Select other type of secrets")
-4. Provide credentials to your Coiote DM REST user created before as key/value pairs. Desired keys and related values are specified in the table below. To add a new pair, click **+ Add row**.
-
-   | Key | Value description |
-   |---|---|
-   | `url` | URL address and port of your Coiote DM installation. By default, it's https://lwm2m-test.avsystem.io:8087.|
-   | `password` | Password for your Coiote DM REST user.|
-   | `username` | Your Coiote DM REST user login (email address).|
-
-   ![Provide Coiote DM credentials](images/secret_values.png "Provide Coiote DM credentials")
-
-5. After adding the credentials, proceed by clicking **Next**.
-6. Set the secret name to `coioteDMrest`.
-   ![Set secret name](images/secret_name.png "Set secret name")
-7. Go through creator's remaining steps the default  and save your secret by clicking **Store**.
 
 ## Add AWS resources using the integration repository
 
@@ -108,7 +89,7 @@ All the AWS-side configuration needed for the integration to work is stored in a
 
 To add the resources needed for the integration to your AWS services:
 
-1. Clone the repository into your local drive and check out on the `coiote-aws-iot-cloud-formation` branch:
+1. Clone the repository into your local drive and check out on the `main` branch:
     - Run your command line and paste the following commands:
        ```
        git clone --no-checkout https://github.com/AVSystem/iot-examples.git
@@ -120,6 +101,7 @@ To add the resources needed for the integration to your AWS services:
 2. Use the Python package installer in command line to install all the required dependencies:
     ```
     python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
+    python3 -m pip install -r certificates/requirements.txt --target certificates/
     ```
 3. If you want to create a new S3 bucket for the lambda code, use the following command:
     ```
@@ -132,8 +114,11 @@ To add the resources needed for the integration to your AWS services:
 5. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
 6. Create a new stack. Use the generated **output.json** file as the template for the stack.
    ![Choose template file](images/choose_template_file.png "Choose template file")
-7. Choose a name for the stack.
-   ![Change stack name](images/stack_name.png "Change stack name")
+7. Choose a name for the stack and provide the parameters:
+   - **coioteDMrestUsername** - username of the created CoioteDM account.
+   - **coioteDMrestPassword** - password of the created CoioteDM account.
+   - **coioteDMrestUri** - URL address and port of your Coiote DM installation.
+   ![Change stack parameters](images/stack_params.png "Change stack name and parameters")
 8. Finalize configuring the stack and wait for its creation to finish.
 9. Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
 10. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
@@ -142,3 +127,15 @@ To add the resources needed for the integration to your AWS services:
 ## Next steps
 
 To learn how to perform operations on your devices, please see the [Performing LwM2M operations](../AWS_Integration_Guide/Device_operations/Operation_types.md) chapter.
+
+## Removing the integration
+
+To remove the integration of AWS and Coiote DM, follow the following steps:
+
+1. In **CoioteDM** remove all the devices from the **AWSiotCoreCertAuth** group.
+2. Go to the **CloudFormation** service in **AWS** and select the stack that was created while setting up the integration.
+3. Delete the stack.
+   ![Delete stack](images/stack_delete.png "Delete stack")
+4. Go to the **S3** service in **AWS** and select the bucket with the lambda code files.
+5. Delete the files.
+   ![Delete files](images/s3_delete.png "Delete files")
