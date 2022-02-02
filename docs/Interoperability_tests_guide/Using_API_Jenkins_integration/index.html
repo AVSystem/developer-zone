@@ -1770,19 +1770,19 @@ Follow the guide below to learn how to configure the integration, run tests and 
 </div>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.repository.com/docker-local/linux_image</span>
+<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.repository.com/docker-local/linux_image</span><span class="w"></span>
 
-<span class="nt">protocol-tests</span><span class="p">:</span>
-  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
-  <span class="nt">script</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python3 example_filename.py</span>
-  <span class="nt">artifacts</span><span class="p">:</span>
-    <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
-    <span class="nt">paths</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">report.xml</span>
-    <span class="nt">reports</span><span class="p">:</span>
-      <span class="nt">junit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">report.xml</span>
+<span class="nt">protocol-tests</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 example_filename.py</span><span class="w"></span>
+<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"></span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">reports</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>Save the file as <code>gitlab-ci.yml</code> and upload it to the chosen branch of your project repository.</li>

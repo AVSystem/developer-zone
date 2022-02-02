@@ -1367,21 +1367,21 @@
 <p>The Operation Shadow is where you request your LwM2M operations to be executed. To this end, the <code>desired</code> values of the device state are used. Thus, you can perform any LwM2M 1.0 operation on the device by defining it inside the <code>desired</code> values section. Also, to check if the operation execution was successful, the <code>reported</code> values section of the Operation Shadow is used (but only in case of the READ, WRITE and READ COMPOSITE operations).</p>
 <h4 id="communication-flow">Communication flow<a class="headerlink" href="#communication-flow" title="Permanent link">#</a></h4>
 <p>A value change using the <code>desired</code> device state is formulated as the one below:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;desired&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;write&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;LwM2M Server.1.Lifetime&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Device.0.UTC Offset&quot;</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="mi">68</span><span class="p">,</span>
-          <span class="s2">&quot;+02:00&quot;</span>
-        <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;desired&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;operation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;write&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;LwM2M Server.1.Lifetime&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Device.0.UTC Offset&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="mi">68</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;+02:00&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Once a value change in the <code>desired</code> section of the operation shadow is saved, a chain of events starts:</p>
 <ol>
