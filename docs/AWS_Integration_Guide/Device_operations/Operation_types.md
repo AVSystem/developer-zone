@@ -187,7 +187,7 @@ Here are example inputs for other operations supported by the integration: READ 
 
 ??? Cancel_observe
     ```
-     {
+    {
        "state": {
            "desired": {
              "operation": "cancelObserve",
@@ -198,7 +198,7 @@ Here are example inputs for other operations supported by the integration: READ 
                "Portfolio.5.Identity.1",
                "Device.0.UTC Offset",
                "Test object.0.Integer array"
-             ],
+             ]
            }
          }
      }
