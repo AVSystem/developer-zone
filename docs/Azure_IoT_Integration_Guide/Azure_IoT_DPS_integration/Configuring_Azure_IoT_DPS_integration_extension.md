@@ -1,8 +1,8 @@
 # Configure integration
 
-Azure IoT Hub Device Provisioning Service (DPS) is a helper service for Azure IoT hub that allows registering large numbers of devices without any human intervention. Azure DPS ensures high availability by providing load balancing across multiple hubs and supporting reprovisioning based on a change in the device. For more information about Azure DPS, refer to the [official documentation](https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps).
+Azure IoT Hub Device Provisioning Service (DPS) is a helper service for Azure IoT Hub that allows registering large numbers of devices without any human intervention. Azure DPS ensures high availability by providing load balancing across multiple hubs and supporting reprovisioning based on a change in the device. For more information about Azure DPS, refer to the [official documentation](https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps).
 
-To enable communication and data flow between Azure DPS and Coiote DM platform, you first need to integrate them using the dedicated extension module in Coiote DM. Follow the instruction below to learn how to do it.
+To enable communication and data flow between Azure DPS and the Coiote DM platform, you first need to integrate them using the dedicated extension module in Coiote DM. Follow the instruction below to learn how to do it.
 
 
 ## Prerequisites
@@ -26,7 +26,7 @@ To create an Enrollment group:
 
     ![Click Add enrollment group in the Manage enrollments panel](images/dps-1.png "Click Add enrollment group in the Manage enrollments panel")
 
-4. Provide the group name and select the **Symmetric key** option of the Attestation Type. Make sure that the **Auto-generate keys** checkbox is ticked. Click **Save**.
+4. Provide the group name and select the **Symmetric key** option from the Attestation Type. Make sure that the **Auto-generate keys** checkbox is ticked. Click **Save**.
 
 ![Provide the group name and select the Symmetric key option](images/dps-2.png "Provide the group name and select the Symmetric key option")
 
@@ -81,5 +81,5 @@ Importing and exporting devices, upgrading device firmware, and setting observat
 
 ## Next steps
 
-* [Device operations on Azure IoT hub](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/)
+* [Device operations on Azure IoT Hub](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/)
 * [Azure DPS documentation](https://docs.microsoft.com/en-us/azure/iot-dps/)
