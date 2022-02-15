@@ -33,7 +33,9 @@ To create an Enrollment group:
 You’ve just created your enrollment group. The generated Symmetric Key will be used in the next step.
 
 !!! info
-    On the Enrollment Group Details page you can also select to which hub the enrollment group will be assigned. The list of hubs that are connected to this DPS is displayed in the drop-down menu under **Select the IoT hubs this group can be assigned to**. To add more hubs to this list, click **Link a new IoT hub** or go to the Linked IoT hubs page from the left pane.
+    On the Enrollment Group Details page, you can also select to which hub the enrollment group will be assigned. The list of hubs that are connected to this DPS is displayed in the drop-down menu under **Select the IoT hubs this group can be assigned to**. To add more hubs to this list, click **Link a new IoT hub** or go to the Linked IoT hubs page from the left pane.
+
+    You can also define how devices should be assigned to hubs. From the **Select how you want to assign devices to hubs** drop-down menu, the following options are available: Lowest latency, Evenly weighted distribution, Static configuration, or Custom. For more information, refer to the [official Azure DPS documentation](https://docs.microsoft.com/en-us/azure/iot-dps/how-to-reprovision#configure-the-enrollment-allocation-policy).
 
 ## Get the credentials
 
@@ -77,7 +79,16 @@ The ID Scope is used to identify the specific provisioning service for the devic
 
 After you set up Azure DPS and configure your Azure DPS integration in Coiote DM, device provisioning and reprovisioning to the proper IoT hub are automated. You aren’t required to make any changes in Coiote DM.
 
-Importing and exporting devices, upgrading device firmware, and setting observations — all these operations happen at the level of individual hubs. The detailed instructions are provided in our [Azure IoT Hub documentation](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/).
+Importing and exporting devices, upgrading device firmware, and setting observations—all these operations happen at the level of individual hubs. The detailed instructions are provided in our [Azure IoT Hub documentation](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/).
+
+To see to which hub a device has been assigned:
+
+1. Go to **Manage enrollments** from the left pane.
+2. Under the **Enrollment Groups** tab, click on the group.
+3. Select the **Registration Records** tab and see the **Assigned IoT Hub** column.
+
+![Registration Records show to which hub a device has been assigned](images/dps-9.png "Registration Records show to which hub a device has been assigned")
+
 
 ## Next steps
 
