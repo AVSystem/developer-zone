@@ -54,15 +54,17 @@ nav:
             - 'Interoperability_tests_guide/Using_API_Jenkins_integration.md'
         - 'Azure IoT integration guide':
             - Azure IoT Hub:
-                - 'Configuring integration extension': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md'
+                - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md'
                 - 'Device operations':
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation.md'
+            - Azure IoT DPS:
+               -  'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_DPS_integration/Configuring_Azure_IoT_DPS_integration_extension.md'
             - Azure IoT Central:
-                - 'Configuring integration extension': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
+                - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
                 - 'Device operations':
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM.md'
