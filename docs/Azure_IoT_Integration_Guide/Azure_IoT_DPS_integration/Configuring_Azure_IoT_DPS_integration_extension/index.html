@@ -1381,7 +1381,8 @@
 <p>You’ve just created your enrollment group. The generated Symmetric Key will be used in the next step.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>On the Enrollment Group Details page you can also select to which hub the enrollment group will be assigned. The list of hubs that are connected to this DPS is displayed in the drop-down menu under <strong>Select the IoT hubs this group can be assigned to</strong>. To add more hubs to this list, click <strong>Link a new IoT hub</strong> or go to the Linked IoT hubs page from the left pane.</p>
+<p>On the Enrollment Group Details page, you can also select to which hub the enrollment group will be assigned. The list of hubs that are connected to this DPS is displayed in the drop-down menu under <strong>Select the IoT hubs this group can be assigned to</strong>. To add more hubs to this list, click <strong>Link a new IoT hub</strong> or go to the Linked IoT hubs page from the left pane.</p>
+<p>You can also define how devices should be assigned to hubs. From the <strong>Select how you want to assign devices to hubs</strong> drop-down menu, the following options are available: Lowest latency, Evenly weighted distribution, Static configuration, or Custom. For more information, refer to the <a href="https://docs.microsoft.com/en-us/azure/iot-dps/how-to-reprovision#configure-the-enrollment-allocation-policy">official Azure DPS documentation</a>.</p>
 </div>
 <h2 id="get-the-credentials">Get the credentials<a class="headerlink" href="#get-the-credentials" title="Permanent link">#</a></h2>
 <p>This step explains where you can get the credentials for setting up the Azure DPS integration in Coiote DM.</p>
@@ -1423,7 +1424,14 @@
 <p><img alt="Enter ID Scope, Enrollment group key and click Save" src="../images/dps-8.png" title="Enter ID Scope, Enrollment group key and click Save" /></p>
 <h2 id="what-happens-next">What happens next<a class="headerlink" href="#what-happens-next" title="Permanent link">#</a></h2>
 <p>After you set up Azure DPS and configure your Azure DPS integration in Coiote DM, device provisioning and reprovisioning to the proper IoT hub are automated. You aren’t required to make any changes in Coiote DM.</p>
-<p>Importing and exporting devices, upgrading device firmware, and setting observations — all these operations happen at the level of individual hubs. The detailed instructions are provided in our <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/">Azure IoT Hub documentation</a>.</p>
+<p>Importing and exporting devices, upgrading device firmware, and setting observations—all these operations happen at the level of individual hubs. The detailed instructions are provided in our <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/">Azure IoT Hub documentation</a>.</p>
+<p>To see to which hub a device has been assigned:</p>
+<ol>
+<li>Go to <strong>Manage enrollments</strong> from the left pane.</li>
+<li>Under the <strong>Enrollment Groups</strong> tab, click on the group.</li>
+<li>Select the <strong>Registration Records</strong> tab and see the <strong>Assigned IoT Hub</strong> column.</li>
+</ol>
+<p><img alt="Registration Records show to which hub a device has been assigned" src="../images/dps-9.png" title="Registration Records show to which hub a device has been assigned" /></p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/">Device operations on Azure IoT Hub</a></li>
@@ -1490,7 +1498,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2022</span>
     
   </small>
 </div>
