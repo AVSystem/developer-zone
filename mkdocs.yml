@@ -5,6 +5,8 @@ theme:
   custom_dir: overrides
   logo: assets/images/logo.svg
   favicon: assets/favicon/favicon-32x32.png
+  features:
+    - navigation.tabs
 
 markdown_extensions:
   - pymdownx.highlight
@@ -29,6 +31,8 @@ google_analytics:
   - auto
 
 nav:
+        - 'Home':
+          - 'index.md'
         - 'Anjay integrations':
             - 'Anjay_integrations/Getting_started.md'
             - 'Anjay ST integration':
