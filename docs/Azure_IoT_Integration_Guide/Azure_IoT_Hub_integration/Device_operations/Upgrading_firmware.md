@@ -1,10 +1,10 @@
-# Upgrading device firmware
+# Upgrade device firmware
 
 If you would like to upgrade the firmware of devices using the Azure IoT Hub, follow the instruction below.
 
 ## Prerequisites
 
- - At least one device with active Coiote DM - Azure IoT Hub [synchronization](../Importing_devices_to_Coiote_DM).
+ - At least one device with active Coiote DM - Azure IoT Hub [synchronization](../Synchronize_devices_with_Azure_IoT_Hub).
  - A firmware file hosted on an HTTP server that is reachable by the Coiote DM server.
 
 !!! note
