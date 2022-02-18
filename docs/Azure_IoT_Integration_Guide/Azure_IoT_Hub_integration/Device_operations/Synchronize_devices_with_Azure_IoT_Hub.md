@@ -35,14 +35,14 @@ In the import process, you will need a list of devices that you want to import a
             - Save the template and upload it using the **Browse** button and dialog window.
     -  Click **Sync with Azure**.
 0. After a moment, the import operation should finish successfully.  
-0. Now you can connect your physical devices to Coiote DM using their credentials and the URL displayed in the screen.
+0. Now you can connect your physical devices to Coiote DM using their credentials and the dedicated URL displayed after the successful device import.
 
 ### What the import operation does
 
 Once the devices from the CSV template are imported into Coiote DM, the following actions are performed:
 
-- In Coiote DM, device entities are created based on the credentials provided in the template. All such entities are visible in the **Device list** tab:
-- In Coiote DM, a dedicated integration group is automatically created (with name built up by the `hyperscalercenter` prefix and the template ID, e.g. `618238c8bcafcb43b2911262`).  
+- In Coiote DM, device entities are created based on the credentials provided in the template. All such entities are visible in the **Device list** tab.
+- In Coiote DM, a dedicated integration group is automatically created (with the name built up by the `hyperscalercenter` prefix and the template ID, e.g. `618238c8bcafcb43b2911262`).  
 - In your Azure IoT hub, devices are created and ready for operation.
 
 ### Check device error logs

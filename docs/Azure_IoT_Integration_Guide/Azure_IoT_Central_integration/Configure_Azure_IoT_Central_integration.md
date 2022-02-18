@@ -1,11 +1,11 @@
 # Connect integration
 
-To enable communication and data flow between the Azure IoT Central and Coiote DM platforms, you first need to integrate them using the dedicated extension module in Coiote DM. Follow the instruction below to learn how to do it.
+To enable communication and data flow between the Azure IoT Central and Coiote DM platforms, you first need to integrate them using the Hyperscaler Integration Center in Coiote DM. Follow the instruction below to learn how to do it.
 
 ## Prerequisites:
 
    - An active IoT Central with hub owner access permissions.
-   - A Coiote DM user account with permissions to use the integration extension.
+   - A Coiote DM user account with permissions to use the Hyperscaler Integration Center.
 _______________
 ## Get the Azure IoT Central integration credentials
 

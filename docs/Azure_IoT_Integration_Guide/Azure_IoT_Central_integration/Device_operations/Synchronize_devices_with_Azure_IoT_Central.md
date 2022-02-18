@@ -12,7 +12,7 @@ Importing devices to Coiote DM and synchronizing them with Azure IoT Central is 
 
 ## Import devices from CSV using a default integration template
 
-In the import process, you will need a list of devices that you want to import along with an integration template to be used by the Azure IoT Central. To learn more about Azure integration templates, see the [Configure integration templates](/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) section.
+In the import process, you will need a list of devices that you want to import along with an integration template to be used by Azure IoT Central. To learn more about Azure integration templates, see the [Configure integration templates](/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) section.
 
 0. In Coiote DM, go to **Administration** -> **Hyperscaler Integration Center**.
 0. Make sure you have an integration connected in the **Integration** tab.
@@ -35,7 +35,7 @@ In the import process, you will need a list of devices that you want to import a
             - Save the template and upload it using the **Browse** button and dialog window.
     -  Click **Sync with Azure**.
 0. After a moment, the import operation should finish successfully.  
-0. Now you can connect your physical devices to Coiote DM using their credentials and the URL displayed in the screen.
+0. Now you can connect your physical devices to Coiote DM using their credentials and the dedicated URL displayed after the successful device import.
 
 ### What the import operation does
 
