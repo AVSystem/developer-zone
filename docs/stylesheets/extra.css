@@ -9,7 +9,7 @@
 .md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg{
     width: unset;
     height: 1.8rem;
-    margin-left:-8px;
+    margin-left:-5px;
 }
 
 
@@ -286,7 +286,7 @@
 
 
 .md-header-nav__button:not(.focus-visible){
-    margin-left: 50px;
+    margin-left: 45px;
 }
 
 .logoMobile{
@@ -481,3 +481,103 @@
 .md-footer-nav{
     display: none;
 }
+
+.md-tabs{
+    z-index: 2;
+    background-color: #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.md-header{
+    z-index: 3;
+}
+
+.md-tabs__link--active{
+    font-weight: bold;
+}
+
+.md-tabs__link--active, .md-tabs__link:focus, .md-tabs__link:hover{
+    color:#fff;
+}
+
+.md-tabs__link:after{
+    display: block;
+    content:'';
+    width: 100%;
+    height: 2px;
+    background-color:#FFD600;
+    margin-top: 14px;
+    opacity:0;
+    transition:.3s;
+}
+
+ .md-tabs__link--active::after, .md-tabs__link:focus::after, .md-tabs__link:hover::after{
+    opacity:1;
+} 
+
+
+.md-search__input{
+    background-color: rgba(255,255,255,.12);
+}
+
+.md-search__input:hover {
+    background-color: rgba(255,255,255,.26);
+}
+
+
+@media (min-width: 1220px){
+    .md-header .md-ellipsis {
+        display: none;
+    }
+
+    .md-header-nav__button:not(.focus-visible) {
+        margin-left: unset;
+    }
+}
+
+
+
+.md-header-nav__title{
+    margin-left: 0.3rem;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .md-header-nav__topic{
+        max-width: 120%;
+    }
+}
+
+
+.md-search-result__link:focus, .md-search-result__link:hover {
+    background-color: rgba(255,214,0,.20);
+}
+.md-search-result__more summary:focus, .md-search-result__more summary:hover{
+    background-color: rgba(255,214,0,.20);
+    color:hsla(231, 48%, 48%, 1);
+
+}
+
+/* sticky menu tab */
+@media(min-width:1220px){
+    .md-container{
+        margin-top:35px;
+    }
+    .md-tabs{
+        position:fixed;
+        left:0;
+        top:55px;
+    }
+    .md-tabs[data-md-state=hidden] .md-tabs__link{
+        transform: unset;
+        opacity: unset;
+    }
+    .md-tabs[data-md-state=hidden] {
+        pointer-events: unset; 
+    }
+    .md-sidebar{
+        top:110px !important;
+    }
+}
+
+/* ./sticky menu tab */
