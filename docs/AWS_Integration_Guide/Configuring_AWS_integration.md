@@ -51,35 +51,16 @@ Then follow the steps below:
               ![Copy setting values pop-up](images/copy_sv_popup.png "Copy setting values pop-up")
 
 2. Enter your AWS subscription credentials in Coiote DM:
-     - Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting values with your **AWS** credentials:
-        - For `AWSaccessKeyID` and `AWSsecretAccessKey`:
-            - Go to **AWS Identity and Access Management**, click **Users** and select your user name from the list.
-            - Select the **Security credentials** tab and, under the **Access keys** section, click **Create access key**.
-               ![Create access key button](images/create_access_key.png "Create access key button")
-            - Copy the generated **Access key ID** and **Secret access key**.
-               ![Copy access key and ID](images/aws_access_key.png "Copy access key and ID")
-            - In Coiote DM, go to the **Profiles** tab of your integration group and paste the credentials as values for `AWSaccessKeyID` and `AWSsecretAccessKey`.
-            - Click **Save**.
-        - For `AWSregion`:
-            - While in AWS IoT Core, click on your region name in the top navigation bar to expand the list of regions. Then, copy the hyphenated region name (e.g. *us-east-1*).
-              ![Copy region name](images/region_name.png "Copy region name")
-            - In Coiote DM, go to the **Profiles** tab of your integration group and paste the region name as the value for `AWSregion`.
-            - Click **Save**.
-        - For `AWScontrolPlaneEndpointAddress`:
-            - Go to **AWS documentation**: <https://docs.aws.amazon.com/general/latest/gr/iot-core.html>.
-            - From the **Control Plane API Endpoints** section, find the endpoint that matches your region (e.g. *iot.us-east-1.amazonaws.com*) and copy it.
-            - In Coiote DM, go to the **Profiles** tab of your integration group and paste the credentials as the value for `AWScontrolPlaneEndpointAddress`.
-            - Click **Save**.
-        - For `AWSdataPlaneEndpointAddress`:
-            - Open your command line and run the following command:
-              ```
-              aws iot describe-endpoint --endpoint-type iot:Data-ATS
-              ```
-            - Copy the returned result.
-              ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
-            - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
-            - Append `:8443` port to the pasted value.
-            - Click **Save**.
+- Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting value:
+  - Open your command line and run the following command:
+           ```
+           aws iot describe-endpoint --endpoint-type iot:Data-ATS
+           ```
+  - Copy the returned result.
+  ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
+  - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
+  - Append `:8443` port to the pasted value.
+  - Click **Save**.
 
 3. Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.
 
@@ -102,6 +83,8 @@ To add the resources needed for the integration to your AWS services:
     ```
     python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
     python3 -m pip install -r certificates/requirements.txt --target certificates/
+    python3 -m pip install -r createThingType/requirements.txt --target createThingType/
+    python3 -m pip install -r createThing/requirements.txt --target createThing/
     ```
 3. If you want to create a new S3 bucket for the lambda code, use the following command:
     ```
