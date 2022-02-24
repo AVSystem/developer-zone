@@ -1531,46 +1531,17 @@ Then follow the steps below:</p>
 </li>
 <li>
 <p>Enter your AWS subscription credentials in Coiote DM:</p>
-<ul>
-<li>Go to <strong>Device groups</strong>, select your custom integration group (or the <strong>AWSiotCoreCertAuth</strong> group, depending on the previous step) and go to <strong>Profiles</strong>. Complete the <strong>AWS</strong> setting values with your <strong>AWS</strong> credentials:<ul>
-<li>For <code>AWSaccessKeyID</code> and <code>AWSsecretAccessKey</code>:<ul>
-<li>Go to <strong>AWS Identity and Access Management</strong>, click <strong>Users</strong> and select your user name from the list.</li>
-<li>Select the <strong>Security credentials</strong> tab and, under the <strong>Access keys</strong> section, click <strong>Create access key</strong>.
-   <img alt="Create access key button" src="../images/create_access_key.png" title="Create access key button" /></li>
-<li>Copy the generated <strong>Access key ID</strong> and <strong>Secret access key</strong>.
-   <img alt="Copy access key and ID" src="../images/aws_access_key.png" title="Copy access key and ID" /></li>
-<li>In Coiote DM, go to the <strong>Profiles</strong> tab of your integration group and paste the credentials as values for <code>AWSaccessKeyID</code> and <code>AWSsecretAccessKey</code>.</li>
-<li>Click <strong>Save</strong>.</li>
-</ul>
 </li>
-<li>For <code>AWSregion</code>:<ul>
-<li>While in AWS IoT Core, click on your region name in the top navigation bar to expand the list of regions. Then, copy the hyphenated region name (e.g. <em>us-east-1</em>).
-  <img alt="Copy region name" src="../images/region_name.png" title="Copy region name" /></li>
-<li>In Coiote DM, go to the <strong>Profiles</strong> tab of your integration group and paste the region name as the value for <code>AWSregion</code>.</li>
-<li>Click <strong>Save</strong>.</li>
-</ul>
-</li>
-<li>For <code>AWScontrolPlaneEndpointAddress</code>:<ul>
-<li>Go to <strong>AWS documentation</strong>: <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">https://docs.aws.amazon.com/general/latest/gr/iot-core.html</a>.</li>
-<li>From the <strong>Control Plane API Endpoints</strong> section, find the endpoint that matches your region (e.g. <em>iot.us-east-1.amazonaws.com</em>) and copy it.</li>
-<li>In Coiote DM, go to the <strong>Profiles</strong> tab of your integration group and paste the credentials as the value for <code>AWScontrolPlaneEndpointAddress</code>.</li>
-<li>Click <strong>Save</strong>.</li>
-</ul>
-</li>
-<li>For <code>AWSdataPlaneEndpointAddress</code>:<ul>
+<li>Go to <strong>Device groups</strong>, select your custom integration group (or the <strong>AWSiotCoreCertAuth</strong> group, depending on the previous step) and go to <strong>Profiles</strong>. Complete the <strong>AWS</strong> setting value:</li>
 <li>Open your command line and run the following command:
-  <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS
+           <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS
 </code></pre></div></li>
 <li>Copy the returned result.
   <img alt="Copy data plane endpoint address" src="../images/dataplane.png" title="Copy data plane endpoint address" /></li>
 <li>In Coiote DM, go to the <strong>Profiles</strong> tab of your integration group and paste the result as the value for <code>AWSdataPlaneEndpointAddress</code>.</li>
 <li>Append <code>:8443</code> port to the pasted value.</li>
-<li>Click <strong>Save</strong>.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<li>
+<p>Click <strong>Save</strong>.</p>
 </li>
 <li>
 <p>Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.</p>
@@ -1593,6 +1564,8 @@ cd coiote-aws-iot-cloud-formation
 <li>Use the Python package installer in command line to install all the required dependencies:
     <div class="highlight"><pre><span></span><code>python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
 python3 -m pip install -r certificates/requirements.txt --target certificates/
+python3 -m pip install -r createThingType/requirements.txt --target createThingType/
+python3 -m pip install -r createThing/requirements.txt --target createThing/
 </code></pre></div></li>
 <li>If you want to create a new S3 bucket for the lambda code, use the following command:
     <div class="highlight"><pre><span></span><code>aws s3 mb s3://&lt;your-bucket-name&gt; --region &lt;region-name, e.g. us-west-1&gt;
@@ -1687,7 +1660,7 @@ python3 -m pip install -r certificates/requirements.txt --target certificates/
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 17, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2022</span>
     
   </small>
 </div>
