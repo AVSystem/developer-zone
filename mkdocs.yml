@@ -65,7 +65,7 @@ nav:
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation.md'
-            - Azure IoT DPS:
+            - Azure DPS:
                -  'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_DPS_integration/Configuring_Azure_IoT_DPS_integration_extension.md'
             - Azure IoT Central:
                 - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md'
