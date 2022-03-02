@@ -236,7 +236,7 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 
 0. Refresh device state in Coiote and see if the Temperature object `3303` has appeared in the Objects tab and values are reported for  for the Sensor Value `5700` resource:
 
-   ![Temperature object](images/raspi.png "3303")
+   ![Temperature object](images/raspi1.png "3303")
 
 ## Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object `3345`
 
