@@ -252,90 +252,88 @@ Now you can implement the Push Button module based on the OMA DM Multiple Axis J
 
 0. Type in the terminal: `cd /etc/svetovid/dm/3345/resources ./5550 read`.
 You should be able to see a default value reported in the command-line terminal.
-
 0. In home directory, create the file `~/button_object_forwarder.py` and paste the following into it:
 
-=== "SenseHat"
-    ```
-      from sense_hat import SenseHat
-      from time import sleep
-      from fsdm import KvStore
-      sense = SenseHat()
+    === "SenseHat"
+        ```
+          from sense_hat import SenseHat
+          from time import sleep
+          from fsdm import KvStore
+          sense = SenseHat()
 
-      sense.clear()
+          sense.clear()
 
-      #KvStore(namespace=3345).set('counter', 0)
-      #KvStore(namespace=3345).set('state', False)
+          #KvStore(namespace=3345).set('counter', 0)
+          #KvStore(namespace=3345).set('state', False)
 
-      released_before = False
-      counter = 0
+          released_before = False
+          counter = 0
 
-      while True:
-        for event in sense.stick.get_events():
-      	if event.action == "pressed":
-        	if event.direction == "middle":
-          	sense.show_letter("M")
-          	KvStore(namespace=3345).set('state', True)
+          while True:
+            for event in sense.stick.get_events():
+          	if event.action == "pressed":
+            	if event.direction == "middle":
+              	sense.show_letter("M")
+              	KvStore(namespace=3345).set('state', True)
 
-          	if released_before:
-              	counter = counter + 1
-              	KvStore(namespace=3345).set('counter', counter)
+              	if released_before:
+                  	counter = counter + 1
+                  	KvStore(namespace=3345).set('counter', counter)
 
-          	released_before = False
+              	released_before = False
 
-      	elif event.action == "released":
-        	if event.direction == "middle":
-          	sense.show_letter("m")
-          	KvStore(namespace=3345).set('state', False)
-          	released_before = True
-      	else:
+          	elif event.action == "released":
+            	if event.direction == "middle":
+              	sense.show_letter("m")
+              	KvStore(namespace=3345).set('state', False)
+              	released_before = True
+          	else:
+              	sense.clear()
+
+          	# Wait and clear the screen
+          	sleep(0.5)
           	sense.clear()
+        ```
+    === "GrovePi"
+        ```
+          from time import sleep
+          import grovepi
+          from fsdm import KvStore
 
-      	# Wait and clear the screen
-      	sleep(0.5)
-      	sense.clear()
-    ```
+          button = 3
 
-=== "GrovePi"
-    ```
-      from time import sleep
-      import grovepi
-      from fsdm import KvStore
+          KvStore(namespace=3345).set('counter', 0)
+          KvStore(namespace=3345).set('state', False)
 
-      button = 3
+          released_before = False
+          counter = 0
 
-      KvStore(namespace=3345).set('counter', 0)
-      KvStore(namespace=3345).set('state', False)
+          grovepi.pinMode(button, "INPUT")
 
-      released_before = False
-      counter = 0
-
-      grovepi.pinMode(button, "INPUT")
-
-      while True:
-          try:
-              state = grovepi.digitalRead(button)
-              KvStore(namespace=3345).set('state', True)
-
-              print("State:{}".format(state))
-
-              if state == 1:
-
-                  if released_before:
-                      counter = counter + 1
-                      print("Counter:{}".format(counter))
-                      KvStore(namespace=3345).set('counter', counter+1)
-                      released_before = False    
+          while True:
+              try:
+                  state = grovepi.digitalRead(button)
                   KvStore(namespace=3345).set('state', True)
-              else:
-                  released_before = True
-                  KvStore(namespace=3345).set('state', False)
 
-              sleep(.2)
+                  print("State:{}".format(state))
 
-          except IOError:
-              print("Error")
-    ```
+                  if state == 1:
+
+                      if released_before:
+                          counter = counter + 1
+                          print("Counter:{}".format(counter))
+                          KvStore(namespace=3345).set('counter', counter+1)
+                          released_before = False    
+                      KvStore(namespace=3345).set('state', True)
+                  else:
+                      released_before = True
+                      KvStore(namespace=3345).set('state', False)
+
+                  sleep(.2)
+
+              except IOError:
+                  print("Error")
+        ```
 
 0. Modify the python script in the ``/etc/svetovid/dm/3345/Digital_Input_Counter.py`` file. Open the file, replace the contents with the following script and click **Save**:
       ```
@@ -372,7 +370,6 @@ You should be able to see a default value reported in the command-line terminal.
           ResourceHandler_3345_5501().main()
       ```
 0. Modify the python script in the ``/etc/svetovid/dm/3345/Digital_Input_State.py`` file. Open the file, replace the contents with the following script and click **Save**:
-
       ```
       #!/usr/bin/env python
       # -*- encoding: utf-8 -*-
@@ -406,9 +403,7 @@ You should be able to see a default value reported in the command-line terminal.
       if __name__ == '__main__':
           ResourceHandler_3345_5500().main()
       ```
-
 0. Modify the ``/etc/svetovid/dm/3345/resources/5500`` file:
-
       ```
       #!/usr/bin/env python
       # -*- encoding: utf-8 -*-
@@ -440,9 +435,7 @@ You should be able to see a default value reported in the command-line terminal.
           ResourceHandler_3345_5500().main()
 
       ```
-
 0. Modify the ``/etc/svetovid/dm/3345/resources/5501`` file:
-
       ```
       #!/usr/bin/env python
       # -*- encoding: utf-8 -*-
@@ -472,13 +465,9 @@ You should be able to see a default value reported in the command-line terminal.
       if __name__ == '__main__':
           ResourceHandler_3345_5501().main()
       ```
-
 0. Plug in the push button to digital port D3 of the GrovePi/Sense HAT.
-
 0. Restart Svetovid:
-
     `sudo systemctl restart svetovid.service --now`
-
 0. Refresh device state in Coiote and see if the Multiple Axis Joystick object `3345` has appeared in the Objects tab and values are reported for the Digital Input State `5500` and Digital Input Counter `5501` resources:
 
        ![Joystick button object](images/button.png "3345")
