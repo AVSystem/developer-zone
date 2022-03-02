@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for RaspberryPi-based IoT devices. The Python programming language is used to implement LwM2M objects. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
+Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for [RaspberryPi-based](https://www.raspberrypi.org/) IoT devices. The Python programming language is used to implement LwM2M objects. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
 It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.
 
 This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.  
@@ -10,17 +10,17 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 ## Prerequisites
 
 - Raspberry Pi 3 or 4 with a configured [operating system](https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-05-28/2021-05-07-raspios-buster-armhf.zip) and a set-up WiFi connection.
-- A [SenseHat](https://www.raspberrypi.org/products/sense-hat/) or a [GrovePi](https://www.seeedstudio.com/GrovePi.html) with a temperature sensor ([DHT11](https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/) or similar) and a push button ([Grove-button](https://wiki.seeedstudio.com/Grove-Button/) or similar).
+- A [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) or a [GrovePi](https://www.seeedstudio.com/GrovePi.html) with a temperature sensor ([DHT11](https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/) or similar) and a push button ([Grove-button](https://wiki.seeedstudio.com/Grove-Button/) or similar).
 - An active Coiote IoT Device Management user account with Cloud admin permissions.
 
-## Step 1: Prepare your SenseHat/GrovePi
+## Step 1: Prepare your Sense HAT/GrovePi
 
-### SenseHat
+### Sense HAT
 
-1. Install SenseHat packages:
+1. Install the Sense HAT packages:
 `sudo apt-get install sense-hat`
 
-2. Check if SenseHat is working correctly:
+2. Check if Sense HAT is working correctly:
    - Create a `hello_world.py` file:
 				```
 				from sense_hat import SenseHat
@@ -31,7 +31,7 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 `python hello_world.py`
 
 !!! note
-    A tutorial on SenseHat is available here: https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat
+    If you're new to Sense HAT, follow the [getting started tutorial](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat).
 
 ### GrovePi
 
@@ -57,7 +57,7 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 
 1. To install Svetovid, paste and execute the following commands into your command-line terminal:
 
-```
+    ```
 mkdir ~/AVSystem
 cd /home/pi/AVSystem
 git clone https://github.com/AVSystem/Svetovid-raspberry-client.git
@@ -66,7 +66,7 @@ cd ~/AVSystem/Svetovid-raspberry-client
 sudo dpkg -i svetovid_20.11-raspberry_armhf.deb
 sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
 sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
-```
+    ```
 
 2. In file `/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py`, find the `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test` entry and replace it with `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod`.
 
@@ -119,11 +119,11 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 				}
 			```
 
-!!! note
-    XXXX and YYYY should be replaced by the chosen values of endpoint name, PSK identity and PSK key.
+    !!! note
+        XXXX and YYYY should be replaced by the chosen values of endpoint name, PSK identity and PSK key.
 
-!!! tip
-    XXXX values are in hex. To convert your plain text, use the following:
+    !!! tip
+        XXXX values are in hex. To convert your plain text, use the following:
     `echo -n 'text-value' | xxd -p`
 
 3. Restart the Svetovid service:
@@ -481,7 +481,7 @@ You should be able to see a default value reported in the command-line terminal.
           ResourceHandler_3345_5501().main()
       ```
 
-0. Plug in the push button to digital port D3 of the GrovePi/SenseHat.
+0. Plug in the push button to digital port D3 of the GrovePi/Sense HAT.
 
 0. Restart Svetovid:
 
