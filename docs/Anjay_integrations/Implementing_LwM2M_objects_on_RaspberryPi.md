@@ -37,25 +37,22 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 
 1. To install the GrovePi repository, paste and execute the following commands:
 
-    ```
+```
     mkdir ~/Dexter
     cd /home/pi/Dexter
     git clone https://github.com/DexterInd/GrovePi
     cd /home/pi/Dexter/GrovePi/Script
     bash ./update_grovepi.sh
-    ```
+```
 2. Check if the GrovePi libraries are working correctly:
-    - Connect a LED module to GrovePi port D4.
-    - In the terminal, type:
 
-        ```
-        cd /home/pi/Dexter/GrovePi/Software/Python python grove_led_blink.py
-        ```
-    - The LED should start blinking.
+   - Connect a LED module to GrovePi port D4.
+   - In the terminal, type: `cd /home/pi/Dexter/GrovePi/Software/Python python grove_led_blink.py`
+   - The LED should start blinking.
 
 ## Step 2: Install Svetovid
 
-1. To install Svetovid, paste and execute the following commands into your command-line terminal:
+0. To install Svetovid, paste and execute the following commands into your command-line terminal:
 
     ```
 mkdir ~/AVSystem
@@ -68,7 +65,7 @@ sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
 sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
     ```
 
-2. In file `/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py`, find the `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test` entry and replace it with `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod`.
+0. In file `/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py`, find the `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test` entry and replace it with `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod`.
 
 ## Step 3: Register your device in Coiote DM
 
@@ -149,13 +146,12 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 
     `sudo systemctl disable svetovid.service --now`
 
-0. Generate a stub object in your `dm` (data model) Svetovid folder by pasting and executing the following command in the terminal:
-$ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --generator python
+0. Generate a stub object in your `dm` (data model) Svetovid folder by pasting and executing the following command in the terminal: `$ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --generator python`
 
-!!! tip
-    You can analyze the resource implementation in the /etc/svetovid/dm/3303 folder. For more details, see here: https://github.com/AVSystem/Svetovid-raspberry-client.
+    !!! tip
+        You can analyze the resource implementation in the `/etc/svetovid/dm/3303 folder`. For more details, see the [Svetovid page on GitHub](https://github.com/AVSystem/Svetovid-raspberry-client).
 
-0. Modify the python script in the ``/etc/svetovid/dm/3303/Sensor_Value.py`` file. Open the file, replace the contents with the following script and click **Save**:
+0. Modify the python script in the `/etc/svetovid/dm/3303/Sensor_Value.py` file. Open the file, replace the contents with the following script and click **Save**:
       ```
       #!/usr/bin/env python
       # -*- encoding: utf-8 -*-
@@ -250,20 +246,17 @@ Now you can implement the Push Button module based on the OMA DM Multiple Axis J
       ```
       $ sudo svetovid-fsdmtool generate --object 3345 --output-dir /etc/svetovid/dm --generator python`
       ```
-Analyze the resource implementation in the `/etc/svetovid/dm/3345` folder. For more details, see (https://github.com/AVSystem/Svetovid-raspberry-client).
 
-0. Type in the terminal:
+    !!! tip
+        You can analyze the resource implementation in the `/etc/svetovid/dm/3345` folder. For more details, see the [Svetovid page on GitHub](https://github.com/AVSystem/Svetovid-raspberry-client).
 
-    `cd /etc/svetovid/dm/3345/resources
-     ./5550 read`
-
+0. Type in the terminal: `cd /etc/svetovid/dm/3345/resources ./5550 read`.
 You should be able to see a default value reported in the command-line terminal.
 
-0. In home directory, create the file ``~/button_object_forwarder.py` and paste the following into it:
+0. In home directory, create the file `~/button_object_forwarder.py` and paste the following into it:
 
 === "SenseHat"
-
-      ```
+    ```
       from sense_hat import SenseHat
       from time import sleep
       from fsdm import KvStore
@@ -301,11 +294,10 @@ You should be able to see a default value reported in the command-line terminal.
       	# Wait and clear the screen
       	sleep(0.5)
       	sense.clear()
-      ```
+    ```
 
 === "GrovePi"
-
-      ```
+    ```
       from time import sleep
       import grovepi
       from fsdm import KvStore
@@ -343,7 +335,7 @@ You should be able to see a default value reported in the command-line terminal.
 
           except IOError:
               print("Error")
-      ```
+    ```
 
 0. Modify the python script in the ``/etc/svetovid/dm/3345/Digital_Input_Counter.py`` file. Open the file, replace the contents with the following script and click **Save**:
       ```
@@ -415,7 +407,7 @@ You should be able to see a default value reported in the command-line terminal.
           ResourceHandler_3345_5500().main()
       ```
 
-0. Modify the /etc/svetovid/dm/3345/resources/5500 file:
+0. Modify the ``/etc/svetovid/dm/3345/resources/5500`` file:
 
       ```
       #!/usr/bin/env python
@@ -449,7 +441,7 @@ You should be able to see a default value reported in the command-line terminal.
 
       ```
 
-0. Modify the /etc/svetovid/dm/3345/resources/5501 file:
+0. Modify the ``/etc/svetovid/dm/3345/resources/5501`` file:
 
       ```
       #!/usr/bin/env python
