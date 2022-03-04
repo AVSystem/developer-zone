@@ -70,41 +70,20 @@ All the AWS-side configuration needed for the integration to work is stored in a
 
 To add the resources needed for the integration to your AWS services:
 
-1. Clone the repository into your local drive and check out on the `main` branch:
-    - Run your command line and paste the following commands:
-       ```
-       git clone --no-checkout https://github.com/AVSystem/iot-examples.git
-       cd iot-examples
-       git sparse-checkout set coiote-aws-iot-cloud-formation
-       git checkout main
-       cd coiote-aws-iot-cloud-formation
-       ```
-2. Use the Python package installer in command line to install all the required dependencies:
-    ```
-    python3 -m pip install -r lwm2mOperation/requirements.txt --target lwm2mOperation/
-    python3 -m pip install -r certificates/requirements.txt --target certificates/
-    python3 -m pip install -r createThingType/requirements.txt --target createThingType/
-    python3 -m pip install -r createThing/requirements.txt --target createThing/
-    ```
-3. If you want to create a new S3 bucket for the lambda code, use the following command:
-    ```
-    aws s3 mb s3://<your-bucket-name> --region <region-name, e.g. us-west-1>
-    ```
-4. Package the code to your AWS S3 bucket and change the current CloudFormation template using the following command:
-    ```
-    aws cloudformation package --template-file cloudFormation.json --s3-bucket <your-bucket-name> --output-template-file output.json --use-json
-    ```
-5. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
-6. Create a new stack. Use the generated **output.json** file as the template for the stack.
-   ![Choose template file](images/choose_template_file.png "Choose template file")
-7. Choose a name for the stack and provide the parameters:
+1. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
+2. Create a new stack. Use the Amazon S3 URL from below.
+
+       https://coiote-aws-integration.s3.eu-central-1.amazonaws.com/coiote-aws-integration-cf-template.json
+
+   ![Choose template file](images/choose_template_s3.png "Choose template file")
+4. Choose a name for the stack and provide the parameters:
    - **coioteDMrestUsername** - username of the created CoioteDM account.
    - **coioteDMrestPassword** - password of the created CoioteDM account.
    - **coioteDMrestUri** - URL address and port of your Coiote DM installation.
    ![Change stack parameters](images/stack_params.png "Change stack name and parameters")
-8. Finalize configuring the stack and wait for its creation to finish.
-9. Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
-10. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
+5. Finalize configuring the stack and wait for its creation to finish.
+6. Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
+7. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
 ![Migrated things](images/migrated_things.png "Migrated things")
 
 ## Next steps
