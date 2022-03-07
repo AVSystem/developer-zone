@@ -291,7 +291,7 @@
 
 .logoMobile{
     position: absolute;
-    left: 9px;
+    left: 7px;
     margin-right: 50px;
 }
 
@@ -581,3 +581,24 @@
 }
 
 /* ./sticky menu tab */
+
+.md-header-nav__button{
+    padding:.4rem 0;
+}
+
+.md-footer-meta.md-typeset a{
+    white-space: nowrap;
+}
+
+@media(max-width:768px){
+    .md-navbottom__link .md-navbottom__title{
+        max-width: 90%;
+    }
+    .md-navbottom__link .md-ellipsis{
+        white-space: initial;
+        margin: 8px 15px;
+    }
+    .md-navbottom__link--next{
+        margin-left: 24px;
+    }
+}
