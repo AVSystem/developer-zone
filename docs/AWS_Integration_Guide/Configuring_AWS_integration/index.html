@@ -1252,6 +1252,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#supported-regions" class="md-nav__link">
+    Supported regions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-a-coiote-dm-rest-user" class="md-nav__link">
     Create a Coiote DM REST user
   </a>
@@ -1412,6 +1419,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#supported-regions" class="md-nav__link">
+    Supported regions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-a-coiote-dm-rest-user" class="md-nav__link">
     Create a Coiote DM REST user
   </a>
@@ -1473,13 +1487,22 @@
 <p>Follow this section to integrate your AWS services with Coiote DM.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager.</li>
-<li>An AWS S3 bucket.</li>
+<li>An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager in supported regions.</li>
 <li>A Coiote DM user account with the <strong>awsiottenant</strong> role.</li>
-<li>The Git tool (<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a>).</li>
-<li>The Python package installer (<a href="https://pypi.org/project/pip/">https://pypi.org/project/pip/</a>).</li>
-<li>The AWS CLI (<a href="https://aws.amazon.com/cli/">https://aws.amazon.com/cli/</a>).</li>
 </ul>
+<h2 id="supported-regions">Supported regions<a class="headerlink" href="#supported-regions" title="Permanent link">#</a></h2>
+<ul>
+<li>eu-central-1</li>
+<li>eu-north-1</li>
+<li>eu-west-1</li>
+<li>eu-west-2</li>
+<li>eu-west-3</li>
+<li>us-east-1</li>
+<li>us-east-2</li>
+<li>us-west-1</li>
+<li>us-west-2</li>
+</ul>
+<p>If you cannot find your region, please create an issue or contact AVSystem.</p>
 <h2 id="create-a-coiote-dm-rest-user">Create a Coiote DM REST user<a class="headerlink" href="#create-a-coiote-dm-rest-user" title="Permanent link">#</a></h2>
 <p>To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:   </p>
 <ol>
@@ -1552,8 +1575,8 @@ Then follow the steps below:</p>
 <ol>
 <li>Go to the AWS Console page (<a href="https://console.aws.amazon.com/console/home">https://console.aws.amazon.com/console/home</a>) and sign in. Make sure that you are in the right region. From the list of services, select <strong>CloudFormation</strong> .</li>
 <li>
-<p>Create a new stack. Use the Amazon S3 URL from below.</p>
-<p>https://coiote-aws-integration.s3.eu-central-1.amazonaws.com/coiote-aws-integration-cf-template.json</p>
+<p>Create a new stack. Use the template of Amazon S3 URL from below and change placeholders <code>[REGION-NAME]</code> to the one you use and is <a href="#supported-regions">supported</a>.</p>
+<p>https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-integration-cf-template.json</p>
 </li>
 </ol>
 <p><img alt="Choose template file" src="../images/choose_template_s3.png" title="Choose template file" />
@@ -1640,7 +1663,7 @@ Then follow the steps below:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 8, 2022</span>
     
   </small>
 </div>
