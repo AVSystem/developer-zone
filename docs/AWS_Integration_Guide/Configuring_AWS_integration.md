@@ -4,12 +4,22 @@ Follow this section to integrate your AWS services with Coiote DM.
 
 ## Prerequisites
 
-- An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager.
-- An AWS S3 bucket.
+- An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager in supported regions.
 - A Coiote DM user account with the **awsiottenant** role.
-- The Git tool (<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>).
-- The Python package installer (<https://pypi.org/project/pip/>).
-- The AWS CLI (<https://aws.amazon.com/cli/>).
+
+## Supported regions
+
+- eu-central-1
+- eu-north-1
+- eu-west-1
+- eu-west-2
+- eu-west-3
+- us-east-1
+- us-east-2
+- us-west-1
+- us-west-2
+
+If you cannot find your region, please create an issue or contact AVSystem.
 
 ## Create a Coiote DM REST user
 
@@ -71,9 +81,9 @@ All the AWS-side configuration needed for the integration to work is stored in a
 To add the resources needed for the integration to your AWS services:
 
 1. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
-2. Create a new stack. Use the Amazon S3 URL from below.
+2. Create a new stack. Use the template of Amazon S3 URL from below and change placeholders `[REGION-NAME]` to the one you use and is [supported](#supported-regions).
 
-       https://coiote-aws-integration.s3.eu-central-1.amazonaws.com/coiote-aws-integration-cf-template.json
+       https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-integration-cf-template.json
 
    ![Choose template file](images/choose_template_s3.png "Choose template file")
 4. Choose a name for the stack and provide the parameters:
