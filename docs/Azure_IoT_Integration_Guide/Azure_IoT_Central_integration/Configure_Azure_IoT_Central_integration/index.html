@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuring-integration-extension" class="md-skip">
+        <a href="#connect-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/" class="md-tabs__link md-tabs__link--active">
         Azure IoT integration guide
       </a>
     </li>
@@ -805,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
+      <a href="../../Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/" class="md-nav__link">
         Configure integration
       </a>
     </li>
@@ -851,20 +851,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
-        Exporting devices to Azure IoT Hub
+      <a href="../../Azure_IoT_Hub_integration/Device_operations/Synchronize_devices_with_Azure_IoT_Hub/" class="md-nav__link">
+        Synchronize devices with Azure IoT Hub
       </a>
     </li>
   
@@ -876,7 +864,7 @@
   
     <li class="md-nav__item">
       <a href="../../Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/" class="md-nav__link">
-        Upgrading device firmware
+        Upgrade device firmware
       </a>
     </li>
   
@@ -1020,15 +1008,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-azure-iot-hub-extension-using-credentials" class="md-nav__link">
-    Set up the Azure IoT Hub Extension using credentials.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next steps
+  <a href="#set-up-the-azure-iot-central-integration" class="md-nav__link">
+    Set up the Azure IoT Central integration
   </a>
   
 </li>
@@ -1080,20 +1061,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
-        Exporting devices to Azure IoT Central
+      <a href="../Device_operations/Synchronize_devices_with_Azure_IoT_Central/" class="md-nav__link">
+        Synchronize devices with Azure IoT Central
       </a>
     </li>
   
@@ -1407,15 +1376,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-azure-iot-hub-extension-using-credentials" class="md-nav__link">
-    Set up the Azure IoT Hub Extension using credentials.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next steps
+  <a href="#set-up-the-azure-iot-central-integration" class="md-nav__link">
+    Set up the Azure IoT Central integration
   </a>
   
 </li>
@@ -1443,61 +1405,44 @@
 
 
 <!-- Markdown content -->
-<h1 id="configuring-integration-extension">Configuring integration extension<a class="headerlink" href="#configuring-integration-extension" title="Permanent link">#</a></h1>
-<p>To enable communication and data flow between the Azure IoT Central and Coiote DM platforms, you first need to integrate them using the dedicated extension module in Coiote DM. Follow the instruction below to learn how to do it.</p>
+<h1 id="connect-integration">Connect integration<a class="headerlink" href="#connect-integration" title="Permanent link">#</a></h1>
+<p>To enable communication and data flow between the Azure IoT Central and Coiote DM platforms, you first need to integrate them using the Hyperscaler Integration Center in Coiote DM. Follow the instruction below to learn how to do it.</p>
 <h2 id="prerequisites">Prerequisites:<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An active IoT Central with hub owner access permissions.</li>
-<li>A Coiote DM user account with permissions to use the integration extension.</li>
+<li>A Coiote DM user account with permissions to use the Hyperscaler Integration Center.</li>
 </ul>
 <hr />
 <h2 id="get-the-azure-iot-central-integration-credentials">Get the Azure IoT Central integration credentials<a class="headerlink" href="#get-the-azure-iot-central-integration-credentials" title="Permanent link">#</a></h2>
 <ol>
-<li>In your Azure IoT Central account view, go to <strong>Administration</strong>:</li>
+<li>In your Azure IoT Central account view, from the left menu, select <strong>Application</strong>.</li>
 <li>
-<p>Under <strong>Your application</strong>, copy the full <em>Application URL</em> (along with '.azureiotcentral.com') into Notepad or other place to keep it for later.</p>
-<p><img alt="IoT Central Administration" src="../images/azure_central_admin.png" title="IoT Hub Administration" /></p>
+<p>Under <strong>Management</strong>, copy the full <em>Application URL</em> (along with '.azureiotcentral.com') into Notepad or other place to keep it for later.
+      <img alt="IoT Central Application" src="../images/azure_central_admin.png" title="IoT Central Application" /></p>
 </li>
 <li>
-<p>From the <strong>Administration</strong> menu, select <strong>API tokens</strong> and click <em>generate token</em>.</p>
-<p><img alt="Azure IoT central API token generation" src="../images/api_token.png" title="Azure IoT central API token generation" /></p>
-<ol>
-<li>In the pop-up window that appears, click the copy icon for the newly generated token.</li>
-</ol>
-<p><img alt="token generated" src="../images/generated_token.png" title="Generate token pop-up" /></p>
+<p>From the left menu, click <strong>Permissions</strong>, select <strong>API tokens</strong> and click <strong>+New</strong> .
+    <img alt="Azure IoT central API token generation" src="../images/api_token.png" title="Azure IoT central API token generation" /></p>
+</li>
+<li>
+<p>In the dialog window, provide a name for the token and select <strong>App Administrator</strong> as the role, then click the copy icon for the newly generated token.
+     <img alt="token generated" src="../images/generated_token.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Generate token pop-up" /></p>
 </li>
 </ol>
 <p>Now you need to use the obtained credentials in the Coiote DM platform.</p>
-<h2 id="set-up-the-azure-iot-hub-extension-using-credentials">Set up the <strong>Azure IoT Hub Extension</strong> using credentials.<a class="headerlink" href="#set-up-the-azure-iot-hub-extension-using-credentials" title="Permanent link">#</a></h2>
+<h2 id="set-up-the-azure-iot-central-integration">Set up the <strong>Azure IoT Central</strong> integration<a class="headerlink" href="#set-up-the-azure-iot-central-integration" title="Permanent link">#</a></h2>
+<p>Use the obtained credentials to establish the integration between Coiote DM and your Azure IoT Central application:</p>
 <ol>
-<li>In your Coiote DM user account, go to <strong>Administration --&gt; Extensions</strong>.</li>
-<li>
-<p>Find the <strong>Azure IoT Central</strong> tab and click <code>Setup</code>.</p>
-<p><img alt="Azure IoT Central extension" src="../images/azure_central_extension.png" title="Azure IoT Central extension" /></p>
-</li>
-<li>
-<p>Inside the tab:</p>
-<ul>
-<li>paste the previously copied Azure IoT Central <em>Application URL</em>,</li>
-<li>provide the API token and,</li>
-<li>if needed, enter your <em>Device Provisioning Service hostname</em> (however, the default address provided is  sufficient in most cases).</li>
-</ul>
-<p><img alt="Setting up the Azure IoT Central extension" src="../images/central_extension_setup.png" title="Setting up IoT Central extension" /></p>
-<ul>
-<li>
-<p>use <code>Test connection</code> to see if the connection can be established correctly.</p>
-</li>
-<li>
-<p>click <code>Save</code> to keep the setting.</p>
-</li>
+<li>In your Coiote DM user account, go to <strong>Administration --&gt; Hyperscaler Integration Center</strong>
+    <img alt="Hyperscaler Integration Center menu link" src="../images/HIC_menu.png" title="Hyperscaler Integration Center menu link" /></li>
+<li>In the <strong>Integration</strong> tab, find the <strong>Azure IoT Central</strong> tile and click <strong>Connect</strong>.</li>
+<li>In the dialog window, paste the previously copied <strong>Application URL</strong> and <strong>API token</strong> into the relevant fields.
+  <img alt="Setting up the integration" src="../images/central_extension_setup.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Setting up the Azure integration" /><ul>
+<li>click <strong>Save</strong> to keep the setting.</li>
 </ul>
 </li>
 </ol>
-<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="../Device_operations/Importing_devices_to_Coiote_DM/">Importing devices to Coiote DM</a></li>
-<li><a href="../Device_operations/Exporting_devices_to_Azure_IoT_Central/">Exporting devices to Azure IoT Central</a></li>
-</ul>
+<p>Your integration should now be established. To get the integration up and running, try <a href="../Device_operations/Synchronize_devices_with_Azure_IoT_Central/">synchronizing devices with Azure IoT Central</a></p>
 
 <!-- Link to previous and/or next page -->
 
@@ -1559,7 +1504,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2022</span>
     
   </small>
 </div>

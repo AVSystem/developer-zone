@@ -14,7 +14,7 @@
     
     
       
-        <title>Exporting devices to Azure IoT Central - Coiote IoT Device Management Docs</title>
+        <title>Synchronize devices with Azure IoT Central - Coiote IoT Device Management Docs</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exporting-devices-to-azure-iot-central" class="md-skip">
+        <a href="#synchronize-devices-with-azure-iot-central" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Exporting devices to Azure IoT Central
+              Synchronize devices with Azure IoT Central
             
           </span>
         </div>
@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/" class="md-tabs__link md-tabs__link--active">
         Azure IoT integration guide
       </a>
     </li>
@@ -805,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
+      <a href="../../../Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/" class="md-nav__link">
         Configure integration
       </a>
     </li>
@@ -851,20 +851,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Hub_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Hub_integration/Device_operations/Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
-        Exporting devices to Azure IoT Hub
+      <a href="../../../Azure_IoT_Hub_integration/Device_operations/Synchronize_devices_with_Azure_IoT_Hub/" class="md-nav__link">
+        Synchronize devices with Azure IoT Hub
       </a>
     </li>
   
@@ -876,7 +864,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/" class="md-nav__link">
-        Upgrading device firmware
+        Upgrade device firmware
       </a>
     </li>
   
@@ -975,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
+      <a href="../../Configure_Azure_IoT_Central_integration/" class="md-nav__link">
         Configure integration
       </a>
     </li>
@@ -1021,18 +1009,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -1044,12 +1020,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Exporting devices to Azure IoT Central
+          Synchronize devices with Azure IoT Central
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Exporting devices to Azure IoT Central
+        Synchronize devices with Azure IoT Central
       </a>
       
         
@@ -1066,37 +1042,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-device-entity-in-coiote-dm" class="md-nav__link">
-    Create a device entity in Coiote DM
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-group-of-devices-for-export" class="md-nav__link">
-    Create a group of devices for export
+  <a href="#import-devices-from-csv-using-a-default-integration-template" class="md-nav__link">
+    Import devices from CSV using a default integration template
+  </a>
+  
+    <nav class="md-nav" aria-label="Import devices from CSV using a default integration template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-import-operation-does" class="md-nav__link">
+    What the import operation does
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#export-your-devices-to-csv" class="md-nav__link">
-    Export your devices to CSV
+        
+          <li class="md-nav__item">
+  <a href="#check-device-error-logs" class="md-nav__link">
+    Check device error logs
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#import-the-csv-file-to-azure-iot-central" class="md-nav__link">
-    Import the CSV file to Azure IoT Central
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next steps
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1402,37 +1377,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-device-entity-in-coiote-dm" class="md-nav__link">
-    Create a device entity in Coiote DM
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-group-of-devices-for-export" class="md-nav__link">
-    Create a group of devices for export
+  <a href="#import-devices-from-csv-using-a-default-integration-template" class="md-nav__link">
+    Import devices from CSV using a default integration template
+  </a>
+  
+    <nav class="md-nav" aria-label="Import devices from CSV using a default integration template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-import-operation-does" class="md-nav__link">
+    What the import operation does
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#export-your-devices-to-csv" class="md-nav__link">
-    Export your devices to CSV
+        
+          <li class="md-nav__item">
+  <a href="#check-device-error-logs" class="md-nav__link">
+    Check device error logs
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#import-the-csv-file-to-azure-iot-central" class="md-nav__link">
-    Import the CSV file to Azure IoT Central
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next steps
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1459,62 +1433,76 @@
 
 
 <!-- Markdown content -->
-<h1 id="exporting-devices-to-azure-iot-central">Exporting devices to Azure IoT Central<a class="headerlink" href="#exporting-devices-to-azure-iot-central" title="Permanent link">#</a></h1>
-<p>If you have device entities in Coiote DM that you would like to manage via the Azure IoT Central, you may use the export functionality. Follow the instruction below to learn how to do it in four basic steps:</p>
-<ol>
-<li><a href="#create-a-device-entity-in-coiote-dm">Create a device</a></li>
-<li><a href="#create-a-group-of-devices-for-export">Create a group of devices for export</a></li>
-<li><a href="#export-your-devices-to-csv">Export your Coiote DM devices to CSV</a></li>
-<li><a href="#import-the-csv-file-to-azure-iot-central">Import the CSV file to Azure IoT Central</a></li>
-</ol>
-<h2 id="create-a-device-entity-in-coiote-dm">Create a device entity in Coiote DM<a class="headerlink" href="#create-a-device-entity-in-coiote-dm" title="Permanent link">#</a></h2>
-<p>If you don't have any devices in your Coiote DM <strong>Device Inventory</strong>, follow these instructions to add one or more devices.</p>
-<ol>
-<li>In the Coiote DM <strong>Device Inventory</strong>, select <strong>Device Creator</strong>.
-   <img alt="Device Creator button" src="../images/dev_creator.png" title="Device Creator in Device inventory view" /></li>
-<li>In the next screen, choose the <strong>Connect your LwM2M device directly via the Management server</strong>.</li>
-<li>In the <strong>Device credentials</strong> step, provide a name for your device, then select <code>NoSec</code> from the <strong>Security mode</strong> list and click <strong>Add device</strong>.</li>
-<li>In the pop-up window, click <strong>Confirm</strong> to add your device entity. Now it should be listed in <strong>Device Inventory</strong>.</li>
-</ol>
-<h2 id="create-a-group-of-devices-for-export">Create a group of devices for export<a class="headerlink" href="#create-a-group-of-devices-for-export" title="Permanent link">#</a></h2>
-<p>Now that you have some devices added, you need to insert all the devices to be exported into a common group for ease of configuration.</p>
-<ol>
-<li>In Coiote DM, go to <strong>Device Inventory</strong>, filter the devices you would like to export and use the <strong>Add to group</strong> action.
-   <img alt="Add to group function" src="../images/add_to_group.png" title="Adding devices to a group" /></li>
-<li>In the pop-up window that appears, select <strong>Add to new group</strong>, provide a name for the group and click <strong>Confirm</strong>.</li>
-</ol>
-<h2 id="export-your-devices-to-csv">Export your devices to CSV<a class="headerlink" href="#export-your-devices-to-csv" title="Permanent link">#</a></h2>
-<p>You are now ready to export your devices.</p>
-<ol>
-<li>In the <strong>Device groups</strong> panel, select your group of devices for export and click the <strong>Actions</strong> tab.</li>
-<li>Under <strong>Management</strong>, select the <strong>Export devices to Azure IoT Central</strong>.</li>
-<li>
-<p>In the pop-up window:
-   <img alt="Exporting devices" src="../images/exporting_central.png" title="Exporting devices to Azure IoT Central" /></p>
+<h1 id="synchronize-devices-with-azure-iot-central">Synchronize devices with Azure IoT Central<a class="headerlink" href="#synchronize-devices-with-azure-iot-central" title="Permanent link">#</a></h1>
+<p>Importing devices to Coiote DM and synchronizing them with Azure IoT Central is a quick way to start using your Coiote DM - Azure IoT Central integration. The import operation will do two basic operations automatically:</p>
 <ul>
-<li>mark <strong>Skip already exported devices</strong> optionally if you have already exported some of the devices belonging to this group.</li>
-<li>select <strong>Export to CSV</strong>.</li>
+<li>Create device entities in Coiote DM with the credentials that you specified,</li>
+<li>create the devices' "counterparts" within Azure IoT Central and synchronize them with Coiote DM.     </li>
+</ul>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>A <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configure_Azure_IoT_Central_integration/">connected Azure IoT Central integration</a> in the Hyperscaler Integration Center.</li>
+</ul>
+<hr />
+<h2 id="import-devices-from-csv-using-a-default-integration-template">Import devices from CSV using a default integration template<a class="headerlink" href="#import-devices-from-csv-using-a-default-integration-template" title="Permanent link">#</a></h2>
+<p>In the import process, you will need a list of devices that you want to import along with an integration template to be used by Azure IoT Central. To learn more about Azure integration templates, see the <a href="/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">Configure integration templates</a> section.</p>
+<ol>
+<li>In Coiote DM, go to <strong>Administration</strong> -&gt; <strong>Hyperscaler Integration Center</strong>.</li>
+<li>Make sure you have an integration connected in the <strong>Integration</strong> tab.</li>
+<li>Go to the <strong>Device list</strong> tab and click <strong>Import devices</strong>.</li>
+<li>In the <strong>Import devices</strong> wizard:<ul>
+<li>From the <strong>Select template</strong> field, select one of two default integration templates:<ul>
+<li>Default minimal LwM2M schema - a pre-defined template implementing a basic device data model.     </li>
+<li>Default rich LwM2M schema - a pre-defined template implementing an extended device data model.</li>
 </ul>
 </li>
-<li>
-<p>After a moment, the export operation should finish and a CSV file should start downloading.</p>
-</li>
-</ol>
-<h2 id="import-the-csv-file-to-azure-iot-central">Import the CSV file to Azure IoT Central<a class="headerlink" href="#import-the-csv-file-to-azure-iot-central" title="Permanent link">#</a></h2>
-<p>Once you have the CSV file downloaded, you can use it to import the devices into Azure IoT Central.</p>
-<ol>
-<li>From the left pane of your Azure IoT Central account, choose <strong>Devices</strong> and select a device template into which you want to import the devices.</li>
-<li>Select <strong>Import</strong>.</li>
-<li>In the pop-up that appears, select the previously downloaded CSV file.</li>
-<li>The import process should start. Its status can be tracked in the <strong>Device Operations</strong> panel in the top right-hand corner.</li>
-<li>Once the import process is complete, a success message should appear. If there are any errors, a log file will be generated in <strong>Device Operations</strong> that you can download.
-   <img alt="Exported devices" src="../images/exported_devices_central.png" title="Exported devices view" /></li>
-</ol>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To learn more about importing device entities to Azure IoT Central, <a href="https://docs.microsoft.com/en-us/azure/iot-central/core/howto-manage-devices#import-devices">click here</a>.</p>
+<p>Integration templates are crucial in the device import process. Optionally, you can create your custom device template and use it in importing. Check the instructions in the <a href="/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">Configure integration templates</a> section.  </p>
 </div>
-<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<ul>
+<li>In the <strong>Import devices from a CSV file</strong> section:
+    <img alt="Importing devices" src="../images/import_view.png" title="Importing devices" /><ul>
+<li>If you already have a CSV file with devices for import, click <strong>Browse</strong> and select the file.</li>
+<li>If you don't have a CSV with devices for import yet, click the <strong>device template</strong> link to download an empty template that you can fill in with your data:<ul>
+<li><strong>DeviceId</strong>  - provide your device ID. For LwM2M-enabled devices, device ID usually equals the endpoint name.</li>
+<li><strong>IMSI</strong> - provide a random but unique number for each entry (or provide IMSI number if your device has one).
+  <img alt="CSV device template" src="../images/device_template_csv.png" title="CSV device template" /></li>
+<li><strong>PSK_Identity_Key</strong> - provide a unique plain-text PSK identity key used for secure communication between the device and Coiote DM.</li>
+<li><strong>PSK_Key</strong> -  provide a unique HEX-encoded PSK key used for secure communication between the device and Coiote DM.</li>
+<li>Save the template and upload it using the <strong>Browse</strong> button and dialog window.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Click <strong>Sync with Azure</strong>.</li>
+</ul>
+</li>
+<li>After a moment, the import operation should finish successfully.<br />
+<img alt="Synchronization successful" src="../images/sync_successful.png" title="Sync successful" /></li>
+<li>Now you can connect your physical devices to Coiote DM using their credentials and the dedicated URL displayed after the successful device import.</li>
+</ol>
+<h3 id="what-the-import-operation-does">What the import operation does<a class="headerlink" href="#what-the-import-operation-does" title="Permanent link">#</a></h3>
+<p>Once the devices from the CSV template are imported into Coiote DM, the following actions are performed:</p>
+<ul>
+<li>In Coiote DM, device entities are created based on the credentials provided in the template. All such entities are visible in the <strong>Device list</strong> tab:</li>
+<li>In Coiote DM, a dedicated integration group is automatically created (with name built up by the <code>hyperscalercenter</code> prefix and the template ID, e.g. <code>618238c8bcafcb43b2911261</code>).  </li>
+<li>In your Azure IoT Central, devices are created and ready for operation.</li>
+</ul>
+<h3 id="check-device-error-logs">Check device error logs<a class="headerlink" href="#check-device-error-logs" title="Permanent link">#</a></h3>
+<p>Logs may come helpful for diagnosing and troubleshooting issues with the communication between the three actors in the integration: the device, Coiote DM, and Azure IoT Central.   </p>
+<p>To see logs for your integrated devices:</p>
+<ol>
+<li>Go to the single device view and from the left menu, select the <strong>Logs</strong> tile.</li>
+<li>In the <strong>Logs</strong> panel, expand the view by clicking on <strong>More</strong> and configure the following:<ul>
+<li><strong>Store from level</strong> - select <strong>Use custom</strong> and set log level to <strong>DEBUG</strong> for 1 hour.</li>
+<li><strong>Tags</strong> - select <strong>HYPERSCALERS</strong></li>
+</ul>
+</li>
+</ol>
+<p><img alt="Integration logs" src="../images/hic_logs.png" title="Integration logs" /></p>
+<p>The communication logs will be displayed, allowing you to check, diagnose, or debug any issues.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -1526,7 +1514,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../Importing_devices_to_Coiote_DM/"
+      href="../Overview/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1538,7 +1526,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Importing devices to Coiote DM
+          Overview
         </div>
       </div>
     </a>
@@ -1576,7 +1564,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2022</span>
     
   </small>
 </div>
@@ -1599,7 +1587,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../Importing_devices_to_Coiote_DM/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../Overview/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -1608,7 +1596,7 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Importing devices to Coiote DM
+                  Overview
                 </div>
               </div>
             </a>

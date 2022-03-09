@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Configuring_Azure_IoT_Hub_integration_extension/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Configure_Azure_IoT_Hub_integration/" class="md-tabs__link md-tabs__link--active">
         Azure IoT integration guide
       </a>
     </li>
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
+      <a href="../../Configure_Azure_IoT_Hub_integration/" class="md-nav__link">
         Configure integration
       </a>
     </li>
@@ -893,20 +893,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
-        Exporting devices to Azure IoT Hub
+      <a href="../Synchronize_devices_with_Azure_IoT_Hub/" class="md-nav__link">
+        Synchronize devices with Azure IoT Hub
       </a>
     </li>
   
@@ -918,7 +906,7 @@
   
     <li class="md-nav__item">
       <a href="../Upgrading_firmware/" class="md-nav__link">
-        Upgrading device firmware
+        Upgrade device firmware
       </a>
     </li>
   
@@ -1015,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
+      <a href="../../../Azure_IoT_Central_integration/Configure_Azure_IoT_Central_integration/" class="md-nav__link">
         Configure integration
       </a>
     </li>
@@ -1061,20 +1049,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
-        Exporting devices to Azure IoT Central
+      <a href="../../../Azure_IoT_Central_integration/Device_operations/Synchronize_devices_with_Azure_IoT_Central/" class="md-nav__link">
+        Synchronize devices with Azure IoT Central
       </a>
     </li>
   
@@ -1405,7 +1381,7 @@
 <!-- Markdown content -->
 <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
 <h2 id="how-synchronization-works">How synchronization works<a class="headerlink" href="#how-synchronization-works" title="Permanent link">#</a></h2>
-<p>Coiote DM provides zero-touch provisioning for synchronized devices from Azure IoT Hub. This means that device entities are automatically created within Coiote DM upon synchronization with the Azure IoT Hub and this is repeated periodically for any new devices that appear. Therefore, after one successful synchronization, you can be sure that any devices that have been added to Azure IoT Hub at a later time will also be migrated to Coiote DM.             </p>
+<p>Coiote DM provides zero-touch provisioning for devices synchronized with Azure IoT Hub. This means any devices imported using a CSV file are automatically created within Coiote DM and Azure IoT Hub and from this time on are synchronized periodically. Therefore, after any successful synchronization, you can be sure that any devices that have been imported via Coiote DM will be presented in their actual state within Azure IoT Hub.             </p>
 
 <!-- Link to previous and/or next page -->
 
@@ -1417,7 +1393,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../../Configuring_Azure_IoT_Hub_integration_extension/"
+      href="../../Configure_Azure_IoT_Hub_integration/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1438,7 +1414,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../Importing_devices_to_Coiote_DM/"
+      href="../Synchronize_devices_with_Azure_IoT_Hub/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -1447,7 +1423,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          Importing devices to Coiote DM
+          Synchronize devices with Azure IoT Hub
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -1467,7 +1443,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2022</span>
     
   </small>
 </div>
@@ -1490,7 +1466,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../../Configuring_Azure_IoT_Hub_integration_extension/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../../Configure_Azure_IoT_Hub_integration/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -1505,13 +1481,13 @@
             </a>
           
           
-            <a href="../Importing_devices_to_Coiote_DM/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../Synchronize_devices_with_Azure_IoT_Hub/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  Importing devices to Coiote DM
+                  Synchronize devices with Azure IoT Hub
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">

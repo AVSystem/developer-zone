@@ -14,7 +14,7 @@
     
     
       
-        <title>Upgrading device firmware - Coiote IoT Device Management Docs</title>
+        <title>Upgrade device firmware - Coiote IoT Device Management Docs</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#upgrading-device-firmware" class="md-skip">
+        <a href="#upgrade-device-firmware" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Upgrading device firmware
+              Upgrade device firmware
             
           </span>
         </div>
@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Configuring_Azure_IoT_Hub_integration_extension/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Configure_Azure_IoT_Hub_integration/" class="md-tabs__link md-tabs__link--active">
         Azure IoT integration guide
       </a>
     </li>
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Configuring_Azure_IoT_Hub_integration_extension/" class="md-nav__link">
+      <a href="../../Configure_Azure_IoT_Hub_integration/" class="md-nav__link">
         Configure integration
       </a>
     </li>
@@ -855,20 +855,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Exporting_devices_to_Azure_IoT_Hub/" class="md-nav__link">
-        Exporting devices to Azure IoT Hub
+      <a href="../Synchronize_devices_with_Azure_IoT_Hub/" class="md-nav__link">
+        Synchronize devices with Azure IoT Hub
       </a>
     </li>
   
@@ -888,12 +876,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Upgrading device firmware
+          Upgrade device firmware
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Upgrading device firmware
+        Upgrade device firmware
       </a>
       
         
@@ -1070,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/" class="md-nav__link">
+      <a href="../../../Azure_IoT_Central_integration/Configure_Azure_IoT_Central_integration/" class="md-nav__link">
         Configure integration
       </a>
     </li>
@@ -1116,20 +1104,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/" class="md-nav__link">
-        Importing devices to Coiote DM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/" class="md-nav__link">
-        Exporting devices to Azure IoT Central
+      <a href="../../../Azure_IoT_Central_integration/Device_operations/Synchronize_devices_with_Azure_IoT_Central/" class="md-nav__link">
+        Synchronize devices with Azure IoT Central
       </a>
     </li>
   
@@ -1513,11 +1489,11 @@
 
 
 <!-- Markdown content -->
-<h1 id="upgrading-device-firmware">Upgrading device firmware<a class="headerlink" href="#upgrading-device-firmware" title="Permanent link">#</a></h1>
+<h1 id="upgrade-device-firmware">Upgrade device firmware<a class="headerlink" href="#upgrade-device-firmware" title="Permanent link">#</a></h1>
 <p>If you would like to upgrade the firmware of devices using the Azure IoT Hub, follow the instruction below.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>At least one device with active Coiote DM - Azure IoT Hub <a href="../Importing_devices_to_Coiote_DM">synchronization</a>.</li>
+<li>At least one <a href="../Synchronize_devices_with_Azure_IoT_Hub">synchronized</a> Coiote DM - Azure IoT Hub device.</li>
 <li>A firmware file hosted on an HTTP server that is reachable by the Coiote DM server.</li>
 </ul>
 <div class="admonition note">
@@ -1629,7 +1605,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <ol>
 <li>
 <p>Go to your Coiote DM account and in the <strong>Device Inventory</strong>, select your device.</p>
-<p><img alt="Device inventory view" src="../images/device_inventory_view.png" title="Device inventory view" /></p>
+<p><img alt="Device inventory view" src="images/device_inventory_view.png" title="Device inventory view" /></p>
 </li>
 <li>
 <p>In the Device Management Center, enter the <strong>LwM2M firmware</strong> tab.  </p>
@@ -1677,7 +1653,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
   <!-- Link to previous page -->
   
     <a
-      href="../Exporting_devices_to_Azure_IoT_Hub/"
+      href="../Synchronize_devices_with_Azure_IoT_Hub/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1689,7 +1665,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Exporting devices to Azure IoT Hub
+          Synchronize devices with Azure IoT Hub
         </div>
       </div>
     </a>
@@ -1727,7 +1703,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2022</span>
     
   </small>
 </div>
@@ -1750,7 +1726,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../Exporting_devices_to_Azure_IoT_Hub/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../Synchronize_devices_with_Azure_IoT_Hub/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -1759,7 +1735,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Exporting devices to Azure IoT Hub
+                  Synchronize devices with Azure IoT Hub
                 </div>
               </div>
             </a>
