@@ -34,7 +34,8 @@ In the import process, you will need a list of devices that you want to import a
             - **PSK_Key** -  provide a unique HEX-encoded PSK key used for secure communication between the device and Coiote DM.
             - Save the template and upload it using the **Browse** button and dialog window.
     -  Click **Sync with Azure**.
-0. After a moment, the import operation should finish successfully.  
+0. After a moment, the import operation should finish successfully.
+![Synchronization successful](images/sync_successful.png "Sync successful")
 0. Now you can connect your physical devices to Coiote DM using their credentials and the dedicated URL displayed after the successful device import.
 
 ### What the import operation does
@@ -53,6 +54,10 @@ To see logs for your integrated devices:
 
 0. Go to the single device view and from the left menu, select the **Logs** tile.
 0. In the **Logs** panel, expand the view by clicking on **More** and configure the following:
+
     - **Store from level** - select **Use custom** and set log level to **DEBUG** for 1 hour.
     - **Tags** - select **HYPERSCALERS**
-0. The communication logs will be displayed, allowing you to check, diagnose, or debug any issues.
+
+![Integration logs](images/hic_logs.png "Integration logs")
+
+The communication logs will be displayed, allowing you to check, diagnose, or debug any issues.
