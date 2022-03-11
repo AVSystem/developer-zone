@@ -64,7 +64,7 @@ Then follow the steps below:
 - Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting value:
   - Open your command line and run the following command:
            ```
-           aws iot describe-endpoint --endpoint-type iot:Data-ATS
+           aws iot describe-endpoint --endpoint-type iot:Data-ATS --region <desired-region-for-the-integration>
            ```
   - Copy the returned result.
   ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
