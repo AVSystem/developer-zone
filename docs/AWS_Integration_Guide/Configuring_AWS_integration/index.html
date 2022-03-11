@@ -1532,7 +1532,7 @@ Then follow the steps below:</p>
 </li>
 <li>Go to <strong>Device groups</strong>, select your custom integration group (or the <strong>AWSiotCoreCertAuth</strong> group, depending on the previous step) and go to <strong>Profiles</strong>. Complete the <strong>AWS</strong> setting value:</li>
 <li>Open your command line and run the following command:
-           <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS
+           <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS --region &lt;desired-region-for-the-integration&gt;
 </code></pre></div></li>
 <li>Copy the returned result.
   <img alt="Copy data plane endpoint address" src="../images/dataplane.png" title="Copy data plane endpoint address" /></li>
@@ -1639,7 +1639,7 @@ Then follow the steps below:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 8, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2022</span>
     
   </small>
 </div>
