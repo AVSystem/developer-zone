@@ -1,20 +1,25 @@
 # Getting started
 
-Start using the **Interoperability tests** feature right away. This short instruction will help you create your first test case, run it on a device and see the execution logs.
+Start using the **Interoperability tests** feature right away. This short instruction will help you create your first test, run it on a device and see the execution logs.
 
 ## Prerequisites
 
 - A device that is added and registered in the platform.
 
-## Create your first test case
+## Create your first test
 
-1. From the navigation menu on the left, select **Protocol tests configuration**.
-![Protocol tests tab](images/image019.png "Interoperability tests")
-2. Click the **Add a new test case** button in the top-right corner.
-![Adding a new test case](images/image102.png "Adding a new test case")
-   Configure your test case:
-    - Provide a name for your test case.
-    - Under the **Action list**, click the **Add action** button and select **Write** from the drop down list and provide data for the following fields:
+1. From the navigation menu on the left, select **Device test repository** and then **Server simulator**.
+
+![Device test repository](images/interop1.png "Device test repository")
+
+2. Click **Add test** and select one of the two options: either **Add test manually** or **Import tests from .conf file**.
+![Adding a new test](images/interop2.png "Adding a new test")
+
+### Add test manually
+
+If you've selected **Add test manually**, you need to configure your test:
+    - Provide a name for your test.
+    - Under the **Action list**, click**Add action** and select **Write** from the drop down list and provide data for the following fields:
          - **Parameter name**: `Device.0.Manufacturer`,
          - **Expected value**: `Example_manufacturer`,
          - **Expected response code**: `4.05 MethodNotAllowed`.
@@ -22,9 +27,15 @@ Start using the **Interoperability tests** feature right away. This short instru
          - **Parameter name**: `LwM2M Server.1.Binding`,
          - **Expected value**: `U`,
          - **Expected response code**: `2.05 Content`.
-    - Select the **Add a new test case** button.
+    - Click **Add a new test**.
 
-## Run the test case on device
+  ![Adding a new test](images/interop3.png "Adding a new test")
+
+### Import tests from .conf file
+
+If you've selected **Import tests from .conf file**,
+
+## Run the test on device
 
 1. In the **Device inventory**, select a currently registered device and enter its **Device Management Center**.
 2. In **Device Management Center**, select the **Protocol tests** tab.
@@ -40,7 +51,7 @@ Start using the **Interoperability tests** feature right away. This short instru
     The `Success` status of a test case is a measure of the correctness of the device response against the expected test case parameters. Depending on the device and tester's needs, there may be test cases that are `successful` when the device responds with a *Failure* message (similarly to the example presented in this section).
 ## Check test execution details
 
-To see test execution logs for your test case:
+To see test execution logs for your:
 
 1. While in the **Protocol tests** panel, find your test case and click on its name.
 2. Expand the **Logs** section using the **^** arrow icon to see execution details.
