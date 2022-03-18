@@ -1,5 +1,4 @@
-site_name: Coiote IoT Device Management Docs
-
+site_name: IoT Developer Zone
 theme:
   name: material
   custom_dir: overrides
@@ -25,7 +24,7 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
-  
+ 
 google_analytics:
   - UA-25246208-6 
   - auto
@@ -85,6 +84,12 @@ nav:
                 - 'AWS_Integration_Guide/Device_operations/Operation_types.md'
             - 'Concepts':
                 - 'AWS_Integration_Guide/Concepts/AWS_Integration_concepts.md'
+        - 'Release Notes':
+                - 'Release_Notes/v2021.22.1.md'
+                - 'Release_Notes/v2021.23.0.md'
+                - 'Release_Notes/v2021.24.5.md'
+                - 'Release_Notes/v2021.3.2.md'
+                - 'Release_Notes/v2022.5.3.md'
 extra_css:
   - stylesheets/extra.css
 
