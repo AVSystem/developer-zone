@@ -491,16 +491,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-prepare-your-sensehatgrovepi" class="md-nav__link">
-    Step 1: Prepare your SenseHat/GrovePi
+  <a href="#step-1-prepare-your-sense-hatgrovepi" class="md-nav__link">
+    Step 1: Prepare your Sense HAT/GrovePi
   </a>
   
-    <nav class="md-nav" aria-label="Step 1: Prepare your SenseHat/GrovePi">
+    <nav class="md-nav" aria-label="Step 1: Prepare your Sense HAT/GrovePi">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sensehat" class="md-nav__link">
-    SenseHat
+  <a href="#sense-hat" class="md-nav__link">
+    Sense HAT
   </a>
   
 </li>
@@ -1529,16 +1529,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-prepare-your-sensehatgrovepi" class="md-nav__link">
-    Step 1: Prepare your SenseHat/GrovePi
+  <a href="#step-1-prepare-your-sense-hatgrovepi" class="md-nav__link">
+    Step 1: Prepare your Sense HAT/GrovePi
   </a>
   
-    <nav class="md-nav" aria-label="Step 1: Prepare your SenseHat/GrovePi">
+    <nav class="md-nav" aria-label="Step 1: Prepare your Sense HAT/GrovePi">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sensehat" class="md-nav__link">
-    SenseHat
+  <a href="#sense-hat" class="md-nav__link">
+    Sense HAT
   </a>
   
 </li>
@@ -1608,24 +1608,24 @@
 <!-- Markdown content -->
 <h1 id="tutorial-implementing-lwm2m-objects-on-raspberrypi">Tutorial: Implementing LwM2M objects on RaspberryPi<a class="headerlink" href="#tutorial-implementing-lwm2m-objects-on-raspberrypi" title="Permanent link">#</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
-<p>Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for RaspberryPi-based IoT devices. The Python programming language is used to implement LwM2M objects. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
+<p>Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for <a href="https://www.raspberrypi.org/">RaspberryPi-based</a> IoT devices. The Python programming language is used to implement LwM2M objects. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
 It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.</p>
 <p>This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.  </p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>Raspberry Pi 3 or 4 with a configured <a href="https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-05-28/2021-05-07-raspios-buster-armhf.zip">operating system</a> and a set-up WiFi connection.</li>
-<li>A <a href="https://www.raspberrypi.org/products/sense-hat/">SenseHat</a> or a <a href="https://www.seeedstudio.com/GrovePi.html">GrovePi</a> with a temperature sensor (<a href="https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/">DHT11</a> or similar) and a push button (<a href="https://wiki.seeedstudio.com/Grove-Button/">Grove-button</a> or similar).</li>
+<li>A <a href="https://www.raspberrypi.org/products/sense-hat/">Sense HAT</a> or a <a href="https://www.seeedstudio.com/GrovePi.html">GrovePi</a> with a temperature sensor (<a href="https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/">DHT11</a> or similar) and a push button (<a href="https://wiki.seeedstudio.com/Grove-Button/">Grove-button</a> or similar).</li>
 <li>An active Coiote IoT Device Management user account with Cloud admin permissions.</li>
 </ul>
-<h2 id="step-1-prepare-your-sensehatgrovepi">Step 1: Prepare your SenseHat/GrovePi<a class="headerlink" href="#step-1-prepare-your-sensehatgrovepi" title="Permanent link">#</a></h2>
-<h3 id="sensehat">SenseHat<a class="headerlink" href="#sensehat" title="Permanent link">#</a></h3>
+<h2 id="step-1-prepare-your-sense-hatgrovepi">Step 1: Prepare your Sense HAT/GrovePi<a class="headerlink" href="#step-1-prepare-your-sense-hatgrovepi" title="Permanent link">#</a></h2>
+<h3 id="sense-hat">Sense HAT<a class="headerlink" href="#sense-hat" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p>Install SenseHat packages:
+<p>Install the Sense HAT packages:
 <code>sudo apt-get install sense-hat</code></p>
 </li>
 <li>
-<p>Check if SenseHat is working correctly:</p>
+<p>Check if Sense HAT is working correctly:</p>
 </li>
 <li>Create a <code>hello_world.py</code> file:
                 <div class="highlight"><pre><span></span><code>from sense_hat import SenseHat
@@ -1635,47 +1635,42 @@ sense.show_message(&quot;Hello World!&quot;)
 <li>Run the program:
 <code>python hello_world.py</code></li>
 </ol>
+<p>If a <em>Hello World!</em> message is displayed, you're good to proceed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A tutorial on SenseHat is available here: https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat</p>
+<p>If you're new to Sense HAT, follow the <a href="https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat">getting started tutorial</a>.</p>
 </div>
 <h3 id="grovepi">GrovePi<a class="headerlink" href="#grovepi" title="Permanent link">#</a></h3>
 <ol>
-<li>
-<p>To install the GrovePi repository, paste and execute the following commands:</p>
-<p><div class="highlight"><pre><span></span><code>mkdir ~/Dexter
-cd /home/pi/Dexter
-git clone https://github.com/DexterInd/GrovePi
-cd /home/pi/Dexter/GrovePi/Script
-bash ./update_grovepi.sh
+<li>To install the GrovePi repository, paste and execute the following commands:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>    mkdir ~/Dexter
+    cd /home/pi/Dexter
+    git clone https://github.com/DexterInd/GrovePi
+    cd /home/pi/Dexter/GrovePi/Script
+    bash ./update_grovepi.sh
 </code></pre></div>
-2. Check if the GrovePi libraries are working correctly:
-- Connect a LED module to GrovePi port D4.
-- In the terminal, type:</p>
-<div class="highlight"><pre><span></span><code>```
-cd /home/pi/Dexter/GrovePi/Software/Python python grove_led_blink.py
-```
-</code></pre></div>
+2. Check if the GrovePi libraries are working correctly:</p>
 <ul>
+<li>Connect a LED module to GrovePi port D4.</li>
+<li>In the terminal, type: <code>cd /home/pi/Dexter/GrovePi/Software/Python python grove_led_blink.py</code></li>
 <li>The LED should start blinking.</li>
 </ul>
-</li>
-</ol>
 <h2 id="step-2-install-svetovid">Step 2: Install Svetovid<a class="headerlink" href="#step-2-install-svetovid" title="Permanent link">#</a></h2>
 <ol>
-<li>To install Svetovid, paste and execute the following commands into your command-line terminal:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>mkdir ~/AVSystem
+<li>
+<p>To install Svetovid, paste and execute the following commands into your command-line terminal:</p>
+<p><code>mkdir ~/AVSystem
 cd /home/pi/AVSystem
 git clone https://github.com/AVSystem/Svetovid-raspberry-client.git
 cd /home/pi/AVsystem/Svetovid-raspberry-client
-cd ~/AVSystem/Svetovid-raspberry-client
 sudo dpkg -i svetovid_20.11-raspberry_armhf.deb
 sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
-sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
-</code></pre></div>
-<ol>
-<li>In file <code>/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py</code>, find the <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test</code> entry and replace it with <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod</code>.</li>
+sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb</code></p>
+</li>
+<li>
+<p>In file <code>/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py</code>, find the <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test</code> entry and replace it with <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod</code>.</p>
+</li>
 </ol>
 <h2 id="step-3-register-your-device-in-coiote-dm">Step 3: Register your device in Coiote DM<a class="headerlink" href="#step-3-register-your-device-in-coiote-dm" title="Permanent link">#</a></h2>
 <ol>
@@ -1728,18 +1723,16 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 </ul>
 </li>
 </ul>
-</li>
-</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>XXXX and YYYY should be replaced by the chosen values of endpoint name, PSK identity and PSK key.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>XXXX values are in hex. To convert your plain text, use the following:
-<code>echo -n 'text-value' | xxd -p</code></p>
+<p>XXXX values are in hex. To convert your plain text, use the following:</p>
 </div>
-<ol>
+<p><code>echo -n 'text-value' | xxd -p</code></p>
+</li>
 <li>
 <p>Restart the Svetovid service:</p>
 <p><code>sudo systemctl start svetovid.service --now</code></p>
@@ -1761,7 +1754,7 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid.  </p>
+<p>Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid, for instance the temperature object - <code>3303</code>.  </p>
 </div>
 <h2 id="step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi">Step 4: Implement the LwM2M temperature object <code>3303</code> (only for GrovePi)<a class="headerlink" href="#step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" title="Permanent link">#</a></h2>
 <ol>
@@ -1770,15 +1763,12 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 <p><code>sudo systemctl disable svetovid.service --now</code></p>
 </li>
 <li>
-<p>Generate a stub object in your <code>dm</code> (data model) Svetovid folder by pasting and executing the following command in the terminal:
-$ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --generator python</p>
-</li>
-</ol>
+<p>Generate a stub object in your <code>dm</code> (data model) Svetovid folder by pasting and executing the following command in the terminal: <code>$ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --generator python</code></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can analyze the resource implementation in the /etc/svetovid/dm/3303 folder. For more details, see here: https://github.com/AVSystem/Svetovid-raspberry-client.</p>
+<p>You can analyze the resource implementation in the <code>/etc/svetovid/dm/3303 folder</code>. For more details, see the <a href="https://github.com/AVSystem/Svetovid-raspberry-client">Svetovid page on GitHub</a>.</p>
 </div>
-<ol>
+</li>
 <li>
 <p>Modify the python script in the <code>/etc/svetovid/dm/3303/Sensor_Value.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:
       <div class="highlight"><pre><span></span><code>#!/usr/bin/env python
@@ -1866,109 +1856,109 @@ if __name__ == &#39;__main__&#39;:
 <p>Refresh device state in Coiote and see if the Temperature object <code>3303</code> has appeared in the Objects tab and values are reported for  for the Sensor Value <code>5700</code> resource:</p>
 </li>
 </ol>
-<p><img alt="Temperature object" src="images/raspi.png" title="3303" /></p>
+<p><img alt="Temperature object" src="../images/raspi1.png" title="3303" /></p>
 <h2 id="step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345">Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object <code>3345</code><a class="headerlink" href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" title="Permanent link">#</a></h2>
 <p>Now you can implement the Push Button module based on the OMA DM Multiple Axis Joystick object (3345).</p>
 <ol>
 <li>
 <p>Type in the terminal:
       <div class="highlight"><pre><span></span><code>$ sudo svetovid-fsdmtool generate --object 3345 --output-dir /etc/svetovid/dm --generator python`
-</code></pre></div>
-Analyze the resource implementation in the <code>/etc/svetovid/dm/3345</code> folder. For more details, see (https://github.com/AVSystem/Svetovid-raspberry-client).</p>
+</code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can analyze the resource implementation in the <code>/etc/svetovid/dm/3345</code> folder. For more details, see the <a href="https://github.com/AVSystem/Svetovid-raspberry-client">Svetovid page on GitHub</a>.</p>
+</div>
 </li>
 <li>
-<p>Type in the terminal:</p>
-<p><code>cd /etc/svetovid/dm/3345/resources
- ./5550 read</code></p>
+<p>Type in the terminal: <code>cd /etc/svetovid/dm/3345/resources ./5550 read</code>.
+You should be able to see a default value reported in the command-line terminal.</p>
 </li>
-</ol>
-<p>You should be able to see a default value reported in the command-line terminal.</p>
-<ol>
-<li>In home directory, create the file <code>`~/button_object_forwarder.py</code> and paste the following into it:</li>
-</ol>
+<li>
+<p>In home directory, create the file <code>~/button_object_forwarder.py</code> and paste the following into it:</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">SenseHat</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>from sense_hat import SenseHat
-from time import sleep
-from fsdm import KvStore
-sense = SenseHat()
+<div class="highlight"><pre><span></span><code>  from sense_hat import SenseHat
+  from time import sleep
+  from fsdm import KvStore
+  sense = SenseHat()
 
-sense.clear()
-
-#KvStore(namespace=3345).set(&#39;counter&#39;, 0)
-#KvStore(namespace=3345).set(&#39;state&#39;, False)
-
-released_before = False
-counter = 0
-
-while True:
-  for event in sense.stick.get_events():
-  if event.action == &quot;pressed&quot;:
-      if event.direction == &quot;middle&quot;:
-      sense.show_letter(&quot;M&quot;)
-      KvStore(namespace=3345).set(&#39;state&#39;, True)
-
-      if released_before:
-          counter = counter + 1
-          KvStore(namespace=3345).set(&#39;counter&#39;, counter)
-
-      released_before = False
-
-  elif event.action == &quot;released&quot;:
-      if event.direction == &quot;middle&quot;:
-      sense.show_letter(&quot;m&quot;)
-      KvStore(namespace=3345).set(&#39;state&#39;, False)
-      released_before = True
-  else:
-      sense.clear()
-
-  # Wait and clear the screen
-  sleep(0.5)
   sense.clear()
+
+  #KvStore(namespace=3345).set(&#39;counter&#39;, 0)
+  #KvStore(namespace=3345).set(&#39;state&#39;, False)
+
+  released_before = False
+  counter = 0
+
+  while True:
+    for event in sense.stick.get_events():
+    if event.action == &quot;pressed&quot;:
+        if event.direction == &quot;middle&quot;:
+        sense.show_letter(&quot;M&quot;)
+        KvStore(namespace=3345).set(&#39;state&#39;, True)
+
+        if released_before:
+            counter = counter + 1
+            KvStore(namespace=3345).set(&#39;counter&#39;, counter)
+
+        released_before = False
+
+    elif event.action == &quot;released&quot;:
+        if event.direction == &quot;middle&quot;:
+        sense.show_letter(&quot;m&quot;)
+        KvStore(namespace=3345).set(&#39;state&#39;, False)
+        released_before = True
+    else:
+        sense.clear()
+
+    # Wait and clear the screen
+    sleep(0.5)
+    sense.clear()
 </code></pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">GrovePi</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>from time import sleep
-import grovepi
-from fsdm import KvStore
+<div class="highlight"><pre><span></span><code>  from time import sleep
+  import grovepi
+  from fsdm import KvStore
 
-button = 3
+  button = 3
 
-KvStore(namespace=3345).set(&#39;counter&#39;, 0)
-KvStore(namespace=3345).set(&#39;state&#39;, False)
+  KvStore(namespace=3345).set(&#39;counter&#39;, 0)
+  KvStore(namespace=3345).set(&#39;state&#39;, False)
 
-released_before = False
-counter = 0
+  released_before = False
+  counter = 0
 
-grovepi.pinMode(button, &quot;INPUT&quot;)
+  grovepi.pinMode(button, &quot;INPUT&quot;)
 
-while True:
-    try:
-        state = grovepi.digitalRead(button)
-        KvStore(namespace=3345).set(&#39;state&#39;, True)
+  while True:
+      try:
+          state = grovepi.digitalRead(button)
+          KvStore(namespace=3345).set(&#39;state&#39;, True)
 
-        print(&quot;State:{}&quot;.format(state))
+          print(&quot;State:{}&quot;.format(state))
 
-        if state == 1:
+          if state == 1:
 
-            if released_before:
-                counter = counter + 1
-                print(&quot;Counter:{}&quot;.format(counter))
-                KvStore(namespace=3345).set(&#39;counter&#39;, counter+1)
-                released_before = False    
-            KvStore(namespace=3345).set(&#39;state&#39;, True)
-        else:
-            released_before = True
-            KvStore(namespace=3345).set(&#39;state&#39;, False)
+              if released_before:
+                  counter = counter + 1
+                  print(&quot;Counter:{}&quot;.format(counter))
+                  KvStore(namespace=3345).set(&#39;counter&#39;, counter+1)
+                  released_before = False    
+              KvStore(namespace=3345).set(&#39;state&#39;, True)
+          else:
+              released_before = True
+              KvStore(namespace=3345).set(&#39;state&#39;, False)
 
-        sleep(.2)
+          sleep(.2)
 
-    except IOError:
-        print(&quot;Error&quot;)
+      except IOError:
+          print(&quot;Error&quot;)
 </code></pre></div>
 </div>
 </div>
-<ol>
-<li>Modify the python script in the <code>/etc/svetovid/dm/3345/Digital_Input_Counter.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:
+</li>
+<li>
+<p>Modify the python script in the <code>/etc/svetovid/dm/3345/Digital_Input_Counter.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:
       <div class="highlight"><pre><span></span><code>#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
@@ -2000,45 +1990,43 @@ The cumulative value of active state detected.&#39;&#39;&#39;
 
 if __name__ == &#39;__main__&#39;:
     ResourceHandler_3345_5501().main()
+</code></pre></div></p>
+</li>
+<li>Modify the python script in the <code>/etc/svetovid/dm/3345/Digital_Input_State.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:
+      <div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3345_5500(ResourceHandler):
+    NAME = &quot;Digital Input State&quot;
+    DESCRIPTION = &#39;&#39;&#39;\
+The current state of a digital input.&#39;&#39;&#39;
+    DATATYPE = DataType.BOOLEAN
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+  state = KvStore(namespace=3345).get(&#39;state&#39;)
+        if state is None:
+            # The value was not set, so it&#39;s not found.
+            raise CoapError.NOT_FOUND
+            #state = False
+        print(state)
+
+        # TODO: print value to stdout
+        #print(0)
+
+
+
+
+if __name__ == &#39;__main__&#39;:
+    ResourceHandler_3345_5500().main()
 </code></pre></div></li>
-<li>
-<p>Modify the python script in the <code>/etc/svetovid/dm/3345/Digital_Input_State.py</code> file. Open the file, replace the contents with the following script and click <strong>Save</strong>:</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-
-from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
-
-class ResourceHandler_3345_5500(ResourceHandler):
-    NAME = &quot;Digital Input State&quot;
-    DESCRIPTION = &#39;&#39;&#39;\
-The current state of a digital input.&#39;&#39;&#39;
-    DATATYPE = DataType.BOOLEAN
-    EXTERNAL_NOTIFY = False
-
-    def read(self,
-             instance_id,            # int
-             resource_instance_id):  # int for multiple resources, None otherwise
-  state = KvStore(namespace=3345).get(&#39;state&#39;)
-        if state is None:
-            # The value was not set, so it&#39;s not found.
-            raise CoapError.NOT_FOUND
-            #state = False
-        print(state)
-
-        # TODO: print value to stdout
-        #print(0)
-
-
-
-
-if __name__ == &#39;__main__&#39;:
-    ResourceHandler_3345_5500().main()
-</code></pre></div>
-</li>
-<li>
-<p>Modify the /etc/svetovid/dm/3345/resources/5500 file:</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+<li>Modify the <code>/etc/svetovid/dm/3345/resources/5500</code> file:
+      <div class="highlight"><pre><span></span><code>#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
@@ -2066,11 +2054,9 @@ The current state of a digital input.&#39;&#39;&#39;
 
 if __name__ == &#39;__main__&#39;:
     ResourceHandler_3345_5500().main()
-</code></pre></div>
-</li>
-<li>
-<p>Modify the /etc/svetovid/dm/3345/resources/5501 file:</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env python
+</code></pre></div></li>
+<li>Modify the <code>/etc/svetovid/dm/3345/resources/5501</code> file:
+      <div class="highlight"><pre><span></span><code>#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
@@ -2097,15 +2083,10 @@ The cumulative value of active state detected.&#39;&#39;&#39;
 
 if __name__ == &#39;__main__&#39;:
     ResourceHandler_3345_5501().main()
-</code></pre></div>
-</li>
-<li>
-<p>Plug in the push button to digital port D3 of the GrovePi/SenseHat.</p>
-</li>
-<li>
-<p>Restart Svetovid:</p>
-<p><code>sudo systemctl restart svetovid.service --now</code></p>
-</li>
+</code></pre></div></li>
+<li>Plug in the push button to digital port D3 of the GrovePi/Sense HAT.</li>
+<li>Restart Svetovid:
+    <code>sudo systemctl restart svetovid.service --now</code></li>
 <li>
 <p>Refresh device state in Coiote and see if the Multiple Axis Joystick object <code>3345</code> has appeared in the Objects tab and values are reported for the Digital Input State <code>5500</code> and Digital Input Counter <code>5501</code> resources:</p>
 <p><img alt="Joystick button object" src="../images/button.png" title="3345" /></p>
@@ -2172,7 +2153,7 @@ if __name__ == &#39;__main__&#39;:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 18, 2022</span>
     
   </small>
 </div>
