@@ -30,6 +30,8 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 3. Run the program:
 `python hello_world.py`
 
+If a *Hello World!* message is displayed, you're good to proceed.
+
 !!! note
     If you're new to Sense HAT, follow the [getting started tutorial](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat).
 
@@ -59,7 +61,6 @@ mkdir ~/AVSystem
 cd /home/pi/AVSystem
 git clone https://github.com/AVSystem/Svetovid-raspberry-client.git
 cd /home/pi/AVsystem/Svetovid-raspberry-client
-cd ~/AVSystem/Svetovid-raspberry-client
 sudo dpkg -i svetovid_20.11-raspberry_armhf.deb
 sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
 sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
@@ -69,11 +70,11 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 
 ## Step 3: Register your device in Coiote DM
 
-1. Disable the Svetovid service:
+0. Disable the Svetovid service:
 
     `sudo systemctl disable svetovid.service --now`
 
-2. Set the server connection details:
+0. Set the server connection details:
 
 	 - in `/etc/svetovid/config/security.json`:
 			```
@@ -123,22 +124,22 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
         XXXX values are in hex. To convert your plain text, use the following:
     `echo -n 'text-value' | xxd -p`
 
-3. Restart the Svetovid service:
+0. Restart the Svetovid service:
 
     `sudo systemctl start svetovid.service --now`
 
-4. Create a device instance in Coiote DM:
+0. Create a device instance in Coiote DM:
     - When logged into your Coiote DM user account, go to Device Inventory and click **Add device**.
       ![Add device](images/add_device.png "add_device")
     - Provide Device ID, Key Identity and Key values as in the Svetovid config files from the earlier step.
       ![Add device credentials](images/creds.png "Credentials")
     - Wait for the connection.
 
-5. Analyze the objects exposed by the device.
+0. Analyze the objects exposed by the device.
     ![Device objects](images/rasp.png "Objects")
 
 !!! note
-    Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid.  
+    Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid, for instance the temperature object - `3303`.  
 
 ## Step 4: Implement the LwM2M temperature object `3303` (only for GrovePi)
 
