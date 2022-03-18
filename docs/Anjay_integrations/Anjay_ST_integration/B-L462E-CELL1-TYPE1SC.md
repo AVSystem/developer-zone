@@ -40,8 +40,8 @@ Enter the command line interface on your machine and paste the following command
 
     ``Press any key in 3 seconds to enter config menu...``
 
-3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it .
-      ![Client configuration](images/config_menu.png "Client configuration")
+3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
+      ![Client configuration](images/config_menu1.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
 ## Step 4: Connecting to the LwM2M Server
 
