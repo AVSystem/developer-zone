@@ -47,7 +47,7 @@ nav:
         - 'Device onboarding':
             - 'Coiote_DM_Device_Onboarding/Quick_start.md'
             - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
-        - 'Interoperability tests guide':
+        - 'Device tests':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
             - 'Interoperability_tests_guide/Test_case_actions.md'
@@ -55,7 +55,7 @@ nav:
             - 'Interoperability_tests_guide/Data_model_and_variables.md'
             - 'Interoperability_tests_guide/Running_test_cases.md'
             - 'Interoperability_tests_guide/Using_API_Jenkins_integration.md'
-        - 'Azure IoT integration guide':
+        - 'Azure IoT integrations':
             - Azure IoT Hub:
                 - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration.md'
                 - 'Device operations':
@@ -77,7 +77,7 @@ nav:
                 - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Central.md'
             - 'Tutorials':
                 - 'Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.md'
-        - 'AWS IoT Core integration guide':
+        - 'AWS IoT Core integration':
             - 'AWS_Integration_Guide/Overview.md'
             - 'Configuring the integration': 'AWS_Integration_Guide/Configuring_AWS_integration.md'
             - 'Device operations':
