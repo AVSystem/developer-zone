@@ -14,7 +14,7 @@ This guide will take you on a step-by-step journey through the integration proce
 
 Here’s how you can get started with the Coiote DM – Azure IoT integration:
 
-[Azure IoT Hub](Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} [Azure IoT Central](Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} [Azure DPS](Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension.md){: .md-button .md-button--big }
+[Azure IoT Hub](/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} [Azure IoT Central](/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} [Azure DPS](/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/){: .md-button .md-button--big }
 
 ## AWS integration guide
 
