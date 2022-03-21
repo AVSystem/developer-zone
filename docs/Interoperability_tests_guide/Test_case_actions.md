@@ -1,13 +1,13 @@
-# Test case actions
+# Test actions
 
 ## Introduction
 
-Based on the LwM2M 1.0 standard protocol operations, **Actions** are steps that can be defined within a test case. While some are used for the communication between the Server and the LwM2M test device, others help to define the test case logic. Read this chapter to learn how to use Actions in the configuration of customizable interoperability test cases.
+Based on the LwM2M 1.0 standard protocol operations, **Actions** are steps that can be defined within a test. While some are used for the communication between the Server and the LwM2M test device, others help to define the test logic. Read this chapter to learn how to use Actions in the configuration of customizable device tests.
 
 ## Action attributes
 
-All the available Actions are defined using a set of configurable attributes that you can specify while adding or editing a test case. The attributes available under each action are determined by the type of given Action.
-However, to set up a test case, not all attributes are mandatory. The general rule is that if you leave an optional attribute’s field blank, the final test case result won’t be affected in any way.
+All the available Actions are defined using a set of configurable attributes that you can specify while adding or editing a test. The attributes available under each action are determined by the type of given Action.
+However, to set up a test, not all attributes are mandatory. The general rule is that if you leave an optional attribute’s field blank, the final test result won’t be affected in any way.
 
 !!! tip
     if you would like to make the test device ignore a particular attribute so that it doesn’t answer to the server request, type ``None`` in the optional attribute’s field.
@@ -33,7 +33,9 @@ Within the Server simulator test cases, the following Actions are available (wit
 15.	Send paused response
 16.	Start Notification recording
 17.	Expect Notification
-18.	Loop start
+18. Start Send recording
+19. Expect Send
+20.	Loop start
 
 ### READ
 
@@ -211,6 +213,23 @@ Expect Notification is used to check if recorded Notifications match the require
  - Expected arrival order – use it to limit the validation only to one notification on a given path that arrived in a given order since the last Start Notification recording action. Note that the counting starts from 0 and that the Observe response is also counted if it is executed after the recording action started.
  - Timeout – if the expected notification does not arrive within this time limit, the action will fail.
  - Waiting message – a custom text that will be displayed as the test case progress message while waiting for the action execution.
+
+### Start Send recording
+
+Start Send recording is used to make the Server simulator save all Send messages sent from device in its memory. The limit of recorded Send messages can be configured using the `ddscSendRecordingLimit` setting value. Once the limit is reached, new Send messages are not recorded. Execute the Start Send recording action again in the same test to clear the recording state and to be able to match more Send messages than the recording limit.
+
+### Expect Send
+
+Expect Send is used to check if recorded Send messages match the required criteria. You can define it using five attributes:
+
+![Expect Send configuration](images/interop-expectsend.png "Expect Send configuration")
+
+* Expected path – only Send messages that were received on this path will be validated. In case of a Send message with multiple paths and values, each path and value are treated as separate messages.
+* Expected value – use it to check if there is any Send message that has a given value and matches all other criteria.
+* Expected arrival order – use it to limit the validation only to one Send message on a given path that was sent in a given order since the last Start Send recording action.
+* Timeout – if the expected Send message does not arrive within this time limit, the action fails.
+* Waiting message – a custom text that is displayed as the test progress message while waiting for the action execution.
+
 
 ### Loop start
 
