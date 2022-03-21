@@ -10,15 +10,16 @@ A device that is added and registered in the platform.
 
 1. From the navigation menu on the left, select **Device test repository** and then **Server simulator**.
 
-![Device test repository](images/interop1.png "Device test repository")
+    ![Device test repository](images/interop1.png "Device test repository")
 
-2. Click **Add test** and select one of the two options: either **Add test manually** or **Import tests from .conf file**.
+2. Click **Add test** and select **Add test manually**.
 
-![Adding a new test](images/interop2.png "Adding a new test")
+    ![Adding a new test](images/interop2.png "Adding a new test")
 
-### Add test manually
+3. Configure your test:
 
-If you've selected **Add test manually**, you need to configure your test:
+![Configure your test](images/interop3.png "Configure your test")
+
     - Provide a name for your test.
     - Under the **Action list**, click**Add action** and select **Write** from the drop down list and provide data for the following fields:
          - **Parameter name**: `Device.0.Manufacturer`,
@@ -29,12 +30,6 @@ If you've selected **Add test manually**, you need to configure your test:
          - **Expected value**: `U`,
          - **Expected response code**: `2.05 Content`.
     - Click **Add a new test**.
-
-  ![Import tests from .conf file](images/interop3.png "Import tests from .conf file")
-
-### Import tests from .conf file
-
-If you've selected **Import tests from .conf file**, a dialogue box prompting you to import a .conf file appears. Add the file and click **Import**.
 
 ## Run the test on device
 
