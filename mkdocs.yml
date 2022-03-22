@@ -84,7 +84,7 @@ nav:
                 - 'AWS_Integration_Guide/Device_operations/Operation_types.md'
             - 'Concepts':
                 - 'AWS_Integration_Guide/Concepts/AWS_Integration_concepts.md'
-        - 'Release Notes':
+        - 'Release notes':
                 - 'Release_Notes/v2021.22.1.md'
                 - 'Release_Notes/v2021.23.0.md'
                 - 'Release_Notes/v2021.24.5.md'
