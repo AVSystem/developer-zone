@@ -1,6 +1,6 @@
-# Jenkins/GitLab integration with interop tests API
+# Jenkins/GitLab integration with device tests API
 
-If you would like to automate your interoperability tests, you can use the Coiote DM API and integrate it with a CI/CD environment like Jenkins or GitLab.
+If you would like to automate your device tests, you can use the Coiote DM API and integrate it with a CI/CD environment like Jenkins or GitLab.
 Follow the guide below to learn how to configure the integration, run tests and summarize your test execution using these tools.
 
 !!! note
@@ -18,7 +18,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 ### Set up standard pipeline
 
-1. Upload a file with python script used to run test cases to your project repository:
+1. Upload a file with python script used to run tests to your project repository:
     - Edit the following python script where required to adjust it to your environment (remember to select the appropriate tab with script depending on whether you want to run your tests on a single device or a device group).
     === "Device"
           ``` python
@@ -33,7 +33,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
           INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
           CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
-          TEST_NAMES = { # type the names of the test cases that you want to execute on the device.
+          TEST_NAMES = { # type the names of the tests that you want to execute on the device.
                   "testCases":[
                           "protocol_test_1",
                           "protocol_test_2",
@@ -98,7 +98,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
           INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
           CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
-          TEST_NAMES = { # type the names of the test cases that you want to execute on the group.
+          TEST_NAMES = { # type the names of the tests that you want to execute on the group.
                   "testCases":[
                           "protocol_test_1",
                           "protocol_test_2",
@@ -186,14 +186,14 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 !!! note
     Remember to check if the device you run the tests for is connected and registered in Coiote DM.
-2. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test case.
+2. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
 ![A standard pipeline build with test result report](images/image109.png "Build with test result report")
 
 ## Jenkins multibranch pipeline
 
 ### Set up multibranch pipeline
 
-Alternatively to the standard pipeline, you may configure a multibranch pipeline to run your test cases.
+Alternatively to the standard pipeline, you may configure a multibranch pipeline to run your tests.
 
 1. Upload the `Jenkinsfile` that will define your multibranch pipeline to your project repository:
     - Edit the script where required to adjust it to your environment:
@@ -226,7 +226,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
     - Save the file as `Jenkinsfile` and upload it to the chosen branch of your project repository.
 
-2. Upload a file with python script used to run test cases to your project repository:
+2. Upload a file with python script used to run tests to your project repository:
     - Edit the following python script where required to adjust it to your environment (remember to select the appropriate tab with script depending on whether you want to run your tests on a single device or a device group).
     === "Device"
           ``` python
@@ -241,7 +241,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
           INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
           CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
-          TEST_NAMES = { # type the names of the test cases that you want to execute on the device.
+          TEST_NAMES = { # type the names of the tests that you want to execute on the device.
                   "testCases":[
                           "protocol_test_1",
                           "protocol_test_2",
@@ -306,7 +306,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
           INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
           CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
-          TEST_NAMES = { # type the names of the test cases that you want to execute on the group.
+          TEST_NAMES = { # type the names of the tests that you want to execute on the group.
                   "testCases":[
                           "protocol_test_1",
                           "protocol_test_2",
@@ -393,7 +393,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
 !!! note
     Remember to check if the device you run the tests for is connected and registered in Coiote DM.
-3. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test case.
+3. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
 ![A pipeline build with test result report](images/image108.png "Build with test result report")
 
 ## GitLab - configure and run pipeline
