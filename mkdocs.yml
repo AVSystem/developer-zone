@@ -1,5 +1,4 @@
-site_name: Coiote IoT Device Management Docs
-
+site_name: IoT Developer Zone
 theme:
   name: material
   custom_dir: overrides
@@ -27,7 +26,7 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
-  
+ 
 google_analytics:
   - UA-25246208-6 
   - auto
@@ -50,6 +49,7 @@ nav:
         - 'Device onboarding':
             - 'Coiote_DM_Device_Onboarding/Quick_start.md'
             - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
+<<<<<<< HEAD
         - 'Device tests guide':
             - 'Interoperability_tests_guide/Overview.md'
             - 'Interoperability_tests_guide/Getting_started.md'
@@ -59,6 +59,17 @@ nav:
             - 'Interoperability_tests_guide/Running_test_cases.md'
             - 'Interoperability_tests_guide/Using_API_Jenkins_integration.md'
         - 'Azure IoT integration guide':
+=======
+        - 'Device tests':
+            - 'Device_tests/Overview.md'
+            - 'Device_tests/Getting_started.md'
+            - 'Device_tests/Test_case_actions.md'
+            - 'Device_tests/Configuring_test_cases.md'
+            - 'Device_tests/Data_model_and_variables.md'
+            - 'Device_tests/Running_test_cases.md'
+            - 'Device_tests/Using_API_Jenkins_integration.md'
+        - 'Azure IoT integrations':
+>>>>>>> device_tests_updates
             - Azure IoT Hub:
                 - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration.md'
                 - 'Device operations':
@@ -80,13 +91,19 @@ nav:
                 - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Central.md'
             - 'Tutorials':
                 - 'Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.md'
-        - 'AWS IoT Core integration guide':
+        - 'AWS IoT Core integration':
             - 'AWS_Integration_Guide/Overview.md'
             - 'Configuring the integration': 'AWS_Integration_Guide/Configuring_AWS_integration.md'
             - 'Device operations':
                 - 'AWS_Integration_Guide/Device_operations/Operation_types.md'
             - 'Concepts':
                 - 'AWS_Integration_Guide/Concepts/AWS_Integration_concepts.md'
+        - 'Release Notes':
+                - 'Release_Notes/v2021.22.1.md'
+                - 'Release_Notes/v2021.23.0.md'
+                - 'Release_Notes/v2021.24.5.md'
+                - 'Release_Notes/v2021.3.2.md'
+                - 'Release_Notes/v2022.5.3.md'
 extra_css:
   - stylesheets/extra.css
 
