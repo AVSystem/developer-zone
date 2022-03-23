@@ -48,13 +48,13 @@ nav:
             - 'Coiote_DM_Device_Onboarding/Quick_start.md'
             - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
         - 'Device tests':
-            - 'Interoperability_tests_guide/Overview.md'
-            - 'Interoperability_tests_guide/Getting_started.md'
-            - 'Interoperability_tests_guide/Test_case_actions.md'
-            - 'Interoperability_tests_guide/Configuring_test_cases.md'
-            - 'Interoperability_tests_guide/Data_model_and_variables.md'
-            - 'Interoperability_tests_guide/Running_test_cases.md'
-            - 'Interoperability_tests_guide/Using_API_Jenkins_integration.md'
+            - 'Device_tests/Overview.md'
+            - 'Device_tests/Getting_started.md'
+            - 'Device_tests/Test_case_actions.md'
+            - 'Device_tests/Configuring_test_cases.md'
+            - 'Device_tests/Data_model_and_variables.md'
+            - 'Device_tests/Running_test_cases.md'
+            - 'Device_tests/Using_API_Jenkins_integration.md'
         - 'Azure IoT integrations':
             - Azure IoT Hub:
                 - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration.md'
