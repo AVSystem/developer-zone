@@ -20,16 +20,16 @@ A device that is added and registered in the platform.
 
 ![Configure your test](images/interop3.png "Configure your test")
 
-    - Provide a name for your test.
-    - Under the **Action list**, click**Add action** and select **Write** from the drop down list and provide data for the following fields:
-         - **Parameter name**: `Device.0.Manufacturer`,
-         - **Expected value**: `Example_manufacturer`,
-         - **Expected response code**: `4.05 MethodNotAllowed`.
-    - Under the **Action list**, select **Read** from the drop down list and provide data for the following fields:
-         - **Parameter name**: `LwM2M Server.1.Binding`,
-         - **Expected value**: `U`,
-         - **Expected response code**: `2.05 Content`.
-    - Click **Add a new test**.
+* Provide a name for your test.
+* Under the **Action list**, click**Add action** and select **Write** from the drop down list and provide data for the following fields:
+    * **Parameter name**: `Device.0.Manufacturer`,
+    * **Expected value**: `Example_manufacturer`,
+    * **Expected response code**: `4.05 MethodNotAllowed`.
+* Under the **Action list**, select **Read** from the drop down list and provide data for the following fields:
+    * **Parameter name**: `LwM2M Server.1.Binding`,
+    * **Expected value**: `U`,
+    * **Expected response code**: `2.05 Content`.
+* Click **Add a new test**.
 
 ## Run the test on device
 
@@ -51,9 +51,9 @@ A device that is added and registered in the platform.
 
 To see execution logs for your tests:
 
-1. While in the **Device tests** panel, find your test and click on its name.
+1. While in the **Device tests** panel, find your test and click its name.
 2. Expand the **Logs** section using the **^** arrow icon to see execution details.
 
-![Checking test results](images/image103.png "Checking test results")
+    ![Checking test results](images/image103.png "Checking test results")
 
 3. Use the **Check logs** button for each action inside the test to see the highlighted results for this action.   
