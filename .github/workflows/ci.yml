@@ -22,6 +22,7 @@ jobs:
 #      - run: docker run -v ${PWD}:/docs squidfunk/mkdocs-material:6.2.6 build 
       - run: pip install ghp-import
 #      - run: mkdocs --version
+      - run: pip install jinja2==3.0.0
       - run: mkdocs build
       - run: cp -R site dist/docs
       - run: python ghpages.py
