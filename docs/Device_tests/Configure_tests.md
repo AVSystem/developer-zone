@@ -125,9 +125,9 @@ Read this section to learn how to delete tests.
 2.	From the list, select the tests you want to delete.
 3.	There are two ways to delete the selected tests:
     * Click the **Actions** drop-down menu and select **Delete**.
-    ![Delete a test from the Actions drop-down menu](images/interop7.png "Delete a test from the Actions drop-down menu")
+    ![Delete a test from the Actions drop-down menu](images/interop7.png "Delete a test from the Actions drop-down menu"){:style="float: left;margin-right: 817px;margin-top: 10px; margin-bottom: 10px"}
     * Click the context menu :material-dots-vertical: on the right and select **Delete**.
-    ![Delete a test from the context menu](images/interop8.png "Delete a test from the context menu")
+    ![Delete a test from the context menu](images/interop8.png "Delete a test from the context menu"){:style="float: left;margin-right: 817px;margin-top: 10px; margin-bottom: 10px;"}
 
 4. In the dialog that appears, click **Delete**. The test will be permanently deleted and you won't be able to recover it.
 
