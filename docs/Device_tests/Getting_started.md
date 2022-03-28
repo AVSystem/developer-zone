@@ -21,7 +21,7 @@ A device that is added and registered in the platform.
 ![Configure your test](images/interop3.png "Configure your test")
 
 * Provide a name for your test.
-* Under the **Action list**, click**Add action** and select **Write** from the drop down list and provide data for the following fields:
+* Under the **Action list**, click **Add action**, select **Write** from the drop down list and provide data for the following fields:
     * **Parameter name**: `Device.0.Manufacturer`,
     * **Expected value**: `Example_manufacturer`,
     * **Expected response code**: `4.05 MethodNotAllowed`.
@@ -31,7 +31,7 @@ A device that is added and registered in the platform.
     * **Expected response code**: `2.05 Content`.
 * Click **Add a new test**.
 
-## Run the test on device
+## Run test on your device
 
 1. In the **Device inventory**, select a currently registered device and enter its **Device Management Center**.
 2. In **Device Management Center**, select the **Device tests** tab.
@@ -42,10 +42,10 @@ A device that is added and registered in the platform.
 3. Tick the test you have just created and click **Run selected (1)**.
 ![Running a test](images/interop5.png "Running a test")
 
-4. After a few moments, the execution should end and test status changes from `In progress` to `Success`.  
+4. After a few moments, the execution ends and the test status should change from `In progress` to `Success`.  
 
 !!! tip
-    The `Success` status of a test is a measure of the correctness of the device response against the expected test parameters. Depending on the device and tester's needs, there may be tests that are `successful` when the device responds with a *Failure* message (similarly to the example presented in this section).
+    The `Success` status of a test measures the correctness of the device response against the expected test parameters. Depending on the device and tester's needs, there may be tests that are *successful* when the device responds with a *Failure* message (similarly to the example presented in this section).
 
 ## Check test execution details
 

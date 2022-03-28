@@ -34,7 +34,7 @@ To enter the panel, select **Device test repository** and then **Server simulato
 
 ##	Listing tests
 
-The tests appearing in the **Device test repository** panel are presented in the form of a searchable alphabetical list to ensure their convenient viewing and management. Read on this section to learn how to use the search to list your test cases.
+The tests appearing in the **Device test repository** panel are presented in the form of a searchable alphabetical list to ensure their convenient viewing and management. Read on this section to learn how to use the search to list your tests.
 
 ### Using the search
 
@@ -87,6 +87,10 @@ Read this section to learn how to add a new test. You can either add a test manu
 2.	Click **Add test** and select **Import tests from .conf file**.
 3.  A dialogue box prompting you to import a `.conf` file appears. Add the file and click **Import**.
 
+!!! tip
+    To download tests into a `.conf` file, check the [Downloading tests](#downloading-tests) section.
+
+
 ## Editing tests
 
 Read this section to learn how to edit a test.
@@ -132,10 +136,10 @@ Read this section to learn how to delete tests.
 Read this section to learn how to export tests.
 
 1.	From the navigation menu, select **Device test repository**.
-2.	From the list, select the tests you want to export.
+2.	From the list, select the test(s) you want to export.
 3.  There are two ways to download the selected tests:
-    * Click the **Actions** drop-down menu and select **Download test**.
-    * Click the context menu :material-dots-vertical: on the right and select **Download test**.
+    * for batch export, click the **Actions** drop-down menu and select **Download tests**.
+    * for single test export, click the context menu :material-dots-vertical: on the right the test entry and select **Download test**.
   3. The tests are downloaded in the ``.conf`` format.
 
 !!! tip

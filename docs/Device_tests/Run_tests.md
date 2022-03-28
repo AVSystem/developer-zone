@@ -1,4 +1,4 @@
-# Running tests
+# Run tests
 
 If you have tests configured in the platform, you can run them on your device using the **Device tests** panel. Read this chapter to learn how to display test descriptions, start and stop test execution and view test results and logs.
 

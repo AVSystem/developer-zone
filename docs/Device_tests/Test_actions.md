@@ -14,28 +14,7 @@ However, to set up a test, not all attributes are mandatory. The general rule is
 
 ## Description of Actions
 
-Within the Server simulator test cases, the following Actions are available (with mandatory attributes written in bold):
-
-1.	READ
-2.	WRITE
-3.	EXECUTE
-4.	DISCOVER
-5.	DELETE
-6.	CREATE
-7.	WRITE ATTRIBUTES
-8.	CLEAR ATTRIBUTES
-9.	OBSERVE
-10.	CANCEL OBSERVE
-11.	Firmware Update
-12.	Wait
-13.	Pause response
-14.	Wait for uplink request
-15.	Send paused response
-16.	Start Notification recording
-17.	Expect Notification
-18. Start Send recording
-19. Expect Send
-20.	Loop start
+Within the Server simulator tests, the following Actions are available.
 
 ### READ
 
@@ -44,7 +23,7 @@ READ is used to access the value of an object, object instances, a resource and 
 ![READ action configuration](images/image031.png "READ action configuration")
 
  - Parameter name – the name of the data model parameter you want to read. Note that it can be specified either using the full name in the string (e.g. ‘Device.0.Manufacturer) or the numerical (e.g. 3.0.1) value of the parameter.
- - Expected value – if the value you enter here equals the value read from the device, the test will be passed. If left blank, the value will only show up in the test case log and it will have no impact on the test case result. Note that this READ attribute works only for Resources and Resource Instances.
+ - Expected value – if the value you enter here equals the value read from the device, the test will be passed. If left blank, the value will only show up in the test log and it will have no impact on the test result. Note that this READ attribute works only for Resources and Resource Instances.
  - Expected response code – if the response code you enter here equals the response code returned by the device, the test will be passed. If left blank, the server will expect the default response code defined by the LwM2M standard.
  - LwM2M: Requested content format – the content format of the device answer that you request for your read operation. If the device doesn’t support the requested format, the test will fail. If left blank, the device can decide what content format to use; any format will be accepted.
 
@@ -159,7 +138,7 @@ Firmware Update is used to perform a firmware update operation on the test devic
  - Firmware – the ID of the resource used as the firmware source.
  - Update timeout – the time period in seconds within which the firmware update should be completed. In case the timeout is up and the update process has not finished, the action will fail.
  - Delivery method – The protocol and transfer method used to deliver the firmware file to the device.
- - Use notifications – if set to true, an OBSERVE will be issued automatically for the ‘State’ and ‘Update result’ parameters while upgrading the device. The notifications returned by the device will be visible in the test case logs.
+ - Use notifications – if set to true, an OBSERVE will be issued automatically for the ‘State’ and ‘Update result’ parameters while upgrading the device. The notifications returned by the device will be visible in the test logs.
  - Expected update result – if the update result you enter here equals the result returned by the device, the test will be passed. If left blank, the server will expect the default result defined by the LwM2M standard. You can choose among the ten update results defined as per the LwM2M protocol specification.
 
 ### WAIT
@@ -169,7 +148,7 @@ Wait is used to set the waiting time before executing the next action. You can d
 ![Wait action configuration](images/image042.png "Wait action configuration")
 
  - Waiting time – the interval set before the next action is executed.
- - In progress message – a custom text that will be displayed as the test case progress message while waiting for the execution of the next action.
+ - In progress message – a custom text that will be displayed as the test progress message while waiting for the execution of the next action.
 
 ### Pause response
 
@@ -187,7 +166,7 @@ Wait for uplink request is used to prevent the server from executing any tasks o
 
  - Request type to wait for – the kind of request you want to wait for.
  - Timeout – the time period in seconds within which the uplink request should arrive. In case the timeout is up with no request, the action will fail.
- - Waiting message – the message displayed during the test case execution while waiting for the arrival of the uplink request.
+ - Waiting message – the message displayed during the test execution while waiting for the arrival of the uplink request.
 
 ### Send paused response
 
@@ -212,7 +191,7 @@ Expect Notification is used to check if recorded Notifications match the require
  - Expected value – use it to check if there is any notification that has a given value and matches all other criteria.
  - Expected arrival order – use it to limit the validation only to one notification on a given path that arrived in a given order since the last Start Notification recording action. Note that the counting starts from 0 and that the Observe response is also counted if it is executed after the recording action started.
  - Timeout – if the expected notification does not arrive within this time limit, the action will fail.
- - Waiting message – a custom text that will be displayed as the test case progress message while waiting for the action execution.
+ - Waiting message – a custom text that will be displayed as the test progress message while waiting for the action execution.
 
 ### Start Send recording
 
@@ -233,7 +212,7 @@ Expect Send is used to check if recorded Send messages match the required criter
 
 ### Loop start
 
-Loop start is used to repeat an action or a set of actions within a test case. Note that when configuring the first action inside the loop, the Loop end action is added automatically.
+Loop start is used to repeat an action or a set of actions within a test. Note that when configuring the first action inside the loop, the Loop end action is added automatically.
 
 ![Loop start action configuration](images/image050.png "Loop start action configuration")
 
