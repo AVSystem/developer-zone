@@ -87,12 +87,15 @@ nav:
             - 'Concepts':
                 - 'AWS_Integration_Guide/Concepts/AWS_Integration_concepts.md'
         - 'Release notes':
-                - 'Release_Notes/v2021.22.1.md'
-                - 'Release_Notes/v2021.23.0.md'
-                - 'Release_Notes/v2021.24.5.md'
-                - 'Release_Notes/v2021.3.2.md'
-                - 'Release_Notes/v2022.5.3.md'
+            - 2022:
+                - 'Release_Notes/v2022.8.2.md'
                 - 'Release_Notes/v2022.7.3.md'
+                - 'Release_Notes/v2022.5.3.md'
+                - 'Release_Notes/v2022.3.2.md'
+            - 2021:
+                - 'Release_Notes/v2021.24.5.md'
+                - 'Release_Notes/v2021.23.0.md'
+                - 'Release_Notes/v2021.22.1.md'
 extra_css:
   - stylesheets/extra.css
 
