@@ -181,6 +181,9 @@
         background-color: #fff;
     }
     
+    .md-content img{
+	image-rendering: -webkit-optimize-contrast; 
+    }
     .md-sidebar--primary .md-sidebar__scrollwrap{
         padding-top: 57px;
         margin-top: -60px;
