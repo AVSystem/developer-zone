@@ -2,6 +2,12 @@
 
 Start developing LwM2M applications on your ST devices in just a few clicks using our Anjay LwM2M Client based on freeRTOS or Zephyr OS.   
 
+## Espressif ESP32 board
+
+![M5Stick](images/m5stick.webp "M5Stick"){ width=50% }
+
+[Start integration](./ESP32_integration/M5Stick.md){: .md-button .md-button--big }
+
 ## STMicroelectronics boards
 
 Build a LwM2M application for your ST board using I-Cube Anjay from scratch by following our [I-CUBE-Anjay guide](../Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/).
