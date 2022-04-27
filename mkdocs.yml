@@ -37,7 +37,7 @@ nav:
         - 'Anjay integrations':
             - 'Anjay_integrations/Getting_started.md'
             - 'Anjay_integrations/Implementing_LwM2M_objects_on_RaspberryPi.md'
-            - 'STM boards':
+            - 'STMicroelectronics boards':
                 - 'Anjay_integrations/Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96.md'
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH.md'
@@ -46,7 +46,7 @@ nav:
             - 'Nordic boards':
                 - 'Anjay_integrations/Anjay_Nordic_integration/Thingy91.md'
                 - 'Anjay_integrations/Anjay_Nordic_integration/nRF9160.md'
-            - 'ESP32':
+            - 'ESP32 board':
                 - 'Anjay_integrations/ESP32_integration/M5Stick.md'
         - 'Device onboarding':
             - 'Coiote_DM_Device_Onboarding/Quick_start.md'
