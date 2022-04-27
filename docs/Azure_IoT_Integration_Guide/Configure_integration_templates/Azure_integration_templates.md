@@ -56,7 +56,11 @@ A dialog box will appear asking you to specify the group that needs to be assign
 !!! note
     One template can be assigned to more than one group.
 
-Now the devices in the **group ‘anjay’** will report data to Azure according to the way defined in the **template ‘abc_test’**. Coiote DM sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in [Azure IoT Hub](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/) and [Azure IoT Central](/Azure_IoT_Central_integration/Set_an_Observation/).)
+Now the devices in the **group ‘anjay’** will report data to Azure according to the way defined in the **template ‘abc_test’**.
+
+### Integration templates in action
+
+As you now know, the Azure integration template is based on a data model which consists of the objects and resources available on your reference device. Coiote DM sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in [Azure IoT Hub](/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/) and [Azure IoT Central](/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/).)
 
 Let’s illustrate the process with two examples. In the first case, the change in the data model is triggered by a device. When the value of the `Battery level` resource changes, the device sends **Send** or **Notify** messages via LwM2M. The device information in Coiote DM is then updated and translated to Device Twin JSON, which in turn is sent to Azure.
 
