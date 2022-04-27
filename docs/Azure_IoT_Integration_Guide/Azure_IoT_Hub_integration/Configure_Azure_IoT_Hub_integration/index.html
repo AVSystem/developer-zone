@@ -1631,7 +1631,7 @@
 <ul>
 <li>An active IoT Hub with hub owner access permissions. <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal">Check here</a> how to create a hub.</li>
 <li>A Coiote DM user account with permissions to use the Hyperscaler Integration Center.</li>
-<li>An active Azure Blob Storage account.</li>
+<li>An active Azure Blob Storage account (creating a new dedicated account for the integration is required).</li>
 </ul>
 <h2 id="get-the-iot-hub-connection-string">Get the IoT Hub connection string<a class="headerlink" href="#get-the-iot-hub-connection-string" title="Permanent link">#</a></h2>
 <p>The Azure IoT Hub connection string is required in the integration process. Here is how to obtain it:</p>
@@ -1653,6 +1653,10 @@
 </li>
 </ol>
 <h2 id="get-the-azure-blob-storage-connection-string">Get the Azure Blob storage connection string<a class="headerlink" href="#get-the-azure-blob-storage-connection-string" title="Permanent link">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For the integration to work properly, it is required to have an empty Azure Blob storage account dedicated exclusively for the integration. </p>
+</div>
 <p>An Azure Blob storage connection string is required in the integration process. Here is how to obtain it:</p>
 <ol>
 <li>In your Azure Blob storage account, go to <strong>Access keys</strong>.
@@ -1733,7 +1737,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2022</span>
     
   </small>
 </div>
