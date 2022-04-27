@@ -6,7 +6,7 @@ To enable communication and data flow between the Azure IoT Hub and Coiote DM pl
 
   - An active IoT Hub with hub owner access permissions. [Check here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) how to create a hub.
   - A Coiote DM user account with permissions to use the Hyperscaler Integration Center.
-  - An active Azure Blob Storage account.
+  - An active Azure Blob Storage account (creating a new dedicated account for the integration is required).
 
 ## Get the IoT Hub connection string
 
@@ -25,6 +25,9 @@ The Azure IoT Hub connection string is required in the integration process. Here
         For detailed information about the IoT Hub permissions, please visit the [Control access to IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#access-control-and-permissions) section of the Azure IoT Hub documentation.
 
 ## Get the Azure Blob storage connection string
+
+!!! important
+    For the integration to work properly, it is required to have an empty Azure Blob storage account dedicated exclusively for the integration. 
 
 An Azure Blob storage connection string is required in the integration process. Here is how to obtain it:
 
