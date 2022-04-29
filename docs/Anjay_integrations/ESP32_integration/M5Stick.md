@@ -16,24 +16,7 @@ Enter the command line interface on your machine and paste the following command
    git clone --recursive https://github.com/AVSystem/Anjay-esp32-client
    ```
 
-## Step 2:  
-
-0. Run `idf.py set-target esp32` in your project directory.
-0. Run `idf.py menuconfig`.
-    - navigate to Component config/anjay-esp32-client:
-        - select one of supported boards or manually configure the board in Board options menu.
-        - configure Anjay in Client options menu.
-        - configure WiFi in Connection configuration menu.
-0. Run `idf.py build` to compile.
-0. Run `idf.py flash` to flash.
-
-    !!! note
-        M5StickC-Plus does not support default baud rate, run `idf.py -b 750000 flash` to flash it.
-
-0. The logs will be on the same `/dev/ttyUSB<n>` port that the above used for flashing, 115200 8N1
-    - You can use `idf.py monitor` to see logs on serial output from a connected device, or even more conveniently `idf.py flash monitor` as one command to see logs right after the device is flashed
-
-## Step 3: Configure the client using an NVS partition
+## Step 2: Configure the client using an NVS partition
 
 0. Create a `nvs_config.csv` file and provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). You can use the following snippet as a template:
 
@@ -47,7 +30,7 @@ psk,data,string,[psk]
 uri,data,string,[lwm2m_server_uri]
 ```
 !!! important
-    The **Identity** parameter stands for both the device endpoint name and its PSK identity (therefore they must be identical in Coiote DM).  
+    The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.  
 
 0. Generate the NVS partition:
 
@@ -57,7 +40,7 @@ python3 tools/nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x6000
 
 ![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
-## Step 4: Add device to the LwM2M Server
+## Step 4: Add device to Coiote DM
 
 To connect your M5Stick to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://www.avsystem.com/try-anjay/ to get access.
 
@@ -86,13 +69,11 @@ pip install esptool
 ```
 
 0. Flash the board:
-
 ```
 esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
 ```
 
 0. Flash the NVS partition binary:
-
 ```
 esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
 ```
@@ -100,3 +81,37 @@ esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
 Once executed, the device will be reset and run with the configuration you provided.
 
 ![Registered device](images/registered_device.png "Registered device")
+
+## M5Stick LwM2M objects
+
+After successful connection to Coiote DM, you can explore the available device objects.
+
+| Target         | Objects
+|----------------|---------------------------------------------
+| ESP32 common   | Security (/0)<br>Server (/1)<br>Device (/3)<br>Firmware Update (/5)<br>WLAN connectivity (/12)
+| M5StickC-Plus  | Push button (/3347)<br>Light control (/3311)<br>Temperature sensor (/3303)<br>Accelerometer (/3313)<br>Gyroscope (/3343)
+
+
+## Upgrade device firmware over the air
+
+To perform a FOTA upgrade, you need an established connection between the M5Stick and Coiote DM (see instructions above).
+
+### Build new firmware version
+
+0. Go to your `anjay-esp32-client` project directory and run:
+```
+idf.py set-target esp32
+idf.py build
+```
+Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build/anjay-esp32-client.bin`.
+
+### Schedule the upgrade in Coiote DM
+
+0. In your Coiote DM account, select your device in **Device inventory** and click the **LwM2M Firmware** tab.
+![LwM2M firmware tab](images/lwm2m_firmware.png "LwM2M firmware tab")
+0. Click **Schedule new firmware upgrade**.
+0. Click **Upload** to select the binary file from your local drive, select **COAP** in the **Image delivery protocol**, and click **Upgrade**.
+![Scheduling FOTA](images/schedule_fota.png "Scheduling FOTA")
+0. The FOTA upgrade is now scheduled. Note that it might take a few minutes to complete.
+0. Once the upgrade is finished, you can check the new version of the firmware under **Current firmware**.
+![Current firware](images/current_firmware.png "Current firware")
