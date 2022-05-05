@@ -13,16 +13,14 @@ Follow the instruction below to learn how to create integration templates and th
 
 ## Create a new template
 
-1. In your Coiote DM user account, go to **Administration —> Azure integration**.
+1. In your Coiote DM user account, go to **Hyperscaler Integration Center** and select the **Templates** tab.
 
     ![Go to Azure integration](images/azure_navbar.png "Go to Administration —> Azure integration"){: .center }
 
-2. You will see the page with existing templates. Click **Add new** in the top-right corner.
+2. Click **Add new** in the top-right corner.
 3. In the **Create new template** wizard that appears, provide the Basic data:
     * **Template name**
-    * **Reference device**. Note that the device must be connected at least once so that Coiote DM can use its data model. (Read more about data models in the [brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html).)
-
-        ![Data model scheme](images/templ_name.png "Data model scheme"){: .center }
+    * **Azure IoT Central template model ID**. This step is optional. If it's enabled, copy and paste the model ID of a device template from the Azure [public model repository](https://github.com/Azure/iot-plugandplay-models). In this case, Coiote DM won’t generate the template for Azure IoT Central. This model ID will be used as DPS payload while the device is connected to Azure IoT Central. Note that the assigned model ID can’t be changed.
 
     Click **Next step**.
 
