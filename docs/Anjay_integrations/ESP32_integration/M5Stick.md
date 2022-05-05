@@ -82,7 +82,7 @@ Once executed, the device will be reset and run with the configuration you provi
 
 ![Registered device](images/registered_device.png "Registered device")
 
-## M5Stick LwM2M objects
+## M5StickC LwM2M objects
 
 After successful connection to Coiote DM, you can explore the available device objects.
 
