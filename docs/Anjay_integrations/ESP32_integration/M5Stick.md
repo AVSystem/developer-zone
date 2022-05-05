@@ -1,11 +1,11 @@
-# M5Stick
+# M5StickC
 
 Integrate your ESP32-based device to manage it via Coiote DM.
 
 ## Prerequisites
 
-- An M5Stick device.
-- Installed ESP-IDF and dependencies (steps 1-4 from https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)
+- An M5StickC device.
+- Installed ESP-IDF and dependencies (installation steps 1-4 from https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html). Supported ESP-IDF version is v4.4.
 - A user with access to the Coiote IoT Device Management platform.
 
 ## Step 1: Clone Anjay ESP32 client repository
@@ -20,29 +20,38 @@ Enter the command line interface on your machine and paste the following command
 
 0. Create a `nvs_config.csv` file and provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). You can use the following snippet as a template:
 
-```
-key,type,encoding,value
-config,namespace,,
-wifi_ssid,data,string,[wifi_ssid]
-wifi_pswd,data,string,[wifi_password]
-identity,data,string,[identity]
-psk,data,string,[psk]
-uri,data,string,[lwm2m_server_uri]
-```
-!!! important
-    The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.  
+    !!! important
+        The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.  
+
+    ```
+    key,type,encoding,value
+    config,namespace,,
+    wifi_ssid,data,string,[wifi_ssid]
+    wifi_pswd,data,string,[wifi_password]
+    wifi_inter_en,data,u8,1
+    identity,data,string,[identity]
+    psk,data,string,[psk]
+    uri,data,string,[lwm2m_server_uri]
+    writable_wifi,namespace,,
+    wifi_ssid,data,string,[wifi_ssid]
+    wifi_pswd,data,string,[wifi_password]
+    wifi_inter_en,data,u8,0
+    ```
+
+    !!! Note
+        The additional parameters under the **writable_wifi** namespace are used to provide a secondary Wi-Fi configuration (it is not obligatory). This allows for switching between Wi-Fi configurations while the device is running.
 
 0. Generate the NVS partition:
 
 ```
-python3 tools/nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x6000
+python3 tools/nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 ```
 
 ![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
 ## Step 4: Add device to Coiote DM
 
-To connect your M5Stick to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://www.avsystem.com/try-anjay/ to get access.
+To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://www.avsystem.com/try-anjay/ to get access.
 
 To connect the board:
 
@@ -51,11 +60,11 @@ To connect the board:
 0. Select the **Connect your LwM2M device directly via the Management server** tile.
 ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
 0. In the **Device credentials** step:
-    - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
+    - In the **Device ID** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
       ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-    - In the **Security mode** section, select the **PSK** mode:
-    - In the **Key identity** field, type `test_device`.
-    - In the **Key** field, type the shared secret used in the device-server authentication.  
+    - In the **Security mode** section, select the **PSK** mode.
+    - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
+    - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.  
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
 0. In the **Connect your device** step, wait for the board to connect.
 
@@ -80,9 +89,9 @@ esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
 
 Once executed, the device will be reset and run with the configuration you provided.
 
-![Registered device](images/registered_device.png "Registered device")
+    ![Registered device](images/registered_device.png "Registered device")
 
-## M5Stick LwM2M objects
+## M5StickC LwM2M objects
 
 After successful connection to Coiote DM, you can explore the available device objects.
 
@@ -94,24 +103,33 @@ After successful connection to Coiote DM, you can explore the available device o
 
 ## Upgrade device firmware over the air
 
-To perform a FOTA upgrade, you need an established connection between the M5Stick and Coiote DM (see instructions above).
+To perform a FOTA upgrade, you need an established connection between the M5StickC and Coiote DM (see instructions above).
 
 ### Build new firmware version
 
-0. Go to your `anjay-esp32-client` project directory and run:
-```
-idf.py set-target esp32
-idf.py build
-```
-Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build/anjay-esp32-client.bin`.
+1. Go to your `anjay-esp32-client` project directory and run:
+  ```
+  idf.py set-target esp32
+  ```
+2. Run `idf.py menuconfig`, navigate to `Component config/anjay-esp32-client`, and from the supported boards, select **M5StickC**.
+3. Run `idf.py build`.
+4. Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build/anjay-esp32-client.bin`.
 
-### Schedule the upgrade in Coiote DM
+### Schedule upgrade in Coiote DM
 
 0. In your Coiote DM account, select your device in **Device inventory** and click the **LwM2M Firmware** tab.
-![LwM2M firmware tab](images/lwm2m_firmware.png "LwM2M firmware tab")
+
+    ![LwM2M firmware tab](images/lwm2m_firmware.png "LwM2M firmware tab")
+
 0. Click **Schedule new firmware upgrade**.
 0. Click **Upload** to select the binary file from your local drive, select **COAP** in the **Image delivery protocol**, and click **Upgrade**.
-![Scheduling FOTA](images/schedule_fota.png "Scheduling FOTA")
+
+    !!! tip
+        The **COAPS** option is also supported. To use it, you need to additionally provide the **Base URI** parameter.  
+
+    ![Scheduling FOTA](images/schedule_fota.png "Scheduling FOTA")
+
 0. The FOTA upgrade is now scheduled. Note that it might take a few minutes to complete.
+
 0. Once the upgrade is finished, you can check the new version of the firmware under **Current firmware**.
-![Current firware](images/current_firmware.png "Current firware")
+    ![Current firware](images/current_firmware.png "Current firware")
