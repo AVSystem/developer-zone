@@ -4,7 +4,7 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 
 ## Prerequisites
 
-- An M5Stick device.
+- An M5StickC device.
 - Installed ESP-IDF and dependencies (steps 1-4 from https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)
 - A user with access to the Coiote IoT Device Management platform.
 
