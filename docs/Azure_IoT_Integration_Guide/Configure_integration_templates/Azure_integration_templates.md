@@ -4,18 +4,17 @@ Integration templates define the format in which the data is exchanged between d
 
 If you select the Property option, then Coiote DM reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the [LwM2M mappings](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/) section.
 
-Follow the instruction below to learn how to create integration templates and then assign them to [device groups](https://lwm2m-test.avsystem.io/doc/user/User_Guide/Device_management/Managing_device_groups_toctree.html). You can edit or remove a group assignment at any time.
+Follow the instruction below to create integration templates and learn how they work.
 
 ## Prerequisites
 1. An active Azure IoT Central, IoT Hub, or DPS with hub owner access permissions.
-2. A Coiote DM user account with permissions to use the integration extension.
-3. A device group created in Coiote DM.
+2. A Coiote DM user account with permissions to use Hyperscaler Integration Center.
 
 ## Create a new template
 
 1. In your Coiote DM user account, go to **Hyperscaler Integration Center** and select the **Templates** tab.
 
-    ![Go to Azure integration](images/azure_navbar.png "Go to Administration —> Azure integration"){: .center }
+    ![Go to Hyperscaler Integration Center and select Templates](images/hicTemplate1.png "Go to Hyperscaler Integration Center and select Templates")
 
 2. Click **Add new** in the top-right corner.
 3. In the **Create new template** wizard that appears, provide the Basic data:
@@ -24,63 +23,33 @@ Follow the instruction below to learn how to create integration templates and th
 
     Click **Next step**.
 
-4. The **Data model scheme** page displays the list of all LwM2M objects that are available on your reference device.
+4. The **Data model scheme** page displays the list of all LwM2M objects that are available to you.
 
-    * To choose the objects and resources that you want to report to Azure, expand the lists and check the respective boxes.
-    * Select the format for each resource that needs to be reported: Telemetry, Property, or Command.
+    * To choose the objects and resources that you want to report to Azure, expand the lists and check the respective boxes. To add more objects or resources, click **Add missing objects**.
+    * Select the type of data that needs to be reported (Capability type): Telemetry, Property, or Command.
 
-    ![Provide basic data](images/datamodelscheme.png "Provide basic data"){: .center }
+    ![Provide basic data](images/hicTemplate2.png "Provide basic data")
 
     !!! Example
         `Manufacturer` is unlikely to change over time, so it is a **Property**. `Reboot` is an executable **Command**. `Battery Level` is more ambiguous: it can be a property if we just want to have the actual value. But because we want to have its historical values, it is a **Telemetry**.
 
 5. Click **Next step**.
 
-6. Check the Summary and click **Save template**.
-
-## Assign a template to a group
-
-Now that you have a template, you need to assign it to a group. Here is how you create groups in Coiote DM:
-
-1. Go to **Administration —> Azure integration** and see the list of Azure integration templates that exist in your domain.
-2. To assign a template to a specific group, click on the context menu next to the template name and select **Assign to group**.
-
-![Assign template to group](images/templ_assign.png "Assign template to group"){: .center }
-
-A dialog box will appear asking you to specify the group that needs to be assigned to this template. Select and click Confirm.
-
-![Assign template to group- dialog](images/templ-assign-group.png "Assign template to group- dialog"){: .center }
-
-!!! note
-    One template can be assigned to more than one group.
-
-Now the devices in the **group ‘anjay’** will report data to Azure according to the way defined in the **template ‘abc_test’**.
+6. Check the **Summary** and click **Save template**.
 
 ### How integration templates work
 
-As you now know, the Azure integration template is based on a data model which consists of the objects and resources available on your reference device. Coiote DM sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in [Azure IoT Hub](/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/) and [Azure IoT Central](/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/).)
+As you now know, the Azure integration template is based on a data model which consists of the objects and resources. Coiote DM sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in [Azure IoT Hub](/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/) and [Azure IoT Central](/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/).)
 
 Let’s illustrate the process with two examples. In the first case, the change in the data model is triggered by the device. When the value of the `Battery level` resource changes, the device sends **Send** or **Notify** messages via LwM2M. The device information in Coiote DM is then updated and translated to Device Twin JSON, which in turn is sent to Azure.
 
 !!! info
-    **Send** and **Notify** messages are sent when `Battery level` is a property. When it's a telemetry, then device-to-cloud messages are used.
+    **Send** and **Notify** messages are sent when `Battery level` is a property. When it's a telemetry, then Device-to-cloud messages are used.
 
 In the second example, the change in the data model is triggered by Coiote DM. When you set an Observation on the `Battery level`, this information is sent to Azure in the Device Twin JSON. To check whether the values of the `Battery level` resource on the device and Coiote DM are the same, Coiote DM performs a **READ** operation on this resource. If the value is different, a **WRITE** operation is performed to change the value in Coiote DM. Then the Device Twin JSON is updated and sent to Azure.
 
 !!! info
     **Default minimal LwM2M schema** and **Default rich LwM2M schema** are the default Azure integration templates. You can also use them to generate a template for Azure IoT Central. **Default minimal LwM2M schema** contains only two objects: `LwM2M Server` and `Device` that are necessary to connect a device to a LwM2M server. **Default rich LwM2M schema** contains some additional objects that describe the current state of a device, as well as objects related to [FOTA](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/). You can use these default templates to test your integration or for some basic operations. If you have a more complex case (e.g., your device contains other LwM2M objects), then you need to create a new template or copy and edit the default template.
-
-## Edit an assignment
-
-1. Go to **Administration —> Azure integration** and see the list of Azure integration templates that exist in your domain.
-2. To assign the template to another group, click on the context menu next to the template name and select **Edit group assignment**.
-3. A dialog box will appear asking you to specify a new group that needs to assigned to this template. Select and click **Confirm**.
-
-![Remove or edit the assignment](images/templ_remove.png "Remove or edit the assignment"){: .center }
-
-## Remove an assignment
-1. Go to **Administration —> Azure integration** and see the list of Azure integration templates that exist in your domain.
-2. To unassign the template from the group, click on the context menu next to the template and select **Remove from group**. To confirm, click **Remove** in the dialog box.
 
 ## Next steps
  - [Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)
