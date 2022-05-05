@@ -94,7 +94,7 @@ After successful connection to Coiote DM, you can explore the available device o
 
 ## Upgrade device firmware over the air
 
-To perform a FOTA upgrade, you need an established connection between the M5Stick and Coiote DM (see instructions above).
+To perform a FOTA upgrade, you need an established connection between the M5StickC and Coiote DM (see instructions above).
 
 ### Build new firmware version
 
