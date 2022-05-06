@@ -1108,26 +1108,18 @@
     Create a new template
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assign-a-template-to-a-group" class="md-nav__link">
-    Assign a template to a group
+    <nav class="md-nav" aria-label="Create a new template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-integration-templates-work" class="md-nav__link">
+    How integration templates work
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#edit-an-assignment" class="md-nav__link">
-    Edit an assignment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-an-assignment" class="md-nav__link">
-    Remove an assignment
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1598,26 +1590,18 @@
     Create a new template
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assign-a-template-to-a-group" class="md-nav__link">
-    Assign a template to a group
+    <nav class="md-nav" aria-label="Create a new template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-integration-templates-work" class="md-nav__link">
+    How integration templates work
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#edit-an-assignment" class="md-nav__link">
-    Edit an assignment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-an-assignment" class="md-nav__link">
-    Remove an assignment
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1652,80 +1636,62 @@
 
 <!-- Markdown content -->
 <h1 id="configure-integration-templates">Configure integration templates<a class="headerlink" href="#configure-integration-templates" title="Permanent link">#</a></h1>
-<p>Integration templates define the format in which the data is exchanged between devices and Azure. The data can be either a property or a telemetry. Property describes the actual value — e.g., at 1:00 PM a thermometer shows 5 C, and only this value is sent. Telemetry is used to observe changes in values — e.g., it was 5 C at 1:00 PM, and one hour later it’s 6 C. In other words, you need to decide whether you want to send and receive historical data or not.</p>
-<p>If you select the Property option, then Coiote DM reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/">LwM2M mappings</a> section.</p>
-<p>Follow the instruction below to learn how to create integration templates and then assign them to <a href="https://lwm2m-test.avsystem.io/doc/user/User_Guide/Device_management/Managing_device_groups_toctree.html">device groups</a>. You can edit or remove a group assignment at any time.</p>
+<p>Integration templates define the format in which the data is exchanged between devices and Azure. The data can be either a property or a telemetry. Property describes the actual value. For example: at 1:00 PM a thermometer shows 5°C, and only this value is sent. Telemetry is used to observe changes in values. For example: it was 5°C at 1:00 PM, and one hour later it’s 6°C. In other words, you need to decide whether you want to send and receive historical data or not.</p>
+<p>If you select the Property option, then Coiote DM reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the <a href="/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/">LwM2M mappings</a> section.</p>
+<p>Follow the instruction below to create integration templates and learn how they work.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ol>
 <li>An active Azure IoT Central, IoT Hub, or DPS with hub owner access permissions.</li>
-<li>A Coiote DM user account with permissions to use the integration extension.</li>
-<li>A device group created in Coiote DM.</li>
+<li>A Coiote DM user account with permissions to use Hyperscaler Integration Center.</li>
 </ol>
 <h2 id="create-a-new-template">Create a new template<a class="headerlink" href="#create-a-new-template" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p>In your Coiote DM user account, go to <strong>Administration —&gt; Azure integration</strong>.</p>
-<p><img alt="Go to Azure integration" class="center" src="../images/azure_navbar.png" title="Go to Administration —&gt; Azure integration" /></p>
+<p>In your Coiote DM user account, go to <strong>Hyperscaler Integration Center</strong> and select the <strong>Templates</strong> tab.</p>
+<p><img alt="Go to Hyperscaler Integration Center and select Templates" src="../images/hicTemplate1.png" title="Go to Hyperscaler Integration Center and select Templates" /></p>
 </li>
 <li>
-<p>You will see the page with existing templates. Click <strong>Add new</strong> in the top-right corner.</p>
+<p>Click <strong>Add new</strong> in the top-right corner.</p>
 </li>
 <li>
 <p>In the <strong>Create new template</strong> wizard that appears, provide the Basic data:</p>
 <ul>
 <li><strong>Template name</strong></li>
-<li>
-<p><strong>Reference device</strong>. Note that the device must be connected at least once so that Coiote DM can use its data model. (Read more about data models in the <a href="https://avsystem.github.io/Anjay-doc/LwM2M.html">brief description of OMA LwM2M</a>.)</p>
-<p><img alt="Data model scheme" class="center" src="../images/templ_name.png" title="Data model scheme" /></p>
-</li>
+<li><strong>Azure IoT Central template model ID</strong>. This step is optional. If it's enabled, copy and paste the model ID of a device template from the Azure <a href="https://github.com/Azure/iot-plugandplay-models">public model repository</a>. This model ID will be used as DPS payload while the device is connected to Azure IoT Central. In this case, Coiote DM won’t generate the template for Azure IoT Central. Note that the assigned model ID can’t be changed.</li>
 </ul>
 <p>Click <strong>Next step</strong>.</p>
 </li>
 <li>
-<p>The <strong>Data model scheme</strong> page displays the list of all LwM2M objects that are available on your reference device.</p>
+<p>The <strong>Data model scheme</strong> page displays the list of all LwM2M objects that are available to you.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you don't specify the <strong>Azure IoT Central template model ID</strong>, the Data model scheme by default will contain only two objects: <code>LwM2M Server</code> and <code>Device</code> that are necessary to connect a device to a LwM2M server. You can use this default template to test your integration or for some basic operations. If you have a more complex case (for example, your device contains other LwM2M objects), then you need to add missing objects.</p>
+</div>
 <ul>
-<li>To choose the objects and resources that you want to report to Azure, expand the lists and check the respective boxes.</li>
-<li>Select the format for each resource that needs to be reported: Telemetry, Property, or Command.</li>
+<li>To choose the objects and resources that you want to report to Azure, expand the lists and check the respective boxes. To add more objects or resources, click <strong>Add missing objects</strong>.</li>
+<li>Select the type of data that needs to be reported (Capability type): Telemetry, Property, or Command.</li>
 </ul>
-<p><img alt="Provide basic data" class="center" src="../images/datamodelscheme.png" title="Provide basic data" /></p>
+<p><img alt="Provide basic data" src="../images/hicTemplate2.png" title="Provide basic data" /></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><code>Manufacturer</code> is unlikely to change over time, so it is a <strong>Property</strong>. <code>Reboot</code> is an executable <strong>Command</strong>. <code>Battery Level</code> is more ambiguous: it can be a property if we just want to have the actual value. But because we want to have its historical values, it is a <strong>Telemetry</strong>.</p>
 </div>
 </li>
-</ol>
+<li>
 <p>Click <strong>Next step</strong>.</p>
-<p>Check the Summary and click <strong>Save template</strong>.</p>
-<h2 id="assign-a-template-to-a-group">Assign a template to a group<a class="headerlink" href="#assign-a-template-to-a-group" title="Permanent link">#</a></h2>
-<p>Now that you have a template, you need to assign it to a group. Learn more about how to create groups in Coiote DM.</p>
-<ol>
-<li>Go to <strong>Administration —&gt; Azure integration</strong> and see the list of Azure integration templates that exist in your domain.</li>
-<li>To assign a template to a specific group, click on the context menu next to the template name and select <strong>Assign to group</strong>.</li>
+</li>
+<li>
+<p>Check the <strong>Summary</strong> and click <strong>Save template</strong>.</p>
+</li>
 </ol>
-<p><img alt="Assign template to group" class="center" src="../images/templ_assign.png" title="Assign template to group" /></p>
-<p>A pop-up window will appear asking you to specify the group that needs to be assigned to this template. Select and click Confirm.</p>
-<p><img alt="Assign template to group- pop-up window" class="center" src="../images/templ-assign-group.png" title="Assign template to group- pop-up window" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>One template can be assigned to more than one group.</p>
-</div>
-<p>Now the devices in the <strong>group ‘anjay’</strong> will report data to Azure according to the way defined in the <strong>template ‘abc_test’</strong>.</p>
+<h3 id="how-integration-templates-work">How integration templates work<a class="headerlink" href="#how-integration-templates-work" title="Permanent link">#</a></h3>
+<p>As you now know, the Azure integration template is based on a data model which consists of the objects and resources. Coiote DM sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/">Azure IoT Hub</a> and <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/">Azure IoT Central</a>.)</p>
+<p>Let’s illustrate the process with two examples. In the first case, the change in the data model is triggered by the device. <code>Battery level</code> is defined as a property. When the value of the <code>Battery level</code> resource changes, the device sends <strong>Send</strong> or <strong>Notify</strong> messages via LwM2M. The device information in Coiote DM is then updated and translated to Device Twin JSON, which in turn is sent to Azure.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p><strong>Default minimal LwM2M schema</strong> and <strong>Default rich LwM2M schema</strong> are the default Azure integration templates that you can use to generate a template for Azure IoT Central. <strong>Default minimal LwM2M schema</strong> contains only two objects: <code>LwM2M Server</code> and <code>Device</code> that are necessary to connect a device to a LwM2M server. <strong>Default rich LwM2M schema</strong> contains some additional objects that describe the current state of a device, as well as objects related to <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware/">FOTA</a>. You can use these default templates to test your integration or for some basic operations. If you have a more complex case (e.g., your device contains other LwM2M objects), then you need to create a new template or copy and edit the default template.</p>
+<p>When <code>Battery level</code> is defined as a telemetry, then Device-to-cloud messages are used.</p>
 </div>
-<h2 id="edit-an-assignment">Edit an assignment<a class="headerlink" href="#edit-an-assignment" title="Permanent link">#</a></h2>
-<ol>
-<li>Go to <strong>Administration —&gt; Azure integration</strong> and see the list of Azure integration templates that exist in your domain.</li>
-<li>To assign the template to another group, click on the context menu next to the template name and select <strong>Edit group assignment</strong>.</li>
-<li>A pop-up window will appear asking you to specify a new group that needs to assigned to this template. Select and click <strong>Confirm</strong>.</li>
-</ol>
-<p><img alt="Remove or edit the assignment" class="center" src="../images/templ_remove.png" title="Remove or edit the assignment" /></p>
-<h2 id="remove-an-assignment">Remove an assignment<a class="headerlink" href="#remove-an-assignment" title="Permanent link">#</a></h2>
-<ol>
-<li>Go to <strong>Administration —&gt; Azure integration</strong> and see the list of Azure integration templates that exist in your domain.</li>
-<li>To unassign the template from the group, click on the context menu next to the template and select <strong>Remove from group</strong>. To confirm, click <strong>Remove</strong> in the pop-up window.</li>
-</ol>
+<p>In the second example, the change in the data model is triggered by Coiote DM. When you set an Observation on the <code>Battery level</code>, this information is sent to Azure in the Device Twin JSON. To check whether the values of the <code>Battery level</code> resource on the device and Coiote DM are the same, Coiote DM performs a <strong>READ</strong> operation on this resource. If the value is different, a <strong>WRITE</strong> operation is performed to change the value in Coiote DM. Then the Device Twin JSON is updated and sent to Azure.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/">Air quality monitoring - tutorial</a></li>
@@ -1791,7 +1757,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 29, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2022</span>
     
   </small>
 </div>
