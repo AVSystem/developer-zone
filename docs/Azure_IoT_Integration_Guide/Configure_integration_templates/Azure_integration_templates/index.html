@@ -1637,7 +1637,7 @@
 <!-- Markdown content -->
 <h1 id="configure-integration-templates">Configure integration templates<a class="headerlink" href="#configure-integration-templates" title="Permanent link">#</a></h1>
 <p>Integration templates define the format in which the data is exchanged between devices and Azure. The data can be either a property or a telemetry. Property describes the actual value. For example: at 1:00 PM a thermometer shows 5°C, and only this value is sent. Telemetry is used to observe changes in values. For example: it was 5°C at 1:00 PM, and one hour later it’s 6°C. In other words, you need to decide whether you want to send and receive historical data or not.</p>
-<p>If you select the Property option, then Coiote DM reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the <a href="/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/">LwM2M mappings</a> section.</p>
+<p>If you select the Property option, then Coiote DM reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the <a href="/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/">LwM2M mappings</a> section.</p>
 <p>Follow the instruction below to create integration templates and learn how they work.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ol>
@@ -1685,7 +1685,7 @@
 </li>
 </ol>
 <h3 id="how-integration-templates-work">How integration templates work<a class="headerlink" href="#how-integration-templates-work" title="Permanent link">#</a></h3>
-<p>As you now know, the Azure integration template is based on a data model which consists of the objects and resources. Coiote DM sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/">Azure IoT Hub</a> and <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/">Azure IoT Central</a>.)</p>
+<p>As you now know, the Azure integration template is based on a data model which consists of the objects and resources. Coiote DM sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in <a href="/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/">Azure IoT Hub</a> and <a href="/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/">Azure IoT Central</a>.)</p>
 <p>Let’s illustrate the process with two examples. In the first case, the change in the data model is triggered by the device. <code>Battery level</code> is defined as a property. When the value of the <code>Battery level</code> resource changes, the device sends <strong>Send</strong> or <strong>Notify</strong> messages via LwM2M. The device information in Coiote DM is then updated and translated to Device Twin JSON, which in turn is sent to Azure.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
