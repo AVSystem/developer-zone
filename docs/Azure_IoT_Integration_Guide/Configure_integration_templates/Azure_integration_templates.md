@@ -26,7 +26,7 @@ Follow the instruction below to create integration templates and learn how they 
 4. The **Data model scheme** page displays the list of all LwM2M objects that are available to you.
 
     !!! info
-        If you don't specify the **Azure IoT Central template model ID**, the **Data model scheme** by default will contain only two objects: `LwM2M Server` and `Device` that are necessary to connect a device to a LwM2M server. You can use this default template to test your integration or for some basic operations. If you have a more complex case (for example, your device contains other LwM2M objects), then you need to add missing objects.
+        If you don't specify the **Azure IoT Central template model ID**, the Data model scheme by default will contain only two objects: `LwM2M Server` and `Device` that are necessary to connect a device to a LwM2M server. You can use this default template to test your integration or for some basic operations. If you have a more complex case (for example, your device contains other LwM2M objects), then you need to add missing objects.
 
     * To choose the objects and resources that you want to report to Azure, expand the lists and check the respective boxes. To add more objects or resources, click **Add missing objects**.
     * Select the type of data that needs to be reported (Capability type): Telemetry, Property, or Command.
