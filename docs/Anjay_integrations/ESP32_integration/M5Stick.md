@@ -5,7 +5,7 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 ## Prerequisites
 
 - An M5StickC device.
-- Installed ESP-IDF and dependencies (installation steps 1-4 from https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html). Supported ESP-IDF version is v4.4.
+- Installed ESP-IDF and dependencies (installation steps 1-4 from [ESP32 official documentation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)). Supported ESP-IDF version is v4.4.
 - A user with access to the Coiote IoT Device Management platform.
 
 ## Step 1: Clone Anjay ESP32 client repository
@@ -89,7 +89,7 @@ esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
 
 Once executed, the device will be reset and run with the configuration you provided.
 
-    ![Registered device](images/registered_device.png "Registered device")
+   ![Registered device](images/registered_device.png "Registered device")
 
 ## M5StickC LwM2M objects
 
@@ -107,10 +107,7 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 
 ### Build new firmware version
 
-1. Go to your `anjay-esp32-client` project directory and run:
-  ```
-  idf.py set-target esp32
-  ```
+1. Go to your `anjay-esp32-client` project directory and run `idf.py set-target esp32`.
 2. Run `idf.py menuconfig`, navigate to `Component config/anjay-esp32-client`, and from the supported boards, select **M5StickC**.
 3. Run `idf.py build`.
 4. Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build/anjay-esp32-client.bin`.
@@ -125,7 +122,7 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 0. Click **Upload** to select the binary file from your local drive, select **COAP** in the **Image delivery protocol**, and click **Upgrade**.
 
     !!! tip
-        The **COAPS** option is also supported. To use it, you need to additionally provide the **Base URI** parameter.  
+        The **COAPS** option is also supported. To use it, you may need to additionally provide the **Base URI** parameter (depending on your server settings).  
 
     ![Scheduling FOTA](images/schedule_fota.png "Scheduling FOTA")
 
