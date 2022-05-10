@@ -42,7 +42,7 @@ To send a request for a READ operation to a device:
          }
         ```
 
-5. Click **Save**.
+5. Click **Update**.
 6. To see the operation results, check the `reported` section of the **operation** Shadow. An example response looks like this:
 
     ???+ READ_result

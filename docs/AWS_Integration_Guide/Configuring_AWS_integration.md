@@ -5,8 +5,10 @@ Follow this section to integrate your AWS services with Coiote DM.
 ## Prerequisites
 
 - An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager in supported regions.
-- Installed [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- Installed [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 - A Coiote DM user account with the **awsiottenant** role.
+    !!! important
+        It's recommended to create a Coiote DM user
 
 ## Supported regions
 
@@ -54,11 +56,11 @@ Then follow the steps below:
             - In the **Actions** field, select **Add new task**.
               ![Copy task pop-up](images/copy_task_popup.png "Copy task pop-up")
             - Repeat the action for the remaining five tasks.
-        - Migrate all the five setting values that have the **AWS** prefix in their task name:
+        - Migrate the `AWSdataPlaneEndpointAddress` setting value:
             - Select your custom integration group and go to **Profiles**, then select **Copy from**.
               ![Copy setting values](images/copy_svs.png "Copy setting values")
-            - In the pop-up window, click **Select group** and select the **AWSiotCore** group.
-            - Pick all the five **AWS** setting values from the list by checking them in the **Selected** column, then click **Copy**.
+            - In the pop-up window, click **Select group** and select the **AWSiotCoreCertAuth** group.
+            - Pick the `AWSdataPlaneEndpointAddress` setting value from the list by checking it in the **Selected** column, then click **Copy**.
               ![Copy setting values pop-up](images/copy_sv_popup.png "Copy setting values pop-up")
 2. Enter your AWS Endpoint Name in Coiote DM:
     - Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting value:
@@ -75,23 +77,31 @@ Then follow the steps below:
 
 ## Add AWS resources using the integration repository
 
+!!! important
+    To complete this step, make sure you have the appropriate AWS permissions to enter the CloudFormation service and create a stack ([for details, see the AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-actions)).
+
 To add the resources needed for the integration to your AWS services:
 
-1. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
-2. Create a new stack. Use the template of Amazon S3 URL from below and change placeholders `[REGION-NAME]` to the one you use and is [supported](#supported-regions).
-
-       https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-integration-cf-template.json
-
+0. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
+0. Create a new stack. Use the template of Amazon S3 URL from below and change placeholders `[REGION-NAME]` to the one you use and is [supported](#supported-regions).
+```       
+https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-integration-cf-template.json
+```
    ![Choose template file](images/choose_template_s3.png "Choose template file")
-4. Choose a name for the stack and provide the parameters:
-   - **coioteDMrestUsername** - username of the created CoioteDM account.
-   - **coioteDMrestPassword** - password of the created CoioteDM account.
-   - **coioteDMrestUri** - URL address and port of your Coiote DM installation.
-   ![Change stack parameters](images/stack_params.png "Change stack name and parameters")
-5. Finalize configuring the stack and wait for its creation to finish.
-6. Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
-7. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
-![Migrated things](images/migrated_things.png "Migrated things")
+0. Choose a name for the stack and provide the parameters:
+    - **coioteDMrestUsername** - username of the created CoioteDM account.
+    - **coioteDMrestPassword** - password of the created CoioteDM account.
+    - **coioteDMrestUri** - URL address and port of your Coiote DM installation.
+
+        !!! note
+            For some installations, port is not required. If you don't know what port to choose, contact our support.
+
+        ![Change stack parameters](images/stack_params.png "Change stack name and parameters")
+
+0. Finalize configuring the stack and wait for its creation to finish.
+0. Once the stack is created successfully, the devices in your integration group will be automatically migrated to the AWS IoT Core.
+0. To check if your integration works correctly, go to AWS IoT Core, and from the menu, select **Manage** > **Things**, then see if your devices are listed as in here:
+    ![Migrated things](images/migrated_things.png "Migrated things")
 
 ## Next steps
 
