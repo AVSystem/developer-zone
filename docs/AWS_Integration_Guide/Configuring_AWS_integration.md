@@ -5,6 +5,7 @@ Follow this section to integrate your AWS services with Coiote DM.
 ## Prerequisites
 
 - An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager in supported regions.
+- Installed [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - A Coiote DM user account with the **awsiottenant** role.
 
 ## Supported regions
@@ -26,7 +27,7 @@ If you cannot find your region, please create an issue or contact AVSystem.
 To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:   
 
 1. Go to your Coiote DM account and from the **Administration** menu, select **Users management**.
-2. Select **Add user** and in fill in the form:
+2. Select **Add user** and fill in the form:
 ![Add user button](images/add_button2.png "Add user button")
     - Provide **Email** for new user (which will be its username) and select your domain from the **Domain path** drop-down list.
     - Remember to switch on the **User Verified** and **User Enabled** toggle buttons.
@@ -59,24 +60,20 @@ Then follow the steps below:
             - In the pop-up window, click **Select group** and select the **AWSiotCore** group.
             - Pick all the five **AWS** setting values from the list by checking them in the **Selected** column, then click **Copy**.
               ![Copy setting values pop-up](images/copy_sv_popup.png "Copy setting values pop-up")
-
-2. Enter your AWS subscription credentials in Coiote DM:
-- Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting value:
-  - Open your command line and run the following command:
+2. Enter your AWS Endpoint Name in Coiote DM:
+    - Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting value:
+    - Open your command line and run the following command:
            ```
            aws iot describe-endpoint --endpoint-type iot:Data-ATS --region <desired-region-for-the-integration>
            ```
-  - Copy the returned result.
-  ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
-  - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
-  - Append `:8443` port to the pasted value.
-  - Click **Save**.
-
+    - Copy the returned result.
+      ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
+    - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
+    - Append `:8443` port to the pasted value.
+    - Click **Save**.
 3. Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.
 
 ## Add AWS resources using the integration repository
-
-All the AWS-side configuration needed for the integration to work is stored in a publicly available git repository (<https://github.com/AVSystem/iot-examples/tree/main/coiote-aws-iot-cloud-formation>).
 
 To add the resources needed for the integration to your AWS services:
 
