@@ -7,8 +7,9 @@ Follow this section to integrate your AWS services with Coiote DM.
 - An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager in supported regions.
 - Installed [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 - A Coiote DM user account with the **awsiottenant** role.
+
     !!! important
-        It's recommended to create a Coiote DM user
+        It's recommended to create a Coiote DM user account dedicated exclusively for the integration. Note that the integration will work correctly only until the user with the **awsiottenant** role exists in Coiote DM and the AWS CloudFormation stack is appropriately configured.
 
 ## Supported regions
 
@@ -22,7 +23,7 @@ Follow this section to integrate your AWS services with Coiote DM.
 - us-west-1
 - us-west-2
 
-If you cannot find your region, please create an issue or contact AVSystem.
+If you cannot find your region, please create a GitHub issue or contact AVSystem.
 
 ## Create a Coiote DM REST user
 
@@ -89,6 +90,10 @@ https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-i
 ```
    ![Choose template file](images/choose_template_s3.png "Choose template file")
 0. Choose a name for the stack and provide the parameters:
+
+    !!! important
+        The credentials you provide at this point should belong to the user with access to the Coiote DM group which stores the AWS configuration set in a previous step.
+
     - **coioteDMrestUsername** - username of the created CoioteDM account.
     - **coioteDMrestPassword** - password of the created CoioteDM account.
     - **coioteDMrestUri** - URL address and port of your Coiote DM installation.
