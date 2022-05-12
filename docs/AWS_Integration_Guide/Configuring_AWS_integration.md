@@ -70,7 +70,7 @@ Then follow the steps below:
            aws iot describe-endpoint --endpoint-type iot:Data-ATS --region <desired-region-for-the-integration>
            ```
     - Copy the returned result.
-      ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
+      ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
     - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
     - Append `:8443` port to the pasted value.
     - Click **Save**.
