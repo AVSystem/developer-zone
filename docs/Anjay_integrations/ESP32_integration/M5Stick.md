@@ -8,17 +8,14 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 - Installed ESP-IDF and dependencies (installation steps 1-4 from [ESP32 official documentation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)). Supported ESP-IDF version is v4.4.
 - A user with access to the Coiote IoT Device Management platform.
 
-## Step 1: Clone Anjay ESP32 client repository
+## Step 1: Download the Anjay ESP32 client files
 
-Enter the command line interface on your machine and paste the following command:
-
-   ```
-   git clone --recursive https://github.com/AVSystem/Anjay-esp32-client
-   ```
+0. Create a project directory for the integration.
+0. Go to [https://github.com/AVSystem/Anjay-esp32-client/releases](https://github.com/AVSystem/Anjay-esp32-client/releases) and download `m5stickc-plus.bin` and `nvs_partition_gen.py` to your project directory.
 
 ## Step 2: Configure the client using an NVS partition
 
-0. Create a `nvs_config.csv` file and provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). You can use the following snippet as a template:
+0. Create a `nvs_config.csv` file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). Use the following snippet as a template:
 
     !!! important
         The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.  
@@ -41,15 +38,15 @@ Enter the command line interface on your machine and paste the following command
     !!! Note
         The additional parameters under the **writable_wifi** namespace are used to provide a secondary Wi-Fi configuration (it is not obligatory). This allows for switching between Wi-Fi configurations while the device is running.
 
-0. Generate the NVS partition:
+0. Open a command line interface, go to your project directory, and generate the NVS partition:
 
 ```
-python3 tools/nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
+python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 ```
 
 ![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
-## Step 4: Add device to Coiote DM
+## Step 3: Add device to Coiote DM
 
 To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://www.avsystem.com/try-anjay/ to get access.
 
@@ -61,14 +58,14 @@ To connect the board:
 ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
 0. In the **Device credentials** step:
     - In the **Device ID** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
-      ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
     - In the **Security mode** section, select the **PSK** mode.
     - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.  
+    ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. In the **Connect your device** step, wait for the board to connect.
+0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.  
 
-## Step 5: Flash the board and run device
+## Step 4: Flash the board and run device
 
 Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.
 
@@ -107,10 +104,12 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 
 ### Build new firmware version
 
-1. Go to your `anjay-esp32-client` project directory and run `idf.py set-target esp32`.
-2. Run `idf.py menuconfig`, navigate to `Component config/anjay-esp32-client`, and from the supported boards, select **M5StickC**.
-3. Run `idf.py build`.
-4. Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build/anjay-esp32-client.bin`.
+0. Open a command line interface and run `git clone https://github.com/AVSystem/Anjay-esp32-client`.
+0. Go to the directory of the cloned repository and run `idf.py set-target esp32`.
+0. Run `git submodule update --recursive --init`.
+0. Run `idf.py menuconfig`, navigate to `Component config/anjay-esp32-client`, and from the supported boards, select **M5StickC**. Press `s` and `enter` to save.
+0. Run `idf.py build`.
+0. Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build`.
 
 ### Schedule upgrade in Coiote DM
 
