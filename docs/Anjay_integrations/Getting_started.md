@@ -1,8 +1,14 @@
 # Getting started
 
-Start developing LwM2M applications on your ST devices in just a few clicks using our Anjay LwM2M Client based on freeRTOS or Zephyr OS.   
+Start developing LwM2M applications on your boards and IoT devices in just a few clicks using our Anjay LwM2M Client.   
 
-## STMicroelectronics boards
+## Espressif ESP32 (M5StickC)
+
+![M5Stick](images/m5stick.webp "M5Stick"){ width=50% }
+
+[Start integration](./ESP32_integration/M5Stick.md){: .md-button .md-button--big }
+
+## STMicroelectronics
 
 Build a LwM2M application for your ST board using I-Cube Anjay from scratch by following our [I-CUBE-Anjay guide](../Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/).
 
@@ -38,7 +44,7 @@ Integrate your B-L475E-IOT01A Discovery kit board using our Anjay LwM2M Client b
 
 [Start integration](./Anjay_ST_integration/B-L475E-IOT01A.md){: .md-button .md-button--big }
 
-## Nordic Semiconductor boards
+## Nordic Semiconductor
 
 ### Thingy:91
 
