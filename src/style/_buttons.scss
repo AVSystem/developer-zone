@@ -1,38 +1,35 @@
 .mainBtn{
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border-radius: .25rem;
-    transition: .3s;
-    text-decoration:none;
-    padding: 12px 19px;
-    min-width: 210px;
-    background: $yellow;
-    box-shadow: 0px 2px 4px rgba(208, 208, 208, 0.5);
-    border-radius: 5px;
-    color:#000;
-    font-size: 1.6rem;
-    font-weight: 500;
-    border:2px solid $yellow;
-    line-height: 26px;
+    border-radius: 25px;
+  max-width: 200px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  padding: 12px 10px;
+  line-height: 22px;
+  text-align: center;
+  transition: 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: Roboto;
+
+  background-color: #FFD100;
+    border: 2px solid #FFD100;
+    color: #000000;
 
     &:hover{
-        background-color:#fff;
+        text-decoration: none;
+      background-color: #fff6ca;
     }
 
-    &--black{
-        background-color: #000;
-        color:#fff;
-        border-color:#000;
-
-        &:hover{
-            color:#000;
+    &--black {
+        background-color: #1F1F1F;
+        border: 2px solid #1F1F1F;
+        color: #ffffff;
+    
+        &:hover {
+          text-decoration: none;
+          background-color: #4D4D4D;
         }
-    }
+      }
 }
