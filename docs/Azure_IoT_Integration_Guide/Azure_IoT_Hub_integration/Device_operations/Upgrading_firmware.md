@@ -148,4 +148,4 @@ To cancel the firmware upgrade procedure, follow these steps:
 
 ## See also
 
-See the relevant section of [LwM2M mappings](/Concepts/LwM2M_mappings/#lwm2m-executable-resources) to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.  
+See the relevant section of [LwM2M mappings](/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-executable-resources) to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.  
