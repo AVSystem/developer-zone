@@ -20,4 +20,4 @@ Here’s how you can get started with the Coiote DM – Azure IoT integration:
 
 Integrate Coiote DM with the Amazon Web Services and gain new opportunities to leverage your IoT data.
 
-[Configure integration with AWS](AWS_Integration_Guide/Configuring_AWS_integration.md){: .md-button .md-button--big }
+[Integrate with AWS](AWS_Integration_Guide/Configuring_AWS_integration.md){: .md-button .md-button--big }

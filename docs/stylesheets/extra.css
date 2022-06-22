@@ -14,23 +14,38 @@
 
 
 
-.md-typeset .md-button{
-    color:#000;
-    border-color:#ffd100;
-    padding: 0.4em 1rem;
-    font-size: .725rem;
-    letter-spacing: .01rem;
+.md-typeset .md-button,
+.md-typeset .md-button--small,
+.md-typeset .md-button--big,
+.md-typeset .md-button--primary{
+    border-radius: 25px;
+    max-width: 200px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 12px 10px;
+    line-height: 22px;
+    text-align: center;
+    transition: .2s;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: Roboto;
+    background-color: #ffd100;
+    border: 2px solid #ffd100;
+    color: #000;
 }
 
 .md-typeset .md-button:hover,
 .md-typeset .md-button:active,
 .md-typeset .md-button:focus{
-    background-color:#ffd100;
-    border-color:#ffd100;
-    color:#000;
+    text-decoration: none;
+    background-color: #fff6ca;
+    border: 2px solid #ffd100;
+    color: #000;
 }
 
-.md-typeset .md-button--small{
+/*.md-typeset .md-button--small{
     padding: .4em 1em;
     font-size: .6rem;
 }
@@ -47,7 +62,7 @@
 
 .md-typeset .md-button--primary:hover{
     background-color:#fff;
-}
+}*/
 
 .md-typeset .admonition.note, 
 .md-typeset details.note{
