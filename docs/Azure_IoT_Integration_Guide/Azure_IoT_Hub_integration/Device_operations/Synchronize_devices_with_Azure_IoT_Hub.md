@@ -22,7 +22,7 @@ In the import process, you will need a list of devices that you want to import a
         - Default minimal LwM2M schema - a pre-defined template implementing a basic device data model.     
         - Default rich LwM2M schema - a pre-defined template implementing an extended device data model.
     !!! note
-        Integration templates are crucial in the device import process. Optionally, you can create your custom device template and use it in importing. Check the instructions in the [Configure integration templates](Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) section.  
+        Integration templates are crucial in the device import process. Optionally, you can create your custom device template and use it in importing. Check the instructions in the [Configure integration templates](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) section.  
     - In the **Import devices from a CSV file** section:
         ![Importing devices](images/import_view.png "Importing devices")
         - If you already have a CSV file with devices for import, click **Browse** and select the file.
