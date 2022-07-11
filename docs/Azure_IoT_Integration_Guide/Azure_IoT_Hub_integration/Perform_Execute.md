@@ -1,13 +1,12 @@
 # Perform LwM2M EXECUTE
 
-This section describes how to perform a LwM2M WRITE operation in your Azure IoT Hub.
+This section describes how to perform a LwM2M EXECUTE operation in your Azure IoT Hub.
 
-A WRITE operation lets you change the current value on the given [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/) component: object, object instance, and resource.
+An EXECUTE operation lets you perform operations on IoT devices such as a reboot or a firmware upgrade, only on individual resources.
 
 In this section, you learn how to:
 
-  * Perform WRITE on resources
-  * Check for the reported value changes in resources
+  * Perform EXECUTE
 
 ## Prerequisites
 
@@ -18,72 +17,41 @@ In this section, you learn how to:
 5. [A configured integration template in Coiote DM, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
 5. [A connected device](https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/).
 
-## Perform WRITE
+## Perform EXECUTE
 
-Let’s perform a WRITE operation on the **Lifetime** resource with ID **1/1/1**. From the Azure IoT integration standpoint, **Lifetime** it is interpreted as a *Property*.
+Let’s perform an EXECUTE operation on the **Factory Reset** resource with ID **3/0/5**.
 
-In Azure IoT Hub, value changes for both *Telemetry* and *Property* are stored in [Device twin](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-readable-and-writable-resources). To perform a WRITE operation, do the following:
+!!! note
+    From the Azure IoT integration standpoint, **Factory Reset** is interpreted as a *Command*. Read more about how LwM2M data model is mapped to Azure IoT Hub mechanisms in [Concepts](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/)
 
 1. In your Azure IoT Hub account, go to **Devices** from the left pane.
 
-2. Click on the device and then go to **Device twin**.
+2. Click on the device and then go to **Direct method**.
 
-    ![Device view in Azure IoT Hub](images-observation/observation-hub1.png "Click on Device Twin")
+    ![Direct method in Azure IoT Hub](images/dirmethod_azure.png "Direct method tab")
 
-3. Find the **desired** property in the JSON snippet. This is where you define what needs to be observed.
-4. To the **1/1/1 (Lifetime)** resource, add the following snippet under the `"desired": {` property and click **Save**:
+3. As **Method name**, type `execute`.
+
+4. In **Payload**, paste the following snipped and click **Invoke method**:
 
       ```
-      "lwm2m": {
-         "1": {
-             "1": {
-                 "0": {},
-                 "1": {
-                     "value": 60
-                 },
-             }
-         },
-      },
+      {
+         path: "3.0.5"
+      }
       ```
 
     !!! note
-        The exact LwM2M path of the Lifetime resource depends on the LwM2M client used and may vary slightly, e.g. in the object instance number: **1/0/1**. For the purpose of this tutorial, the Anjay LwM2M Client is used. If needed, modify the snippet according to your case.  
+        The exact LwM2M path of the **Factory reset** resource depends on the LwM2M client used and may vary slightly, e.g. in the object instance number: **3/1/5**. For the purpose of this tutorial, the Anjay LwM2M Client is used. If needed, modify the snippet according to your case.  
 
-![Device twin desired properties](images/write_azure.png "Device Twin desired properties")
+    ![Direct method in Azure IoT Hub](images/execute_azure.png "Direct method - execute")
 
-After you click **Save**, the line with `value: 60` will trigger the WRITE operation.
+## See value changes in Azure IoT Hub
 
-## See value changes
-
-### In Azure IoT Hub
-
-The value change for the resource is displayed in the same Device Twin JSON snippet. Scroll down to the **Reported** property and find the `value` line for the **1/1/1** resource.
+The result of the EXECUTE operation is displayed in the same **Direct method** tab. Scroll down to the **Result** field and check the HTTP code.
 
 ```
-"reported": {
-    "lwm2m": {
-        "1": {
-            "1": {
-                "0": {},
-                "1": {
-                    "value": 60
-                },
+{"status":200,"payload":"Executed `3.0.5` successfully"}
 ```
+
 
 ![Device twin reported properties](images/check_write_azure.png "Device Twin reported properties")
-
-If you don’t see any changes, click **Refresh**. If it doesn’t help, you can check whether the WRITE operation has been performed in Coiote DM as well.
-
-### In Coiote DM
-
-This step is optional. If you want to make sure the WRITE has been correctly performed in Coiote DM, do the following:
-
-1. In Coiote DM, go to your device and select the **Data model** tab.
-2. Expand the **LwM2M Server** object, find the **Lifetime (1/1/1)** resource in the list. If there is no change in data, use the **Refresh** icon in the top right corner of the screen.
-
-      ![Lifetime resource in Coiote DM](images/check_write_cdm.png "Lifetime resource in Coiote DM")
-
-You have successfully performed a LwM2M WRITE on a resource.
-
-## Next steps
-[Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)

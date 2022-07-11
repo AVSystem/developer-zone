@@ -1,4 +1,4 @@
-# Read and Write on resources
+# Perform LwM2M Read and Write
 
 This section describes how to perform a LwM2M WRITE and READ operations in your Azure IoT Hub and Coiote DM.
 
