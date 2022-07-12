@@ -67,6 +67,7 @@ nav:
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Synchronize_devices_with_Azure_IoT_Hub.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Perform_Read_Write.md'
+                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Perform_Execute.md'
                     - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation.md'
             - Azure DPS:
                -  'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_DPS_integration/Configuring_Azure_IoT_DPS_integration_extension.md'
