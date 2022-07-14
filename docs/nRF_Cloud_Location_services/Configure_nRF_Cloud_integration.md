@@ -30,7 +30,7 @@ Now the integration between Coiote DM and nRF Cloud is established. Read the nex
 
 To display your device location, you first need to set up the Google Maps property for your domain.
 
-0. In your Coiote DM user account, go to **Administration --> Device Inventory**.
-0. Click the **Management** link next to your device to enter Device Center.
-0. If not selected, click the **Overview** tab and scroll down to the **Location** section.
+0. In your Coiote DM user account, go to **Device Inventory**.
+0. Click the **Management** link next to your device to enter the **Device Center**.
+0. If not selected, click the **Overview** tab and scroll down to the **Device location** section.
   ![Google maps location](images/gmaps_location.png "Google maps location"){:style="float: left;margin-right: 1177px;margin-top: 17px;;margin-bottom: 17px;}
