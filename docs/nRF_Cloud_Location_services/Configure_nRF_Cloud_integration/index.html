@@ -14,7 +14,7 @@
     
     
       
-        <title>v2021.23.0 - IoT Developer Zone</title>
+        <title>Connect nRF Cloud integration - IoT Developer Zone</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v2021230" class="md-skip">
+        <a href="#connect-nrf-cloud-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              v2021.23.0
+              Connect nRF Cloud integration
             
           </span>
         </div>
@@ -312,13 +312,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         nRF Cloud Location services
       </a>
     </li>
@@ -328,8 +330,6 @@
         
   
   
-    
-  
 
 
   
@@ -341,7 +341,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../v2022.13.5/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Release_Notes/v2022.13.5/" class="md-tabs__link">
         Release notes
       </a>
     </li>
@@ -1366,12 +1366,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
       
       <label class="md-nav__link" for="nav-7">
         nRF Cloud Location services
@@ -1388,11 +1390,82 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Connect nRF Cloud integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Connect nRF Cloud integration
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-the-service-evaluation-token-from-nrf-cloud" class="md-nav__link">
+    Get the Service Evaluation Token from nRF Cloud
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrate-nrf-cloud-with-coiote-dm" class="md-nav__link">
+    Integrate nRF Cloud with Coiote DM
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrate nRF Cloud with Coiote DM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-device-location-in-coiote-dm" class="md-nav__link">
+    View device location in Coiote DM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1409,14 +1482,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
       
       <label class="md-nav__link" for="nav-8">
         Release notes
@@ -1457,7 +1528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2022.13.5/" class="md-nav__link">
+      <a href="../../Release_Notes/v2022.13.5/" class="md-nav__link">
         v2022.13.5
       </a>
     </li>
@@ -1469,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2022.9.2/" class="md-nav__link">
+      <a href="../../Release_Notes/v2022.9.2/" class="md-nav__link">
         v2022.9.2
       </a>
     </li>
@@ -1481,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2022.8.2/" class="md-nav__link">
+      <a href="../../Release_Notes/v2022.8.2/" class="md-nav__link">
         v2022.8.2
       </a>
     </li>
@@ -1493,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2022.7.3/" class="md-nav__link">
+      <a href="../../Release_Notes/v2022.7.3/" class="md-nav__link">
         v2022.7.3
       </a>
     </li>
@@ -1505,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2022.5.3/" class="md-nav__link">
+      <a href="../../Release_Notes/v2022.5.3/" class="md-nav__link">
         v2022.5.3
       </a>
     </li>
@@ -1517,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2022.3.2/" class="md-nav__link">
+      <a href="../../Release_Notes/v2022.3.2/" class="md-nav__link">
         v2022.3.2
       </a>
     </li>
@@ -1533,14 +1604,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
       
       <label class="md-nav__link" for="nav-8-2">
         2021
@@ -1559,7 +1628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2021.24.5/" class="md-nav__link">
+      <a href="../../Release_Notes/v2021.24.5/" class="md-nav__link">
         v2021.24.5
       </a>
     </li>
@@ -1569,103 +1638,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          v2021.23.0
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2021.23.0/" class="md-nav__link">
         v2021.23.0
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="In this article">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      In this article
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
-    Enhancements
-  </a>
-  
-    <nav class="md-nav" aria-label="Enhancements">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#record-headers-in-kafka-messages" class="md-nav__link">
-    Record headers in Kafka messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#support-for-additional-non-standard-device-type" class="md-nav__link">
-    Support for additional non-standard device type
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-error-pages" class="md-nav__link">
-    New error pages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    Bug fixes
-  </a>
-  
-    <nav class="md-nav" aria-label="Bug fixes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#uninterrupted-access-to-gui" class="md-nav__link">
-    Uninterrupted access to GUI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jdk-downgrade" class="md-nav__link">
-    JDK downgrade
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1675,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v2021.22.1/" class="md-nav__link">
+      <a href="../../Release_Notes/v2021.22.1/" class="md-nav__link">
         v2021.22.1
       </a>
     </li>
@@ -1719,30 +1696,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
-    Enhancements
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
-    <nav class="md-nav" aria-label="Enhancements">
+    <nav class="md-nav" aria-label="Prerequisites">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#record-headers-in-kafka-messages" class="md-nav__link">
-    Record headers in Kafka messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#support-for-additional-non-standard-device-type" class="md-nav__link">
-    Support for additional non-standard device type
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-error-pages" class="md-nav__link">
-    New error pages
+  <a href="#get-the-service-evaluation-token-from-nrf-cloud" class="md-nav__link">
+    Get the Service Evaluation Token from nRF Cloud
   </a>
   
 </li>
@@ -1753,23 +1716,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    Bug fixes
+  <a href="#integrate-nrf-cloud-with-coiote-dm" class="md-nav__link">
+    Integrate nRF Cloud with Coiote DM
   </a>
   
-    <nav class="md-nav" aria-label="Bug fixes">
+    <nav class="md-nav" aria-label="Integrate nRF Cloud with Coiote DM">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uninterrupted-access-to-gui" class="md-nav__link">
-    Uninterrupted access to GUI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jdk-downgrade" class="md-nav__link">
-    JDK downgrade
+  <a href="#view-device-location-in-coiote-dm" class="md-nav__link">
+    View device location in Coiote DM
   </a>
   
 </li>
@@ -1802,22 +1758,40 @@
 
 
 <!-- Markdown content -->
-<h1 id="v2021230">v2021.23.0<a class="headerlink" href="#v2021230" title="Permanent link">#</a></h1>
-<p>Previous version: <a href="../v2021.22.1/">v2021.22.1</a></p>
-<h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
-<h3 id="record-headers-in-kafka-messages">Record headers in Kafka messages<a class="headerlink" href="#record-headers-in-kafka-messages" title="Permanent link">#</a></h3>
-<p>You can now add record headers to the kafkaPublish tag when configuring an XML task. It means that the components responsible for the Kafka event processing (e.g., routing) no longer need to read each binary message. Instead, these components read only the record headers and therefore work faster.</p>
-<h3 id="support-for-additional-non-standard-device-type">Support for additional non-standard device type<a class="headerlink" href="#support-for-additional-non-standard-device-type" title="Permanent link">#</a></h3>
-<p>We continue to improve compatibility with devices that have incomplete or faulty support of the standard LwM2M protocol. To make such a device ready to work with Coiote DM, you can now turn on and configure a non-standard logic in the Device dialects section.</p>
-<h3 id="new-error-pages">New error pages<a class="headerlink" href="#new-error-pages" title="Permanent link">#</a></h3>
-<p>The 400, 404, and 5XX error pages now have a cleaner and more user-friendly look.</p>
-<p><img alt="Error pages" src="../images/404.png" />
-<img alt="Error pages" src="../images/400.png" /></p>
-<h2 id="bug-fixes">Bug fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">#</a></h2>
-<h3 id="uninterrupted-access-to-gui">Uninterrupted access to GUI<a class="headerlink" href="#uninterrupted-access-to-gui" title="Permanent link">#</a></h3>
-<p>Fixed a bug where the GUI of Coiote DM would crash after 30 minutes of inactivity on some installations. Thanks to the new configuration, the GUI now works smoothly even after hours of inactivity.</p>
-<h3 id="jdk-downgrade">JDK downgrade<a class="headerlink" href="#jdk-downgrade" title="Permanent link">#</a></h3>
-<p>To improve the speed performance of Coiote DM, we’ve downgraded the JDK version from 17 to 11. No action is required for the virtual machine deployments because the JRE is included in the docker image.</p>
+<h1 id="connect-nrf-cloud-integration">Connect nRF Cloud integration<a class="headerlink" href="#connect-nrf-cloud-integration" title="Permanent link">#</a></h1>
+<p>Connect your nRF Cloud devices to Coiote DM to track their location and save battery life. <a href="https://www.nordicsemi.com/Products/Cloud-services?lang=en#infotabs">Read more about Nordic Semiconductor Location services</a>.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>An nRF Cloud account. If you don't have it, <a href="https://nrfcloud.com/#/">create one here</a>.</li>
+<li>A Coiote DM user account. If you don't have one, <a href="eu.iot.avsystem.cloud/">register here</a>.</li>
+</ul>
+<p>To enable communication and data flow between the Nordic Semiconductor nRF Cloud and Coiote DM platforms, you first need to integrate them using the <strong>nRF Cloud integration</strong>  in Coiote DM. Follow the instructions below to learn how to do it.</p>
+<h3 id="get-the-service-evaluation-token-from-nrf-cloud">Get the Service Evaluation Token from nRF Cloud<a class="headerlink" href="#get-the-service-evaluation-token-from-nrf-cloud" title="Permanent link">#</a></h3>
+<ol>
+<li>In your nRF Cloud user account, from the expandable top-right menu, select <strong>Team</strong>.</li>
+<li>In the <strong>Service Evaluation Token</strong> field, click <strong>Generate Token</strong> and click on the icon to copy it.
+<img alt="Generate nRFC token" src="../images/gen_token.png" title="Generate nRFC token" /></li>
+</ol>
+<h2 id="integrate-nrf-cloud-with-coiote-dm">Integrate nRF Cloud with Coiote DM<a class="headerlink" href="#integrate-nrf-cloud-with-coiote-dm" title="Permanent link">#</a></h2>
+<ol>
+<li>In your Coiote DM user account, go to <strong>Administration --&gt; Integrations --&gt; Location services</strong>.
+  <img alt="nRFC Integration menu link" src="../images/nRFC_menu.png" title="Integration menu link" /></li>
+<li>In the <strong>nRF Cloud</strong> tile, click <strong>Connect</strong>.</li>
+<li>In the dialog window, paste the previously copied nRFC Service Evaluation Token.
+  <img alt="Paste integration token" src="../images/save_token.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Paste integration token" /><ul>
+<li>click <strong>Save</strong> to keep the setting.</li>
+</ul>
+</li>
+</ol>
+<p>Now the integration between Coiote DM and nRF Cloud is established. Read the next section on how to display device location in Coiote DM.</p>
+<h3 id="view-device-location-in-coiote-dm">View device location in Coiote DM<a class="headerlink" href="#view-device-location-in-coiote-dm" title="Permanent link">#</a></h3>
+<p>To display your device location, you first need to set up the Google Maps property for your domain.</p>
+<ol>
+<li>In your Coiote DM user account, go to <strong>Device Inventory</strong>.</li>
+<li>Click the <strong>Management</strong> link next to your device to enter the <strong>Device Center</strong>.</li>
+<li>If not selected, click the <strong>Overview</strong> tab and scroll down to the <strong>Device location</strong> section.
+  <img 1177px_margin-top:="1177px;margin-top:" 17px_="17px;" 17px_margin-bottom:="17px;;margin-bottom:" alt="Google maps location" left_margin-right:="left;margin-right:" src="../images/gmaps_location.png" style="&quot;float:" title="Google maps location" /></li>
+</ol>
 
 <!-- Link to previous and/or next page -->
 
@@ -1829,7 +1803,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../v2021.24.5/"
+      href="../../AWS_Integration_Guide/Concepts/AWS_Integration_concepts/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1841,7 +1815,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          v2021.24.5
+          How AWS integration works
         </div>
       </div>
     </a>
@@ -1850,7 +1824,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../v2021.22.1/"
+      href="../../Release_Notes/v2022.13.5/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -1859,7 +1833,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          v2021.22.1
+          v2022.13.5
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -1879,7 +1853,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 18, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2022</span>
     
   </small>
 </div>
@@ -1902,7 +1876,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../v2021.24.5/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../../AWS_Integration_Guide/Concepts/AWS_Integration_concepts/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -1911,19 +1885,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  v2021.24.5
+                  How AWS integration works
                 </div>
               </div>
             </a>
           
           
-            <a href="../v2021.22.1/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../../Release_Notes/v2022.13.5/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  v2021.22.1
+                  v2022.13.5
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
