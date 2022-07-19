@@ -88,6 +88,8 @@ nav:
                 - 'AWS_Integration_Guide/Device_operations/Operation_types.md'
             - 'Concepts':
                 - 'AWS_Integration_Guide/Concepts/AWS_Integration_concepts.md'
+        - 'nRF Cloud Location services':
+            - 'nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
         - 'Release notes':
             - 2022:
                 - 'Release_Notes/v2022.13.5.md'
