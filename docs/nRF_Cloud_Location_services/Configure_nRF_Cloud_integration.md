@@ -5,7 +5,7 @@ Connect your nRF Cloud devices to Coiote DM to track their location and save bat
 ## Prerequisites
 
   - An nRF Cloud account. If you don't have it, [create one here](https://nrfcloud.com/#/).
-  - A Coiote DM user account. If you don't have one, [register here](eu.iot.avsystem.cloud/).
+  - A Coiote DM user account. If you don't have one, [register here](https://eu.iot.avsystem.cloud/).
 
 To enable communication and data flow between the Nordic Semiconductor nRF Cloud and Coiote DM platforms, you first need to integrate them using the **nRF Cloud integration**  in Coiote DM. Follow the instructions below to learn how to do it.
 
