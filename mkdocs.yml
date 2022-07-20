@@ -51,6 +51,7 @@ nav:
         - 'Device onboarding':
             - 'Coiote_DM_Device_Onboarding/Quick_start.md'
             - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
+            - 'Coiote_DM_Device_Onboarding/Device_Center.md'
         - 'Device tests':
             - 'Device_tests/Overview.md'
             - 'Device_tests/Getting_started.md'
