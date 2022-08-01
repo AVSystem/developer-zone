@@ -8,20 +8,20 @@ Integrate your Nordic Thingy:91 board.
 - Installed **minicom** (for Linux) or RealTerm (for Windows) or other serial communication program.
 - A user with access to the Coiote IoT Device Management platform and appropriate permissions.
 
-## Preparing binaries
-### Using already built binary
+## Prepare binaries
+### Use an already built binary
 
 To get the latest binaries, navigate to [Anjay-zephyr-client releases](https://github.com/AVSystem/Anjay-zephyr-client/releases)
 and download one of the attached .hex files.
 
-In this case we are going to use the `demo` application, so look for `demo_thingy91_app_signed.hex` and go to the flashing part of the tutorial.
+In this case we are going to use the `demo` application, so find the `demo_thingy91_app_signed.hex` file and go to the [flashing part](#flash-the-binaries) of the tutorial.
 
-### Starting developement using samples
-#### Step 1: Getting Zephyr and Python dependencies
+### Start developement using samples
+#### Step 1: Get Zephyr and Python dependencies
 
 To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
 
-#### Step 2: Cloning the Anjay zephyr repository
+#### Step 2: Clone the Anjay Zephyr repository
 
 Enter the command line interface on your machine, then paste and run the following command:
 
@@ -29,7 +29,7 @@ Enter the command line interface on your machine, then paste and run the followi
    git clone https://github.com/AVSystem/Anjay-zephyr-client
    ```
 
-#### Step 3: Compiling the example
+#### Step 3: Compile the example
 
 0. Connect the Thingy:91 board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
@@ -41,14 +41,15 @@ Enter the command line interface on your machine, then paste and run the followi
     ```
 
 0. Compile the project for **Thingy:91** using `west build -b thingy91_nrf9160ns` in the demo directory.
-0. Look for `app_signed.hex` file under `build/zephyr` directory in project folder.
+0. Find the `app_signed.hex` file under the `build/zephyr` directory in the project folder.
 
-## Flashing the binaries
-To program the board, use nRF Connect Programmer with `.hex` file generated or downloaded in previous steps.
-Whole process of [flashing Thingy:91 is described here.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application)
+## Flash the binaries
+To program the board, use the nRF Connect Programmer with the `.hex` file generated or downloaded in a previous step.
+The whole process of [flashing Thingy:91 is described here.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application)
 
-After board is programmed and resetted, go to configuration step.
-## Configuring the Client
+After you have programmed and reset the board, go to the next step.
+
+## Configure the Client
 
 1. With the board still connected to a serial port interface, open a serial communication program.
 2. Use the `anjay` command to list possible options:
@@ -64,7 +65,7 @@ After board is programmed and resetted, go to configuration step.
 
 3. Change the default credentials to your custom data by following the instructions presented in the program and save it.
 
-## Connecting to the LwM2M Server
+## Connect to the LwM2M Server
 
 To connect to Coiote IoT Device Management LwM2M Server, please register at https://www.avsystem.com/try-anjay/.
 
