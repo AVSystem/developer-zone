@@ -18,7 +18,7 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 0. Create a `nvs_config.csv` file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). Use the following snippet as a template:
 
     !!! important
-        The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.  
+        The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.
 
     ```
     key,type,encoding,value
@@ -60,10 +60,10 @@ To connect the board:
     - In the **Device ID** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Security mode** section, select the **PSK** mode.
     - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
-    - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.  
+    - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.
     ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.  
+0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.
 
 ## Step 4: Flash the board and run device
 
@@ -121,7 +121,7 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 0. Click **Upload** to select the binary file from your local drive, select **COAP** in the **Image delivery protocol**, and click **Upgrade**.
 
     !!! tip
-        The **COAPS** option is also supported. To use it, you may need to additionally provide the **Base URI** parameter (depending on your server settings).  
+        The **COAPS** option is also supported. To use it, you may need to additionally provide the **Base URI** parameter (depending on your server settings).
 
     ![Scheduling FOTA](images/schedule_fota.png "Scheduling FOTA")
 
