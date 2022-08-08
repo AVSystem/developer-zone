@@ -1846,16 +1846,17 @@
 <h2 id="step-2-configure-the-client-using-an-nvs-partition">Step 2: Configure the client using an NVS partition<a class="headerlink" href="#step-2-configure-the-client-using-an-nvs-partition" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p>Create a <code>nvs_config.csv</code> file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the <code>[]</code> brackets). Use the following snippet as a template:</p>
+<p>Create a <code>nvs_config.csv</code> file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [endpoint_name], [identity], [psk], [lwm2m_server_uri] (without the <code>[]</code> brackets). Use the following snippet as a template:</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The <strong>Identity</strong> parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.  </p>
+<p>The <strong>Identity</strong> parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.</p>
 </div>
 <div class="highlight"><pre><span></span><code>key,type,encoding,value
 config,namespace,,
 wifi_ssid,data,string,[wifi_ssid]
 wifi_pswd,data,string,[wifi_password]
 wifi_inter_en,data,u8,1
+endpoint_name,data,string,[endpoint_name]
 identity,data,string,[identity]
 psk,data,string,[psk]
 uri,data,string,[lwm2m_server_uri]
@@ -1877,7 +1878,7 @@ wifi_inter_en,data,u8,0
 </code></pre></div>
 <p><img alt="Client configuration" src="../images/nvs_config.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Client configuration" /></p>
 <h2 id="step-3-add-device-to-coiote-dm">Step 3: Add device to Coiote DM<a class="headerlink" href="#step-3-add-device-to-coiote-dm" title="Permanent link">#</a></h2>
-<p>To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://www.avsystem.com/try-anjay/ to get access.</p>
+<p>To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.</p>
 <p>To connect the board:</p>
 <ol>
 <li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
@@ -1885,15 +1886,15 @@ wifi_inter_en,data,u8,0
 <li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
 <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
 <li>In the <strong>Device credentials</strong> step:<ul>
-<li>In the <strong>Device ID</strong> field, type the name provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
+<li>In the <strong>Device ID</strong> field, type the endpoint name provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
 <li>In the <strong>Security mode</strong> section, select the <strong>PSK</strong> mode.</li>
-<li>In the <strong>Key identity</strong> field, type the name provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
-<li>In the <strong>Key</strong> field, type the <code>psk</code> key provided in the <code>nvs_config.csv</code>.<br />
+<li>In the <strong>Key identity</strong> field, type the identity provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
+<li>In the <strong>Key</strong> field, type the <code>psk</code> key provided in the <code>nvs_config.csv</code>.
 <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
 </ul>
 </li>
 <li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>In the <strong>Connect your device</strong> step, the server is waiting for the board to connect. You can now start connecting the device.  </li>
+<li>In the <strong>Connect your device</strong> step, the server is waiting for the board to connect. You can now start connecting the device.</li>
 </ol>
 <h2 id="step-4-flash-the-board-and-run-device">Step 4: Flash the board and run device<a class="headerlink" href="#step-4-flash-the-board-and-run-device" title="Permanent link">#</a></h2>
 <p>Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.</p>
@@ -1960,7 +1961,7 @@ wifi_inter_en,data,u8,0
 <p>Click <strong>Upload</strong> to select the binary file from your local drive, select <strong>COAP</strong> in the <strong>Image delivery protocol</strong>, and click <strong>Upgrade</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The <strong>COAPS</strong> option is also supported. To use it, you may need to additionally provide the <strong>Base URI</strong> parameter (depending on your server settings).  </p>
+<p>The <strong>COAPS</strong> option is also supported. To use it, you may need to additionally provide the <strong>Base URI</strong> parameter (depending on your server settings).</p>
 </div>
 <p><img alt="Scheduling FOTA" src="../images/schedule_fota.png" title="Scheduling FOTA" /></p>
 </li>
@@ -2033,7 +2034,7 @@ wifi_inter_en,data,u8,0
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2022</span>
     
   </small>
 </div>
