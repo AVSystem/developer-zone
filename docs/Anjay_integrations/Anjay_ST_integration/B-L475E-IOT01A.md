@@ -52,7 +52,7 @@ Enter the command line interface on your machine, then paste and run the followi
 
 ## Step 5: Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://www.avsystem.com/try-anjay/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
 
 To connect the board:
 
@@ -65,7 +65,7 @@ To connect the board:
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
          - In the **Security mode** section, select the **PSK** mode:
               - In the **Key identity** field, type `test_device`
-              - In the **Key** field, type the shared secret used in the device-server authentication.  
+              - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, wait for the board to connect.
     6. Click **Go to device** to see your added device dashboard.
