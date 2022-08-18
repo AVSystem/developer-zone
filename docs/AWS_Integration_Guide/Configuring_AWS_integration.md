@@ -96,7 +96,7 @@ https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-i
 
     - **coioteDMrestUsername** - username of the created CoioteDM account.
     - **coioteDMrestPassword** - password of the created CoioteDM account.
-    - **coioteDMrestUri** - URL address and port of your Coiote DM installation.
+    - **coioteDMrestUri** - URL address and port of your Coiote DM installation. In most cases the port should be `8088`.
 
         !!! note
             For some installations, port is not required. If you don't know what port to choose, contact our support.
