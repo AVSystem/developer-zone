@@ -968,6 +968,30 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../Perform_Read_Write/" class="md-nav__link">
+        Perform LwM2M Read and Write
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Perform_Execute/" class="md-nav__link">
+        Perform LwM2M Execute
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -1830,7 +1854,7 @@
 <!-- Markdown content -->
 <h1 id="set-an-observation">Set an Observation<a class="headerlink" href="#set-an-observation" title="Permanent link">#</a></h1>
 <p>This section describes how to set an Observation in your Azure IoT Hub.</p>
-<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote DM, which in turn will transfer it to Azure IoT Hub.</p>
+<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote DM, which in turn will transfer it to Azure IoT Hub.</p>
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Set an Observation on objects and resources</li>
@@ -1842,13 +1866,13 @@
 <li>An active Azure IoT Hub with hub owner access permissions.</li>
 <li>A Coiote DM user account with permissions to use the integration extension.</li>
 <li>A device group created in Coiote DM.</li>
-<li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension/">A configured extension between Coiote DM and Azure Iot Hub</a>.</li>
+<li><a href="https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/">A configured extension between Coiote DM and Azure Iot Hub</a>.</li>
 <li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">A configured integration template in Coiote DM, assigned to the device group</a>.</li>
-<li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/">A connected device</a>.</li>
+<li><a href="https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/">A connected device</a>.</li>
 </ol>
 <h2 id="set-an-observation-and-define-its-attributes">Set an Observation and define its attributes<a class="headerlink" href="#set-an-observation-and-define-its-attributes" title="Permanent link">#</a></h2>
 <p>Let’s set two Observations: one on the whole object with ID <strong>1/1 (1 LwM2M Server, 1 Lifetime)</strong> and on the resource with ID <strong>3/0/13</strong> (3 Device, 13 Current time). Both of them are Properties.</p>
-<p>In Azure IoT Hub, value changes for both Telemetry and Property are stored in <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/#lwm2m-readable-and-writable-resources">Device twin</a>, because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:</p>
+<p>In Azure IoT Hub, value changes for both Telemetry and Property are stored in <a href="https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-readable-and-writable-resources">Device twin</a>, because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:</p>
 <ol>
 <li>
 <p>In your Azure IoT Hub account, go to <strong>Devices</strong> from the left pane.</p>
@@ -1950,7 +1974,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
   <!-- Link to previous page -->
   
     <a
-      href="../Device_operations/Upgrading_firmware/"
+      href="../Perform_Execute/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -1962,7 +1986,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Upgrade device firmware
+          Perform LwM2M Execute
         </div>
       </div>
     </a>
@@ -2000,7 +2024,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 5, 2022</span>
     
   </small>
 </div>
@@ -2023,7 +2047,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../Device_operations/Upgrading_firmware/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../Perform_Execute/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -2032,7 +2056,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Upgrade device firmware
+                  Perform LwM2M Execute
                 </div>
               </div>
             </a>
