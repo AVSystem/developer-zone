@@ -4,7 +4,7 @@ Start prototyping custom LwM2M applications on your STMicroelectronics board wit
 
 ## Prerequisites
 
-- An STM board with an USB cable.
+- An STM board with a USB cable.
 - Installed **STM32CubeMX**.
 - Downloaded [**Anjay I-CUBE** pack file](https://avsystem.com/static/avssite/files/AVSystem/I-CUBE-Anjay/AVSystem.I-CUBE-Anjay.2.13.0.pack).
 
@@ -200,7 +200,7 @@ IAR Embedded Workbench for ARM version 9.20.2 or higher is required to compile t
     /* Place your implementation of putchar here */
     /* e.g. write a character to the USART3 and Loop until the end of transmission */
     HAL_UART_Transmit(&TRACE_INTERFACE_UART_HANDLE, (uint8_t *)&ch, 1, 0xFFFF);
-    
+
     return ch;
     }
     ```
@@ -208,10 +208,10 @@ IAR Embedded Workbench for ARM version 9.20.2 or higher is required to compile t
 ### Keil uVision
 
 0. The newest Keil MDK distribution no longer contains Arm Compiler 5, which is a target compiler when generating a project with STM32CubeMX. You have to either install Keil MDK version older than 5.37 or install the missing compiler manually - [more information here](https://developer.arm.com/documentation/ka005073/1-0/?lang=en).
-   
+
 0. Keil's `errno` defines conflict with LwIP's `errno` and it must be resolved by adding LwIP's include folder to the list of the system includes. To do so, navigate to **Project -> Options for Target (...) -> C/C++ -> Misc Controls** and add a following command control option (ensure proper path; incorrect path will not generate an error):<br>
     `-J ../Middlewares/Third_Party/AVSystem_LwM2M_Stack/LwIP/src/include/compat/stdc -J "$J"`
-    
+
     ![Keil Misc Controls](images/keil_misc.png "keil_misc")
 
 0. To ensure proper handling of serial output with application flashed on board and **not** attached to uVision, navigate to **Project -> Manage -> Run-Time Environment... -> Compiler -> I/O**, select checkboxes and choose **User** variant for **STRERR**, **STDIN** and **STDOUT**.
@@ -233,7 +233,7 @@ IAR Embedded Workbench for ARM version 9.20.2 or higher is required to compile t
     /* Place your implementation of putchar here */
     /* e.g. write a character to the USART3 and Loop until the end of transmission */
     HAL_UART_Transmit(&TRACE_INTERFACE_UART_HANDLE, (uint8_t *)&ch, 1, 0xFFFF);
-    
+
     return ch;
     }
     ```
