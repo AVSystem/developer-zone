@@ -6,18 +6,24 @@ Integrate your ESP32-based device with Quectel BG96 module to manage it via Coio
 - An ESP32 device.
 - A BG96 module with internet connection (it is strongly recommended to have a BG96 with firmware version BG96MAR03A06M1G).
 - Installed ESP-IDF and dependencies (installation steps 1-4 from [ESP32 official documentation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)). Supported ESP-IDF version is v4.4.
-- A user with access to the Coiote IoT Device Management platform.
+- A user with access to the [Coiote IoT Device Management platform](https://eu.iot.avsystem.cloud).
 
 ## Step 1: Prepare project
 0. Create a project directory for the integration.
 0. Open a command line interface and run `git clone https://github.com/AVSystem/Anjay-esp32-client --recursive`.
-0. Open the `nvs_config.csv` file. Provide your credentials in [endpoint_name], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). The other fields can remain unchanged.
 0. Run `. $HOME/esp/esp-idf/export.sh` and `idf.py set-target esp32`.
-0. Open menuconfig with the `idf.py menuconfig` command, navigate to the `Component config/anjay-esp32-client`, and from the supported boards, select **ESP32-DevKitC and derivatives**.
-0. Go to the `Choose an interface`, and select `External BG96 module`.
-0. Configure UART port for the BG96 module in the `BG96 module configuration`.
-![BG96 UART example configuration](images/BG96_uart_config.png.png "BG96 UART example configuration")
-0. Configure PDN in the `Connection configuration`.
+0. Open the **menuconfig** with the `idf.py menuconfig` command, navigate to **Component config -> anjay-esp32-client**.
+    - In **Choose targeted development board**, select ``M5StickC`` from the list of supported boards.
+    - In **Choose an interface**, select `External BG96 module`.
+    - In **BG96 module configuration**, specify the UART port, Tx pin and Rx pin for the BG96 module. Example port and pin numbers are provided in the screenshot below.
+      ![BG96 UART example configuration](images/BG96_uart_config.png "BG96 UART example configuration")
+    - In **Client options**, provide device credentials:
+        - **Endpoint name** - your device endpoint name
+        - **Server URI** - the address and port of your Coiote DM installation, e.g. ``coaps://eu.iot.avsystem.cloud:5684``
+        - **Security mode** - the PSK security mode
+        - **PSK configuration** - the PSK identity (must be equal to endpoint name) and PSK key
+    - In the `Connection configuration`, set **APN name** to `internet`.
+    - Press `s` on the keyboard to Save the configuration.
 
 ## Step 2: Connect BG96 module to a ESP32-DevKitC
 0. Connect the Tx, Rx and GND pins, respectively, to the ESP32-DevKitC pins selected in the previous step.
