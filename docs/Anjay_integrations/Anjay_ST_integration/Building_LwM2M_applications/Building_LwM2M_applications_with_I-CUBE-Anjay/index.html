@@ -590,6 +590,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#compiler-dependent-options" class="md-nav__link">
+    Compiler-dependent options
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiler-dependent options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iar-embedded-workbench" class="md-nav__link">
+    IAR Embedded Workbench
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keil-uvision" class="md-nav__link">
+    Keil uVision
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1827,6 +1854,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#compiler-dependent-options" class="md-nav__link">
+    Compiler-dependent options
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiler-dependent options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iar-embedded-workbench" class="md-nav__link">
+    IAR Embedded Workbench
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keil-uvision" class="md-nav__link">
+    Keil uVision
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1856,7 +1910,7 @@
 <ul>
 <li>An STM board with a USB cable.</li>
 <li>Installed <strong>STM32CubeMX</strong>.</li>
-<li>Downloaded <a href="https://www.google.com/url?q=https://github.com/AVSystem/I-CUBE-Anjay&amp;sa=D&amp;source=docs&amp;ust=1635860560367000&amp;usg=AOvVaw3SRpv0DubVZl_rYpXkeI9d"><strong>Anjay I-CUBE</strong> pack file</a>.</li>
+<li>Downloaded <a href="https://avsystem.com/static/avssite/files/AVSystem/I-CUBE-Anjay/AVSystem.I-CUBE-Anjay.2.13.0.pack"><strong>Anjay I-CUBE</strong> pack file</a>.</li>
 </ul>
 <h2 id="step-1-installing-the-anjay-i-cube-software-pack">Step 1: Installing the <strong>Anjay I-CUBE</strong> software pack<a class="headerlink" href="#step-1-installing-the-anjay-i-cube-software-pack" title="Permanent link">#</a></h2>
 <ol>
@@ -1873,11 +1927,8 @@
 </li>
 <li>Back in the <strong>Pinout &amp; Configuration</strong> tab, click <strong>Software Packs</strong> and select <strong>Select Components</strong>.
 <img alt="Select Components menu" src="../images/select_components.png" title="select_components" /></li>
-<li>From the list of packs, click <strong>AVSystem.I-CUBE-Anjay</strong> to expand a list of boards.<ul>
-<li>In the list, find your board and check it in the <strong>Selection</strong> column.</li>
-<li>In the list, find your modem device and check it in the <strong>Selection</strong> column.</li>
-<li>In the list, find the <strong>LwM2M Anjay</strong> component and check it in the <strong>Selection</strong> column.</li>
-<li>In the <strong>Device Application</strong> component, select <strong>anjay</strong> in the <strong>Selection</strong> column to enable your demo application.</li>
+<li>From the list of packs, click <strong>AVSystem.I-CUBE-Anjay</strong> to expand a list of bundles and components.<ul>
+<li>Configure options according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.</li>
 </ul>
 </li>
 </ol>
@@ -1885,7 +1936,7 @@
 <p>Before you generate code for your application, you need to configure it as per the specific requirements for your board:</p>
 <ol>
 <li>Back in the <strong>Pinout &amp; Configuration</strong> tab, expand the <strong>Software Packs</strong> tab that has appeared in the side menu and click <strong>AVSystem.I-CUBE-Anjay.x.xx.x</strong>:<ul>
-<li>In the <strong>Mode</strong> window that appears, check all the boxes next to the LwM2M Anjay, Device Application, Device Modem and Board Support <your_board_name> options.
+<li>In the <strong>Mode</strong> window that appears, check all the boxes next to the LwM2M Stack, Device LwM2M Client example, Board Support LwM2M, Board Support X STMOD PLUS MODEMS, Cellular Middleware STM32 Cellular options.
  <img alt="Mode boxes" src="../images/mode_settings.png" title="mode_settings" /></li>
 <li>In the <strong>Configuration</strong> window:<ul>
 <li>Go to the <strong>Parameter Settings</strong> tab and configure your Anjay Library. For a detailed description of all Anjay library configuration options, see <a href="https://avsystem.github.io/Anjay-doc/api/anjay__config_8h.html">here</a>.
@@ -1897,18 +1948,8 @@
 </ul>
 </li>
 <li>In the <strong>Pinout &amp; Configuration</strong> tab:<ul>
-<li>Expand the <strong>Connectivity</strong> tab:<ul>
-<li>Configure connectivity options (like <em>USART</em>) according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.
- <img alt="Connectivity settings" src="../images/dma_settings.png" title="dma_settings" /></li>
-</ul>
-</li>
-<li>Expand the <strong>Middleware</strong> tab:<ul>
-<li>Configure middleware options according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.
- <img alt="Middleware settings" src="../images/middleware.png" title="middleware" /></li>
-</ul>
-</li>
-<li>Expand the <strong>Security</strong> tab:<ul>
-<li>Configure security options according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.</li>
+<li>Expand the <strong>Connectivity</strong>, <strong>Middleware</strong>, <strong>Security</strong> and <strong>System Core</strong> tabs:<ul>
+<li>Configure options according to the specific instruction for your board in the <a href="#specific-cubemx-settings">Specific CubeMX settings</a>.</li>
 </ul>
 </li>
 </ul>
@@ -1920,6 +1961,7 @@
 <li>In the <strong>Project</strong> tab:<ul>
 <li>In the <strong>Project Name</strong> field, provide a name for your project.</li>
 <li>From the Toolchain/IDE expandable list, select <strong>STM32CubeIDE</strong>.</li>
+<li>In linker settings adjust Minimum Heap Size to 0x5000 and Minimum Stack Size to 0xC00.</li>
 </ul>
 </li>
 <li>In the <strong>Code Generator</strong> tab:<ul>
@@ -1937,24 +1979,38 @@
 <p>Start from board selector with B-L462E-CELL1 board, do not initialize all peripherals with their default mode.</p>
 <p>Through Select Components menu choose desired components from the pack, in this example select:</p>
 <ul>
-<li>LwM2M Anjay</li>
-<li>Device TYPE1SC</li>
-<li>Device Application - anjay</li>
-<li>Board Support B-L462E-CELL1</li>
+<li>LwM2M Stack<ul>
+<li>Anjay</li>
+<li>LwIP</li>
+<li>mbedtls</li>
+</ul>
+</li>
+<li>Device Application - FullExample</li>
+<li>Board Support LwM2M<ul>
+<li>LwM2M Objects: B-L462E-CELL1</li>
+<li>B-L462E-CELL1 BSP</li>
+</ul>
+</li>
+<li>Board Support X_STMOD_PLUS_MODEMS - TYPE1SC</li>
+<li>STM32_Cellular<ul>
+<li>Core</li>
+<li>Platform config: B-L462E-CELL1</li>
+</ul>
+</li>
 </ul>
 <p>Apply the following settings:</p>
 <ul>
 <li>Connectivity tab:<ul>
-<li>I2C1 - Enable</li>
-<li>USART1 - Enable, enable global interrupts</li>
-<li>USART2 - Enable, enable global interrupts</li>
-<li>USART3 - Enable, enable global interrupts</li>
+<li>I2C1 - Enable I2C1</li>
+<li>USART1 - Enable Asynchronous, enable global interrupts</li>
+<li>USART2 - Enable Asynchronous, enable global interrupts</li>
+<li>USART3 - Enable Asynchronous, enable global interrupts</li>
 </ul>
 </li>
 <li>Middleware tab:<ul>
 <li>FreeRTOS<ul>
 <li>Interface - CMSIS_V1</li>
-<li>TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)</li>
+<li>TOTAL_HEAP_SIZE - 32768 Bytes</li>
 <li>USE_COUNTING_SEMAPHORES - Enabled</li>
 </ul>
 </li>
@@ -1969,26 +2025,40 @@
 </ul>
 </li>
 </ul>
-<p>Generate the project and open in <strong>STM32CubeIDE</strong>.</p>
+<p>Generate the project and open it in <strong>STM32CubeIDE</strong>.</p>
 <p>Right click on the project <strong>Build Configurations -&gt; Set Active -&gt; Release</strong>.</p>
 <p>Select generated project and modify <strong>Properties -&gt; C/C++ Build -&gt; Settings -&gt; MCU Settings</strong></p>
-<p>Change <strong>Runtime library</strong> to <strong>Standard C</strong>, and check <code>Use float with printf from newlin-nano (-u _printf_float)</code></p>
-<p>Flash the project using <strong>Run As -&gt; STM32 Cortex-M C\C++ Application</strong>.</p>
+<p>Change <strong>Runtime library</strong> to <strong>Standard C</strong>.</p>
+<p>Flash the project using <strong>Run As -&gt; STM32 Cortex-M C/C++ Application</strong>.</p>
 <h3 id="p-l496g-cell02">P-L496G-CELL02<a class="headerlink" href="#p-l496g-cell02" title="Permanent link">#</a></h3>
 <p>Start from board selector with STM32L496G-DISCO board, do not initialize all peripherals with their default mode.</p>
 <p>Through Select Components menu choose desired components from the pack, in this example select:</p>
 <ul>
-<li>LwM2M Anjay</li>
-<li>Device TYPE1SC</li>
-<li>Device Application - anjay</li>
-<li>Board Support B-L462E-CELL1</li>
+<li>LwM2M Stack<ul>
+<li>Anjay</li>
+<li>LwIP</li>
+<li>mbedtls</li>
+</ul>
+</li>
+<li>Device Application - FullExample</li>
+<li>Board Support LwM2M<ul>
+<li>LwM2M Objects: P-L496G-CELL02</li>
+<li>P-L496G-CELL02 BSP</li>
+</ul>
+</li>
+<li>Board Support X_STMOD_PLUS_MODEMS - BG96 or MONARCH (depending on your setup)</li>
+<li>STM32_Cellular<ul>
+<li>Core</li>
+<li>Platform config: P-L496G-CELL02</li>
+</ul>
+</li>
 </ul>
 <p>Apply the following settings:</p>
 <ul>
 <li>Connectivity tab:<ul>
-<li>I2C1 - Enable</li>
-<li>USART1 - Enable, enable global interrupts</li>
-<li>USART2 - Enable, enable global interrupts</li>
+<li>I2C1 - Enable I2C</li>
+<li>USART1 - Enable Asynchronous, enable global interrupts</li>
+<li>USART2 - Enable Asynchronous, enable global interrupts</li>
 </ul>
 </li>
 <li>Security tab:<ul>
@@ -1998,8 +2068,18 @@
 <li>Middleware tab:<ul>
 <li>FreeRTOS<ul>
 <li>Interface - CMSIS_V1</li>
-<li>TOTAL_HEAP_SIZE - 18432 Bytes (Required by X-CUBE-CELLULAR)</li>
+<li>TOTAL_HEAP_SIZE - 32768 Bytes</li>
 <li>USE_COUNTING_SEMAPHORES - Enabled</li>
+<li>USE_TIMERS - Enabled</li>
+<li>vTaskDelayUntil - Enabled</li>
+<li>uxTaskGetStackHighWaterMark - Enabled</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>System Core<ul>
+<li>SYS<ul>
+<li>Timebase Source - TIM1</li>
 </ul>
 </li>
 </ul>
@@ -2013,10 +2093,95 @@
 </ul>
 </li>
 </ul>
-<p>Generate the project and open in <strong>STM32CubeIDE</strong>.</p>
+<p>Generate the project and open it in <strong>STM32CubeIDE</strong>.</p>
 <p>Select generated project and modify <strong>Properties -&gt; C/C++ Build -&gt; Settings -&gt; MCU Settings</strong></p>
-<p>Change <strong>Runtime library</strong> to <strong>Standard C</strong>, and check <code>Use float with printf from newlin-nano (-u _printf_float)</code></p>
-<p>Flash the project using <strong>Run As -&gt; STM32 Cortex-M C\C++ Application</strong>.</p>
+<p>Change <strong>Runtime library</strong> to <strong>Standard C</strong>.</p>
+<p>Flash the project using <strong>Run As -&gt; STM32 Cortex-M C/C++ Application</strong>.</p>
+<h2 id="compiler-dependent-options">Compiler-dependent options<a class="headerlink" href="#compiler-dependent-options" title="Permanent link">#</a></h2>
+<p>When generating code, CubeMX might warn you that <code>USE_NEWLIB_REENTRANT</code> option must be set. However, not all the IDEs have <em>newlib</em> in their toolchain libraries and checking this option can make your project uncompilable. For IAR and Keil simply press <code>Yes</code> to skip it.</p>
+<p>Depending on the Compiler Toolchain, redirecting standard output into the console via UART and serial port might require additional options in IDE and compiler-specific code. Solutions can be found below as well as in the Pack's demonstration projects.</p>
+<h3 id="iar-embedded-workbench">IAR Embedded Workbench<a class="headerlink" href="#iar-embedded-workbench" title="Permanent link">#</a></h3>
+<p>IAR Embedded Workbench for ARM version 9.20.2 or higher is required to compile the project.</p>
+<ol>
+<li>
+<p>To compile client application example, navigate to <strong>Project -&gt; Options ... -&gt; C/C++ Compiler -&gt; C dialect</strong> and set <strong>Allow VLA</strong>.
+    <img alt="Allow VLA" src="../images/iar_vla.png" title="allow_vla" /></p>
+</li>
+<li>
+<p>To allow and handle serial output with application flashed on board and <strong>not</strong> attached to IAR, Semihosting has to be disabled.
+    Navigate to <strong>Project -&gt; Options ... -&gt; General Options -&gt; Library low-level interface implementation</strong> and set it to <strong>None</strong>.
+    <img alt="Disable Semihosting" src="../images/iar_semihosting.png" title="disable_semihosting" /></p>
+<p>In <code>main.c</code> add the following lines of code:</p>
+<div class="highlight"><pre><span></span><code>#include &quot;plf_hw_config.h&quot;
+#include &lt;stdio.h&gt;
+#include &quot;trace_interface.h&quot;
+#include &lt;LowLevelIOInterface.h&gt;
+
+// ...
+
+int iar_fputc(int ch);
+#define PUTCHAR_PROTOTYPE int iar_fputc(int ch)
+
+// ...
+
+size_t __write(int file, unsigned char const *ptr, size_t len)
+{
+size_t idx;
+unsigned char const *pdata = ptr;
+
+for (idx = 0; idx &lt; len; idx++)
+{
+    iar_fputc((int)*pdata);
+    pdata++;
+}
+return len;
+}
+
+PUTCHAR_PROTOTYPE
+{
+/* Place your implementation of putchar here */
+/* e.g. write a character to the USART3 and Loop until the end of transmission */
+HAL_UART_Transmit(&amp;TRACE_INTERFACE_UART_HANDLE, (uint8_t *)&amp;ch, 1, 0xFFFF);
+
+return ch;
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="keil-uvision">Keil uVision<a class="headerlink" href="#keil-uvision" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>The newest Keil MDK distribution no longer contains Arm Compiler 5, which is a target compiler when generating a project with STM32CubeMX. You have to either install Keil MDK version older than 5.37 or install the missing compiler manually - <a href="https://developer.arm.com/documentation/ka005073/1-0/?lang=en">more information here</a>.</p>
+</li>
+<li>
+<p>Keil's <code>errno</code> defines conflict with LwIP's <code>errno</code> and it must be resolved by adding LwIP's include folder to the list of the system includes. To do so, navigate to <strong>Project -&gt; Options for Target (...) -&gt; C/C++ -&gt; Misc Controls</strong> and add a following command control option (ensure proper path; incorrect path will not generate an error):<br>
+    <code>-J ../Middlewares/Third_Party/AVSystem_LwM2M_Stack/LwIP/src/include/compat/stdc -J "$J"</code></p>
+<p><img alt="Keil Misc Controls" src="../images/keil_misc.png" title="keil_misc" /></p>
+</li>
+<li>
+<p>To ensure proper handling of serial output with application flashed on board and <strong>not</strong> attached to uVision, navigate to <strong>Project -&gt; Manage -&gt; Run-Time Environment... -&gt; Compiler -&gt; I/O</strong>, select checkboxes and choose <strong>User</strong> variant for <strong>STRERR</strong>, <strong>STDIN</strong> and <strong>STDOUT</strong>.
+    <img alt="Keil IO settings" src="../images/keil_io.png" title="keil_io" /></p>
+<p>In <code>main.c</code> add the following lines of code:
+<div class="highlight"><pre><span></span><code>#include &quot;plf_hw_config.h&quot;
+#include &lt;stdio.h&gt;
+
+// ...
+
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+
+// ...
+
+PUTCHAR_PROTOTYPE
+{
+/* Place your implementation of putchar here */
+/* e.g. write a character to the USART3 and Loop until the end of transmission */
+HAL_UART_Transmit(&amp;TRACE_INTERFACE_UART_HANDLE, (uint8_t *)&amp;ch, 1, 0xFFFF);
+
+return ch;
+}
+</code></pre></div></p>
+</li>
+</ol>
 
 <!-- Link to previous and/or next page -->
 
@@ -2078,7 +2243,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2022</span>
     
   </small>
 </div>
