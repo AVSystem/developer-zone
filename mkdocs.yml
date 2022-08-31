@@ -95,6 +95,7 @@ nav:
             - 'nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
         - 'Release notes':
             - 2022:
+                - 'Release_Notes/v2022.18.3.md'
                 - 'Release_Notes/v2022.17.0.md'
                 - 'Release_Notes/v2022.16.0.md'
                 - 'Release_Notes/v2022.13.5.md'
