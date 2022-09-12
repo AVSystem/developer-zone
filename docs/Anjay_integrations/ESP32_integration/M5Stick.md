@@ -15,9 +15,11 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 
 ## Step 2: Configure the client using an NVS partition
 
-0. Create a `nvs_config.csv` file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). Use the following snippet as a template:
+0. Create a `nvs_config.csv` file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [endpoint_name], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). Use the following snippet as a template:
 
     !!! important
+        The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.
+
 
     ```
     key,type,encoding,value
@@ -25,6 +27,7 @@ Integrate your ESP32-based device to manage it via Coiote DM.
     wifi_ssid,data,string,[wifi_ssid]
     wifi_pswd,data,string,[wifi_password]
     wifi_inter_en,data,u8,1
+    endpoint_name,data,string,[endpoint_name]
     identity,data,string,[identity]
     psk,data,string,[psk]
     uri,data,string,[lwm2m_server_uri]
@@ -47,7 +50,7 @@ python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 
 ## Step 3: Add device to Coiote DM
 
-To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://www.avsystem.com/try-anjay/ to get access.
+To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.
 
 To connect the board:
 
@@ -56,9 +59,10 @@ To connect the board:
 0. Select the **Connect your LwM2M device directly via the Management server** tile.
 ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
 0. In the **Device credentials** step:
-    - In the **Device ID** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
+    - In the **Device ID** field, type the endpoint name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Security mode** section, select the **PSK** mode.
     - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
+    - In the **Key identity** field, type the identity provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.
     ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
