@@ -18,7 +18,6 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 0. Create a `nvs_config.csv` file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). Use the following snippet as a template:
 
     !!! important
-        The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.
 
     ```
     key,type,encoding,value
