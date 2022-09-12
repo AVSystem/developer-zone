@@ -45,7 +45,7 @@ Enter the command line interface on your machine and paste the following command
 
 ## Step 4: Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://www.avsystem.com/try-anjay/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
 
 !!! note
     If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.

@@ -48,7 +48,7 @@ python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 
 ## Step 3: Add device to Coiote DM
 
-To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://www.avsystem.com/try-anjay/ to get access.
+To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.
 
 To connect the board:
 

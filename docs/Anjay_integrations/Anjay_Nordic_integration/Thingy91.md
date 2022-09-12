@@ -52,7 +52,7 @@ Enter the command line interface on your machine, then paste and run the followi
 
 ## Step 5: Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://www.avsystem.com/try-anjay/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
 
 To connect the board:
 
