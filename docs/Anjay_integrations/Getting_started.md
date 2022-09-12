@@ -1,12 +1,25 @@
 # Getting started
 
-Start developing LwM2M applications on your boards and IoT devices in just a few clicks using our Anjay LwM2M Client.   
+Start developing LwM2M applications on your boards and IoT devices in just a few clicks using our Anjay LwM2M Client.
 
-## Espressif ESP32 (M5StickC)
+## Espressif ESP32
+## M5StickC
 
 ![M5Stick](images/m5stick.webp "M5Stick"){ width=50% }
 
 [Start integration](./ESP32_integration/M5Stick.md){: .md-button .md-button--big }
+
+## M5StickC/BG96
+
+![M5StickC/BG96](images/M5StickC+BG96.jpg "M5StickC/BG96"){ width=50% }
+
+[Start integration](./ESP32_integration/M5StickBG96.md){: .md-button .md-button--big }
+
+## ESP32-DevKitC/BG96
+
+![ESP32DevKitC/BG96](images/ESP32devkitC+BG96.png "ESP32DevKitC/BG96")
+
+[Start integration](./ESP32_integration/ESP32-DevKitCBG96.md){: .md-button .md-button--big }
 
 ## STMicroelectronics
 

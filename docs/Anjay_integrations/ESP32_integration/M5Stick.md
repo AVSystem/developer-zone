@@ -20,6 +20,7 @@ Integrate your ESP32-based device to manage it via Coiote DM.
     !!! important
         The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.
 
+
     ```
     key,type,encoding,value
     config,namespace,,
@@ -60,6 +61,7 @@ To connect the board:
 0. In the **Device credentials** step:
     - In the **Device ID** field, type the endpoint name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Security mode** section, select the **PSK** mode.
+    - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Key identity** field, type the identity provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.
     ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
