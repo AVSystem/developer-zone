@@ -108,7 +108,7 @@ Thus, for instance, to execute a factory reset on a device, you need to invoke a
 
 ```
     {
-       path: "3.0.5"
+       "path": "3.0.5"
     }
 ```
 
