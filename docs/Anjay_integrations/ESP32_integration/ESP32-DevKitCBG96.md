@@ -47,4 +47,4 @@ To connect the board:
 0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.
 
 ## Step 4: Flash ESP32-DevKitC
-0. Open a command line interface and run `idf.py -b 750000 flash monitor`.
+0. Open the command line interface, go to your project directory, and run `idf.py flash monitor`.
