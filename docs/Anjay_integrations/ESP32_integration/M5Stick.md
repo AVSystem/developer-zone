@@ -43,6 +43,7 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 0. Open a command line interface, go to your project directory, and generate the NVS partition:
 
 ```
+pip3 install future cryptography
 python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 ```
 
