@@ -13,7 +13,27 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 0. Create a project directory for the integration.
 0. Go to [https://github.com/AVSystem/Anjay-esp32-client/releases](https://github.com/AVSystem/Anjay-esp32-client/releases) and download `m5stickc-plus.bin` and `nvs_partition_gen.py` to your project directory.
 
-## Step 2: Configure the client using an NVS partition
+## Step 2: Add device to Coiote DM
+
+To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.
+
+To connect the board:
+
+0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+0. In **Device Inventory**, click **Add device**.
+0. Select the **Connect your LwM2M device directly via the Management server** tile.
+![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
+0. In the **Device credentials** step:
+    - In the **Device ID** field, type the endpoint name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
+    - In the **Security mode** section, select the **PSK** mode.
+    - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
+    - In the **Key identity** field, type the identity provided in the `nvs_config.csv`, e.g. `ESP32_test`.
+    - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.
+    ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
+0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
+0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.
+
+## Step 3: Configure the client using an NVS partition
 
 0. Create a `nvs_config.csv` file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [endpoint_name], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). Use the following snippet as a template:
 
@@ -42,52 +62,62 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 
 0. Open a command line interface, go to your project directory, and generate the NVS partition:
 
-```
-pip3 install future cryptography
-python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
-```
+=== "Linux"
+    ``` linux
+            pip3 install future cryptography
+            python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
+    ```
+=== "Windows"
+    ``` windows
+            pip3 install future cryptography
+            python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
+    ```
 
-![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
-
-## Step 3: Add device to Coiote DM
-
-To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.
-
-To connect the board:
-
-0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
-0. In **Device Inventory**, click **Add device**.
-0. Select the **Connect your LwM2M device directly via the Management server** tile.
-![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-0. In the **Device credentials** step:
-    - In the **Device ID** field, type the endpoint name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
-    - In the **Security mode** section, select the **PSK** mode.
-    - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
-    - In the **Key identity** field, type the identity provided in the `nvs_config.csv`, e.g. `ESP32_test`.
-    - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.
-    ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.
+![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 30px;"}
 
 ## Step 4: Flash the board and run device
 
 Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.
 
-0. Install the `esptool.py`:
+
+
+
+Install the `esptool.py`:
+
+
 ```
-pip install esptool
+        pip install esptool
 ```
 
-0. Flash the board:
-```
-esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
-```
+Flash the board:
 
-0. Flash the NVS partition binary:
-```
-esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
-```
+=== "Linux"
 
+    ``` linux
+        esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+    ```
+
+=== "Windows"
+
+    ``` windows
+        esptool -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+    ```
+
+Flash the NVS partition binary:
+
+=== "Linux"
+
+    ``` linux
+        esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+    ```
+
+=== "Windows"
+
+    ``` windows
+        esptool -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+    ```
+
+<br>
 Once executed, the device will be reset and run with the configuration you provided.
 
    ![Registered device](images/registered_device.png "Registered device")
@@ -111,7 +141,7 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 0. Open a command line interface and run `git clone https://github.com/AVSystem/Anjay-esp32-client`.
 0. Go to the directory of the cloned repository and run `idf.py set-target esp32`.
 0. Run `git submodule update --recursive --init`.
-0. Run `idf.py menuconfig`, navigate to `Component config/anjay-esp32-client`, and from the supported boards, select **M5StickC**. Press `s` and `enter` to save.
+0. Run `idf.py menuconfig`, navigate to `Component config/anjay-esp32-client`, and from the supported boards choose target development board (**M5StickC**). Press `s` and `enter` to save.
 0. Run `idf.py build`.
 0. Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build`.
 
