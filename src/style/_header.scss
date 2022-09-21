@@ -11,18 +11,25 @@
 }
 
 .header{
-    min-height: 300px;
-    background-image: url('../images/headerBg_new.jpg');
+    //min-height: 300px;
+    //background-image: url('../images/headerBg_new.jpg');
+    min-height: 400px;
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-image: url(../images/desktop_default_M.jpg);
+    @media(max-width: 450px) {
+      background-image: url(../images/mobile_default_M.jpg);
+      min-height: 250px;
+    }
 
     &__mainTitle{
         color:#fff;
-        font-size:5.4rem;
+        font-size:5.6rem;
         font-weight: 700;
-        text-align: center;
+        text-align: left;
         letter-spacing: 1px;
-        padding-top: 25px;
+        padding-top: 60px;
 
         @media(max-width:1400px){
             font-size:4.8rem
@@ -35,8 +42,9 @@
             padding-top: 35px;
         }
         @media(max-width:576px){
-            font-size:3.5rem;
-            padding-top: 50px;
+            font-size: 30px;
+            line-height: 36px;
+            padding-top: 32px;
         }
     }
 }
