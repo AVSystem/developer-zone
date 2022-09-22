@@ -6,10 +6,20 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the Sequans' Monarc
 
 - The STM32L496G-DISCO/MONARCH board with a USB cable.
 - Installed **STM32CubeIDE**.
-- Installed **minicom** (for Linux) or RealTerm (for Windows) or other serial communication program.
+- Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
 - A user with access to the Coiote IoT Device Management platform.
 
-## Step 1: Cloning the Anjay freeRTOS client repository
+## Prepare binaries
+### Use an already built binary
+
+To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+
+In this case we are going to use the Anjay-freertos-client-STM32L496G-MONARCH.bin file which after downloaded must be added to STM32L496G-DISCO/MONARCH board folder.
+
+
+
+### Start developement using samples
+#### Step 1: Cloning the Anjay freeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
 
@@ -17,7 +27,7 @@ Enter the command line interface on your machine and paste the following command
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-## Step 2: Compiling the board
+#### Step 2: Compiling the board
 
 0. Connect the STM32L496G-DISCO/MONARCH board to a USB port of your machine.
 0. Go to the STM32CubeIDE.
@@ -33,17 +43,8 @@ Enter the command line interface on your machine and paste the following command
         - In the **Lauch Configuration Selection**, choose the **Anjay-freertos-client-STM32L496G-MONARCH** option and click **OK**.
 0. After the build and run are complete, the board is now compiled.
 
-## Step 3: Configuring the Client
 
-1. With the board still connected to a serial port interface, open a serial communication program.
-2. Press the reset button located on the board. This should trigger the following prompt:
-
-    ``Press any key in 3 seconds to enter config menu...``
-
-3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
-   ![Client configuration](images/config_menu.png "Client configuration")
-
-## Step 4: Connecting to the LwM2M Server
+## Connecting to the LwM2M Server
 
 To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
 
@@ -56,10 +57,31 @@ To connect the board:
     3. In the **Device credentials** step:
          - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-         - In the **Security mode** section, select the **PSK** mode:
+         - In the **Security mode** section, select the **PSK (Pre-shared Key)** mode:
               - In the **Key identity** field, type `test_device`
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, wait for the board to connect.
     6. Click **Go to device** to see your added device dashboard.
+
+    !!! tip
+        LwM2M Server URI, endpoint name and other informations you can read from **configuration** tab.
+
+## Configuring the Client
+
+1. With the board still connected to a serial port interface, open a serial communication program.
+2. Press the reset button located on the board. This should trigger the following prompt:
+
+    ``Press any key in 3 seconds to enter config menu...``
+
+3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
+    ![Client configuration](images/config_menu1.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
+
+    !!! important
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card truphone then change APN to **iot.truphone.com**.
+
+    !!! Note
+        If you use external eSIM card you have to check APN used by SIM card's provider.
+
+4. After changing credentials go to Coiote DM and refresh data:
         ![Registered device](images/registered_device.png "Registered device")
