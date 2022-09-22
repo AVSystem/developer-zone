@@ -57,8 +57,8 @@ To connect the board:
     wifi_inter_en,data,u8,0
     ```
 
-    !!! Note
-        The additional parameters under the **writable_wifi** namespace are used to provide a secondary Wi-Fi configuration (it is not obligatory). This allows for switching between Wi-Fi configurations while the device is running.
+!!! Note
+    The additional parameters under the **writable_wifi** namespace are used to provide a secondary Wi-Fi configuration (it is not obligatory). This allows for switching between Wi-Fi configurations while the device is running.
 
 0. Open a command line interface, go to your project directory, and generate the NVS partition:
 
@@ -74,6 +74,11 @@ To connect the board:
     ```
 
 ![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 30px;"}
+
+
+!!! Note
+    Before flashing the device you should erase the flash first to make sure you have correct settings.
+
 
 ## Step 4: Flash the board and run device
 
