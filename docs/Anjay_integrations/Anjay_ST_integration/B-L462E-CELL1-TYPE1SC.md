@@ -64,7 +64,7 @@ To connect the board:
     5. In the **Connect your device** step, wait for the board to connect.
     6. Click **Go to device** to see your added device dashboard.
 
-    !!! Note
+    !!! tip
         LwM2M Server URI, endpoint name and other informations you can read from **configuration** tab.
 
 ## Configuring the Client
@@ -76,5 +76,12 @@ To connect the board:
 
 3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
       ![Client configuration](images/config_menu1.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
+
+    !!! important
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card truphone then change APN to **iot.truphone.com**.
+
+    !!! Note
+        If you use external eSIM card you have to check APN used by your card's company.
+
 4. After changing credentials go to Coiote DM and refresh data:
      ![Registered device](images/registered_device.png "Registered device")
