@@ -9,11 +9,21 @@ Integrate your B-L475E-IOT01A Discovery kit board.
 - Installed **ST-Link** or **OpenOCD** debugger.
 - A user with access to the Coiote IoT Device Management platform and appropriate permissions.
 
-## Step 1: Getting Zephyr and Python dependencies
+## Prepare binaries
+### Use an already built binary
+
+To get the latest binaries, navigate to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases).
+
+In this case we are going to use the demo_B-L475E-IOT01A1_merged.bin file which after downloaded must be added to B-L475E-IOT01A board folder.
+
+
+
+### Start developement using samples
+#### Step 1: Getting Zephyr and Python dependencies
 
 To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
 
-## Step 2: Cloning the Anjay zephyr repository
+#### Step 2: Cloning the Anjay zephyr repository
 
 Enter the command line interface on your machine, then paste and run the following command:
 
@@ -21,7 +31,7 @@ Enter the command line interface on your machine, then paste and run the followi
    git clone https://github.com/AVSystem/Anjay-zephyr-client
    ```
 
-## Step 3: Compiling the board
+#### Step 3: Compiling the board
 
 0. Connect the B-L475E-IOT01A board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, and manifest file to `west.yml` and do `west update`:
@@ -35,7 +45,7 @@ Enter the command line interface on your machine, then paste and run the followi
 0. Compile the project for **B-L475E-IOT01A** using `west build -b disco_l475_iot1` in the demo directory.
 0. Flash the board using `west flash`.
 
-## Step 4: Connecting to the LwM2M Server
+## Connecting to the LwM2M Server
 
 To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
 
@@ -56,7 +66,7 @@ To connect the board:
     6. Click **Go to device** to see your added device dashboard.
 
 
-## Step 5: Configuring the Client
+## Configuring the Client
 
 1. With the board still connected to a serial port interface, open a serial communication program.
 2. Use the `anjay` command to list possible options:
