@@ -44,16 +44,36 @@ Enter the command line interface on your machine, then paste and run the followi
 0. Find the `app_signed.hex` file under the `build/zephyr` directory in the project folder.
 
 ## Flash the binaries
-To program the board, use the whole process of **flashing Thingy:91** which [is described here.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application)
+To program the board, go through the whole process of **flashing Thingy:91** [described here.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application)
 
-After you have programmed all steps from page use the nRF Connect Programmer with the `.hex` file generated or downloaded in a previous step.
+After successful flashing, use the nRF Connect Programmer with the `.hex` file generated or downloaded in a previous step.
 Then reset the board and go to the next step.
 
 
+
+## Connect to the LwM2M Server
+
+To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
+
+To connect the board:
+
+0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+0. In **Device Inventory**, click **Add device**.
+0. Select the **Connect your LwM2M device directly via the Management server** tile.
+    ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
+0. In the **Device credentials** step:
+     - In the **Endpoint name** field, enter your board endpoint name e.g. `test_device` (remember to set the same name in the [next section](#configure-the-client)).
+         ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
+     - In the **Security mode** section, select the **Pre-Shared Key** mode:
+         - In the **Key identity** field, type `test_device`
+         - In the **Key** field, type the shared secret used in the device-server authentication.
+0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
+0. While in the **Connect your device** step, follow the [next section](#configure-the-client) to run the client and connect.
+
 ## Configure the Client
 
-1. With the board still connected to a serial port interface, open a serial communication program.
-2. Use the `anjay` command to list possible options:
+0. With the board still connected to a serial port interface, open a serial communication program.
+0. Use the `anjay` command to list possible options:
 
     ```
     uart:~$ anjay
@@ -63,28 +83,11 @@ Then reset the board and go to the next step.
     stop    :Stop Anjay
     config  :Configure Anjay params
     ```
-In this situation really useful can be **Tab key** which shows you available possibilities.
 
-3. You can also change the default credentials to your custom data by following the instructions presented in the program.
+    !!! tip
+        To show available subcommands, use the **Tab** key.
 
-
-## Connect to the LwM2M Server
-
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
-
-To connect the board:
-
-1. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
-2. In **Device Inventory**, click **Add device**.
-3. Select the **Connect your LwM2M device directly via the Management server** tile.
-    ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-4. In the **Device credentials** step:
-     - In the **Device ID** enter your board endpoint name which you can check in serial communication program, e.g. `test_device`.
-         ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-     - In the **Security mode** section, select the **Pre-Shared Key** mode:
-         - In the **Key identity** field, type `test_device`
-         - In the **Key** field, type the shared secret used in the device-server authentication.
-5. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-6. In the **Connect your device** step, wait for the board to connect.
-7. Click **Go to device** to see your added device dashboard.
+0. Optionally, change the default credentials by following the instructions in the program.
+0. Use the `start` command to run the Client.
+0. In Coiote DM, click **Go to device** to see if your device connected successfully.
     ![Registered device](images/registered_device.png "Registered device")
