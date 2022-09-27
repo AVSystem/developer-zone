@@ -692,15 +692,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-the-client" class="md-nav__link">
-    Configure the Client
+  <a href="#connect-to-the-lwm2m-server" class="md-nav__link">
+    Connect to the LwM2M Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-to-the-lwm2m-server" class="md-nav__link">
-    Connect to the LwM2M Server
+  <a href="#configure-the-client" class="md-nav__link">
+    Configure the Client
   </a>
   
 </li>
@@ -1928,15 +1928,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-the-client" class="md-nav__link">
-    Configure the Client
+  <a href="#connect-to-the-lwm2m-server" class="md-nav__link">
+    Connect to the LwM2M Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-to-the-lwm2m-server" class="md-nav__link">
-    Connect to the LwM2M Server
+  <a href="#configure-the-client" class="md-nav__link">
+    Configure the Client
   </a>
   
 </li>
@@ -1969,7 +1969,7 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>The Thingy:91 board with a USB cable.</li>
-<li>Installed <strong>minicom</strong> (for Linux) or RealTerm (for Windows) or other serial communication program.</li>
+<li>Installed <strong>minicom</strong> (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.</li>
 <li>A user with access to the Coiote IoT Device Management platform and appropriate permissions.</li>
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
@@ -2000,9 +2000,30 @@ west update
 <li>Find the <code>app_signed.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</li>
 </ol>
 <h2 id="flash-the-binaries">Flash the binaries<a class="headerlink" href="#flash-the-binaries" title="Permanent link">#</a></h2>
-<p>To program the board, use the nRF Connect Programmer with the <code>.hex</code> file generated or downloaded in a previous step.
-The whole process of <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application">flashing Thingy:91 is described here.</a></p>
-<p>After you have programmed and reset the board, go to the next step.</p>
+<p>To program the board, go through the whole process of <strong>flashing Thingy:91</strong> <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application">described here.</a></p>
+<p>After successful flashing, use the nRF Connect Programmer with the <code>.hex</code> file generated or downloaded in a previous step.
+Then reset the board and go to the next step.</p>
+<h2 id="connect-to-the-lwm2m-server">Connect to the LwM2M Server<a class="headerlink" href="#connect-to-the-lwm2m-server" title="Permanent link">#</a></h2>
+<p>To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.</p>
+<p>To connect the board:</p>
+<ol>
+<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
+<li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
+    <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
+<li>In the <strong>Device credentials</strong> step:<ul>
+<li>In the <strong>Endpoint name</strong> field, enter your board endpoint name e.g. <code>test_device</code> (remember to set the same name in the <a href="#configure-the-client">next section</a>).
+     <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
+<li>In the <strong>Security mode</strong> section, select the <strong>Pre-Shared Key</strong> mode:<ul>
+<li>In the <strong>Key identity</strong> field, type <code>test_device</code></li>
+<li>In the <strong>Key</strong> field, type the shared secret used in the device-server authentication.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
+<li>While in the <strong>Connect your device</strong> step, follow the <a href="#configure-the-client">next section</a> to run the client and connect.</li>
+</ol>
 <h2 id="configure-the-client">Configure the Client<a class="headerlink" href="#configure-the-client" title="Permanent link">#</a></h2>
 <ol>
 <li>With the board still connected to a serial port interface, open a serial communication program.</li>
@@ -2015,32 +2036,16 @@ start   :Save config and start Anjay
 stop    :Stop Anjay
 config  :Configure Anjay params
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To show available subcommands, use the <strong>Tab</strong> key.</p>
+</div>
 </li>
 <li>
-<p>Change the default credentials to your custom data by following the instructions presented in the program and save it.</p>
+<p>Optionally, change the default credentials by following the instructions in the program.</p>
 </li>
-</ol>
-<h2 id="connect-to-the-lwm2m-server">Connect to the LwM2M Server<a class="headerlink" href="#connect-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.</p>
-<p>To connect the board:</p>
-<ol>
-<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
-<li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
-<li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
-    <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
-<li>In the <strong>Device credentials</strong> step:<ul>
-<li>In the <strong>Device ID</strong> enter your board endpoint name, e.g. <code>test_device</code>.
-     <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-<li>In the <strong>Security mode</strong> section, select the <strong>PSK</strong> mode:<ul>
-<li>In the <strong>Key identity</strong> field, type <code>test_device</code></li>
-<li>In the <strong>Key</strong> field, type the shared secret used in the device-server authentication.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>In the <strong>Connect your device</strong> step, wait for the board to connect.</li>
-<li>Click <strong>Go to device</strong> to see your added device dashboard.
+<li>Use the <code>start</code> command to run the Client.</li>
+<li>In Coiote DM, click <strong>Go to device</strong> to see if your device connected successfully.
     <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
 </ol>
 
@@ -2104,7 +2109,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2022</span>
     
   </small>
 </div>
