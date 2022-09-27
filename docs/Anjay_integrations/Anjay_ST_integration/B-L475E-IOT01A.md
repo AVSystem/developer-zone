@@ -14,7 +14,7 @@ Integrate your B-L475E-IOT01A Discovery kit board.
 
 To get the latest binaries, navigate to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases).
 
-In this case we are going to use the demo_B-L475E-IOT01A1_merged.bin file which after downloaded must be added to B-L475E-IOT01A board folder.
+In this case we are going to use the demo_B-L475E-IOT01A1_merged.bin file which after being downloaded must be added to B-L475E-IOT01A board folder.
 
 
 
