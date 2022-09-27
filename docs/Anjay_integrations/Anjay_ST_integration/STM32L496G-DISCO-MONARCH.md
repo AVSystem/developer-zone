@@ -14,7 +14,7 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the Sequans' Monarc
 
 To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 
-In this case we are going to use the Anjay-freertos-client-STM32L496G-MONARCH.bin file which after downloaded must be added to STM32L496G-DISCO/MONARCH board folder.
+In this case we are going to use the Anjay-freertos-client-STM32L496G-MONARCH.bin file which after being downloaded must be added to STM32L496G-DISCO/MONARCH board folder.
 
 
 
