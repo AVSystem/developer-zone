@@ -643,36 +643,69 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prepare-binaries" class="md-nav__link">
+    Prepare binaries
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare binaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-an-already-built-binary" class="md-nav__link">
+    Use an already built binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-developement-using-samples" class="md-nav__link">
+    Start developement using samples
+  </a>
+  
+    <nav class="md-nav" aria-label="Start developement using samples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#step-1-getting-zephyr-and-python-dependencies" class="md-nav__link">
     Step 1: Getting Zephyr and Python dependencies
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-2-cloning-the-anjay-zephyr-repository" class="md-nav__link">
     Step 2: Cloning the Anjay zephyr repository
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-3-compiling-the-example" class="md-nav__link">
     Step 3: Compiling the example
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configuring-the-client" class="md-nav__link">
-    Step 4: Configuring the Client
+  <a href="#connecting-to-the-lwm2m-server" class="md-nav__link">
+    Connecting to the LwM2M Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-connecting-to-the-lwm2m-server" class="md-nav__link">
-    Step 5: Connecting to the LwM2M Server
+  <a href="#configuring-the-client" class="md-nav__link">
+    Configuring the Client
   </a>
   
 </li>
@@ -1827,36 +1860,69 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prepare-binaries" class="md-nav__link">
+    Prepare binaries
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare binaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-an-already-built-binary" class="md-nav__link">
+    Use an already built binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-developement-using-samples" class="md-nav__link">
+    Start developement using samples
+  </a>
+  
+    <nav class="md-nav" aria-label="Start developement using samples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#step-1-getting-zephyr-and-python-dependencies" class="md-nav__link">
     Step 1: Getting Zephyr and Python dependencies
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-2-cloning-the-anjay-zephyr-repository" class="md-nav__link">
     Step 2: Cloning the Anjay zephyr repository
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-3-compiling-the-example" class="md-nav__link">
     Step 3: Compiling the example
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configuring-the-client" class="md-nav__link">
-    Step 4: Configuring the Client
+  <a href="#connecting-to-the-lwm2m-server" class="md-nav__link">
+    Connecting to the LwM2M Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-connecting-to-the-lwm2m-server" class="md-nav__link">
-    Step 5: Connecting to the LwM2M Server
+  <a href="#configuring-the-client" class="md-nav__link">
+    Configuring the Client
   </a>
   
 </li>
@@ -1889,16 +1955,22 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>The nRF9160 board with a USB cable.</li>
-<li>Installed <strong>minicom</strong> (for Linux) or RealTerm (for Windows) or other serial communication program.</li>
+<li>Installed <strong>minicom</strong> (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.</li>
+<li>Installed nrfjprog.</li>
 <li>A user with access to the Coiote IoT Device Management platform and appropriate permissions.</li>
 </ul>
-<h2 id="step-1-getting-zephyr-and-python-dependencies">Step 1: Getting Zephyr and Python dependencies<a class="headerlink" href="#step-1-getting-zephyr-and-python-dependencies" title="Permanent link">#</a></h2>
+<h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
+<h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
+<p>To get the latest binaries, navigate to <a href="https://github.com/AVSystem/Anjay-zephyr-client/releases">Anjay-zephyr-client</a> and download one of the attached .hex files.</p>
+<p>In this case we are going to use the <code>demo</code> application, so find the <code>demo_nrf9160dk_merged.hex</code> file which after downloaded must be added to nRF9160 board folder.</p>
+<h3 id="start-developement-using-samples">Start developement using samples<a class="headerlink" href="#start-developement-using-samples" title="Permanent link">#</a></h3>
+<h4 id="step-1-getting-zephyr-and-python-dependencies">Step 1: Getting Zephyr and Python dependencies<a class="headerlink" href="#step-1-getting-zephyr-and-python-dependencies" title="Permanent link">#</a></h4>
 <p>To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by <a href="https://docs.zephyrproject.org/latest/getting_started/index.html">the Zephyr Project</a> (from the set up the OS to installing the Zephyr SDK).</p>
-<h2 id="step-2-cloning-the-anjay-zephyr-repository">Step 2: Cloning the Anjay zephyr repository<a class="headerlink" href="#step-2-cloning-the-anjay-zephyr-repository" title="Permanent link">#</a></h2>
+<h4 id="step-2-cloning-the-anjay-zephyr-repository">Step 2: Cloning the Anjay zephyr repository<a class="headerlink" href="#step-2-cloning-the-anjay-zephyr-repository" title="Permanent link">#</a></h4>
 <p>Enter the command line interface on your machine and change the directory to the one where you set up the Zephyr project (usually, it's <code>~/zephyrproject</code>), then paste and run the following command:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AVSystem/Anjay-zephyr-client
 </code></pre></div>
-<h2 id="step-3-compiling-the-example">Step 3: Compiling the example<a class="headerlink" href="#step-3-compiling-the-example" title="Permanent link">#</a></h2>
+<h4 id="step-3-compiling-the-example">Step 3: Compiling the example<a class="headerlink" href="#step-3-compiling-the-example" title="Permanent link">#</a></h4>
 <ol>
 <li>Connect the nRF9160 board to a USB port of your machine.</li>
 <li>
@@ -1918,24 +1990,7 @@ west build -b nrf9160dk_nrf9160ns
 <p>Flash the board using <code>west flash</code>.</p>
 </li>
 </ol>
-<h2 id="step-4-configuring-the-client">Step 4: Configuring the Client<a class="headerlink" href="#step-4-configuring-the-client" title="Permanent link">#</a></h2>
-<ol>
-<li>With the board still connected to a serial port interface, open a serial communication program.</li>
-<li>
-<p>Use the <code>anjay</code> command to list possible options:</p>
-<div class="highlight"><pre><span></span><code>uart:~$ anjay
-anjay - Anjay commands
-Subcommands:
-start   :Save config and start Anjay
-stop    :Stop Anjay
-config  :Configure Anjay params
-</code></pre></div>
-</li>
-<li>
-<p>Change the default credentials to your custom data by following the instructions presented in the program and save it.</p>
-</li>
-</ol>
-<h2 id="step-5-connecting-to-the-lwm2m-server">Step 5: Connecting to the LwM2M Server<a class="headerlink" href="#step-5-connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
+<h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
 <p>To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.</p>
 <p>To connect the board:</p>
 <ol>
@@ -1955,9 +2010,29 @@ config  :Configure Anjay params
 </li>
 <li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
 <li>In the <strong>Connect your device</strong> step, wait for the board to connect.</li>
-<li>Click <strong>Go to device</strong> to see your added device dashboard.
-    <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
+<li>Click <strong>Go to device</strong> to see your added device dashboard.</li>
 </ol>
+</li>
+</ol>
+<h2 id="configuring-the-client">Configuring the Client<a class="headerlink" href="#configuring-the-client" title="Permanent link">#</a></h2>
+<ol>
+<li>With the board still connected to a serial port interface, open a serial communication program.</li>
+<li>
+<p>Use the <code>anjay</code> command to list possible options:</p>
+<div class="highlight"><pre><span></span><code>uart:~$ anjay
+anjay - Anjay commands
+Subcommands:
+start   :Save config and start Anjay
+stop    :Stop Anjay
+config  :Configure Anjay params
+</code></pre></div>
+</li>
+<li>
+<p>Change the default credentials to your custom data by following the instructions presented in the program and save it.</p>
+</li>
+<li>
+<p>After changing credentials go to Coiote DM and refresh data:
+    <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
 </li>
 </ol>
 
@@ -2021,7 +2096,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2022</span>
     
   </small>
 </div>
