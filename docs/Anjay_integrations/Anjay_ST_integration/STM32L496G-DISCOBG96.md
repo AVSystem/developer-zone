@@ -67,7 +67,7 @@ To connect the board:
     6. Click **Go to device** to see your added device dashboard.
 
     !!! tip
-        LwM2M Server URI, endpoint name and other informations you can read from **configuration** tab.
+        LwM2M Server URI, endpoint name and other informations you can be found in the **configuration** tab.
 
 ## Configuring the Client
 
