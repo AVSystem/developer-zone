@@ -15,7 +15,7 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 
 To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 
-In this case we are going to use the Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin file which after downloaded must be added to B-L462E-CELL1/TYPE1SC board folder.
+In this case we are going to use the Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin file which after being downloaded must be added to B-L462E-CELL1/TYPE1SC board folder.
 
 
 
