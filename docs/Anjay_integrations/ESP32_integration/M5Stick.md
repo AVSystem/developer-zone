@@ -40,12 +40,21 @@ Integrate your ESP32-based device to manage it via Coiote DM.
     !!! Note
         The additional parameters under the **writable_wifi** namespace are used to provide a secondary Wi-Fi configuration (it is not obligatory). This allows for switching between Wi-Fi configurations while the device is running.
 
+    !!! Note
+        The nvs_config.csv file can also be downloaded from [https://github.com/AVSystem/Anjay-esp32-client/releases](https://github.com/AVSystem/Anjay-esp32-client/releases)
+
 0. Open a command line interface, go to your project directory, and generate the NVS partition:
 
-```
-pip3 install future cryptography
-python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
-```
+=== "Linux"
+    ``` linux
+    pip3 install future cryptography
+    python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
+    ```
+=== "Windows"
+    ``` windows
+    pip3 install future cryptography
+    python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
+    ```
 
 ![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
@@ -63,13 +72,15 @@ To connect the board:
     - In the **Device ID** field, type the endpoint name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Security mode** section, select the **PSK** mode.
     - In the **Key identity** field, type the name provided in the `nvs_config.csv`, e.g. `ESP32_test`.
-    - In the **Key identity** field, type the identity provided in the `nvs_config.csv`, e.g. `ESP32_test`.
     - In the **Key** field, type the `psk` key provided in the `nvs_config.csv`.
     ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
 0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.
 
 ## Step 4: Flash the board and run device
+
+!!! tip
+        Before flashing the device you should erase the flash first to make sure you have correct settings.
 
 Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.
 
@@ -79,14 +90,27 @@ pip install esptool
 ```
 
 0. Flash the board:
-```
-esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
-```
+
+    === "Linux"
+        ``` linux
+            esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+        ```
+    === "Windows"
+        ``` windows
+            esptool -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+        ```
+
 
 0. Flash the NVS partition binary:
-```
-esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
-```
+
+    === "Linux"
+        ``` linux
+            esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+        ```
+    === "Windows"
+        ``` windows
+            esptool -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+        ```
 
 Once executed, the device will be reset and run with the configuration you provided.
 
