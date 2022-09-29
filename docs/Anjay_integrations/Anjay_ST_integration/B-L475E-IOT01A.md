@@ -68,8 +68,8 @@ To connect the board:
 
 ## Configuring the Client
 
-1. With the board still connected to a serial port interface, open a serial communication program.
-2. Use the `anjay` command to list possible options:
+0. With the board still connected to a serial port interface, open a serial communication program.
+0. Use the `anjay` command to list possible options:
 
     ```
     uart:~$ anjay
@@ -80,8 +80,11 @@ To connect the board:
     config  :Configure Anjay params
     ```
 
-3. Change the default credentials to your custom data by following the instructions presented in the program and save it.
+    !!! tip
+        To show available subcommands, use the **Tab** key.
 
+0. Optionally, change the default credentials by following the instructions in the program.
+    ![Anjay configuration](images/anjay_config.png "Anjay configuration")
 
-4. After changing credentials go to Coiote DM and refresh data:
+0. After changing credentials go to Coiote DM and refresh data:
     ![Registered device](images/registered_device.png "Registered device")
