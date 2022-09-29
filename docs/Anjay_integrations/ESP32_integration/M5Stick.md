@@ -80,7 +80,15 @@ To connect the board:
 ## Step 4: Flash the board and run device
 
 !!! tip
-        Before flashing the device you should erase the flash first to make sure you have correct settings.
+        Before flashing the device you should erase the flash first to make sure you have correct settings:
+        === "Linux"
+            ``` linux
+                esptool.py erase_flash
+            ```
+        === "Windows"
+            ``` windows
+                esptool erase_flash
+            ```
 
 Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.
 
