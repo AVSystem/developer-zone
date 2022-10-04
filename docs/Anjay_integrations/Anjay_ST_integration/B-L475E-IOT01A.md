@@ -86,5 +86,7 @@ To connect the board:
 0. Optionally, change the default credentials by following the instructions in the program.
     ![Anjay configuration](images/anjay_config.png "Anjay configuration")
 
+
+0. Use the `anjay start` command to run the Client.
 0. After changing credentials go to Coiote DM and refresh data:
     ![Registered device](images/registered_device.png "Registered device")
