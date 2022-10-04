@@ -65,14 +65,14 @@ To connect the board:
      - In the **Endpoint name** field, enter your board endpoint name e.g. `test_device` (remember to set the same name in the [next section](#configure-the-client)).
          ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
      - In the **Security mode** section, select the **Pre-Shared Key** mode:
-         - In the **Key identity** field, type `test_device`
+         - In the **Key identity** field, type the same name as in the `Endpoint name` field.
          - In the **Key** field, type the shared secret used in the device-server authentication.
 
         !!! Note
-            This is your own password which you will need further.
+            This is your own password which you will need in the next steps.
 
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. While in the **Connect your device** step, follow the [next section](#configure-the-client) to run the client and connect.
+0. While being in the **Connect your device** step, follow the [next section](#configure-the-client) to run the client and connect it to the server.
 
 ## Configure the Client
 
@@ -93,6 +93,6 @@ To connect the board:
 
 0. Optionally, change the default credentials by following the instructions in the program.
     ![Anjay configuration](images/anjay_config.png "Anjay configuration")
-0. Use the `start` command to run the Client.
+0. Use the `anjay start` command to run the Client.
 0. In Coiote DM, click **Go to device** to see if your device connected successfully.
     ![Registered device](images/registered_device.png "Registered device")
