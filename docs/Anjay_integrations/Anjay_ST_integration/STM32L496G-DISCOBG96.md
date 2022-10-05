@@ -16,6 +16,10 @@ To get the latest binaries, navigate to [Anjay-freertos-client](https://github.c
 
 In this case we are going to use the Anjay-freertos-client-STM32L496G-BG96.bin file which after being downloaded must be added to STM32L496G-DISCO/BG96 board folder.
 
+To flash the board you should drag the .bin file to STM32L496G-DISCO/BG96 device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. When the diode stop blinking it means that the board is flashed.
+
+Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
+
 
 
 ### Start developement using samples

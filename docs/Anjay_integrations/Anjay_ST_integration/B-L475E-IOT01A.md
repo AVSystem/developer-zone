@@ -16,6 +16,9 @@ To get the latest binaries, navigate to [Anjay-zephyr-client](https://github.com
 
 In this case we are going to use the demo_B-L475E-IOT01A1_merged.bin file which after being downloaded must be added to B-L475E-IOT01A board folder.
 
+To flash the board you should drag the .bin file to B-L475E-IOT01A device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. When the diode stop blinking it means that the board is flashed.
+
+Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 
 
 ### Start developement using samples
