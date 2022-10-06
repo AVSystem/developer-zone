@@ -1949,6 +1949,8 @@
 <h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
 <p>To get the latest binaries, navigate to <a href="https://github.com/AVSystem/Anjay-freertos-client/releases/">Anjay-freertos-client</a>.</p>
 <p>In this case we are going to use the Anjay-freertos-client-STM32L496G-BG96.bin file which after being downloaded must be added to STM32L496G-DISCO/BG96 board folder.</p>
+<p>To flash the board, drag the .bin file to STM32L496G-DISCO/BG96 device which you can find in <strong>devices and drives</strong> part in <strong>This PC</strong>. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.</p>
+<p>Now you can go to the <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server part </a></p>
 <h3 id="start-developement-using-samples">Start developement using samples<a class="headerlink" href="#start-developement-using-samples" title="Permanent link">#</a></h3>
 <h4 id="step-1-cloning-the-anjay-freertos-client-repository">Step 1: Cloning the Anjay freeRTOS client repository<a class="headerlink" href="#step-1-cloning-the-anjay-freertos-client-repository" title="Permanent link">#</a></h4>
 <p>Enter the command line interface on your machine and paste the following command:</p>
@@ -1994,7 +1996,7 @@
 <li>In the <strong>Device ID</strong> enter your board endpoint name, e.g. <code>test_device</code>.
      <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
 <li>In the <strong>Security mode</strong> section, select the <strong>PSK (Pre-Shared Key)</strong> mode:<ul>
-<li>In the <strong>Key identity</strong> field, type <code>test_device</code></li>
+<li>In the <strong>Key identity</strong> field, type the same name as in the <code>Endpoint name</code> field.</li>
 <li>In the <strong>Key</strong> field, type the shared secret used in the device-server authentication.</li>
 </ul>
 </li>
@@ -2095,7 +2097,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
     
   </small>
 </div>

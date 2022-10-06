@@ -1956,13 +1956,15 @@
 <ul>
 <li>The nRF9160 board with a USB cable.</li>
 <li>Installed <strong>minicom</strong> (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.</li>
-<li>Installed nrfjprog.</li>
+<li>Installed <strong>nrfjprog</strong> from <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download">Nordic Semiconductor page</a></li>
 <li>A user with access to the Coiote IoT Device Management platform and appropriate permissions.</li>
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
 <h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
-<p>To get the latest binaries, navigate to <a href="https://github.com/AVSystem/Anjay-zephyr-client/releases">Anjay-zephyr-client</a> and download one of the attached .hex files.</p>
-<p>In this case we are going to use the <code>demo</code> application, so find the <code>demo_nrf9160dk_merged.hex</code> file which after downloaded must be added to nRF9160 board folder.</p>
+<p>To get the latest binaries, navigate to <a href="https://github.com/AVSystem/Anjay-zephyr-client/releases">Anjay-zephyr-client</a> and download one of the attached .hex files. In this case we are going to use the <code>demo</code> application, so find the <code>demo_nrf9160dk_merged.hex</code> file.</p>
+<p>To program the board, go through the whole process of <strong>flashing nRF</strong> <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html">described here.</a></p>
+<p>Use the nRF Connect Programmer with the downloaded <code>.hex</code> file.
+Then reset the board and go to the <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a>.</p>
 <h3 id="start-developement-using-samples">Start developement using samples<a class="headerlink" href="#start-developement-using-samples" title="Permanent link">#</a></h3>
 <h4 id="step-1-getting-zephyr-and-python-dependencies">Step 1: Getting Zephyr and Python dependencies<a class="headerlink" href="#step-1-getting-zephyr-and-python-dependencies" title="Permanent link">#</a></h4>
 <p>To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by <a href="https://docs.zephyrproject.org/latest/getting_started/index.html">the Zephyr Project</a> (from the set up the OS to installing the Zephyr SDK).</p>
@@ -1982,12 +1984,12 @@ west update
 </li>
 <li>
 <p>Compile the project for <strong>nRF9160</strong>:</p>
-<div class="highlight"><pre><span></span><code>cd demo
+<div class="highlight"><pre><span></span><code>cd Anjay-zephyr-client/demo
 west build -b nrf9160dk_nrf9160ns
 </code></pre></div>
 </li>
 <li>
-<p>Flash the board using <code>west flash</code>.</p>
+<p>Find the <code>app_signed.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</p>
 </li>
 </ol>
 <h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
@@ -2001,8 +2003,8 @@ west build -b nrf9160dk_nrf9160ns
 <li>In the <strong>Device credentials</strong> step:<ul>
 <li>In the <strong>Device ID</strong> enter your board endpoint name, e.g. <code>test_device</code>.
      <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-<li>In the <strong>Security mode</strong> section, select the <strong>PSK</strong> mode:<ul>
-<li>In the <strong>Key identity</strong> field, type <code>test_device</code></li>
+<li>In the <strong>Security mode</strong> section, select the <strong>PSK (Pre-Shared Key)</strong> mode:<ul>
+<li>In the <strong>Key identity</strong> field, type the same name as in the <code>Endpoint name</code> field</li>
 <li>In the <strong>Key</strong> field, type the shared secret used in the device-server authentication.</li>
 </ul>
 </li>
@@ -2026,14 +2028,20 @@ start   :Save config and start Anjay
 stop    :Stop Anjay
 config  :Configure Anjay params
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To show available subcommands, use the <strong>Tab</strong> key.</p>
+</div>
 </li>
 <li>
-<p>Change the default credentials to your custom data by following the instructions presented in the program and save it.</p>
+<p>Optionally, change the default credentials by following the instructions in the program.
+    <img alt="Anjay configuration" src="../images/anjay_config.png" title="Anjay configuration" /></p>
 </li>
 <li>
-<p>After changing credentials go to Coiote DM and refresh data:
-    <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
+<p>Use the <code>anjay start</code> command to run the Client.</p>
 </li>
+<li>After changing credentials go to Coiote DM and refresh data:
+    <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
 </ol>
 
 <!-- Link to previous and/or next page -->
@@ -2096,7 +2104,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2022</span>
     
   </small>
 </div>

@@ -2011,18 +2011,28 @@ Then reset the board and go to the next step.</p>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
     <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
-<li>In the <strong>Device credentials</strong> step:<ul>
+<li>
+<p>In the <strong>Device credentials</strong> step:</p>
+<ul>
 <li>In the <strong>Endpoint name</strong> field, enter your board endpoint name e.g. <code>test_device</code> (remember to set the same name in the <a href="#configure-the-client">next section</a>).
      <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-<li>In the <strong>Security mode</strong> section, select the <strong>Pre-Shared Key</strong> mode:<ul>
-<li>In the <strong>Key identity</strong> field, type <code>test_device</code></li>
+<li>
+<p>In the <strong>Security mode</strong> section, select the <strong>Pre-Shared Key</strong> mode:</p>
+<ul>
+<li>In the <strong>Key identity</strong> field, type the same name as in the <code>Endpoint name</code> field.</li>
 <li>In the <strong>Key</strong> field, type the shared secret used in the device-server authentication.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is your own password which you will need in the next steps.</p>
+</div>
 </li>
 </ul>
 </li>
-<li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>While in the <strong>Connect your device</strong> step, follow the <a href="#configure-the-client">next section</a> to run the client and connect.</li>
+<li>
+<p>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</p>
+</li>
+<li>While in the <strong>Connect your device</strong> step, follow the <a href="#configure-the-client">next section</a> to run the client and connect it to the server.</li>
 </ol>
 <h2 id="configure-the-client">Configure the Client<a class="headerlink" href="#configure-the-client" title="Permanent link">#</a></h2>
 <ol>
@@ -2042,9 +2052,10 @@ config  :Configure Anjay params
 </div>
 </li>
 <li>
-<p>Optionally, change the default credentials by following the instructions in the program.</p>
+<p>Optionally, change the default credentials by following the instructions in the program.
+    <img alt="Anjay configuration" src="../images/anjay_config.png" title="Anjay configuration" /></p>
 </li>
-<li>Use the <code>start</code> command to run the Client.</li>
+<li>Use the <code>anjay start</code> command to run the Client.</li>
 <li>In Coiote DM, click <strong>Go to device</strong> to see if your device connected successfully.
     <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
 </ol>
@@ -2109,7 +2120,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
     
   </small>
 </div>

@@ -1977,14 +1977,26 @@ wifi_inter_en,data,u8,0
 <p class="admonition-title">Note</p>
 <p>The additional parameters under the <strong>writable_wifi</strong> namespace are used to provide a secondary Wi-Fi configuration (it is not obligatory). This allows for switching between Wi-Fi configurations while the device is running.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The nvs_config.csv file can also be downloaded from <a href="https://github.com/AVSystem/Anjay-esp32-client/releases">https://github.com/AVSystem/Anjay-esp32-client/releases</a></p>
+</div>
 </li>
 <li>
 <p>Open a command line interface, go to your project directory, and generate the NVS partition:</p>
 </li>
 </ol>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Linux</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>pip3 install future cryptography
 python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 </code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Windows</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>pip3 install future cryptography
+python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
+</code></pre></div>
+</div>
+</div>
 <p><img alt="Client configuration" src="../images/nvs_config.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Client configuration" /></p>
 <h2 id="step-3-add-device-to-coiote-dm">Step 3: Add device to Coiote DM<a class="headerlink" href="#step-3-add-device-to-coiote-dm" title="Permanent link">#</a></h2>
 <p>To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.</p>
@@ -1998,7 +2010,6 @@ python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 <li>In the <strong>Device ID</strong> field, type the endpoint name provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
 <li>In the <strong>Security mode</strong> section, select the <strong>PSK</strong> mode.</li>
 <li>In the <strong>Key identity</strong> field, type the name provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
-<li>In the <strong>Key identity</strong> field, type the identity provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
 <li>In the <strong>Key</strong> field, type the <code>psk</code> key provided in the <code>nvs_config.csv</code>.
 <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
 </ul>
@@ -2015,14 +2026,41 @@ python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 </code></pre></div></p>
 </li>
 <li>
-<p>Flash the board:
-<div class="highlight"><pre><span></span><code>esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
-</code></pre></div></p>
+<p>Flash the board:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip<p>Before flashing the device you should erase the flash first to make sure you have correct settings:</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Linux</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>    esptool.py erase_flash
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Windows</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>    esptool erase_flash
+</code></pre></div>
+</div>
+</div>
+</p>
+</div>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Linux</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>    esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Windows</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>    esptool -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+</code></pre></div>
+</div>
+</div>
 </li>
 <li>
-<p>Flash the NVS partition binary:
-<div class="highlight"><pre><span></span><code>esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
-</code></pre></div></p>
+<p>Flash the NVS partition binary:</p>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Linux</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>    esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Windows</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>    esptool -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+</code></pre></div>
+</div>
+</div>
 </li>
 </ol>
 <p>Once executed, the device will be reset and run with the configuration you provided.</p>
@@ -2144,7 +2182,7 @@ python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2022</span>
     
   </small>
 </div>
