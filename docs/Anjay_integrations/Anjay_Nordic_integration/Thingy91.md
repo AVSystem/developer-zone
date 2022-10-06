@@ -72,7 +72,7 @@ To connect the board:
             This is your own password which you will need in the next steps.
 
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. While being in the **Connect your device** step, follow the [next section](#configure-the-client) to run the client and connect it to the server.
+0. While in the **Connect your device** step, follow the [next section](#configure-the-client) to run the client and connect it to the server.
 
 ## Configure the Client
 

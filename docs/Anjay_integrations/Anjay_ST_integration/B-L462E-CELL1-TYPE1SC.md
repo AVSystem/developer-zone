@@ -17,7 +17,7 @@ To get the latest binaries, navigate to [Anjay-freertos-client](https://github.c
 
 In this case we are going to use the Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin file which after being downloaded must be added to B-L462E-CELL1/TYPE1SC board folder.
 
-To flash the board you should drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. When the diode stop blinking it means that the board is flashed.
+To flash the board, drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
 
 Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 
