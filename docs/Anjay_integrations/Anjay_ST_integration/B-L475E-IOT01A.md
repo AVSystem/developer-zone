@@ -16,6 +16,9 @@ To get the latest binaries, navigate to [Anjay-zephyr-client](https://github.com
 
 In this case we are going to use the demo_B-L475E-IOT01A1_merged.bin file which after being downloaded must be added to B-L475E-IOT01A board folder.
 
+To flash the board, drag the .bin file to B-L475E-IOT01A device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+
+Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 
 
 ### Start developement using samples
@@ -59,7 +62,7 @@ To connect the board:
          - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
          - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
-              - In the **Key identity** field, type `test_device`
+              - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, wait for the board to connect.
@@ -68,8 +71,8 @@ To connect the board:
 
 ## Configuring the Client
 
-1. With the board still connected to a serial port interface, open a serial communication program.
-2. Use the `anjay` command to list possible options:
+0. With the board still connected to a serial port interface, open a serial communication program.
+0. Use the `anjay` command to list possible options:
 
     ```
     uart:~$ anjay
@@ -80,8 +83,13 @@ To connect the board:
     config  :Configure Anjay params
     ```
 
-3. Change the default credentials to your custom data by following the instructions presented in the program and save it.
+    !!! tip
+        To show available subcommands, use the **Tab** key.
+
+0. Optionally, change the default credentials by following the instructions in the program.
+    ![Anjay configuration](images/anjay_config.png "Anjay configuration")
 
 
-4. After changing credentials go to Coiote DM and refresh data:
+0. Use the `anjay start` command to run the Client.
+0. After changing credentials go to Coiote DM and refresh data:
     ![Registered device](images/registered_device.png "Registered device")

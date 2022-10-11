@@ -51,7 +51,7 @@ Before you generate code for your application, you need to configure it as per t
         - Check the **Generate peripheral initialization as a pair of '.c/.h' files per peripheral**.
 0. Click **GENERATE CODE** and confirm by clicking **Yes** in the pop-up.
 ![Generate code button](images/generate_code.png "generate_code")
-0. After the project is generated, you can use it further in the CubeIDE as per the specific instructions for your board in the [Anjay ST integration guide](/Anjay_integrations/Getting_started/#stmicroelectronics-boards).
+0. After the project is generated, you can use it further in the CubeIDE to develop, flash and debug your application.
 
 ## Specific CubeMX settings
 

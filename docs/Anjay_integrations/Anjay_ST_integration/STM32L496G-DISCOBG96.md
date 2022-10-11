@@ -16,6 +16,10 @@ To get the latest binaries, navigate to [Anjay-freertos-client](https://github.c
 
 In this case we are going to use the Anjay-freertos-client-STM32L496G-BG96.bin file which after being downloaded must be added to STM32L496G-DISCO/BG96 board folder.
 
+To flash the board, drag the .bin file to STM32L496G-DISCO/BG96 device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+
+Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
+
 
 
 ### Start developement using samples
@@ -60,7 +64,7 @@ To connect the board:
          - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
          - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
-              - In the **Key identity** field, type `test_device`
+              - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, wait for the board to connect.
