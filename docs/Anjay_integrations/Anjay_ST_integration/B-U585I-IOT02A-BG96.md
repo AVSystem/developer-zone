@@ -1,6 +1,6 @@
 # B-U585I-IOT02A/BG96
 
-Integrate your P-L496G-CELL02 Discovery kit board along with the default-provided Quectel BG96 modem.
+Integrate your B-U585I-IOT02A Discovery kit board along with the default-provided Quectel BG96 modem.
 
 ## Prerequisites
 
@@ -60,7 +60,7 @@ To connect the board:
          - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
          - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
-              - In the **Key identity** field, type `test_device`
+              - In the **Key identity** field, type the same name as in the `Endpoint name` field
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, wait for the board to connect.
