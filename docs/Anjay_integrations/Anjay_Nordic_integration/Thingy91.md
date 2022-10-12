@@ -17,6 +17,10 @@ and download one of the attached .hex files.
 In this case we are going to use the `demo` application, so find the `demo_thingy91_app_signed.hex` file and go to the [flashing part](#flash-the-binaries) of the tutorial.
 
 ### Start developement using samples
+!!! Note
+    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [flashing part](#flash-the-binaries) of the tutorial.
+
+
 #### Step 1: Get Zephyr and Python dependencies
 
 To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
@@ -45,11 +49,10 @@ Enter the command line interface on your machine, then paste and run the followi
 
 ## Flash the binaries
 To program the board, go through the whole process of **flashing Thingy:91** [described here.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application)
-
-After successful flashing, use the nRF Connect Programmer with the `.hex` file generated or downloaded in a previous step.
-Then reset the board and go to the next step.
+Use the nRF Connect Programmer with the downloaded `.hex` file and make [program the nRF9160 SiP application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application) part.
 
 
+After successful flashing, reset the board and go to the next step.
 
 ## Connect to the LwM2M Server
 
