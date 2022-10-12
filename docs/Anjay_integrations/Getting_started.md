@@ -61,6 +61,8 @@ Integrate your B-L475E-IOT01A Discovery kit board using our Anjay LwM2M Client b
 
 Integrate your B-U585I-IOT02A/BG96 Discovery kit board using our Anjay LwM2M Client based on Zephyr OS.
 
+![B-U585I-IOT02A](images/stm32u5.PNG "B-U585I-IOT02A"){ width=60% }
+
 [Start integration](./Anjay_ST_integration/B-U585I-IOT02A-BG96.md){: .md-button .md-button--big }
 
 
