@@ -15,9 +15,7 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 
 To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 
-In this case we are going to use the Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin file which after being downloaded must be added to B-L462E-CELL1/TYPE1SC board folder.
-
-To flash the board, drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+To flash the board, open **Windows Explorer**, drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
 
 Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 
@@ -25,6 +23,9 @@ Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-
 
 
 ### Start developement using samples
+!!! Note
+    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+
 #### Step 1: Cloning the Anjay freeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
