@@ -16,10 +16,14 @@ To get the latest binaries, navigate to [Anjay-freertos-client](https://github.c
 
 In this case we are going to use the Anjay-freertos-client-B-U585I-IOT02A-BG96.bin file which after being downloaded must be added to STM32U585I-IOT02A/BG96 board folder.
 
+To flash the board, drag the .bin file to B-U585I-IOT02A device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+
+Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
+
 
 
 ### Start developement using samples
-#### Step 1: Cloning the Anjay freeRTOS client repository
+#### Step 1: Cloning the Anjay FreeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
 
@@ -41,14 +45,14 @@ Enter the command line interface on your machine and paste the following command
     - Right-click on the project name and select **Build Project**. The build should take less than one minute to complete.
     - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
         - In the **Lauch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
-0. After the build and run are complete, the board is now compiled.
+0. After the build and run steps are done, the board is now flashed and ready for next steps.
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud.
 
 !!! note
-    If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
+    If you use BG96-based configuration, you must upgrade the firmware of the modem to at least `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
 
 To connect the board:
 
@@ -63,11 +67,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, wait for the board to connect.
-    6. Click **Go to device** to see your added device dashboard.
-
-    !!! tip
-        LwM2M Server URI, endpoint name and other informations you can be found in the **configuration** tab.
+    5. In the **Connect your device** step, click **Go to device** to see your added device dashboard.
 
 ## Configuring the Client
 
@@ -77,7 +77,11 @@ To connect the board:
     ``Press any key in 3 seconds to enter config menu...``
 
 3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
-   ![Client configuration](images/config_menu1.png "Client configuration"){:style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
+
+    !!! tip
+        LwM2M Server URI, endpoint name and other informations you can be found in the **configuration** tab.
+
+    ![Client configuration](images/config_menu1.png "Client configuration"){:style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
 
     !!! important
         APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card truphone then change APN to **iot.truphone.com**.
