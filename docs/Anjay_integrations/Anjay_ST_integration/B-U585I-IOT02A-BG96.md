@@ -12,15 +12,14 @@ Integrate your B-U585I-IOT02A Discovery kit board along with the default-provide
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+To get the latest binary file and flash the board:
 
-In this case we are going to use the Anjay-freertos-client-B-U585I-IOT02A-BG96.bin file which after being downloaded must be added to STM32U585I-IOT02A/BG96 board folder.
+0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+0. Download the `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file.
+0. To flash the board, drag the downloaded `.bin` file to your **B-U585I-IOT02A** device which can be found in the **Devices and drives** section of **This PC** (if Windows is used).
+0. You will see a blinking diode on your board. As soon as the diode stops blinking, the flashing is finished.
 
-To flash the board, drag the .bin file to B-U585I-IOT02A device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
-
-Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
-
-
+The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
 ### Start developement using samples
 #### Step 1: Cloning the Anjay FreeRTOS client repository
@@ -33,8 +32,8 @@ Enter the command line interface on your machine and paste the following command
 
 #### Step 2: Compiling the board
 
-0. Connect the STM32U585I-IOT02A board to a USB port of your machine.
-0. Go to the STM32CubeIDE.
+0. Connect the **STM32U585I-IOT02A** board to a USB port of your machine.
+0. Go to the **STM32CubeIDE**.
 0. Import the project cloned in the previous step to your workspace:
     - From the navigation bar, select **File** and click **Import**.
     - From the **General** list, select **Existing Projects into Workspace** and click **Next**.
@@ -44,7 +43,7 @@ Enter the command line interface on your machine and paste the following command
 0. In the Project Explorer, navigate to the **Anjay-freertos-client-B-U585I-IOT02A-BG96** project:
     - Right-click on the project name and select **Build Project**. The build should take less than one minute to complete.
     - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
-        - In the **Lauch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
+        - In the **Launch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
 0. After the build and run steps are done, the board is now flashed and ready for next steps.
 
 ## Connecting to the LwM2M Server
@@ -52,7 +51,7 @@ Enter the command line interface on your machine and paste the following command
 To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud.
 
 !!! note
-    If you use BG96-based configuration, you must upgrade the firmware of the modem to at least `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
+    If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
 
 To connect the board:
 
@@ -67,7 +66,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, click **Go to device** to see your added device dashboard.
+    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
 ## Configuring the Client
 
@@ -76,19 +75,19 @@ To connect the board:
 
     ``Press any key in 3 seconds to enter config menu...``
 
-3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
+3. Press any key, and in the configuration menu, change the default credentials to your data by following the instructions presented in the program, then save it.
 
     !!! tip
-        LwM2M Server URI, endpoint name and other informations you can be found in the **configuration** tab.
+        LwM2M Server URI, endpoint name and other information you can be found in the **configuration** tab.
 
     ![Client configuration](images/config_menu1.png "Client configuration"){:style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
 
     !!! important
-        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card truphone then change APN to **iot.truphone.com**.
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use a built-in truphone eSIM card, change the APN to **iot.truphone.com**.
 
     !!! Note
-        If you use external eSIM card you have to check APN used by SIM card's provider.
+        If you use an external eSIM card, you need to verify the APN used by your SIM card provider.
 
-4. After changing credentials go to Coiote DM and refresh data:
+4. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
     ![Registered device](images/registered_device.png "Registered device")
