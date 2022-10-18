@@ -15,7 +15,7 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 
 To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 
-To flash the board, open your **File Manager**, drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+To flash the board, open your **File Manager**, drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the flashing is finished, the diode stops blinking.
 
 Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 

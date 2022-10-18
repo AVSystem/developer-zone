@@ -14,7 +14,7 @@ Integrate your B-L475E-IOT01A Discovery kit board.
 
 To get the latest binaries, navigate to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases) and download demo_B-L475E-IOT01A1_merged.bin.
 
-To flash the board, open your **File Manager**, drag the .bin file to B-L475E-IOT01A device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+To flash the board, open your **File Manager**, drag the .bin file to B-L475E-IOT01A device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the flashing is finished, the diode stops blinking.
 
 Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 

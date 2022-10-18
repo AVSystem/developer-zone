@@ -14,7 +14,7 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the default-provide
 
 To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 
-To flash the board, open your **File Manager**, drag the .bin file to STM32L496G-DISCO/BG96 device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the flashing finished, the diode stops blinking.
+To flash the board, open your **File Manager**, drag the .bin file to STM32L496G-DISCO/BG96 device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the flashing is finished, the diode stops blinking.
 
 Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 
