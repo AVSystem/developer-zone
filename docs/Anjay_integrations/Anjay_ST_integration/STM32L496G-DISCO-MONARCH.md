@@ -14,7 +14,7 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the Sequans' Monarc
 
 To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 
-To flash the board, open your **File Manager**, drag the .bin file to STM32L496G-DISCO/MONARCH device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the flashing is finished, the diode stops blinking.
+To flash the board, open your **File Manager**, drag the .bin file to STM32L496G-DISCO/MONARCH device. You will see the blinking diode on your board. As soon as the flashing is finished, the diode stops blinking.
 
 Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 
@@ -51,7 +51,7 @@ Enter the command line interface on your machine and paste the following command
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 To connect the board:
 
