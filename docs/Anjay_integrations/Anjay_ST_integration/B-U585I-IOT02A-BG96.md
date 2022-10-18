@@ -5,9 +5,9 @@ Integrate your B-U585I-IOT02A Discovery kit board along with the default-provide
 ## Prerequisites
 
 - The STM32U585I-IOT02A/BG96 board with a USB cable.
-- Installed **STM32CubeIDE**.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
 - A user with access to the Coiote IoT Device Management platform.
+- Optional: installed STM32CubeIDE.
 
 ## Prepare binaries
 ### Use an already built binary
