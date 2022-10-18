@@ -5,9 +5,9 @@ Integrate your B-U585I-IOT02A Discovery kit board along with the default-provide
 ## Prerequisites
 
 - The STM32U585I-IOT02A/BG96 board with a USB cable.
-- Installed **STM32CubeIDE**.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
 - A user with access to the Coiote IoT Device Management platform.
+- Optional: installed STM32CubeIDE.
 
 ## Prepare binaries
 ### Use an already built binary
@@ -22,6 +22,10 @@ To get the latest binary file and flash the board:
 The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
 ### Start developement using samples
+
+!!! Note
+    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+
 #### Step 1: Cloning the Anjay FreeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
@@ -48,7 +52,7 @@ Enter the command line interface on your machine and paste the following command
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud.
+To connect to Coiote IoT Device Management LwM2M Server, please register git status[here](https://eu.iot.avsystem.cloud).
 
 !!! note
     If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
