@@ -12,22 +12,24 @@ Integrate your B-L475E-IOT01A Discovery kit board.
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binaries, navigate to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases).
+To get the latest binary file and flash the board:
 
-To flash the board, open **Windows Explorer**, drag the .bin file to B-L475E-IOT01A device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+0. Download the `demo_B-L475E-IOT01A1_merged.bin` file.
+0. To flash the board, drag the downloaded `.bin` file to your **B-L475E-IOT01A** device which can be found in the **Devices and drives** section of **This PC** (in **Windows Explorer**).
+0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
-Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
-
+The board is now flashed: you can jump to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) section.
 
 ### Start developement using samples
 !!! Note
-    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 
-#### Step 1: Getting Zephyr and Python dependencies
+#### Part 1: Getting Zephyr and Python dependencies
 
 To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
 
-#### Step 2: Cloning the Anjay zephyr repository
+#### Part 2: Cloning the Anjay zephyr repository
 
 Enter the command line interface on your machine, then paste and run the following command:
 
@@ -35,7 +37,7 @@ Enter the command line interface on your machine, then paste and run the followi
    git clone https://github.com/AVSystem/Anjay-zephyr-client
    ```
 
-#### Step 3: Compiling the board
+#### Part 3: Compiling the board
 
 0. Connect the B-L475E-IOT01A board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, and manifest file to `west.yml` and do `west update`:
@@ -66,9 +68,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, wait for the board to connect.
-    6. Click **Go to device** to see your added device dashboard.
-
+    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
 ## Configuring the Client
 
@@ -92,5 +92,9 @@ To connect the board:
 
 
 0. Use the `anjay start` command to run the Client.
-0. After changing credentials go to Coiote DM and refresh data:
-    ![Registered device](images/registered_device.png "Registered device")
+0. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+
+![Registered device](images/registered_device.png "Registered device")
+
+!!! tip
+    LwM2M Server URI, endpoint name and other information can be found in the **Configuration** tab.

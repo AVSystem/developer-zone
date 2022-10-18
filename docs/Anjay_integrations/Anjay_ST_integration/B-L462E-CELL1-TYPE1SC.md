@@ -13,18 +13,18 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+To get the latest binary file and flash the board:
 
-To flash the board, open **Windows Explorer**, drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+0. Download the `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file.
+0. To flash the board, drag the downloaded `.bin` file to your **B-L462E-CELL1/TYPE1SC** device which can be found in the **Devices and drives** section of **This PC**.
+0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
-Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
-
-
-
+The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
 ### Start developement using samples
 !!! Note
-    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
 
 #### Step 1: Cloning the Anjay freeRTOS client repository
 
@@ -67,11 +67,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, wait for the board to connect.
-    6. Click **Go to device** to see your added device dashboard.
-
-    !!! tip
-        LwM2M Server URI, endpoint name and other informations can be found in the **configuration** tab.
+    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
 ## Configuring the Client
 
@@ -89,5 +85,9 @@ To connect the board:
     !!! Note
         If you use external eSIM card you have to check APN used by SIM card's provider.
 
-4. After changing credentials go to Coiote DM and refresh data:
-     ![Registered device](images/registered_device.png "Registered device")
+4. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+
+![Registered device](images/registered_device.png "Registered device")
+
+!!! tip
+    LwM2M Server URI, endpoint name and other information can be found in the **Configuration** tab.

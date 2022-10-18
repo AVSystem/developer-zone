@@ -12,19 +12,20 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the Sequans' Monarc
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+To get the latest binary file and flash the board:
 
-To flash the board, open **Windows Explorer**, drag the .bin file to STM32L496G-DISCO/MONARCH device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+0. Download the `Anjay-freertos-client-STM32L496G-MONARCH.bin` file.
+0. To flash the board, drag the downloaded `.bin` file to your **STM32L496G-DISCO/MONARCH** device which can be found in the **Devices and drives** section of **This PC**.
+0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
-Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
-
-
+The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
 ### Start developement using samples
 !!! Note
-    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
 
-#### Step 1: Cloning the Anjay freeRTOS client repository
+#### Part 1: Cloning the Anjay freeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
 
@@ -32,7 +33,7 @@ Enter the command line interface on your machine and paste the following command
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-#### Step 2: Compiling the board
+#### Part 2: Compiling the board
 
 0. Connect the STM32L496G-DISCO/MONARCH board to a USB port of your machine.
 0. Go to the STM32CubeIDE.
@@ -66,20 +67,16 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, wait for the board to connect.
-    6. Click **Go to device** to see your added device dashboard.
-
-    !!! tip
-        LwM2M Server URI, endpoint name and other informations you can be found in the **configuration** tab.
+    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
 ## Configuring the Client
 
-1. With the board still connected to a serial port interface, open a serial communication program.
-2. Press the reset button located on the board. This should trigger the following prompt:
+0. With the board still connected to a serial port interface, open a serial communication program.
+0. Press the reset button located on the board. This should trigger the following prompt:
 
     ``Press any key in 3 seconds to enter config menu...``
 
-3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
+0. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
     ![Client configuration](images/config_menu1.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
 
     !!! important
@@ -88,5 +85,9 @@ To connect the board:
     !!! Note
         If you use external eSIM card you have to check APN used by SIM card's provider.
 
-4. After changing credentials go to Coiote DM and refresh data:
-        ![Registered device](images/registered_device.png "Registered device")
+0. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+
+![Registered device](images/registered_device.png "Registered device")
+
+!!! tip
+    LwM2M Server URI, endpoint name and other information can be found in the **Configuration** tab.
