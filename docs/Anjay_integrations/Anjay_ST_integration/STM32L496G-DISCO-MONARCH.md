@@ -14,7 +14,7 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the Sequans' Monarc
 
 To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 
-To flash the board, open **Windows Explorer**, drag the .bin file to STM32L496G-DISCO/MONARCH device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+To flash the board, open your **File Manager**, drag the .bin file to STM32L496G-DISCO/MONARCH device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the flashing is finished, the diode stops blinking.
 
 Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
 
@@ -22,7 +22,7 @@ Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-
 
 ### Start developement using samples
 !!! Note
-    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+    This steps are optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 
 #### Step 1: Cloning the Anjay freeRTOS client repository
 
