@@ -18,7 +18,7 @@ In this case we are going to use the `demo` application, so find the `demo_thing
 
 ### Start developement using samples
 !!! Note
-    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part, you can jump to the [flashing](#flash-the-binaries) part of the tutorial.
+    This steps are optional, if you go through the [use an already built binary](#use-an-already-built-binary) part, you can jump to the [flashing part](#flash-the-binaries) of the tutorial.
 
 
 #### Step 1: Get Zephyr and Python dependencies
