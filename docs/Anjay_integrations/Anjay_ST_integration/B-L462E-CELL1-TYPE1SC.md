@@ -17,7 +17,7 @@ To get the latest binary file and flash the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file.
-0. To flash the board, drag the downloaded `.bin` file to your **B-L462E-CELL1/TYPE1SC** device which can be found in the **Devices and drives** section of **This PC**.
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **B-L462E-CELL1/TYPE1SC** device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
 The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
@@ -52,7 +52,7 @@ Enter the command line interface on your machine and paste the following command
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 To connect the board:
 

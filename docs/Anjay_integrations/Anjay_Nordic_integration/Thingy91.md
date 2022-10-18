@@ -48,16 +48,13 @@ Enter the command line interface on your machine, then paste and run the followi
 0. Find the `app_signed.hex` file under the `build/zephyr` directory in the project folder.
 
 ## Flash the binaries
-
-To program the board, go through the whole process of **flashing Thingy:91** [described here.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#updating-the-firmware-in-the-nrf52840-soc)
-
-Use the nRF Connect Programmer with the downloaded `.hex` file and execute steps from the [Program the nRF9160 SiP application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application) section.
+To program the board, go through the process of **flashing Thingy:91**. Use the nRF Connect Programmer with the downloaded `.hex` file and follow the [program the nRF9160 SiP application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application) section.
 
 After successful flashing, reset the board and go to the next step.
 
 ## Connect to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud/](https://eu.iot.avsystem.cloud/).
+To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
 
 To connect the board:
 

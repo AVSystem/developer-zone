@@ -16,7 +16,7 @@ To get the latest binary file and flash the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `demo_B-L475E-IOT01A1_merged.bin` file.
-0. To flash the board, drag the downloaded `.bin` file to your **B-L475E-IOT01A** device which can be found in the **Devices and drives** section of **This PC** (in **Windows Explorer**).
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **B-L475E-IOT01A** device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
 The board is now flashed: you can jump to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) section.
@@ -53,7 +53,7 @@ Enter the command line interface on your machine, then paste and run the followi
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 To connect the board:
 
