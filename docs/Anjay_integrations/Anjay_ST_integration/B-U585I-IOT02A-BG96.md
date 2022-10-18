@@ -23,6 +23,10 @@ Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-
 
 
 ### Start developement using samples
+
+!!! Note
+    This part is optional, if you go through the [use an already built binary](#use-an-already-built-binary) part you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+
 #### Step 1: Cloning the Anjay FreeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
@@ -49,7 +53,7 @@ Enter the command line interface on your machine and paste the following command
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register [here](https://eu.iot.avsystem.cloud).
+To connect to Coiote IoT Device Management LwM2M Server, please register git status[here](https://eu.iot.avsystem.cloud).
 
 !!! note
     If you use BG96-based configuration, you must upgrade the firmware of the modem to at least `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
