@@ -55,7 +55,7 @@ After successful flashing, reset the board and go to the next step.
 
 ## Connect to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register [here](https://eu.iot.avsystem.cloud/).
+To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
 
 To connect the board:
 
