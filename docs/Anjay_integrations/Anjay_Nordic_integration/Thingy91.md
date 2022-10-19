@@ -17,7 +17,7 @@ To get the latest binary file and flash the board:
 0. Download the `demo_thingy91_app_signed.hex` file.
 0. Jump to the [flashing part](#flash-the-binaries) of the tutorial.
 
-### Start developement using samples
+### Start development using samples
 !!! Note
     This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 

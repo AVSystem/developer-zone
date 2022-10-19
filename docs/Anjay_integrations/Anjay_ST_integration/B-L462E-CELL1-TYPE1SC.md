@@ -22,7 +22,7 @@ To get the latest binary file and flash the board:
 
 The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
-### Start developement using samples
+### Start development using samples
 !!! Note
     This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
 
