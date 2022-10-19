@@ -17,16 +17,16 @@ To get the latest binary file and flash the board:
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file.
 0. To flash the board, drag the downloaded `.bin` file to your **B-U585I-IOT02A** device which can be found in the **Devices and drives** section of **This PC** (if Windows is used).
-0. You will see a blinking diode on your board. As soon as the diode stops blinking, the flashing is finished.
+0. You will see a blinking diode on your board. The diode stops blinking as soon as the flashing is finished.
 
 The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
-### Start developement using samples
+### Start development using samples
 
 !!! Note
-    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 
-#### Step 1: Cloning the Anjay FreeRTOS client repository
+#### Part 1: Cloning the Anjay FreeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
 
@@ -34,7 +34,7 @@ Enter the command line interface on your machine and paste the following command
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-#### Step 2: Compiling the board
+#### Part 2: Compiling the board
 
 0. Connect the **STM32U585I-IOT02A** board to a USB port of your machine.
 0. Go to the **STM32CubeIDE**.
