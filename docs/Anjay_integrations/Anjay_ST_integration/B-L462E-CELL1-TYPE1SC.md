@@ -17,7 +17,7 @@ To get the latest binary file and flash the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file.
-0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **B-L462E-CELL1/TYPE1SC** device.
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L462RE** external device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
 The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
