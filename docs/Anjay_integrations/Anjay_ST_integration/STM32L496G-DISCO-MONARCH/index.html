@@ -582,23 +582,23 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#start-developement-using-samples" class="md-nav__link">
-    Start developement using samples
+  <a href="#start-development-using-samples" class="md-nav__link">
+    Start development using samples
   </a>
   
-    <nav class="md-nav" aria-label="Start developement using samples">
+    <nav class="md-nav" aria-label="Start development using samples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-cloning-the-anjay-freertos-client-repository" class="md-nav__link">
-    Step 1: Cloning the Anjay freeRTOS client repository
+  <a href="#part-1-cloning-the-anjay-freertos-client-repository" class="md-nav__link">
+    Part 1: Cloning the Anjay freeRTOS client repository
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-compiling-the-board" class="md-nav__link">
-    Step 2: Compiling the board
+  <a href="#part-2-compiling-the-board" class="md-nav__link">
+    Part 2: Compiling the board
   </a>
   
 </li>
@@ -1892,23 +1892,23 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#start-developement-using-samples" class="md-nav__link">
-    Start developement using samples
+  <a href="#start-development-using-samples" class="md-nav__link">
+    Start development using samples
   </a>
   
-    <nav class="md-nav" aria-label="Start developement using samples">
+    <nav class="md-nav" aria-label="Start development using samples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-cloning-the-anjay-freertos-client-repository" class="md-nav__link">
-    Step 1: Cloning the Anjay freeRTOS client repository
+  <a href="#part-1-cloning-the-anjay-freertos-client-repository" class="md-nav__link">
+    Part 1: Cloning the Anjay freeRTOS client repository
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-compiling-the-board" class="md-nav__link">
-    Step 2: Compiling the board
+  <a href="#part-2-compiling-the-board" class="md-nav__link">
+    Part 2: Compiling the board
   </a>
   
 </li>
@@ -1971,16 +1971,24 @@
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
 <h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
-<p>To get the latest binaries, navigate to <a href="https://github.com/AVSystem/Anjay-freertos-client/releases/">Anjay-freertos-client</a>.</p>
-<p>In this case we are going to use the Anjay-freertos-client-STM32L496G-MONARCH.bin file which after being downloaded must be added to STM32L496G-DISCO/MONARCH board folder.</p>
-<p>To flash the board, drag the .bin file to STM32L496G-DISCO/MONARCH device which you can find in <strong>devices and drives</strong> part in <strong>This PC</strong>. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.</p>
-<p>Now you can go to the <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server part </a></p>
-<h3 id="start-developement-using-samples">Start developement using samples<a class="headerlink" href="#start-developement-using-samples" title="Permanent link">#</a></h3>
-<h4 id="step-1-cloning-the-anjay-freertos-client-repository">Step 1: Cloning the Anjay freeRTOS client repository<a class="headerlink" href="#step-1-cloning-the-anjay-freertos-client-repository" title="Permanent link">#</a></h4>
+<p>To get the latest binary file and flash the board:</p>
+<ol>
+<li>Go to <a href="https://github.com/AVSystem/Anjay-freertos-client/releases/">Anjay-freertos-client</a>.</li>
+<li>Download the <code>Anjay-freertos-client-STM32L496G-MONARCH.bin</code> file.</li>
+<li>To flash the board, open your <strong>File manager</strong> and drag the downloaded <code>.bin</code> file to your <strong>DIS_L496ZG</strong> external device.</li>
+<li>You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.</li>
+</ol>
+<p>The board is now flashed: you can go to the <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a> step.</p>
+<h3 id="start-development-using-samples">Start development using samples<a class="headerlink" href="#start-development-using-samples" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional. If you've gone through the <a href="#use-an-already-built-binary">Use an already built binary</a> step, you can go to <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a> right away.</p>
+</div>
+<h4 id="part-1-cloning-the-anjay-freertos-client-repository">Part 1: Cloning the Anjay freeRTOS client repository<a class="headerlink" href="#part-1-cloning-the-anjay-freertos-client-repository" title="Permanent link">#</a></h4>
 <p>Enter the command line interface on your machine and paste the following command:</p>
 <div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
 </code></pre></div>
-<h4 id="step-2-compiling-the-board">Step 2: Compiling the board<a class="headerlink" href="#step-2-compiling-the-board" title="Permanent link">#</a></h4>
+<h4 id="part-2-compiling-the-board">Part 2: Compiling the board<a class="headerlink" href="#part-2-compiling-the-board" title="Permanent link">#</a></h4>
 <ol>
 <li>Connect the STM32L496G-DISCO/MONARCH board to a USB port of your machine.</li>
 <li>Go to the STM32CubeIDE.</li>
@@ -2003,15 +2011,13 @@
 <li>After the build and run are complete, the board is now compiled.</li>
 </ol>
 <h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.</p>
+<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
 <ol>
 <li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
-<li>
-<p>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
-       <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></p>
-<ol>
+<li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
+       <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /><ol>
 <li>In the <strong>Device credentials</strong> step:<ul>
 <li>In the <strong>Device ID</strong> enter your board endpoint name, e.g. <code>test_device</code>.
      <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
@@ -2023,13 +2029,8 @@
 </ul>
 </li>
 <li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>In the <strong>Connect your device</strong> step, wait for the board to connect.</li>
-<li>Click <strong>Go to device</strong> to see your added device dashboard.</li>
+<li>In the <strong>Connect your device</strong> step, follow the next <a href="#configuring-the-client">section</a> to run the client and connect it to the server.</li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>LwM2M Server URI, endpoint name and other informations you can be found in the <strong>configuration</strong> tab.</p>
-</div>
 </li>
 </ol>
 <h2 id="configuring-the-client">Configuring the Client<a class="headerlink" href="#configuring-the-client" title="Permanent link">#</a></h2>
@@ -2052,10 +2053,14 @@
 </div>
 </li>
 <li>
-<p>After changing credentials go to Coiote DM and refresh data:
-        <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
+<p>Go to Coiote DM to check if your device connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:</p>
 </li>
 </ol>
+<p><img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>LwM2M Server URI, endpoint name and other information can be found in the <strong>Configuration</strong> tab.</p>
+</div>
 
 <!-- Link to previous and/or next page -->
 
@@ -2117,7 +2122,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
     
   </small>
 </div>

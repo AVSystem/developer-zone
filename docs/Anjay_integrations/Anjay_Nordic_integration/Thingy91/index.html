@@ -658,30 +658,30 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#start-developement-using-samples" class="md-nav__link">
-    Start developement using samples
+  <a href="#start-development-using-samples" class="md-nav__link">
+    Start development using samples
   </a>
   
-    <nav class="md-nav" aria-label="Start developement using samples">
+    <nav class="md-nav" aria-label="Start development using samples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-get-zephyr-and-python-dependencies" class="md-nav__link">
-    Step 1: Get Zephyr and Python dependencies
+  <a href="#part-1-get-zephyr-and-python-dependencies" class="md-nav__link">
+    Part 1: Get Zephyr and Python dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-clone-the-anjay-zephyr-repository" class="md-nav__link">
-    Step 2: Clone the Anjay Zephyr repository
+  <a href="#part-2-clone-the-anjay-zephyr-repository" class="md-nav__link">
+    Part 2: Clone the Anjay Zephyr repository
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-compile-the-example" class="md-nav__link">
-    Step 3: Compile the example
+  <a href="#part-3-compile-the-example" class="md-nav__link">
+    Part 3: Compile the example
   </a>
   
 </li>
@@ -1906,30 +1906,30 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#start-developement-using-samples" class="md-nav__link">
-    Start developement using samples
+  <a href="#start-development-using-samples" class="md-nav__link">
+    Start development using samples
   </a>
   
-    <nav class="md-nav" aria-label="Start developement using samples">
+    <nav class="md-nav" aria-label="Start development using samples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-get-zephyr-and-python-dependencies" class="md-nav__link">
-    Step 1: Get Zephyr and Python dependencies
+  <a href="#part-1-get-zephyr-and-python-dependencies" class="md-nav__link">
+    Part 1: Get Zephyr and Python dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-clone-the-anjay-zephyr-repository" class="md-nav__link">
-    Step 2: Clone the Anjay Zephyr repository
+  <a href="#part-2-clone-the-anjay-zephyr-repository" class="md-nav__link">
+    Part 2: Clone the Anjay Zephyr repository
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-compile-the-example" class="md-nav__link">
-    Step 3: Compile the example
+  <a href="#part-3-compile-the-example" class="md-nav__link">
+    Part 3: Compile the example
   </a>
   
 </li>
@@ -1998,17 +1998,24 @@
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
 <h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
-<p>To get the latest binaries, navigate to <a href="https://github.com/AVSystem/Anjay-zephyr-client/releases">Anjay-zephyr-client releases</a>
-and download one of the attached .hex files.</p>
-<p>In this case we are going to use the <code>demo</code> application, so find the <code>demo_thingy91_app_signed.hex</code> file and go to the <a href="#flash-the-binaries">flashing part</a> of the tutorial.</p>
-<h3 id="start-developement-using-samples">Start developement using samples<a class="headerlink" href="#start-developement-using-samples" title="Permanent link">#</a></h3>
-<h4 id="step-1-get-zephyr-and-python-dependencies">Step 1: Get Zephyr and Python dependencies<a class="headerlink" href="#step-1-get-zephyr-and-python-dependencies" title="Permanent link">#</a></h4>
+<p>To get the latest binary file and flash the board:</p>
+<ol>
+<li>Go to <a href="https://github.com/AVSystem/Anjay-zephyr-client/releases">Anjay-zephyr-client</a>.</li>
+<li>Download the <code>demo_thingy91_app_signed.hex</code> file.</li>
+<li>Jump to the <a href="#flash-the-binaries">flashing part</a> of the tutorial.</li>
+</ol>
+<h3 id="start-development-using-samples">Start development using samples<a class="headerlink" href="#start-development-using-samples" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional. If you've gone through the <a href="#use-an-already-built-binary">Use an already built binary</a> step, you can jump to <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a>.</p>
+</div>
+<h4 id="part-1-get-zephyr-and-python-dependencies">Part 1: Get Zephyr and Python dependencies<a class="headerlink" href="#part-1-get-zephyr-and-python-dependencies" title="Permanent link">#</a></h4>
 <p>To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by <a href="https://docs.zephyrproject.org/latest/getting_started/index.html">the Zephyr Project</a>.</p>
-<h4 id="step-2-clone-the-anjay-zephyr-repository">Step 2: Clone the Anjay Zephyr repository<a class="headerlink" href="#step-2-clone-the-anjay-zephyr-repository" title="Permanent link">#</a></h4>
+<h4 id="part-2-clone-the-anjay-zephyr-repository">Part 2: Clone the Anjay Zephyr repository<a class="headerlink" href="#part-2-clone-the-anjay-zephyr-repository" title="Permanent link">#</a></h4>
 <p>Enter the command line interface on your machine, then paste and run the following command:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AVSystem/Anjay-zephyr-client
 </code></pre></div>
-<h4 id="step-3-compile-the-example">Step 3: Compile the example<a class="headerlink" href="#step-3-compile-the-example" title="Permanent link">#</a></h4>
+<h4 id="part-3-compile-the-example">Part 3: Compile the example<a class="headerlink" href="#part-3-compile-the-example" title="Permanent link">#</a></h4>
 <ol>
 <li>Connect the Thingy:91 board to a USB port of your machine.</li>
 <li>
@@ -2024,11 +2031,10 @@ west update
 <li>Find the <code>app_signed.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</li>
 </ol>
 <h2 id="flash-the-binaries">Flash the binaries<a class="headerlink" href="#flash-the-binaries" title="Permanent link">#</a></h2>
-<p>To program the board, go through the whole process of <strong>flashing Thingy:91</strong> <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#update-nrf9160-application">described here.</a></p>
-<p>After successful flashing, use the nRF Connect Programmer with the <code>.hex</code> file generated or downloaded in a previous step.
-Then reset the board and go to the next step.</p>
+<p>To program the board, go through the process of <strong>flashing Thingy:91</strong>. Use the nRF Connect Programmer with the downloaded <code>.hex</code> file and follow the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application">program the nRF9160 SiP application</a> section.</p>
+<p>After successful flashing, reset the board and go to the next step.</p>
 <h2 id="connect-to-the-lwm2m-server">Connect to the LwM2M Server<a class="headerlink" href="#connect-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.</p>
+<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud/">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
 <ol>
 <li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
@@ -2080,7 +2086,7 @@ config  :Configure Anjay params
     <img alt="Anjay configuration" src="../images/anjay_config.png" title="Anjay configuration" /></p>
 </li>
 <li>Use the <code>anjay start</code> command to run the Client.</li>
-<li>In Coiote DM, click <strong>Go to device</strong> to see if your device connected successfully.
+<li>Go to Coiote DM to check if your device connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:
     <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
 </ol>
 
@@ -2144,7 +2150,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2022</span>
     
   </small>
 </div>
