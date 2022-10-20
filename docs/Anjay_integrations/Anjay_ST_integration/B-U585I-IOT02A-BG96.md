@@ -16,7 +16,7 @@ To get the latest binary file and flash the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file.
-0. To flash the board, drag the downloaded `.bin` file to your **B-U585I-IOT02A** device which can be found in the **Devices and drives** section of **This PC** (if Windows is used).
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_U585AI** external device.
 0. You will see a blinking diode on your board. The diode stops blinking as soon as the flashing is finished.
 
 The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
