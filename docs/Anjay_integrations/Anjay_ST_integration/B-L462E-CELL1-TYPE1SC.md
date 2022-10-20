@@ -13,18 +13,19 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binaries, navigate to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+To get the latest binary file and flash the board:
 
-In this case we are going to use the Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin file which after being downloaded must be added to B-L462E-CELL1/TYPE1SC board folder.
+0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+0. Download the `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file.
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L462RE** external device.
+0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
-To flash the board, drag the .bin file to B-L462E-CELL1/TYPE1SC device which you can find in **devices and drives** part in **This PC**. You will see the blinking diode on your board. As soon as the diode stops blinking, the flashing has finished.
+The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
-Now you can go to the [Connecting to the LwM2M Server part ](#connecting-to-the-lwm2m-server)
+### Start development using samples
+!!! Note
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
 
-
-
-
-### Start developement using samples
 #### Step 1: Cloning the Anjay freeRTOS client repository
 
 Enter the command line interface on your machine and paste the following command:
@@ -51,7 +52,7 @@ Enter the command line interface on your machine and paste the following command
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at https://eu.iot.avsystem.cloud/.
+To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 To connect the board:
 
@@ -66,11 +67,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, wait for the board to connect.
-    6. Click **Go to device** to see your added device dashboard.
-
-    !!! tip
-        LwM2M Server URI, endpoint name and other informations can be found in the **configuration** tab.
+    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
 ## Configuring the Client
 
@@ -88,5 +85,9 @@ To connect the board:
     !!! Note
         If you use external eSIM card you have to check APN used by SIM card's provider.
 
-4. After changing credentials go to Coiote DM and refresh data:
-     ![Registered device](images/registered_device.png "Registered device")
+4. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+
+![Registered device](images/registered_device.png "Registered device")
+
+!!! tip
+    LwM2M Server URI, endpoint name and other information can be found in the **Configuration** tab.
