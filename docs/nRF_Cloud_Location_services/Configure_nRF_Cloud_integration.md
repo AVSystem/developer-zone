@@ -28,7 +28,8 @@ Now the integration between Coiote DM and nRF Cloud is established. Read the nex
 
 ### View device location in Coiote DM
 
-To display your device location, you first need to set up the Google Maps property for your domain.
+!!! caution
+    To display your device location, you first need to set up the Google Maps property for your domain. Go to Coiote DM User Guide to learn how to do it. 
 
 0. In your Coiote DM user account, go to **Device Inventory**.
 0. Click the **Management** link next to your device to enter the **Device Center**.
