@@ -3,10 +3,11 @@
 ## Introduction
 The device before it will be deployed in the field needs to be flashed and configured. This process takes some time and effort.
 
-This tutorial will show you how to provision Nordic boards using the provisioning script found [Anjay-zephyr-client repositorie] (https://github.com/AVSystem/Anjay-zephyr-client).
+This tutorial will show you how to provision Nordic boards using the provisioning script found [Anjay-zephyr-client repository] (https://github.com/AVSystem/Anjay-zephyr-client).
 
 ## Prerequisites
 - Nordic board connected to your computer.
+- Installed [Go Programming language](https://go.dev/dl)
 - Installed [mcumgr command line tool](https://docs.zephyrproject.org/3.1.0/services/device_mgmt/mcumgr.html).
 - Zephyr development environment set up.
 - Registered account on [EU IOT CLOUD](https://eu.iot.avsystem.cloud).
@@ -18,17 +19,11 @@ The provision script can register the provisioned device to Coiote DM automaticl
     ```
     #!/bin/bash
 
-    if [ -z "$1" ]
-    then
-        echo "Usage:"
-        echo "$0 [USERNAME]"
-        exit 1
-    fi
-
-    USER="$1"
     SERVER="https://eu.iot.avsystem.cloud"
 
-    read -p "Password for user $USER on $SERVER: " -s PASS
+    echo "Enter your login credentials for $SERVER"
+    read -p "Login: " USER
+    read -p "Password: " -s PASS
 
     curl -X POST \
        -H "Content-Type:application/x-www-form-urlencoded" \
@@ -53,24 +48,28 @@ Before running the script some configuration should be set. Example configuratio
 
 2. Edit `cert_info.json`. This file contains information for generating a self signed certificate. This configuration is needed only if `RID.Security.Mode` is set to `2` and the user don't want to provide certificates generated ealier.
 
-3. Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server. This file is needed if you wish the script to automaticlly add the new device to Coiote DM.
+3. Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server. This file is needed if you wish the script to automatically add the new device to Coiote DM.
 
-4. If in `endpoint_cfg` file you set `RID.Security.Mode` as `2` (certificate) then run 
+4. If in `endpoint_cfg` file you set `RID.Security.Mode` as `2` (certificate), you need to provide also a certificate for the server. For `eu.iot.avsystem.cloud` run:
 
     `openssl s_client -showcerts -dtls eu.iot.avsystem.cloud:5684 > server.pem` to download server certificate and then 
 
     `openssl  x509 -outform der -in server.pem -out server.der` to convert it to DER format. 
 
 ## Step 3: Run provisioning tool
-After creating the correct configuration for provisioning make sure that west configuration is correct and the `manifest.path` is set to a absolute path.
-The script should be executed from a directorie from which the command `west build` will work. For the tutorial we will use the `Anjay-zephyr-client/demo`.
-
+After creating the correct configuration for provisioning make sure that west configuration is correct and the `manifest.path` is set to an absolute path.
+The script should be executed from a directory from which the command `west build` will work. For the tutorial we will use the `Anjay-zephyr-client/demo`.
+We will assume also that you have nrf9160dk board but other Nordic boards supported by `Anjay-zephyr-client` can also be used.
     ```
     cd Anjay-zephyr-client/demo
-    ./../tools/provisioning-tool/ptool.py -b nrf9160dk_nrf9160_ns -s <SERIAL> -c ../tools/provisioning-tool/configs/endpoint_cfg -t <TOKEN> -S ../tools/provisioning-tool/configs/lwm2m_server.json -C ../tools/provisioning-tools/configs/cert_info.json -p server.der
+    ./../tools/provisioning-tool/ptool.py -b nrf9160dk_nrf9160_ns -s <SERIAL> \
+        -c ../tools/provisioning-tool/configs/endpoint_cfg -t <TOKEN> \
+        -S ../tools/provisioning-tool/configs/lwm2m_server.json \
+        -C ../tools/provisioning-tools/configs/cert_info.json -p server.der
     ```
-    
-    Where <SERIAL> should be the USB serial number of the connected board and <TOKEN> should be the token acquired in Step 1.
+
+!!!note
+    Where `<SERIAL>` should be the USB serial number of the connected board and <TOKEN> should be the token acquired in Step 1.
     If you prefer using your own certificates then letting the script create a self signed cert use option `-k` for providing endpoint private key and `-r` to provide endpoint public cert. 
 
 ## Step 4: Connecting device to Coiote
