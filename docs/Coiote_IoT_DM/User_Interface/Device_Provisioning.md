@@ -71,6 +71,9 @@ In this section we will show how to provision the device using Pre-shared key.
     !!!important
         `<SERIAL>` should be the USB serial number of the connected board. You can check the serial number of your board by running: `nrfjprog -i`. The `<TOKEN>` should be the token acquired in previous step.
 
+    !!!note
+        To see all of the options available in the script run `./ptool.py -h`.
+
     If everything went well then your device should be visible in Coiote DM.
 
 ## Provisioning the device using certificates
@@ -112,7 +115,7 @@ Now we will show how to provision the device using certificates. This method is 
     ```
 
     !!!note
-        If you prefer using your own certificates then letting the script create a self signed cert thenyou can use option `-k` for providing endpoint private key `-r` to provide endpoint public cert. Also please remove option `-C` while running `ptool.py`.
+        If you prefer using your own certificates then letting the script create a self signed cert then you can use option `-k` for providing endpoint private key `-r` to provide endpoint public cert. Also please remove option `-C` while running `ptool.py`.
 
 4. Connecting device to Coiote
 
