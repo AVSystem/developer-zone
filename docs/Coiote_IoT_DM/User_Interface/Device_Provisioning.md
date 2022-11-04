@@ -1,22 +1,22 @@
 # Automated Provisioning for Nordic boards
 
 ## Introduction
-The device before it will be deployed in the field needs to be flashed and configured. This process takes some time and effort.
+With Factory provisioning for Nordic IoT devices, you can load on-device communication credentials and any cloud-related configuration at the factory level to automate secure device onboarding to Coiote IoT DM cloud.
 
-This tutorial will show you how to provision Nordic boards using the provisioning script found [Anjay-zephyr-client repository](https://github.com/AVSystem/Anjay-zephyr-client).
+Here’s a tutorial to get you started with device provisioning using a dedicated script to be found in the [Anjay Zephyr Client repository](https://github.com/AVSystem/Anjay-zephyr-client).
 
 ## Prerequisites
-- Nordic board connected to your computer.
+- A Nordic board connected to your computer. 
 - Installed [Go Programming language](https://go.dev/dl).
 - Installed [mcumgr command line tool](https://docs.zephyrproject.org/3.1.0/services/device_mgmt/mcumgr.html).
 - Zephyr development environment set up.
-- Registered account on [EU IOT CLOUD](https://eu.iot.avsystem.cloud).
-- If Windows is used then the ability to run Linux scripts/tools either under WSL, Cygwin or other means.
+- An active [Coiote DM cloud](https://eu.iot.avsystem.cloud) account.
+- If you're using Windows: possibility to run Linux scripts/tools either via WSL, Cygwin or other.
 
-## Provisioning the device using PSK
-In this section we will show how to provision the device using Pre-shared key.
+## Provision the device using PSK
+This section shows how to provision your device using a pre-shared key (PSK).
 
-1. Prepare configuration
+1. Prepare configuration:
 
     Before running the script some configuration should be set. Example configuration can be found in `Anjay-zephyr-client/tools/provisioning-tool/configs` directory.
 
@@ -24,12 +24,12 @@ In this section we will show how to provision the device using Pre-shared key.
 
     - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server. This file is needed if you wish the script to automatically add the new device to Coiote DM.
 
-2. Getting Coiote Access Token
+2. Get the Coiote DM Access Token
 
-    The provision script can register the provisioned device to Coiote DM automaticlly. We will use this option in this tutorial but this is a optional step and can be omited.
+    The provisioning script can register your device to Coiote DM automatically. You might use this option for the sake of this tutorial, but this is an optional step.
 
     !!! note
-        If you wish to skip device registration to Coiote DM then call `ptool.py` without `-t` and `-S` options.
+        If you wish to skip device registration to Coiote DM, then call `ptool.py` without `-t` and `-S` options.
 
     First an access token needs to be generated.
 
@@ -50,7 +50,7 @@ In this section we will show how to provision the device using Pre-shared key.
            --data-urlencode "password=$PASS" \
            "$SERVER/api/auth/oauth_password"
         ```
-    - If your using Linux run `chmod u+x get_token.sh` to give execute rights. Under Windows you can use the GUI to allow execution of this file.
+    - If you're using Linux, run `chmod u+x get_token.sh` to give execute rights. Under Windows you can use the GUI to allow execution of this file.
 
     - Run `./get_token.sh`. The script will ask you for your login and password for eu.iot.avsyste.cloud, please provide it.
 
