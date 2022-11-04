@@ -96,7 +96,7 @@ https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-i
 
     - **coioteDMrestUsername** - username of the created CoioteDM account.
     - **coioteDMrestPassword** - password of the created CoioteDM account.
-    - **coioteDMrestUri** - URL address and port of your Coiote DM installation. The port should always be `8088`, unless you are using `lwm2m-test.avsystem.io` - there the port part can be skipped.
+    - **coioteDMrestUri** - URL address and port of your Coiote DM installation. The port should always be `8088` to enable proper mTLS-based authentication.
 
         !!! note
             For some installations, port is not required. If you don't know what port to choose, contact our support.

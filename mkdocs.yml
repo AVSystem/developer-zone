@@ -43,6 +43,7 @@ nav:
                 - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH.md'
                 - 'Anjay_integrations/Anjay_ST_integration/B-L462E-CELL1-TYPE1SC.md'
                 - 'Anjay_integrations/Anjay_ST_integration/B-L475E-IOT01A.md'
+                - 'Anjay_integrations/Anjay_ST_integration/B-U585I-IOT02A-BG96.md'
             - 'Nordic boards':
                 - 'Anjay_integrations/Anjay_Nordic_integration/Thingy91.md'
                 - 'Anjay_integrations/Anjay_Nordic_integration/nRF9160.md'
@@ -97,6 +98,7 @@ nav:
             - 'nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
         - 'Release notes':
             - 2022:
+                - 'Release_Notes/v2022.22.0.md'
                 - 'Release_Notes/v2022.21.6.md'
                 - 'Release_Notes/v2022.20.4.md'
                 - 'Release_Notes/v2022.19.2.md'
