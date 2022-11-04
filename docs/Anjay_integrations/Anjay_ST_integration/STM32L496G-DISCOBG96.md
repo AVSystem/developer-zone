@@ -57,7 +57,7 @@ To connect to Coiote IoT Device Management LwM2M Server, please register at [htt
     If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
 
 !!! note
-     To upgrade this firmware please download these .zip files:
+     To upgrade this firmware please download the folowing .zip files:
      <br />
      - [Pack_BG96MAR02A08M1G_01.012.01.012](../resources/Pack_BG96MAR02A08M1G_01.012.01.012.zip "Pack_BG96MAR02A08M1G_01.012.01.012"),
      <br />
