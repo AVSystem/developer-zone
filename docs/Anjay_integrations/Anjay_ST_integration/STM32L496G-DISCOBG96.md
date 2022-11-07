@@ -54,9 +54,8 @@ Enter the command line interface on your machine and paste the following command
 To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 !!! note
-    If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
-
-!!! note
+     If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
+     <br />
      To upgrade this firmware please download the folowing .zip files:
      <br />
      - [Pack_BG96MAR02A08M1G_01.012.01.012](../resources/Pack_BG96MAR02A08M1G_01.012.01.012.zip "Pack_BG96MAR02A08M1G_01.012.01.012"),
