@@ -54,7 +54,10 @@ This section shows how to provision your device using a pre-shared key (PSK).
 
     - Run `./get_token.sh`. The script will ask you for your login and password for eu.iot.avsyste.cloud, please provide it.
 
-    If a JSON structure had been displayed containing `"access_token"` your ready to proceed. Copy your token, it's valid only for a short period of time. 
+    If a JSON structure had been displayed containing `"access_token"` your ready to proceed. Copy your token.
+
+    !!!important
+        The token received is valid only for a short period of time.
 
     For more informaton how to aquire the access token see [REST API authentication](https://eu.iot.avsystem.cloud/doc/user/REST_API/REST_API_Authentication/).
 
