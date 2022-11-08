@@ -10,7 +10,7 @@
       
       
       <link rel="shortcut icon" href="../../../assets/favicon/favicon-32x32.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-6.2.6">
     
     
       
@@ -2026,7 +2026,17 @@
 <p>To connect to Coiote IoT Device Management LwM2M Server, please register <a href="https://eu.iot.avsystem.cloud">here</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you use BG96-based configuration, you need to upgrade the modem firmware to at least the <code>BG96MAR02A08M1G</code> revision. Older versions may cause unexpected loss of connection.</p>
+<p>If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the <code>BG96MAR02A08M1G</code> revision. Older versions may cause unexpected loss of connection.
+ <br />
+ To upgrade this firmware please download the folowing .zip files:
+ <br />
+ - <a href="../../resources/Pack_BG96MAR02A08M1G_01.012.01.012.zip" title="Pack_BG96MAR02A08M1G_01.012.01.012">Pack_BG96MAR02A08M1G_01.012.01.012</a>,
+ <br />
+ - <a href="../../resources/Quectel_LTE_Windows_USB_Driver_V2.0.zip" title="Quectel_LTE_Windows_USB_Driver_V2.10">Quectel_LTE_Windows_USB_Driver_V2.0</a>,
+ <br />
+ - <a href="../../resources/QFlash_V4.10.zip" title="QFlash_V4.10">QFlash_V4.10</a>.
+ <br />
+ In Pack_BG96MAR02A08M1G_01.012.01.012 you will find step-by-step instruction. Step 2 and step 4 in this instruction doesn't work. For that reason you will need to download Quectel_LTE_Windows_USB_Driver_V2.0 file, as a required file for step 2, and QFlash_V4.10 file, as a required file for step 4.</p>
 </div>
 <p>To connect the board:</p>
 <ol>
@@ -2138,7 +2148,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2022</span>
     
   </small>
 </div>
