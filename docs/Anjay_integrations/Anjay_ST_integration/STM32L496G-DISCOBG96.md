@@ -54,9 +54,9 @@ Enter the command line interface on your machine and paste the following command
 To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 !!! note
-     If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
+     If you use the BG96-based configuration, you need to upgrade the modem firmware to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
      <br />
-     To upgrade this firmware please download the folowing .zip files:
+     To upgrade the firmware, download the following .zip files:
      <br />
      - [Pack_BG96MAR02A08M1G_01.012.01.012](../resources/Pack_BG96MAR02A08M1G_01.012.01.012.zip "Pack_BG96MAR02A08M1G_01.012.01.012"),
      <br />
@@ -64,7 +64,7 @@ To connect to Coiote IoT Device Management LwM2M Server, please register at [htt
      <br />
      - [QFlash_V4.10](../resources/QFlash_V4.10.zip "QFlash_V4.10").
      <br />
-     In Pack_BG96MAR02A08M1G_01.012.01.012 you will find step-by-step instruction. Step 2 and step 4 in this instruction doesn't work. For that reason you will need to download Quectel_LTE_Windows_USB_Driver_V2.0 file, as a required file for step 2, and QFlash_V4.10 file, as a required file for step 4.
+     Then, follow a step-by-step instruction in `Pack_BG96MAR02A08M1G_01.012.01.012`. Mind that links from steps 2 and 4 of this instruction don't work correctly. For this reason you will need to use the downloaded `Quectel_LTE_Windows_USB_Driver_V2.0` file for step 2 and `QFlash_V4.10` file for step 4.
 
 To connect the board:
 
