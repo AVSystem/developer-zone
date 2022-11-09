@@ -92,13 +92,15 @@ To connect the board:
     !!! tip
         To show available subcommands, use the **Tab** key.
 
-0. Check your default credentials by following the instructions in the program.
-    ![Anjay configuration](images/anjay_config.png "Anjay configuration")
+0. Check your default credentials by following the instructions in the program:
+    ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
+
 
     !!! note
-        If your default credentials are different than device credentials from Coiote IoT Device Management, please change them with `anjay config set possible_option` command.
+        If your default credentials are different than device credentials from Coiote IoT Device Management, please change them with `anjay config set <possible_option> <value>` command.
         <br/>
-        ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px;"}
+        ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+
 
 0. Use the `anjay start` command to run the Client.
 0. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
