@@ -51,10 +51,10 @@ nav:
                 - 'Anjay_integrations/ESP32_integration/M5Stick.md'
                 - 'Anjay_integrations/ESP32_integration/M5StickBG96.md'
                 - 'Anjay_integrations/ESP32_integration/ESP32-DevKitCBG96.md'
-        - 'Device onboarding':
-            - 'Coiote_DM_Device_Onboarding/Quick_start.md'
-            - 'Coiote_DM_Device_Onboarding/Device_onboarding.md'
-            - 'Coiote_DM_Device_Onboarding/Device_Center.md'
+        - 'IoT Quick Start':
+            - 'IoT_quick_start/Connect_device_quickstart.md'
+            - 'IoT_quick_start/Device_onboarding.md'
+            - 'IoT_quick_start/Device_Center.md'
         - 'Device tests':
             - 'Device_tests/Overview.md'
             - 'Device_tests/Getting_started.md'
