@@ -2094,10 +2094,18 @@ config  :Configure Anjay params
 </div>
 </li>
 <li>
-<p>Optionally, change the default credentials by following the instructions in the program.
-    <img alt="Anjay configuration" src="../images/anjay_config.png" title="Anjay configuration" /></p>
+<p>Check your default credentials by following the instructions in the program:
+    <img alt="Anjay configuration" src="../images/anjay_config.png" style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;" title="Anjay configuration" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your default credentials are different from device credentials provided in Coiote DM, change them using the <code>anjay config set &lt;possible_option&gt; &lt;value&gt;</code> command.
+<br/>
+<img alt="Anjay set configuration" src="../images/anjay_config_set.PNG" style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;" title="Anjay set configuration" /></p>
+</div>
 </li>
-<li>Use the <code>anjay start</code> command to run the Client.</li>
+<li>
+<p>Use the <code>anjay start</code> command to run the Client.</p>
+</li>
 <li>Go to Coiote DM to check if your device connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:
     <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
 </ol>
@@ -2162,7 +2170,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2022</span>
     
   </small>
 </div>
