@@ -92,7 +92,7 @@ To connect the board:
 
 
     !!! note
-        If your default credentials are different than device credentials from Coiote IoT Device Management, please change them with `anjay config set <possible_option> <value>` command.
+        If your default credentials are different from device credentials provided in Coiote DM, change them using the `anjay config set <possible_option> <value>` command.
         <br/>
         ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
