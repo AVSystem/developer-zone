@@ -87,8 +87,14 @@ To connect the board:
     !!! tip
         To show available subcommands, use the **Tab** key.
 
-0. Optionally, change the default credentials by following the instructions in the program.
-    ![Anjay configuration](images/anjay_config.png "Anjay configuration")
+0. Check your default credentials by following the instructions in the program:
+    ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
+
+
+    !!! note
+        If your default credentials are different from device credentials provided in Coiote DM, change them using the `anjay config set <possible_option> <value>` command.
+        <br/>
+        ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 
 0. Use the `anjay start` command to run the Client.
