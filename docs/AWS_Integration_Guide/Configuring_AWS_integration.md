@@ -49,14 +49,15 @@ Then follow the steps below:
     - Alternatively, create a new group and migrate the required tasks and setting values:
         - Select the **Add** button, name your group and click **Add**.
         ![Add group button](images/add_group_button.png "Add group button")
-        - Migrate all the six tasks that have the **AWS** prefix in their task name:
+        - Migrate all the five tasks that have the **AWS** prefix in their task name:
             - Select the **AWSiotCoreCertAuth** group and go to **Group tasks**, select the first **AWS** task and click **Copy**.
               ![Copy task](images/copy_task.png "Copy task")
             - In the pop-up window, click **Select group** in the **Task target** field and choose your custom integration group from the list.
-            - Remember to select the **Domain** of the user you created earlier.
+            - !!! important
+                  Remember to select the **Domain** of the user you created earlier.
             - In the **Actions** field, select **Add new task**.
               ![Copy task pop-up](images/copy_task_popup.png "Copy task pop-up")
-            - Repeat the action for the remaining five tasks.
+            - Repeat the action for the remaining four tasks.
         - Migrate the `AWSdataPlaneEndpointAddress` setting value:
             - Select your custom integration group and go to **Profiles**, then select **Copy from**.
               ![Copy setting values](images/copy_svs.png "Copy setting values")
