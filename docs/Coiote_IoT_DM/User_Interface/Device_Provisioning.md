@@ -20,7 +20,7 @@ This section shows how to provision your device using a pre-shared key (PSK).
 
     Before running the script some configuration should be set. Example configuration can be found in `Anjay-zephyr-client/tools/provisioning-tool/configs` directory.
 
-    - Edit `endpoint_cfg` contains LwM2M objects setting that will be uploaded to the device. Set `RID.Security.Mode` to `0` and modify `RID.Security.PKOrIdentity` and `RID.Security.SecretKey` as well.
+    - Edit `endpoint_cfg` contains LwM2M objects setting that will be uploaded to the device. Set `RID.Security.PKOrIdentity` and `RID.Security.SecretKey`. Make sure that `RID.Security.Mode` is set to `0`.
 
     - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server. This file is needed if you wish the script to automatically add the new device to Coiote DM.
 
@@ -89,7 +89,8 @@ Now we will show how to provision the device using certificates. This method is 
 
     Like in the PSK example we will modify the configuration found in `Anjay-zephyr-client/tools/provisioning-tool/configs` directory.
 
-    - Edit `endpoint_cfg` and change `RID.Security.Mode` to `2` for authentication using certificates.
+    !!!note
+        In this step we will use `endpoint_cfg_cert` configuration file instead of `endpoint_cfg`. You may verify that the `RID.Security.Mode` is set to `2` in this configuration.
 
     - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server.
 
@@ -112,17 +113,20 @@ Now we will show how to provision the device using certificates. This method is 
     ```
     cd Anjay-zephyr-client/demo
     ./../tools/provisioning-tool/ptool.py -b nrf9160dk_nrf9160_ns -s <SERIAL> \
-        -c ../tools/provisioning-tool/configs/endpoint_cfg -t <TOKEN> \
+        -c ../tools/provisioning-tool/configs/endpoint_cfg_cert -t <TOKEN> \
         -S ../tools/provisioning-tool/configs/lwm2m_server.json \
-        -C ../tools/provisioning-tools/configs/cert_info.json -p server.der
+        -C ../tools/provisioning-tool/configs/cert_info.json -p server.der
     ```
 
     !!!note
         If you prefer using your own certificates then letting the script create a self signed cert then you can use option `-k` for providing endpoint private key `-r` to provide endpoint public cert. Also please remove option `-C` while running `ptool.py`.
 
+    !!!important
+        By default the script generates certificates for the device using P-384 elliptic curve.
+
 4. Connecting device to Coiote
 
-    During running the provisioning script you will be asked to upload the device public certificate to Coiote.
+    The certificates for the device need to be uploaded by hand. To do this fallow those steps:
 
     - Log in Coiote DM
 
