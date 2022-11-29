@@ -67,10 +67,10 @@ To connect the board:
          ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
      - In the **Security mode** section, select the **Pre-Shared Key** mode:
          - In the **Key identity** field, type the same name as in the `Endpoint name` field.
-         - In the **Key** field, type the shared secret used in the device-server authentication.
+         - In the **Key** field, type a shared secret used for the device-server authentication.
 
         !!! Note
-            This is your own password which you will need in the next steps.
+            This is your password which you create yourself, you will need it in the next steps.
 
 0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
 0. While in the **Connect your device** step, follow the [next section](#configure-the-client) to run the client and connect it to the server.
