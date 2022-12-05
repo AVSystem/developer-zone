@@ -11,7 +11,7 @@ Integrate your Raspberry Pi Pico W board.
 ### Step 1: Create a workspace
 
 0. Create a project directory for the integration.
-0. Clone Raspberry Pi Pico SDK and FreeRTOS kernel into a base directory, parallel to Anjay-pico-client Github repository:
+0. Clone **Raspberry Pi Pico SDK** and **FreeRTOS kernel** into a base directory, parallel to Anjay-pico-client Github repository:
 
     ```
     git clone -b 1.4.0 https://github.com/raspberrypi/pico-sdk.git
@@ -35,7 +35,7 @@ Integrate your Raspberry Pi Pico W board.
     mkdir build && cd build
     ```
 
-0. Build the project with `<ssid>` and `<pass>` replaced with your WIFI name and password respectively. LwM2M Client Endpoint Name is also configured by `<endpoint_name>` parameter:
+0. Build the project with `<ssid>` and `<pass>` replaced with your WIFI name and password respectively. LwM2M Client Endpoint Name is also configured by `<endpoint_name>` parameter. If you want to use Pre-Shared Key option you will need `<identity>` and `<psk>` too:
 === "Pre-Shared Key"
     ``` psk
     cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
@@ -53,7 +53,7 @@ Then use `make -j` command to generate directories named after examples that con
 
 0. To program using the bootloader, press BOOTSEL button while connecting Raspberry Pi Pico W through a USB cable - it should be recognized as a Mass Storage device.
 0. Copy the .uf2 file to the open Mass Storage device folder.
-0. After Pico will be programmed, reset and start running the code.
+0. Once Pico have been programmed the board restart and start running the code.
 
 ## Connecting to the LwM2M Server
 
@@ -68,13 +68,13 @@ To connect the board:
     3. In the **Device credentials** step:
          - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-         - In the **Security mode** section, select the security mode you choose in [Compile the application](#compile-the-application) step:
+         - In the **Security mode** section, select the security mode you've choosen in [Compile the application](#compile-the-application) step:
 
-        !!! note
-            If you choose **Pre-Shared Key** mode then type:
+            !!! note
+                If you choose **Pre-Shared Key** mode then type:
 
-            - In the **Key identity** field, the same name as in the Endpoint name field.
-            - In the **Key** field, the shared secret used in the device-server authentication.
+                - In the **Key identity** field, the same name as in the Endpoint name field.
+                - In the **Key** field, the shared secret used in the device-server authentication.
 
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:  ![Registered device](images/registered_device.png "Registered device")

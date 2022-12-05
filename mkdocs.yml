@@ -36,7 +36,7 @@ nav:
           - 'index.md'
         - 'Anjay integrations':
             - 'Anjay_integrations/Getting_started.md'
-            - 'Raspberry Pi Pico boards':
+            - 'Raspberry Pi boards':
                 - 'Anjay_integrations/RaspberryPi_integration/Implementing_LwM2M_objects_on_RaspberryPi.md'
                 - 'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md'
             - 'STMicroelectronics boards':
