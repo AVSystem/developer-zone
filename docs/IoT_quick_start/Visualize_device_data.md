@@ -1,4 +1,4 @@
-# Visualize device data - quickstart
+# Visualize device data
 
 Learn how to visualize collected device data in your domain by setting an observation, adding a widget and diplaying it on the **Dashboard**.   
 
@@ -10,6 +10,9 @@ Learn how to visualize collected device data in your domain by setting an observ
 ## Set observation and add widget
 
 To start collecting data to be displayed for a widget on your Dashboard, you need to set an observation on a resource. In this tutorial, we'll be visualizing temperature records of the **Sensor value** `/5700/` resource belonging to the `/3303/` **Temperature** object.
+
+!!! note
+    Data model objects that support adding widgets range from `/502/` to `/65534/`.       
 
 0. Go to the **Device Center** of a connected device in your domain and click the **Data model** tab.
 0. In the list of objects, expand the **Temperature** `/3303/` object and click the **eye** icon in the **Operations** column.
@@ -23,6 +26,10 @@ To start collecting data to be displayed for a widget on your Dashboard, you nee
 
 0. In the expanded **Temperature** object card, click the **Add widget** icon in the **Widget** column and click **Save**.
    ![Add widget](images/add_widget.png "Add widget"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray;width: 70%"}
+
+    !!! important
+        The action of adding a widget applies for all the devices in your domain, but the widget will only display data from the 10 oldest devices (based on their **Creation time**).
+
 0. Repeat all the steps for any other connected devices in your domain which you want to include in the **Temperature** widget. You can add up to 10 devices to one widget.  
 
 ## View widget on the **Dashboard**

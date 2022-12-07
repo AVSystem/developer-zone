@@ -25,6 +25,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - git-revision-date-localized
 
 google_analytics:
   - UA-25246208-6
