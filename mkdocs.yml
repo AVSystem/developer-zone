@@ -54,7 +54,9 @@ nav:
         - 'IoT Quick Start':
             - 'IoT_quick_start/Connect_device_quickstart.md'
             - 'IoT_quick_start/Device_onboarding.md'
+            - 'IoT_quick_start/Visualize_device_data.md'
             - 'IoT_quick_start/Device_Center.md'
+            - 'IoT_quick_start/Dashboard.md'
         - 'Device tests':
             - 'Device_tests/Overview.md'
             - 'Device_tests/Getting_started.md'
