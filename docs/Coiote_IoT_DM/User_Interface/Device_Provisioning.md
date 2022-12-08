@@ -63,7 +63,10 @@ This section shows how to provision your device using a pre-shared key (PSK).
 
 3. Run provisioning tool
 
-    After creating the correct configuration for provisioning make sure that west configuration is correct and the `manifest.path` is set to an absolute path. Run:
+    !!!important
+        After creating the correct configuration for provisioning make sure that west configuration is correct and the `manifest.path` is set to an absolute path.
+
+    Run:
         ```
         cd Anjay-zephyr-client/demo
         ./../tools/provisioning-tool/ptool.py -b nrf9160dk_nrf9160_ns -s <SERIAL> \
@@ -98,9 +101,12 @@ Now we will show how to provision the device using certificates. This method is 
 
     - Get the certificate for `eu.iot.avsystem.cloud`. Run:
 
-        `openssl s_client -showcerts -dtls eu.iot.avsystem.cloud:5684 > server.pem` to download server certificate and then
+        `openssl s_client -showcerts -dtls eu.iot.avsystem.cloud:5684 > /tmp/server.pem` to download server certificate and then
 
-        `openssl  x509 -outform der -in server.pem -out server.der` to convert it to DER format.
+        `openssl  x509 -outform der -in /tmp/server.pem -out /tmp/server.der` to convert it to DER format.
+
+    !!!note
+        The above two commands assumes you use a Linux OS and writes the certificate in the `/tmp` directory. If using Windows modify the commands by changing `"/tmp"` with some other valid directory.
 
 2. Getting Coiote Access Token
 
@@ -115,11 +121,14 @@ Now we will show how to provision the device using certificates. This method is 
     ./../tools/provisioning-tool/ptool.py -b nrf9160dk_nrf9160_ns -s <SERIAL> \
         -c ../tools/provisioning-tool/configs/endpoint_cfg_cert -t <TOKEN> \
         -S ../tools/provisioning-tool/configs/lwm2m_server.json \
-        -C ../tools/provisioning-tool/configs/cert_info.json -p server.der
+        -C ../tools/provisioning-tool/configs/cert_info.json -p /tmp/server.der
     ```
 
     !!!note
         If you prefer using your own certificates then letting the script create a self signed cert then you can use option `-k` for providing endpoint private key `-r` to provide endpoint public cert. Also please remove option `-C` while running `ptool.py`.
+
+    !!!important
+        Parameters `-p`, `-k` and `-r` should use absoute paths.
 
     !!!important
         By default the script generates certificates for the device using P-384 elliptic curve.
