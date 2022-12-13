@@ -101,7 +101,7 @@ Now we will show how to provision the device using certificates. This method is 
 
     - Get the certificate for `eu.iot.avsystem.cloud`. Run:
 
-        `openssl s_client -showcerts -dtls eu.iot.avsystem.cloud:5684 > /tmp/server.pem` to download server certificate and then
+        `openssl s_client -showcerts eu.iot.avsystem.cloud:5684 > /tmp/server.pem` to download server certificate and then
 
         `openssl  x509 -outform der -in /tmp/server.pem -out /tmp/server.der` to convert it to DER format.
 
