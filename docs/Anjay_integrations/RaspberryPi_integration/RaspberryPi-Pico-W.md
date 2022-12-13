@@ -25,7 +25,13 @@ Integrate your Raspberry Pi Pico W board.
     sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
     ```
 !!! note
-    This command works only on Linux. If you use Windows you need to go to [Installing the ARM Toolchain for Windows](https://mynewt.apache.org/latest/get_started/native_install/cross_tools.html#installing-the-arm-toolchain-for-windows) page for instruction on how to install this libraries.
+    When using **Windows** you need to go to the [Installing the ARM Toolchain for Windows](https://mynewt.apache.org/latest/get_started/native_install/cross_tools.html#installing-the-arm-toolchain-for-windows) page for instruction on how to install this libraries.
+
+    When using **MacOS**, run the following command:
+
+    ```
+    brew install armmbed/formulae/arm-none-eabi-gcc
+    ```
 
 ### Compile the application
 0. Go to the Anjay-pico-client repository and update submodules:
@@ -36,24 +42,29 @@ Integrate your Raspberry Pi Pico W board.
     ```
 
 0. Build the project with `<ssid>` and `<pass>` replaced with your WIFI name and password respectively. LwM2M Client Endpoint Name is also configured by `<endpoint_name>` parameter. If you want to use Pre-Shared Key option you will need `<identity>` and `<psk>` too:
-=== "Pre-Shared Key"
-    ``` psk
-    cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
+
+    === "Pre-Shared Key"
+        ``` psk
+        cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
+        ```
+    === "NoSec"
+        ``` nosec
+        cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" ..
+        ```
+
+0. Run the following command to generate the directories named after the examples that contain files with `.uf2` and `.hex` extensions:
     ```
-=== "NoSec"
-    ``` nosec
-    cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" ..
+    make -j
     ```
-Then use `make -j` command to generate directories named after examples that contain files with .uf2 and .hex extensions.
 
 !!! note
     If you're using Windows system you should add `-G "MinGW Makefiles"` at the end of the cmake command. It will help generate proper files.
 
 ## Flash the board using bootloader
 
-0. To program using the bootloader, press BOOTSEL button while connecting Raspberry Pi Pico W through a USB cable - it should be recognized as a Mass Storage device.
-0. Copy the .uf2 file to the open Mass Storage device folder.
-0. Once Pico have been programmed the board restart and start running the code.
+0. To program using the bootloader, press and hold the **BOOTSEL** button while connecting Raspberry Pi Pico W through a USB cable - it should be recognized as a Mass Storage device.
+0. Copy the `.uf2` file to the open Mass Storage device folder. Depending on the application you want to program, copy the `.uf2` file from available directories, e.g. `mandatory_objects`.
+0. Once the Pico has been programmed, disconnect the board and connect it again to make it execute the code.
 
 ## Connecting to the LwM2M Server
 

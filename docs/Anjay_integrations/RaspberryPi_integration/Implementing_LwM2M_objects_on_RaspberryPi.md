@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for [RaspberryPi-based](https://www.raspberrypi.org/) IoT devices using Python programming language. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
+Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for [RaspberryPi-based](https://www.raspberrypi.org/) IoT devices using Python programming language. Svetovid is based on a state-of-the-art Anjay LwM2M client developed by AVSystem.
 It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.
 
 This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.
@@ -39,18 +39,18 @@ If a *Hello World!* message is displayed, you're good to proceed.
 
 1. To install the GrovePi repository, paste and execute the following commands:
 
-```
-    mkdir ~/Dexter
-    cd ~/Dexter
-    git clone https://github.com/DexterInd/GrovePi
-    cd ~/Dexter/GrovePi/Script
-    bash ./update_grovepi.sh
-```
+    ```
+        mkdir ~/Dexter
+        cd ~/Dexter
+        git clone https://github.com/DexterInd/GrovePi
+        cd ~/Dexter/GrovePi/Script
+        bash ./update_grovepi.sh
+    ```
 2. Check if the GrovePi libraries are working correctly:
 
-   - Connect a LED module to GrovePi port D4.
-   - In the terminal, type: `cd /home/pi/Dexter/GrovePi/Software/Python && python grove_led_blink.py`
-   - The LED should start blinking.
+    - Connect a LED module to GrovePi port D4.
+    - In the terminal, type: `cd ~/Dexter/GrovePi/Software/Python && python grove_led_blink.py`
+    - The LED should start blinking.
 
 ## Step 2: Install Svetovid
 
@@ -94,7 +94,7 @@ If a *Hello World!* message is displayed, you're good to proceed.
 				}
 			```
 
-		- in `/etc/svetovid/config/svd.json`:
+	 - in `/etc/svetovid/config/svd.json`:
 			```
 				{
 					"device": {
@@ -139,7 +139,7 @@ If a *Hello World!* message is displayed, you're good to proceed.
  3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
     3. In the **Device credentials** step:
-         - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
+         - In the **Device ID** enter your board endpoint name, e.g. `raspberry_pi_test`.
              ![Device credentials step](images/raspberry_pi_test_credentials.png "Device credentials step")
          - In the **Security mode** section, select the security mode you've choosen in [Compile the application](#compile-the-application) step:
 
@@ -155,7 +155,7 @@ If a *Hello World!* message is displayed, you're good to proceed.
     ![Device objects](images/rasp.png "Objects")
 
 !!! note
-    Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid, for instance the temperature object `/3303`.
+    Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid, for instance the Light Control `/3311`.
 
 ## Step 5: Implement the LwM2M temperature object `/3303` (only for GrovePi)
 
@@ -166,7 +166,7 @@ If a *Hello World!* message is displayed, you're good to proceed.
 0. Generate a stub object in your `dm` (data model) Svetovid folder by pasting and executing the following command in the terminal: `$ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --generator python`
 
     !!! tip
-        You can analyze the resource implementation in the `/etc/svetovid/dm/3303 folder`. For more details, see the [Svetovid page on GitHub](https://github.com/AVSystem/Svetovid-raspberry-client).
+        You can analyze the resource implementation in the `/etc/svetovid/dm/3303` folder. For more details, see the [Svetovid page on GitHub](https://github.com/AVSystem/Svetovid-raspberry-client).
 
 0. Modify the python script in the `/etc/svetovid/dm/3303/Sensor_Value.py` file. Open the file, replace the contents with the following script and click **Save**:
       ```
