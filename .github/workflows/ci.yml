@@ -17,7 +17,7 @@ jobs:
       - run: npm install
       - run: npm install gulp-cli
       - run: gulp build 
-      - run: pip install -Iv mkdocs-material==8.5.11
+      - run: pip install -Iv mkdocs-material==6.4.6
       - run: pip install mkdocs-git-revision-date-localized-plugin
 #      - run: docker run -v ${PWD}:/docs squidfunk/mkdocs-material:6.2.6 build 
       - run: pip install ghp-import
