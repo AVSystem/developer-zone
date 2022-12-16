@@ -1,4 +1,4 @@
-# Configuring the integration
+# Configure AWS integration
 
 Follow this section to integrate your AWS services with Coiote DM.
 

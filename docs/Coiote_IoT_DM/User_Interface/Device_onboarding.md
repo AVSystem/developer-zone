@@ -25,7 +25,7 @@ To add a device using the Management server:
 3. In the **Device credentials** step, provide the following:
      - Device ID - enter the endpoint name of your LwM2M device.
      - Friendly name (optional) - enter a name for your device that will help user identify it in the platform.
-         ![Device credentials step](images/add_mgmt.png "Device credentials step")
+         ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
      - Security mode:
          - PSK - authorize your device using a pre-shared key. To use this option, provide the following:
              - **Key identity** - define the name that the device will use during DTLS handshake. Can be equal with the LwM2M device endpoint name.   
@@ -40,7 +40,6 @@ To add a device using the Management server:
         At this stage, your device will be already visible in the platform. However, to get your device connected, you need to configure it using the credentials from the next step.     
 
 5. In the **Connect your device** step, insert the given connection parameters into your device to start connection.
-   ![Connect your device step](images/quick_onboard.png "Connect your device step")
 6. Click **Go to device** to see your added device dashboard.
    ![Added device](images/registered_device.png "Added device")
 
