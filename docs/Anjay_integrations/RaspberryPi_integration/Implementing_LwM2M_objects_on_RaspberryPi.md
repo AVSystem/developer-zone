@@ -46,6 +46,8 @@ If a *Hello World!* message is displayed, you're good to proceed.
         cd ~/Dexter/GrovePi/Script
         bash ./update_grovepi.sh
     ```
+
+
 2. Check if the GrovePi libraries are working correctly:
 
     - Connect a LED module to GrovePi port D4.
