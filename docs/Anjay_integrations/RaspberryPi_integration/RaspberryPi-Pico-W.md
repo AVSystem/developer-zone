@@ -4,14 +4,14 @@ Integrate your Raspberry Pi Pico W board.
 
 ## Prerequisites
 
-- The Raspberry Pi Pico W board with a USB cable.
+- A Raspberry Pi Pico W board with a USB cable.
 - A user with access to the Coiote IoT Device Management platform and appropriate permissions.
 
 ## Prepare binaries
 ### Step 1: Create a workspace
 
 0. Create a project directory for the integration.
-0. Clone **Raspberry Pi Pico SDK** and **FreeRTOS kernel** into a base directory, parallel to Anjay-pico-client Github repository:
+0. Clone the **Raspberry Pi Pico SDK** and the **FreeRTOS kernel** into a base directory, parallel to the `Anjay-pico-client` Github repository:
 
     ```
     git clone -b 1.4.0 https://github.com/raspberrypi/pico-sdk.git
@@ -20,28 +20,28 @@ Integrate your Raspberry Pi Pico W board.
     git clone https://github.com/AVSystem/Anjay-pico-client.git
     ```
 
-0. Install needed libraries:
+0. Install the required libraries:
     ```
     sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
     ```
 !!! note
-    When using **Windows** you need to go to the [Installing the ARM Toolchain for Windows](https://mynewt.apache.org/latest/get_started/native_install/cross_tools.html#installing-the-arm-toolchain-for-windows) page for instruction on how to install this libraries.
+    If you're using **Windows**, follow the [Installing the ARM Toolchain for Windows](https://mynewt.apache.org/latest/get_started/native_install/cross_tools.html#installing-the-arm-toolchain-for-windows) instruction on how to install these libraries.
 
-    When using **MacOS**, run the following command:
+    If you're using **MacOS**, run the following command:
 
     ```
     brew install armmbed/formulae/arm-none-eabi-gcc
     ```
 
 ### Compile the application
-0. Go to the Anjay-pico-client repository and update submodules:
+0. Go to the `Anjay-pico-client` repository and update submodules:
     ```
     cd Anjay-pico-client
     git submodule update --init --recursive
     mkdir build && cd build
     ```
 
-0. Build the project with `<ssid>` and `<pass>` replaced with your WIFI name and password respectively. LwM2M Client Endpoint Name is also configured by `<endpoint_name>` parameter. If you want to use Pre-Shared Key option you will need `<identity>` and `<psk>` too:
+0. Build the project with `<ssid>` and `<pass>` replaced with your WIFI name and password respectively. LwM2M Client Endpoint Name is also configured by `<endpoint_name>` parameter. If you want to use the Pre-Shared Key option, you need to provide `<identity>` and `<psk>`:
 
     === "Pre-Shared Key"
         ``` psk
@@ -58,7 +58,7 @@ Integrate your Raspberry Pi Pico W board.
     ```
 
 !!! note
-    If you're using Windows system you should add `-G "MinGW Makefiles"` at the end of the cmake command. It will help generate proper files.
+    If you're using Windows, you need to add `-G "MinGW Makefiles"` at the end of the `cmake` command. It will help generate the proper files.
 
 ## Flash the board using bootloader
 
@@ -82,10 +82,10 @@ To connect the board:
          - In the **Security mode** section, select the security mode you've choosen in [Compile the application](#compile-the-application) step:
 
             !!! note
-                If you choose **Pre-Shared Key** mode then type:
+                If you choose the **Pre-Shared Key** security mode:
 
-                - In the **Key identity** field, the same name as in the Endpoint name field.
-                - In the **Key** field, the shared secret used in the device-server authentication.
+                - In the **Key identity** field, provide the same name as in the **Endpoint name** field.
+                - In the **Key** field, provide the shared secret used in the device-server authentication.
 
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:  ![Registered device](images/registered_device.png "Registered device")
