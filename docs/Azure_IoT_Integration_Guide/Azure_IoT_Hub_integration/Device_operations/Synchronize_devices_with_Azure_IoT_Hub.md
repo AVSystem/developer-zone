@@ -3,7 +3,7 @@
 Importing devices to Coiote DM and synchronizing them with Azure IoT Hub is a quick way to start using your Coiote DM - Azure IoT Hub integration. The import operation will do two basic operations automatically:
 
 - Create device entities in Coiote DM with the credentials that you specified,
-- create the devices' "counterparts" within Azure IoT Hub and synchronize them with Coiote DM.         
+- Create the devices' "counterparts" within Azure IoT Hub and synchronize them with Coiote DM.         
 
 ## Prerequisites
 
@@ -52,7 +52,12 @@ Logs may come helpful for diagnosing and troubleshooting issues with the communi
 
 To see logs for your integrated devices:
 
-0. Go to the single device view and from the left menu, select the **Logs** tile.
+0. Go to the single device view in Coiote DM, from the left menu, select the **Logs** tile.
+
+    !!! info
+        The logs are only available in the previous version of Coiote. Select **Go to previous version** in the top-right corner.
+        ![previous version](images/previous-version.png "previous version")
+
 0. In the **Logs** panel, expand the view by clicking on **More** and configure the following:
 
     - **Store from level** - select **Use custom** and set log level to **DEBUG** for 1 hour.
