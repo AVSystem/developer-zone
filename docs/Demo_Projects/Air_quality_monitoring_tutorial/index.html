@@ -1,0 +1,2644 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/favicon/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-6.2.6">
+    
+    
+      
+        <title>Air quality monitoring - tutorial - IoT Developer Zone</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1572272-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1572272-2');
+    </script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-25246208-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#air-quality-monitoring-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <!-- Mitigate bug: https://github.com/mkdocs/mkdocs/issues/2191 -->
+
+
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+   
+    <!-- Link to home -->
+    <a
+      href="https://iotdevzone.avsystem.com/docs/"
+      title="IoT Developer Zone"
+      class="md-header-nav__button md-logo"
+      aria-label="IoT Developer Zone"
+    >
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+  
+    
+      <svg class="logoMobile" width="150px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 221 48">
+        <g>
+          <path style="fill: #FFD600;" d="M47.5,16.4c-3-7.2-10.1-12.3-18.3-12.3C18.2,4.1,9.3,13,9.3,23.9c0,1.8,0.2,3.5,0.7,5.1h2.2
+                  c0.6,0,1.4-0.7,1.6-1.2l3.9-9.8c0.5-1.2,1.7-2.1,3-2.1c1.3,0,2.5,0.8,3,2.1l6.2,15.6c0.3,0.7,1.1,1.2,1.7,1.2h1.3
+                  c0.3,0,0.6,0.2,0.8,0.5l0.5,1.4c0.1,0.3,0,0.5-0.3,0.5h-4.2c-1.8,0-3.9-1.5-4.6-3.3L20.7,23c-0.4-1.1-0.8-2.2-1.1-3.3
+                  c-0.3,1.1-0.6,2.2-1.1,3.3l-2.1,5.4c-0.7,1.7-2.6,3.1-4.4,3.1h-1.3c3,7.2,10.1,12.3,18.3,12.3c10.9,0,19.8-8.9,19.8-19.8
+                  c0-1.8-0.2-3.5-0.7-5.1h-2.2c-0.6,0-1.4,0.7-1.6,1.2l-3.9,9.8c-0.5,1.2-1.7,2.1-3,2.1c-1.3,0-2.5-0.8-3-2.1l-6.2-15.6
+                  c-0.3-0.7-1.1-1.2-1.7-1.2h-1.3c-0.3,0-0.6-0.2-0.8-0.5L24,11c-0.1-0.3,0-0.5,0.3-0.5h4.2c1.8,0,3.9,1.5,4.6,3.3l4.4,11.1
+                  c0.4,1.1,0.8,2.2,1.1,3.3c0.3-1.1,0.6-2.2,1.1-3.3l2.1-5.4c0.7-1.7,2.6-3.1,4.4-3.1H47.5z"/>
+        </g>
+      </svg>
+  
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+      <div class="md-header-nav__ellipsis">
+       
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            IoT Developer Zone
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Air quality monitoring - tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../LwM2M_Client/Getting_started/" class="md-tabs__link">
+        LwM2M Client
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Coiote_IoT_DM/Quick_Start/Connect_device_quickstart/" class="md-tabs__link">
+        Coiote IoT DM
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/" class="md-tabs__link">
+        Cloud integrations
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Implementing_LwM2M_objects_on_RaspberryPi/" class="md-tabs__link md-tabs__link--active">
+        Demo Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Release_Notes/v2022.25.20/" class="md-tabs__link">
+        Release notes
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IoT Developer Zone" class="md-nav__button md-logo" aria-label="IoT Developer Zone">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    IoT Developer Zone
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+      
+      <label class="md-nav__link" for="nav-1">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="nav-1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        LwM2M Client
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LwM2M Client" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          LwM2M Client
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/Getting_started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+      
+      <label class="md-nav__link" for="nav-2-2">
+        STMicroelectronics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="STMicroelectronics" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          STMicroelectronics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/" class="md-nav__link">
+        Building LwM2M applications for STM boards with I-CUBE-Anjay
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/STMicroelectronics/STM32L496G-DISCOBG96/" class="md-nav__link">
+        STM32L496G-DISCO/BG96
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/STMicroelectronics/STM32L496G-DISCO-MONARCH/" class="md-nav__link">
+        STM32L496G-DISCO/MONARCH
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/STMicroelectronics/B-L462E-CELL1-TYPE1SC/" class="md-nav__link">
+        B-L462E-CELL1/TYPE1SC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/STMicroelectronics/B-L475E-IOT01A/" class="md-nav__link">
+        B-L475E-IOT01A
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/STMicroelectronics/B-U585I-IOT02A-BG96/" class="md-nav__link">
+        B-U585I-IOT02A/BG96
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
+      
+      <label class="md-nav__link" for="nav-2-3">
+        Nordic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Nordic" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          Nordic
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/Nordic/Thingy91/" class="md-nav__link">
+        Thingy:91
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/Nordic/nRF9160/" class="md-nav__link">
+        nRF9160
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+      
+      <label class="md-nav__link" for="nav-2-4">
+        ESP32
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ESP32" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          ESP32
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/ESP32/M5Stick/" class="md-nav__link">
+        M5StickC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/ESP32/M5StickBG96/" class="md-nav__link">
+        M5StickC with BG96
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LwM2M_Client/ESP32/ESP32-DevKitCBG96/" class="md-nav__link">
+        ESP32-DevKitC with BG96
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        Coiote IoT DM
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Coiote IoT DM" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Coiote IoT DM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+      
+      <label class="md-nav__link" for="nav-3-1">
+        Quick Start
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Quick Start" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-1">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Quick_Start/Connect_device_quickstart/" class="md-nav__link">
+        Connect device
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Quick_Start/Visualize_device_data/" class="md-nav__link">
+        Visualize device data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
+        User Interface
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="User Interface" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          User Interface
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/User_Interface/Device_onboarding/" class="md-nav__link">
+        Device onboarding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/User_Interface/Device_Center/" class="md-nav__link">
+        Device Center
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/User_Interface/Dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3">
+        Device tests
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Device tests" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Device tests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Device_tests/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Device_tests/Getting_started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Device_tests/Test_actions/" class="md-nav__link">
+        Test actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Device_tests/Configure_tests/" class="md-nav__link">
+        Configure tests
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Device_tests/Data_model_and_variables/" class="md-nav__link">
+        Device data model and variables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Device_tests/Run_tests/" class="md-nav__link">
+        Run tests
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration/" class="md-nav__link">
+        Jenkins/GitLab integration with device tests API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        Cloud integrations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cloud integrations" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" >
+      
+      <label class="md-nav__link" for="nav-4-1">
+        Azure IoT
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-1">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-1" type="checkbox" id="nav-4-1-1" >
+      
+      <label class="md-nav__link" for="nav-4-1-1">
+        Azure IoT Hub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT Hub" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-1-1">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT Hub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/" class="md-nav__link">
+        Configure integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-1-2" type="checkbox" id="nav-4-1-1-2" >
+      
+      <label class="md-nav__link" for="nav-4-1-1-2">
+        Device operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Device operations" data-md-level="4">
+        <label class="md-nav__title" for="nav-4-1-1-2">
+          <span class="md-nav__icon md-icon"></span>
+          Device operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Synchronize_devices_with_Azure_IoT_Hub/" class="md-nav__link">
+        Synchronize devices with Azure IoT Hub
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Upgrading_firmware/" class="md-nav__link">
+        Upgrade device firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Perform_Read_Write/" class="md-nav__link">
+        Perform LwM2M Read and Write
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Perform_Execute/" class="md-nav__link">
+        Perform LwM2M Execute
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-2" type="checkbox" id="nav-4-1-2" >
+      
+      <label class="md-nav__link" for="nav-4-1-2">
+        Azure DPS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure DPS" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-1-2">
+          <span class="md-nav__icon md-icon"></span>
+          Azure DPS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_DPS/Configuring_Azure_IoT_DPS_integration_extension/" class="md-nav__link">
+        Configure integration
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-3" type="checkbox" id="nav-4-1-3" >
+      
+      <label class="md-nav__link" for="nav-4-1-3">
+        Azure IoT Central
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT Central" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-1-3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT Central
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Central/Configure_Azure_IoT_Central_integration/" class="md-nav__link">
+        Configure integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-3-2" type="checkbox" id="nav-4-1-3-2" >
+      
+      <label class="md-nav__link" for="nav-4-1-3-2">
+        Device operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Device operations" data-md-level="4">
+        <label class="md-nav__title" for="nav-4-1-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Device operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Central/Device_operations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Central/Device_operations/Synchronize_devices_with_Azure_IoT_Central/" class="md-nav__link">
+        Synchronize devices with Azure IoT Central
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Central/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates/" class="md-nav__link">
+        Configure integration templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-5" type="checkbox" id="nav-4-1-5" >
+      
+      <label class="md-nav__link" for="nav-4-1-5">
+        Concepts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Concepts" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-1-5">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/" class="md-nav__link">
+        LwM2M mappings - Azure IoT Hub
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Central/" class="md-nav__link">
+        LwM2M mappings - Azure IoT Central
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+      
+      <label class="md-nav__link" for="nav-4-2">
+        AWS IoT Core
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="AWS IoT Core" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          AWS IoT Core
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/AWS_IoT_Core/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/AWS_IoT_Core/Configuring_AWS_integration/" class="md-nav__link">
+        Configure AWS integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3" >
+      
+      <label class="md-nav__link" for="nav-4-2-3">
+        Device operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Device operations" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          Device operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/AWS_IoT_Core/Device_operations/Operation_types/" class="md-nav__link">
+        Performing LwM2M operations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4" >
+      
+      <label class="md-nav__link" for="nav-4-2-4">
+        Concepts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Concepts" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/AWS_IoT_Core/Concepts/AWS_Integration_concepts/" class="md-nav__link">
+        How AWS integration works
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+      
+      <label class="md-nav__link" for="nav-4-3">
+        nRF Cloud Location services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="nRF Cloud Location services" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          nRF Cloud Location services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/" class="md-nav__link">
+        Connect nRF Cloud integration
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      
+      <label class="md-nav__link" for="nav-5">
+        Demo Projects
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Demo Projects" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Demo Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Implementing_LwM2M_objects_on_RaspberryPi/" class="md-nav__link">
+        Tutorial: Implementing LwM2M objects on RaspberryPi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Air quality monitoring - tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Air quality monitoring - tutorial
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-configuring-an-azure-iot-hub-and-storage-account" class="md-nav__link">
+    Creating and configuring an Azure IoT hub and storage account
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating and configuring an Azure IoT hub and storage account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-iot-hub" class="md-nav__link">
+    Creating an IoT hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-storage-account" class="md-nav__link">
+    Creating a storage account
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-azure-iot-hub-integration-extension" class="md-nav__link">
+    Configuring the Azure IoT Hub integration extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub" class="md-nav__link">
+    Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidirectional-communication-using-device-twin" class="md-nav__link">
+    Bidirectional communication using Device Twin
+  </a>
+  
+    <nav class="md-nav" aria-label="Bidirectional communication using Device Twin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-coiote-dm-to-azure-iot-hub" class="md-nav__link">
+    From Coiote DM to Azure IoT Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-azure-iot-hub-to-coiote-dm" class="md-nav__link">
+    From Azure IoT Hub to Coiote DM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-telemetry-to-azure-iot-hub" class="md-nav__link">
+    Passing telemetry to Azure IoT Hub
+  </a>
+  
+    <nav class="md-nav" aria-label="Passing telemetry to Azure IoT Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-group-value-tracking-on-resources-in-coiote-dm" class="md-nav__link">
+    Setting group value tracking on resources in Coiote DM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-message-routing-for-sending-telemetry-data-in-azure-iot-hub" class="md-nav__link">
+    Configuring message routing for sending telemetry data in Azure IoT Hub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualization-using-power-bi" class="md-nav__link">
+    Data visualization using Power BI
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        Release notes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Release notes" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          Release notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1" >
+      
+      <label class="md-nav__link" for="nav-6-1">
+        2022
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2022" data-md-level="2">
+        <label class="md-nav__title" for="nav-6-1">
+          <span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.25.20/" class="md-nav__link">
+        v2022.25.20
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.24.14/" class="md-nav__link">
+        v2022.24.14
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.23.11/" class="md-nav__link">
+        v2022.23.11
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.22.0/" class="md-nav__link">
+        v2022.22.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.21.6/" class="md-nav__link">
+        v2022.21.6
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.20.4/" class="md-nav__link">
+        v2022.20.4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.19.2/" class="md-nav__link">
+        v2022.19.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.18.3/" class="md-nav__link">
+        v2022.18.3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.17.0/" class="md-nav__link">
+        v2022.17.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.16.0/" class="md-nav__link">
+        v2022.16.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.13.5/" class="md-nav__link">
+        v2022.13.5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.9.2/" class="md-nav__link">
+        v2022.9.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.8.2/" class="md-nav__link">
+        v2022.8.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.7.3/" class="md-nav__link">
+        v2022.7.3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.5.3/" class="md-nav__link">
+        v2022.5.3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2022.3.2/" class="md-nav__link">
+        v2022.3.2
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" >
+      
+      <label class="md-nav__link" for="nav-6-2">
+        2021
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2021" data-md-level="2">
+        <label class="md-nav__title" for="nav-6-2">
+          <span class="md-nav__icon md-icon"></span>
+          2021
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2021.24.5/" class="md-nav__link">
+        v2021.24.5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2021.23.0/" class="md-nav__link">
+        v2021.23.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2021.22.1/" class="md-nav__link">
+        v2021.22.1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-configuring-an-azure-iot-hub-and-storage-account" class="md-nav__link">
+    Creating and configuring an Azure IoT hub and storage account
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating and configuring an Azure IoT hub and storage account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-iot-hub" class="md-nav__link">
+    Creating an IoT hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-storage-account" class="md-nav__link">
+    Creating a storage account
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-azure-iot-hub-integration-extension" class="md-nav__link">
+    Configuring the Azure IoT Hub integration extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub" class="md-nav__link">
+    Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidirectional-communication-using-device-twin" class="md-nav__link">
+    Bidirectional communication using Device Twin
+  </a>
+  
+    <nav class="md-nav" aria-label="Bidirectional communication using Device Twin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-coiote-dm-to-azure-iot-hub" class="md-nav__link">
+    From Coiote DM to Azure IoT Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-azure-iot-hub-to-coiote-dm" class="md-nav__link">
+    From Azure IoT Hub to Coiote DM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-telemetry-to-azure-iot-hub" class="md-nav__link">
+    Passing telemetry to Azure IoT Hub
+  </a>
+  
+    <nav class="md-nav" aria-label="Passing telemetry to Azure IoT Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-group-value-tracking-on-resources-in-coiote-dm" class="md-nav__link">
+    Setting group value tracking on resources in Coiote DM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-message-routing-for-sending-telemetry-data-in-azure-iot-hub" class="md-nav__link">
+    Configuring message routing for sending telemetry data in Azure IoT Hub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualization-using-power-bi" class="md-nav__link">
+    Data visualization using Power BI
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+<!-- Edit button -->
+
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Markdown content -->
+<h1 id="air-quality-monitoring-tutorial">Air quality monitoring - tutorial<a class="headerlink" href="#air-quality-monitoring-tutorial" title="Permanent link">#</a></h1>
+<p>The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the Coiote DM - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.</p>
+<figure class="video_container">
+  <iframe width="640" height="480"  src="https://www.youtube.com/embed/Ck0WJp4grb0" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+
+<p>The text version of the tutorial, complete with the necessary steps and code snippets, is available below:</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>An active Azure subscription.</li>
+<li>An active Coiote DM account. Please refer to <a href="https://www.avsystem.com/products/coiote-iot-device-management-platform/">Coiote DM home page</a> for details on how to get it.</li>
+<li>An active Microsoft Power BI account.</li>
+<li>An OpenWeatherMap account with a free API token.</li>
+<li>An active and configured Azure CLI - please refer to the <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Azure CLI installation guide</a> for details.</li>
+</ul>
+<h2 id="creating-and-configuring-an-azure-iot-hub-and-storage-account">Creating and configuring an Azure IoT hub and storage account<a class="headerlink" href="#creating-and-configuring-an-azure-iot-hub-and-storage-account" title="Permanent link">#</a></h2>
+<p>First you need to add a new IoT hub and a storage account in Azure. Here's how to do it:</p>
+<h3 id="creating-an-iot-hub">Creating an IoT hub<a class="headerlink" href="#creating-an-iot-hub" title="Permanent link">#</a></h3>
+<ol>
+<li>In your Azure portal home view, go to <strong>IoT Hub</strong> and select <strong>Add</strong>.
+<img alt="Adding an IoT hub" src="../images/hub_add.png" title="Add iot hub" /><ul>
+<li>In the <strong>Basics</strong> tab:<ul>
+<li>select your subscription and resource group,</li>
+<li>pick your region,</li>
+<li>provide a name for your IoT hub.
+<img alt="IoT hub basics tab" src="../images/hub_basics.png" title="Iot hub basics" /></li>
+</ul>
+</li>
+<li>In the <strong>Management</strong> tab:<ul>
+<li>in <strong>Pricing and scale tier</strong> select,</li>
+<li>optionally, turn off <strong>Defender for IoT</strong>.</li>
+</ul>
+</li>
+<li>In the <strong>Review + create</strong> tab, click <strong>Create</strong>.
+<img alt="IoT hub management tab" src="../images/hub_create.png" title="Iot hub management" /></li>
+</ul>
+</li>
+</ol>
+<h3 id="creating-a-storage-account">Creating a storage account<a class="headerlink" href="#creating-a-storage-account" title="Permanent link">#</a></h3>
+<p>While your new IoT hub is deploying, you can add a new storage account:</p>
+<ol>
+<li>In the Azure portal, go to <strong>Storage accounts</strong> and select <strong>Add</strong>.
+<img alt="Adding a storage account" src="../images/storage_add.png" title="Storage_add" /></li>
+<li>In the <strong>Basics</strong> tab:<ul>
+<li>select your subscription and resource group,</li>
+<li>provide a name for your storage account,</li>
+<li>pick your location.
+<img alt="Creating a storage account" src="../images/storage_create.png" title="Storage_create" /></li>
+</ul>
+</li>
+<li>In the <strong>Review + create</strong> tab, click <strong>Create</strong>.</li>
+</ol>
+<h2 id="configuring-the-azure-iot-hub-integration-extension">Configuring the Azure IoT Hub integration extension<a class="headerlink" href="#configuring-the-azure-iot-hub-integration-extension" title="Permanent link">#</a></h2>
+<p>Once the deployments are complete, go to Coiote DM to set up the Azure IoT Hub extension.
+If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension">instruction for the Azure IoT Hub integration configuration</a>.</p>
+<h2 id="adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub">Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub<a class="headerlink" href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub" title="Permanent link">#</a></h2>
+<ol>
+<li>Go to your Azure IoT Hub and add new devices:<ul>
+<li>Under <strong>Explorers</strong>, select <strong>IoT Devices</strong> and click <strong>+ New</strong>.
+<img alt="Adding new devices to IoT Hub" src="../images/device_add.png" title="New_device_create" /></li>
+<li>Provide the name for your first device: <code>air-quality-meter-example-0</code>.</li>
+<li>Click <strong>Save</strong>.
+     <img alt="Saving IoT Hub devices" src="../images/device_save.png" title="New_device_save" /></li>
+<li>Repeat the procedure for the other 5 devices (increase the number included in the device name).</li>
+</ul>
+</li>
+<li>Go to Coiote DM and sync the previously added devices:<ul>
+<li>In <strong>Device inventory</strong>, select <strong>Sync with IoT platform -&gt; Azure IoT Hub</strong>.
+<img alt="Syncing IoT Hub devices" src="../images/hub_sync_menu.png" title="Device_sync" /></li>
+<li>In the pop-up, click <strong>Sync devices</strong>.
+<img alt="Device sync" src="../images/sync_devices.png" title="Device_sync2" /></li>
+<li>Devices should then be visible in <strong>Device inventory</strong>   </li>
+</ul>
+</li>
+<li>
+<p>Go to your command line and register the device simulators:</p>
+<ul>
+<li>
+<p>Paste and run the following command to create a container group:
+    <div class="highlight"><pre><span></span><code> az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS=eu.iot.avsystem.cloud OPEN_WEATHER_API_TOKEN=exampletoken
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember to change the command parameters accordingly so that they are in line with your naming and credentials.</p>
+</div>
+</li>
+<li>
+<p>once the command is executed, you should see a JSON payload that describes the content of the container instance.
+<img alt="Command line JSON payload" src="../images/json_payload.png" title="JSON_payload" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Go back to Coiote DM and in <strong>Device inventory</strong>, check if the devices have registered to the platform and if their data model has been updated.</p>
+<ul>
+<li>Click the <strong>Refresh data</strong> icon if needed.</li>
+<li>Click on a device and in the <strong>Device Management Center</strong>, select the <strong>Actions</strong> panel.</li>
+<li>Select the <strong>Refresh data model from device</strong> link and confirm by clicking <strong>Yes, execute task now</strong>.
+<img alt="Refreshing data model" src="../images/refresh_data_model.png" title="Data_model_refresh" /></li>
+<li>Go to the <strong>Objects</strong> panel to see if the data model for the device has been updated. You should be able to see objects such as <code>3 Device</code> (along with the <code>Model number</code> resource which shows the name of the city of the temperature reading), <code>3303 Temperature</code>, and <code>3428 Air quality</code>.
+<img alt="Device data model" src="../images/objects.png" title="Data_model" /></li>
+</ul>
+<h2 id="bidirectional-communication-using-device-twin">Bidirectional communication using Device Twin<a class="headerlink" href="#bidirectional-communication-using-device-twin" title="Permanent link">#</a></h2>
+</li>
+</ol>
+<h3 id="from-coiote-dm-to-azure-iot-hub">From Coiote DM to Azure IoT Hub<a class="headerlink" href="#from-coiote-dm-to-azure-iot-hub" title="Permanent link">#</a></h3>
+<ol>
+<li>In your Coiote DM account, go to <strong>Device inventory</strong>, select a device.</li>
+<li>In the <strong>Device Management Center</strong>, go to the <strong>Objects</strong> panel.</li>
+<li>In the <code>1 LwM2M Server</code> object, find the <code>Lifetime</code> resource.</li>
+<li>Click the <strong>pen</strong> icon next to it, change the lifetime value and click the <strong>Apply</strong> link.</li>
+<li>Go to your Azure IoT hub, select <strong>IoT devices</strong>, click your device and select the <strong>Device Twin</strong> panel.</li>
+<li>Click <strong>Refresh</strong> and check in the JSON payload if the reported property for the <code>1/0/1</code> (Lifetime) resource has changed.   </li>
+</ol>
+<h3 id="from-azure-iot-hub-to-coiote-dm">From Azure IoT Hub to Coiote DM<a class="headerlink" href="#from-azure-iot-hub-to-coiote-dm" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To read more about how the Device Twins work in the Coiote DM - Azure IoT Hub integration, please refer to <a href="/Concepts/LwM2M_mappings/#lwm2m-readable-and-writable-resources">the LwM2M Mappings section</a>.</p>
+</div>
+<ol>
+<li>In your Azure IoT hub, select <strong>IoT devices</strong>, click one of your added devices and select the <strong>Device Twin</strong> panel.</li>
+<li>
+<p>To change the <code>Lifetime</code> resource in Coiote DM, you need to modify the relevant Device Twin desired property.</p>
+<ul>
+<li>under the <code>properties</code> tag in the Device Twin JSON payload, paste the following nested structure:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code> &quot;reported&quot;: {
+   &quot;lwm2m&quot;: {
+     &quot;1&quot;: {
+       &quot;0&quot;: {
+         &quot;0&quot;: {},
+         &quot;1&quot;: {
+           &quot;value&quot;: 45
+         }
+       }
+     }
+   }
+ },
+</code></pre></div>
+  - Click <strong>Save</strong> and <strong>Refresh</strong>.</p>
+</li>
+<li>
+<p>The value of the resource should now be changed in the Device Twin reported properties as well as in the Coiote DM Objects panel, in the <code>Lifetime</code> resource of the <code>1 LwM2M Server</code> object.</p>
+</li>
+</ol>
+<h2 id="passing-telemetry-to-azure-iot-hub">Passing telemetry to Azure IoT Hub<a class="headerlink" href="#passing-telemetry-to-azure-iot-hub" title="Permanent link">#</a></h2>
+<h3 id="setting-group-value-tracking-on-resources-in-coiote-dm">Setting group value tracking on resources in Coiote DM<a class="headerlink" href="#setting-group-value-tracking-on-resources-in-coiote-dm" title="Permanent link">#</a></h3>
+<ol>
+<li>In Coiote DM, go to <strong>Device inventory</strong> and use the search option to display your air quality meter devices. Then, click the <strong>Add to group</strong> icon.</li>
+<li>In the pop-up, click <strong>Add to new group</strong>, provide a name for your group (following the pattern root.iothubexample.airqualitymeter), click <strong>Confirm</strong> and <strong>Yes</strong>.</li>
+<li>Go to the <strong>Group management</strong> panel, select your group and click <strong>Devices</strong> to see if all of your devices are added to the group.</li>
+<li>Go to the <strong>Value tracking</strong> panel and click <strong>Add new</strong>. In the pop-up:<ul>
+<li>Add value tracking for the Temperature resource:<ul>
+<li>Provide the resource path: <code>Temperature.1.Sensor Value</code>.</li>
+<li>In the <strong>Notification frequency</strong> section, provide the following values:<ul>
+<li><strong>At least once every</strong> - set it to 10 seconds.</li>
+<li><strong>Not more often than once every</strong> - set it to 5 seconds.</li>
+</ul>
+</li>
+<li>Click <strong>Add new</strong>.</li>
+</ul>
+</li>
+<li>Add value tracking for the Air quality PM10 resource:<ul>
+<li>Provide the resource path: <code>Air quality.1.PM10</code>.</li>
+<li>In the <strong>Notification frequency</strong> section, provide the following values:<ul>
+<li><strong>At least once every</strong> - set it to 10 seconds.</li>
+<li><strong>Not more often than once every</strong> - set it to 5 seconds.</li>
+</ul>
+</li>
+<li>Click <strong>Add new</strong>.</li>
+</ul>
+</li>
+<li>Add value tracking for the Air quality PM2.5 resource:<ul>
+<li>Provide the resource path: <code>Air quality.1.PM2_5</code>.</li>
+<li>In the <strong>Notification frequency</strong> section, provide the following values:<ul>
+<li><strong>At least once every</strong> - set it to 10 seconds.</li>
+<li><strong>Not more often than once every</strong> - set it to 5 seconds.</li>
+</ul>
+</li>
+<li>Click <strong>Add new</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Go back to <strong>Device inventory</strong> and select a device of your group. In the <strong>Dashboard view</strong>, you should be able to see the value tracking parameters as in the picture below:
+<img alt="Value tracking in Device Dashboard tab" src="../images/dashboard_value_tracking.png" title="Dashboard value tracking" /></li>
+</ol>
+<h3 id="configuring-message-routing-for-sending-telemetry-data-in-azure-iot-hub">Configuring message routing for sending telemetry data in Azure IoT Hub<a class="headerlink" href="#configuring-message-routing-for-sending-telemetry-data-in-azure-iot-hub" title="Permanent link">#</a></h3>
+<ol>
+<li>Go to your Azure IoT hub and add message routing:<ul>
+<li>Under <strong>Messaging</strong>, select <strong>Message routing</strong> and click <strong>+ Add</strong>.</li>
+<li>Provide a name for your event, for example <code>EventRoute</code>.</li>
+<li>From the <strong>Endpoint</strong> drop-down list, select <strong>events</strong>.</li>
+<li>In the <strong>Routing query</strong>, paste the following:
+      <div class="highlight"><pre><span></span><code>IS_DEFINED($body.lwm2m.3303.1.5700.value) OR IS_DEFINED($body.lwm2m.3428.1.1.value) OR IS_DEFINED($body.lwm2m.3428.1.3.value)
+</code></pre></div></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+</li>
+<li>While in the <strong>Message routing</strong> panel, go to the <strong>Enrich messages</strong> tab to set up location tracking:<ul>
+<li>For latitude:<ul>
+<li>Name - type <code>lat</code></li>
+<li>Value - copy and paste <code>$twin.properties.reported.lwm2m.6.1.0.value</code></li>
+<li>Endpoint(s) - select <code>events</code></li>
+</ul>
+</li>
+<li>For longitude:<ul>
+<li>Name - type <code>lon</code></li>
+<li>Value - copy and paste <code>$twin.properties.reported.lwm2m.6.1.1.value</code></li>
+<li>Endpoint(s) - select <code>events</code></li>
+</ul>
+</li>
+<li>For longitude:<ul>
+<li>Name - type <code>deviceId</code></li>
+<li>Value - copy and paste <code>$twin.properties.reported.lwm2m.3.1.1.value</code></li>
+<li>Endpoint(s) - select <code>events</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use search to go to <strong>Stream analytics jobs</strong> and create a job for transferring the gathered data to Power BI.<ul>
+<li>Click <strong>+ Add</strong> and provide the following:<ul>
+<li>Job name - e.g. <code>avsystem-iot-hub-to-powerbi</code>.</li>
+<li>Resource group - pick your resource group.</li>
+<li>Click <strong>Create</strong>.</li>
+</ul>
+</li>
+<li>Once your deployment is complete, click <strong>Go to resource</strong>.</li>
+</ul>
+</li>
+<li>While in your Stream Analytics job panel, add a stream input and output and write a query:<ul>
+<li>Under <strong>Job topology</strong>, select <strong>Inputs</strong>.<ul>
+<li>From the <strong>+ Add stream input</strong> drop-down list, select <strong>Iot Hub</strong> and provide the following:<ul>
+<li>Input alias - e.g. <code>avsystem-iot-hub-input</code>.</li>
+<li>Consumer group - pick the <code>$Default</code> group.</li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Under <strong>Job topology</strong>, select <strong>Outputs</strong>.<ul>
+<li>From the <strong>+ Add</strong> drop-down list, select <strong>Power BI</strong> and click <strong>Authorize</strong>.</li>
+<li>Log in to Power BI using your Azure account.</li>
+<li>In the <strong>Power BI</strong> right-hand side panel, provide the following:<ul>
+<li>Output alias - e.g. <code>avsystem-iot-hub-output</code></li>
+<li>Dataset name - e.g. <code>AVSystemIoTHubDataSet</code></li>
+<li>Table name - e.g. <code>Data</code></li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+</li>
+<li>Under <strong>Job topology</strong>, select <strong>Query</strong>.<ul>
+<li>Paste the following query into the query input field (remember to adjust your naming inside the query if needed):
+   <div class="highlight"><pre><span></span><code>SELECT
+    CAST(lwm2m.&quot;3303.&quot;1&quot;.&quot;5700&quot;.value as float) as temperature,
+    CAST(lwm2m.&quot;3428.&quot;1&quot;.&quot;1&quot;.value as float) as pm10,
+    CAST(lwm2m.&quot;3428.&quot;1&quot;.&quot;3&quot;.value as float) as pm25,
+    GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User].[lat]&#39;) as lat,
+    GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User],[lon]&#39;) as lon,
+    GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User],[deviceId]&#39;) as deviceId2,
+    EventProcessedUtcTime as processedTimestamp,
+    IoTHub.EnqueuedTime as iotHubTimestamp,
+    IoTHub.ConnectionDeviceId as deviceId
+INTO
+    &quot;avsystem-iot-hub-output&quot;
+FROM
+    &quot;avsystem-iot-hub-input&quot;
+</code></pre></div></li>
+<li>Click <strong>Save query</strong>.</li>
+</ul>
+</li>
+<li>In your Stream analytics job, go to <strong>Overview</strong> and click <strong>Start</strong> and confirm by clicking <strong>Start</strong> in the <strong>Start job</strong> window to run the created query.</li>
+</ul>
+</li>
+</ol>
+<h2 id="data-visualization-using-power-bi">Data visualization using Power BI<a class="headerlink" href="#data-visualization-using-power-bi" title="Permanent link">#</a></h2>
+<p>Once the query is finished, you can go to Power BI to create a visualization for the data you have gathered.</p>
+<ol>
+<li>Go to <a href="https://powerbi.microsoft.com/">https://powerbi.microsoft.com/</a> and sign in to your account.</li>
+<li>Go to <strong>My workspace</strong> and find your recently created dataset.</li>
+<li>Click the <strong>more options</strong> icon and select <strong>Create report</strong><ul>
+<li>From the <strong>Visualizations</strong> menu, select the <strong>table</strong> icon and drag and drop it to the work space.<ul>
+<li>From the <strong>Fields</strong> menu, select the <code>deviceId2</code>, <code>temperature</code>, <code>pm10</code> and <code>pm25</code> parameters.</li>
+<li>In the <strong>Values</strong> submenu, expand the drop-down list for the <code>temperature</code>, <code>pm10</code> and <code>pm25</code> parameters and select <strong>Average</strong> for each.   </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create a map with air quality indicators:<ul>
+<li>From the <strong>Visualizations</strong> menu, click the <strong>get more visuals</strong> icon and select <strong>Get more visuals</strong>.</li>
+<li>Use search to find the <strong>Heatmap</strong> and click <strong>Add</strong>.</li>
+<li>From the <strong>Visualizations</strong> menu, click the <strong>Heatmap</strong> icon.</li>
+<li>Add the relevant parameters to the map data fields:<ul>
+<li>To the <strong>Latitude</strong> data field, drag and drop the <code>lat</code> parameter from the <strong>Fields</strong> menu.</li>
+<li>To the <strong>Longitude</strong> data field, drag and drop the <code>lon</code> parameter from the <strong>Fields</strong> menu.</li>
+<li>To the <strong>Value</strong> data field, drag and drop the <code>pm10</code> parameter from the <strong>Fields</strong> menu.<ul>
+<li>In the <strong>Value</strong> data field, expand the drop-down list and select <strong>Average</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To refresh the displayed data, click the <strong>Refresh</strong> button located in the upper navigation bar.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="PowerBi air quality heatmap" src="../images/powerbi.png" title="PowerBi_heatmap" /></p>
+
+<!-- Link to previous and/or next page -->
+
+<nav
+  class="md-navbottom__inner md-grid"
+  aria-label="Footer"
+>
+
+  <!-- Link to previous page -->
+  
+    <a
+      href="../Implementing_LwM2M_objects_on_RaspberryPi/"
+      class="md-navbottom__link md-navbottom__link--prev"
+      rel="prev"
+    >
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </div>
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Previous
+          </span>
+          Tutorial: Implementing LwM2M objects on RaspberryPi
+        </div>
+      </div>
+    </a>
+  
+
+  <!-- Link to next page -->
+  
+    <a
+      href="../../Release_Notes/v2022.25.20/"
+      class="md-navbottom__link md-navbottom__link--next"
+      rel="next"
+    >
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Next
+          </span>
+          v2022.25.20
+        </div>
+      </div>
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+      </div>
+    </a>
+  
+</nav>
+
+
+<!-- Last update of source file -->
+
+  
+    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+    
+  </small>
+</div>
+  
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+  <footer class="md-footer">
+    
+      <div class="md-footer-nav">
+        <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+          
+            <a href="../Implementing_LwM2M_objects_on_RaspberryPi/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Previous
+                  </span>
+                  Tutorial: Implementing LwM2M objects on RaspberryPi
+                </div>
+              </div>
+            </a>
+          
+          
+            <a href="../../Release_Notes/v2022.25.20/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Next
+                  </span>
+                  v2022.25.20
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      </div>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid ">
+        <div class="md-footer-copyright">
+           &copy; Copyright 2022 <a href="https://www.avsystem.com/" target="_blank">AVSystem</a>
+        </div>
+        <div class="md-footer-meta__linksBox">
+          <a class="md-footer-meta__link" href="https://www.avsystem.com/tags/dev-topics/" target="_blank">
+              Our blog
+          </a>
+          <a class="md-footer-meta__link" href="https://iotdevzone.avsystem.com/" target="_blank">
+              IoT Developer Zone
+          </a>
+          <a class="md-footer-meta__link" href="https://www.avsystem.com/products/coiote-iot-device-management-platform/" target="_blank">
+              Coiote IoT DM Home
+          </a>
+          <a class="md-footer-meta__link" href="https://discord.avsystem.com/" target="_blank">
+            Join our Discord
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+  
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}</script>
+      
+    
+
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
