@@ -9,7 +9,7 @@ The **Dashboard** displays widgets with visualized device data for your domain. 
 
 ## Dashboard overview
 
-The **Dashboard** consists of widgets which are based on observations set on a device's data model. If you can't see any widgets in your domain dashboard, follow the [Visualize device data](Visualize_device_data.md) quick start to set them up smoothly.
+The **Dashboard** consists of widgets which are based on observations set on a device's data model. If you can't see any widgets in your domain dashboard, follow the [Visualize device data](../Quick_Start/Visualize_device_data.md) quick start to set them up smoothly.
 
   ![Dashboard](images/dashboard.png "Dashboard"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray;"}
 

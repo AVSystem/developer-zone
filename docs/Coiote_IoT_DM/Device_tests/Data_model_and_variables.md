@@ -78,7 +78,7 @@ Use case: Testing the **WRITE** action on the `LwM2M Server.1.Lifetime` resource
      - Click **Save**.
 
 2. Create a test and include the new variable in the appropriate format:
-     - To add a new test, follow the steps in [Creating your first test](../Getting_started/#create-your-first-test-case) section, but including the adjustments below:
+     - To add a new test, follow the steps in [Creating your first test](Getting_started.md#create-your-first-test-case) section, but including the adjustments below:
          - For example purposes, pick only the **Write** action.
          - In the **Parameter name** field, type `LwM2M Server.1.Lifetime` (note that the path may vary slightly depending on your device data model).
 ![Using a variable in a test](images/image107.png "Using a variable in a test case")
@@ -88,7 +88,7 @@ Use case: Testing the **WRITE** action on the `LwM2M Server.1.Lifetime` resource
                 By default, the variable value is rendered as a `string` data type. To cast it to the `integer` data type, `.toInt` suffix is added to the created expression, as seen above.
 
 3. Run the created test and check if the variable works correctly:
-     -  To run the test, follow the steps in [Running the test on device](../Getting_started/#run-the-test-case-on-device) using the test created in the previous step.
+     -  To run the test, follow the steps in [Running the test on device](Getting_started.md#run-the-test-case-on-device) using the test created in the previous step.
      -  After the test is finished, check if the *Lifetime* resource value has changed on the device:
         - Go to the **Objects** panel of your device and under the **LwM2M Server** object, look for the **Lifetime** resource value:
 ![Checking device data model](images/image106.png "Checking device data model")
