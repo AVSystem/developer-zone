@@ -32,72 +32,75 @@ google_analytics:
   - auto
 
 nav:
-        - 'Home':
+        - 'Getting Started':
           - 'index.md'
-        - 'Anjay integrations':
-            - 'Anjay_integrations/Getting_started.md'
-            - 'Anjay_integrations/Implementing_LwM2M_objects_on_RaspberryPi.md'
-            - 'STMicroelectronics boards':
-                - 'Anjay_integrations/Anjay_ST_integration/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
-                - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCOBG96.md'
-                - 'Anjay_integrations/Anjay_ST_integration/STM32L496G-DISCO-MONARCH.md'
-                - 'Anjay_integrations/Anjay_ST_integration/B-L462E-CELL1-TYPE1SC.md'
-                - 'Anjay_integrations/Anjay_ST_integration/B-L475E-IOT01A.md'
-                - 'Anjay_integrations/Anjay_ST_integration/B-U585I-IOT02A-BG96.md'
-            - 'Nordic boards':
-                - 'Anjay_integrations/Anjay_Nordic_integration/Thingy91.md'
-                - 'Anjay_integrations/Anjay_Nordic_integration/nRF9160.md'
-            - 'ESP32 board':
-                - 'Anjay_integrations/ESP32_integration/M5Stick.md'
-                - 'Anjay_integrations/ESP32_integration/M5StickBG96.md'
-                - 'Anjay_integrations/ESP32_integration/ESP32-DevKitCBG96.md'
-        - 'IoT Quick Start':
-            - 'IoT_quick_start/Connect_device_quickstart.md'
-            - 'IoT_quick_start/Device_onboarding.md'
-            - 'IoT_quick_start/Visualize_device_data.md'
-            - 'IoT_quick_start/Device_Center.md'
-            - 'IoT_quick_start/Dashboard.md'
-        - 'Device tests':
-            - 'Device_tests/Overview.md'
-            - 'Device_tests/Getting_started.md'
-            - 'Device_tests/Test_actions.md'
-            - 'Device_tests/Configure_tests.md'
-            - 'Device_tests/Data_model_and_variables.md'
-            - 'Device_tests/Run_tests.md'
-            - 'Device_tests/Use_API_Jenkins_integration.md'
-        - 'Azure IoT integrations':
-            - Azure IoT Hub:
-                - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration.md'
+        - 'LwM2M Client':
+            - 'LwM2M_Client/Getting_started.md'
+            - 'STMicroelectronics':
+                - 'LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
+                - 'LwM2M_Client/STMicroelectronics/STM32L496G-DISCOBG96.md'
+                - 'LwM2M_Client/STMicroelectronics/STM32L496G-DISCO-MONARCH.md'
+                - 'LwM2M_Client/STMicroelectronics/B-L462E-CELL1-TYPE1SC.md'
+                - 'LwM2M_Client/STMicroelectronics/B-L475E-IOT01A.md'
+                - 'LwM2M_Client/STMicroelectronics/B-U585I-IOT02A-BG96.md'
+            - 'Nordic':
+                - 'LwM2M_Client/Nordic/Thingy91.md'
+                - 'LwM2M_Client/Nordic/nRF9160.md'
+            - 'ESP32':
+                - 'LwM2M_Client/ESP32/M5Stick.md'
+                - 'LwM2M_Client/ESP32/M5StickBG96.md'
+                - 'LwM2M_Client/ESP32/ESP32-DevKitCBG96.md'
+        - 'Coiote IoT DM':
+            - 'Quick Start':
+                - 'Coiote_IoT_DM/Quick_Start/Connect_device_quickstart.md'
+                - 'Coiote_IoT_DM/Quick_Start/Visualize_device_data.md'
+            - 'User Interface':
+                - 'Coiote_IoT_DM/User_Interface/Device_onboarding.md'
+                - 'Coiote_IoT_DM/User_Interface/Device_Center.md'
+                - 'Coiote_IoT_DM/User_Interface/Dashboard.md'
+            - 'Device tests':
+                - 'Coiote_IoT_DM/Device_tests/Overview.md'
+                - 'Coiote_IoT_DM/Device_tests/Getting_started.md'
+                - 'Coiote_IoT_DM/Device_tests/Test_actions.md'
+                - 'Coiote_IoT_DM/Device_tests/Configure_tests.md'
+                - 'Coiote_IoT_DM/Device_tests/Data_model_and_variables.md'
+                - 'Coiote_IoT_DM/Device_tests/Run_tests.md'
+                - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
+        - 'Cloud integrations':
+            - 'Azure IoT':
+                - 'Azure IoT Hub':
+                    - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md'
+                    - 'Device operations':
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Overview.md'
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Synchronize_devices_with_Azure_IoT_Hub.md'
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Upgrading_firmware.md'
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Perform_Read_Write.md'
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Perform_Execute.md'
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Set_an_Observation.md'
+                - 'Azure DPS':
+                    -  'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_DPS/Configuring_Azure_IoT_DPS_integration_extension.md'
+                - 'Azure IoT Central':
+                    - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Configure_Azure_IoT_Central_integration.md'
+                    - 'Device operations':
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Device_operations/Overview.md'
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Device_operations/Synchronize_devices_with_Azure_IoT_Central.md'
+                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Set_an_Observation.md'
+                - 'Configure integration templates': 'Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates.md'
+                - 'Concepts':
+                    - 'Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub.md'
+                    - 'Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Central.md'
+            - 'AWS IoT Core':
+                - 'Cloud_integrations/AWS_IoT_Core/Overview.md'
+                - 'Cloud_integrations/AWS_IoT_Core/Configuring_AWS_integration.md'
                 - 'Device operations':
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview.md'
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Synchronize_devices_with_Azure_IoT_Hub.md'
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Upgrading_firmware.md'
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Perform_Read_Write.md'
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Perform_Execute.md'
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation.md'
-            - Azure DPS:
-               -  'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_DPS_integration/Configuring_Azure_IoT_DPS_integration_extension.md'
-            - Azure IoT Central:
-                - 'Configure integration': 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configure_Azure_IoT_Central_integration.md'
-                - 'Device operations':
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Overview.md'
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Synchronize_devices_with_Azure_IoT_Central.md'
-                    - 'Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation.md'
-            - 'Configure integration templates': 'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md'
-            - 'Concepts':
-                - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub.md'
-                - 'Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Central.md'
-            - 'Tutorials':
-                - 'Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial.md'
-        - 'AWS IoT Core integration':
-            - 'AWS_Integration_Guide/Overview.md'
-            - 'Configuring the integration': 'AWS_Integration_Guide/Configuring_AWS_integration.md'
-            - 'Device operations':
-                - 'AWS_Integration_Guide/Device_operations/Operation_types.md'
-            - 'Concepts':
-                - 'AWS_Integration_Guide/Concepts/AWS_Integration_concepts.md'
-        - 'nRF Cloud Location services':
-            - 'nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
+                    - 'Cloud_integrations/AWS_IoT_Core/Device_operations/Operation_types.md'
+                - 'Concepts':
+                    - 'Cloud_integrations/AWS_IoT_Core/Concepts/AWS_Integration_concepts.md'
+            - 'nRF Cloud Location services':
+                    - 'Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
+        - 'Demo Projects':
+            - 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
+            - 'Demo_Projects/Air_quality_monitoring_tutorial.md'
         - 'Release notes':
             - 2022:
                 - 'Release_Notes/v2022.25.20.md'
