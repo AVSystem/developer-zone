@@ -205,12 +205,12 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
            - Paste the following query into the query input field (remember to adjust your naming inside the query if needed):
            ```
            SELECT
-               CAST(lwm2m."3303."1"."5700".value as float) as temperature,
-               CAST(lwm2m."3428."1"."1".value as float) as pm10,
-               CAST(lwm2m."3428."1"."3".value as float) as pm25,
+               CAST("lwm2m"."3303."1"."5700".value as float) as temperature,
+               CAST("lwm2m"."3428."1"."1".value as float) as pm10,
+               CAST("lwm2m"."3428."1"."3".value as float) as pm25,
                GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lat]') as lat,
-               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User],[lon]') as lon,
-               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User],[deviceId]') as deviceId2,
+               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lon]') as lon,
+               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[deviceId]') as deviceId2,
                EventProcessedUtcTime as processedTimestamp,
                IoTHub.EnqueuedTime as iotHubTimestamp,
                IoTHub.ConnectionDeviceId as deviceId
