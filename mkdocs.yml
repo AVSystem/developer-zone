@@ -103,6 +103,7 @@ nav:
             - 'Demo_Projects/Air_quality_monitoring_tutorial.md'
         - 'Release notes':
             - 2022:
+                - 'Release_Notes/v2022.26.0.md'
                 - 'Release_Notes/v2022.25.20.md'
                 - 'Release_Notes/v2022.24.14.md'
                 - 'Release_Notes/v2022.23.11.md'
