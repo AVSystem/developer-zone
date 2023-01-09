@@ -650,8 +650,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-3-compile-the-example" class="md-nav__link">
-    Part 3: Compile the example
+  <a href="#part-3-compile-the-demo-project" class="md-nav__link">
+    Part 3: Compile the demo project
   </a>
   
 </li>
@@ -683,6 +683,13 @@
         <li class="md-nav__item">
   <a href="#configure-the-client" class="md-nav__link">
     Configure the Client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
   </a>
   
 </li>
@@ -2060,8 +2067,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-3-compile-the-example" class="md-nav__link">
-    Part 3: Compile the example
+  <a href="#part-3-compile-the-demo-project" class="md-nav__link">
+    Part 3: Compile the demo project
   </a>
   
 </li>
@@ -2097,6 +2104,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2121,12 +2135,13 @@
 
 <!-- Markdown content -->
 <h1 id="thingy91">Thingy:91<a class="headerlink" href="#thingy91" title="Permanent link">#</a></h1>
-<p>Integrate your Nordic Thingy:91 board.</p>
+<p>Integrate your Nordic <strong>Thingy:91</strong> board with <strong>Coiote IoT DM</strong> using the <a href="https://avsystem.github.io/Anjay-doc/index.html"><strong>Anjay LwM2M client</strong></a>.</p>
+<p><img alt="Thingy:91" src="../images/NordicThingy91.jpeg" title="Nordic Thingy:91" /></p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>The Thingy:91 board with a USB cable.</li>
-<li>Installed <strong>minicom</strong> (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.</li>
-<li>A user with access to the Coiote IoT Device Management platform and appropriate permissions.</li>
+<li>The <strong>Thingy:91</strong> board with a USB cable and SIM card.</li>
+<li>Installed <strong>minicom</strong> or <strong>RealTerm</strong> (for Linux or Mac) or <strong>PuTTy</strong> (for Windows) or other serial communication program.</li>
+<li>A user with access to the <a href="https://eu.iot.avsystem.cloud/ui/device/inventory"><strong>Coiote IoT Device Management</strong></a> platform.</li>
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
 <h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
@@ -2139,32 +2154,57 @@
 <h3 id="start-development-using-samples">Start development using samples<a class="headerlink" href="#start-development-using-samples" title="Permanent link">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This step is optional. If you've gone through the <a href="#use-an-already-built-binary">Use an already built binary</a> step, you can jump to <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a>.</p>
+<p>If you've gone through the <a href="#use-an-already-built-binary">Use an already built binary</a> step, you can jump to <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a>.</p>
 </div>
 <h4 id="part-1-get-zephyr-and-python-dependencies">Part 1: Get Zephyr and Python dependencies<a class="headerlink" href="#part-1-get-zephyr-and-python-dependencies" title="Permanent link">#</a></h4>
 <p>To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by <a href="https://docs.zephyrproject.org/latest/getting_started/index.html">the Zephyr Project</a>.</p>
+<ol>
+<li><a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html#select-and-update-os">Select and Update OS</a></li>
+<li><a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-dependencies">Install dependencies</a></li>
+<li><a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html#get-zephyr-and-install-python-dependencies">Get Zephyr and install Python dependencies</a></li>
+<li><a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-zephyr-sdk">Install Zephyr SDK</a></li>
+</ol>
 <h4 id="part-2-clone-the-anjay-zephyr-repository">Part 2: Clone the Anjay Zephyr repository<a class="headerlink" href="#part-2-clone-the-anjay-zephyr-repository" title="Permanent link">#</a></h4>
-<p>Enter the command line interface on your machine, then paste and run the following command:</p>
+<p>Open the command line interface on your machine, then paste and run the following command:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AVSystem/Anjay-zephyr-client
 </code></pre></div>
-<h4 id="part-3-compile-the-example">Part 3: Compile the example<a class="headerlink" href="#part-3-compile-the-example" title="Permanent link">#</a></h4>
+<h4 id="part-3-compile-the-demo-project">Part 3: Compile the demo project<a class="headerlink" href="#part-3-compile-the-demo-project" title="Permanent link">#</a></h4>
 <ol>
 <li>Connect the Thingy:91 board to a USB port of your machine.</li>
 <li>
-<p>Set West manifest path to <code>Anjay-zephyr-client/demo</code>, manifest file to <code>west-nrf.yml</code>, and do <code>west update</code>:</p>
+<p>Set West manifest path to <code>Anjay-zephyr-client/demo</code>, manifest file to <code>west-nrf.yml</code>, and run <code>west update</code>:</p>
 <div class="highlight"><pre><span></span><code>west config manifest.path Anjay-zephyr-client/demo
 west config manifest.file west-nrf.yml
 west update
 </code></pre></div>
 </li>
 <li>
-<p>Compile the project for <strong>Thingy:91</strong> using <code>west build -b thingy91_nrf9160ns</code> in the demo directory.</p>
+<p>Go to the directory <code>Anjay-zephyr-client/demo</code>.</p>
 </li>
-<li>Find the <code>app_signed.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</li>
+<li>
+<p>Compile the project for <strong>Thingy:91</strong> using the command:</p>
+<div class="highlight"><pre><span></span><code>west build -b thingy91_nrf9160ns
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Optional] Configuration of the Anjay client can be done using <strong>menuconfig</strong>. This allows you, among others, to enable the <strong>GPS</strong> and <strong>cell-based location services</strong>. To open the configuration menu, run the command:</p>
+<div class="highlight"><pre><span></span><code>west build -b thingy91_nrf9160ns -p -t menuconfig
+</code></pre></div>
+<p>A config screen will open:</p>
+<p><img alt="menuconfig" src="../images/menuconfig1.png" title="Anjay menuconfig" /></p>
+<p>After making the configuration changes, close the config menu by pressing <code>Q</code> and save it by pressing the key <code>Y</code>.</p>
+<p>To build the project using the new configuration, run:
+<div class="highlight"><pre><span></span><code>west build
+</code></pre></div></p>
+</div>
+</li>
+<li>
+<p>Find the <code>app_signed.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</p>
+</li>
 </ol>
 <h2 id="flash-the-binaries">Flash the binaries<a class="headerlink" href="#flash-the-binaries" title="Permanent link">#</a></h2>
 <p>To program the board, go through the process of <strong>flashing Thingy:91</strong>. Use the nRF Connect Programmer with the downloaded <code>.hex</code> file and follow the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application">program the nRF9160 SiP application</a> section.</p>
-<p>After successful flashing, reset the board and go to the next step.</p>
+<p>After successful flashing, reboot the board and go to the next step.</p>
 <h2 id="connect-to-the-lwm2m-server">Connect to the LwM2M Server<a class="headerlink" href="#connect-to-the-lwm2m-server" title="Permanent link">#</a></h2>
 <p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud/">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
@@ -2178,16 +2218,16 @@ west update
 <ul>
 <li>In the <strong>Endpoint name</strong> field, enter your board endpoint name e.g. <code>test_device</code> (remember to set the same name in the <a href="#configure-the-client">next section</a>).
      <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-<li>
-<p>In the <strong>Security mode</strong> section, select the <strong>Pre-Shared Key</strong> mode:</p>
-<ul>
+<li>In the <strong>Security mode</strong> section, select the <strong>Pre-Shared Key</strong> mode:<ul>
 <li>In the <strong>Key identity</strong> field, type the same name as in the <code>Endpoint name</code> field.</li>
-<li>In the <strong>Key</strong> field, type a shared secret used for the device-server authentication.</li>
-</ul>
+<li>
+<p>In the <strong>Key</strong> field, type a shared secret used for the device-server authentication.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is your password which you create yourself, you will need it in the next steps.</p>
 </div>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -2198,7 +2238,9 @@ west update
 </ol>
 <h2 id="configure-the-client">Configure the Client<a class="headerlink" href="#configure-the-client" title="Permanent link">#</a></h2>
 <ol>
-<li>With the board still connected to a serial port interface, open a serial communication program.</li>
+<li>
+<p>With the board still connected to a serial port interface, open a serial communication program. </p>
+</li>
 <li>
 <p>Use the <code>anjay</code> command to list possible options:</p>
 <div class="highlight"><pre><span></span><code>uart:~$ anjay
@@ -2214,21 +2256,43 @@ config  :Configure Anjay params
 </div>
 </li>
 <li>
-<p>Check your default credentials by following the instructions in the program:
-    <img alt="Anjay configuration" src="../images/anjay_config.png" style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;" title="Anjay configuration" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If your default credentials are different from device credentials provided in Coiote DM, change them using the <code>anjay config set &lt;possible_option&gt; &lt;value&gt;</code> command.
-<br/>
-<img alt="Anjay set configuration" src="../images/anjay_config_set.PNG" style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;" title="Anjay set configuration" /></p>
-</div>
+<p>Check your default credentials by following the instructions in the program:</p>
+<div class="highlight"><pre><span></span><code>anjay config show
+</code></pre></div>
+<p><img alt="Anjay configuration" src="../images/anjay_config.png" title="Anjay configuration" /></p>
 </li>
 <li>
-<p>Use the <code>anjay start</code> command to run the Client.</p>
+<p>Update your device credentials:</p>
+<ul>
+<li>
+<p>To make any changes to the configuration, stop the client:</p>
+<div class="highlight"><pre><span></span><code>anjay stop
+</code></pre></div>
 </li>
-<li>Go to Coiote DM to check if your device connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:
-    <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
+<li>
+<p>To update the <strong>endpoint name</strong> run the command:</p>
+<div class="highlight"><pre><span></span><code>anjay config set endpoint &lt;endpoint name&gt;
+</code></pre></div>
+</li>
+<li>
+<p>To update the <strong>Pre-Shared Key</strong>, run the command</p>
+<div class="highlight"><pre><span></span><code>anjay config set psk &lt;key&gt;
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Start the client using the new configurations:</p>
+<div class="highlight"><pre><span></span><code>anjay start
+</code></pre></div>
+</li>
+<li>
+<p>Go to the Coiote DM to check if your device is connected.
+    <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
+</li>
 </ol>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<p>After configuring the Anjay Client, you can use the <strong>nRF Cloud Location Service</strong> to enable cell-based location services, or assisted GPS. <a href="/Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/"><strong>Learn how to do it here.</strong></a></p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2290,7 +2354,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
     
   </small>
 </div>
