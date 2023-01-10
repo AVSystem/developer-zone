@@ -1,4 +1,4 @@
-# Tracking application - tutorial
+# Tracking application
 
 ## Introduction
 Build a tracking application using the Thingy:91 devkit, while leveraging the benefits of the LwM2M protocol and visualizing its data on Microsoft Power BI.
@@ -19,7 +19,7 @@ Thingy:91   →   AVSystem    ←   nRF Cloud Connector
                             →   Azure IoT Hub   →   Microsoft PowerBI
 ```
 
-# Part 1 - Connect the Thingy:91 to Coiote using the Zephyr LwM2M client
+## Part 1 - Connect the Thingy:91 to Coiote using the Zephyr LwM2M client
 
 ### **Install the nRF Connect SDK**
 
@@ -64,7 +64,7 @@ Click **Build Configuration**
 
 Once the configuration has been generated, click **Kconfig** under **ACTIONS**.
 
-![Kconfig.png](images/images/Kconfig-click.png)
+![Kconfig.png](images/Kconfig-click.png)
 
 Update the timeout time to 200 seconds, giving more time to the GPS to get a fix.
 
@@ -115,13 +115,44 @@ To connect the board:
 
 ## Enable nRF Cloud integration
 
-Follow the instructions listed [here](../../Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/) to enable the nRF Location Service integration.
+Follow [**the instructions listed here**](../../Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/) to enable the nRF Location Service integration.
+
+If the connection to nRF Cloud Locator was successful, you will see the device location as a widget in the Coiote Device Center.
+
+![nrf - location.png](images/location.png)
 
 
+## Part 2 - Connect Coiote to Microsoft Azure
+
+In Coiote DM, go to **Integrations**, open the tab **Templates** and create a new template by clicking the green button **+ Add new**.
+
+![new template](images/new-template.png)
+
+Select the objects: 
+
+- 0 - LwM2M Security
+- 1 - LwM2M Server
+- 3 - Device
+- 4 - Connectivity Monitoring
+- 5 - Firmware Update
+- 6 - Location
+- 3303 - Temperature
+- 3304 - Humidity
+- 3313 - Accelerometer
+- 3315 - Barometer
+- 3347 - Push button
+- 3420 - LED color light
+- 10256 - ECID-Signal Measurement information
+- 50001 - Location Assistance
+
+Make sure to select **Telemetry** for the sensor values of the objects: **6**, **3303**, **3304**, **3313**, **3315** and **3347**.
+
+![new template](images/new-template2.png)
 
 
-# Part 2 - Connect Coiote to Microsoft Azure
+### Connect your device to Azure
 
+Visit your **Device inventory** in Coiote. Find the device you want to connect to Azure, click the three dots and select **Connect to Azure**.
 
 ![azure connect](images/azure-connect.png)
 
