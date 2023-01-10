@@ -156,3 +156,43 @@ Visit your **Device inventory** in Coiote. Find the device you want to connect t
 
 ![azure connect](images/azure-connect.png)
 
+If the the connection was successful, your device is now added to your IoT Hub. You can find your device under **Device management** > **Devices**.
+
+![azure device](images/azure-device.png)
+
+
+### Setting group value tracking on resources in Coiote DM
+
+![azure device](images/value-tracking.png)
+
+
+### Configuring message routing for sending telemetry data in Azure IoT Hub
+
+**Set up message routing**
+
+1. Go to your Azure IoT hub and add message routing:
+    - Under **Messaging**, select **Message routing** and click **+ Add**.
+    - Provide a name for your event, for example `EventRoute`.
+    - From the **Endpoint** drop-down list, select **events**.
+    - From the **Data source** drop-down list, select **Device Telemetry Messages**.
+    - In the **Routing query**, paste the following:
+    
+    ```
+    IS_DEFINED($body.lwm2m.6.0.0.value) OR IS_DEFINED($body.lwm2m.6.0.1.value) OR IS_DEFINED($body.lwm2m.3303.0.5700.value) OR IS_DEFINED($body.lwm2m.3304.0.5700.value) OR IS_DEFINED($body.lwm2m.3315.0.5700.value) OR IS_DEFINED($body.lwm2m.50001.0.8.value) OR IS_DEFINED($body.lwm2m.50001.0.9.value)
+    ```
+    
+    - Click **Save**.
+2. While in the **Message routing** panel, go to the **Enrich messages** tab to set up location tracking:
+    - For latitude:
+        - Name - type `lat`
+        - Value - copy and paste `$twin.properties.reported.lwm2m.6.0.0.value`
+        - Endpoint(s) - select `events`
+    - For longitude:
+        - Name - type `lon`
+        - Value - copy and paste `$twin.properties.reported.lwm2m.6.0.1.value`
+        - Endpoint(s) - select `events`
+
+
+### Set up a Stream Analytics Job
+
+![new stream analytics job](images/stream-analytics-click.png)
