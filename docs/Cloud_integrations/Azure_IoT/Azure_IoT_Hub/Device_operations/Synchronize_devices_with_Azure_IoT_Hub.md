@@ -16,7 +16,7 @@ In Coiote IoT DM, visit the **Device inventory** and search for the device you w
 
 Click on the three dots and select the option **Connect to Azure**.
 
-Select the minimal or the rich LwM2M schema (unless you created a custom LwM2M template)
+Select the minimal or the rich LwM2M schema (unless you created a custom LwM2M template).
 
 ![Azure Connect](images/azure-connect.png "Importing devices")
 
@@ -66,6 +66,7 @@ To see logs for your integrated devices:
 
     !!! info
         The logs are only available in the previous version of Coiote. Select **Go to previous version** in the top-right corner.
+        
         ![previous version](images/previous-version.png "previous version")
 
 0. In the **Logs** panel, expand the view by clicking on **More** and configure the following:
