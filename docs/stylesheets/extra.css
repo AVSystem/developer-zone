@@ -20,6 +20,8 @@
 .md-typeset .md-button--small,
 .md-typeset .md-button--big,
 .md-typeset .md-button--primary{
+    margin-top:6px;
+    margin-bottom:6px;
     border-radius: 25px;
     max-width: 200px;
     width: 200px;
