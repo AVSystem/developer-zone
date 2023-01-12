@@ -9,7 +9,6 @@ Build a tracking application using the Thingy:91 devkit, while leveraging the be
 - (Premium) account on [Coiote IoT DM](https://eu.iot.avsystem.cloud/)
 - [nRF Cloud](https://nrfcloud.com/) account
 - [nRF Connect for Desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop)
-- [nRF Connect SDK](https://www.nordicsemi.com/Products/Development-software/nrf-connect-sdk)
 - [Microsoft Azure account](https://azure.microsoft.com/en-us/free/)
 - [Microsoft Power BI account](https://powerbi.microsoft.com/)
 
@@ -19,7 +18,57 @@ Thingy:91   →   AVSystem    ←   nRF Cloud Connector
                             →   Azure IoT Hub   →   Microsoft PowerBI
 ```
 
-## Part 1 - Connect the Thingy:91 to Coiote using the Zephyr LwM2M client
+## Part 1 - Connect the Thingy:91 to Coiote using the Anjay client
+
+
+#### Get Zephyr and Python dependencies
+
+To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
+
+0. [Select and Update OS](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#select-and-update-os)
+0. [Install dependencies](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-dependencies)
+0. [Get Zephyr and install Python dependencies](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#get-zephyr-and-install-python-dependencies)
+0. [Install Zephyr SDK](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-zephyr-sdk)
+
+
+#### Clone the Anjay Zephyr repository
+
+Open the command line interface on your machine, then paste and run the following command:
+
+   ```
+   git clone https://github.com/AVSystem/Anjay-zephyr-client
+   ```
+
+#### Compile the demo project
+
+0. Connect the Thingy:91 board to a USB port of your machine.
+0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and run `west update`:
+
+    ```
+    west config manifest.path Anjay-zephyr-client/demo
+    west config manifest.file west-nrf.yml
+    west update
+    ```
+
+0. Go to the directory `Anjay-zephyr-client/demo` and configure the client using **menuconfig**.
+
+    Configuration of the Anjay client can be done using **menuconfig**. This allows you, among others, to enable the **GPS** and **cell-based location services**. To open the configuration menu, run the command:
+
+    ```
+    west build -b thingy91_nrf9160ns -p -t menuconfig
+    ``` 
+    
+    A config screen will open:
+
+    ![menuconfig](../LwM2M_Client/Nordic/images/menuconfig1.png "Anjay menuconfig")
+
+    After making the configuration changes, close the config menu by pressing `Q` and save it by pressing the key `Y`.
+
+    To build the project using the new configuration, run:
+    ```
+    west build
+    ```
+
 
 ### **Install the nRF Connect SDK**
 
@@ -128,24 +177,52 @@ In Coiote DM, go to **Integrations**, open the tab **Templates** and create a ne
 
 ![new template](images/new-template.png)
 
-Select the objects: 
+Name your template and click the button **+ Add missing objects**
 
-- 0 - LwM2M Security
-- 1 - LwM2M Server
-- 3 - Device
-- 4 - Connectivity Monitoring
-- 5 - Firmware Update
-- 6 - Location
-- 3303 - Temperature
-- 3304 - Humidity
-- 3313 - Accelerometer
-- 3315 - Barometer
-- 3347 - Push button
-- 3420 - LED color light
-- 10256 - ECID-Signal Measurement information
-- 50001 - Location Assistance
+![add missing objects](images/add-objects.png)
 
-Make sure to select **Telemetry** for the sensor values of the objects: **6**, **3303**, **3304**, **3313**, **3315** and **3347**.
+Select all of the following objects:
+
+- `0` - LwM2M Security
+- `1` - LwM2M Server
+- `3` - Device
+- `4` - Connectivity Monitoring
+- `5` - Firmware Update
+- `6` - Location
+- `3303` - Temperature
+- `3304` - Humidity
+- `3313` - Accelerometer
+- `3315` - Barometer
+- `3347` - Push button
+- `3420` - LED color light
+- `10256` - ECID-Signal Measurement information
+- `50001` - Location Assistance
+
+Set the CAPABILITY TYPE to **Telemetry** for the resources:
+
+- `3303` - Temperature
+    - `/5601` - Min Measured Value
+    - `/5602` - Max Measured Value
+    - `/5700` - Sensor Value
+- `3304` - Humidity
+    - `/5601` - Min Measured Value
+    - `/5602` - Max Measured Value
+    - `/5700` - Sensor Value
+- `3313` - Accelerometer
+    - `/5702` - X Value
+    - `/5703` - Y Value
+    - `/5704` - Z Value
+- `3315` - Barometer
+    - `/5601` - Min Measured Value
+    - `/5602` - Max Measured Value
+    - `/5700` - Sensor Value
+- `3347` - LED color light
+    - `/5500` - Digital Input State
+    - `/5501` - Digital Input Counter
+
+!!! note
+    Although the object **`6` - Location** sends telemetry data, all location resources need to be configured as **Property**.
+
 
 ![new template](images/new-template2.png)
 
@@ -156,7 +233,7 @@ Visit your **Device inventory** in Coiote. Find the device you want to connect t
 
 ![azure connect](images/azure-connect.png)
 
-If the the connection was successful, your device is now added to your IoT Hub. You can find your device under **Device management** > **Devices**.
+If the the connection was successful, your device is now added to your **Azure IoT Hub**. You can find your device under: **Device management** > **Devices**.
 
 ![azure device](images/azure-device.png)
 
@@ -164,7 +241,6 @@ If the the connection was successful, your device is now added to your IoT Hub. 
 ### Setting group value tracking on resources in Coiote DM
 
 ![azure device](images/value-tracking.png)
-
 
 ### Configuring message routing for sending telemetry data in Azure IoT Hub
 
