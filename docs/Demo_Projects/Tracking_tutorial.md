@@ -13,10 +13,10 @@ Build a tracking application using the Thingy:91 devkit, while leveraging the be
 - [Microsoft Power BI account](https://powerbi.microsoft.com/)
 
 ## Architecture
-```
-Thingy:91   →   AVSystem    ←   nRF Cloud Connector
-                            →   Azure IoT Hub   →   Microsoft PowerBI
-```
+
+![Architecture tracking app](images/Architecture-tracking-demo.jpg "Anjay menuconfig")
+
+This tutorial uses the **Thingy:91** prototyping platform in combination with the **Coiote IoT Device Management** platform to build a cellular-based tracking application. A data integration with **nRF Cloud Locator** enables cell-based localization and optimizes the usage of the onboard GNSS. The location data, in combination with additional telemetry data is sent to **Azure IoT Hub** and visualized using **Microsoft Power BI**.
 
 ## Part 1 - Connect the Thingy:91 to Coiote using the Anjay client
 
@@ -52,7 +52,7 @@ Open the command line interface on your machine, then paste and run the followin
 
 0. Go to the directory `Anjay-zephyr-client/demo` and configure the client using **menuconfig**.
 
-    Configuration of the Anjay client can be done using **menuconfig**. This allows you, among others, to enable the **GPS** and **cell-based location services**. To open the configuration menu, run the command:
+    **Menuconfig** allows for, among others, enabling the **GPS** and **cell-based location services**. To open the configuration menu, run the command:
 
     ```
     west build -b thingy91_nrf9160ns -p -t menuconfig
@@ -60,75 +60,32 @@ Open the command line interface on your machine, then paste and run the followin
     
     A config screen will open:
 
-    ![menuconfig](../LwM2M_Client/Nordic/images/menuconfig1.png "Anjay menuconfig")
+    - Open the folder: `anjay-zephyr-client --->`
+        - Select: `Enable manual requests for cell-based location`
+        - Open the folder: `Enable GPS on nRF9160-based devices --->`
+            - Select `Enable A-GPS using Nordic Location Services over LwM2M`
+        
+
+    ![menuconfig](images/menuconfig1.png "Anjay menuconfig")
 
     After making the configuration changes, close the config menu by pressing `Q` and save it by pressing the key `Y`.
 
-    To build the project using the new configuration, run:
+    To build the project using the updated configuration, run:
     ```
     west build
     ```
 
+0. Find the `app_signed.hex` file under the `build/zephyr` directory in the project folder.
 
-### **Install the nRF Connect SDK**
+### Flash the binaries
+To program the board, go through the process of **flashing Thingy:91**. Use the nRF Connect Programmer with the downloaded `.hex` file and follow the [program the nRF9160 SiP application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application) section.
 
-If not installed yet, make sure to install the nRF Connect SDK. In this example, we’re using the **nRF Connect extension for Visual Studio Code**. For information on working with the SDK, see the [Nordic documentation](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html).
-
-### **Create a new application**
-
-Create a new application in VS Code, use the [**lwm2m client**](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/lwm2m_client/README.html) template. If you installed the nrf Connect SDK, you can the sample at: `nrf/samples/nrf9160/lwm2m_client`
-
-![applications.png](images/nrf-new-application.png)
-
-!!! Info
-    **Update the default key** (optional)
-
-    The default key is: `000102030405060708090a0b0c0d0e0f`
-
-    To update this key, open the `Kconfig` file, go to line 113 and update the key.
-
-
-### Generate a Build Configuration
-
-In VS Code, you can find the **lwm2m_client** application you just opened in the **nRF Connect extension**, under **APPLICATIONS**. Click on **No build configurations** to **Add a build configuration**.
-
-![applications.png](images/applications-click.png)
-
-In the **Add Build Configuration** page, select the board **thingy91_nrf9160_ns**
-
-Select the configuration file: `prj.conf`
-
-Add **Kconfig fragments**:
-
-- `overlay-avystem.conf`
-- `overlay-assist-cell.conf` for localization using cell towers
-- `overlay-assist-agps.conf` for Assisted GPS
-- `overlay-queue.conf` for integration with nRF Cloud
-
-Uncheck the box **Build after generating configuration**
-
-Click **Build Configuration**
-
-![generate configuration.png](images/nrf-generate-config.png)
-
-Once the configuration has been generated, click **Kconfig** under **ACTIONS**.
-
-![Kconfig.png](images/Kconfig-click.png)
-
-Update the timeout time to 200 seconds, giving more time to the GPS to get a fix.
-
-To do so, search for “**lwm2m seconds**”. Set the timeout to 200 “LWM2M Registration Update transmission time before timeout”.
-
-Click **Build** to create a binary.
-
-![nrf - build (with timeout 200).png](images/build-click.png)
-
+After successful flashing, reboot the board and go to the next step.
 
 ### **Write the firmware to the Thingy:91**
 
-- When using the Thingy:91, use the `app_signed.hex` file and flash the firmware the **Programmer** in **nRF Cloud for Desktop**. 
-  You can find the `app_signed` file in the folder `/build/zephyr`
-- Flash it using **Programmer** in **nRF Cloud for Desktop** via **MCU** **boot**. 
+- When using the Thingy:91, use the `app_signed.hex` file which you can find in the `build/zephyr` directory.
+- Flash it using **Programmer** in **nRF Cloud for Desktop** via **MCUboot**. 
 
     *For more information on flashing the Thingy:91 using MCU Boot, see [link](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application)*
 
@@ -147,22 +104,75 @@ To connect the board:
 1. In **Device Inventory**, click **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
     
-    ![https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
+    ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
     
 
 1. In the **Device credentials** step:
-    - Use as the **Endpoint name**: `urn:imei:…` followed by the IMEI of the Thingy:91 which you can find on the printed sticker on the device.
+    - Think of an unique **Endpoint name**.
     
-    ![https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
+    ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
     
     - **Key Identity** is the same as the device ID
-    - Create a **Key** (in hexademical). The default key is: `000102030405060708090a0b0c0d0e0f`.
+    - Create a **Key** and store this somewhere to retrieve later when configuring your device.
 1. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-1. If the device was booted successfully, you will see the device as shown below.
 
-    ![nrf - coiote dashboard.png](images/nrf-coiote_dashboard.png)
+## Configure the Client
 
-## Enable nRF Cloud integration
+0. With the board still connected to a serial port interface, open a serial communication program. 
+
+0. Use the `anjay` command to list possible options:
+
+    ```
+    uart:~$ anjay
+    anjay - Anjay commands
+    Subcommands:
+    start   :Save config and start Anjay
+    stop    :Stop Anjay
+    config  :Configure Anjay params
+    ```
+
+    !!! tip
+        To show available subcommands, use the **Tab** key.
+
+0. Check your default credentials by following the instructions in the program:
+
+    ```
+    anjay config show
+    ```
+
+    ![Anjay configuration](images/anjay_config.png "Anjay configuration")
+
+0. Update your device credentials:
+    * To make any changes to the configuration, stop the client:
+
+        ```
+        anjay stop
+        ```
+    
+    * To update the **endpoint name** run the following command, Use the endpoint name you create in Coiote. 
+
+        ```
+        anjay config set endpoint <endpoint name>
+        ```
+
+    * To update the **Pre-Shared Key**, run the following command and enter the key you used in Coiote.
+
+         ```
+         anjay config set psk <key>
+         ```
+
+0. Start the client using the new configurations:
+
+    ```
+    anjay start
+    ```
+
+0. Go to the Coiote DM. If your device is connected successfully, Coiote will whos the device as Registered.
+
+    ![nrf - coiote dashboard.png](images/connected_device.png)
+
+
+## Part 2 - Enable nRF Cloud integration
 
 Follow [**the instructions listed here**](../../Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/) to enable the nRF Location Service integration.
 
@@ -171,7 +181,7 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 ![nrf - location.png](images/location.png)
 
 
-## Part 2 - Connect Coiote to Microsoft Azure
+## Part 3 - Connect Coiote to Microsoft Azure
 
 In Coiote DM, go to **Integrations**, open the tab **Templates** and create a new template by clicking the green button **+ Add new**.
 
@@ -238,23 +248,27 @@ If the the connection was successful, your device is now added to your **Azure I
 ![azure device](images/azure-device.png)
 
 
-### Setting group value tracking on resources in Coiote DM
+### Set group value tracking on resources in Coiote DM
 
 ![azure device](images/value-tracking.png)
+
+
+## Part 4 - Connect Microsoft Azure to Power BI
 
 ### Configuring message routing for sending telemetry data in Azure IoT Hub
 
 **Set up message routing**
 
 1. Go to your Azure IoT hub and add message routing:
-    - Under **Messaging**, select **Message routing** and click **+ Add**.
+    - Under **Hub settings**, select **Message routing** and click **+ Add**.
+    ![azure message routing](images/azure-message-routing-click.png)
     - Provide a name for your event, for example `EventRoute`.
     - From the **Endpoint** drop-down list, select **events**.
     - From the **Data source** drop-down list, select **Device Telemetry Messages**.
     - In the **Routing query**, paste the following:
     
     ```
-    IS_DEFINED($body.lwm2m.6.0.0.value) OR IS_DEFINED($body.lwm2m.6.0.1.value) OR IS_DEFINED($body.lwm2m.3303.0.5700.value) OR IS_DEFINED($body.lwm2m.3304.0.5700.value) OR IS_DEFINED($body.lwm2m.3315.0.5700.value) OR IS_DEFINED($body.lwm2m.50001.0.8.value) OR IS_DEFINED($body.lwm2m.50001.0.9.value)
+    IS_DEFINED($body.lwm2m.6.0.0.value) OR IS_DEFINED($body.lwm2m.6.0.1.value) OR IS_DEFINED($body.lwm2m.3303.0.5700.value) OR IS_DEFINED($body.lwm2m.3304.0.5700.value) OR IS_DEFINED($body.lwm2m.3315.0.5700.value)
     ```
     
     - Click **Save**.
@@ -267,8 +281,77 @@ If the the connection was successful, your device is now added to your **Azure I
         - Name - type `lon`
         - Value - copy and paste `$twin.properties.reported.lwm2m.6.0.1.value`
         - Endpoint(s) - select `events`
-
+    
+    ![azure enrich message](images/azure-enrich-message.png)
 
 ### Set up a Stream Analytics Job
 
-![new stream analytics job](images/stream-analytics-click.png)
+1. Use search to go to **Stream analytics jobs** and create a job for transferring the gathered data to Power BI.
+    - Click **+ Add** and provide the following:
+        
+        ![stream-analytics-click.png](images/stream-analytics-click.png)
+        
+        - Resource group - pick your resource group.
+        - Instance Name - e.g. `lwm2m-to-powerbi`.
+        - Region - select the region closest to your device’s location
+        - Click **Review + Create**.
+    - Once your deployment is complete, click **Go to resource**.
+
+2. While in your Stream Analytics job panel, add a stream **input** and **output** and write a **query**:
+    - Under **Job topology**, select **Inputs**.
+        - From the **+ Add stream input** drop-down list, select **IoT Hub** and provide the following:
+            - Input alias - e.g. `avsystem-iot-hub-input`.
+            - Consumer group - pick the `$Default` group.
+            - Click **Save**.
+    - Under **Job topology**, select **Outputs**.
+        - From the **+ Add** drop-down list, select **Power BI**
+        - In the **Power BI** right-hand side panel, provide the following:
+            - Output alias - e.g. `avsystem-iot-hub-output`
+            - Select - Provide Power BI settings manually
+            - Group workspace - The ID can be found in the powerBI URL for the workspace.
+            - Authentication mode - User token
+            - Dataset name - e.g. `AVSystemIoTHubDataSet`
+            - Table name - e.g. `Data`
+            - Click the button **Authorize** and login to your Power BI account
+        - Click **Save**.
+    - Under **Job topology**, select **Query**.
+        - Paste the following query into the query input field (remember to adjust your naming inside the query if needed):
+        
+        ```
+        SELECT
+            CAST("lwm2m"."3303"."0"."5700".value  as float) as temperature,
+            CAST("lwm2m"."3304"."0"."5700".value as float) as humidity,
+            CAST("lwm2m"."3315"."0"."5700".value as float) as barometer,
+            CAST("lwm2m"."3313"."0"."5702".value as float) as xValue,
+            CAST("lwm2m"."3313"."0"."5703".value as float) as yValue,
+            CAST("lwm2m"."3313"."0"."5704".value as float) as zValue,
+            GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lat]') as lat,
+            GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lon]') as lon,
+            EventProcessedUtcTime as processedTimestamp,
+            IoTHub.EnqueuedTime as iotHubTimestamp,
+            IoTHub.ConnectionDeviceId as deviceId
+        INTO
+            "avsystem-iot-hub-output"
+        FROM
+            "avsystem-iot-hub-input"
+        ```
+
+        - Click **Save query**.
+    - Click **Test query** to validate if the query works as expected.
+    - In your Stream analytics job, go to **Overview** and click **Start** and confirm by clicking **Start** in the **Start job** window to run the created query.
+
+
+
+## Data visualization using Power BI
+
+Once the query is finished, you can go to Power BI to create a visualization for the data you have gathered.
+
+1. Go to [https://powerbi.microsoft.com/](https://powerbi.microsoft.com/) and sign in to your account.
+1. Go to the workspace you connected via Stream Analytics Jobs and find your recently created dataset.
+1. Click the **more options** icon and select **Create report**
+    ![Powerbi dataset.png](images/powerbi-dataset-click.png)
+1. Now start building some nice visualizations, such as a map for your location and line charts for your temperature, humidity and barometer values.
+
+    Eventually, it may look something like this:
+    
+![Powerbi Visualization.png](images/PowerBI-visual.png)
