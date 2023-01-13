@@ -36,6 +36,8 @@ nav:
           - 'index.md'
         - 'LwM2M Client':
             - 'LwM2M_Client/Getting_started.md'
+            - 'Raspberry Pi boards':
+                - 'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md'
             - 'STMicroelectronics':
                 - 'LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
                 - 'LwM2M_Client/STMicroelectronics/STM32L496G-DISCOBG96.md'
