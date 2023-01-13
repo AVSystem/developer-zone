@@ -58,7 +58,7 @@ Integrate your Raspberry Pi Pico W board.
     ```
 
 !!! note
-    If you're using Windows, you need to add `-G "MinGW Makefiles"` at the end of the `cmake` command. It will help generate the proper files.
+    If you're using Windows, add `-G "MinGW Makefiles"` at the end of the `cmake` command. It will help generate the proper files.
 
 ## Flash the board using bootloader
 
@@ -68,7 +68,7 @@ Integrate your Raspberry Pi Pico W board.
 
 ## Connecting to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
+To connect to a Coiote IoT Device Management LwM2M Server, register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 To connect the board:
 
