@@ -1,12 +1,12 @@
-# Tracking application
+# Tracking application - Thingy:91 to Power BI
 
 ## Introduction
-Build a tracking application using the Thingy:91 devkit, while leveraging the benefits of the LwM2M protocol and visualizing its data on Microsoft Power BI.
+Build a tracking application using the **Thingy:91** devkit, while leveraging the benefits of the LwM2M protocol and visualizing its data on **Microsoft Power BI**.
 
 ## Prerequisites
 
 - [Thingy:91](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-91) with SIM with access to LTE-M or NB-IoT networks
-- (Premium) account on [Coiote IoT DM](https://eu.iot.avsystem.cloud/)
+- [Coiote IoT DM](https://eu.iot.avsystem.cloud/) account (premium)
 - [nRF Cloud](https://nrfcloud.com/) account
 - [nRF Connect for Desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop)
 - [Microsoft Azure account](https://azure.microsoft.com/en-us/free/)
@@ -16,16 +16,17 @@ Build a tracking application using the Thingy:91 devkit, while leveraging the be
 
 ![Architecture tracking app](images/Architecture-tracking-demo.jpg "Anjay menuconfig")
 
-This tutorial uses the **Thingy:91** prototyping platform in combination with the **Coiote IoT Device Management** platform to build a cellular-based tracking application. A data integration with **nRF Cloud Locator** enables cell-based localization and optimizes the usage of the onboard GNSS. The location data, in combination with additional telemetry data is sent to **Azure IoT Hub** and visualized using **Microsoft Power BI**.
+This tutorial uses the **Thingy:91** prototyping platform in combination with the **Coiote IoT Device Management** platform to build a cellular-connected tracking application. The integration with **nRF Cloud Locator** enables cell-based localization and optimizes the usage of the onboard GNSS. The location data, in combination with additional telemetry data is sent to **Azure IoT Hub** and visualized using **Microsoft Power BI**.
 
-## Part 1 - Connect the Thingy:91 to Coiote using the Anjay client
+## Part 1 - Connect the Thingy:91 to Coiote using the LwM2M Anjay client
 
+### Set up the Anjay Zephyr Client
 
 #### Get Zephyr and Python dependencies
 
 To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
 
-0. [Select and Update OS](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#select-and-update-os)
+0. [Select and update OS](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#select-and-update-os)
 0. [Install dependencies](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-dependencies)
 0. [Get Zephyr and install Python dependencies](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#get-zephyr-and-install-python-dependencies)
 0. [Install Zephyr SDK](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-zephyr-sdk)
@@ -39,7 +40,7 @@ Open the command line interface on your machine, then paste and run the followin
    git clone https://github.com/AVSystem/Anjay-zephyr-client
    ```
 
-#### Compile the demo project
+### Compile the demo project
 
 0. Connect the Thingy:91 board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and run `west update`:
@@ -70,22 +71,17 @@ Open the command line interface on your machine, then paste and run the followin
 
     After making the configuration changes, close the config menu by pressing `Q` and save it by pressing the key `Y`.
 
-    To build the project using the updated configuration, run:
+    **Build the project** using the updated configuration by running:
     ```
     west build
     ```
 
 0. Find the `app_signed.hex` file under the `build/zephyr` directory in the project folder.
 
-### Flash the binaries
-To program the board, go through the process of **flashing Thingy:91**. Use the nRF Connect Programmer with the downloaded `.hex` file and follow the [program the nRF9160 SiP application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application) section.
-
-After successful flashing, reboot the board and go to the next step.
-
-### **Write the firmware to the Thingy:91**
+### Write the firmware to the Thingy:91
 
 - When using the Thingy:91, use the `app_signed.hex` file which you can find in the `build/zephyr` directory.
-- Flash it using **Programmer** in **nRF Cloud for Desktop** via **MCUboot**. 
+- Flash it using **Programmer** application in **nRF Cloud for Desktop** via **MCUboot**. 
 
     *For more information on flashing the Thingy:91 using MCU Boot, see [link](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application)*
 
@@ -94,31 +90,27 @@ After successful flashing, reboot the board and go to the next step.
 - Powercycle the Thingy:91 to activate the application.
 
 
-## **Register your device in AVSystem**
-
-To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
+## Connect the Thingy:91 to Coiote IoT Device Management
 
 To connect the board:
 
-1. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+1. [Log in](https://eu.iot.avsystem.cloud/) to Coiote DM and from the left side menu, select **Device Inventory**.
 1. In **Device Inventory**, click **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
     
     ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
-    
 
 1. In the **Device credentials** step:
     - Think of an unique **Endpoint name**.
-    
-    ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
-    
-    - **Key Identity** is the same as the device ID
+    - **Key Identity** is the same as the Endpoint name
     - Create a **Key** and store this somewhere to retrieve later when configuring your device.
-1. Click the **Add device** button and **Confirm** in the confirmation pop-up.
+    - Click the **Add device** button and click **Confirm** in the confirmation pop-up.
+
+    ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
 
 ## Configure the Client
 
-0. With the board still connected to a serial port interface, open a serial communication program. 
+0. With the Thingy:91 still connected to a serial port interface, connect to your device using a serial communication program (e.g. Minicom, RealTerm or PuTTY).
 
 0. Use the `anjay` command to list possible options:
 
@@ -149,13 +141,13 @@ To connect the board:
         anjay stop
         ```
     
-    * To update the **endpoint name** run the following command, Use the endpoint name you create in Coiote. 
+    * To update the **endpoint name** run the following command. Use the endpoint name you created in Coiote. 
 
         ```
         anjay config set endpoint <endpoint name>
         ```
 
-    * To update the **Pre-Shared Key**, run the following command and enter the key you used in Coiote.
+    * To update the **Pre-Shared Key**, enter the key you created in Coiote and run the following command.
 
          ```
          anjay config set psk <key>
@@ -167,7 +159,7 @@ To connect the board:
     anjay start
     ```
 
-0. Go to the Coiote DM. If your device is connected successfully, Coiote will whos the device as Registered.
+0. Go to the Coiote DM. If your device is connected successfully is will be shown as **Registered**.
 
     ![nrf - coiote dashboard.png](images/connected_device.png)
 
@@ -182,6 +174,20 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 
 
 ## Part 3 - Connect Coiote to Microsoft Azure
+
+Start by logging into your Azure account. [Create a new **IoT Hub**](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) and a new **storage account**.
+
+Get the **IoT Hub connection**-string and **Azure Blob storage**-string from your Azure account. For information on how to retrieve these details, [see link](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
+
+In Coiote, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
+
+Go the Azure IoT Hub section and click **Connect**.
+
+![Start Azure Integration](images/start-integration.jpg)
+
+In the dialog window, paste the **IoT Hub connection string** and **Azure Blob storage** connection string into the relevant fields.
+
+### Create a new LwM2M template
 
 In Coiote DM, go to **Integrations**, open the tab **Templates** and create a new template by clicking the green button **+ Add new**.
 
@@ -231,7 +237,7 @@ Set the CAPABILITY TYPE to **Telemetry** for the resources:
     - `/5501` - Digital Input Counter
 
 !!! note
-    Although the object **`6` - Location** sends telemetry data, all location resources need to be configured as **Property**.
+    Although the **Location** object `6` sends telemetry data, all location resources need to be configured as **Property**.
 
 
 ![new template](images/new-template2.png)
@@ -239,7 +245,7 @@ Set the CAPABILITY TYPE to **Telemetry** for the resources:
 
 ### Connect your device to Azure
 
-Visit your **Device inventory** in Coiote. Find the device you want to connect to Azure, click the three dots and select **Connect to Azure**.
+In Coiote, visit your **Device inventory**. Find the device you want to connect to Azure, click the three dots and select **Connect to Azure**.
 
 ![azure connect](images/azure-connect.png)
 
@@ -250,6 +256,16 @@ If the the connection was successful, your device is now added to your **Azure I
 
 ### Set group value tracking on resources in Coiote DM
 
+- In Coiote DM, go to **Device Groups**.
+- Open up the folder **hyperscaler** and open the subfolder which contains your device which is connected to Azure.
+- Go to the **Value tracking** panel and click **Add new**. In the pop-up:
+    - Provide the resource path: `Temperature.0.Sensor Value`.
+    - In the **Notification frequency** section, provide the following values:
+        - **At least once every** - set it to 1 hour.
+        - **Not more often than once every** - set it to 10 minutes.
+    - Click **Add new**.
+- Go through the same process for the resources: `Humidity.0.Sensor Value`, `Barometer.0.Sensor Value`, `Location.0.Latitude` and `Location.0.Longitude`.
+
 ![azure device](images/value-tracking.png)
 
 
@@ -257,10 +273,10 @@ If the the connection was successful, your device is now added to your **Azure I
 
 ### Configuring message routing for sending telemetry data in Azure IoT Hub
 
-**Set up message routing**
+#### Set up message routing
 
 1. Go to your Azure IoT hub and add message routing:
-    - Under **Hub settings**, select **Message routing** and click **+ Add**.
+    - In the left-side menu, under **Hub settings**, select **Message routing** and click **+ Add**.
     ![azure message routing](images/azure-message-routing-click.png)
     - Provide a name for your event, for example `EventRoute`.
     - From the **Endpoint** drop-down list, select **events**.
@@ -272,7 +288,10 @@ If the the connection was successful, your device is now added to your **Azure I
     ```
     
     - Click **Save**.
-2. While in the **Message routing** panel, go to the **Enrich messages** tab to set up location tracking:
+
+    ![Message Route](images/azure-message-routing2.png)
+
+1. While in the **Message routing** panel, go to the **Enrich messages** tab to set up location tracking:
     - For latitude:
         - Name - type `lat`
         - Value - copy and paste `$twin.properties.reported.lwm2m.6.0.0.value`
@@ -287,26 +306,26 @@ If the the connection was successful, your device is now added to your **Azure I
 ### Set up a Stream Analytics Job
 
 1. Use search to go to **Stream analytics jobs** and create a job for transferring the gathered data to Power BI.
-    - Click **+ Add** and provide the following:
+    - Click **+ Create** and provide the following:
         
         ![stream-analytics-click.png](images/stream-analytics-click.png)
         
-        - Resource group - pick your resource group.
-        - Instance Name - e.g. `lwm2m-to-powerbi`.
-        - Region - select the region closest to your device’s location
+        - **Resource group** - pick your resource group.
+        - **Instance Name** - e.g. `lwm2m-to-powerbi`.
+        - **Region** - select the region closest to your device’s location
         - Click **Review + Create**.
     - Once your deployment is complete, click **Go to resource**.
 
 2. While in your Stream Analytics job panel, add a stream **input** and **output** and write a **query**:
     - Under **Job topology**, select **Inputs**.
         - From the **+ Add stream input** drop-down list, select **IoT Hub** and provide the following:
-            - Input alias - e.g. `avsystem-iot-hub-input`.
+            - Input alias - e.g. `thingy91-input`.
             - Consumer group - pick the `$Default` group.
             - Click **Save**.
     - Under **Job topology**, select **Outputs**.
         - From the **+ Add** drop-down list, select **Power BI**
         - In the **Power BI** right-hand side panel, provide the following:
-            - Output alias - e.g. `avsystem-iot-hub-output`
+            - Output alias - e.g. `thingy91-output`
             - Select - Provide Power BI settings manually
             - Group workspace - The ID can be found in the powerBI URL for the workspace.
             - Authentication mode - User token
@@ -325,23 +344,26 @@ If the the connection was successful, your device is now added to your **Azure I
             CAST("lwm2m"."3313"."0"."5702".value as float) as xValue,
             CAST("lwm2m"."3313"."0"."5703".value as float) as yValue,
             CAST("lwm2m"."3313"."0"."5704".value as float) as zValue,
-            GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lat]') as lat,
-            GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lon]') as lon,
+            GetMetadataPropertyValue("thingy91-input", '[User].[lat]') as lat,
+            GetMetadataPropertyValue("thingy91-input", '[User].[lon]') as lon,
             EventProcessedUtcTime as processedTimestamp,
             IoTHub.EnqueuedTime as iotHubTimestamp,
             IoTHub.ConnectionDeviceId as deviceId
         INTO
-            "avsystem-iot-hub-output"
+            "thingy91-output"
         FROM
-            "avsystem-iot-hub-input"
+            "thingy91-input"
         ```
 
         - Click **Save query**.
     - Click **Test query** to validate if the query works as expected.
-    - In your Stream analytics job, go to **Overview** and click **Start** and confirm by clicking **Start** in the **Start job** window to run the created query.
+    
+        ![Stream Analytics Test](images/stream-analytics-final.png)
 
+    - In your Stream analytics job, go to **Overview** and click **Start**. Confirm by clicking **Start** again in the right-wide window to run the created query.
 
-
+        ![Start Stream Analytics Test](images/start-job-click.png)
+    
 ## Data visualization using Power BI
 
 Once the query is finished, you can go to Power BI to create a visualization for the data you have gathered.
@@ -355,3 +377,12 @@ Once the query is finished, you can go to Power BI to create a visualization for
     Eventually, it may look something like this:
     
 ![Powerbi Visualization.png](images/PowerBI-visual.png)
+
+
+!!! info
+
+    Did you manage to setup the integration and display data in Power BI? Congratulations! If not, don't worry, there are many engineers ready to support you. Join our [**AVSystem Discord**](https://discord.avsystem.com/) to get in touch with our experts. 
+
+    [![Join Discord.png](images/discord.png)](https://discord.avsystem.com/)
+
+
