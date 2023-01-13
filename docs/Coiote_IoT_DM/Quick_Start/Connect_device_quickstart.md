@@ -6,7 +6,7 @@ Learn how to onboard a LwM2M device in just a few clicks using the Management se
 
 ### Prerequisites
 
-- An active Coiote DM user account with appropriate role assigned.
+- An active [Coiote DM](https://eu.iot.avsystem.cloud) user account with appropriate role assigned.
 - A LwM2M device (except for the simulated test device scenario).
 
 1. Upon logging in to Coiote DM, you will see the **Add your LwM2M device** panel.
@@ -32,7 +32,7 @@ Learn how to onboard a LwM2M device in just a few clicks using the Management se
 
 ### Prerequisites
 
-- An active [Coiote DM](eu.iot.avsystem.cloud) user account with appropriate roles assigned.
+- An active [Coiote DM](https://eu.iot.avsystem.cloud) user account with appropriate roles assigned.
 - Compiled [Anjay SDK demo library](https://github.com/AVSystem/Anjay) for simulating a device.
 - Installed [OpenSSL](https://www.openssl.org) (or similar) for generating the certificate.
 
