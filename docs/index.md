@@ -1,8 +1,8 @@
 # Welcome
 
-Welcome to the DevZone of AVSystem! 
+Welcome to the DevZone of AVSystem!
 
-In the DevZone your will find all documentation related to our scalable LwM2M server called **Coiote IoT Device Management**, as well as to get started with our LwM2M client: **Anjay**.
+In the DevZone your will find all documentation related to our scalable LwM2M server **Coiote IoT Device Management**, as well as our LwM2M client **Anjay**.
 
 
 ## Quick Start Guide
@@ -25,12 +25,12 @@ Follow the getting started guides to kickstart your LwM2M application using one 
 
 ## Learn more about Coiote IoT DM
 
-Dive into Coiote IoT Device Management, the scalable LwM2M server and explore its numerous functionalities, from device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
+Dive into Coiote IoT Device Management, the scalable LwM2M server and explore its numerous features. From device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
 
 [Coiote IoT DM docs](Coiote_IoT_DM/Quick_Start/Connect_device_quickstart/){: .md-button .md-button--big }
 
 
-## Explore our cloud integrations
+## Explore cloud integrations
 
 With the Coiote IoT Device Management platform, you can easily integrate your LwM2M data with **Azure IoT Hub**, **Azure IoT Central**, **Azure DPS**, **AWS IoT Core** and **nRF Cloud Location Services**.
 
@@ -41,7 +41,7 @@ The guides will take you on a step-by-step journey to seamlessly activate the in
 
 ## Join our community on Discord
 
-Join us on [Discord](https://discord.avsystem.com/) to get in touch with the AVSystem experts and to meet fellow LwM2M developers.
+Join us on <a href="https://discord.avsystem.com/" target="_blank">Discord</a> to get in touch with AVSystem experts and to meet fellow LwM2M developers.
 
 <a href="https://discord.avsystem.com/" target="_blank">
 ![Join Discord](img/discord.png)

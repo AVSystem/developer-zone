@@ -17,9 +17,9 @@ Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signin
 
 ## Run Anjay LwM2M Client Demo
 
-Anjay LwM2M SDK is a set of tools that enables device vendors and IoT developers to easily implement a LwM2M client on their hardware or develop a customized LwM2M client for testing purposes. It is available both in an advanced commercial version as well as in the open-source model you can find on <a href="https://github.com/AVSystem/Anjay" target="_blank">GitHub</a>.
+Anjay LwM2M SDK is a set of tools that enables device vendors and IoT developers to easily implement a LwM2M client on their hardware. It is available both in an advanced commercial version as well as in the open-source model you can find on <a href="https://github.com/AVSystem/Anjay" target="_blank">GitHub</a>.
 
-Find below the guide to run the Anjay client on your **Linux**, **Mac** or **Windows** machine and simulate a LwM2M device.
+Start by running the Anjay client on your **Linux**, **Mac** or **Windows** machine and simulate LwM2M telemetry data.
 
 !!! note
     If preferred, you can directly jump to the Getting Started guides of the popular hardware platforms:
@@ -31,7 +31,7 @@ Find below the guide to run the Anjay client on your **Linux**, **Mac** or **Win
 
 
 !!! Info
-    For more information about the Anjay LwM2M Client, visit the <a href="https://avsystem.github.io/Anjay-doc/index.html" target="_blank">Anjay Library Documentation</a>.
+    For more information about the Anjay LwM2M Client, visit the <a href="https://avsystem.github.io/Anjay-doc/index.html" target="_blank">**Anjay Library Documentation**</a>.
 
 
 ### Compile the Anjay demo client:
@@ -61,7 +61,7 @@ Find below the guide to run the Anjay client on your **Linux**, **Mac** or **Win
     ```
 
 === "Mac"
-    Open up your terminal dependencies and install the required dependencies using [Homebrew](https://brew.sh/).
+    Open up your terminal and install the required dependencies using [Homebrew](https://brew.sh/).
 
     ```
     brew install cmake mbedtls
@@ -125,7 +125,7 @@ Copy the command you find in Coiote.
 
 ![Run command in terminal](img/run-command.png)
 
-Go back to your terminal and **run the command** from your Anjay directory to configure and activate the demo application.
+Go back to your terminal, open your Anjay directory and **run the command** to configure and activate the demo application.
 
 ## Monitor your demo device in the Coiote IoT DM
 
@@ -180,14 +180,16 @@ Follow the getting started guides to kickstart your LwM2M application using one 
 
 ### Learn more about Coiote IoT DM
 
-Dive into Coiote IoT Device Management, the scalable LwM2M server and explore its numerous functionalities, from device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
+Dive into Coiote IoT Device Management and explore its numerous functionalities. From device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
 
 [Coiote IoT DM docs](Coiote_IoT_DM/Quick_Start/Connect_device_quickstart/){: .md-button .md-button--big }
 
 ### Join our community on Discord
 
-Join us on [Discord](https://discord.avsystem.com/) to get in touch with the AVSystem experts and to meet fellow LwM2M developers.
+Join us on <a href="https://discord.avsystem.com/" target="_blank">Discord</a> to get in touch with AVSystem experts and to meet fellow LwM2M developers.
 
 <a href="https://discord.avsystem.com/" target="_blank">
 ![Join Discord](img/discord.png)
 </a>
+
+
