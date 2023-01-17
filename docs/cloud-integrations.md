@@ -1,8 +1,10 @@
 # IoT Cloud Integrations
 
-With the Coiote IoT Device Management platform, you can integrate your LwM2M devices with Azure IoT Hub, Azure IoT Central, or Azure DPS.
+With the Coiote IoT Device Management platform, you can integrate your LwM2M devices with Microsoft Azure, AWS and nRF Cloud.
 
-This guide will take you on a step-by-step journey through the integration process to make it seamless and efficient.
+These guides will take you on a step-by-step journey to seamlessly activate the integrations.
+
+## Microsoft Azure integrations
 
 Here’s how you can get started with the Coiote DM – Azure IoT integration:
 
