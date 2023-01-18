@@ -12,7 +12,7 @@ Learn how to visualize collected device data in your domain by setting an observ
 To start collecting data to be displayed for a widget on your Dashboard, you need to set an observation on a resource. In this tutorial, we'll be visualizing temperature records of the **Sensor value** `/5700/` resource belonging to the `/3303/` **Temperature** object.
 
 !!! note
-    Data model objects that support adding widgets range from `/502/` to `/65534/`.       
+    Data model objects that support adding widgets range from `/502/` to `/65534/`. By default, the data is stored for 30 days. The storage retention period can be changed in the **Domain configuration** view.    
 
 0. Go to the **Device Center** of a connected device in your domain and click the **Data model** tab.
 0. In the list of objects, expand the **Temperature** `/3303/` object and click the **eye** icon in the **Operations** column.
