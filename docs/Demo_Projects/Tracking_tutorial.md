@@ -34,7 +34,7 @@ To get the Zephyr SDK and dependencies follow the first 4 steps of the instructi
 
 #### Clone the Anjay Zephyr repository
 
-Open the command line interface on your machine, then paste and run the following command:
+Open the command line interface on your machine and clone the Anjay Zephyr repository using [Git](https://formulae.brew.sh/formula/git):
 
    ```
    git clone https://github.com/AVSystem/Anjay-zephyr-client
@@ -43,7 +43,7 @@ Open the command line interface on your machine, then paste and run the followin
 ### Compile the demo project
 
 0. Connect the Thingy:91 board to a USB port of your machine.
-0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and run `west update`:
+0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and run `west update` using the following commands:
 
     ```
     west config manifest.path Anjay-zephyr-client/demo
@@ -59,7 +59,7 @@ Open the command line interface on your machine, then paste and run the followin
     west build -b thingy91_nrf9160ns -p -t menuconfig
     ``` 
     
-    A config screen will open:
+    In the config screen:
 
     - Open the folder: `anjay-zephyr-client --->`
         - Select: `Enable manual requests for cell-based location`
@@ -69,7 +69,7 @@ Open the command line interface on your machine, then paste and run the followin
 
     ![menuconfig](images/menuconfig1.png "Anjay menuconfig")
 
-    After making the configuration changes, close the config menu by pressing `Q` and save it by pressing the key `Y`.
+    After making the configuration changes, close the config menu by pressing `Q` and save it by pressing `Y`.
 
     **Build the project** using the updated configuration by running:
     ```
@@ -95,15 +95,15 @@ Open the command line interface on your machine, then paste and run the followin
 To connect the board:
 
 1. [Log in](https://eu.iot.avsystem.cloud/) to Coiote DM and from the left side menu, select **Device Inventory**.
-1. In **Device Inventory**, click **Add device**.
+1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
     
     ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
 
 1. In the **Device credentials** step:
-    - Think of an unique **Endpoint name**.
-    - **Key Identity** is the same as the Endpoint name
-    - Create a **Key** and store this somewhere to retrieve later when configuring your device.
+    - Think of a unique **Endpoint name**.
+    - **Key Identity** is the same as the Endpoint name.
+    - Create a **Key** and store it somewhere to retrieve later when configuring your device.
     - Click the **Add device** button and click **Confirm** in the confirmation pop-up.
 
     ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
@@ -124,7 +124,7 @@ To connect the board:
     ```
 
     !!! tip
-        To show available subcommands, use the **Tab** key.
+        To show available subcommands, press **Tab**.
 
 0. Check your default credentials by following the instructions in the program:
 
@@ -134,20 +134,20 @@ To connect the board:
 
     ![Anjay configuration](images/anjay_config.png "Anjay configuration")
 
-0. Update your device credentials:
+0. Update your device credentials by running the following commands:
     * To make any changes to the configuration, stop the client:
 
         ```
         anjay stop
         ```
     
-    * To update the **endpoint name** run the following command. Use the endpoint name you created in Coiote. 
+    * To update the **endpoint name**, enter the endpoint name you created in Coiote:
 
         ```
         anjay config set endpoint <endpoint name>
         ```
 
-    * To update the **Pre-Shared Key**, enter the key you created in Coiote and run the following command.
+    * To update the **Pre-Shared Key**, enter the key you created in Coiote:
 
          ```
          anjay config set psk <key>
@@ -159,7 +159,7 @@ To connect the board:
     anjay start
     ```
 
-0. Go to the Coiote DM. If your device is connected successfully is will be shown as **Registered**.
+0. Go to the Coiote DM. If your device is connected successfully its status will change to **Registered**.
 
     ![nrf - coiote dashboard.png](images/connected_device.png)
 
@@ -175,66 +175,67 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 
 ## Part 3 - Connect Coiote to Microsoft Azure
 
-Start by logging into your Azure account. [Create a new **IoT Hub**](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) and a new **storage account**.
+1. Start by logging into your Azure account. [Create a new **IoT Hub**](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) and a new **storage account**.
 
-Get the **IoT Hub connection**-string and **Azure Blob storage**-string from your Azure account. For information on how to retrieve these details, [see link](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
+1. Get the **IoT Hub connection**-string and **Azure Blob storage**-string from your Azure account. For information on how to retrieve these details, [see link](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
 
-In Coiote, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
+1. In Coiote, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
 
-Go the Azure IoT Hub section and click **Connect**.
+    Go the Azure IoT Hub section and click **Connect**.
 
-![Start Azure Integration](images/start-integration.jpg)
+    ![Start Azure Integration](images/start-integration.jpg)
 
-In the dialog window, paste the **IoT Hub connection string** and **Azure Blob storage** connection string into the relevant fields.
+1. In the dialog window, paste the **IoT Hub connection string** and **Azure Blob storage** connection string into the relevant fields.
 
 ### Create a new LwM2M template
 
-In Coiote DM, go to **Integrations**, open the tab **Templates** and create a new template by clicking the green button **+ Add new**.
+1. In Coiote DM, go to **Integrations**, open the tab **Templates** and create a new template by clicking the green button **+ Add new**.
 
-![new template](images/new-template.png)
+    ![new template](images/new-template.png)
 
-Name your template and click the button **+ Add missing objects**
+1. Name your template and click the button **+ Add missing objects**
 
-![add missing objects](images/add-objects.png)
+    ![add missing objects](images/add-objects.png)
 
-Select all of the following objects:
+1. Select all of the following objects:
 
-- `0` - LwM2M Security
-- `1` - LwM2M Server
-- `3` - Device
-- `4` - Connectivity Monitoring
-- `5` - Firmware Update
-- `6` - Location
-- `3303` - Temperature
-- `3304` - Humidity
-- `3313` - Accelerometer
-- `3315` - Barometer
-- `3347` - Push button
-- `3420` - LED color light
-- `10256` - ECID-Signal Measurement information
-- `50001` - Location Assistance
+    - `0` - LwM2M Security
+    - `1` - LwM2M Server
+    - `3` - Device
+    - `4` - Connectivity Monitoring
+    - `5` - Firmware Update
+    - `6` - Location
+    - `3303` - Temperature
+    - `3304` - Humidity
+    - `3313` - Accelerometer
+    - `3315` - Barometer
+    - `3347` - Push button
+    - `3420` - LED color light
+    - `10256` - ECID-Signal Measurement information
+    - `50001` - Location Assistance
 
-Set the CAPABILITY TYPE to **Telemetry** for the resources:
 
-- `3303` - Temperature
-    - `/5601` - Min Measured Value
-    - `/5602` - Max Measured Value
-    - `/5700` - Sensor Value
-- `3304` - Humidity
-    - `/5601` - Min Measured Value
-    - `/5602` - Max Measured Value
-    - `/5700` - Sensor Value
-- `3313` - Accelerometer
-    - `/5702` - X Value
-    - `/5703` - Y Value
-    - `/5704` - Z Value
-- `3315` - Barometer
-    - `/5601` - Min Measured Value
-    - `/5602` - Max Measured Value
-    - `/5700` - Sensor Value
-- `3347` - LED color light
-    - `/5500` - Digital Input State
-    - `/5501` - Digital Input Counter
+1. Set the CAPABILITY TYPE to **Telemetry** for the resources:
+
+    - `3303` - Temperature
+        - `/5601` - Min Measured Value
+        - `/5602` - Max Measured Value
+        - `/5700` - Sensor Value
+    - `3304` - Humidity
+        - `/5601` - Min Measured Value
+        - `/5602` - Max Measured Value
+        - `/5700` - Sensor Value
+    - `3313` - Accelerometer
+        - `/5702` - X Value
+        - `/5703` - Y Value
+        - `/5704` - Z Value
+    - `3315` - Barometer
+        - `/5601` - Min Measured Value
+        - `/5602` - Max Measured Value
+        - `/5700` - Sensor Value
+    - `3347` - LED color light
+        - `/5500` - Digital Input State
+        - `/5501` - Digital Input Counter
 
 !!! note
     Although the **Location** object `6` sends telemetry data, all location resources need to be configured as **Property**.
@@ -245,7 +246,7 @@ Set the CAPABILITY TYPE to **Telemetry** for the resources:
 
 ### Connect your device to Azure
 
-In Coiote, visit your **Device inventory**. Find the device you want to connect to Azure, click the three dots and select **Connect to Azure**.
+In Coiote, visit your **Device inventory**. Find the device you want to connect to Azure, click the three dots icon and select **Connect to Azure**.
 
 ![azure connect](images/azure-connect.png)
 
@@ -256,15 +257,15 @@ If the the connection was successful, your device is now added to your **Azure I
 
 ### Set group value tracking on resources in Coiote DM
 
-- In Coiote DM, go to **Device Groups**.
-- Open up the folder **hyperscaler** and open the subfolder which contains your device which is connected to Azure.
-- Go to the **Value tracking** panel and click **Add new**. In the pop-up:
+1. In Coiote DM, go to **Device Groups**.
+1. Open up the folder **hyperscaler** and open the subfolder which contains your device which is connected to Azure.
+1. Go to the **Value tracking** panel and click **Add new**. In the pop-up:
     - Provide the resource path: `Temperature.0.Sensor Value`.
     - In the **Notification frequency** section, provide the following values:
         - **At least once every** - set it to 1 hour.
         - **Not more often than once every** - set it to 10 minutes.
     - Click **Add new**.
-- Go through the same process for the resources: `Humidity.0.Sensor Value`, `Barometer.0.Sensor Value`, `Location.0.Latitude` and `Location.0.Longitude`.
+1. Go through the same process for the resources: `Humidity.0.Sensor Value`, `Barometer.0.Sensor Value`, `Location.0.Latitude` and `Location.0.Longitude`.
 
 ![azure device](images/value-tracking.png)
 
@@ -370,8 +371,10 @@ Once the query is finished, you can go to Power BI to create a visualization for
 
 1. Go to [https://powerbi.microsoft.com/](https://powerbi.microsoft.com/) and sign in to your account.
 1. Go to the workspace you connected via Stream Analytics Jobs and find your recently created dataset.
-1. Click the **more options** icon and select **Create report**
+1. Click the **more options** icon and select **Create report**.
+
     ![Powerbi dataset.png](images/powerbi-dataset-click.png)
+
 1. Now start building some nice visualizations, such as a map for your location and line charts for your temperature, humidity and barometer values.
 
     Eventually, it may look something like this:
