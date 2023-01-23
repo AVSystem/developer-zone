@@ -1,4 +1,4 @@
-# Tutorial: Implementing LwM2M objects on RaspberryPi
+# Implementing LwM2M objects on RaspberryPi
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Air quality monitoring - tutorial
+# Air quality monitoring using Azure IoT Hub and Power BI
 
 The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the Coiote DM - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.
 
