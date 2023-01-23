@@ -177,7 +177,7 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 
 1. Start by logging into your Azure account. [Create a new **IoT Hub**](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) and a new **storage account**.
 
-1. Get the **IoT Hub connection**-string and **Azure Blob storage**-string from your Azure account. For information on how to retrieve these details, [see link](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
+1. Get the **IoT Hub connection**-string and **Azure Blob storage**-string from your Azure account. For information on how to retrieve these details, see [Get the IoT hub connection string](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
 
 1. In Coiote, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
 
