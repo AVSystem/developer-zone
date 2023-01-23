@@ -14,7 +14,7 @@
     
     
       
-        <title>Tutorial: Implementing LwM2M objects on RaspberryPi - IoT Developer Zone</title>
+        <title>Implementing LwM2M objects on RaspberryPi - IoT Developer Zone</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial-implementing-lwm2m-objects-on-raspberrypi" class="md-skip">
+        <a href="#implementing-lwm2m-objects-on-raspberrypi" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Tutorial: Implementing LwM2M objects on RaspberryPi
+              Implementing LwM2M objects on RaspberryPi
             
           </span>
         </div>
@@ -1585,12 +1585,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Tutorial: Implementing LwM2M objects on RaspberryPi
+          Implementing LwM2M objects on RaspberryPi
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Tutorial: Implementing LwM2M objects on RaspberryPi
+        Implementing LwM2M objects on RaspberryPi
       </a>
       
         
@@ -1689,7 +1689,19 @@
   
     <li class="md-nav__item">
       <a href="../Air_quality_monitoring_tutorial/" class="md-nav__link">
-        Air quality monitoring - tutorial
+        Air quality monitoring using Azure IoT Hub and Power BI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tracking_tutorial/" class="md-nav__link">
+        Tracking application - Thingy:91 to Power BI
       </a>
     </li>
   
@@ -2196,7 +2208,7 @@
 
 
 <!-- Markdown content -->
-<h1 id="tutorial-implementing-lwm2m-objects-on-raspberrypi">Tutorial: Implementing LwM2M objects on RaspberryPi<a class="headerlink" href="#tutorial-implementing-lwm2m-objects-on-raspberrypi" title="Permanent link">#</a></h1>
+<h1 id="implementing-lwm2m-objects-on-raspberrypi">Implementing LwM2M objects on RaspberryPi<a class="headerlink" href="#implementing-lwm2m-objects-on-raspberrypi" title="Permanent link">#</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
 <p>Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for <a href="https://www.raspberrypi.org/">RaspberryPi-based</a> IoT devices. The Python programming language is used to implement LwM2M objects. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
 It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.</p>
@@ -2331,15 +2343,15 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 <p>Create a device instance in Coiote DM:</p>
 <ul>
 <li>When logged into your Coiote DM user account, go to Device Inventory and click <strong>Add device</strong>.
-  <img alt="Add device" src="images/add_device.png" title="add_device" /></li>
+  <img alt="Add device" src="../images/add_device.png" title="add_device" /></li>
 <li>Provide Device ID, Key Identity and Key values as in the Svetovid config files from the earlier step.
-  <img alt="Add device credentials" src="images/creds.png" title="Credentials" /></li>
+  <img alt="Add device credentials" src="../images/creds.png" title="Credentials" /></li>
 <li>Wait for the connection.</li>
 </ul>
 </li>
 <li>
 <p>Analyze the objects exposed by the device.
-    <img alt="Device objects" src="images/rasp.png" title="Objects" /></p>
+    <img alt="Device objects" src="../images/rasp.png" title="Objects" /></p>
 </li>
 </ol>
 <div class="admonition note">
@@ -2446,7 +2458,7 @@ if __name__ == &#39;__main__&#39;:
 <p>Refresh device state in Coiote and see if the Temperature object <code>3303</code> has appeared in the Objects tab and values are reported for  for the Sensor Value <code>5700</code> resource:</p>
 </li>
 </ol>
-<p><img alt="Temperature object" src="images/raspi1.png" title="3303" /></p>
+<p><img alt="Temperature object" src="../images/raspi1.png" title="3303" /></p>
 <h2 id="step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345">Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object <code>3345</code><a class="headerlink" href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" title="Permanent link">#</a></h2>
 <p>Now you can implement the Push Button module based on the OMA DM Multiple Axis Joystick object (3345).</p>
 <ol>
@@ -2679,7 +2691,7 @@ if __name__ == &#39;__main__&#39;:
     <code>sudo systemctl restart svetovid.service --now</code></li>
 <li>
 <p>Refresh device state in Coiote and see if the Multiple Axis Joystick object <code>3345</code> has appeared in the Objects tab and values are reported for the Digital Input State <code>5500</code> and Digital Input Counter <code>5501</code> resources:</p>
-<p><img alt="Joystick button object" src="images/button.png" title="3345" /></p>
+<p><img alt="Joystick button object" src="../images/button.png" title="3345" /></p>
 </li>
 </ol>
 
@@ -2723,7 +2735,7 @@ if __name__ == &#39;__main__&#39;:
           <span class="md-navbottom__direction">
             Next
           </span>
-          Air quality monitoring - tutorial
+          Air quality monitoring using Azure IoT Hub and Power BI
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -2743,7 +2755,7 @@ if __name__ == &#39;__main__&#39;:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 13, 2023</span>
     
   </small>
 </div>
@@ -2787,7 +2799,7 @@ if __name__ == &#39;__main__&#39;:
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  Air quality monitoring - tutorial
+                  Air quality monitoring using Azure IoT Hub and Power BI
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
