@@ -52,7 +52,7 @@ Open the command line interface on your machine and clone the Anjay Zephyr repos
     west update
     ```
 
-    *For more information about the west build commands, see [link](https://docs.zephyrproject.org/3.0.0/guides/west/build-flash-debug.html).*
+    *For more information about the west build commands, see the [Zephyr Project documentation](https://docs.zephyrproject.org/3.0.0/guides/west/build-flash-debug.html).*
 
 0. Go to the directory `Anjay-zephyr-client/demo` and configure the client using **menuconfig**.
 
