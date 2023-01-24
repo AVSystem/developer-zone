@@ -11,6 +11,7 @@ Build a tracking application using the **Thingy:91** devkit, while leveraging th
 - [nRF Connect for Desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop)
 - [Microsoft Azure account](https://azure.microsoft.com/en-us/free/)
 - [Microsoft Power BI account](https://powerbi.microsoft.com/)
+- Serial communication program e.g. minicom or RealTerm (for Linux or Mac) or PuTTy (for Windows)
 
 ## Architecture
 
@@ -50,6 +51,8 @@ Open the command line interface on your machine and clone the Anjay Zephyr repos
     west config manifest.file west-nrf.yml
     west update
     ```
+
+    *If you want to know more about the west build commands, check [here](https://docs.zephyrproject.org/3.0.0/guides/west/build-flash-debug.html).*
 
 0. Go to the directory `Anjay-zephyr-client/demo` and configure the client using **menuconfig**.
 
@@ -177,15 +180,15 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 
 1. Start by logging into your Azure account. [Create a new **IoT Hub**](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) and a new **storage account**.
 
-1. Get the **IoT Hub connection**-string and **Azure Blob storage**-string from your Azure account. For information on how to retrieve these details, see [Get the IoT hub connection string](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
+1. Get the **IoT Hub connection** string and **Azure Blob storage** string from your Azure account. For information on how to retrieve these details, see [Get the IoT hub connection string](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
 
 1. In Coiote, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
 
-    Go the Azure IoT Hub section and click **Connect**.
+    Go to the Azure IoT Hub section and click **Connect**.
 
     ![Start Azure Integration](images/start-integration.jpg)
 
-1. In the dialog window, paste the **IoT Hub connection string** and **Azure Blob storage** connection string into the relevant fields.
+1. In the dialog window, paste the **IoT Hub connection string** and **Azure Blob storage** string into the relevant fields.
 
 ### Create a new LwM2M template
 
@@ -250,7 +253,7 @@ In Coiote, visit your **Device inventory**. Find the device you want to connect 
 
 ![azure connect](images/azure-connect.png)
 
-If the the connection was successful, your device is now added to your **Azure IoT Hub**. You can find your device under: **Device management** > **Devices**.
+If the connection was successful, your device is now added to your **Azure IoT Hub**. You can find your device under: **Device management** > **Devices**.
 
 ![azure device](images/azure-device.png)
 
@@ -258,7 +261,7 @@ If the the connection was successful, your device is now added to your **Azure I
 ### Set group value tracking on resources in Coiote DM
 
 1. In Coiote DM, go to **Device Groups**.
-1. Open up the folder **hyperscaler** and open the subfolder which contains your device which is connected to Azure.
+1. Open up the folder **hyperscalercenter** and open the subfolder which contains your device which is connected to Azure.
 1. Go to the **Value tracking** panel and click **Add new**. In the pop-up:
     - Provide the resource path: `Temperature.0.Sensor Value`.
     - In the **Notification frequency** section, provide the following values:
@@ -279,7 +282,7 @@ If the the connection was successful, your device is now added to your **Azure I
 1. Go to your Azure IoT hub and add message routing:
     - In the left-side menu, under **Hub settings**, select **Message routing** and click **+ Add**.
     ![azure message routing](images/azure-message-routing-click.png)
-    - Provide a name for your event, for example `EventRoute`.
+    - Provide a name for your event, e.g. `EventRoute`.
     - From the **Endpoint** drop-down list, select **events**.
     - From the **Data source** drop-down list, select **Device Telemetry Messages**.
     - In the **Routing query**, paste the following:
@@ -387,5 +390,4 @@ Once the query is finished, you can go to Power BI to create a visualization for
     Did you manage to setup the integration and display data in Power BI? Congratulations! If not, don't worry, there are many engineers ready to support you. Join our [**AVSystem Discord**](https://discord.avsystem.com/) to get in touch with our experts. 
 
     [![Join Discord.png](images/discord.png)](https://discord.avsystem.com/)
-
 
