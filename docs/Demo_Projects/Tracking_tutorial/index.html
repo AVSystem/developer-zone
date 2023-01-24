@@ -2435,6 +2435,7 @@
 <li><a href="https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop">nRF Connect for Desktop</a></li>
 <li><a href="https://azure.microsoft.com/en-us/free/">Microsoft Azure account</a></li>
 <li><a href="https://powerbi.microsoft.com/">Microsoft Power BI account</a></li>
+<li>Serial communication program e.g. minicom or RealTerm (for Linux or Mac) or PuTTy (for Windows)</li>
 </ul>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">#</a></h2>
 <p><img alt="Architecture tracking app" src="../images/Architecture-tracking-demo.jpg" title="Anjay menuconfig" /></p>
@@ -2462,6 +2463,7 @@
 west config manifest.file west-nrf.yml
 west update
 </code></pre></div>
+<p><em>For more information about the west build commands, see the <a href="https://docs.zephyrproject.org/3.0.0/guides/west/build-flash-debug.html">Zephyr Project documentation</a>.</em></p>
 </li>
 <li>
 <p>Go to the directory <code>Anjay-zephyr-client/demo</code> and configure the client using <strong>menuconfig</strong>.</p>
@@ -2586,15 +2588,15 @@ config  :Configure Anjay params
 <p>Start by logging into your Azure account. <a href="https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal">Create a new <strong>IoT Hub</strong></a> and a new <strong>storage account</strong>.</p>
 </li>
 <li>
-<p>Get the <strong>IoT Hub connection</strong>-string and <strong>Azure Blob storage</strong>-string from your Azure account. For information on how to retrieve these details, see <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string">Get the IoT hub connection string</a>.</p>
+<p>Get the <strong>IoT Hub connection</strong> string and <strong>Azure Blob storage</strong> string from your Azure account. For information on how to retrieve these details, see <a href="../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string">Get the IoT hub connection string</a>.</p>
 </li>
 <li>
 <p>In Coiote, click <strong>Integrations</strong> from the left-side menu and select <strong>Hyperscaler Integration Center</strong>.</p>
-<p>Go the Azure IoT Hub section and click <strong>Connect</strong>.</p>
+<p>Go to the Azure IoT Hub section and click <strong>Connect</strong>.</p>
 <p><img alt="Start Azure Integration" src="../images/start-integration.jpg" /></p>
 </li>
 <li>
-<p>In the dialog window, paste the <strong>IoT Hub connection string</strong> and <strong>Azure Blob storage</strong> connection string into the relevant fields.</p>
+<p>In the dialog window, paste the <strong>IoT Hub connection string</strong> and <strong>Azure Blob storage</strong> string into the relevant fields.</p>
 </li>
 </ol>
 <h3 id="create-a-new-lwm2m-template">Create a new LwM2M template<a class="headerlink" href="#create-a-new-lwm2m-template" title="Permanent link">#</a></h3>
@@ -2669,12 +2671,12 @@ config  :Configure Anjay params
 <h3 id="connect-your-device-to-azure">Connect your device to Azure<a class="headerlink" href="#connect-your-device-to-azure" title="Permanent link">#</a></h3>
 <p>In Coiote, visit your <strong>Device inventory</strong>. Find the device you want to connect to Azure, click the three dots icon and select <strong>Connect to Azure</strong>.</p>
 <p><img alt="azure connect" src="../images/azure-connect.png" /></p>
-<p>If the the connection was successful, your device is now added to your <strong>Azure IoT Hub</strong>. You can find your device under: <strong>Device management</strong> &gt; <strong>Devices</strong>.</p>
+<p>If the connection was successful, your device is now added to your <strong>Azure IoT Hub</strong>. You can find your device under: <strong>Device management</strong> &gt; <strong>Devices</strong>.</p>
 <p><img alt="azure device" src="../images/azure-device.png" /></p>
 <h3 id="set-group-value-tracking-on-resources-in-coiote-dm">Set group value tracking on resources in Coiote DM<a class="headerlink" href="#set-group-value-tracking-on-resources-in-coiote-dm" title="Permanent link">#</a></h3>
 <ol>
 <li>In Coiote DM, go to <strong>Device Groups</strong>.</li>
-<li>Open up the folder <strong>hyperscaler</strong> and open the subfolder which contains your device which is connected to Azure.</li>
+<li>Open up the folder <strong>hyperscalercenter</strong> and open the subfolder which contains your device which is connected to Azure.</li>
 <li>Go to the <strong>Value tracking</strong> panel and click <strong>Add new</strong>. In the pop-up:<ul>
 <li>Provide the resource path: <code>Temperature.0.Sensor Value</code>.</li>
 <li>In the <strong>Notification frequency</strong> section, provide the following values:<ul>
@@ -2697,7 +2699,7 @@ config  :Configure Anjay params
 <ul>
 <li>In the left-side menu, under <strong>Hub settings</strong>, select <strong>Message routing</strong> and click <strong>+ Add</strong>.
 <img alt="azure message routing" src="../images/azure-message-routing-click.png" /></li>
-<li>Provide a name for your event, for example <code>EventRoute</code>.</li>
+<li>Provide a name for your event, e.g. <code>EventRoute</code>.</li>
 <li>From the <strong>Endpoint</strong> drop-down list, select <strong>events</strong>.</li>
 <li>From the <strong>Data source</strong> drop-down list, select <strong>Device Telemetry Messages</strong>.</li>
 <li>In the <strong>Routing query</strong>, paste the following:</li>
@@ -2893,7 +2895,7 @@ FROM
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 24, 2023</span>
     
   </small>
 </div>
