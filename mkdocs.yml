@@ -107,6 +107,7 @@ nav:
         - 'Release notes':
             - 2023:
                 - 'Release_Notes/v2023.3.0.md'
+                - 'Release_Notes/v2023.4.0.md'
             - 2022:
                 - 'Release_Notes/v2022.27.0.md'
                 - 'Release_Notes/v2022.26.0.md'
