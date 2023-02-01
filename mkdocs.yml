@@ -34,6 +34,8 @@ google_analytics:
 nav:
         - 'Getting Started':
           - 'index.md'
+          - 'quickstart.md'
+          - Join Discord Community: https://discord.avsystem.com/
         - 'LwM2M Client':
             - 'LwM2M_Client/Getting_started.md'
             - 'Raspberry Pi boards':
