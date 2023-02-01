@@ -12,7 +12,7 @@ Importing devices to Coiote DM and synchronizing them with Azure IoT Hub is a qu
 
 ## Option 1: Syncronize devices one by one
 
-In Coiote IoT DM, visit the **Device inventory** and search for the device you want to connect to Azure.
+In Coiote IoT DM, go to the **Device inventory** and search for the device you want to connect to Azure.
 
 Click on the three dots and select the option **Connect to Azure**.
 
