@@ -2357,26 +2357,26 @@
 If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension">instruction for the Azure IoT Hub integration configuration</a>.</p>
 <h2 id="adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub">Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub<a class="headerlink" href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub" title="Permanent link">#</a></h2>
 <ol>
-<li>Go to your Azure IoT Hub and add new devices:<ul>
-<li>Under <strong>Explorers</strong>, select <strong>IoT Devices</strong> and click <strong>+ New</strong>.
-<img alt="Adding new devices to IoT Hub" src="../images/device_add.png" title="New_device_create" /></li>
-<li>Provide the name for your first device: <code>air-quality-meter-example-0</code>.</li>
+<li>
+<p>Go to your Azure IoT Hub and add new devices:</p>
+<ul>
+<li>
+<p>Under <strong>Device management</strong>, select <strong>Devices</strong> and click <strong>+ Add Device</strong>.
+<img alt="Adding new devices to IoT Hub" src="../images/device_add2.png" title="New_device_create" /></p>
+</li>
+<li>
+<p>Provide the name for your first device: <code>air-quality-meter-example-0</code>.</p>
+</li>
 <li>Click <strong>Save</strong>.
      <img alt="Saving IoT Hub devices" src="../images/device_save.png" title="New_device_save" /></li>
 <li>Repeat the procedure for the other 5 devices (increase the number included in the device name).</li>
-</ul>
-</li>
-<li>Go to Coiote DM and sync the previously added devices:<ul>
+<li>Go to Coiote DM and sync the previously added devices:</li>
 <li>In <strong>Device inventory</strong>, select <strong>Sync with IoT platform -&gt; Azure IoT Hub</strong>.
 <img alt="Syncing IoT Hub devices" src="../images/hub_sync_menu.png" title="Device_sync" /></li>
 <li>In the pop-up, click <strong>Sync devices</strong>.
 <img alt="Device sync" src="../images/sync_devices.png" title="Device_sync2" /></li>
 <li>Devices should then be visible in <strong>Device inventory</strong>   </li>
-</ul>
-</li>
-<li>
-<p>Go to your command line and register the device simulators:</p>
-<ul>
+<li>Go to your command line and register the device simulators:</li>
 <li>
 <p>Paste and run the following command to create a container group:
     <div class="highlight"><pre><span></span><code> az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS=eu.iot.avsystem.cloud OPEN_WEATHER_API_TOKEN=exampletoken
@@ -2490,7 +2490,7 @@ If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integrat
 <h3 id="configuring-message-routing-for-sending-telemetry-data-in-azure-iot-hub">Configuring message routing for sending telemetry data in Azure IoT Hub<a class="headerlink" href="#configuring-message-routing-for-sending-telemetry-data-in-azure-iot-hub" title="Permanent link">#</a></h3>
 <ol>
 <li>Go to your Azure IoT hub and add message routing:<ul>
-<li>Under <strong>Messaging</strong>, select <strong>Message routing</strong> and click <strong>+ Add</strong>.</li>
+<li>Under <strong>Hub settings</strong>, select <strong>Message routing</strong> and click <strong>+ Add</strong>.</li>
 <li>Provide a name for your event, for example <code>EventRoute</code>.</li>
 <li>From the <strong>Endpoint</strong> drop-down list, select <strong>events</strong>.</li>
 <li>In the <strong>Routing query</strong>, paste the following:
@@ -2521,10 +2521,10 @@ If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integrat
 </ul>
 </li>
 <li>Use search to go to <strong>Stream analytics jobs</strong> and create a job for transferring the gathered data to Power BI.<ul>
-<li>Click <strong>+ Add</strong> and provide the following:<ul>
-<li>Job name - e.g. <code>avsystem-iot-hub-to-powerbi</code>.</li>
+<li>Click <strong>+ Create</strong> and provide the following:<ul>
 <li>Resource group - pick your resource group.</li>
-<li>Click <strong>Create</strong>.</li>
+<li>Name - e.g. <code>avsystem-iot-hub-to-powerbi</code>.</li>
+<li>Click <strong>Review + Create</strong>.</li>
 </ul>
 </li>
 <li>Once your deployment is complete, click <strong>Go to resource</strong>.</li>
@@ -2555,12 +2555,12 @@ If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integrat
 <li>Under <strong>Job topology</strong>, select <strong>Query</strong>.<ul>
 <li>Paste the following query into the query input field (remember to adjust your naming inside the query if needed):
    <div class="highlight"><pre><span></span><code>SELECT
-    CAST(lwm2m.&quot;3303.&quot;1&quot;.&quot;5700&quot;.value as float) as temperature,
-    CAST(lwm2m.&quot;3428.&quot;1&quot;.&quot;1&quot;.value as float) as pm10,
-    CAST(lwm2m.&quot;3428.&quot;1&quot;.&quot;3&quot;.value as float) as pm25,
+    CAST(&quot;lwm2m&quot;.&quot;3303.&quot;1&quot;.&quot;5700&quot;.value as float) as temperature,
+    CAST(&quot;lwm2m&quot;.&quot;3428.&quot;1&quot;.&quot;1&quot;.value as float) as pm10,
+    CAST(&quot;lwm2m&quot;.&quot;3428.&quot;1&quot;.&quot;3&quot;.value as float) as pm25,
     GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User].[lat]&#39;) as lat,
-    GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User],[lon]&#39;) as lon,
-    GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User],[deviceId]&#39;) as deviceId2,
+    GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User].[lon]&#39;) as lon,
+    GetMetadataPropertyValue(&quot;avsystem-iot-hub-input&quot;, &#39;[User].[deviceId]&#39;) as deviceId2,
     EventProcessedUtcTime as processedTimestamp,
     IoTHub.EnqueuedTime as iotHubTimestamp,
     IoTHub.ConnectionDeviceId as deviceId
@@ -2668,7 +2668,7 @@ FROM
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 13, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
     
   </small>
 </div>

@@ -1131,11 +1131,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#import-devices-from-csv-using-a-default-integration-template" class="md-nav__link">
-    Import devices from CSV using a default integration template
+  <a href="#option-1-syncronize-devices-one-by-one" class="md-nav__link">
+    Option 1: Syncronize devices one by one
   </a>
   
-    <nav class="md-nav" aria-label="Import devices from CSV using a default integration template">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-import-devices-from-csv-using-a-default-integration-template" class="md-nav__link">
+    Option 2: Import devices from CSV using a default integration template
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Import devices from CSV using a default integration template">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2107,11 +2114,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#import-devices-from-csv-using-a-default-integration-template" class="md-nav__link">
-    Import devices from CSV using a default integration template
+  <a href="#option-1-syncronize-devices-one-by-one" class="md-nav__link">
+    Option 1: Syncronize devices one by one
   </a>
   
-    <nav class="md-nav" aria-label="Import devices from CSV using a default integration template">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-import-devices-from-csv-using-a-default-integration-template" class="md-nav__link">
+    Option 2: Import devices from CSV using a default integration template
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Import devices from CSV using a default integration template">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2160,14 +2174,19 @@
 <p>Importing devices to Coiote DM and synchronizing them with Azure IoT Hub is a quick way to start using your Coiote DM - Azure IoT Hub integration. The import operation will do two basic operations automatically:</p>
 <ul>
 <li>Create device entities in Coiote DM with the credentials that you specified,</li>
-<li>create the devices' "counterparts" within Azure IoT Hub and synchronize them with Coiote DM.         </li>
+<li>Create the devices' "counterparts" within Azure IoT Hub and synchronize them with Coiote DM.         </li>
 </ul>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>A connected Azure IoT Hub integration in the Hyperscaler Integration Center.</li>
 </ul>
 <hr />
-<h2 id="import-devices-from-csv-using-a-default-integration-template">Import devices from CSV using a default integration template<a class="headerlink" href="#import-devices-from-csv-using-a-default-integration-template" title="Permanent link">#</a></h2>
+<h2 id="option-1-syncronize-devices-one-by-one">Option 1: Syncronize devices one by one<a class="headerlink" href="#option-1-syncronize-devices-one-by-one" title="Permanent link">#</a></h2>
+<p>In Coiote IoT DM, go to the <strong>Device inventory</strong> and search for the device you want to connect to Azure.</p>
+<p>Click on the three dots and select the option <strong>Connect to Azure</strong>.</p>
+<p>Select the minimal or the rich LwM2M schema (unless you created a custom LwM2M template).</p>
+<p><img alt="Azure Connect" src="../images/azure-connect.png" title="Importing devices" /></p>
+<h2 id="option-2-import-devices-from-csv-using-a-default-integration-template">Option 2: Import devices from CSV using a default integration template<a class="headerlink" href="#option-2-import-devices-from-csv-using-a-default-integration-template" title="Permanent link">#</a></h2>
 <p>In the import process, you will need a list of devices that you want to import along with an integration template to be used by the Azure IoT Hub. To learn more about Azure integration templates, see the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">Configure integration templates</a> section.</p>
 <ol>
 <li>In Coiote DM, go to <strong>Administration</strong> -&gt; <strong>Hyperscaler Integration Center</strong>.</li>
@@ -2217,7 +2236,14 @@
 <p>Logs may come helpful for diagnosing and troubleshooting issues with the communication between the three actors in the integration: the device, Coiote DM, and Azure IoT Hub.   </p>
 <p>To see logs for your integrated devices:</p>
 <ol>
-<li>Go to the single device view and from the left menu, select the <strong>Logs</strong> tile.</li>
+<li>
+<p>Go to the single device view in Coiote DM, from the left menu, select the <strong>Logs</strong> tile.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The logs are only available in the previous version of Coiote. Select <strong>Go to previous version</strong> in the top-right corner.</p>
+<p><img alt="previous version" src="../images/previous-version.png" title="previous version" /></p>
+</div>
+</li>
 <li>
 <p>In the <strong>Logs</strong> panel, expand the view by clicking on <strong>More</strong> and configure the following:</p>
 <ul>
@@ -2289,7 +2315,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
     
   </small>
 </div>
