@@ -1,21 +1,21 @@
 # Welcome
 
-Welcome to the DevZone of AVSystem!
+Welcome to the AVSystem DevZone!
 
-In the DevZone your will find all documentation related to our scalable LwM2M server **Coiote IoT Device Management**, as well as our LwM2M client **Anjay**.
+In the DevZone your will find documentation related to our scalable LwM2M server **Coiote IoT Device Management**, as well as our LwM2M client **Anjay**.
 
 
 ## Quick Start Guide
 
-Follow the Quick Start to build your first LwM2M application using a simulate device within 20 minutes.
+Follow the Quick Start to build your first LwM2M application using a simulated device within 20 minutes.
 
-The guide Start walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **Coiote IoT Device Management**.
+The guide walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **Coiote IoT Device Management**.
 
 [Quick Start](quickstart/){: .md-button .md-button--big} 
 
 ## Get started with popular hardware platforms
 
-Follow the getting started guides to kickstart your LwM2M application using one of the popular hardware platforms: [Nordic](LwM2M_Client/Nordic/Thingy91/), [STMicroelectronics](LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/), [ESPRESSIF](LwM2M_Client/ESP32/M5Stick/) or [Raspberry Pi](Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/).
+Follow the **Getting Started Guides** to kickstart your LwM2M application using one of the popular hardware platforms: [Nordic](LwM2M_Client/Nordic/Thingy91/), [STMicroelectronics](LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/), [ESPRESSIF](LwM2M_Client/ESP32/M5Stick/) or [Raspberry Pi](Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/).
 
 
 [<img src="img/Nordic.jpg" alt="Nordic" title="Nordic" width="24%"/>](LwM2M_Client/Nordic/Thingy91/)

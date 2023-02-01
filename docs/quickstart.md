@@ -4,11 +4,11 @@
 
 This Quick Start walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **Coiote IoT Device Management**.
 
-Follow this guide to build your first LwM2M application using a simulate device within 20 minutes.
+Follow this guide to build your first LwM2M application using a simulated device within 20 minutes.
 
 ## Access the Coiote IoT DM portal
 
-Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account, allowing you to connect up to 10 devices free of charge.
+Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
 
 [Coiote IoT DM](https://eu.iot.avsystem.cloud/){: .md-button .md-button--big }
 
@@ -43,14 +43,14 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
     sudo apt-get install git build-essential cmake libmbedtls-dev zlib1g-dev
     ```
 
-    Create a new directory, e.g. called `AVSystem`
+    Create a new directory, e.g. called `AVSystem`:
 
     ```
     mkdir ~/AVSystem \
         && cd AVSystem
     ```
 
-    Clone the Anjay GitHub repository and compile the Anjay demo client using Cmake.
+    Clone the Anjay GitHub repository and compile the Anjay demo client using Cmake:
 
     ```
     git clone https://github.com/AVSystem/Anjay.git \
@@ -61,20 +61,20 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
     ```
 
 === "Mac"
-    Open up your terminal and install the required dependencies using [Homebrew](https://brew.sh/).
+    Open up your terminal and install the required dependencies using [Homebrew](https://brew.sh/):
 
     ```
     brew install cmake mbedtls
     ```
 
-    Create a new directory, e.g. called `AVSystem`
+    Create a new directory, e.g. called `AVSystem`:
 
     ```
     mkdir ~/AVSystem \
         && cd AVSystem
     ```
 
-    Clone the Anjay GitHub repository and compile the Anjay demo client using Cmake.
+    Clone the Anjay GitHub repository and compile the Anjay demo client using Cmake:
 
     ```
     git clone https://github.com/AVSystem/Anjay.git \
@@ -113,7 +113,7 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
 
 After compiling the demo project, go back to the [Coiote IoT DM portal](https://eu.iot.avsystem.cloud/).
 
-Click the button **+ Add device** in the top-right corner.
+Click **+ Add device** in the top-right corner.
 
 ![Add Device button](img/add-device.png)
 
@@ -135,7 +135,7 @@ If the demo application started successfully, a device is shown in the Coiote pl
 
 ### Review the Data model
 
-Click the tab **Data model** from the top-menu.
+Go to the **Data model** tab in the top-menu.
 
 ![Data model](img/data-model-click.png)
 
@@ -163,7 +163,7 @@ Under Data model you will find all the configured LwM2M **Objects**, **Object in
 
 ![Data model](img/data-model.png)
 
-## Up next
+## Next steps
 
 Did you manage to run the Anjay LwM2M Client Demo? **Well done! 👏**
 
