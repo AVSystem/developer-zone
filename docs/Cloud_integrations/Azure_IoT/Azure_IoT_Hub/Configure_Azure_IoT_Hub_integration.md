@@ -39,9 +39,9 @@ An Azure Blob storage connection string is required in the integration process. 
 
 Use the obtained credentials to establish the integration between Coiote DM and your Azure IoT hub:
 
-0. In your Coiote DM user account, go to **Administration --> Hyperscaler Integration Center**
-  ![Hyperscaler Integration Center menu link](images/HIC_menu.png "Hyperscaler Integration Center menu link")
-0. In the **Integration** tab, find the **Azure IoT Hub** tile and click **Connect**.
+0. In your Coiote DM user account, go to **Integrations** → **Hyperscaler Integration Center**
+  ![Hyperscaler Integration Center menu link](images/azure-integration.png "Hyperscaler Integration Center menu link")
+0. In the **Integrations** tab, find the **Azure IoT Hub** tile and click **Connect**.
 0. In the dialog window, paste the previously copied IoT Hub connection string and Azure Blob storage connection string into the relevant fields.
   ![Setting up the integration](images/connect_hub.png "Setting up the Azure integration"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
       - click **Save** to keep the setting.

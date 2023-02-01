@@ -55,8 +55,9 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
 
 ## Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub
 1. Go to your Azure IoT Hub and add new devices:
-    - Under **Explorers**, select **IoT Devices** and click **+ New**.
-    ![Adding new devices to IoT Hub](images/device_add.png "New_device_create")
+    - Under **Device management**, select **Devices** and click **+ Add Device**.
+    ![Adding new devices to IoT Hub](images/device_add2.png "New_device_create")
+
     - Provide the name for your first device: ``air-quality-meter-example-0``.
     - Click **Save**.
          ![Saving IoT Hub devices](images/device_save.png "New_device_save")
@@ -159,7 +160,7 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
 ### Configuring message routing for sending telemetry data in Azure IoT Hub
 
 1. Go to your Azure IoT hub and add message routing:
-      - Under **Messaging**, select **Message routing** and click **+ Add**.
+      - Under **Hub settings**, select **Message routing** and click **+ Add**.
       - Provide a name for your event, for example ``EventRoute``.
       - From the **Endpoint** drop-down list, select **events**.
       - In the **Routing query**, paste the following:
@@ -181,10 +182,10 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
           - Value - copy and paste ``$twin.properties.reported.lwm2m.3.1.1.value``
           - Endpoint(s) - select ``events``
 3. Use search to go to **Stream analytics jobs** and create a job for transferring the gathered data to Power BI.
-      - Click **+ Add** and provide the following:
-          - Job name - e.g. ``avsystem-iot-hub-to-powerbi``.
+      - Click **+ Create** and provide the following:
           - Resource group - pick your resource group.
-          - Click **Create**.
+          - Name - e.g. ``avsystem-iot-hub-to-powerbi``.
+          - Click **Review + Create**.
       - Once your deployment is complete, click **Go to resource**.
 4. While in your Stream Analytics job panel, add a stream input and output and write a query:
       - Under **Job topology**, select **Inputs**.
@@ -204,12 +205,12 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
            - Paste the following query into the query input field (remember to adjust your naming inside the query if needed):
            ```
            SELECT
-               CAST(lwm2m."3303."1"."5700".value as float) as temperature,
-               CAST(lwm2m."3428."1"."1".value as float) as pm10,
-               CAST(lwm2m."3428."1"."3".value as float) as pm25,
+               CAST("lwm2m"."3303."1"."5700".value as float) as temperature,
+               CAST("lwm2m"."3428."1"."1".value as float) as pm10,
+               CAST("lwm2m"."3428."1"."3".value as float) as pm25,
                GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lat]') as lat,
-               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User],[lon]') as lon,
-               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User],[deviceId]') as deviceId2,
+               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[lon]') as lon,
+               GetMetadataPropertyValue("avsystem-iot-hub-input", '[User].[deviceId]') as deviceId2,
                EventProcessedUtcTime as processedTimestamp,
                IoTHub.EnqueuedTime as iotHubTimestamp,
                IoTHub.ConnectionDeviceId as deviceId

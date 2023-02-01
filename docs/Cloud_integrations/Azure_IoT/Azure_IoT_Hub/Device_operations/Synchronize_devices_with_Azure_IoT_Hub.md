@@ -3,14 +3,24 @@
 Importing devices to Coiote DM and synchronizing them with Azure IoT Hub is a quick way to start using your Coiote DM - Azure IoT Hub integration. The import operation will do two basic operations automatically:
 
 - Create device entities in Coiote DM with the credentials that you specified,
-- create the devices' "counterparts" within Azure IoT Hub and synchronize them with Coiote DM.         
+- Create the devices' "counterparts" within Azure IoT Hub and synchronize them with Coiote DM.         
 
 ## Prerequisites
 
  - A connected Azure IoT Hub integration in the Hyperscaler Integration Center.
  ____________________
 
-## Import devices from CSV using a default integration template
+## Option 1: Syncronize devices one by one
+
+In Coiote IoT DM, go to the **Device inventory** and search for the device you want to connect to Azure.
+
+Click on the three dots and select the option **Connect to Azure**.
+
+Select the minimal or the rich LwM2M schema (unless you created a custom LwM2M template).
+
+![Azure Connect](images/azure-connect.png "Importing devices")
+
+## Option 2: Import devices from CSV using a default integration template
 
 In the import process, you will need a list of devices that you want to import along with an integration template to be used by the Azure IoT Hub. To learn more about Azure integration templates, see the [Configure integration templates](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) section.
 
@@ -52,7 +62,13 @@ Logs may come helpful for diagnosing and troubleshooting issues with the communi
 
 To see logs for your integrated devices:
 
-0. Go to the single device view and from the left menu, select the **Logs** tile.
+0. Go to the single device view in Coiote DM, from the left menu, select the **Logs** tile.
+
+    !!! info
+        The logs are only available in the previous version of Coiote. Select **Go to previous version** in the top-right corner.
+        
+        ![previous version](images/previous-version.png "previous version")
+
 0. In the **Logs** panel, expand the view by clicking on **More** and configure the following:
 
     - **Store from level** - select **Use custom** and set log level to **DEBUG** for 1 hour.
