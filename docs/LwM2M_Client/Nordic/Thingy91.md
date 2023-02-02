@@ -169,3 +169,11 @@ To connect the board:
 
 ## Next Steps
 After configuring the Anjay Client, you can use the **nRF Cloud Location Service** to enable cell-based location services, or assisted GPS. [**Learn how to do it here.**](/Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/)
+
+!!! note
+    **Thingy:91** uses the same radio for GPS and LTE connectivity. GPS signal is
+    caught between LTE transmissions and in case GPS "cold" fix acquisition takes
+    too much time, Anjay turns off LTE transmissions for the time of fix acquisition.
+    It can be seen by the following warning: `gps_nrf: GPS was interrupted multiple
+    times by the LTE modem when producing a fix`. Anjay is notified by it, enters
+    offline mode and reconnects when the first fix is acquired and LTE is enabled back.
