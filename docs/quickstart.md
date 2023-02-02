@@ -13,7 +13,7 @@ Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signin
 [Coiote IoT DM](https://eu.iot.avsystem.cloud/){: .md-button .md-button--big }
 
 ![Coiote Device Inventory](img/Empty-Device-Inventory.png "Empty device inventory at Coiote IoT DM")
-*Empty device inventory at Coiote IoT DM*
+
 
 ## Run Anjay LwM2M Client Demo
 
@@ -24,10 +24,10 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
 !!! note
     If preferred, you can directly jump to the Getting Started guides of the popular hardware platforms:
 
-    * [Nordic](LwM2M_Client/Nordic/Thingy91/)
-    * [STMicroelectronics](LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/), 
-    * [ESP32](LwM2M_Client/ESP32/M5Stick/) 
-    * [Raspberry Pi](Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
+    * [Nordic](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/)
+    * [STMicroelectronics](https://iotdevzone.avsystem.com/docs/LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/),
+    * [ESP32](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/)
+    * [Raspberry Pi](https://iotdevzone.avsystem.com/docs/Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
 
 
 !!! Info
@@ -88,12 +88,12 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
     **Install the required dependencies**
 
     1. Install [MSYS2](http://www.msys2.org/)
-    
+
     1. Install [Git for Windows](https://gitforwindows.org/)
-    
-        !!! Note 
+
+        !!! Note
             You can also install these using [Chocolatey](https://chocolatey.org/): `choco install git msys2` but make sure to follow the instructions to update MSYS2 after installing it.
-    
+
     1. Open the appropriate MINGW shell (e.g., `C:\msys64\mingw32.exe` or `C:\msys64\mingw64.exe`, depending on whether you want to build 32- or 64-bit binaries) and install the compile-time dependencies:
 
         ```
@@ -171,18 +171,18 @@ Now the fun begins. Below you can find useful links to continue your LwM2M journ
 
 ### Get started with popular hardware platforms
 
-Follow the getting started guides to kickstart your LwM2M application using one of the popular hardware platforms: [Nordic](LwM2M_Client/Nordic/Thingy91/), [STMicroelectronics](LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/), [ESPRESSIF](LwM2M_Client/ESP32/M5Stick/) or [Raspberry Pi](Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/).
+Follow the **Getting started** guides to kickstart your LwM2M application using one of the popular hardware platforms: [Nordic](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/), [STMicroelectronics](https://iotdevzone.avsystem.com/docs/LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/), [ESPRESSIF](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/) or [Raspberry Pi](https://iotdevzone.avsystem.com/docs/Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/).
 
-[<img src="/img/Nordic.jpg" alt="Nordic" title="Nordic" width="24%"/>](LwM2M_Client/Nordic/Thingy91/)
-[<img src="/img/ST.jpg" alt="STM" title="STM" width="24%" />](LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/)
-[<img src="/img/ESP.jpg" alt="ESPPRESSIF" title="ESPPRESSIF" width="24%" />](LwM2M_Client/ESP32/M5Stick/)
-[<img src="/img/RPI.jpg" alt="Raspberry Pi" title="Raspberry Pi" width="24%" />](Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
+[<img src="/img/Nordic.jpg" alt="Nordic" title="Nordic" width="24%"/>](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/)
+[<img src="/img/ST.jpg" alt="STM" title="STM" width="24%" />](https://iotdevzone.avsystem.com/docs/LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/)
+[<img src="/img/ESP.jpg" alt="ESPPRESSIF" title="ESPPRESSIF" width="24%" />](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/)
+[<img src="/img/RPI.jpg" alt="Raspberry Pi" title="Raspberry Pi" width="24%" />](https://iotdevzone.avsystem.com/docs/Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
 
 ### Learn more about Coiote IoT DM
 
-Dive into Coiote IoT Device Management and explore its numerous functionalities. From device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
+Dive into Coiote IoT Device Management and explore its numerous functionalities. From device onboarding using the [Bootstrapping Server](https://iotdevzone.avsystem.com/docs/Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](https://iotdevzone.avsystem.com/docs/Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](https://iotdevzone.avsystem.com/docs/Coiote_IoT_DM/Device_tests/Overview/).
 
-[Coiote IoT DM docs](Coiote_IoT_DM/Quick_Start/Connect_device_quickstart/){: .md-button .md-button--big }
+[Coiote IoT DM docs](https://iotdevzone.avsystem.com/docs/Coiote_IoT_DM/Quick_Start/Connect_device_quickstart/){: .md-button .md-button--big }
 
 ### Join our community on Discord
 

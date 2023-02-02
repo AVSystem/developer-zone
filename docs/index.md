@@ -2,7 +2,7 @@
 
 Welcome to the AVSystem DevZone!
 
-In the DevZone your will find documentation related to our scalable LwM2M server **Coiote IoT Device Management**, as well as our LwM2M client **Anjay**.
+In the DevZone you will find documentation related to our scalable LwM2M Server **Coiote IoT Device Management**, as well as our LwM2M Client **Anjay**.
 
 
 ## Quick Start Guide
@@ -11,7 +11,7 @@ Follow the Quick Start to build your first LwM2M application using a simulated d
 
 The guide walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **Coiote IoT Device Management**.
 
-[Quick Start](quickstart/){: .md-button .md-button--big} 
+[Quick Start](quickstart/){: .md-button .md-button--big}
 
 ## Get started with popular hardware platforms
 
