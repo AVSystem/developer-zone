@@ -162,6 +162,10 @@ To connect the board:
 0. Go to the Coiote DM to check if your device is connected.
     ![Registered device](images/registered_device.png "Registered device")
 
+!!! note
+    When Anjay has no connection with the server or network for a long time, warning
+    `at_monitor: No heap space for incoming notification: <notification>` may appear.
+    It does not affect the operation of the application and will no longer appear after reconnection.
 
 ## Next Steps
 After configuring the Anjay Client, you can use the **nRF Cloud Location Service** to enable cell-based location services, or assisted GPS. [**Learn how to do it here.**](/Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/)
