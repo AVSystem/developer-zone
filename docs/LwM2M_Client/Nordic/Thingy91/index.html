@@ -2443,8 +2443,23 @@ config  :Configure Anjay params
     <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Anjay has no connection with the server or network for a long time, warning
+<code>at_monitor: No heap space for incoming notification: &lt;notification&gt;</code> may appear.
+It does not affect the operation of the application and will no longer appear after reconnection.</p>
+</div>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <p>After configuring the Anjay Client, you can use the <strong>nRF Cloud Location Service</strong> to enable cell-based location services, or assisted GPS. <a href="/Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/"><strong>Learn how to do it here.</strong></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Thingy:91</strong> uses the same radio for GPS and LTE connectivity. GPS signal is
+caught between LTE transmissions and in case GPS "cold" fix acquisition takes
+too much time, Anjay turns off LTE transmissions for the time of fix acquisition.
+It can be seen by the following warning: <code>gps_nrf: GPS was interrupted multiple
+times by the LTE modem when producing a fix</code>. Anjay is notified by it, enters
+offline mode and reconnects when the first fix is acquired and LTE is enabled back.</p>
+</div>
 
 <!-- Link to previous and/or next page -->
 
@@ -2506,7 +2521,7 @@ config  :Configure Anjay params
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
     
   </small>
 </div>
