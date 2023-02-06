@@ -116,7 +116,7 @@ Once you have executed the Azure-side steps of the procedure, you can check its 
 
 1. Go to your Coiote DM account and in the **Device Inventory**, select your device.
 
-    ![Device inventory view](images/device_inventory_view.png "Device inventory view")
+    ![Device inventory view](images/device_inventory.png "Device inventory view")
 
 2. In the Device Management Center, enter the **LwM2M firmware** tab.
 3. Check the status of the FOTA task execution for your device:
@@ -148,4 +148,4 @@ To cancel the firmware upgrade procedure, follow these steps:
 
 ## See also
 
-See the relevant section of [LwM2M mappings](../../../Azure_IoT/Concepts/LwM2M_mappings_Hub.md) to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.
+See the relevant section of [LwM2M mappings](https://iotdevzone.avsystem.com/docs/Cloud_integrations/AWS_IoT_Core/Concepts/AWS_Integration_concepts/) to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.

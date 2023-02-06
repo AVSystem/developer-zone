@@ -111,7 +111,7 @@ https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-i
 
 ## Next steps
 
-To learn how to perform operations on your devices, please see the [Performing LwM2M operations](../AWS_IoT_Core/Device_operations/Operation_types.md) chapter.
+To learn how to perform operations on your devices, please see the [Performing LwM2M operations](https://iotdevzone.avsystem.com/docs/Cloud_integrations/AWS_IoT_Core/Device_operations/Operation_types/) chapter.
 
 ## Removing the integration
 
