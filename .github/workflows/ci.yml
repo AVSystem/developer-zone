@@ -19,6 +19,7 @@ jobs:
       - run: gulp build 
       - run: pip install -Iv mkdocs-material==6.2.6
       - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: pip install mkdocs-redirects
 #      - run: docker run -v ${PWD}:/docs squidfunk/mkdocs-material:6.2.6 build 
       - run: pip install ghp-import
 #      - run: mkdocs --version

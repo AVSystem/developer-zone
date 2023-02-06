@@ -26,6 +26,10 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
+  - redirects:
+        redirect_maps:
+            'IoT_quick_start/Device_onboarding.md': 'Coiote_IoT_DM/Quick_Start/Connect_device_quickstart.md'
+
 
 google_analytics:
   - UA-25246208-6
