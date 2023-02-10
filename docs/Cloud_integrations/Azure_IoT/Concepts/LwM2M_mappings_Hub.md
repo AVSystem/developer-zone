@@ -159,4 +159,4 @@ After JSON is saved, Azure notifies Coiote DM of the desired attribute setting w
 
 **Next steps**
 
-* [Configure integration templates](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/)
+* [Configure integration templates](https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates/)
