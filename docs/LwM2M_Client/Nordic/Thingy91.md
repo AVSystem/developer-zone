@@ -85,7 +85,7 @@ To program the board, go through the process of **flashing Thingy:91**. Use the 
 
 After successful flashing, reboot the board and go to the next step.
 
-## Connecting to the LwM2M Server
+## Connect to the LwM2M Server
 
 To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
 
