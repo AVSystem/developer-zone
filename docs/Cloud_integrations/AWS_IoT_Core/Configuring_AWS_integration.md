@@ -27,7 +27,7 @@ If you cannot find your region, please create a GitHub issue or contact AVSystem
 
 ## Create a Coiote DM REST user
 
-To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:   
+To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:
 
 1. Go to your Coiote DM account and from the **Administration** menu, select **Users management**.
 2. Select **Add user** and fill in the form:
@@ -86,7 +86,7 @@ To add the resources needed for the integration to your AWS services:
 
 0. Go to the AWS Console page (<https://console.aws.amazon.com/console/home>) and sign in. Make sure that you are in the right region. From the list of services, select **CloudFormation** .
 0. Create a new stack. Use the template of Amazon S3 URL from below and change placeholders `[REGION-NAME]` to the one you use and is [supported](#supported-regions).
-```       
+```
 https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-integration-cf-template.json
 ```
    ![Choose template file](images/choose_template_s3.png "Choose template file")
@@ -111,7 +111,7 @@ https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-i
 
 ## Next steps
 
-To learn how to perform operations on your devices, please see the [Performing LwM2M operations](../AWS_Integration_Guide/Device_operations/Operation_types.md) chapter.
+To learn how to perform operations on your devices, please see the [Performing LwM2M operations](https://iotdevzone.avsystem.com/docs/Cloud_integrations/AWS_IoT_Core/Device_operations/Operation_types/) chapter.
 
 ## Removing the integration
 

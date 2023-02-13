@@ -15,7 +15,7 @@ If you would like to upgrade the firmware of devices using the Azure IoT Hub, fo
 ### Introduction
 
 The process of upgrading device firmware for Azure IoT Hub devices synchronized with Coiote DM is based on two main elements: the Azure Direct Method mechanism and the Coiote DM Firmware Upgrade task.
-In the process, the Azure *scheduleFirmwareUpdate* direct method is invoked, enabling the Coiote DM to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in Coiote DM and the upgrade is performed on the device.  
+In the process, the Azure *scheduleFirmwareUpdate* direct method is invoked, enabling the Coiote DM to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in Coiote DM and the upgrade is performed on the device.
 
 !!! info
     For firmware file recognition in Coiote, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then Coiote DM will be able to utilize the once downloaded resource without the need to download it again.
@@ -59,7 +59,7 @@ To initiate the firmware upgrade procedure for your device:
           	// optional - default="WithoutObservations", possible values = ["ObservationTrigger", "WithoutObservations", "ObservationBased", "SendBased"]
           	"upgradeStrategy": "WithoutObservations",
           	// optional - default="always", possible values = ["always", "weekends", "nights-home", "nights-enterprise-weekends", "nights-enterprise", user-defined schedules]
-          	"schedule": "always"							
+          	"schedule": "always"
           }
           ```
     - **Connection timeout** - specify a timeout for the Azure - Coiote DM connection (the recommended value is not less than 5 seconds).
@@ -69,7 +69,7 @@ To initiate the firmware upgrade procedure for your device:
 
     ![Direct Method invoke button](images/dir_method_invoke.png "Direct Method invoke button")
 
-6. After a short moment, you should be able to see the direct method result in the **Result** field.     
+6. After a short moment, you should be able to see the direct method result in the **Result** field.
 
     ![FOTA direct method result](images/direct_method_result.png "Direct Method result")
 
@@ -80,7 +80,7 @@ To initiate the firmware upgrade procedure for your device:
     Out of all the parameters provided in Firmware upgrade direct method payload, only two are mandatory:
 
       - **name** - the unique file name used for firmware identification.
-      - **firmwareUrl** - the URL used by Coiote DM to download the firmware file and include it as a resource.   
+      - **firmwareUrl** - the URL used by Coiote DM to download the firmware file and include it as a resource.
 
     Therefore it is correct to include only those two in the payload, as in here:
       ```
@@ -116,9 +116,9 @@ Once you have executed the Azure-side steps of the procedure, you can check its 
 
 1. Go to your Coiote DM account and in the **Device Inventory**, select your device.
 
-    ![Device inventory view](images/device_inventory_view.png "Device inventory view")
+    ![Device inventory view](images/device_inventory.png "Device inventory view")
 
-2. In the Device Management Center, enter the **LwM2M firmware** tab.  
+2. In the Device Management Center, enter the **LwM2M firmware** tab.
 3. Check the status of the FOTA task execution for your device:
 
     - In the **Current firmware** section, check if the device firmware is updated to the newest version.
@@ -148,4 +148,4 @@ To cancel the firmware upgrade procedure, follow these steps:
 
 ## See also
 
-See the relevant section of [LwM2M mappings](/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-executable-resources) to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.  
+See the relevant section of [LwM2M mappings](https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/) to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.

@@ -53,9 +53,9 @@ Open the command line interface on your machine, then paste and run the followin
     ```
 
 0. Go to the directory `Anjay-zephyr-client/demo`.
-                    
+
 0. Compile the project for **Thingy:91** using the command:
- 
+
     ```
     west build -b thingy91_nrf9160ns
     ```
@@ -65,8 +65,8 @@ Open the command line interface on your machine, then paste and run the followin
 
         ```
         west build -b thingy91_nrf9160ns -p -t menuconfig
-        ``` 
-        
+        ```
+
         A config screen will open:
 
         ![menuconfig](images/menuconfig1.png "Anjay menuconfig")
@@ -110,7 +110,7 @@ To connect the board:
 
 ## Configure the Client
 
-0. With the board still connected to a serial port interface, open a serial communication program. 
+0. With the board still connected to a serial port interface, open a serial communication program.
 
 0. Use the `anjay` command to list possible options:
 
@@ -140,7 +140,7 @@ To connect the board:
         ```
         anjay stop
         ```
-    
+
     * To update the **endpoint name** run the command:
 
         ```

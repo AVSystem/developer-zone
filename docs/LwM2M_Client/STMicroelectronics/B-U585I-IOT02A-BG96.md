@@ -59,11 +59,11 @@ To connect to Coiote IoT Device Management LwM2M Server, please register [here](
      <br />
      To upgrade this firmware please download the folowing .zip files:
      <br />
-     - [Pack_BG96MAR02A08M1G_01.012.01.012](../resources/Pack_BG96MAR02A08M1G_01.012.01.012.zip "Pack_BG96MAR02A08M1G_01.012.01.012"),
+     - [Pack_BG96MAR02A08M1G_01.012.01.012](./resources/Pack_BG96MAR02A08M1G_01.012.01.012.zip "Pack_BG96MAR02A08M1G_01.012.01.012"),
      <br />
-     - [Quectel_LTE_Windows_USB_Driver_V2.0](../resources/Quectel_LTE_Windows_USB_Driver_V2.0.zip "Quectel_LTE_Windows_USB_Driver_V2.10"),
+     - [Quectel_LTE_Windows_USB_Driver_V2.0](./resources/Quectel_LTE_Windows_USB_Driver_V2.0.zip "Quectel_LTE_Windows_USB_Driver_V2.10"),
      <br />
-     - [QFlash_V4.10](../resources/QFlash_V4.10.zip "QFlash_V4.10").
+     - [QFlash_V4.10](./resources/QFlash_V4.10.zip "QFlash_V4.10").
      <br />
      In Pack_BG96MAR02A08M1G_01.012.01.012 you will find step-by-step instruction. Step 2 and step 4 in this instruction doesn't work. For that reason you will need to download Quectel_LTE_Windows_USB_Driver_V2.0 file, as a required file for step 2, and QFlash_V4.10 file, as a required file for step 4.
 
