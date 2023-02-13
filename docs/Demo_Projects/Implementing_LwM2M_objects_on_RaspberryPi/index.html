@@ -1686,15 +1686,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" class="md-nav__link">
-    Step 4: Implement the LwM2M temperature object 3303 (only for GrovePi)
+  <a href="#step-4-connecting-to-the-lwm2m-server" class="md-nav__link">
+    Step 4: Connecting to the LwM2M Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" class="md-nav__link">
-    Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object 3345
+  <a href="#step-5-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" class="md-nav__link">
+    Step 5: Implement the LwM2M temperature object /3303 (only for GrovePi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" class="md-nav__link">
+    Step 6: Implement the LwM2M push button based on the Multiple Axis Joystick object /3345
   </a>
   
 </li>
@@ -2220,15 +2227,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" class="md-nav__link">
-    Step 4: Implement the LwM2M temperature object 3303 (only for GrovePi)
+  <a href="#step-4-connecting-to-the-lwm2m-server" class="md-nav__link">
+    Step 4: Connecting to the LwM2M Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" class="md-nav__link">
-    Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object 3345
+  <a href="#step-5-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" class="md-nav__link">
+    Step 5: Implement the LwM2M temperature object /3303 (only for GrovePi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" class="md-nav__link">
+    Step 6: Implement the LwM2M push button based on the Multiple Axis Joystick object /3345
   </a>
   
 </li>
@@ -2258,14 +2272,14 @@
 <!-- Markdown content -->
 <h1 id="implementing-lwm2m-objects-on-raspberrypi">Implementing LwM2M objects on RaspberryPi<a class="headerlink" href="#implementing-lwm2m-objects-on-raspberrypi" title="Permanent link">#</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
-<p>Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for <a href="https://www.raspberrypi.org/">RaspberryPi-based</a> IoT devices. The Python programming language is used to implement LwM2M objects. Svetovid is based on a state-of-the-art LwM2M client Anjay developed by AVSystem.
+<p>Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for <a href="https://www.raspberrypi.org/">RaspberryPi-based</a> IoT devices using Python programming language. Svetovid is based on a state-of-the-art Anjay LwM2M client developed by AVSystem.
 It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.</p>
-<p>This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.  </p>
+<p>This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>Raspberry Pi 3 or 4 with a configured <a href="https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-05-28/2021-05-07-raspios-buster-armhf.zip">operating system</a> and a set-up WiFi connection.</li>
+<li>Raspberry Pi 3 or 4 with a configured <a href="https://downloads.raspberrypi.org/raspios_armhf/images/">operating system</a> and a set-up WiFi connection.</li>
 <li>A <a href="https://www.raspberrypi.org/products/sense-hat/">Sense HAT</a> or a <a href="https://www.seeedstudio.com/GrovePi.html">GrovePi</a> with a temperature sensor (<a href="https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/">DHT11</a> or similar) and a push button (<a href="https://wiki.seeedstudio.com/Grove-Button/">Grove-button</a> or similar).</li>
-<li>An active Coiote IoT Device Management user account with Cloud admin permissions.</li>
+<li>A user with access to the Coiote IoT Device Management platform and appropriate permissions.</li>
 </ul>
 <h2 id="step-1-prepare-your-sense-hatgrovepi">Step 1: Prepare your Sense HAT/GrovePi<a class="headerlink" href="#step-1-prepare-your-sense-hatgrovepi" title="Permanent link">#</a></h2>
 <h3 id="sense-hat">Sense HAT<a class="headerlink" href="#sense-hat" title="Permanent link">#</a></h3>
@@ -2276,14 +2290,16 @@ It features the FSDM (File System Data Model) in which LwM2M objects are mapped 
 </li>
 <li>
 <p>Check if Sense HAT is working correctly:</p>
-</li>
+<ul>
 <li>Create a <code>hello_world.py</code> file:
-                <div class="highlight"><pre><span></span><code>from sense_hat import SenseHat
+            <div class="highlight"><pre><span></span><code>from sense_hat import SenseHat
 sense = SenseHat()
 sense.show_message(&quot;Hello World!&quot;)
 </code></pre></div></li>
 <li>Run the program:
-<code>python hello_world.py</code></li>
+    <code>python hello_world.py</code></li>
+</ul>
+</li>
 </ol>
 <p>If a <em>Hello World!</em> message is displayed, you're good to proceed.</p>
 <div class="admonition note">
@@ -2292,31 +2308,36 @@ sense.show_message(&quot;Hello World!&quot;)
 </div>
 <h3 id="grovepi">GrovePi<a class="headerlink" href="#grovepi" title="Permanent link">#</a></h3>
 <ol>
-<li>To install the GrovePi repository, paste and execute the following commands:</li>
-</ol>
-<p><div class="highlight"><pre><span></span><code>    mkdir ~/Dexter
-    cd /home/pi/Dexter
+<li>
+<p>To install the GrovePi repository, paste and execute the following commands:</p>
+<div class="highlight"><pre><span></span><code>    mkdir ~/Dexter
+    cd ~/Dexter
     git clone https://github.com/DexterInd/GrovePi
-    cd /home/pi/Dexter/GrovePi/Script
+    cd ~/Dexter/GrovePi/Script
     bash ./update_grovepi.sh
 </code></pre></div>
-2. Check if the GrovePi libraries are working correctly:</p>
+</li>
+<li>
+<p>Check if the GrovePi libraries are working correctly:</p>
 <ul>
 <li>Connect a LED module to GrovePi port D4.</li>
-<li>In the terminal, type: <code>cd /home/pi/Dexter/GrovePi/Software/Python python grove_led_blink.py</code></li>
+<li>In the terminal, type: <code>cd ~/Dexter/GrovePi/Software/Python &amp;&amp; python grove_led_blink.py</code></li>
 <li>The LED should start blinking.</li>
 </ul>
+</li>
+</ol>
 <h2 id="step-2-install-svetovid">Step 2: Install Svetovid<a class="headerlink" href="#step-2-install-svetovid" title="Permanent link">#</a></h2>
 <ol>
 <li>
 <p>To install Svetovid, paste and execute the following commands into your command-line terminal:</p>
-<p><code>mkdir ~/AVSystem
-cd /home/pi/AVSystem
-git clone https://github.com/AVSystem/Svetovid-raspberry-client.git
-cd /home/pi/AVsystem/Svetovid-raspberry-client
-sudo dpkg -i svetovid_20.11-raspberry_armhf.deb
-sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
-sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb</code></p>
+<div class="highlight"><pre><span></span><code>    mkdir ~/AVSystem
+    cd ~/AVSystem
+    git clone https://github.com/AVSystem/Svetovid-raspberry-client.git
+    cd Svetovid-raspberry-client
+    sudo dpkg -i svetovid_20.11-raspberry_armhf.deb
+    sudo dpkg -i svetovid-plugin-fsdm_20.11-raspberry_armhf.deb
+    sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
+</code></pre></div>
 </li>
 <li>
 <p>In file <code>/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py</code>, find the <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test</code> entry and replace it with <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod</code>.</p>
@@ -2337,7 +2358,7 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
         &quot;1&quot;:
         {
             &quot;ssid&quot;: &quot;1&quot;,
-            &quot;server_uri&quot;: &quot;coaps://lwm2m-test.avsystem.io:5684&quot;,
+            &quot;server_uri&quot;: &quot;coaps://eu.iot.avsystem.cloud:5684&quot;,
             &quot;is_bootstrap&quot;: &quot;0&quot;,
             &quot;security_mode&quot;: &quot;psk&quot;,
             &quot;pubkey_or_identity_hex&quot;: &quot;XXXX&quot;,
@@ -2348,9 +2369,10 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
         }
     }
 </code></pre></div></p>
-<ul>
-<li>in <code>/etc/svetovid/config/svd.json</code>:
-    <div class="highlight"><pre><span></span><code>    {
+</li>
+<li>
+<p>in <code>/etc/svetovid/config/svd.json</code>:
+        <div class="highlight"><pre><span></span><code>    {
         &quot;device&quot;: {
             &quot;endpoint_name&quot;: &quot;YYYY&quot;,
             &quot;udp_listen_port&quot;: 1234
@@ -2369,8 +2391,7 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
         &quot;out_buffer_size_b&quot;: 1024,
         &quot;msg_cache_size_b&quot;: 65536
     }
-</code></pre></div></li>
-</ul>
+</code></pre></div></p>
 </li>
 </ul>
 <div class="admonition note">
@@ -2379,23 +2400,47 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>XXXX values are in hex. To convert your plain text, use the following:</p>
+<p>XXXX values are in hex. To convert your plain text, use the following:
+    <code>echo -n '&lt;your-text-value&gt;' | xxd -p</code></p>
 </div>
-<p><code>echo -n 'text-value' | xxd -p</code></p>
 </li>
 <li>
 <p>Restart the Svetovid service:</p>
 <p><code>sudo systemctl start svetovid.service --now</code></p>
 </li>
+</ol>
+<h2 id="step-4-connecting-to-the-lwm2m-server">Step 4: Connecting to the LwM2M Server<a class="headerlink" href="#step-4-connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
+<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
+<p>To connect the board:</p>
+<ol>
+<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>
-<p>Create a device instance in Coiote DM:</p>
+<p>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
+       <img alt="Add via Mgmt" src="images/mgmt_tile.png" title="Add via Mgmt" /></p>
+<ol>
+<li>
+<p>In the <strong>Device credentials</strong> step:</p>
 <ul>
-<li>When logged into your Coiote DM user account, go to Device Inventory and click <strong>Add device</strong>.
-  <img alt="Add device" src="../images/add_device.png" title="add_device" /></li>
-<li>Provide Device ID, Key Identity and Key values as in the Svetovid config files from the earlier step.
-  <img alt="Add device credentials" src="../images/creds.png" title="Credentials" /></li>
-<li>Wait for the connection.</li>
+<li>In the <strong>Device ID</strong> enter your board endpoint name, e.g. <code>raspberry_pi_test</code>.
+     <img alt="Device credentials step" src="images/raspberry_pi_test_credentials.png" title="Device credentials step" /></li>
+<li>
+<p>In the <strong>Security mode</strong> section, select the security mode you've choosen in <a href="#compile-the-application">Compile the application</a> step:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you choose <strong>Pre-Shared Key</strong> mode then type:</p>
+<ul>
+<li>In the <strong>Key identity</strong> field, the same name as in the Endpoint name field.</li>
+<li>In the <strong>Key</strong> field, the shared secret used in the device-server authentication.</li>
 </ul>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</p>
+</li>
+</ol>
 </li>
 <li>
 <p>Analyze the objects exposed by the device.
@@ -2404,9 +2449,9 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid, for instance the temperature object - <code>3303</code>.  </p>
+<p>Your RaspberryPi-based device will feature a number of default LwM2M objects provided by Svetovid, for instance the Light Control <code>/3311</code>.</p>
 </div>
-<h2 id="step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi">Step 4: Implement the LwM2M temperature object <code>3303</code> (only for GrovePi)<a class="headerlink" href="#step-4-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" title="Permanent link">#</a></h2>
+<h2 id="step-5-implement-the-lwm2m-temperature-object-3303-only-for-grovepi">Step 5: Implement the LwM2M temperature object <code>/3303</code> (only for GrovePi)<a class="headerlink" href="#step-5-implement-the-lwm2m-temperature-object-3303-only-for-grovepi" title="Permanent link">#</a></h2>
 <ol>
 <li>
 <p>Disable the Svetovid service:</p>
@@ -2416,7 +2461,7 @@ sudo dpkg -i avsystem_svetovid-20.11-raspberry-Linux-fsdmtool-runtime-python.deb
 <p>Generate a stub object in your <code>dm</code> (data model) Svetovid folder by pasting and executing the following command in the terminal: <code>$ sudo svetovid-fsdmtool generate --object 3303 --output-dir /etc/svetovid/dm --generator python</code></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can analyze the resource implementation in the <code>/etc/svetovid/dm/3303 folder</code>. For more details, see the <a href="https://github.com/AVSystem/Svetovid-raspberry-client">Svetovid page on GitHub</a>.</p>
+<p>You can analyze the resource implementation in the <code>/etc/svetovid/dm/3303</code> folder. For more details, see the <a href="https://github.com/AVSystem/Svetovid-raspberry-client">Svetovid page on GitHub</a>.</p>
 </div>
 </li>
 <li>
@@ -2450,7 +2495,7 @@ Last or Current Measured Value from the Sensor.&#39;&#39;&#39;
              resource_instance_id):  # int for multiple resources, None otherwise
         # TODO: print value to stdout
         # print(0.0)
-        [temp,humidity] = grovepi.dht(sensor,blue)  
+        [temp,humidity] = grovepi.dht(sensor,blue)
         print(&quot;%.02f&quot;%(temp))
 
 if __name__ == &#39;__main__&#39;:
@@ -2488,7 +2533,7 @@ Last or Current Measured Value from the Sensor.&#39;&#39;&#39;
              resource_instance_id):  # int for multiple resources, None otherwise
         # TODO: print value to stdout
         # print(0.0)
-        [temp,humidity] = grovepi.dht(sensor,blue)  
+        [temp,humidity] = grovepi.dht(sensor,blue)
         print(&quot;%.02f&quot;%(temp))
 
 if __name__ == &#39;__main__&#39;:
@@ -2503,16 +2548,16 @@ if __name__ == &#39;__main__&#39;:
 <p><code>sudo systemctl restart svetovid.service --now</code></p>
 </li>
 <li>
-<p>Refresh device state in Coiote and see if the Temperature object <code>3303</code> has appeared in the Objects tab and values are reported for  for the Sensor Value <code>5700</code> resource:</p>
+<p>Refresh device state in Coiote and see if the Temperature object <code>/3303</code> has appeared in the Objects tab and values are reported for the Sensor Value <code>5700</code> resource:</p>
 </li>
 </ol>
-<p><img alt="Temperature object" src="../images/raspi1.png" title="3303" /></p>
-<h2 id="step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345">Step 5: Implement the LwM2M push button based on the Multiple Axis Joystick object <code>3345</code><a class="headerlink" href="#step-5-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" title="Permanent link">#</a></h2>
-<p>Now you can implement the Push Button module based on the OMA DM Multiple Axis Joystick object (3345).</p>
+<p><img alt="Temperature object" src="../images/raspi1.png" title="/3303" /></p>
+<h2 id="step-6-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345">Step 6: Implement the LwM2M push button based on the Multiple Axis Joystick object <code>/3345</code><a class="headerlink" href="#step-6-implement-the-lwm2m-push-button-based-on-the-multiple-axis-joystick-object-3345" title="Permanent link">#</a></h2>
+<p>Now you can implement the Push Button module based on the OMA DM Multiple Axis Joystick object /3345.</p>
 <ol>
 <li>
 <p>Type in the terminal:
-      <div class="highlight"><pre><span></span><code>$ sudo svetovid-fsdmtool generate --object 3345 --output-dir /etc/svetovid/dm --generator python`
+      <div class="highlight"><pre><span></span><code>$ sudo svetovid-fsdmtool generate --object 3345 --output-dir /etc/svetovid/dm --generator python
 </code></pre></div></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2520,7 +2565,7 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </li>
 <li>
-<p>Type in the terminal: <code>cd /etc/svetovid/dm/3345/resources ./5550 read</code>.
+<p>Type in the terminal: <code>cd /etc/svetovid/dm/3345/resources &amp;&amp; ./5550 read</code>.
 You should be able to see a default value reported in the command-line terminal.</p>
 </li>
 <li>
@@ -2593,7 +2638,7 @@ You should be able to see a default value reported in the command-line terminal.
                   counter = counter + 1
                   print(&quot;Counter:{}&quot;.format(counter))
                   KvStore(namespace=3345).set(&#39;counter&#39;, counter+1)
-                  released_before = False    
+                  released_before = False
               KvStore(namespace=3345).set(&#39;state&#39;, True)
           else:
               released_before = True
@@ -2738,8 +2783,8 @@ if __name__ == &#39;__main__&#39;:
 <li>Restart Svetovid:
     <code>sudo systemctl restart svetovid.service --now</code></li>
 <li>
-<p>Refresh device state in Coiote and see if the Multiple Axis Joystick object <code>3345</code> has appeared in the Objects tab and values are reported for the Digital Input State <code>5500</code> and Digital Input Counter <code>5501</code> resources:</p>
-<p><img alt="Joystick button object" src="../images/button.png" title="3345" /></p>
+<p>Refresh device state in Coiote and see if the Multiple Axis Joystick object <code>/3345</code> has appeared in the Objects tab and values are reported for the Digital Input State <code>5500</code> and Digital Input Counter <code>5501</code> resources:</p>
+<p><img alt="Joystick button object" src="../images/button.png" title="/3345" /></p>
 </li>
 </ol>
 
@@ -2803,7 +2848,7 @@ if __name__ == &#39;__main__&#39;:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 13, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2023</span>
     
   </small>
 </div>

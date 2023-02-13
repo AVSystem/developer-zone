@@ -2262,7 +2262,7 @@
 <h2 id="scheduling-a-firmware-upgrade">Scheduling a firmware upgrade<a class="headerlink" href="#scheduling-a-firmware-upgrade" title="Permanent link">#</a></h2>
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h3>
 <p>The process of upgrading device firmware for Azure IoT Hub devices synchronized with Coiote DM is based on two main elements: the Azure Direct Method mechanism and the Coiote DM Firmware Upgrade task.
-In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invoked, enabling the Coiote DM to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in Coiote DM and the upgrade is performed on the device.  </p>
+In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invoked, enabling the Coiote DM to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in Coiote DM and the upgrade is performed on the device.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>For firmware file recognition in Coiote, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then Coiote DM will be able to utilize the once downloaded resource without the need to download it again.</p>
@@ -2304,7 +2304,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
   // optional - default=&quot;WithoutObservations&quot;, possible values = [&quot;ObservationTrigger&quot;, &quot;WithoutObservations&quot;, &quot;ObservationBased&quot;, &quot;SendBased&quot;]
   &quot;upgradeStrategy&quot;: &quot;WithoutObservations&quot;,
   // optional - default=&quot;always&quot;, possible values = [&quot;always&quot;, &quot;weekends&quot;, &quot;nights-home&quot;, &quot;nights-enterprise-weekends&quot;, &quot;nights-enterprise&quot;, user-defined schedules]
-  &quot;schedule&quot;: &quot;always&quot;                            
+  &quot;schedule&quot;: &quot;always&quot;
 }
 </code></pre></div></li>
 <li><strong>Connection timeout</strong> - specify a timeout for the Azure - Coiote DM connection (the recommended value is not less than 5 seconds).</li>
@@ -2316,7 +2316,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <p><img alt="Direct Method invoke button" src="../images/dir_method_invoke.png" title="Direct Method invoke button" /></p>
 </li>
 <li>
-<p>After a short moment, you should be able to see the direct method result in the <strong>Result</strong> field.     </p>
+<p>After a short moment, you should be able to see the direct method result in the <strong>Result</strong> field.</p>
 <p><img alt="FOTA direct method result" src="../images/direct_method_result.png" title="Direct Method result" /></p>
 <ul>
 <li>The <code>200</code> as the "status" parameter value means that the firmware upgrade task was completed successfully.</li>
@@ -2329,7 +2329,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <p>Out of all the parameters provided in Firmware upgrade direct method payload, only two are mandatory:</p>
 <ul>
 <li><strong>name</strong> - the unique file name used for firmware identification.</li>
-<li><strong>firmwareUrl</strong> - the URL used by Coiote DM to download the firmware file and include it as a resource.   </li>
+<li><strong>firmwareUrl</strong> - the URL used by Coiote DM to download the firmware file and include it as a resource.</li>
 </ul>
 <p>Therefore it is correct to include only those two in the payload, as in here:
   <div class="highlight"><pre><span></span><code>{
@@ -2364,10 +2364,10 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <ol>
 <li>
 <p>Go to your Coiote DM account and in the <strong>Device Inventory</strong>, select your device.</p>
-<p><img alt="Device inventory view" src="images/device_inventory_view.png" title="Device inventory view" /></p>
+<p><img alt="Device inventory view" src="../images/device_inventory.png" title="Device inventory view" /></p>
 </li>
 <li>
-<p>In the Device Management Center, enter the <strong>LwM2M firmware</strong> tab.  </p>
+<p>In the Device Management Center, enter the <strong>LwM2M firmware</strong> tab.</p>
 </li>
 <li>
 <p>Check the status of the FOTA task execution for your device:</p>
@@ -2400,7 +2400,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 </li>
 </ol>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">#</a></h2>
-<p>See the relevant section of <a href="/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-executable-resources">LwM2M mappings</a> to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.  </p>
+<p>See the relevant section of <a href="https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/">LwM2M mappings</a> to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2462,7 +2462,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2023</span>
     
   </small>
 </div>
