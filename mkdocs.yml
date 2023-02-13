@@ -110,6 +110,7 @@ nav:
             - 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
             - 'Demo_Projects/Air_quality_monitoring_tutorial.md'
             - 'Demo_Projects/Tracking_tutorial.md'
+            - 'Demo_Projects/Edge_Impulse_demo.md'
         - 'Release notes':
             - 2023:
                 - 'Release_Notes/v2023.5.0.md'
