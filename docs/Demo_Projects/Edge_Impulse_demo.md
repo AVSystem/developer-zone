@@ -1,9 +1,9 @@
 # Edge Impulse & Thingy:91
 
 ## Introduction
-This example runs a motion recognition model built with Edge Impulse, and streams detection statistics to a LwM2M server.
+This example runs a motion recognition model built with <a href="https://www.edgeimpulse.com/" target="_blank">Edge Impulse</a>, and streams detection statistics to a LwM2M server.
 
-LwM2M Objects used:
+**LwM2M Objects used**:
 
 - Security: `/0` 
 - Server: `/1`
@@ -43,7 +43,7 @@ west update
     * PSK (Pre-Shared Key): `test`
     
 !!! note
-    **Update the endpont name and PSK using menuconfig** (optional)
+    **Update the endpoint name and PSK using menuconfig** (optional)
 
     Run the following command:
     ```bash
@@ -86,22 +86,24 @@ To connect the board:
     ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
 
 1. In the **Device credentials** step:
-    - Think of a unique **Endpoint name**.
+    - Add the **Endpoint name**, the default name is: `Anjay-zephyr-client`
     - **Key Identity** is the same as the Endpoint name.
-    - Create a **Key** and store it somewhere to retrieve later when configuring your device.
+    - Add the **Key**, the default key is: `test`
     - Click the **Add device** button and click **Confirm** in the confirmation pop-up.
 
     ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
 
 
-## Add the Object `/33650` Pattern Detection to Coiote
+## Add the Pattern Detection Object to Coiote
 
-Object `/33650` refers to the pattern detection Edge Impulse model.
+Object ID `/33650` refers to the pattern detection model.
 
+To add this custom object, go to the device overview page in Coiote IoT DM and click the top-right button: **Go to previous version**. 
 
-From your Device overview page in Coiote IoT DM, click the top-right button: **Go to previous version**. ![Previous Version button](images/previous-version.png)
+![Previous Version button](images/previous-version2.png)
 
 In the left-side menu, click **Objects**.
+
 Click the button at the top right corner: **Add new LwM2M object definition**.
 
 ![New Object step 1](images/new_object1.png)
@@ -162,19 +164,30 @@ To add a new object definitiation, copy-paste the following `XML file` and click
 
 ![New Object step 2](images/new_object2.png)
 
-If the import was successful, you will find the under **Data model** the object `/33650 Pattern detector`.
+After importing the object definitiation, go back to the *New Device Center* by clicking the button in the top-right corner: **Go to new Device Center**.
 
-![New Object step 4](images/new_object4.png)
+![Button new device center](images/new-device-center.png)
+
+If the import was successful, you will find the under **Data model** the object: `/33650 Pattern detector`.
+
+
+
+The object: `/33650` can distinguish patterns:
+
+1. idle
+1. circle
+1. snake
+
+Each pattern is defined as an *Object Instance*. The number of times the pattern has been recognized is shown as the **Dectector Counter**.
+
+To see the detector counters for each pattern, select the corresponding Object Instance by clicking the down-arrow: ▼.
+
+![New Object step 4](images/new_object4-click.png)
 
 
 ## Movement detection
 
-Now start moving the Thingy:91 around to detect either of the three patterns, each pattern is also defined by a different LED color on the device:
-
-- Idle
-- Circle
-- Snake
-
+Now start moving the Thingy:91 around to detect either of the three patterns. When a new motion pattern is detected, the LED color on the device will change.
 
 Optional - set observations.
 
