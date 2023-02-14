@@ -1,9 +1,13 @@
 # Edge Impulse & Thingy:91
 
 ## Introduction
-This example runs a motion recognition model built with <a href="https://www.edgeimpulse.com/" target="_blank">Edge Impulse</a>, and streams detection statistics to a LwM2M server.
+This example runs a motion detection model using the accelerometer of the Thingy:91 development kit, built with <a href="https://www.edgeimpulse.com/" target="_blank">Edge Impulse</a>. It streams the detected motion patterns to a LwM2M server.
 
-**LwM2M Objects used**:
+![Snake motion detector](images/thingy91-snake.gif)
+
+*Detecting the motion patterns: "idle" and "snake"*
+
+LwM2M Objects used:
 
 - Security: `/0` 
 - Server: `/1`
@@ -13,53 +17,59 @@ This example runs a motion recognition model built with <a href="https://www.edg
 ## Prerequisites
 - Thingy:91
 - [Coiote IoT DM](https://eu.iot.avsystem.cloud/) account
-- Installed [Zephyr](https://docs.zephyrproject.org/latest/getting_started/index.html) dependencies
+- Installed <a href="https://docs.zephyrproject.org/latest/getting_started/index.html" target="_blank">Zephyr</a> dependencies
 - Serial communication program e.g. minicom or RealTerm (for Linux or Mac) or PuTTy (for Windows)
 
+!!! warning
+    This tutorial uses the Arm Embedded Toolchain, which is not compatible with the Apple M1 chipset.
 
 ## Compilation
 
-**Clone the Anjay Zephyr repository**
+### Clone the Anjay Zephyr repository
 
-Open the command line interface on your machine and clone the Anjay Zephyr repository using [Git](https://formulae.brew.sh/formula/git):
+Open the command line interface on your machine and clone the [Anjay Zephyr repository](https://github.com/AVSystem/Anjay-zephyr-client) using [Git](https://formulae.brew.sh/formula/git):
 
 ```jsx
 git clone https://github.com/AVSystem/Anjay-zephyr-client
 ```
 
-Open the repository: `Anjay-zephyr-client` > `ei-demo`
-
-Set West manifest path to `Anjay-zephyr-client/ei_demo`, and manifest file to `west-nrf.yml` and do `west update`.
+Set West manifest path to `Anjay-zephyr-client/ei_demo`, and manifest file to `west-nrf.yml` and run `west update`:
 
 ```jsx
 west config manifest.path Anjay-zephyr-client/ei_demo
 west config manifest.file west-nrf.yml
 west update
 ```
+
+### Update the endpoint name and PSK (optional)
+
 !!! info
     **The default credentials are**:
 
     * Endpoint name: `Anjay-zephyr-client`
     * PSK (Pre-Shared Key): `test`
-    
-!!! note
-    **Update the endpoint name and PSK using menuconfig** (optional)
 
-    Run the following command:
-    ```bash
-    west build -b thingy91_nrf9160_ns -p -t menuconfig
-    ```
+The Endpoint Name and PSK can be configured using *menuconfig*.
 
-    Open up folder `anjay-zephyr-client --->`
-    ![menuconfig1.png](images/menuconfig_ei1.png)
+To open *menuconfig*, run the following command:
+```bash
+west build -b thingy91_nrf9160_ns -p -t menuconfig
+```
 
-    Change the Endpoint Name and PSK Key:
+Open up the folder `anjay-zephyr-client --->`
 
-    ![menuconfig2.png](images/menuconfig_ei2.png)
+![menuconfig1.png](images/menuconfig_ei1.png)
 
-    After making the changes, close the config menu by pressing `Q` and save it by pressing `Y`.
+Create a new **Endpoint Name** and **PSK Key**:
 
-Compile the project for Thingy:91 by running the below command within the `ei_demo` directory.
+![menuconfig2.png](images/menuconfig_ei2.png)
+
+After making the changes, close the config menu by pressing `Q` and save it by pressing `Y`.
+
+
+### Compile the project
+
+Go to the `ei_demo` directory and compile the project for the Thingy:91:
 
 ```jsx
 west build -b thingy91_nrf9160_ns
@@ -68,35 +78,35 @@ west build -b thingy91_nrf9160_ns
 
 ## Write the firmware to the Thingy:91
 
-Find the build file in the directory `/build/zephyr`, named: `app_signed.hex`
+Find the build file in the directory `/build/zephyr`, named: `app_signed.hex`.
 
 Flash the file using the **Programmer** application in **nRF Cloud for Desktop** via **MCUboot**.
 
-*For more information on flashing the Thingy:91 using MCU Boot, see [link](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application).*
+*For more information on flashing the Thingy:91 using MCU Boot, see <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application" target="_blank">link</a>.*
 
 
 ## Connect the Thingy:91 to Coiote IoT Device Management
 
 To connect the board:
 
-1. [Log in](https://eu.iot.avsystem.cloud/) to Coiote DM and from the left side menu, select **Device Inventory**.
+1. [Log in](https://eu.iot.avsystem.cloud/) to Coiote IoT DM and from the left side menu select **Device Inventory**.
 1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
     
     ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
 
 1. In the **Device credentials** step:
-    - Add the **Endpoint name**, the default name is: `Anjay-zephyr-client`
-    - **Key Identity** is the same as the Endpoint name.
+    - Add the **Endpoint name**, the default endpoint name is: `Anjay-zephyr-client`
+    - **Key Identity** is the same as the endpoint name
     - Add the **Key**, the default key is: `test`
-    - Click the **Add device** button and click **Confirm** in the confirmation pop-up.
+    - Click the **Add device** button and click **Confirm** in the confirmation pop-up
 
     ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
 
 
 ## Add the Pattern Detection Object to Coiote
 
-Object ID `/33650` refers to the pattern detection model.
+Object ID `/33650` refers to the pattern detection model and indicates which pattern has been detected.
 
 To add this custom object, go to the device overview page in Coiote IoT DM and click the top-right button: **Go to previous version**. 
 
@@ -154,8 +164,6 @@ To add a new object definitiation, copy-paste the following `XML file` and click
                 <Description><![CDATA[Name of the pattern being detected.]]></Description>
             </Item>
 			
-			
-            
          </Resources>
         <Description2></Description2>
     </Object>
@@ -168,27 +176,29 @@ After importing the object definitiation, go back to the *New Device Center* by 
 
 ![Button new device center](images/new-device-center.png)
 
-If the import was successful, you will find the under **Data model** the object: `/33650 Pattern detector`.
+If the import was successful, you will find the object: `/33650 Pattern detector` under **Data model**.
+
+![Button new device center](images/new_object4-data-model.png)
 
 
+### Pattern detection
 
-The object: `/33650` can distinguish patterns:
+The object: `/33650` can distinguish three patterns:
 
-1. idle
-1. circle
-1. snake
+1. Idle
+1. Circle
+1. Snake
 
 Each pattern is defined as an *Object Instance*. The number of times the pattern has been recognized is shown as the **Dectector Counter**.
 
-To see the detector counters for each pattern, select the corresponding Object Instance by clicking the down-arrow: ▼.
+To see the Detector Counter for each pattern, select the corresponding Object Instance by clicking the down-arrow: ▼.
 
 ![New Object step 4](images/new_object4-click.png)
 
+Now start moving the Thingy:91 around to detect all three patterns. When a new motion pattern is detected, the Dectector Counter increases and the LED color on the device will change.
 
-## Movement detection
+### Set observations
 
-Now start moving the Thingy:91 around to detect either of the three patterns. When a new motion pattern is detected, the LED color on the device will change.
+The LwM2M standard allows you to instruct the device about the minimum and maximum allowed intervals between two updates. The intervals can be set from 1 second to multiple days. To instruct the device, an OBSERVE operation can be sent from the LwM2M Server to the LwM2M Client
 
-Optional - set observations.
-
-[link to more information](/Coiote_IoT_DM/User_Interface/Device_Center/#set-observation)
+For more information, see [how to set observations](/Coiote_IoT_DM/User_Interface/Device_Center/#set-observation)
