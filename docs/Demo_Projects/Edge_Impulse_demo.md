@@ -118,7 +118,7 @@ Click the button at the top right corner: **Add new LwM2M object definition**.
 
 ![New Object step 1](images/new_object1.png)
 
-To add a new object definitiation, copy-paste the following `XML file` and click **Import**.
+To add a new object definition, copy-paste the following `XML file` and click **Import**.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -172,7 +172,7 @@ To add a new object definitiation, copy-paste the following `XML file` and click
 
 ![New Object step 2](images/new_object2.png)
 
-After importing the object definitiation, go back to the *New Device Center* by clicking the button in the top-right corner: **Go to new Device Center**.
+After importing the object definition, go back to the *New Device Center* by clicking the button in the top-right corner: **Go to new Device Center**.
 
 ![Button new device center](images/new-device-center.png)
 
@@ -189,16 +189,16 @@ The object: `/33650` can distinguish three patterns:
 1. Circle
 1. Snake
 
-Each pattern is defined as an *Object Instance*. The number of times the pattern has been recognized is shown as the **Dectector Counter**.
+Each pattern is defined as an *Object Instance*. The number of times the pattern has been recognized is shown as the **Detector Counter**.
 
 To see the Detector Counter for each pattern, select the corresponding Object Instance by clicking the down-arrow: ▼.
 
 ![New Object step 4](images/new_object4-click.png)
 
-Now start moving the Thingy:91 around to detect all three patterns. When a new motion pattern is detected, the Dectector Counter increases and the LED color on the device will change.
+Now start moving the Thingy:91 around to detect all three patterns. When a new motion pattern is detected, the Detector Counter increases and the LED color on the device will change.
 
 ### Set observations
 
-The LwM2M standard allows you to instruct the device about the minimum and maximum allowed intervals between two updates. The intervals can be set from 1 second to multiple days. To instruct the device, an OBSERVE operation can be sent from the LwM2M Server to the LwM2M Client
+The LwM2M standard allows you to instruct the device about the minimum and maximum allowed intervals between two updates. The intervals can be set from 1 second to multiple days. To instruct the device, an OBSERVE operation can be sent from the LwM2M Server to the LwM2M Client.
 
 For more information, see [how to set observations](/Coiote_IoT_DM/User_Interface/Device_Center/#set-observation)
