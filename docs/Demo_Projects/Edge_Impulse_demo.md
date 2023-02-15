@@ -64,8 +64,7 @@ Create a new **Endpoint Name** and **PSK Key**:
 
 ![menuconfig2.png](images/menuconfig_ei2.png)
 
-After making the changes, close the config menu by pressing `Q` and save it by pressing `Y`.
-
+After making the changes, press `Q` to close the config menu and `Y` to save.
 
 ### Compile the project
 
@@ -99,7 +98,7 @@ To connect the board:
     - Add the **Endpoint name**, the default endpoint name is: `Anjay-zephyr-client`
     - **Key Identity** is the same as the endpoint name
     - Add the **Key**, the default key is: `test`
-    - Click the **Add device** button and click **Confirm** in the confirmation pop-up
+    - Click **Add device** and then **Confirm** in the confirmation pop-up
 
     ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
 
