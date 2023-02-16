@@ -74,10 +74,11 @@ Go to the `ei_demo` directory and compile the project for the Thingy:91:
 west build -b thingy91_nrf9160_ns
 ```
 
-
 ## Write the firmware to the Thingy:91
 
 Find the build file in the directory `/build/zephyr`, named: `app_signed.hex`.
+
+Connect the Thingy:91 to a USB port of your machine.
 
 Flash the file using the **Programmer** application in **nRF Cloud for Desktop** via **MCUboot**.
 
