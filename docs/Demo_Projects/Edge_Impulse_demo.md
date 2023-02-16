@@ -76,20 +76,20 @@ west build -b thingy91_nrf9160_ns
 
 ## Write the firmware to the Thingy:91
 
-Find the build file in the directory `/build/zephyr`, named: `app_signed.hex`.
+1. Find the build file in the directory `/build/zephyr`, named: `app_signed.hex`.
+1. Connect the Thingy:91 to a USB port of your machine.
+1. Flash the file using the **Programmer** application in **nRF Cloud for Desktop** via **MCUboot**.
 
-Connect the Thingy:91 to a USB port of your machine.
-
-Flash the file using the **Programmer** application in **nRF Cloud for Desktop** via **MCUboot**.
-
-*For more information on flashing the Thingy:91 using MCU Boot, see <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application" target="_blank">link</a>.*
+*Find more information on flashing the Thingy:91 using MCU Boot <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application" target="_blank">here</a>.*
 
 
 ## Connect the Thingy:91 to Coiote IoT Device Management
 
+To connect to Coiote IoT Device Management LwM2M Server, please register at [eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
+
 To connect the board:
 
-1. [Log in](https://eu.iot.avsystem.cloud/) to Coiote IoT DM and from the left side menu select **Device Inventory**.
+1. [Log in](https://eu.iot.avsystem.cloud/) to Coiote IoT DM and select **Device Inventory** from the left side menu.
 1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
     
