@@ -173,10 +173,10 @@ Now the fun begins. Below you can find useful links to continue your LwM2M journ
 
 Follow the **Getting started** guides to kickstart your LwM2M application using one of the popular hardware platforms: [Nordic](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/), [STMicroelectronics](https://iotdevzone.avsystem.com/docs/LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/), [ESPRESSIF](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/) or [Raspberry Pi](https://iotdevzone.avsystem.com/docs/Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/).
 
-[<img src="/img/Nordic.jpg" alt="Nordic" title="Nordic" width="24%"/>](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/)
-[<img src="/img/ST.jpg" alt="STM" title="STM" width="24%" />](https://iotdevzone.avsystem.com/docs/LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/)
-[<img src="/img/ESP.jpg" alt="ESPPRESSIF" title="ESPPRESSIF" width="24%" />](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/)
-[<img src="/img/RPI.jpg" alt="Raspberry Pi" title="Raspberry Pi" width="24%" />](https://iotdevzone.avsystem.com/docs/Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
+[<img src="../img/Nordic.jpg" alt="Nordic" title="Nordic" width="24%"/>](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/)
+[<img src="../img/ST.jpg" alt="STM" title="STM" width="24%" />](https://iotdevzone.avsystem.com/docs/LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/)
+[<img src="../img/ESP.jpg" alt="ESPPRESSIF" title="ESPPRESSIF" width="24%" />](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/)
+[<img src="../img/RPI.jpg" alt="Raspberry Pi" title="Raspberry Pi" width="24%" />](https://iotdevzone.avsystem.com/docs/Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
 
 ### Learn more about Coiote IoT DM
 
