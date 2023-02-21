@@ -60,7 +60,7 @@ nav:
                 - 'LwM2M_Client/ESP32/M5Stick.md'
                 - 'LwM2M_Client/ESP32/M5StickBG96.md'
                 - 'LwM2M_Client/ESP32/ESP32-DevKitCBG96.md'
-            - 'OpenThread'
+            - 'OpenThread':
                 - 'LwM2M_Client/OpenThread/Adding_device.md'
         - 'Coiote IoT DM':
             - 'Quick Start':
