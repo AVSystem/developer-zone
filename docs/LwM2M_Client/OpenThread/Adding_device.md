@@ -1,49 +1,78 @@
-# Adding nRF dongle to OpenThread
+# Adding nRF board to OpenThread
 
 Integrate your Nordic nRF52840-DK board to an active OpenThread Border Router.
 
 ## Prerequisites
 
-- An active OpenThread Border Router
+- An active **OpenThread Border Router**.
 - The **nRF52840-DK** board with a USB cable.
-- Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
+- Installed **minicom** or **RealTerm** (for Linux or Mac) or **PuTTy** (for Windows) or other serial communication program.
 - Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
-- A user with access to the Coiote IoT Device Management platform and appropriate permissions.
+- A user with access to the [**Coiote IoT Device Management**](https://eu.iot.avsystem.cloud/ui/device/inventory) platform and appropriate permissions.
 
 ## Connecting to the OpenThread
 
-When you have an active Border Router you should have a posibility to check its hostname, domain, IP address and port on which your Border Router works.
-
-!!! Note
-    In commands **OTBR_hostname.OTBR_domain** can be replaced with **OTBR_IP_address**.
+Check your active Border Router **OTBR_IP_address** and **OTBR_port** on which your Border Router works. This will be necessary for further steps.
 
 ### Connection through Wi-Fi
 
-In this method you have to be connected to the same Wifi network as is your OpenThread Border Router. To connect your device to Border Router through Wifi you should go to ` http://localhost:OTBR_port/ `.
+You have to be connected to the same Wifi network as your OpenThread Border Router. To connect your device to Border Router through Wifi, you should go to `OTBR_IP_address`.
 
-### Connection through SSH
-
-In this method you will need hostname and domain for your OTBR
-`ssh -L OTBR_port:OTBR_hostname.OTBR_domain:80 -L 8081:OTBR_hostname.OTBR_domain:8081`
-Then go to: `http://localhost:OTBR_port/`. The additional forwarding for port 8081 is necessary for the Topology view to work.
-
-
-
+!!! Note
+    There is an option to connect to your Border Router through ssh by `ssh -L OTBR_port:OTBR_IP_addres:80 -L 8081:OTBR_hostname` command, then go to: `http://OTBR_IP_address:80`. The additional forwarding for port 8081 is necessary for the ***Topology*** view to work. Also, port 80 is necessary due to the HTTP protocol.
 
 When you are connected you should see the OpenThread main page:
 
 ![OT Main Page](images/ot_main_page.PNG "OT Main Page")
 
+### Creating an OpenThread network
 
+On the left side, select the option ***Form***, and a new page will be displayed for the network creation. Click the form and a message should pop up to let you know about the operation's success. ![Form Network](images/form_network.png "Form Network"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
+On the left-side menu, click ***Topology*** to see the role of Border Router ![Border Router topology](images/border1.png "Border Router topology"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
-## Creating an OpenThread network
+### Starting Commission
 
-On the left side, select the option Form, and a new page will be displayed for the network creation. Click form and a message should pop up to let you know about the operation success. ![Form Network](images/form_network.png "Form Network"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+To start the commissioning process click ***Commission*** on the left-side menu and write down Joiner PSKd password.
 
+!!! Important
+    The PSKd needs to conform to the following: Length: 6-32 characters, encoding: base32-thread (0-9, A-Y excluding I, O, Q, and Z for readability).
+    <br />
+    Remember the joiner PSKd password, you will use it in the next step to configure your device.
+    <br />
+    For more information check [here](https://community.silabs.com/s/article/openthread-faq?language=en_US).
 
+Click start commission, and a message should pop up to inform you about the operation's success. ![Start commission](images/commision.png "Start commission"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
-On the left-side menu, click Topology to see the role of Border Router ![Border Router topology](images/border1.png "Border Router topology"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+### Device configuration
+
+0. Connect the nRF52840 board to the USB port of your machine.
+
+0. Because NCS uses a different Zephyr version, it is necessary to change our Zephyr workspace, it is handled by using a different manifest file.
+Set West manifest path to *Anjay-zephyr-client/demo*, and manifest file to *west-nrf.yml* and do *west update*.
+
+    ```
+        west config manifest.path Anjay-zephyr-client/demo
+        west config manifest.file west-nrf.yml
+        west update
+    ```
+
+0. Go to *Anjay-zephyr-client/demo/boards* folder and find `nrf52840dk_nrf52840.conf` file. In this file, you will need to change the joiner PSKd password (line 41 in the .conf file). ![Configuration file](images/conf_file.PNG){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+
+    !!! Note
+        The last config option in file `CONFIG_OPENTHREAD_FTD` tells about a Full Thread Device (FTD) which always has its radio on and maintains IPv6 address mappings. This option can be changed to `CONFIG_OPENTHREAD_MTD`, a Minimal Thread Device (MTD) forwards all messages to its Parent.
+
+0. Now in demo directory you can compile the project.
+
+    ```
+        west build -b nrf52840dk_nrf52840
+    ```
+
+0. After successful build you can flash the target.
+
+    ```
+        west flash
+    ```
 
 ## Connecting to the LwM2M Server
 
@@ -93,8 +122,22 @@ To connect the board:
 
 
 0. Use the `anjay start` command to run the Client.
+
+0. In logs, you can read view lines that contain OpenThread informations. There will be information about success or failure in joining the connection and the current role of your device in the OpenThread network.
+
+    ![Connected as a child role](images/connected_child.PNG "Connected as a child role"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+
+0. Go to OpenThread main web page, on the left-side menu click ***Topology*** to see connected device.
+
+    ![Connected device as a child](images/border2.png "Connected device as a child"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+
+    !!! Note
+        The node should join the OTBR Thread network automatically. Within two minutes its state should be `router`
+
+        ![Connected device as a router](images/border3.png "Connected device as a router"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+
 0. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
-    ![Registered device](images/registered_device.png "Registered device")
+    ![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 !!! note
     When Anjay has no connection with the server or network for a long time, warning
