@@ -13,6 +13,9 @@ Here’s a tutorial to get you started with device provisioning using a dedicate
 - An active [Coiote DM cloud](https://eu.iot.avsystem.cloud) account.
 - If you're using Windows: possibility to run Linux scripts/tools either via WSL, Cygwin or other.
 
+!!!important
+    Please verify if the directory to which you installed Go is in your `PATH` variable. If it's missing please add it.
+
 ## Provision the device using PSK
 This section shows how to provision your device using a pre-shared key (PSK).
 
@@ -52,9 +55,9 @@ This section shows how to provision your device using a pre-shared key (PSK).
         ```
     - If you're using Linux, run `chmod u+x get_token.sh` to give execute rights. Under Windows you can use the GUI to allow execution of this file.
 
-    - Run `./get_token.sh`. The script will ask you for your login and password for eu.iot.avsyste.cloud, please provide it.
+    - Run `./get_token.sh`. The script will ask you for your login and password for eu.iot.avsystem.cloud, please provide them.
 
-    If a JSON structure had been displayed containing `"access_token"` your ready to proceed. Copy your token.
+    If a JSON structure containing `"access_token"` appears, you're ready to proceed. Copy your token.
 
     !!!important
         The token received is valid only for a short period of time.
