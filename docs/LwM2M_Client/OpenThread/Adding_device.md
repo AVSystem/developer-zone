@@ -16,10 +16,7 @@ Check your active Border Router **OTBR_IP_address** and **OTBR_port** on which y
 
 ### Connection through Wi-Fi
 
-You have to be connected to the same Wifi network as your OpenThread Border Router. To connect your device to Border Router through Wifi, you should go to `OTBR_IP_address`.
-
-!!! Note
-    There is an option to connect to your Border Router through ssh by `ssh -L OTBR_port:OTBR_IP_addres:80 -L 8081:OTBR_hostname` command, then go to: `http://OTBR_IP_address:80`. The additional forwarding for port 8081 is necessary for the ***Topology*** view to work. Also, port 80 is necessary due to the HTTP protocol.
+You have to be connected to the same Wifi network as your OpenThread Border Router. To connect your device to Border Router through Wifi, open any web browser and connect to the WebUI by connecting to **OTBR_IP_address:OTBR_port**.
 
 When you are connected you should see the OpenThread main page:
 
@@ -31,20 +28,28 @@ On the left side, select the option ***Form***, and a new page will be displayed
 
 On the left-side menu, click ***Topology*** to see the role of Border Router ![Border Router topology](images/border1.png "Border Router topology"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
-### Starting Commission
+### Commissioning process
 
 To start the commissioning process click ***Commission*** on the left-side menu and write down Joiner PSKd password.
 
 !!! Important
-    The PSKd needs to conform to the following: Length: 6-32 characters, encoding: base32-thread (0-9, A-Y excluding I, O, Q, and Z for readability).
+    The PSKd needs to be a string of all uppercase alphanumeric characters (0-9 and A-Y, excluding I, O, Q, and Z for readability), with a length between 6 and 32 characters.
     <br />
     Remember the joiner PSKd password, you will use it in the next step to configure your device.
     <br />
-    For more information check [here](https://community.silabs.com/s/article/openthread-faq?language=en_US).
+    For more information check [here](https://openthread.io/guides/border-router/external-commissioning/prepare?hl=en#prepare_the_joiner_device).
 
 Click start commission, and a message should pop up to inform you about the operation's success. ![Start commission](images/commision.png "Start commission"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
 ### Device configuration
+
+0. Get Zephyr, SDK and other dependencies, as described in Zephyr's [Getting Started Guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) (first 4 steps).
+
+0. After navigating to Zephyr workspace (**~/zephyrproject** is default after following Getting Started Guide), clone Anjay Zephyr client repository.
+
+    ```
+        git clone https://github.com/AVSystem/Anjay-zephyr-client
+    ```
 
 0. Connect the nRF52840 board to the USB port of your machine.
 
@@ -57,7 +62,7 @@ Set West manifest path to *Anjay-zephyr-client/demo*, and manifest file to *west
         west update
     ```
 
-0. Go to *Anjay-zephyr-client/demo/boards* folder and find `nrf52840dk_nrf52840.conf` file. In this file, you will need to change the joiner PSKd password (line 41 in the .conf file). ![Configuration file](images/conf_file.PNG){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+0. Go to *Anjay-zephyr-client/demo/boards* folder and find `nrf52840dk_nrf52840.conf` file. In this file, you will need to change the joiner PSKd password. ![Configuration file](images/conf_file.PNG){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
     !!! Note
         The last config option in file `CONFIG_OPENTHREAD_FTD` tells about a Full Thread Device (FTD) which always has its radio on and maintains IPv6 address mappings. This option can be changed to `CONFIG_OPENTHREAD_MTD`, a Minimal Thread Device (MTD) forwards all messages to its Parent.
@@ -111,6 +116,8 @@ To connect the board:
     !!! tip
         To show available subcommands, use the **Tab** key.
 
+0. Use the `anjay stop` command to stop LwM2M Client and change credentials.
+
 0. Check your default credentials by following the instructions in the program:
     ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
 
@@ -123,7 +130,7 @@ To connect the board:
 
 0. Use the `anjay start` command to run the Client.
 
-0. In logs, you can read view lines that contain OpenThread informations. There will be information about success or failure in joining the connection and the current role of your device in the OpenThread network.
+0. In logs, you can find information about status of the device. There will be information about success or failure in joining the connection and the current role of your device in the OpenThread network.
 
     ![Connected as a child role](images/connected_child.PNG "Connected as a child role"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
@@ -132,7 +139,7 @@ To connect the board:
     ![Connected device as a child](images/border2.png "Connected device as a child"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
     !!! Note
-        The node should join the OTBR Thread network automatically. Within two minutes its state should be `router`
+        The node should join the OTBR Thread network automatically. Within two minutes its state should change to `router`.
 
         ![Connected device as a router](images/border3.png "Connected device as a router"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
