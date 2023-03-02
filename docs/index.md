@@ -1,3 +1,10 @@
+---
+title: Welcome
+date: 2023-03-02
+og_title: AVSystem IoT Developer Zone
+og_image: img/AVsystem-512x512.png
+---
+
 # Welcome
 
 Welcome to the AVSystem DevZone!
