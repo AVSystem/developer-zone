@@ -115,6 +115,7 @@ nav:
             - 'Demo_Projects/Edge_Impulse_demo.md'
         - 'Release notes':
             - 2023:
+                - 'Release_Notes/v2023.9.0.md'
                 - 'Release_Notes/v2023.7.0.md'
                 - 'Release_Notes/v2023.6.0.md'
                 - 'Release_Notes/v2023.5.0.md'
