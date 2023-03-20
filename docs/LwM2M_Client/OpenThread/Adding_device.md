@@ -12,11 +12,11 @@ Integrate your Nordic nRF52840-DK board to an active OpenThread Border Router.
 
 ## Connecting to the OpenThread
 
-Check your active Border Router **OTBR_IP_address** and **OTBR_port** on which your Border Router works. This will be necessary for further steps.
+Check your active Border Router **OTBR_IP_address** on which your Border Router works. This will be necessary for further steps.
 
 ### Connection through Wi-Fi
 
-You have to be connected to the same Wifi network as your OpenThread Border Router. To connect your device to Border Router through Wifi, open any web browser and connect to the WebUI by connecting to **OTBR_IP_address:OTBR_port**.
+You have to be connected to the same Wifi network as your OpenThread Border Router. To connect your device to Border Router through Wifi, open any web browser and connect to the WebUI by connecting to **OTBR_IP_address:80**.
 
 When you are connected you should see the OpenThread main page:
 
@@ -24,22 +24,27 @@ When you are connected you should see the OpenThread main page:
 
 ### Creating an OpenThread network
 
-On the left side, select the option ***Form***, and a new page will be displayed for the network creation. Click the form and a message should pop up to let you know about the operation's success. ![Form Network](images/form_network.png "Form Network"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+On the left side, select the ***Form*** option, and a new page will be displayed for the network creation. After providing required credentials, click the **FORM** button and a message should pop up to let you know about the operation's success. ![Form Network](images/form_network.png "Form Network"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
-On the left-side menu, click ***Topology*** to see the role of Border Router ![Border Router topology](images/border1.png "Border Router topology"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+On the left-side menu, click ***Topology*** to see the role of Border Router. ![Border Router topology](images/border1.png "Border Router topology"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
 ### Commissioning process
 
-To start the commissioning process click ***Commission*** on the left-side menu and write down Joiner PSKd password.
+To start the commissioning process click ***Commission*** on the left-side menu and write down **Joiner PSKd password**.
 
 !!! Important
-    The PSKd needs to be a string of all uppercase alphanumeric characters (0-9 and A-Y, excluding I, O, Q, and Z for readability), with a length between 6 and 32 characters.
-    <br />
-    Remember the joiner PSKd password, you will use it in the next step to configure your device.
+    The PSKd needs following:
+
+    - length: 6-32 characters,
+
+    - encoding: base32-thread (0-9, A-Y excluding I, O, Q, and Z for readability).
+
+
+    Remember the **Joiner PSKd password**, you will use it in the next step to configure your device.
     <br />
     For more information check [here](https://openthread.io/guides/border-router/external-commissioning/prepare?hl=en#prepare_the_joiner_device).
 
-Click start commission, and a message should pop up to inform you about the operation's success. ![Start commission](images/commision.png "Start commission"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+Click **START COMMISSION** button, and a message should pop up to inform you about the operation's success. ![Start commission](images/commision.png "Start commission"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
 
 ### Device configuration
 
@@ -53,7 +58,7 @@ Click start commission, and a message should pop up to inform you about the oper
 
 0. Connect the nRF52840 board to the USB port of your machine.
 
-0. Because NCS uses a different Zephyr version, it is necessary to change our Zephyr workspace, it is handled by using a different manifest file.
+0. Because NCS uses a *west-nrf.yml* file, it is necessary to change our Zephyr workspace, it is handled by using a different manifest file.
 Set West manifest path to *Anjay-zephyr-client/demo*, and manifest file to *west-nrf.yml* and do *west update*.
 
     ```
@@ -62,12 +67,22 @@ Set West manifest path to *Anjay-zephyr-client/demo*, and manifest file to *west
         west update
     ```
 
-0. Go to *Anjay-zephyr-client/demo/boards* folder and find `nrf52840dk_nrf52840.conf` file. In this file, you will need to change the joiner PSKd password. ![Configuration file](images/conf_file.PNG){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+0. Go to *Anjay-zephyr-client/demo/boards* directory and find the `nrf52840dk_nrf52840.conf` file. In this file, you will need to change the joiner PSKd password (the `CONFIG_OPENTHREAD_JOINER_PSKD` option):
+
+    ```
+        # OpenThread
+        CONFIG_OPENTHREAD_JOINER=y
+        CONFIG_OPENTHREAD_JOINER_AUTOSTART=y
+        CONFIG_OPENTHREAD_MANUAL_START=y
+        CONFIG_OPENTHREAD_SLAAC=y
+        CONFIG_OPENTHREAD_JOINER_PSKD="00000000001"
+        CONFIG_OPENTHREAD_FTD=y
+    ```
 
     !!! Note
-        The last config option in file `CONFIG_OPENTHREAD_FTD` tells about a Full Thread Device (FTD) which always has its radio on and maintains IPv6 address mappings. This option can be changed to `CONFIG_OPENTHREAD_MTD`, a Minimal Thread Device (MTD) forwards all messages to its Parent.
+        The last config option in the `nrf52840dk_nrf52840.conf` file (`CONFIG_OPENTHREAD_FTD`) tells about a Full Thread Device (FTD) which always has its radio on and maintains IPv6 address mappings. This option can be changed to `CONFIG_OPENTHREAD_MTD`, a Minimal Thread Device (MTD) that forwards all messages to its Parent.
 
-0. Now in demo directory you can compile the project.
+0. Now in Anjay-zephyr-client/demo directory you can compile the project.
 
     ```
         west build -b nrf52840dk_nrf52840
@@ -93,7 +108,7 @@ To connect the board:
          - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
          - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
-              - In the **Key identity** field, type the same name as in the `Endpoint name` field
+              - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, follow the [next section](#configuring-the-client) to run the client and connect it to the server.
