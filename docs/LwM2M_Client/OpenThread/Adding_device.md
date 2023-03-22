@@ -16,7 +16,7 @@ Check your active Border Router **OTBR_IP_address** on which your Border Router 
 
 ### Connection through Wi-Fi
 
-You have to be connected to the same Wifi network as your OpenThread Border Router. To connect your device to Border Router through Wifi, open any web browser and connect to the WebUI by connecting to **OTBR_IP_address:80**.
+You have to be attached to the same Wifi network as your OpenThread Border Router. To join your device to Border Router, open any web browser and connect to the WebUI by typing **OTBR_IP_address:80**.
 
 When you are connected you should see the OpenThread main page:
 
