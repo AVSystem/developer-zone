@@ -14,9 +14,9 @@ Integrate your Nordic nRF52840-DK board to an active OpenThread Border Router.
 
 Check your active Border Router **OTBR_IP_address** on which your Border Router works. This will be necessary for further steps.
 
-### Connection through Wi-Fi
+### Connecting to the WebUI
 
-You have to be attached to the same Wifi network as your OpenThread Border Router. To join your device to Border Router, open any web browser and connect to the WebUI by typing **OTBR_IP_address:80**.
+You have to be attached to the same network as your OpenThread Border Router. To configure the Border Router open any web browser and connect to the WebUI by typing **OTBR_IP_address:80**.
 
 When you are connected you should see the OpenThread main page:
 
@@ -158,7 +158,7 @@ To connect the board:
 
         ![Connected device as a router](images/border3.png "Connected device as a router"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
-0. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+0. Go to Coiote DM to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
     ![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 !!! note
