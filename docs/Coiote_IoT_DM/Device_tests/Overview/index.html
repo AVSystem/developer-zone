@@ -2151,9 +2151,18 @@
 
 <!-- Markdown content -->
 <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
-<p>Device tests are a comprehensive and convenient solution for the customization and performance of LwM2M protocol tests on LwM2M devices.
-Offered as part of the <strong>Coiote IoT Device Management</strong> platform, it enables you develop tests from scratch to tailor them to your devices, or use the ready-made test scenarios (including those described in the <a href="https://www.openmobilealliance.org/release/LightweightM2M/ETS/OMA-ETS-LightweightM2M-V1_1-20190912-D.pdf"><strong>OMA Enabler Test Specification</strong></a> for Lightweight M2M by <strong>OMA SpecWorks</strong> and the scenarios created by <strong>AVSystem</strong>).</p>
-<p>The following guide walks you through the basic functionalities of the device tests solution. You will learn how to configure, run and manage your tests and get to know in detail each possible action that can be defined within a test.</p>
+<p>Device tests - also known as hardware in the loop tests - is a solution to test the performance of LwM2M devices and is offered as part of the <strong>Coiote IoT Device Management</strong> platform. Device tests are an essential tool in the development process of device firmware as they can be used for:</p>
+<ul>
+<li>Validating new functionalities</li>
+<li>Testing the proper implementation of the LwM2M standard</li>
+<li>Regression tests to ensure new firmware doesn’t break existing functionality</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The device tests are executed on <strong>real hardware</strong>.</p>
+</div>
+<p>In practice this means you can mimic real-world scenarios by instructing the server to send a series of operations to a device and monitor its behavior. The tests include basic LwM2M server operations such as <em>Read</em>, <em>Write</em>, <em>Execute</em>, <em>Discover</em>, <em>Delete</em> as well as advanced actions such as <em>Loop</em> or <em>Wait</em> to build more complex test cases.</p>
+<p>The following guide walks you through the basic functionalities of the device tests solution. You will learn how to configure, run and manage your tests.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2215,7 +2224,7 @@ Offered as part of the <strong>Coiote IoT Device Management</strong> platform, i
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2023</span>
     
   </small>
 </div>
