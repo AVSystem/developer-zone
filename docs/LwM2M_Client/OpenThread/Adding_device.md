@@ -12,11 +12,13 @@ Integrate your Nordic nRF52840-DK board to an active OpenThread Border Router.
 
 ## Connecting to the OpenThread
 
-Check your active Border Router **OTBR_IP_address** on which your Border Router works. This will be necessary for further steps.
+!!!Note
+
+    Check your active Border Router IP address on which your Border Router works (e.g. `192.168.10.3`) and save it - use your address instead of **<OTBR_IP_address\>** in the next steps.
 
 ### Connecting to the WebUI
 
-You have to be attached to the same network as your OpenThread Border Router. To configure the Border Router open any web browser and connect to the WebUI by typing **OTBR_IP_address:80**.
+You should be in the same network as your OpenThread Border Router. To configure the Border Router open any web browser and connect to the WebUI by typing **<OTBR_IP_address\>:80**.
 
 When you are connected you should see the OpenThread main page:
 
