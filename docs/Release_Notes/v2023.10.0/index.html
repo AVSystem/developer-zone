@@ -14,7 +14,7 @@
     
     
       
-        <title>v2023.9.0 - IoT Developer Zone</title>
+        <title>v2023.10.0 - IoT Developer Zone</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v202390" class="md-skip">
+        <a href="#v2023100" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              v2023.9.0
+              v2023.10.0
             
           </span>
         </div>
@@ -323,7 +323,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../v2023.10.0/" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Release notes
       </a>
     </li>
@@ -1713,18 +1713,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../v2023.10.0/" class="md-nav__link">
-        v2023.10.0
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -1736,12 +1724,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          v2023.9.0
+          v2023.10.0
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        v2023.9.0
+        v2023.10.0
       </a>
       
         
@@ -1758,26 +1746,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architectural-changes" class="md-nav__link">
-    Architectural Changes
-  </a>
-  
-    <nav class="md-nav" aria-label="Architectural Changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-firmware-update-tab" class="md-nav__link">
-    New Firmware update tab
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#enhancements" class="md-nav__link">
     Enhancements
   </a>
@@ -1786,8 +1754,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improve-device-logs" class="md-nav__link">
-    Improve device logs
+  <a href="#hide-change-password-functionality-for-sso-users" class="md-nav__link">
+    Hide change password functionality for SSO users
   </a>
   
 </li>
@@ -1806,15 +1774,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fix-unwarranted-tag-in-xml-tasks" class="md-nav__link">
-    Fix unwarranted tag in XML tasks
+  <a href="#fix-device-inventory-pagination-issues" class="md-nav__link">
+    Fix Device Inventory pagination issues
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fix-error-not-being-logged" class="md-nav__link">
-    Fix error not being logged
+  <a href="#fix-dtls-session-resumption" class="md-nav__link">
+    Fix DTLS session resumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fix-rest-api-user-permissions" class="md-nav__link">
+    Fix REST API user permissions
   </a>
   
 </li>
@@ -1828,6 +1803,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.9.0/" class="md-nav__link">
+        v2023.9.0
+      </a>
     </li>
   
 
@@ -2237,26 +2224,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architectural-changes" class="md-nav__link">
-    Architectural Changes
-  </a>
-  
-    <nav class="md-nav" aria-label="Architectural Changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-firmware-update-tab" class="md-nav__link">
-    New Firmware update tab
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#enhancements" class="md-nav__link">
     Enhancements
   </a>
@@ -2265,8 +2232,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improve-device-logs" class="md-nav__link">
-    Improve device logs
+  <a href="#hide-change-password-functionality-for-sso-users" class="md-nav__link">
+    Hide change password functionality for SSO users
   </a>
   
 </li>
@@ -2285,15 +2252,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fix-unwarranted-tag-in-xml-tasks" class="md-nav__link">
-    Fix unwarranted tag in XML tasks
+  <a href="#fix-device-inventory-pagination-issues" class="md-nav__link">
+    Fix Device Inventory pagination issues
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fix-error-not-being-logged" class="md-nav__link">
-    Fix error not being logged
+  <a href="#fix-dtls-session-resumption" class="md-nav__link">
+    Fix DTLS session resumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fix-rest-api-user-permissions" class="md-nav__link">
+    Fix REST API user permissions
   </a>
   
 </li>
@@ -2326,19 +2300,18 @@
 
 
 <!-- Markdown content -->
-<h1 id="v202390">v2023.9.0<a class="headerlink" href="#v202390" title="Permanent link">#</a></h1>
-<p>Previous version: <a href="../v2023.7.0/">v2023.7.0</a></p>
-<h2 id="architectural-changes">Architectural Changes<a class="headerlink" href="#architectural-changes" title="Permanent link">#</a></h2>
-<h3 id="new-firmware-update-tab">New Firmware update tab<a class="headerlink" href="#new-firmware-update-tab" title="Permanent link">#</a></h3>
-<p>We have added the possibility to conduct both Basic and Multi-component Firmware Update in the user interface. This functionality is accessible through the <strong>Device Center &gt; Firmware update &gt; Update Firmware</strong>.  We have also added two new cards in the device Firmware update tab. The <em>Device firmware</em> card displays the last recorded information about the current firmware version of the device. The <em>Updates list</em> card contains a table with a detailed overview of executed and scheduled firmware updates</p>
+<h1 id="v2023100">v2023.10.0<a class="headerlink" href="#v2023100" title="Permanent link">#</a></h1>
+<p>Previous version: <a href="../v2023.9.0/">v2023.9.0</a></p>
 <h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
-<h3 id="improve-device-logs">Improve device logs<a class="headerlink" href="#improve-device-logs" title="Permanent link">#</a></h3>
-<p>We have introduced a configuration change, so that information about failed connection attempts is included in the device logs.</p>
+<h3 id="hide-change-password-functionality-for-sso-users">Hide change password functionality for SSO users<a class="headerlink" href="#hide-change-password-functionality-for-sso-users" title="Permanent link">#</a></h3>
+<p>We have removed an unintended functionality. Single sign-on users no longer have access to changing their password through the platform interface.</p>
 <h2 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">#</a></h2>
-<h3 id="fix-unwarranted-tag-in-xml-tasks">Fix unwarranted tag in XML tasks<a class="headerlink" href="#fix-unwarranted-tag-in-xml-tasks" title="Permanent link">#</a></h3>
-<p>We have fixed a bug, which caused the <code>&lt;ensureObservation&gt;</code> tag being injected into XML task code when scheduling a task via API.</p>
-<h3 id="fix-error-not-being-logged">Fix error not being logged<a class="headerlink" href="#fix-error-not-being-logged" title="Permanent link">#</a></h3>
-<p>We have fixed an error message not being properly logged in case a device could not obtain an EST certificate after being added via Bootstrap. This occurred if the Endpoint name and certificate Common Name verification (<code>verifyEpAgainstCertCn</code> Setting Value) was disabled and a certificate of a different device was used.</p>
+<h3 id="fix-device-inventory-pagination-issues">Fix Device Inventory pagination issues<a class="headerlink" href="#fix-device-inventory-pagination-issues" title="Permanent link">#</a></h3>
+<p>We have fixed issues with pagination in the <strong>Device Inventory</strong>, which occurred after returning to that view from <strong>Device Center</strong>. Bootstrap devices are now properly filtered and the interface shows accurate information.</p>
+<h3 id="fix-dtls-session-resumption">Fix DTLS session resumption<a class="headerlink" href="#fix-dtls-session-resumption" title="Permanent link">#</a></h3>
+<p>We have fixed an issue with DTLS session resumption failing after NAT expiration, even if replication was enabled.</p>
+<h3 id="fix-rest-api-user-permissions">Fix REST API user permissions<a class="headerlink" href="#fix-rest-api-user-permissions" title="Permanent link">#</a></h3>
+<p>We have fixed inconsistent user permissions, so that it is no longer possible for certain users to delete other users outside the scope of their domain via REST API.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2350,7 +2323,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../v2023.10.0/"
+      href="../../Demo_Projects/Edge_Impulse_demo/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -2362,7 +2335,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          v2023.10.0
+          Edge Impulse & Thingy:91
         </div>
       </div>
     </a>
@@ -2371,7 +2344,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../v2023.7.0/"
+      href="../v2023.9.0/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -2380,7 +2353,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          v2023.7.0
+          v2023.9.0
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -2400,7 +2373,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2023</span>
     
   </small>
 </div>
@@ -2423,7 +2396,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../v2023.10.0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../../Demo_Projects/Edge_Impulse_demo/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -2432,19 +2405,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  v2023.10.0
+                  Edge Impulse & Thingy:91
                 </div>
               </div>
             </a>
           
           
-            <a href="../v2023.7.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../v2023.9.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  v2023.7.0
+                  v2023.9.0
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
