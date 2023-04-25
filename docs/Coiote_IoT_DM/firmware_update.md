@@ -128,13 +128,15 @@ If the update was successfully performed, the **State** `/5/*/3` returns to `0` 
 ![Firmware upgraded](images/result1.png)
 
 
-## Troublelshooting
+## Troubleshooting
 
 ### Insufficient flash
 A common update error is due to insufficient flash memory, indicated by **Update Result** `2`.
 
 The Anjay build file can be quite large in size, particularly when using the `.hex` file (`app_signed.hex`). For updating the firmware, it’s better to use the `app_update.bin` file which is about half the size of the `.hex` file.
 
+!!! Warning
+    The **Nordic Thingy:91** is very restricted in its flash size due to the Nordic Bootloader. The maximum firmware size is `421kB`.
 
 
 ## Useful Links
