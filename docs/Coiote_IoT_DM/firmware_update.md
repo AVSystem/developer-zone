@@ -80,7 +80,7 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
 1. Choose between **Pull** and **Push**
 
-    **Pull method**: The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it. 
+    **Pull method** (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it. 
     
     **Push method**: The LwM2M Server pushes the firmware file to the device.
 
@@ -92,7 +92,15 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
         - `CoAP` or `CoAPs` over `TCP`
         - `HTTP` or `HTTPs`
 
-        **Push** uses `CoAPs` by default.
+        **Push** uses `CoAPs` over `UDP` by default.
+
+    !!! Note
+        **Which transport protocol to choose?**
+        
+        Downloads using `CoAP(s)` over `UDP` tend to be slow due to limitation of the maximum CoAP BLOCK size of 1024 bytes and the required acknowledgements for each block transfer.
+
+        Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually result in faster download speeds.
+
 
     ![Basic Firmware Update](images/Pull.png)
 
@@ -100,7 +108,6 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 1. Click **Schedule Update** from the bottom-right corner to trigger the Firmware Update process.
 
     ![Schedule Update](images/schedule.png)
-
 
 
 ## Download & Upgrade Process
