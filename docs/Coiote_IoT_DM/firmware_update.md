@@ -97,9 +97,9 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
     !!! Note
         **Which transport protocol to choose?**
         
-        Downloads using `CoAP(s)` over `UDP` tend to be slow due to limitation of the maximum CoAP BLOCK size of 1024 bytes and the required acknowledgements for each block transfer.
+        Downloads using `CoAP(s)` over `UDP` tend to be slow due to limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
 
-        Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually result in faster download speeds.
+        Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually results in faster download speeds.
 
 
     ![Basic Firmware Update](images/Pull.png)
