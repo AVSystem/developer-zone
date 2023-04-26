@@ -175,7 +175,7 @@ The **Update list** also reports: `Success`.
     ```
 
     ![Kconfig update](images/Kconfig.png)
-    *Kconfig editor in nRF Connect in VS Code*
+    *Kconfig editor in nRF Connect for VS Code*
 
 
 
