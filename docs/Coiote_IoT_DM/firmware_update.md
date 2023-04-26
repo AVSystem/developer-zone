@@ -137,13 +137,42 @@ If the update was successfully performed, the **State** `/5/*/3` returns to `0` 
 
 ## Troubleshooting
 
-### Insufficient flash
-A common update error is due to insufficient flash memory, indicated by **Update Result** `2`.
+* ### Insufficient flash
 
-The Anjay build file can be quite large in size, particularly when using the `.hex` file (`app_signed.hex`). For updating the firmware, it’s better to use the `app_update.bin` file which is about half the size of the `.hex` file.
+    A common update error is due to insufficient flash memory, indicated by **Update Result** `2`.
 
-!!! Warning
-    The **Nordic Thingy:91** is very restricted in its flash size due to the Nordic Bootloader. The maximum firmware size is `421kB`.
+    The Anjay build file can be quite large in size, particularly when using the `.hex` file (`app_signed.hex`). For updating the firmware, it’s better to use the `app_update.bin` file which is about half the size of the `.hex` file.
+
+    !!! Warning
+        The **Nordic Thingy:91** is very restricted in its flash size due to the Nordic Bootloader. The maximum firmware size is `421kB`.
+
+* ### Firmware Update only works over CoAP, not over CoAPs
+
+    !!! Warning
+        Possible issue when working with the **Zephyr LwM2M Client**.
+    
+    Firmware Update over CoAPs may requires some configuration in **Kconfig**.
+
+    The **security tags** needs to be similar in the "**Security tag for FOTA download library**" as in the "**LwM2M server TLS tag**". Both tags need to be set to either `16842753` or `35724861`.
+
+    To update the security tags, edit the Kconfig in the directory:
+
+    ```
+    Zephyr Kernel
+     > Modules
+      > nrf
+       > Nordic nRF Connect
+        > Networking
+         >  Application protocols
+          > LwM2M client utilities library
+           > Security object support
+            > Firmware Update object support
+    ```
+
+    ![Kconfig update](images/Kconfig.png)
+    *Kconfig editor in nRF Connect in VS Code*
+
+
 
 
 ## Useful Links
