@@ -134,6 +134,11 @@ If the update was successfully performed, the **State** `/5/*/3` returns to `0` 
 
 ![Firmware upgraded](images/result1.png)
 
+The **Update list** also reports: `Success`.
+
+![Successful update](images/success.png)
+
+
 
 ## Troubleshooting
 
