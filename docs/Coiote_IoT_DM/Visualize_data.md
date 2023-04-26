@@ -16,16 +16,16 @@ To start collecting data to be displayed for a widget on your Dashboard, you nee
 
 0. Go to the **Device Center** of a connected device in your domain and click the **Data model** tab.
 0. In the list of objects, expand the **Temperature** `/3303/` object and click the **eye** icon in the **Operations** column.
-    ![Set observation](images/set_observe.png "Set observation"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
+    ![Set observation](User_Interface/images/set_observe.png "Set observation"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
 0. In the side navigation menu, enable the **Not more often than once every** and **At least once every** attributes with default values and click **Save**.
-  ![Set observation attributes](images/set_observation.png "Set observation attributes"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
+  ![Set observation attributes](User_Interface/images/set_observation.png "Set observation attributes"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
 
     !!! info
         * **Not more often than once every** - the minimum time in seconds between two notifications.
         * **At least once every** - the maximum time in seconds between two notifications. The notification is sent even if the value hasn't changed.
 
 0. In the expanded **Temperature** object card, click the **Add widget** icon in the **Widget** column and click **Save**.
-   ![Add widget](images/add_widget.png "Add widget"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray;width: 70%"}
+   ![Add widget](User_Interface/images/add_widget.png "Add widget"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray;width: 70%"}
 
     !!! important
         The action of adding a widget applies for all the devices in your domain, but the widget will only display data from the 10 oldest devices (based on their **Creation time**).
@@ -38,7 +38,7 @@ To see the device data visualized on the widget, you need to enter your domain *
 
 0. From the left-side menu, select **Dashboard**.
 0. Expand the **Temperature** widget. You should see a view similar to this:
-    ![Dashboard widget](images/dashboard.png "Dashboard widget"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
+    ![Dashboard widget](User_Interface/images/dashboard.png "Dashboard widget"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
 0. Adjust the timespan for the collected data by selecting the desired period in the **timespan** expandable list.
 
     !!! tip
