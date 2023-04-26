@@ -31,6 +31,7 @@ plugins:
             'IoT_quick_start/Device_onboarding.md': 'Coiote_IoT_DM/Quick_Start/Connect_device_quickstart.md'
             'Anjay_integrations/Getting_started.md': 'LwM2M_Client/Getting_started.md'
             'Anjay_integrations/RaspberryPi_integration/Implementing_LwM2M_objects_on_RaspberryPi.md': 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
+            'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md': 'Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates.md'
 
 google_analytics:
   - UA-25246208-6
