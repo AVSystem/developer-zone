@@ -66,7 +66,7 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
 1. Select the device you want to update from the [**Coiote Device Inventory**](https://eu.iot.avsystem.cloud/ui/device/inventory).
     
-1. Select **Data model** from the top menu and validate if the Firmware Update object `/5` is visible, indicating that the Object is supported by the LwM2M Client.
+1. Select **Data model** from the top menu and validate if the Firmware Update Object `/5` is visible, indicating that the Object is supported by the LwM2M Client.
 
     ![Firmware update object](images/State 0 - fota object.png)
 
@@ -78,12 +78,16 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
     ![Basic Firmware Update](images/Basic Firmware Update.png)
 
+1. **Upload the firmware image**, which is usually a binary (`.bin`) file. 
+
+    !!! note 
+        When using the Anjay LwM2M Client, the binary file is called `app_update.bin`.
+
 1. Choose between **Pull** and **Push**
 
     **Pull method** (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it. 
     
     **Push method**: The LwM2M Server pushes the firmware file to the device.
-
 
     !!! Info
         **Pull** supports any of the following **transport types**:
@@ -92,14 +96,14 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
         - `CoAP` or `CoAPs` over `TCP`
         - `HTTP` or `HTTPs`
 
-        **Push** uses `CoAPs` over `UDP` by default.
+        **Push** transmits the firmware over the same transport type as is used for device management, which is `CoAPs` over `UDP` by default.
 
-    !!! Note
+    !!! Tip
         **Which transport protocol to choose?**
         
-        Downloads using `CoAP(s)` over `UDP` tend to be slow due to limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
+        Downloads using `CoAP(s)` over `UDP` tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
 
-        Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually results in faster download speeds.
+        Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually results in faster download speeds. However, not every device supports these transport protocols.
 
 
     ![Basic Firmware Update](images/Pull.png)
@@ -116,66 +120,60 @@ If the Firmware Update is scheduled successfully, the device starts **downloadin
 
 ![Upgrading](images/update-in-progress.png)
 
-The status of the firmware update is shown in the Resources: **State** `/5/*/3` & **Update Result** `/5/*/5`. If no errors arise, the update process follows the following pattern:
+Once executed successfully, the **Update list** reports: `Success`.
+
+![Successful update](images/success.png)
+
+!!! note
+    When the device is updating its firmware, it will deregister and reboot using the new firmware. This process may time multiple minutes.
+
+    ![Deregistered while upgrading](images/deregistered.png)
+
+### Monitoring the update process
+
+During the update process, the status of the firmware update can be monitored by reviewing the Resources **State** `/5/*/3` and **Update Results** `/5/*/5`.
+
+To find the Resources, select the **Data model** tab and open the **Firmware Update Object** `/5`. 
+
+![Firmware upgraded](images/update-successful.png)
+
+If no errors arise, the update process follows the following pattern:
 
 1. **Downloading** `state 1` & `update result 0` 
 2. **Downloaded** `state 2` & `update result 0` 
 3. **Updating** `state 3` & `update result 0` 
 4. **Updated** `state 0` & `update result 1` 
 
-
-!!! info
-    When the device is updating its firmware, it will deregister and reboot using the new firmware. This process may time multiple minutes.
-
-    ![Deregistered while upgrading](images/deregistered.png)
-
-
-If the update was successfully performed, the **State** `/5/*/3` returns to `0` and the **Update Results** `/5/*/5` reports `1`.
-
-![Firmware upgraded](images/result1.png)
-
-The **Update list** also reports: `Success`.
-
-![Successful update](images/success.png)
-
-
+!!! important
+    Does the **State** `/5/*/3` report `0` and the **Update Results** `/5/*/5` report `1`? Congratulations! You've successfully updated the firmware of your device. 🎉
 
 ## Troubleshooting
 
-* ### Insufficient flash
-
-    A common update error is due to insufficient flash memory, indicated by **Update Result** `2`.
-
-    The Anjay build file can be quite large in size, particularly when using the `.hex` file (`app_signed.hex`). For updating the firmware, it’s better to use the `app_update.bin` file which is about half the size of the `.hex` file.
-
-    !!! Warning
-        The **Nordic Thingy:91** is very restricted in its flash size due to the Nordic Bootloader. The maximum firmware size is `421kB`.
-
 * ### Firmware Update only works over CoAP, not over CoAPs
 
-    !!! Warning
-        Possible issue when working with the **Zephyr LwM2M Client**.
+    For the firmware update over CoAPs transfer to work, the LwM2M Client shall use the same security credentials (i.e., PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.
     
-    Firmware Update over CoAPs may requires some configuration in **Kconfig**.
+    !!! info
+        *Below is a configuration instruction for the Zephyr LwM2M Client:*
+    
+        The **security tags** needs to the same in the "**Security tag for FOTA download library**" as in the "**LwM2M server TLS tag**" (e.g. using Nordic's default tag: `35724861`).
 
-    The **security tags** needs to be similar in the "**Security tag for FOTA download library**" as in the "**LwM2M server TLS tag**". Both tags need to be set to either `16842753` or `35724861`.
+        To update the security tags, edit the **Kconfig** in the directory:
 
-    To update the security tags, edit the Kconfig in the directory:
+        ```
+        Zephyr Kernel
+        > Modules
+          > nrf
+            > Nordic nRF Connect
+              > Networking
+                > Application protocols
+                  > LwM2M client utilities library
+                    > Security object support
+                    > Firmware Update object support
+        ```
 
-    ```
-    Zephyr Kernel
-     > Modules
-      > nrf
-       > Nordic nRF Connect
-        > Networking
-         >  Application protocols
-          > LwM2M client utilities library
-           > Security object support
-            > Firmware Update object support
-    ```
-
-    ![Kconfig update](images/Kconfig.png)
-    *Kconfig editor in nRF Connect for VS Code*
+        ![Kconfig update](images/Kconfig.png)
+        *Kconfig editor in nRF Connect for VS Code*
 
 
 
