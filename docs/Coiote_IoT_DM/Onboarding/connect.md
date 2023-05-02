@@ -11,8 +11,8 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
 !!! info
     The LwM2M standard defines two methods for device registration:
     
-    1. **Management Server** (default) - The LwM2M Client negotiate security credentials directly with the LwM2M Server.
-    2. **Bootstrap Server** (enhanced security) - The Bootstrap Server is a dedicated server that acts as an intermediate to securely provisions LwM2M Clients with the necessary information to register with a LwM2M Server. For more information, visit the [Bootstrap guide](bootstrap.md).
+    1. **Management Server** (default) - The LwM2M Client negotiates security credentials directly with the LwM2M Server.
+    2. **Bootstrap Server** (enhanced security) - The Bootstrap Server is a dedicated server that acts as an intermediate to securely provisions LwM2M Clients with the necessary information to register with a LwM2M Server. For more information, visit the [**Bootstrap guide**](bootstrap.md).
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
     !!! note
         If you're a new user with no added devices, the **Add your LwM2M device** panel will be displayed upon logging in to the platform.
 
-1. Select the **Connect your LwM2M device directly via the Management server** tile.
+1. Select the **Connect your LwM2M device via the Management server** tile.
    ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
 
 1. In the **Device credentials** step:
