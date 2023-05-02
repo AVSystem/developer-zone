@@ -35,8 +35,9 @@ plugins:
             'Coiote_IoT_DM/Quick_Start/Connect_device_quickstart.md': 'Coiote_IoT_DM/Onboarding/connect.md'
             'Coiote_IoT_DM/Quick_Start/Visualize_device_data.md': 'Coiote_IoT_DM/Visualize_data.md'
             'Coiote_IoT_DM/User_Interface/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
-
-
+            'Coiote_IoT_DM/User_Interface/Dashboard.md': 'Coiote_IoT_DM/Visualize_data.md'
+            'Coiote_IoT_DM/User_Interface/Device_Center.md': 'Coiote_IoT_DM/Device_Center.md'
+            'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md': 'LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md'
 
 google_analytics:
   - UA-25246208-6
@@ -50,7 +51,7 @@ nav:
         - 'LwM2M Client':
             - 'LwM2M_Client/Getting_started.md'
             - 'Raspberry Pi boards':
-                - 'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md'
+                - 'LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md'
             - 'STMicroelectronics':
                 - 'LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
                 - 'LwM2M_Client/STMicroelectronics/STM32L496G-DISCOBG96.md'
@@ -71,7 +72,7 @@ nav:
         - 'Coiote IoT DM':
             - 'Introduction': 
                 - 'Coiote_IoT_DM/introduction.md'
-                - 'Coiote_IoT_DM/User_Interface/Device_Center.md'
+                - 'Coiote_IoT_DM/Device_Center.md'
             - 'Device Onboarding':
                 - 'Coiote_IoT_DM/Onboarding/connect.md'
                 - 'Coiote_IoT_DM/Onboarding/certificate.md'
@@ -118,10 +119,10 @@ nav:
             - 'nRF Cloud Location services':
                     - 'Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
         - 'Demo Projects':
-            - 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
-            - 'Demo_Projects/Air_quality_monitoring_tutorial.md'
             - 'Demo_Projects/Tracking_tutorial.md'
             - 'Demo_Projects/Edge_Impulse_demo.md'
+            - 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
+            - 'Demo_Projects/Air_quality_monitoring_tutorial.md'
         - 'Release Notes':
             - 2023:
                 - 'Release_Notes/v2023.10.0.md'

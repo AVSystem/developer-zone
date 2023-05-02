@@ -12,20 +12,20 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
     The LwM2M standard defines two methods for device registration:
     
     1. **Management Server** (default) - The LwM2M Client negotiate security credentials directly with the LwM2M Server.
-    2. **Bootstrap Server** (enhanced security) - The Bootstrap Server is a dedicated server that acts as an intermediate to securely provisions LwM2M Clients with the necessary information to register with a LwM2M Server. For more information, visit [this guide](bootstrap.md).
+    2. **Bootstrap Server** (enhanced security) - The Bootstrap Server is a dedicated server that acts as an intermediate to securely provisions LwM2M Clients with the necessary information to register with a LwM2M Server. For more information, visit the [Bootstrap guide](bootstrap.md).
 
 ### Prerequisites
 
-- An active [Coiote DM](https://eu.iot.avsystem.cloud) user account
+- An active [Coiote IoT DM](https://eu.iot.avsystem.cloud) user account
 - A LwM2M device
 
-!!! note
+!!! tip
     You can create a free developer account allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud)
 
 
 ## Add a device via the Management Server
 
-1. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+1. Log in to Coiote IoT DM and from the left side menu, select **Device Inventory**.
 
 1. In **Device Inventory** click **Add device**.
 

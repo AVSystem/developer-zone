@@ -1,4 +1,10 @@
-# Implementing LwM2M objects on RaspberryPi
+---
+title: LwM2M on a Raspberry Pi
+date: 2023-05-02
+og_title: AVSystem IoT Developer Zone
+---
+
+# Implementing LwM2M objects on Raspberry Pi
 
 ## Introduction
 

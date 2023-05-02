@@ -1,4 +1,10 @@
-# Tracking application - Thingy:91 to Power BI
+---
+title: Asset Tracking using Thingy:91 and Power BI
+date: 2023-05-02
+og_title: AVSystem IoT Developer Zone
+---
+
+# Building a tracking application using the Thingy:91, Azure IoT Hub and Power BI
 
 ## Introduction
 Build a tracking application using the **Thingy:91** devkit, while leveraging the benefits of the LwM2M protocol and visualizing its data on **Microsoft Power BI**.
