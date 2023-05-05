@@ -14,7 +14,7 @@ Remotely update the firmware of your LwM2M device using the **Firmware Update Ob
 - A device which supports Firmware Update Object `/5`
     
 !!! Note
-    The **Anjay LwM2M Client** supports the Firmware Update Object. Learn more about the Anjay by visiting the official <a href="https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial.html" target="_blank">**Anjay Documentation**</a> or <a href="https://github.com/AVSystem/Anjay" target="_blank">**Anjay SDK on GitHub**</a>.
+    The **Anjay LwM2M Client** supports the Firmware Update Object. Learn more about Anjay by visiting the official <a href="https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial.html" target="_blank">**Anjay Documentation**</a> or <a href="https://github.com/AVSystem/Anjay" target="_blank">**Anjay SDK on GitHub**</a>.
 
 ## Firmware Update Object `/5`
 
@@ -78,10 +78,9 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
     ![Basic Firmware Update](images/Basic Firmware Update.png)
 
-1. **Upload the firmware image**, which is usually a binary (`.bin`) file. 
+1. Upload the **firmware image**
 
-    !!! note 
-        When using the Anjay LwM2M Client, the binary file is called `app_update.bin`.
+    ![Upload Firmware Image](images/upload.png)
 
 1. Choose between **Pull** and **Push**
 
