@@ -5,6 +5,9 @@ The **Dashboard** displays widgets with visualized device data for your domain. 
 !!! important
     The **Dashboard** and widgets are domain-wide, so they only apply to devices belonging to your domain. You can add up to 10 devices to a single widget, and they are added chronologically based on their **Creation time**. So if there are, for example, 15 devices in your domain, the 10 oldest of them will only be presented on a widget.
 
+!!! important
+    Any monitored **string** resource values that exceed the 100-character limit will be automatically trimmed to fit within the limit.
+
 ![Dashboard menu entry](images/dashboard_view.png "Dashboard menu entry"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
 
 ## Dashboard overview
