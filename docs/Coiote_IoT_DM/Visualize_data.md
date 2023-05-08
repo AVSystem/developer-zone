@@ -15,7 +15,10 @@ The **Dashboard** consists of **widgets** which display telemetry data. In ord
 To start collecting data to be displayed on your Dashboard, start observering one or multiple resources.
 
 !!! note
-    By default, the data is stored for 30 days. The storage retention period can be changed in the **Domain configuration** view.    
+    By default, the data is stored for **30 days**. The storage retention period can be changed in the **Domain configuration** view.    
+
+!!! important
+    Any monitored **string** resource values that exceed the 100-character limit will be automatically trimmed to fit within the limit.
 
 0. Go to the **Device Center** of a connected device and click the **Data model** tab.
 0. In the list of objects, expand an object (e.g. Temperature `/3303/`) and click the **eye** icon in the **Operations** column.
