@@ -70,13 +70,12 @@ nav:
             - 'OpenThread':
                 - 'LwM2M_Client/OpenThread/Adding_device.md'
         - 'Coiote IoT DM':
-            - 'Introduction': 
-                - 'Coiote_IoT_DM/introduction.md'
-                - 'Coiote_IoT_DM/Device_Center.md'
+            - 'Introduction': 'Coiote_IoT_DM/introduction.md'
             - 'Device Onboarding':
                 - 'Coiote_IoT_DM/Onboarding/connect.md'
                 - 'Coiote_IoT_DM/Onboarding/certificate.md'
                 - 'Coiote_IoT_DM/Onboarding/bootstrap.md'
+            - 'Device Center': 'Coiote_IoT_DM/Device_Center.md'
             - 'Data Visualization': 'Coiote_IoT_DM/Visualize_data.md'
             - 'Device Tests': 
                 - 'Coiote_IoT_DM/Device_tests/Overview.md'

@@ -1,10 +1,10 @@
 ---
-title: Connect Devices
+title: Connect Device
 date: 2023-04-26
 og_title: AVSystem IoT Developer Zone
 ---
 
-# Connect Devices
+# Connect Device
 
 This guide walks you through the process of adding new devices to Coiote IoT DM using the **Management Server**.
 
@@ -20,7 +20,7 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
 - A LwM2M device
 
 !!! tip
-    You can create a free developer account allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud)
+    You can create a **free developer account** allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud)
 
 
 ## Add a device via the Management Server
@@ -91,5 +91,5 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
 
 ## Useful Resources
 
-* For more information about connecting devices using the **Certificate mode**, visit [**this guide**](certificate.md).
+* For more information about connecting devices using the **Certificate Mode**, visit [**this guide**](certificate.md).
 * For more information about connecting devices using a the **Bootstrap Server**, visit [**this guide**](bootstrap.md).
