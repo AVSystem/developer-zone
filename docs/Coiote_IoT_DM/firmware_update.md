@@ -121,7 +121,7 @@ If the Firmware Update is scheduled successfully, the device starts **downloadin
 
 Once executed successfully, the **Update list** reports: `Success`.
 
-![Successful update](images/success.png)
+![Successful update](images/success-full-screen.png)
 
 !!! note
     When the device is updating its firmware, it will deregister and reboot using the new firmware. This process may time multiple minutes.
