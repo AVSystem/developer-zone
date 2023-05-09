@@ -12,7 +12,7 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
     The LwM2M standard defines two methods for device registration:
     
     1. **Management Server** (default) - The LwM2M Client negotiates security credentials directly with the LwM2M Server.
-    2. **Bootstrap Server** (enhanced security) - The Bootstrap Server is a dedicated server that acts as an intermediate to securely provisions LwM2M Clients with the necessary information to register with a LwM2M Server. For more information, visit the [**Bootstrap guide**](bootstrap.md).
+    2. **Bootstrap Server** (enhanced security) - The Bootstrap Server is a dedicated server that acts as an intermediate to securely provision LwM2M Clients with the necessary information to register with a LwM2M Server. For more information, visit the [**Bootstrap guide**](bootstrap.md).
 
 ### Prerequisites
 
@@ -83,13 +83,13 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
 
             ---
 
-1. Click the **Add device** button and **Confirm** in the confirmation pop-up.
+1. Click **Add device** and **Confirm** in the confirmation dialog window.
 
-1. Once the device is activated using the right connection parameters, the device will be added to the Coiote IoT DM platform.
+1. Once the device is activated using the right connection parameters, the device is added to the Coiote IoT DM platform.
     ![Registered device](images/connected_device.png "Registered device")
 
 
-## Useful Resources
+## Useful rsources
 
-* For more information about connecting devices using the **Certificate Mode**, visit [**this guide**](certificate.md).
-* For more information about connecting devices using a the **Bootstrap Server**, visit [**this guide**](bootstrap.md).
+* For more information about connecting devices using certificates, see the [**Certificate mode**](certificate.md) chapter.
+* For more information about connecting devices using the Bootstrap server, see the [**Bootstrap server**](bootstrap.md) chapter.
