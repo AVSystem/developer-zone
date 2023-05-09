@@ -71,6 +71,7 @@ nav:
                 - 'Coiote_IoT_DM/User_Interface/Device_onboarding.md'
                 - 'Coiote_IoT_DM/User_Interface/Device_Center.md'
                 - 'Coiote_IoT_DM/User_Interface/Dashboard.md'
+            - 'Firmware Update': 'Coiote_IoT_DM/firmware_update.md'
             - 'Device tests':
                 - 'Coiote_IoT_DM/Device_tests/Overview.md'
                 - 'Coiote_IoT_DM/Device_tests/Getting_started.md'
