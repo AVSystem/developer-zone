@@ -2,3 +2,10 @@
 /dist
 .idea
 site
+.DS_Store
+docs/.DS_Store
+docs/Coiote_IoT_DM/.DS_Store
+docs/Coiote_IoT_DM/Onboarding/.DS_Store
+docs/Demo_Projects/.DS_Store
+docs/Coiote_IoT_DM/Onboarding/.DS_Store
+docs/Coiote_IoT_DM/Onboarding/images/.DS_Store
