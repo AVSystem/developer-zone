@@ -71,10 +71,10 @@ nav:
                 - 'LwM2M_Client/OpenThread/Adding_device.md'
         - 'Coiote IoT DM':
             - 'Introduction': 'Coiote_IoT_DM/introduction.md'
-            - 'Device onboarding':
-                - Connect device: 'Coiote_IoT_DM/Onboarding/connect.md'
+            - 'Connecting devices':
+                - Management server (default): 'Coiote_IoT_DM/Onboarding/connect.md'
+                - Bootstrap server (advanced): 'Coiote_IoT_DM/Onboarding/bootstrap.md'
                 - Certificate mode: 'Coiote_IoT_DM/Onboarding/certificate.md'
-                - Bootstrap server: 'Coiote_IoT_DM/Onboarding/bootstrap.md'
             - 'Device center': 'Coiote_IoT_DM/Device_Center.md'
             - 'Data visualization': 'Coiote_IoT_DM/Visualize_data.md'
             - 'Device tests': 

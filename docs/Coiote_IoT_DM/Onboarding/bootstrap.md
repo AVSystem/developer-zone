@@ -1,6 +1,6 @@
 ---
 title: Bootstrap Server
-date: 2023-04-20
+date: 2023-05-10
 og_title: AVSystem IoT Developer Zone
 ---
 
