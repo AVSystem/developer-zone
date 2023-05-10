@@ -7,7 +7,7 @@ og_title: AVSystem IoT Developer Zone
 
 The **Dashboard** consists of **widgets** which display telemetry data. Data can be collected in one of the following ways:
 
-- An **observation** is set on a specific resource
+- An **observation** is set on a resource
 - A **read** command is invoked on a resouce
 - The device sends a **LwM2M SEND** message with a resource value
 
@@ -43,7 +43,7 @@ To start collecting data to be displayed on your Dashboard, start observing one 
     !!! important
         The action of adding a widget applies to all the devices in your domain, but the widget will only display data from the **10 oldest devices** (based on their **Creation time**).
 
-## View widget in your **Dashboard**
+## View widget in your Dashboard
 
 To see the device data visualized on the widget, enter your **Dashboard**.
 
