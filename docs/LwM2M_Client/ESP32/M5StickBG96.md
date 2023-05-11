@@ -56,4 +56,6 @@ To connect the board:
 0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.
 
 ## Step 4: Flash M5StickC
+
+0. Connect the M5Stick board to a USB port of your machine.
 0. Open the command line interface, go to your project directory, and run `idf.py -b 750000 flash monitor`.
