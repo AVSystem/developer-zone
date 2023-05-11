@@ -1,13 +1,21 @@
-# Device Center
+---
+title: Device Center
+date: 2023-05-02
+og_title: AVSystem IoT Developer Zone
+---
 
-!!! important
-     This chapter refers to the beta version of the new Device Center. It replaces the previous Device Management Center view (DMC) which is still supported - use the **Go to previous version** button and the **Go to new Device Center** link to switch between them. For documentation of the previous version, check the in-platform Coiote DM User Guide.  
+# Device Center
 
 The Device Center is designed for effective management of single devices. It enables IoT developers to build LwM2M applications quickly and intuitively and features actionable sections for quick access to the most important device info and data.
 
-To enter the Device Center, go to **Device inventory** and click on the **Management** (or **Bootstrap**, if applicable) link next to the device name in the table.
+![Device center](images/device-center.png "Device center")
 
-![Access DC from Device inventory](images/enter_DC.png "Access DC from Device inventory")
+!!! important
+     This chapter refers to the beta version of the new Device Center. It replaces the previous Device Management Center view which is still supported - use the **Go to previous version** button and the **Go to new Device Center** link to switch between them.
+
+To enter the Device Center, go to the **Device inventory** and click on one of your devices.
+
+![Access DC from Device inventory](images/device-inventory.png "Access DC from Device inventory")
 
 ## Summary sidebar
 
@@ -15,25 +23,22 @@ Use it to have the essential device info, status and actions always at hand.
 
 Device actions include:
 
-- Reboot - make the device reboot by executing the **Reboot** resource from device data model.
-- Data model refresh -  make the device refresh its data model to check for new objects, object instances or resources. This is done by executing the LwM2M **Discover** operation on the device.
-    ![Device actions](images/device_actions.png "Device actions"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
-- Clear DTLS context - erase the context established between the device and the server during the DTLS handshake. A DTLS handshake will be performed to create a new DTLS context for communication.  
-- Delete device - permanently deletes the device entity and its data.
+- **Reboot** - make the device reboot by executing the **Reboot** resource from device data model.
+- **Data model refresh** -  make the device refresh its data model to check for new objects, object instances or resources. This is done by executing the LwM2M **Discover** operation on the device.
+    ![Device actions](images/device-actions.png "Device actions"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;border: 1px solid lightgray"}
+- **Clear DTLS context** - erase the context established between the device and the server during the DTLS handshake. A DTLS handshake will be performed to create a new DTLS context for communication.  
+- **Delete device** - permanently deletes the device entity and its data.
 
-Device summary lets you quickly check connection status and essential info about the device:
+The device summary lets you quickly check connection status and essential info about the device:
 
-![Device summary](images/DC_summary.png "Device summary"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 27px;"}
+![Device summary](images/device-center-left-panel.png "Device summary"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 27px;border: 1px solid lightgray"}
 
 
 ## Overview tab
 
-Use this tab to see widgets related to device status and connectivity, and view Device location on the map and check location details:
+Use this tab to see widgets related to device **status** and **connectivity**:
 
-![Status, connectivity and location widgets](images/location_DC.png "Status, connectivity and location widgets"){:style="float: left;margin-right: 817px;margin-top: 17px;;margin-bottom: 27px;"}
-
-!!! note
-    The information displayed in this tab is taken from the device data model in most cases. See more about the device data model in the [Data model tab](#data-model-tab) section.
+![Status, connectivity and location widgets](images/device-center-overview.png "Status, connectivity and location widgets"){:style="float: left;margin-right: 817px;margin-top: 17px;;margin-bottom: 27px;"}
 
 ## Configuration tab
 
@@ -41,11 +46,10 @@ Quickly view, copy and edit device connection parameters and edit device details
 
 - To upload device image, click **Upload device image**, browse an image from your local drive and click **Save**.
 - To change device **Friendly name**, click on the **pen** icon next to the device name in the widget.
-- To copy each connection parameter, use the copy icon next to a given field.
+- To copy each connection parameter, use the **copy** icon next to a given field.
     ![Copy connection parameters](images/copy_params.png "Copy connection parameters"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
 - To change connection parameters, e.g. **Security mode**, click on the **pen** icon in the top right corner, change the required data and click **Save**.
-    ![Edit connection details](images/edit_params.png "Edit connection details"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 27px;"}
-
+    ![Edit connection details](images/edit_params.png "Edit connection details"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 27px;border: 1px solid lightgray"}
 
 ## Data model tab
 

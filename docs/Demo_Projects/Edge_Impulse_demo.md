@@ -1,4 +1,10 @@
-# Edge Impulse & Thingy:91
+---
+title: Motion detection using Edge Impulse and Thingy:91
+date: 2023-05-02
+og_title: AVSystem IoT Developer Zone
+---
+
+# Motion detection using Edge Impulse and Thingy:91
 
 ## Introduction
 This example runs a motion detection model using the accelerometer of the Thingy:91 development kit, built with <a href="https://www.edgeimpulse.com/" target="_blank">Edge Impulse</a>. It streams the detected motion patterns to a LwM2M server.
