@@ -5,7 +5,7 @@ og_title: AVSystem IoT Developer Zone
 
 # Coiote IoT Device Management 
 
-Coiote IoT Device Management Platform allows you to manage your LwM2M devices throughout their entire lifecycle. Coiote supports device onboarding, data visualization, automated tests, firmware updates, monitoring & alerting and cloud integrations.
+Coiote IoT Device Management Platform allows you to manage your LwM2M devices throughout their entire lifecycle. Coiote supports device onboarding, data management, data visualization, automated tests, firmware updates, monitoring & alerting and cloud integrations.
 
 [Visit Coiote IoT DM](https://eu.iot.avsystem.cloud/){: .md-button .md-button--big }
 
