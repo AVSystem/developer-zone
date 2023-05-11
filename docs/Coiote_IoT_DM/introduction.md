@@ -18,7 +18,7 @@ Coiote IoT Device Management Platform allows you to manage your LwM2M devices th
 
 Once logged in, you enter the **Device inventory** which provides an overview of all registered LwM2M devices. After selecting one of your devices, you enter the **Device center** which allows you to monitor and manage single devices. 
 
-In the Device center you can:
+In the **Device center** you can:
 
 * Alter device configurations
 * Set observations
@@ -43,7 +43,7 @@ Use the **Operations center** to easily monitor your devices. It provides a cle
 ## Device groups*
 
 !!! Note
-    Features indicated marked with an "*****" are only included in the premium version of Coiote.
+    Features marked with an "*****" are only included in the premium version of Coiote.
 
 Devices can be added to **Groups** allowing for easy management of your device fleet. Instead of managing devices one by one, configurations and firmware can be updated for a group of devices with a single click.
 
@@ -58,7 +58,7 @@ Initiate integrations with popular cloud platforms such as Azure IoT Hub, AWS Io
 
 ## Device test repository*
 
-Test the performance of your device’s firmware by mimicking real-world scenarios. Device tests allow you to validate new application firmware, to test the implementation of the LwM2M standard, and to run regression tests to ensure new firmware doesn’t break existing functionality.
+Test the performance of your device firmware by mimicking real-world scenarios. Device tests allow you to validate new application firmware, to test the implementation of the LwM2M standard, and to run regression tests to ensure new firmware doesn’t break existing functionality.
 
 → **Learn more about [**Device tests**](/Coiote_IoT_DM/Device_tests/Overview/).**
 
@@ -67,7 +67,7 @@ Test the performance of your device’s firmware by mimicking real-world scenari
 
 ## Monitoring & Reporting*
 
-The **Monitoring** module is responsible for collecting historical data about devices' state which can be aggregated and downloaded using the **Reporting** feature.
+The **Monitoring** module is responsible for collecting historical data about device states which can be aggregated and downloaded using the **Reporting** feature.
 
 
 ## Administration

@@ -37,8 +37,8 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
    ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
 
 1. In the **Device credentials** step:
-     - **Endpoint name** - Enter your LwM2M device endpoint name.
-     - **Friendly name** (optional) - Enter a name that will help you identify your device.
+     - **Endpoint name** - enter your LwM2M device endpoint name
+     - **Friendly name** (optional) - enter a name that will help you identify your device
 
          ![Device credentials step](images/connect-device-simple.jpg "Device credentials step")
 
@@ -47,8 +47,8 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
         ![Security modes](images/security-modes.png "Security modes")
 
         !!! note
-            For more information about the Security modes, scroll down to [**Security modes**](#security-modes).
-
+            For more information about the Security modes, see the [**Security modes**](#security-modes) section.
+            
 1. Click **Add device** and **Confirm** in the confirmation dialog window.
 
 1. Once the device is activated using the right connection parameters, the device is added to the Coiote IoT DM platform.
