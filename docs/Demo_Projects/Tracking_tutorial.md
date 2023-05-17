@@ -25,6 +25,9 @@ Build a tracking application using the **Thingy:91** devkit, while leveraging th
 
 This tutorial uses the **Thingy:91** prototyping platform in combination with the **Coiote IoT Device Management** platform to build a cellular-connected tracking application. The integration with **nRF Cloud Locator** enables cell-based localization and optimizes the usage of the onboard GNSS. The location data, in combination with additional telemetry data is sent to **Azure IoT Hub** and visualized using **Microsoft Power BI**.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/FvW2WQDMaSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+*For the second part of the video tutorial, see <a href="https://www.youtube.com/watch?v=dn5JAlIokA4/" target="_blank">**YouTube**</a>.*
+
 ## Part 1 - Connect the Thingy:91 to Coiote using the LwM2M Anjay client
 
 ### Set up the Anjay Zephyr Client

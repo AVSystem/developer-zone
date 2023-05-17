@@ -6,6 +6,8 @@ This Quick Start walks you through the process of building your first LwM2M appl
 
 Follow this guide to build your first LwM2M application using a simulated device within 20 minutes.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/m-9zYqV5bLQ" title="AVSystem Quickstart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Access the Coiote IoT DM portal
 
 Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
