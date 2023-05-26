@@ -8,9 +8,8 @@ og_title: AVSystem IoT Developer Zone
 
 The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the Coiote DM - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.
 
-<figure class="video_container">
-  <iframe width="640" height="480"  src="https://www.youtube.com/embed/Ck0WJp4grb0" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+<iframe width="640" height="360"  src="https://www.youtube.com/embed/Ck0WJp4grb0" frameborder="0" allowfullscreen="true"> </iframe>
+
 
 The text version of the tutorial, complete with the necessary steps and code snippets, is available below:
 
