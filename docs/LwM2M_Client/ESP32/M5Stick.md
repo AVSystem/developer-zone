@@ -79,7 +79,7 @@ To connect the board:
 
 ## Step 4: Flash the board and run device
 
-Connect the M5Stick board to a USB port of your machine.
+Connect the M5Stick board to a USB port of your machine and open ESP-IDF command line application.
 
 Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.
 
