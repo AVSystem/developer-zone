@@ -79,7 +79,7 @@ To connect the board:
 
 ## Step 4: Flash the board and run device
 
-Connect the M5Stick board to a USB port of your machine.
+Connect the M5Stick board to a USB port of your machine and open ESP-IDF command line application.
 
 Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.
 
@@ -94,21 +94,21 @@ pip install esptool
             Before flashing the device you should erase the flash first to make sure you have correct settings:
             === "Linux"
                 ``` linux
-                    esptool.py erase_flash
+                esptool.py erase_flash
                 ```
             === "Windows"
                 ``` windows
-                    esptool erase_flash
+                esptool erase_flash
                 ```
 
 
     === "Linux"
         ``` linux
-            esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+        esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
         ```
     === "Windows"
         ``` windows
-            esptool -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
+        esptool -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
         ```
 
 
@@ -116,11 +116,11 @@ pip install esptool
 
     === "Linux"
         ``` linux
-            esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+        esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
         ```
     === "Windows"
         ``` windows
-            esptool -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
+        esptool -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
         ```
 
 Once executed, the device will be reset and run with the configuration you provided.
