@@ -12,7 +12,7 @@ Coiote IoT Device Management Platform allows you to manage your LwM2M devices th
 !!! Tip "Sign up free of charge"
     Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account which allows you to connect up to 10 devices free of charge.
 
-![Coiote login page](images/login-page.png "Coiote login page")
+![Coiote login page](images/login-page-new.png "Coiote login page")
 
 ## Device inventory
 
