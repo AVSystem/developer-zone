@@ -77,10 +77,13 @@ Object `/33629` defines the update process using **4 Update States** represen
 
     ![Select component](images/select-component.png)
 
+    !!! note
+        In this example, the modem firmware of the nRF9160 SiP is being updated using the delta update file: `mfw_nrf9160_update_from_1.3.3_to_1.3.4.bin` which is provided by [Nordic](https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download?lang=en#infotabs).
+
 1. Upload the **firmware image**.
 
     ![Upload Firmware Image](images/upload.png)
-
+        
 1. Choose between **Pull** and **Push**:
 
     * **Pull method** (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it. 
