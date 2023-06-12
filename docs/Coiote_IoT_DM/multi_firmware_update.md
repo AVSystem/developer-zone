@@ -1,27 +1,26 @@
 ---
-title: Firmware Update
-date: 2023-04-20
+title: Multi-component Firmware Update
+date: 2023-06-05
 og_title: AVSystem IoT Developer Zone
 ---
 
-# Basic Firmware Update
+# Multi-component Firmware Update
 
-Remotely update the firmware of your LwM2M device using the **Firmware Update Object** `/5`.
+Remotely update a component of your LwM2M device's firmware using the **Advanced Firmware Update Object** `/33629`.
+
+Object `/33629` is designed as an extension of the Firmware Update object `/5`. It supports multiple instances, each representing a "component" of the device's firmware that can be upgraded separately. The specific meaning and purpose of these components are not standardized and can vary depending on the implementation. However, they typically encompass elements such as bootloaders, application code, cellular modem firmwares, security processor firmwares, and other related firmware entities.
 
 ## Prerequisites
 
 - An active [Coiote DM](https://eu.iot.avsystem.cloud/) user account
-- A device which supports Firmware Update Object `/5`
+- A device which supports the Advanced Firmware Update Object `/33629`
     
-!!! Note
-    The **Anjay LwM2M Client** supports the Firmware Update Object. Learn more about Anjay by visiting the official <a href="https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial.html" target="_blank">**Anjay Documentation site**</a> or <a href="https://github.com/AVSystem/Anjay" target="_blank">**Anjay SDK on GitHub**</a>.
+## Firmware Update Object `/33629`
 
-## Firmware Update Object `/5`
+Object `/33629` defines the update process using **4 Update States** representing the phase of the update process. Additionally, a total of **13 Update Results** may be reported, representing the most common outcomes of the firmware update process.
 
-The Firmware Update process is defined in the **Firmware Update Object `/5`**. This Object contains Resources which define the update process using **4 Update States** (representing the phase of the update process) and **11 Update Results** (representing the most common outcomes of the firmware update process).
-
-* **Resource** `/5/*/3` represents the **State**
-* **Resource** `/5/*/5` represents the **Update Result**
+* **Resource** `/33629/*/3` represents the **State**
+* **Resource** `/33629/*/5` represents the **Update Result**
 
 === "**Update States**"
 
@@ -48,10 +47,8 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
     | `update result 9`   | **Unsupported protocol** |
     | `update result 10`  | **Firmware update cancelled** |
     | `update result 11`  | **Firmware update deferred** |
-
-!!! info
-    Learn more about the Firmware Update Object in the <a href="https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2F5.xml" target="_blank">**OMA LwM2M Object and Resource Registry**</a>.
-
+    | `update result 12`  | **Conflicting state** |
+    | `update result 13`  | **Dependency error** |
 
 ## Prepare the Firmware Update
 
@@ -59,24 +56,34 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
 1. Select the device you want to update by clicking on its endpoint name.
 
-1. Go to the **Data model** tab to validate if the Firmware Update Object `/5` is present. If so, the Object is supported by the LwM2M Client.
+1. Go to the **Data model** tab to validate if the Firmware Update Object `/33629` is present. If so, the Object is supported by the LwM2M Client.
 
-    ![Firmware update object](images/object5-purple.png)
+    !!! info
+        Each **Object Instance** represents a component of the device's firmware which can be updated. Click the Object Instances of Object `/33629` to see what components can be updated.
+
+    ![Firmware update object](images/object-33629-instance0.png)
 
 1. Go to the **Firmware update** tab.
 
 1. Click the **Update Firmware** button.
 
-    ![Update Firmware Tab](images/basic-firmware-update-tab.png)
+    ![Update Firmware Tab](images/firmware-update-tab.png)
 
-1. Select **Basic Firmware Update**.
+1. Select **Multi-component Firmware Update**.
 
-    ![Basic Firmware Update](images/basic-fota.png)
+    ![Multi-Component Firmware Update](images/multi-component.png)
+
+1. Select the components you would like to update, e.g. modem, application or bootloader.
+
+    ![Select component](images/select-component.png)
+
+    !!! note
+        In this example, the modem firmware of the nRF9160 SiP is being updated using the delta update file: `mfw_nrf9160_update_from_1.3.3_to_1.3.4.bin` which is provided by [Nordic](https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download?lang=en#infotabs).
 
 1. Upload the **firmware image**.
 
     ![Upload Firmware Image](images/upload.png)
-
+        
 1. Choose between **Pull** and **Push**:
 
     * **Pull method** (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it. 
@@ -104,16 +111,15 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
 1. Click **Schedule Update** to trigger the Firmware Update process.
 
-
 ## Download & Upgrade Process
 
 If the Firmware Update is scheduled successfully, the device starts **downloading** the firmware at the next practical opportunity. The actual firmware **update** starts once the integrity and authenticity of the firmware image has been validated by the LwM2M Client.
 
-![Upgrading](images/in-progress-basic.png)
+![Upgrading](images/in-progress.png)
 
 Once executed successfully, the status in the **Update list** panel changes to `Success`.
 
-![Successful update](images/success.png)
+![Successful update](images/success-multi.png)
 
 !!! note
     While the device is updating its firmware, it will deregister and reboot using the new firmware. This process may time several minutes.
@@ -122,11 +128,11 @@ Once executed successfully, the status in the **Update list** panel changes to `
 
 ### Monitoring the update process
 
-During the update process, the status of the firmware update can be monitored by reviewing the Resources **State** `/5/*/3` and **Update Results** `/5/*/5`.
+During the update process, the status of the firmware update can be monitored by reviewing the Resources **State** `/33629/*/3` and **Update Results** `/33629/*/5`.
 
-To find the Resources, select the **Data model** tab and open the **Firmware Update Object** `/5`. 
+To find the Resources, select the **Data model** tab and open the **Advanced Firmware Update Object** `/33629`. 
 
-![Firmware upgraded](images/result1.png)
+![Firmware upgraded](images/object-33629-downloading.png)
 
 If no errors occur, the update process follows this pattern:
 
@@ -136,41 +142,8 @@ If no errors occur, the update process follows this pattern:
 4. **Updated** `state 0` & `update result 1` 
 
 !!! important "Update successful?"
-    Does the **State** `/5/*/3` report `0` and the **Update Results** `/5/*/5` report `1`? Congratulations! You've successfully updated the firmware of your device. 🎉
-
-## Troubleshooting
-
-### Firmware Update only works over CoAP, not over CoAPs
-
-For the firmware update over CoAPs transfer to work, the LwM2M Client shall use the same security credentials (i.e. PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.
-
-!!! info "Zephyr LwM2M Client configuration instruction"
-
-    The **security tags** needs to the same in the "**Security tag for FOTA download library**" as in the "**LwM2M server TLS tag**" (e.g. using Nordic's default tag: `35724861`).
-
-    To update the security tags, edit the **Kconfig** in the directory:
-
-    ```
-    Zephyr Kernel
-    > Modules
-        > nrf
-        > Nordic nRF Connect
-            > Networking
-            > Application protocols
-                > LwM2M client utilities library
-                > Security object support
-                > Firmware Update object support
-    ```
-
-    ![Kconfig update](images/Kconfig.png)
-    *Kconfig editor in nRF Connect for VS Code*
-
-
+    Does the **State** `/33629/*/3` report `0` and the **Update Results** `/33629/*/5` report `1`? Congratulations! You've successfully updated the firmware of your device. 🎉
 
 
 ## Useful Links
 - [Anjay firmware update documentation](https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial/FU-Introduction.html)
-- [Anjay SDK](https://github.com/AVSystem/Anjay)
-- [Anjay Zephyr SDK](https://github.com/AVSystem/Anjay-zephyr-client)
-- [Anjay ESP32 SDK](https://github.com/AVSystem/Anjay-esp32-client)
-- [OMA LwM2M Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html)
