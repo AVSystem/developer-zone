@@ -8,7 +8,7 @@ og_title: AVSystem IoT Developer Zone
 
 Remotely update a component of your LwM2M device's firmware using the **Advanced Firmware Update Object** `/33629`.
 
-The Advanced Firmware Update Object supports multiple instances, each representing a "component" of the device's firmware that can be upgraded separately. The specific meaning and purpose of these components are not standardized and can vary depending on the implementation. However, they typically encompass elements such as bootloaders, application code, cellular modem firmwares, security processor firmwares, and other related firmware entities.
+Object `/33629` is designed as an extension of the Firmware Update object `/5`. It supports multiple instances, each representing a "component" of the device's firmware that can be upgraded separately. The specific meaning and purpose of these components are not standardized and can vary depending on the implementation. However, they typically encompass elements such as bootloaders, application code, cellular modem firmwares, security processor firmwares, and other related firmware entities.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ The Advanced Firmware Update Object supports multiple instances, each representi
     
 ## Firmware Update Object `/33629`
 
-Object `/33629` defines the update process using **4 Update States** representing the phase of the update process. It knows a total of **13 Update Results**  representing the most common outcomes of the firmware update process.
+Object `/33629` defines the update process using **4 Update States** representing the phase of the update process. Additionally, a total of **13 Update Results** may be reported, representing the most common outcomes of the firmware update process.
 
 * **Resource** `/33629/*/3` represents the **State**
 * **Resource** `/33629/*/5` represents the **Update Result**

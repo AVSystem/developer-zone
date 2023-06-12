@@ -36,6 +36,7 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
     | Result          | Description |
     | ----------- | ----------- |
+    | `update result 0`   | **Initial value** |
     | `update result 1`   | **Firmware updated successfully** |
     | `update result 2`   | **Insufficient flash memory for the new firmware package** |
     | `update result 3`   | **Out of RAM during downloading proces** |
