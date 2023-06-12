@@ -2421,7 +2421,10 @@ west build -b nrf9160dk_nrf9160ns
 </code></pre></div>
 </li>
 <li>
-<p>Find the <code>app_signed.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</p>
+<p>Find the <code>merged.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</p>
+</li>
+<li>
+<p>Use the nRF Connect Programmer to flash the created <code>.hex</code> file onto the board. For more information, follow the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware">updating the application firmware</a> documentation.</p>
 </li>
 </ol>
 <h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
@@ -2556,7 +2559,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2023</span>
     
   </small>
 </div>
