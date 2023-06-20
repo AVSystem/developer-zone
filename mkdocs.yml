@@ -128,13 +128,17 @@ nav:
             - 'Demo_Projects/Air_quality_monitoring_tutorial.md'
         - 'LwM2M Academy': 
             - 'Introduction': 'academy/index.md'
-            - Module 1:
-                - Theory - Introduction to LwM2M: 'academy/module1.md'
+            - Module 1 - Introduction to LwM2M:
+                - Theory: 'academy/module1.md'
                 - Exercise - Connect the RPI to a LwM2M Server: 'academy/exercise1.md'
-            - Module 2: 
+            - Module 2 - Getting started: 
                 - Theory: 'academy/module2.md'
-            - Module 3:
+            - Module 3 - Building applications:
                 - Theory: 'academy/module3.md'
+            - Module 4 - Device Management:
+                - Theory: 'academy/module4.md'                
+            - Module 5 - Firmware Updates OTA:
+                - Theory: 'academy/module5.md'
         - 'Release Notes':
             - 2023:
                 - 'Release_Notes/v2023.10.0.md'

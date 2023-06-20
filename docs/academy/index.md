@@ -8,6 +8,8 @@ og_title: LwM2M Academy
 
 ![module 1 title](images/LwM2M-Academy-cover_1500x844.png)
 
+## Welcome!
+
 **Welcome to the LwM2M Academy**, an immersive online course tailored to equip you with understanding of the Lightweight Machine to Machine (LwM2M) protocol. This program is designed to provide you with both the theoretical understanding and hands-on skills necessary to utilize this powerful IoT standard.
 
 The course consists of **five modules** which will journey you through the diverse aspects of LwM2M, from the underlying principles and architecture to its implementation and optimization for creating robust IoT applications.

@@ -94,6 +94,6 @@ For example, a GNSS module generates location data containing latitude and longi
 
     `7`: Solar
 
-    To describe the availability of solar power, the message format becomes: 
 
-    `/3/0/6/7`
+    To describe the availability of solar power, the message format becomes: `/3/0/6/7`
+
