@@ -9,7 +9,7 @@ The LwM2M protocol provides a standardized process for remote firmware updates. 
 
 ## The LwM2M way of updating firmware
 
-Remote Firmware Updates knows many names, such as Firmware Update OTA (FUOTA) or Device Firmware Upgrade (DFU). Device vendors can develop their own custom FOTA mechanisms, however, these implementations are specific to the vendor or platform and cannot be easily ported to other systems. The problem of vendor compatibility can be resolved by adopting the LwM2M standard, which is hardware agnostic and can be implemented on any hardware platform.
+Remote firmware updates knows many names, such as Firmware Update OTA (FUOTA) or Device Firmware Upgrade (DFU). Device vendors can develop their own custom FOTA mechanisms, however, these implementations are specific to the vendor or platform and cannot be easily ported to other systems. The problem of vendor compatibility can be resolved by adopting the LwM2M standard, which is hardware agnostic and can be implemented on any hardware platform.
 
 The LwM2M firmware update process consists of four steps: 
 
