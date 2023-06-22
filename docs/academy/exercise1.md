@@ -8,7 +8,6 @@ Let’s start with the first exercise on building an end-to-end LwM2M applicatio
 * [Git](https://git-scm.com/downloads)
 * [Python](https://www.python.org/downloads/)
 * Local WiFi network
-* Installed minicom (for Linux), RealTerm, PuTTy (for Windows), or another 
 * Serial communication program such as minicom, RealTerm (for Linux/Mac) or PuTTy (for Windows)
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 
@@ -48,26 +47,6 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
         brew install armmbed/formulae/arm-none-eabi-gcc
         ```
 
-        Clone three GitHub repositories using Git.
-
-        * Clone the RPi Pico SDK repository and update its submodules
-            
-            ```
-            git clone -b 1.4.0 https://github.com/raspberrypi/pico-sdk.git
-            cd pico-sdk/ && git submodule update --init && cd ..
-            ```
-
-        * Clone the FreeRTOS kernel repository
-            ```
-            git clone -b V10.5.0 https://github.com/FreeRTOS/FreeRTOS-Kernel.git
-            ```
-
-        * Clone the Anjay-pico-clientrepository and update its modules
-            ```
-            git clone https://github.com/AVSystem/Anjay-pico-client.git
-            cd Anjay-pico-client && git submodule update --init --recursive && cd ..
-            ```
-
     === "Windows"
         Download and run the [installer](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-win32.exec) to install `arm-none-eabi-gcc` and `arm-none-eabi-gdb`. 
 
@@ -78,9 +57,29 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
         ![Windows installer](images/module1_windows.png)
 ---
 
+1. Clone three GitHub repositories using Git.
+
+    * Clone the RPi Pico SDK repository and update its submodules
+        
+        ```
+        git clone -b 1.4.0 https://github.com/raspberrypi/pico-sdk.git
+        cd pico-sdk/ && git submodule update --init && cd ..
+        ```
+
+    * Clone the FreeRTOS kernel repository
+        ```
+        git clone -b V10.5.0 https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+        ```
+
+    * Clone the Anjay-pico-client repository and update its modules
+        ```
+        git clone https://github.com/AVSystem/Anjay-pico-client.git
+        cd Anjay-pico-client && git submodule update --init --recursive && cd ..
+        ```
+
 ## Connect to the LwM2M Server
 
-Before connecting your device to the cloud, log in to the Coiote IoT Device Management: https://eu.iot.avsystem.cloud.
+Before connecting your device to the cloud, log in to the Coiote IoT Device Management: [eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
 Select **Device Inventory** from the left-side menu
 

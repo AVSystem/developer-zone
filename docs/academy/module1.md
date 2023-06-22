@@ -46,13 +46,13 @@ In order to manage devices and process their data, components of IoT systems mus
 
 **LwM2M Objects** represent configurations, functionalities, and sensors of IoT devices. By structuring the Objects in a particular manner, a language is created which both the LwM2M Client and the LwM2M Server can understand.
 
-This language is organized in a three-level tree comprising **Objects** which consist of **Object Instances**, and Object Instances consist of **Resources**. Entities on each of those levels are identified with numerical identifiers in the range 0-65534 and defined by the OMA in the [LwM2M Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html).
+This language is organized in (most situations as) a three-level tree comprising **Objects** which consist of **Object Instances**, and Object Instances consist of **Resources**. Entities on each of those levels are identified with numerical identifiers in the range 0-65534 and defined by the OMA in the [LwM2M Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html).
 
 The language follows a sequence containing the Object ID, Object Instance ID, and Resource ID. To be more precise, a URI is made up of three unsigned 16-bit integers that are separated by the '`/`' character and look like this:
 
 `/<object_ID>/<object_instance_ID>/<resource_ID>`
 
-For example, a GNSS module generates location data containing latitude and longitude values. The URI of the latitude is: `/6/0/0`, and the URI of the longitude is: `/6/0/0`.
+For example, a GNSS module generates location data containing latitude and longitude values. The URI of the latitude is: `/6/0/0`, and the URI of the longitude is: `/6/0/1`.
 
 `6` → The ID of the Location Object
 
@@ -70,11 +70,11 @@ For example, a GNSS module generates location data containing latitude and longi
 
     Other Objects have multiple Instances. Examples of such Objects include the Object that manages connections to LwM2M Servers as multiple LwM2M Servers can be configured. Devices can also use Object Instances when using multiple SIMs with different APN profiles. When devices contain multiple identical sensors, Object Instances are used to distinguish the different sensors.
 
-* **Resources** - Object Instances have one or multiple Resources. Resources can be represented as certain data types such as string, integer, Boolean, or float. For example, the “Device” Object has multiple resources such as the *manufacturer*, *serial number*, and *firmware version*. The “Location” Object has the resources' *latitude, longitude*, and *altitude*.
+* **Resources** - Object Instances have one or multiple Resources. Resources can be represented as certain data types such as string, integer, Boolean, or float. For example, the “Device” Object has multiple Resources such as the *manufacturer*, *serial number*, and *firmware version*. The “Location” Object has the Resources' *latitude, longitude*, and *altitude*.
 
 ![LwM2M data format](images/module1_data-format.png)
 
-*  **Resource Instances** - In some cases, resources have multiple resource instances. For example: Device Object `/3` includes Resource `/6`: Available Power Sources. The different Resource Instances describe the different power sources:
+*  **Resource Instances** - In some cases, Resources have multiple Resource Instances which turns the language into a four-level tree. For example: Device Object `/3` includes Resource `/6`: Available Power Sources. The different Resource Instances describe the different power sources:
 
     `0`: DC power
 
@@ -93,5 +93,5 @@ For example, a GNSS module generates location data containing latitude and longi
     `7`: Solar
 
 
-    To describe the availability of solar power, the message format becomes: `/3/0/6/7`
+    To describe the availability of solar power, the URI becomes: `/3/0/6/7`
 

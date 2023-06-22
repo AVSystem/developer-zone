@@ -3,13 +3,13 @@
 ![module 5 title](images/6updates.png)
 
 
-Firmware updates over the air (FOTA) are becoming increasingly important as more and more resource-constrained IoT devices are being deployed. Physical access to devices can be expensive or impossible to realize when devices are deployed in remote, hard-to-reach locations. As a result, FOTA is in many cases the only way to fix bugs, patch security vulnerabilities or add functionality to devices which are deployed in the field.
+Firmware updates over the air (FOTA) are becoming increasingly important as more and more resource-constrained IoT devices are being deployed. Physical access to devices can be expensive or impossible to realize when devices are deployed in remote, hard-to-reach locations. As a result, FOTA is in many cases the only way to fix bugs, patch security vulnerabilities, or add functionality to devices which are deployed in the field.
 
 The LwM2M protocol provides a standardized process for remote firmware updates. When developers follow the standardized guidelines provided by the protocol, updating the firmware of resource-constrained devices remotely can be accomplished effortlessly, regardless of the device or platform used.
 
 ## The LwM2M way of updating firmware
 
-Remote firmware updates knows many names, such as Firmware Update OTA (FUOTA) or Device Firmware Upgrade (DFU). Device vendors can develop their own custom FOTA mechanisms, however, these implementations are specific to the vendor or platform and cannot be easily ported to other systems. The problem of vendor compatibility can be resolved by adopting the LwM2M standard, which is hardware agnostic and can be implemented on any hardware platform.
+Remote firmware updates know many names, such as Firmware Update OTA (FUOTA) or Device Firmware Upgrade (DFU). Device vendors can develop their own custom FOTA mechanisms, however, these implementations are specific to the vendor or platform and cannot be easily ported to other systems. The problem of vendor compatibility can be resolved by adopting the LwM2M standard, which is hardware agnostic and can be implemented on any hardware platform.
 
 The LwM2M firmware update process consists of four steps: 
 
@@ -26,10 +26,12 @@ This procedure is defined in detail in the LwM2M specifications (see [LwM2M spec
 ## Download a new firmware
 The LwM2M standard defines two methods to perform a firmware update, allowing either the Client or the Server to decide on the best moment to start the download of the new firmware. 
 
-**PULL method**
+#### PULL method
+
 In the PULL scenario, the LwM2M Server provides the device with the address of the server containing the firmware file known as the **Package URI**. The device subsequently downloads the firmware from the so-called firmware repository at the earliest available opportunity.
 
-**PUSH method**
+#### PUSH method
+
 In the PUSH scenario, the LwM2M Server determines the moment to initiate the firmware download, ideally based on the connectivity conditions. The device must have access to information such as Radio Signal Strength and Link Quality to support such server-side decision making. These resources are available in the **LwM2M Connectivity Monitoring Object** `/4`.
 
 *Firmware Delivery Methods*

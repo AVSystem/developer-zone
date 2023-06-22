@@ -36,7 +36,7 @@ By defining mandatory objects, the LwM2M protocol ensures that LwM2M implementat
 !!! info "The OMA LwM2M Object and Resource Registry"
     The [**OMA LwM2M Object and Resource Registry**](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html) is a comprehensive database containing all the LwM2M Objects and Resources that have been defined by the Open Mobile Alliance (OMA). The registry serves as a reference guide for developers who are implementing the LwM2M standard. 
 
-    The registry is organized by Object ID. Each Object in the registry is associated with a set of resources, which are identified by Resource ID. The registry provides clear descriptions, data types, and usage guidelines for each Object and Resource.
+    The Registry is organized by Object ID. Each Object in the Registry is associated with a set of Resources, which are identified by Resource ID. The registry provides clear descriptions, data types, and usage guidelines for each Object and Resource.
 
     Open up the [Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html) and have a look at the Registry and go through the three mandatory Objects. *Note: At the time of writing, LwM2M version 1.1 is most commonly used.*
 
