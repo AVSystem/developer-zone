@@ -26,15 +26,15 @@ Although CoAP supports transmission over TCP, UDP is typically the preferred cho
 ![Vertical Stack](images/module3_LwM2M_table.png)
 
 !!! info "CoAP vs MQTT"    
-    **MQTT** (Message Queuing Telemetry Transport) is the most widely implemented messaging protocol in IoT. MQTT is often compared with CoAP as both protocols provide a lightweight transport mechanism which are well-suited for resource-constrained IoT devices. Whereas CoAP is  relatively new with its specifications being introduced in 2014, MQTT dates all the way back to 1999. Even though the messaging protocols can be seemingly used interchangeably, there are some key differences in the architectures.
+    **MQTT** (Message Queuing Telemetry Transport) is the most widely implemented messaging protocol in IoT. MQTT is often compared with CoAP as both protocols provide a lightweight transport mechanism which is well-suited for resource-constrained IoT devices. Whereas CoAP is relatively new with its specifications being introduced in 2014, MQTT dates all the way back to 1999. Even though the messaging protocols can be seemingly used interchangeably, there are some key differences in the architectures.
     
     MQTT is a publish-subscribe messaging protocol where clients (IoT Devices) communicate using TCP to a server which is referred to as the Broker. Each message is sent to an address known as a topic, e.g. /temperature. Clients can subscribe to one or multiple topics and get notified when new data is received on any of those topics. Due to the publish-subscribe architecture, communication can happen one-to-one, one-to-many and many-to-one. 
     
     MQTT knows three levels of Quality of Service (QoS), from 0 to 2
     
-    * QoS 0: At most once. Data is sent without acknowledgement
-    * QoS 1: At least once. A message requires an acknowledgement, ensuring the data reaches the receiver.
-    * QoS 2: Exactly once. Through the process of a four-step handshake the sender ensures the data is received exactly once.
+    * QoS 0: At most once. Data is sent without acknowledgment
+    * QoS 1: At least once. A message requires an acknowledgment, ensuring the data reaches the receiver.
+    * QoS 2: Exactly once. Through the process of a four-step handshake, the sender ensures the data is received exactly once.
     
     A variation of the MQTT protocol is called MQTT-SN (MQTT for Sensor Networks) and is designed for sensor networks as it supports UDP transport.
     

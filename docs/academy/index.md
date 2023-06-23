@@ -12,7 +12,7 @@ og_title: LwM2M Academy
 
 **Welcome to the LwM2M Academy**, an immersive online course tailored to equip you with understanding of the Lightweight Machine to Machine (LwM2M) protocol. This program is designed to provide you with both the theoretical understanding and hands-on skills necessary to utilize this powerful IoT standard.
 
-The course consists of **five modules** which will journey you through the diverse aspects of LwM2M, from the underlying principles and architecture to its implementation and optimization for creating robust IoT applications.
+The course consists of **5 modules** which will journey you through the diverse aspects of LwM2M, from the underlying principles and architecture to its implementation and optimization for creating robust IoT applications.
 
 By the end of the course, you will understand the advantages of the LwM2M standard and possess the skills to implement it effectively. With a strong emphasis on real-world applications, the course is designed to provide you with practical experience, empowering you to build IoT applications confidently using LwM2M.
 
@@ -36,7 +36,7 @@ Throughout this course, we will be using the [Raspberry Pi Pico W](https://www.r
 
 ![Raspberry Pi Pico](images/module1_RPI Pico.png){: style="width:300px"}
 
-The 21 mm × 51 mm board comes with a 2.4GHz wireless LAN interface (802.11n). It provides 26 GPIO pins, three of which can function as analog inputs. Four RP2040 I/O pins are used for internal functions: driving an LED, onboard switch mode power supply power control, and sensing the system voltages.
+The 21 mm × 51 mm board comes with a 2.4GHz wireless LAN interface (802.11n). It provides 26 GPIO pins, three of which can function as analog inputs. Four RP2040 I/O pins are used for internal functions: driving an LED, on-board switch mode power supply power control, and sensing the system voltages.
 
 Reprogramming the Pico W flash can be done using USB (simply drag and drop a file onto the Pico W, which appears as a mass storage device), or using the serial wire debug (SWD) port. The SWD port can also be used to debug code running on the RP2040 interactively.
 
