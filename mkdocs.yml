@@ -137,8 +137,12 @@ nav:
                 - Exercise 2B - Implement Pre-Shared Key Mode: 'academy/exercise2b.md'
             - Module 3 - Building applications:
                 - Theory: 'academy/module3.md'
+                - Exercise 3A - Implement the time object: 'academy/exercise3a.md'
+                - Exercise 3B - Implement the Temperature Object: 'academy/exercise3b.md'
             - Module 4 - Device management:
                 - Theory: 'academy/module4.md'
+                - Exercise 4A - Read, Write & Observe Resources using LwM2M Operations: 'academy/exercise4a.md'
+                - Exercise 4B - LwM2M Send - the information reporting Client operation: 'academy/exercise4b.md'
             - Module 5 - Firmware updates:
                 - Theory: 'academy/module5.md'
                 - Exercise - Graduation Project: 'academy/exercise5.md'

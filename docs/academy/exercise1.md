@@ -119,7 +119,7 @@ Let’s continue building the required files for the application. We are using N
 !!! Warning
     Use the NoSec mode only for development, testing, and debugging purposes, never in production environments unless end-to-end security is provided on a lower layer (e.g. IPsec).
 
-To start the compilation of the application, go to the Anjay-pico-client directory. Build the project with *<ssid>* and *<pass>* replaced with your **Wi-Fi network name** and **password** respectively. The LwM2M Client Endpoint Name is configured using the *<endpoint_name>* parameter.
+To start the compilation of the application, go to the Anjay-pico-client directory. Build the project with *<ssid\>* and *<pass\>* replaced with your **Wi-Fi network name** and **password** respectively. The LwM2M Client Endpoint Name is configured using the *<endpoint_name\>* parameter.
 
 !!! Note
     A LwM2M Client is uniquely identified by an **Endpoint Name**. Use the Endpoint Name you used in the “Connect to the Server” part.
