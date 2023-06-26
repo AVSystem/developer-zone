@@ -40,19 +40,20 @@ Find in the **Operations** column three different icons representing three diffe
     There is no Write operation visible here, because the Sensor Objects do not have any “writable” resources (i.e. resources into which you can write your value). Such operation can be found in e.g. Time Object’s Application Type resource.
 
 ## Read Operation
-The Server can perform a LwM2M Read operation on a Resource, Object Instance or a whole Object. To do this, click the circular icon in the Operations column (or use the 3 vertical dots menu in case of Objects and Object Instances).
+The Server can perform a LwM2M Read operation on a Resource, Object Instance or a whole Object. To do this, click the circular icon in the **Operations** column (or use the 3 vertical dots menu in case of Objects and Object Instances).
 
 ![Read](images/read_resource.gif "Read"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
 
 You can see that each time you perform a Read Operation on a specific Resource, its value is updated because the Client has been instructed to send the newest value to the server.
 
 ## Observe Operation
-The Server can set observations on a Resource, Object Instance or a whole Object. To set an observation on the Sensor Value Resource /5700, click an **eye** icon to open the **Set observation** panel. Change the default **“Not more often than once every”** and **“Not more often than once every”** values.
-* Not more often than once every - the minimum time in seconds between two notifications.
-* At least once every - the maximum time in seconds between two notifications. The notification is sent even if the value hasn't changed.
+The Server can set observations on a Resource, Object Instance or a whole Object. To set an observation on the Sensor Value Resource `/3303/*/5700`, click an **eye** icon to open the **Set observation** panel. Change the default **“Not more often than once every”** and **“Not more often than once every”** values.
+
+* **Not more often than once every** - the minimum time in seconds between two notifications.
+* **At least once every** - the maximum time in seconds between two notifications. The notification is sent even if the value hasn't changed.
 
 ![Observe Operation](images/4aObservations.PNG)
-To set an observation on an Object or Object Instance, click on the 3 vertical dots menu and select Set observation, then follow the steps described above.
+To set an observation on an Object or Object Instance, click on the 3 vertical dots menu and select **Set observation**, then follow the steps described above.
 
 ![Set observation on object](images/set_observe_obj.png "Set observation on object"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
 
