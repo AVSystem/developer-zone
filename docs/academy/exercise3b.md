@@ -15,23 +15,26 @@ Among many Objects defined in the [OMA LwM2M Object and Resource Registry](https
 
 ## Implement the Temperature Object
 In these steps, we are going to generate the temperature sensor files required to:
-    - Install the IPSO Temperature Object /3303
-    - Make the Object register to the LwM2M Server at boot
-    - Make the device responsive to server read commands
+
+- Install the IPSO Temperature Object /3303
+- Make the Object register to the LwM2M Server at boot
+- Make the device responsive to server-read commands
 
 ### Generate the lm35.c file
 Let’s get started by going to the **Anjay-pico-client** directory and creating a new directory called **lwm2m_academy_temperature_object_lm35**.In this directory, we are creating the files:
-    - lm35.c and its header file lm35.h
-    - temperature_sensor.c and its header file temperature_sensor.h
-    - main.c
-    - CMakeLists.txt
+
+- lm35.c and its header file lm35.h
+- temperature_sensor.c and its header file temperature_sensor.h
+- main.c
+- CMakeLists.txt
 
 !!! Important
     Copy and paste the ***main.c*** and ***CMakeLists.txt*** files from the **Anjay-pico-client/secure_communication** directory to the **Anjay-pico-client/lwm2m_academy_temperature_object_lm35** directory.
 
 In the lm35.c file we need two functions:
-    - The *lm35_init()* for the initialization of the ADC (Analog to digital converter) and the ADC GPIO pin.
-    - The *temperature_get_data()* computes the temperature value from the sensor. This function will be called from the *temperature_sensor.c* file.
+
+- The `lm35_init()` for the initialization of the ADC (Analog to digital converter) and the ADC GPIO pin.
+- The `temperature_get_data()` computes the temperature value from the sensor. This function will be called from the *temperature_sensor.c* file.
 
 <p style="text-align: center;">lm35.c</p>
 ```
@@ -64,9 +67,9 @@ In the lm35.c file we need two functions:
 
 ## Generate the temperature_sensor.c file
 
-To generate a layout of the Object’s implementation, we need a few functions to be added to the *temperature_sensor.c* file: *temperature_sensor_install()*, *temperature_sensor_update()*, *temperature_sensor_release()*, *temperature_sensor_get_value()*.
+To generate a layout of the Object’s implementation, we need a few functions to be added to the `temperature_sensor.c` file: `temperature_sensor_install()`, `temperature_sensor_update()`, `temperature_sensor_release()`, `temperature_sensor_get_value()`.
 
-The most important function is responsible for getting the temperature value from the sensor. For this, we create *temperature_sensor_get_value()* function where we call the *temperature_get_data()* function (this function was created in lm35.c file).
+The most important function is responsible for getting the temperature value from the sensor. For this, we create `temperature_sensor_get_value()` function where we call the `temperature_get_data()` function (this function was created in lm35.c file).
 
 <p style="text-align: center;">temperature_sensor.c</p>
 ```
@@ -80,9 +83,9 @@ The most important function is responsible for getting the temperature value fro
     }
 ```
 
-In the *temperature_sensor_install()* function, we describe the initialization of the LM35 sensor, the installation of the *ipso_basic_sensor* parameters using sensor-friendly Anjay API, and the creation of the Instance parameters. To install an Anjay IPSO Object we can use [anjay_ipso_basic_sensor_install](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a8a95f45e84db077652f65d272ccbf730). For Instance parameters we need to describe the proper temperature unit which is degrees Celsius (as defined in [SenML RFC](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a8a95f45e84db077652f65d272ccbf730)), and our sensor measures temperatures which are between 0 and 100 degrees Celsius. Knowing this we can prepare an Instance and pass it to *anjay_ipso_basic_sensor_instance_add()* function.
+In the `temperature_sensor_install()` function, we describe the initialization of the LM35 sensor, the installation of the `ipso_basic_sensor` parameters using sensor-friendly Anjay API, and the creation of the Instance parameters. To install an Anjay IPSO Object we can use [anjay_ipso_basic_sensor_install](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a8a95f45e84db077652f65d272ccbf730). For Instance parameters we need to describe the proper temperature unit which is degrees Celsius (as defined in [SenML RFC](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a8a95f45e84db077652f65d272ccbf730)), and our sensor measures temperatures which are between 0 and 100 degrees Celsius. Knowing this we can prepare an Instance and pass it to `anjay_ipso_basic_sensor_instance_add()` function.
 
-Let’s look at the temperature_sensor_install() function implementation:
+Let’s look at the `temperature_sensor_install()` function implementation:
 
 <p style="text-align: center;">temperature_sensor.c</p>
 ```
@@ -120,7 +123,7 @@ Let’s look at the temperature_sensor_install() function implementation:
 
 This function can be divided into a few sections:
 
-At the beginning we need to initialize our sensor so we can use it and get data from it. In our case, we call lm35_init() function, which will initialize Analog-to-Digital Converter (ADC) on Pico W and ADC GPIO Pin for LM35.
+At the beginning we need to initialize our sensor so we can use it and get data from it. In our case, we call `lm35_init()` function, which will initialize Analog-to-Digital Converter (ADC) on Pico W and ADC GPIO Pin for LM35.
 
 ```
     if (lm35_init()) {
@@ -133,7 +136,7 @@ At the beginning we need to initialize our sensor so we can use it and get data 
 Next, we need to create an Object’s Instance with oid 3303 (which belongs to the Temperature measurements according to the LwM2M Object Registry). Because we will use only one sensor, we create only one Instance of this Object.
 
 !!!Note
-	Variable ***NUM_INSTANCES*** are defined on top of the file and her value shows the number of created Instances. If you want to add another instance you have to call anjay_ipso_basic_sensor_instance_add in the loop. But for now we need only information about number of Instances.
+	Variable ***NUM_INSTANCES*** are defined on top of the file and her value shows the number of created Instances. If you want to add another instance you have to call `anjay_ipso_basic_sensor_instance_add` in the loop. But for now we need only information about number of Instances.
 
 ```
     if (anjay_ipso_basic_sensor_install(anjay, 3303, NUM_INSTANCES)) {
@@ -144,7 +147,7 @@ Next, we need to create an Object’s Instance with oid 3303 (which belongs to t
         }
 ```
 
-Finally, after sensor and Object initialization, we can add an instance of a sensor. Because it’s the first and only instance, we will add it as /3303/0. Our sensor readings will be calculated to Celsius and the sensor can read value between 0-100 Cel degrees. To acquire sensor value, Anjay will use the *temperature_sensor_get_value()* function we’ve created before.
+Finally, after sensor and Object initialization, we can add an instance of a sensor. Because it’s the first and only instance, we will add it as `/3303/0`. Our sensor readings will be calculated to Celsius and the sensor can read value between 0-100 Cel degrees. To acquire sensor value, Anjay will use the `temperature_sensor_get_value()` function we’ve created before.
 
 ```
     if (anjay_ipso_basic_sensor_instance_add(
@@ -163,7 +166,7 @@ Finally, after sensor and Object initialization, we can add an instance of a sen
         }
 ```
 
-The functions *temperature_sensor_update()*, and *temperature_sensor_release()* use the *anjay_ipso_basic_sensor_instance_** functions. To update Instance we can use [anjay_ipso_basic_sensor_instance_update](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#adb1d4d64c728ad7e77f35c8c28eb74bf) and to remove Instance we can use [anjay_ipso_basic_sensor_instance_remove](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a50e8c38ac2271e9d702d305349ea79c3). In the case of the sensor Objects, IPSO basic function forces an update of the sensor value for the sensor Object Instance.
+The functions `temperature_sensor_update()`, and `temperature_sensor_release()` use the `anjay_ipso_basic_sensor_instance_` functions. To update Instance we can use [anjay_ipso_basic_sensor_instance_update](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#adb1d4d64c728ad7e77f35c8c28eb74bf) and to remove Instance we can use [anjay_ipso_basic_sensor_instance_remove](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a50e8c38ac2271e9d702d305349ea79c3). In the case of the sensor Objects, IPSO basic function forces an update of the sensor value for the sensor Object Instance.
 
 <p style="text-align: center;">temperature_sensor.c</p>
 ```
@@ -176,7 +179,7 @@ The functions *temperature_sensor_update()*, and *temperature_sensor_release()* 
     }
 ```
 
-Add on top the necessary paths to the libraries used in the *temperature_sensor.c* and defined constant. In file you should include:
+Add on top the necessary paths to the libraries used in the **temperature_sensor.c** and defined constant. In file you should include:
 <p style="text-align: center;">temperature_sensor.c</p>
 ```
     #include <assert.h>
@@ -196,9 +199,7 @@ Add on top the necessary paths to the libraries used in the *temperature_sensor.
 ```
 
 ## Register the Object in Anjay
-The last things to do is to create the header files (*temperature_sensor.h* and *lm35.h*) for the implemented Object, register the temperature sensor in Anjay by updating the main.c file, and update CMakeLists.txt file.
-!!! Note
-    In the main.c and CMakeLists.txt files only the highlighted parts were changed.
+The last things to do is to create the header files (**temperature_sensor.h** and **lm35.h**) for the implemented Object, register the temperature sensor in Anjay by updating the main.c file, and update CMakeLists.txt file.
 
 <p style="text-align: center;">temperature_sensor.h</p>
 ```
@@ -356,11 +357,11 @@ Now, let’s connect the LM35 temperature sensor to the Raspberry Pi Pico W. For
 
 ![Connection between Pico W device and LM35 sensor](images/connection_lm35_pico.PNG)
 
-Once the sensor is connected, it’s time to flash the *.uf2 * file to the Pico.
+Once the sensor is connected, it’s time to flash the *.uf2* file to the Pico.
 
 Program your board using the bootloader. Press and hold the **BOOTSEL** button while connecting the device through a USB cable, it should be recognized as a Mass Storage device.
 
-Go to the **Anjay-pico-client/build/lwm2m_academy_temperature_object_lm35** directory, copy the *temperature_object_lm35.uf2* file to the Mass Storage device directory and wait until the process finishes - copying the firmware image may take a while.
+Go to the **Anjay-pico-client/build/lwm2m_academy_temperature_object_lm35** directory, copy the `temperature_object_lm35.uf2` file to the Mass Storage device directory and wait until the process finishes - copying the firmware image may take a while.
 
 
 ## Check the logs

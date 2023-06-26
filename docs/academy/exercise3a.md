@@ -28,7 +28,6 @@ With our **Time Object** we will initiate one Instance, implement the read and w
 * <a href="https://www.python.org/downloads/" target="_blank">Python</a>
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 * Completed [exercise 2B](../academy/exercise2b.md) from module 2
-* <a href="https://www.python.org/downloads/" target="_blank">Python</a>
 
 
 ## Implement the Time Object
@@ -245,7 +244,7 @@ const anjay_dm_object_def_t **time_object_create(void) {
 
 ## Register the Object in Anjay
 
-The last thing to do is to create the header file *time_object.h* for the implemented object, include  the header file in the *main.c* and update the *CMakeLists.txt* file.
+The last thing to do is to create the header file `time_object.h` for the implemented object, include the header file in the **main.c** and update the **CMakeLists.txt** file.
 
 <p style="text-align: center;">time_object.h</p>
 ```
@@ -369,7 +368,7 @@ Program your board using the bootloader. Press and hold the **BOOTSEL** button w
 
 In the **build/lwm2m_academy_time_object** directory, you will find the *.uf2* file which has our added changes.
 
-Copy the *lwm2m_academy_time_object.uf2* file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
+Copy the `lwm2m_academy_time_object.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
 
 ## Check the logs
 With the board still connected to your PC, open a serial communication program. This will help you to check if everything is working correctly.
@@ -453,9 +452,9 @@ static const anjay_dm_object_def_t OBJ_DEF = {
 };
 ```
 
-Save created code, recompile the application, and build the .uf2 file. Flash the board and check the logs if everything is alright.
+Save created code, recompile the application, and build the *.uf2* file. Flash the board and check the logs if everything is alright.
 
-If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the “Data Model” and  check if you can see Time Object in **Defined objects** section.
+If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the **Data Model** and check if you can see Time Object in **Defined objects** section.
 
 !!!Note
     The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC. After refreshing the page you can see that the value changed.
