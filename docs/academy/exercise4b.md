@@ -274,7 +274,7 @@ After flashing the board, open up your serial communication program and wait for
     [/temperature_object_lm35_send/temperature_sensor.c:135]: Send successful
 ```
 
-Now, open Coiote and validate if the Resources are updated after each configured time interval.
+Now, open Coiote IoT Device Management and validate if the Resources are updated after each configured time interval.
 
 ![Temperature Object registered](images/temperature.PNG)
 

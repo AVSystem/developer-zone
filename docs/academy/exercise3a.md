@@ -389,7 +389,7 @@ In exercises throughout the academy, we use 115200 baud, since it’s the defaul
 !!! Note
     Those logs may help figure out why the device didn't connect to the server (e.g. because of the mistake in writing the Wi-Fi password in the `cmake` command).
 
-If all went well and logs show **registration successfully updated**, you can go to Coiote where the Registration status should show **Registered**. Go to the “Data Model” and  check if you can see Time Object in **Defined objects** section.
+If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the “Data Model” and  check if you can see Time Object in **Defined objects** section.
 
 ![Device in Pre-Shared Key mode Registered](images/pre-shared.png)
 
@@ -451,7 +451,7 @@ Go back to the time_object.c file:
 
 Save created code, recompile the application, and build the .uf2 file. Flash the board and check the logs if everything is alright.
 
-If all went well and logs show **registration successfully updated**, you can go to Coiote where the Registration status should show **Registered**. Go to the “Data Model” and  check if you can see Time Object in **Defined objects** section.
+If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the “Data Model” and  check if you can see Time Object in **Defined objects** section.
 
 !!!Note
     The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC. After refreshing the page you can see that the value changed.

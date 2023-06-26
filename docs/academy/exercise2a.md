@@ -1,6 +1,6 @@
 # Exercise 2A: Analyze the Mandatory Objects
 
-In this exercise, we will look into the implementation of the mandatory LwM2M Objects using the Anjay LwM2M Client. To connect the Raspberry Pi to a LwM2M Server and handle incoming packets, three objects need to be implemented: 
+In this exercise, we will look into the implementation of the mandatory LwM2M Objects using the Anjay LwM2M Client. To connect the Raspberry Pi to a LwM2M Server and handle incoming packets, three objects need to be implemented:
 
 * [LwM2M Security](https://devtoolkit.openmobilealliance.org/OEditor/LWMOView) (Object `/0`)
 * [LwM2M Server](https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F1-1_1.xml) (Object `/1`)
@@ -10,7 +10,7 @@ Fortunately, Anjay provides these Objects in the form of pre-implemented modules
 
 ---
 
-In this exercise, we analyze the application “[Mandatory Objects](https://github.com/AVSystem/Anjay-pico-client/tree/master/mandatory_objects)” which we built in the exercise of **module 1**. This application registers the device to the Coiote LwM2M Server and periodically sends status messages.
+In this exercise, we analyze the application “[Mandatory Objects](https://github.com/AVSystem/Anjay-pico-client/tree/master/mandatory_objects)” which we built in the exercise of **module 1**. This application registers the device to the Coiote IoT Device Management LwM2M Server and periodically sends status messages.
 
 This exercise describes the functionalities of the application that uses the NoSec security mode. In the next exercise we will implement a security mode.
 
@@ -111,15 +111,15 @@ static int setup_server_object(anjay_t *anjay) {
 
 The LwM2M Object can be used to define device-related details such as:
 
-- **Resource `/3/x/0`**: **Manufacturer** 
-- **Resource `/3/x/1`**: **Model Number** 
-- **Resource `/3/x/2`**: **Serial Number** 
-- **Resource `/3/x/3`**: **Firmware Version** 
+- **Resource `/3/x/0`**: **Manufacturer**
+- **Resource `/3/x/1`**: **Model Number**
+- **Resource `/3/x/2`**: **Serial Number**
+- **Resource `/3/x/3`**: **Firmware Version**
 
 It is also used for invoking a device **Resource `/3/x/4`**: **Reboot** or **Resource `/3/x/5`**: **Factory Reset** .
 
 !!! Note
-    Although the LwM2M specifications define the Device Object as mandatory, the Coiote LwM2M Server works without creating this Object. In module 3 (client-side operations) we are covering the creation of the Device Object.
+    Although the LwM2M specifications define the Device Object as mandatory, the Coiote IoT Device Management LwM2M Server works without creating this Object. In module 3 (client-side operations) we are covering the creation of the Device Object.
 
 ## Initiate Objects
 
