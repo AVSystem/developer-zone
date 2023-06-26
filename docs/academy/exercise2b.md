@@ -7,7 +7,7 @@ In this exercise, we will change the security mode from **No-Sec** to **Pre-Shar
 * A Raspberry Pi Pico W board with a USB cable.
 * Completed [exercise 1](../academy/exercise1.md) from module 1.
 * Completed [exercise 2A](../academy/exercise2a.md) from module 2.
-* Installed minicom (for Linux), RealTerm, PuTTy (for Windows), or another serial communication program.
+* Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 
 ## Connect to the LwM2M Server

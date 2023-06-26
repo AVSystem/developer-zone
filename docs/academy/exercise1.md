@@ -6,9 +6,8 @@ Let’s start with the first exercise on building an end-to-end LwM2M applicatio
 
 * A Raspberry Pi Pico W board with a USB cable
 * <a href="https://git-scm.com/downloads" target="_blank">Git</a>
-* <a href="https://www.python.org/downloads/" target="_blank">Python</a>
 * Access to a WiFi network
-* Installed minicom (for Linux), RealTerm, PuTTy (for Windows), or another serial communication program.
+* Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 
 ## Prepare binaries

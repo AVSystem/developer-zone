@@ -8,7 +8,7 @@ Among many Objects defined in the [OMA LwM2M Object and Resource Registry](https
 ## Prerequisites
 
 * A Raspberry Pi Pico W board with a USB cable
-* Installed minicom (for Linux), RealTerm, PuTTy (for Windows), or another serial communication program.
+* Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 * Completed [exercise 2B](../academy/exercise2b.md) from module 2
 * The LM35 temperature sensor

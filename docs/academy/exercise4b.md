@@ -5,7 +5,7 @@ In this exercise, we implement the LwM2M Send Operation for the Temperature Obje
 ## Prerequisites
 
 * A Raspberry Pi Pico W board with a USB cable
-* Installed minicom (for Linux), RealTerm, PuTTy (for Windows), or another serial communication program.
+* Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account
 * Completed [exercise 3B](../academy/exercise3b.md) from module 3
 * Completed [exercise 4A](../academy/exercise4a.md) from module 4
