@@ -38,7 +38,10 @@ For LwM2M Servers like [Coiote IoT DM](https://www.avsystem.com/coiote-iot-devic
 Click the **Save** button and confirm the changes.
 
 ## Configure credentials in application sources
-Let’s get started by going to the **Anjay-pico-client/mandatory_objects** directory.
+Let’s get started by going to the **Anjay-pico-client** directory and creating a new directory called **psk-mode**.
+
+!!! Important
+    Copy and paste the **main.c** and **CMakeLists.txt** files from the **Anjay-pico-client/mandatory_objects** directory into the **Anjay-pico-client/psk-mode** directory.
 
 Open the **main.c** file in a code editor (e.g. VS Code).
 
@@ -80,8 +83,8 @@ After updating the `setup_security_object()` function in the **main.c** file, it
 - **Server URI** (`server_uri`) points to the LwM2M Server. Note that the URI port has changed from `5683` to `5684`.
 
 
-!!! Tip
-    The complete code can be found in the `secure_communication` subdirectory of the Anjay-pico-client project repository.
+!!! Note
+    The complete code for a similar example targeting desktop platforms can be found in the `secure_communication` subdirectory of the Anjay-pico-client project repository.
 
 ## Recompile the application and flash the board
 To recompile the application, go to the **Anjay-pico-client/build** directory.
@@ -91,7 +94,7 @@ If you’re using **Linux** or **Mac**, run the following command:
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
 ```
 
-If you’re using **Windows**, run the following command:
+If you’re using ***Windows***, run the following command:
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" .. -G "MinGW Makefiles"
 ```
@@ -118,4 +121,3 @@ In Coiote, the Registration status should show **Registered** and the **Security
 
 
 Can you see **Registered** in registration status and the tag **Pre-Shared Key**? If yes, well done!  👏 👏
-
