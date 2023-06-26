@@ -1,6 +1,6 @@
 #Exercise 3B: Implement the Temperature Object
 
-Among many Objects defined in the [OMA LwM2M Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html), Temperature is one of the most frequently used. We will implement the Temperature Object (/3303) in this exercise using the **LM35 temperature sensor**. Anjay provides an easy-to-use API for implementing new Sensor Objects as you will experience in this tutorial.
+Among many Objects defined in the [OMA LwM2M Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html), Temperature is one of the most frequently used. We will implement the Temperature Object (`/3303`) in this exercise using the **LM35 temperature sensor**. Anjay provides an easy-to-use API for implementing new Sensor Objects as you will experience in this tutorial.
 
 !!! Note
     In this exercise, we’re presenting an alternative way for implementing Objects which is different from what we used in [exercise 3A](../academy/exercise3a.md). The implementation in this exercise requires more manual work, but it allows you to create easier implementation, involving the ipso_objects library.
