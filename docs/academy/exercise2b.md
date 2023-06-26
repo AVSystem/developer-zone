@@ -12,14 +12,14 @@ In this exercise, we will change the security mode from **No-Sec** to **Pre-Shar
 
 ## Connect to the LwM2M Server
 
-For LwM2M Servers like [Coiote IoT DM](https://www.avsystem.com/coiote-iot-device-management-platform/), server-side configuration needs to be updated to enable LwM2M Clients to connect using PSK. The simplest solution to is to edit the connection parameters on the Coiote configuration page. Follow the next steps to change the parameters and set them to Pre-Shared Key mode.
+For LwM2M Servers like [Coiote IoT DM](https://www.avsystem.com/coiote-iot-device-management-platform/), server-side configuration needs to be updated to enable LwM2M Clients to connect using PSK. The simplest solution is to edit the connection parameters on the Coiote IoT Device Management configuration page. Follow the next steps to change the parameters and set them to Pre-Shared Key mode.
 
 
 ### Change connection parameters
 
-0. Log in to Coiote DM: [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
+0. Log in to Coiote IoT DM: [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 0. Select **Device Inventory** from the left-side menu.
-0. From the Device Inventory, go to your created device. 
+0. From the Device Inventory, go to your created device.
 0. Go to the **Configuration** page and click the right pencil icon on the Connection parameters panel.
 
     ![Device Inventory](images/device_no_sec.png)
@@ -75,12 +75,48 @@ static int setup_security_object(anjay_t *anjay) {
 }
 ```
 
+Next, open the **CMakeLists.txt**, change the file names and add the required information about the PSK mode.
+
+```
+cmake_minimum_required(VERSION 3.13)
+
+add_executable(psk-mode
+            main.c
+            )
+
+target_link_libraries(psk-mode
+                    pico_stdlib
+                    anjay-pico
+                    FreeRTOS
+                    )
+
+target_include_directories(psk-mode PRIVATE
+                        ${COMMON_DIR}/config
+                        )
+
+target_compile_definitions(psk-mode PRIVATE
+                        WIFI_SSID=\"${WIFI_SSID}\"
+                        WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
+                        ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
+                        PSK_IDENTITY=\"${PSK_IDENTITY}\"
+                        PSK_KEY=\"${PSK_KEY}\"
+                        )
+
+pico_enable_stdio_usb(psk-mode 1)
+pico_enable_stdio_uart(psk-mode 0)
+
+pico_add_extra_outputs(psk-mode)
+
+```
+
 ## Configure PSK Identity and Pre-Shared Key
 After updating the `setup_security_object()` function in the **main.c** file, it is time to describe the most important variables to configure the **PSK** mode.
 
 - **PSK Identity** (`PSK_IDENTITY`) is the name by which the device identifies itself during the DTLS handshake. It is recommended to use the endpoint name as the Key identity.
 - **PSK Key** (`PSK_KEY`) is the shared secret (password) the device uses for server connections in PSK mode. You must enter this PSK Key in plain text.
 - **Server URI** (`server_uri`) points to the LwM2M Server. Note that the URI port has changed from `5683` to `5684`.
+
+
 
 
 !!! Note
@@ -113,11 +149,11 @@ Copy the `mandatory_objects.uf2` file to the Mass Storage device directory, and 
 
 If all went well and logs show **registration successfully updated**.
 
-![Check the logs in serial communication program](images/logs.PNG)
+![Check the logs in the serial communication program](images/logs.PNG)
 
-In Coiote, the Registration status should show **Registered** and the **Security mode** in the bottom-left corner panel should now include the tag: `Pre-Shared Key`.
+In Coiote IoT Device Management, the Registration status should show **Registered** and the **Security mode** in the bottom-left corner panel should now include the tag: `Pre-Shared Key`.
 
 ![Device in Pre-Shared Key mode Registered](images/pre-shared.png)
 
 
-Can you see **Registered** in registration status and the tag **Pre-Shared Key**? If yes, well done!  👏 👏
+Can you see **Registered** in the registration status and the tag **Pre-Shared Key**? If yes, well done!  👏 👏

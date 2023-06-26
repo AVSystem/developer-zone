@@ -9,7 +9,7 @@ Once your project is complete, please publish the final result on our [AVSystem 
 **Best of luck with this final step. We can't wait to see how you apply your acquired knowledge to create a compelling end-to-end application.**
 
 ## Useful Resources
-* [Getting Started guides](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Getting_started/) continaing detailed documentation on using different IoT development kits
+* [Getting Started guides](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Getting_started/) containing detailed documentation on using different IoT development kits
 * [AVSystem Discord](https://discord.avsystem.com/) for support and for submitting your graduation project
 
 

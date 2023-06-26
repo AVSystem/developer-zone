@@ -1,10 +1,10 @@
 # Exercise 1: Connect the Raspberry Pi Pico W to a LwM2M Server
 
-Let’s start with the first exercise on building an end-to-end LwM2M application by running Anjay LwM2M Client on the Raspberry Pi Pico W, and connecting your device to Coiote LwM2M Server over WiFi.
+Let’s start with the first exercise on building an end-to-end LwM2M application by running Anjay LwM2M Client on the Raspberry Pi Pico W, and connecting your device to Coiote IoT Device Management LwM2M Server over WiFi.
 
 ## Prerequisites
 
-* A Raspberry Pi Pico W board with USB cable
+* A Raspberry Pi Pico W board with a USB cable
 * <a href="https://git-scm.com/downloads" target="_blank">Git</a>
 * <a href="https://www.python.org/downloads/" target="_blank">Python</a>
 * Access to a WiFi network
@@ -164,7 +164,7 @@ In exercises throughout the academy, we use 115200 baud, since it’s the defaul
 !!! Tip
     Those logs may help figure out why the device didn't connect to the server (e.g. because of the mistake in writing the WiFi password in the `cmake` command).
 
-If all went well and logs show **registration successful/registration successfully updated**, you can go to Coiote where the Registration status should show **Registered**.
+If all went well and logs show **registration successful/registration successfully updated**, you can go to Coiote IoT DM where the Registration status should show **Registered**.
 
 ![Device Center](images/no-sec.png)
 
