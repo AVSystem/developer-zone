@@ -1,4 +1,4 @@
-# Exercise 4B: LwM2M Send - the information reporting Client operation
+# Exercise 4B: LwM2M Send
 
 In this exercise, we implement the LwM2M Send Operation for the Temperature Object and adjust the time interval between two Send Operations. The Send Operation is used by the LwM2M Client to send data without an explicit request from the LwM2M Server (unlike the Read Operation).
 

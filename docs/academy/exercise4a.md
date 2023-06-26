@@ -1,4 +1,4 @@
-# Exercise 4A: Read, Write & Observe Resources using LwM2M Operations
+# Exercise 4A: LwM2M Operations
 
 Some Resources represent values that change over time, like sensor readings. The LwM2M Server may request the Client to send notification messages at regular intervals or when values exceed a certain threshold. To do so, the Server can send an Observe Operation to the device, after which the device responds with periodic Notify messages containing the values of the observed Object, Object Instance, or Resources.
 
