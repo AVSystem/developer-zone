@@ -1,6 +1,6 @@
 # Exercise 3A: Implement the Time Object
 
-In this exercise, we are going to implement the [Time Object /3333](https://devtoolkit.openmobilealliance.org/OEditor/LWMOView) using LwM2M version 1.0. With only 3 Resources, it is one of the simplest Objects defined in the [OMA LwM2M Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html). The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC.
+In this exercise we are implementing the [Time Object /3333](http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F3333-1_0.xml) using LwM2M version 1.0. With only 3 Resources, it is one of the simplest Objects defined in the [OMA LwM2M Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html). The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC.
 
 The Time Object contains three Resources as shown in the table below.
 
