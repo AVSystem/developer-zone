@@ -78,7 +78,7 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
 ---
 
 !!! tip
-    Need help? Head over to <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
+    Need help? Head over to the **lwm2m-academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
  
 
      

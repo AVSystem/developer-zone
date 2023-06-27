@@ -13,6 +13,9 @@ Among many Objects defined in the [OMA LwM2M Object and Resource Registry](https
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 * Completed [exercise 2B](../academy/exercise2b.md) from module 2
 
+!!! tip
+    Need help? Head over to the **lwm2m-academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
+
 ## Implement the Temperature Object
 In these steps, we are going to generate the temperature sensor files required to:
 

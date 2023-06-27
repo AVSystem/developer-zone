@@ -109,6 +109,10 @@ pico_add_extra_outputs(psk-mode)
 
 ```
 
+!!! tip
+    Need help? Head over to the **lwm2m-academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
+
+
 ## Configure PSK Identity and Pre-Shared Key
 After updating the `setup_security_object()` function in the **main.c** file, it is time to describe the most important variables to configure the **PSK** mode.
 

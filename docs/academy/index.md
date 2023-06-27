@@ -22,6 +22,8 @@ By the end of the course, you will understand the advantages of the LwM2M standa
 
 Step right into the heart of learning with the <a href="https://discord.avsystem.com/" target="_blank">**AVSystem Discord Community**</a>. During the course, Discord is the place for expert guidance on LwM2M, networking with fellow course students, and showcasing the cool stuff you're building.
 
+We've dedicated an exclusive channel for our learners, named **lwm2m-academy**.
+
 We invite you to join the AVSystem Discord Community to enrich your learning experience and interact with the LwM2M community.
 
 <a href="https://discord.avsystem.com/" target="_blank">
