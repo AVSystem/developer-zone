@@ -13,4 +13,8 @@ Once your project is complete, please publish the final result on our [AVSystem 
 * [AVSystem Discord](https://discord.avsystem.com/) for support and for submitting your graduation project
 
 
+!!! important "Provide your feedback"
 
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

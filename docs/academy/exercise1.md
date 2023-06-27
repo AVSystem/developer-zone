@@ -77,9 +77,14 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
         ```
 ---
 
+!!! tip
+    Need help? Head over to the **LwM2M Academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
+ 
+
+     
 ## Connect to the LwM2M Server
 
-Before connecting your device to the cloud, log in to Coiote IoT Device Management: <a href="https://eu.iot.avsystem.cloud" target="_blank">eu.iot.avsystem.cloud</a>.
+Before connecting your device to the cloud, log in to Coiote IoT Device Management: <a href="https://eu.iot.avsystem.cloud" target="_blank">**eu.iot.avsystem.cloud**</a>.
 
 Once logged in, select **Device Inventory** from the left-side menu
 
@@ -119,17 +124,17 @@ Create and open a directory called **build**:
 ```
 mkdir build && cd build
 ```
-If you’re using Linux or Mac, run the following command:
+If you’re using **Linux** or **Mac**, run the following command:
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" ..
 ```
 
-If you’re using Windows, run the following command:
+If you’re using **Windows**, run the following command:
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" .. -G "MinGW Makefiles"
 ```
 
-Run the following command in the build directory:
+Open up the build directory and run the following command:
 ```
 cmake --build . -j
 ```
@@ -178,3 +183,10 @@ In this view, we can see all LwM2M Object the device supports. As of now, there 
 
 ![Data model view](images/data_model.png)
 
+
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

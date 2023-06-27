@@ -80,3 +80,9 @@ Remote IoT device updates are essential for the long-term success of IoT applica
 * [DevZone Firmware update documentation](https://iotdevzone.avsystem.com/docs/Coiote_IoT_DM/firmware_update/)
 * [Anjay firmware update documentation](https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial.html)
 * [Anjay Demo for Zephyr](https://github.com/AVSystem/Anjay-zephyr-client/tree/master/demo)
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

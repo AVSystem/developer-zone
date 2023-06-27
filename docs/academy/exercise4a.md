@@ -62,3 +62,9 @@ To perform a LwM2M EXECUTE operation on a resource, click the **cogwheel** icon 
 ![Execute operation](images/module4_Temperature_object_Execute_CLICK.png)
 
 **Well done! You remotely managed your IoT devices using the LwM2M Operations Read and Observe** 👏
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

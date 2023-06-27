@@ -143,3 +143,9 @@ Whereas humans comprehend information through words, computers prefer informatio
 * [LwM2M v1.1 Technical specifications](https://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.pdf)
 * [CoAP specifications](https://www.rfc-editor.org/rfc/rfc7252)
 * [SenML specifications](https://www.rfc-editor.org/rfc/rfc8428)
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

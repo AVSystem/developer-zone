@@ -90,3 +90,10 @@ Before telemetry data can be exchanged, the device needs to register to a LwM2M 
 At regular intervals, the Client sends update messages informing the Server about being alive and functioning properly. If new Objects, Object Instances, or Resources are added over time, the Server gets synchronized with the Client during the status update message.
 
 ![Registration](images/module2_registration.png)
+
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

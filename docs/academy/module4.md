@@ -65,3 +65,9 @@ Example payload of a SEND operation containing the location and radio signal str
   {"n":"/6/0/1", "v":3.87723}
 ]
 ```
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

@@ -155,3 +155,9 @@ void anjay_task(__unused void *params) {
 ```
 
 Did you review all of the code snippets in the Mandatory Objects application? **Nice work! You now understand the basics of building an LwM2M application.** 🎉
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

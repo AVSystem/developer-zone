@@ -4,7 +4,7 @@ date: 2023-06-22
 og_title: LwM2M Academy
 ---
 
-# LwM2M Academy
+# LwM2M Academy (beta)
 
 ![module 1 title](images/LwM2M-Academy-cover_1500x844.png)
 
@@ -22,13 +22,20 @@ By the end of the course, you will understand the advantages of the LwM2M standa
 
 Step right into the heart of learning with the <a href="https://discord.avsystem.com/" target="_blank">**AVSystem Discord Community**</a>. During the course, Discord is the place for expert guidance on LwM2M, networking with fellow course students, and showcasing the cool stuff you're building.
 
-We've dedicated an exclusive channel for our learners, named **Academy**.
+We've dedicated an exclusive channel for our learners, named **LwM2M Academy**.
 
 We invite you to join the AVSystem Discord Community to enrich your learning experience and interact with the LwM2M community.
 
 <a href="https://discord.avsystem.com/" target="_blank">
 ![Join Discord](../img/discord.png)
 </a>
+
+
+## Provide your feedback
+
+We're constantly working on improving the LwM2M Academy. Please share with us your feedback throughout the course so we can create an even better learning experience.
+
+[Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }
 
 
 ## Intro to the hardware used in this course

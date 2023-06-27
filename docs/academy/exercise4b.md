@@ -279,3 +279,9 @@ Now, open Coiote IoT Device Management and validate if the Resources are updated
 ![Temperature Object registered](images/temperature.PNG)
 
 **Well done! You’ve added support for Send Operations in your firmware** 👏
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }

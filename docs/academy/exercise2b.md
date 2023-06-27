@@ -157,3 +157,9 @@ In Coiote IoT Device Management, the Registration status should show **Registere
 
 
 Can you see **Registered** in the registration status and the tag **Pre-Shared Key**? If yes, well done!  👏 👏
+
+!!! important "Provide your feedback"
+
+    We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.
+
+    [Feedback form](https://forms.gle/UAFLJs9LJocAeger9){: .md-button .md-button--big }
