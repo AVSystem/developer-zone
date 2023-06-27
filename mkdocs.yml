@@ -141,7 +141,7 @@ nav:
                 - Exercise 3B - Implement Temperature Object: 'academy/exercise3b.md'
             - Module 4 - Device management:
                 - Theory: 'academy/module4.md'
-                - Exercise 4A - Read, Write & Observe: 'academy/exercise4a.md'
+                - Exercise 4A - Read & Observe: 'academy/exercise4a.md'
                 - Exercise 4B - LwM2M Send: 'academy/exercise4b.md'
             - Module 5 - Firmware updates:
                 - Theory: 'academy/module5.md'

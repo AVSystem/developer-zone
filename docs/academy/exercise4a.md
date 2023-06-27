@@ -1,33 +1,30 @@
 # Exercise 4A: LwM2M Operations
 
-Some Resources represent values that change over time, like sensor readings. The LwM2M Server may request the Client to send notification messages at regular intervals or when values exceed a certain threshold. To do so, the Server can send an Observe Operation to the device, after which the device responds with periodic Notify messages containing the values of the observed Object, Object Instance, or Resources.
+Some Resources represent values that change over time, like sensor readings. The LwM2M Server may request the Client to send notification messages at regular intervals or when values exceed a certain threshold. To do so, the Server can send an **Observe Operation** to the device, after which the device responds with periodic **Notify** messages containing the values of the observed Object, Object Instance, or Resource.
 
-Next to the Observe Operation, the Server can request the Client to send the value of a specific Resource using the Read operation or it can change a parameter using the Write operation. These operations are performed only once.
+Next to the Observe Operation, the Server can request the Client to send the value of a specific Resource using the **Read** Operation. This operations is performed only once.
 
 In this exercise, we start sending LwM2M Operations to the Client to monitor the Temperature Object implemented in the previous 3B exercise.
-
-!!! Note
-    The Write operation won’t be used in this exercise. If you want to use this operation you can perform this on the Time Object.
 
 ## Prerequisites
 
 * A Raspberry Pi Pico W board with a USB cable
+* A LM35 temperature sensor
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 * Completed [exercise 3B](../academy/exercise3b.md) from module 3
-* The LM35 temperature sensor
 
 
 ## Notifications support
-Let’s get started by connecting our Raspberry Pi Pico W to the computer via a USB cable. Open a serial communication program to watch the device logs and go to the Coiote IoT Device Management to check if your device has connected successfully. If so, you are ready to perform your first Observe/Read/Write operations on your LwM2M Device (a.k.a. The LwM2M Client).
+Let’s get started by connecting our Raspberry Pi Pico W to the computer via a USB cable. Open a serial communication program to watch the device logs and go to the Coiote IoT Device Management to check if your device has connected successfully. If so, you are ready to perform your first Observe/Read operations on your LwM2M Device (a.k.a. The LwM2M Client).
 
-Go to **Coiote IoT DM**, select the **Data model** tab and open the **Temperature Object /3303**.
+Go to **Coiote IoT DM**, select the **Data model** tab and open the **Temperature Object `/3303`**.
 
-![Temperature Object Resources](images/4a1.PNG)
+![Temperature Object Resources](images/module4_Temperature_send.png)
 
 Find in the **Operations** column three different icons representing three different Operations.
 
-![Operations column in Data model](images/4aoperations.PNG)
+![Operations column in Data model](images/module4_Temperature_object_Operations.png)
 
 
 - **Read** - The Read operation requests the Client to send its latest value. The operation can be invoked on an Object, Object Instance, Resource or Resource Instance.
@@ -52,19 +49,16 @@ The Server can set observations on a Resource, Object Instance or a whole Object
 * **Not more often than once every** - the minimum time in seconds between two notifications.
 * **At least once every** - the maximum time in seconds between two notifications. The notification is sent even if the value hasn't changed.
 
-![Observe Operation](images/4aObservations.PNG)
-To set an observation on an Object or Object Instance, click on the 3 vertical dots menu and select **Set observation**, then follow the steps described above.
+![Observe Operation](images/module4_Observation.png)
+To set an observation on an Object or Object Instance, click on the 3 vertical dots menu and select **Set observation**.
 
-![Set observation on object](images/set_observe_obj.png "Set observation on object"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
+![Set observation on object](images/module4_observation_object_CLICK.png "Set observation on object"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
 
-You can see that after every amount of time which you set in the observation menu, its value is changed and updated due to calling “Update send” by Anjay.
-
-!!! Note
-    You can read more about other attributes in our [Brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
+You can see that after each time interval which you set in the observation menu, the value is changed as a result of the Client sending an update.
 
 ## Execute Operation
 To perform a LwM2M EXECUTE operation on a resource, click the **cogwheel** icon in the **Operations** column and select **Execute**, or **Execute with parameters** to set additional EXECUTE conditions.
 
-![Execute operation](images/4aexecute.png)
+![Execute operation](images/module4_Temperature_object_Execute_CLICK.png)
 
 **Well done! You remotely managed your IoT devices using the LwM2M Operations Read and Observe** 👏
