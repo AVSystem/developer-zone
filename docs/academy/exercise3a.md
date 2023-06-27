@@ -31,10 +31,10 @@ With our **Time Object** we will initiate one Instance, implement the read and w
 
 
 ## Implement the Time Object
-Let’s get started by going to the **Anjay-pico-client** directory and creating a new directory called **lwm2m_academy_time_object**. Go to the directory and start by generating the Object's implementation.
+Let’s get started by going to the **Anjay-pico-client** directory and creating a new directory called **time_object**. Go to the directory and start by generating the Object's implementation.
 
 !!! Important
-    Copy and paste the **main.c** and **CMakeLists.txt** files from the **Anjay-pico-client/secure_communication** directory to the **Anjay-pico-client/lwm2m_academy_time_object** directory.
+    Copy and paste the *main.c* and *CMakeLists.txt* files from the **Anjay-pico-client/secure_communication** directory to the **Anjay-pico-client/time_object** directory.
 
 ## Generate base source code
 To generate a layout of the Object’s implementation, we will use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts which are bundled with the Anjay library. The script downloads the LwM2M Object Definition and generates a skeleton of the LwM2M Object code, requiring you to only fill in actual Object logic. For more information about the script, visit the [Anjay documentation](https://avsystem.github.io/Anjay-doc/Tools/StubGenerator.html).
@@ -42,13 +42,13 @@ To generate a layout of the Object’s implementation, we will use the `anjay_co
 If you’re using **Linux** or **MacOS** go to the **Anjay-pico-client** directory, run the following commands in your command line:
 
 ```
-python3 deps/anjay/tools/lwm2m_object_registry.py --get-xml 3333 -v 1.0 > lwm2m_academy_time_object/lwm2m_3333.xml
-python3 deps/anjay/tools/anjay_codegen.py -i lwm2m_academy_time_object/lwm2m_3333.xml -o lwm2m_academy_time_object/time_object.c
+python3 deps/anjay/tools/lwm2m_object_registry.py --get-xml 3333 -v 1.0 > time_object/lwm2m_3333.xml
+python3 deps/anjay/tools/anjay_codegen.py -i time_object/lwm2m_3333.xml -o time_object/time_object.c
 ```
 !!! important
     If you’re using **Windows**, use `python` instead of `python3`.
 
-The commands use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts to generate the *time_object.xml* and *time_object.c* files in the **Anjay-pico-client/lwm2m_academy_time_object**.
+The commands use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts to generate the *time_object.xml* and *time_object.c* files in the **Anjay-pico-client/time_object**.
 
 The generated files still require some modifications to make them operational. In the next part, you can find the highlighted code blocks which should be added to the *time_object.c* files.
 
@@ -56,7 +56,7 @@ The generated files still require some modifications to make them operational. I
 
 Each Object requires at least one Object Instance which contains all the required Resources.
 
-Go to the **Anjay-pico-client/lwm2m_academy_time_object** directory and open the file `time_object.c`.
+Go to the **Anjay-pico-client/time_object** directory and open the file `time_object.c`.
 
 Start by adding some variables responsible for the state of our Time Object Instance to the `time_instance_t` structure. For this add a value of Application Type Resource because Current Time Resource will be using a system clock source directly, whenever a read handler is called.
 
@@ -81,7 +81,7 @@ typedef struct time_object_struct {
 ## Initiate, release, and reset the Instance
 Next up is implementing the `init_instance()` and `release_instance()` functions. These functions are used during the creation and deletion of Instances, usually performed through device work.
 
-In this case, all we have to do is initialize the Application Type with some value. We can do this by setting the first byte of  `time_instance_t::application_type` variable to ‘\0’.
+In this case, all we have to do is initialize the Application Type with some value. We can do this by setting the first byte of  `time_instance_t::application_type` variable to `\0`.
 
 !!! Note
     To better understand the code, it is useful to know the “full names” of some variables:
@@ -144,7 +144,7 @@ static int list_resources(anjay_t *anjay,
 
 
 !!! Note
-    Using '-r' command line option in *anjay_codegen.py* you can generate Object’s stub with specified Resources only. You can run
+    Using the `-r` command line option in *anjay_codegen.py* you can generate Object’s stub with specified Resources only. You can run
     `python3 deps/anjay/tools/anjay_codegen.py --help` from the Anjay-pico-client direcotry for more help.
 
 ## Read and Write handlers
@@ -154,7 +154,7 @@ Now we are ready to implement `resource_read()` and `resource_write()` handlers.
 !!! Note
     Read and Write operations will be described in more detail in the next module: **Module 4 - Device Management using LwM2M**.
 
-The resource_read() operation on Current Time resource should return current time in seconds since January 1, 1970, UTC. To get this value, we can use the preimplemented `avs_time_real_now()` function. The same operation on Application Type resource should return the `time_instance_t::application_type` string. Because we’ve made the Fractional Time resource absent, we won’t perform any actions on this resource during `resource_read()` operation.
+The `resource_read()` operation on Current Time resource should return current time in seconds since January 1, 1970, UTC. To get this value, we can use the preimplemented `avs_time_real_now()` function. The same operation on Application Type resource should return the `time_instance_t::application_type` string. Because we’ve made the Fractional Time resource absent, we won’t perform any actions on this resource during `resource_read()` operation.
 
 <p style="text-align: center;">time_object.c</p>
 ```
@@ -308,33 +308,33 @@ Include the `time_object.h` file on the top of the *main.c* file.
 ```
 cmake_minimum_required(VERSION 3.13)
 
-add_executable(lwm2m_academy_time_object
+add_executable(time_object
             main.c
             time_object.c
             time_object.h
             )
 
-target_link_libraries(lwm2m_academy_time_object
+target_link_libraries(time_object
                     pico_stdlib
                     anjay-pico
                     FreeRTOS
                     )
 
-target_include_directories(lwm2m_academy_time_object PRIVATE
+target_include_directories(time_object PRIVATE
                         ${COMMON_DIR}/config
                         )
 
-target_compile_definitions(lwm2m_academy_time_object PRIVATE
+target_compile_definitions(time_object PRIVATE
                         WIFI_SSID=\"${WIFI_SSID}\"
                         WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
                         ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
                         PSK_IDENTITY=\"${PSK_IDENTITY}\"
                         PSK_KEY=\"${PSK_KEY}\"
                         )
-pico_enable_stdio_usb(lwm2m_academy_time_object 1)
-pico_enable_stdio_uart(lwm2m_academy_time_object 0)
+pico_enable_stdio_usb(time_object 1)
+pico_enable_stdio_uart(time_object 0)
 
-pico_add_extra_outputs(lwm2m_academy_time_object)
+pico_add_extra_outputs(time_object)
 ```
 
 At the end of the file add the mention about subdirectory to the general *CMakeLists.txt*.
@@ -342,70 +342,18 @@ At the end of the file add the mention about subdirectory to the general *CMakeL
 
 <p style="text-align: center;">Anjay-pico-client/CMakeLists.txt</p>
 ```
-    add_subdirectory(lwm2m_academy_time_object)
+add_subdirectory(time_object)
 ```
 
 Now the client is ready to be built and connected to LwM2M Server, allowing it to read the Time object.
 
-## Recompile the application and flash the board
-To recompile the application, go to the **Anjay-pico-client/build** directory.
-
-If you’re using **Linux** or **Mac**, run the following command:
-```
-    cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
-```
-
-If you’re using ***Windows***, run the following command:
-```
-    cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" .. -G "MinGW Makefiles"
-```
-Run the following command in the build directory
-```
-    cmake --build . -j
-```
-
-Program your board using the bootloader. Press and hold the **BOOTSEL** button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.
-
-In the **build/lwm2m_academy_time_object** directory, you will find the *.uf2* file which has our added changes.
-
-Copy the `lwm2m_academy_time_object.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
-
-## Check the logs
-With the board still connected to your PC, open a serial communication program. This will help you to check if everything is working correctly.
-!!! Note
-    To open the serial port interface you need to check the name of the connected device and choose the proper baud rate value:
-
-    - Linux usually uses **/dev/ttyACM<number>** or **/dev/ttyUSB<number>** for a serial port device name.
-    - Windows uses **COM<number>** for a serial port device name.
-    - macOS uses **/dev/tty.usbmodem<number>** for a serial port device name.
-
-
-It’s important to set the correct baud rate, too. The baud rate is the number of symbols transferred in a communication channel per second and must be the same both on the serial communication program and on the board. The most common baud rates for serial ports are 9600 and 115200.
-
-!!! Example
-    In the serial port context, "115200 baud" means the serial port sends data at 115200 bits per second.
-
-In exercises throughout the academy, we use 115200 baud, since it’s the default value used by Raspberry Pi Pico W.
-
-![Check the logs in serial communication program](images/logs.PNG)
-
-!!! Note
-    Those logs may help figure out why the device didn't connect to the server (e.g. because of the mistake in writing the Wi-Fi password in the `cmake` command).
-
-If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the “Data Model” and  check if you can see Time Object in **Defined objects** section.
-
-![Device in Pre-Shared Key mode Registered](images/pre-shared.png)
-
-!!! Note
-    The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC. After refreshing the page you can see that the value changed.
-
 ## Support transactional writes
 
-Consider the following scenario: LwM2M Server tries to write to two or more Resources simultaneously. The write-on Application Type will probably succeed, but we are sure that writing at the Current Time will fail as we didn’t implement this Write operation. Without supporting transactions, the entire Write operation will fail.
+Consider the following scenario: the LwM2M Server tries to write to two or more Resources simultaneously. The write-on Application Type will probably succeed, but we are sure that writing at the Current Time will fail as we didn’t implement this Write operation. Without supporting transactions, the entire Write operation will fail.
 
-By default, transaction handlers are set to `anjay_dm_transaction_NOOP` and do nothing. To properly support Writes on the object implemented in this exercise, we need to implement only two handlers: *transaction_begin* which makes a backup of the Application Type value, and *transaction_rollback* which reverts the Application Type to its initial value (before the Write operation is performed) for which we need the `time_instance_t::application_type_backup` array.
+By default, transaction handlers are set to `anjay_dm_transaction_NOOP` and do nothing. To properly support Writes on the O two handlers: `transaction_begin` which makes a backup of the Application Type value, and `transaction_rollback` which reverts the Application Type to its initial value (before the Write operation is performed) for which we need the `time_instance_t::application_type_backup` array.
 
-Go back to the *time_object.c* file:
+Go back to the *time_object.c* file and update the file using the following code block:
 
 <p style="text-align: center;">time_object.c</p>
 ```
@@ -452,14 +400,44 @@ static const anjay_dm_object_def_t OBJ_DEF = {
 };
 ```
 
-Save created code, recompile the application, and build the *.uf2* file. Flash the board and check the logs if everything is alright.
 
-If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the **Data Model** and check if you can see Time Object in **Defined objects** section.
 
-!!!Note
+## Recompile the application and flash the board
+To recompile the application, go to the **Anjay-pico-client/build** directory.
+
+If you’re using **Linux** or **Mac**, run the following command:
+```
+cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
+```
+
+If you’re using ***Windows***, run the following command:
+```
+cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" .. -G "MinGW Makefiles"
+```
+Run the following command in the build directory
+```
+cmake --build . -j
+```
+
+Program your board using the bootloader. Press and hold the **BOOTSEL** button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.
+
+In the **build/time_object** directory, you will find the *.uf2* file which has our added changes.
+
+Copy the `time_object.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
+
+## Check the logs
+With the board still connected to your PC, open a serial communication program. This will help you to check if everything is working correctly.
+
+![Check the logs in serial communication program](images/logs.PNG)
+
+If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the **Data Model** and check if you can see the Time Object in the **Defined objects** section.
+
+![Time object in Data Model](images/time_object.PNG)
+
+!!! Note
     The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC. After refreshing the page you can see that the value changed.
 
 ![Time object in Data Model](images/time_object.PNG)
 
 **Good job!** 👏👏
-Now you are ready to create more difficult objects. For this, go to the next exercise.
+Now you are ready to create more difficult Objects. For this, go to the next exercise.
