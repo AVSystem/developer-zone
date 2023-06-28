@@ -1,6 +1,5 @@
 # Exercise 3A: Implement the Time Object
-
-In this exercise we are implementing the [Time Object /3333](http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F3333-1_0.xml) using LwM2M version 1.0. With only 3 Resources, it is one of the simplest Objects defined in the [OMA LwM2M Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html). The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC.
+In this exercise, we are implementing the [Time Object /3333](http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F3333-1_0.xml) using LwM2M version 1.0. With only 3 Resources, it is one of the simplest Objects defined in the [OMA LwM2M Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html). The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC.
 
 The Time Object contains three Resources as shown in the table below.
 
@@ -39,7 +38,7 @@ Let’s get started by going to the **Anjay-pico-client** directory and creating
 ## Generate base source code
 To generate a layout of the Object’s implementation, we will use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts which are bundled with the Anjay library. The script downloads the LwM2M Object Definition and generates a skeleton of the LwM2M Object code, requiring you to only fill in actual Object logic. For more information about the script, visit the [Anjay documentation](https://avsystem.github.io/Anjay-doc/Tools/StubGenerator.html).
 
-If you’re using **Linux** or **MacOS** go to the **Anjay-pico-client** directory, run the following commands in your command line:
+If you’re using **Linux** or **MacOS** go to the **Anjay-pico-client** directory, and run the following commands in your command line:
 
 ```
 python3 deps/anjay/tools/lwm2m_object_registry.py --get-xml 3333 -v 1.0 > time_object/lwm2m_3333.xml
@@ -248,12 +247,12 @@ The last thing to do is to create the header file `time_object.h` for the implem
 
 <p style="text-align: center;">time_object.h</p>
 ```
-    #pragma once
+#pragma once
 
-    #include <anjay/dm.h>
+#include <anjay/dm.h>
 
-    const anjay_dm_object_def_t **time_object_create(void);
-    void time_object_release(const anjay_dm_object_def_t **def);
+const anjay_dm_object_def_t **time_object_create(void);
+void time_object_release(const anjay_dm_object_def_t **def);
 ```
 
 
