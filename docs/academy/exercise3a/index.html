@@ -2774,7 +2774,7 @@
 
 <!-- Markdown content -->
 <h1 id="exercise-3a-implement-the-time-object">Exercise 3A: Implement the Time Object<a class="headerlink" href="#exercise-3a-implement-the-time-object" title="Permanent link">#</a></h1>
-<p>In this exercise we are implementing the <a href="http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F3333-1_0.xml">Time Object /3333</a> using LwM2M version 1.0. With only 3 Resources, it is one of the simplest Objects defined in the <a href="https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html">OMA LwM2M Registry</a>. The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC.</p>
+<p>In this exercise, we are implementing the <a href="http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F3333-1_0.xml">Time Object /3333</a> using LwM2M version 1.0. With only 3 Resources, it is one of the simplest Objects defined in the <a href="https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html">OMA LwM2M Registry</a>. The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC.</p>
 <p>The Time Object contains three Resources as shown in the table below.</p>
 <table>
 <thead>
@@ -2841,7 +2841,7 @@
 </div>
 <h2 id="generate-base-source-code">Generate base source code<a class="headerlink" href="#generate-base-source-code" title="Permanent link">#</a></h2>
 <p>To generate a layout of the Object’s implementation, we will use the <code>anjay_codegen.py</code> and <code>lwm2m_object_registry.py</code> scripts which are bundled with the Anjay library. The script downloads the LwM2M Object Definition and generates a skeleton of the LwM2M Object code, requiring you to only fill in actual Object logic. For more information about the script, visit the <a href="https://avsystem.github.io/Anjay-doc/Tools/StubGenerator.html">Anjay documentation</a>.</p>
-<p>If you’re using <strong>Linux</strong> or <strong>MacOS</strong> go to the <strong>Anjay-pico-client</strong> directory, run the following commands in your command line:</p>
+<p>If you’re using <strong>Linux</strong> or <strong>MacOS</strong> go to the <strong>Anjay-pico-client</strong> directory, and run the following commands in your command line:</p>
 <div class="highlight"><pre><span></span><code>python3 deps/anjay/tools/lwm2m_object_registry.py --get-xml 3333 -v 1.0 &gt; time_object/lwm2m_3333.xml
 python3 deps/anjay/tools/anjay_codegen.py -i time_object/lwm2m_3333.xml -o time_object/time_object.c
 </code></pre></div>
@@ -3019,12 +3019,12 @@ typedef struct time_object_struct {
 <h2 id="register-the-object-in-anjay">Register the Object in Anjay<a class="headerlink" href="#register-the-object-in-anjay" title="Permanent link">#</a></h2>
 <p>The last thing to do is to create the header file <code>time_object.h</code> for the implemented object, include the header file in the <strong>main.c</strong> and update the <strong>CMakeLists.txt</strong> file.</p>
 <p style="text-align: center;">time_object.h</p>
-<div class="highlight"><pre><span></span><code>    #pragma once
+<div class="highlight"><pre><span></span><code>#pragma once
 
-    #include &lt;anjay/dm.h&gt;
+#include &lt;anjay/dm.h&gt;
 
-    const anjay_dm_object_def_t **time_object_create(void);
-    void time_object_release(const anjay_dm_object_def_t **def);
+const anjay_dm_object_def_t **time_object_create(void);
+void time_object_release(const anjay_dm_object_def_t **def);
 </code></pre></div>
 <p style="text-align: center;">main.c</p>
 <div class="highlight"><pre><span></span><code>void anjay_task(__unused void *params) {
@@ -3243,7 +3243,7 @@ Now you are ready to create more difficult Objects. For this, go to the next exe
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2023</span>
     
   </small>
 </div>

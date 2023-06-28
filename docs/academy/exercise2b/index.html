@@ -2773,6 +2773,7 @@
 </div>
 <p>Open the <strong>main.c</strong> file in a code editor (e.g. VS Code).</p>
 <p>In this file, we need to modify the <code>setup_security_object()</code> function to change Anjay’s security settings and add the configuration of PSK-based encryption. This can be done using the code below.</p>
+<p style="text-align: center;">main.c</p>
 <div class="highlight"><pre><span></span><code>static int setup_security_object(anjay_t *anjay) {
     if (anjay_security_object_install(anjay)) {
         return -1;
@@ -2800,6 +2801,7 @@
 }
 </code></pre></div>
 <p>Next, open the <strong>CMakeLists.txt</strong>, change the file names and add the required information about the PSK mode.</p>
+<p style="text-align: center;">CMakeLists.txt</p>
 <div class="highlight"><pre><span></span><code>cmake_minimum_required(VERSION 3.13)
 
 add_executable(psk-mode
@@ -2930,7 +2932,7 @@ Run the following command in the build directory
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2023</span>
     
   </small>
 </div>

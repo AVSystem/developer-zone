@@ -2718,7 +2718,7 @@
 <h1 id="exercise-2a-analyze-the-mandatory-objects">Exercise 2A: Analyze the Mandatory Objects<a class="headerlink" href="#exercise-2a-analyze-the-mandatory-objects" title="Permanent link">#</a></h1>
 <p>In this exercise, we will look into the implementation of the mandatory LwM2M Objects using the Anjay LwM2M Client. To connect the Raspberry Pi to a LwM2M Server and handle incoming packets, three objects need to be implemented:</p>
 <ul>
-<li><a href="https://devtoolkit.openmobilealliance.org/OEditor/LWMOView">LwM2M Security</a> (Object <code>/0</code>)</li>
+<li><a href="https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F0-1_1.xml">LwM2M Security</a> (Object <code>/0</code>)</li>
 <li><a href="https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F1-1_1.xml">LwM2M Server</a> (Object <code>/1</code>)</li>
 <li><a href="https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F3-1_1.xml">LwM2M Device</a> (Object <code>/3</code>)</li>
 </ul>
@@ -2746,6 +2746,7 @@
 <li><strong>Resource <code>/0/x/0</code></strong>: <strong>LwM2M Server URI</strong>. This Resource defines the address of the LwM2M Server.</li>
 <li><strong>Resource <code>/0/x/2</code></strong>: <strong>Security Mode</strong>. This Resource defines the security mode. In this application, the NoSec (no security) mode is used. By changing this parameter, other security modes can be used, including Pre-Shared Key mode and Certificate mode.</li>
 </ul>
+<p style="text-align: center;">main.c</p>
 <div class="highlight"><pre><span></span><code>// Installs Security Object and adds an instance of it.
 // An instance of Security Object provides information needed to connect // to LwM2M server.
 static int setup_security_object(anjay_t *anjay) {
@@ -2787,6 +2788,7 @@ static int setup_security_object(anjay_t *anjay) {
 <li><strong>Resource <code>/1/x/5</code></strong>: <strong>Disable Timeout</strong> - This Resource controls the time period after which, the LwM2M Client will re-register to the server. In this application, we use “-1” which means the Disable Timeout is disabled. When this Resource is not set, the default timeout value of 86400 seconds (1 day) is used.</li>
 <li><strong>Resource <code>/1/x/7</code></strong>: <strong>Binding</strong> - This Resource sets the preferred transport method. In this application, it is set to UDP. The LwM2M standard provides the option to set the binding to TCP, SMS, LoRaWAN, CIoT, or WebSockets.</li>
 </ul>
+<p style="text-align: center;">main.c</p>
 <div class="highlight"><pre><span></span><code>// Installs Server Object and adds an instance of it.
 // An instance of Server Object provides the data related to a LwM2M
 // Server.
@@ -2826,6 +2828,7 @@ static int setup_server_object(anjay_t *anjay) {
 </div>
 <h2 id="initiate-objects">Initiate Objects<a class="headerlink" href="#initiate-objects" title="Permanent link">#</a></h2>
 <p>After the <code>setup_server_object()</code> and the <code>setup_security_object()</code> have been added to the <strong>main.c</strong> file, these Objects need to be initiated using <code>anjay_task()</code>. This is done using the code below.</p>
+<p style="text-align: center;">main.c</p>
 <div class="highlight"><pre><span></span><code>void anjay_task(__unused void *params) {
     init_wifi();
 
@@ -2918,7 +2921,7 @@ static int setup_server_object(anjay_t *anjay) {
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2023</span>
     
   </small>
 </div>
