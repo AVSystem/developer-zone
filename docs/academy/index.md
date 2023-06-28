@@ -75,7 +75,7 @@ Find [more information](https://www.avsystem.com/coiote-iot-device-management-pl
 ## Intro to Coiote IoT DM
 Coiote IoT Device Management is a platform built around the LwM2M standard. It acts as a LwM2M Server and is designed as a scalable platform to manage large numbers of devices. The platform comes with tools to monitor groups of devices, manage device configurations, and perform firmware updates. In addition, it supports cloud integrations with platforms such as AWS IoT Core or Azure IoT Hub.
 
-Coiote IoT DM has a developer version, allowing you to connect up to 10 devices free of charge. To create a developer account, visit [**eu.iot.avsystem.cloud**](eu.iot.avsystem.cloud)
+Coiote IoT DM has a developer version, allowing you to connect up to 10 devices free of charge. To create a developer account, visit [**eu.iot.avsystem.cloud**](https://eu.iot.avsystem.cloud/)
 
 **Coiote IoT DM features**
 
