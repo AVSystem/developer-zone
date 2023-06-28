@@ -2,7 +2,7 @@
 
 In this exercise, we will look into the implementation of the mandatory LwM2M Objects using the Anjay LwM2M Client. To connect the Raspberry Pi to a LwM2M Server and handle incoming packets, three objects need to be implemented:
 
-* [LwM2M Security](https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F0-1_0.xml) (Object `/0`)
+* [LwM2M Security](https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F0-1_1.xml) (Object `/0`)
 * [LwM2M Server](https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F1-1_1.xml) (Object `/1`)
 * [LwM2M Device](https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2Fversion_history%2F3-1_1.xml) (Object `/3`)
 
