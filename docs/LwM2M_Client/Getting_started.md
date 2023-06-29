@@ -33,14 +33,6 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the default-provide
 
 [Start integration](./STMicroelectronics/STM32L496G-DISCOBG96.md){: .md-button .md-button--big }
 
-### STM32L496G-DISCO/MONARCH
-
-Integrate your P-L496G-CELL02 Discovery kit along with the Sequans' Monarch GM01Q-STMOD expansion board using our Anjay LwM2M Client based on freeRTOS.
-
-![STM32L496G-DISCO/MONARCH](images/sqns.png "STM32L496G-DISCO/MONARCH")
-
-[Start integration](./STMicroelectronics/STM32L496G-DISCO-MONARCH.md){: .md-button .md-button--big }
-
 ### B-L462E-CELL1/TYPE1SC
 
 Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module with built-in eSIM (ST4SIM-200M) using our Anjay LwM2M Client based on freeRTOS.
