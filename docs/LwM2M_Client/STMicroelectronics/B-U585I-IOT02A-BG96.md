@@ -4,15 +4,15 @@ Integrate your **B-U585I-IOT02A** Discovery kit board along with the default-pro
 
 ## Prerequisites
 
-- The **STM32U585I-IOT02A/BG96** board with a USB cable.
-- Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
+- The **STM32U585I-IOT02A/BG96** board with a USB micro cable.
+- The serial communication program, such as **minicom** (for Linux) or RealTerm or PuTTY (for Windows) installed.
 - A user with access to the Coiote IoT Device Management platform.
 - Optional: installed **STM32CubeIDE**.
 
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binary file and flash the board:
+To get the latest binary file and flash it onto the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file.
@@ -28,7 +28,7 @@ The board is now flashed: you can go to the [Connecting to the LwM2M Server](#co
 
 #### Part 1: Cloning the Anjay FreeRTOS client repository
 
-Enter the command line interface on your machine and paste the following command:
+Enter the command line interface on your machine and run the following command:
 
    ```
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
@@ -47,8 +47,8 @@ Enter the command line interface on your machine and paste the following command
 0. In the Project Explorer, navigate to the **Anjay-freertos-client-B-U585I-IOT02A-BG96** project:
     - Right-click on the project name and select **Build Project**. The build should take less than one minute to complete.
     - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
-        - In the **Launch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
-0. After the build and run steps are done, the board is now flashed and ready for next steps.
+    - In the **Launch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
+0. After the build and run are complete, the board is flashed with compiled binary.
 
 ## Connecting to the LwM2M Server
 
@@ -84,7 +84,7 @@ To connect the board:
 
 ## Configuring the Client
 
-1. With the board still connected to a serial port interface, open a serial communication program.
+1. With the board still connected to a serial port interface, open your serial communication program.
 2. Press the reset button located on the board. This should trigger the following prompt:
 
     ``Press any key in 3 seconds to enter config menu...``
@@ -102,6 +102,6 @@ To connect the board:
     !!! Note
         If you use an external eSIM card, you need to verify the APN used by your SIM card provider.
 
-4. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+4. Go to Coiote DM to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
     ![Registered device](images/registered_device.png "Registered device")

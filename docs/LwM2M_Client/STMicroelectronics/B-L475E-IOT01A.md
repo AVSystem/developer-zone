@@ -72,7 +72,7 @@ To connect the board:
 
 ## Configuring the Client
 
-0. With the board still connected to a serial port interface, open a serial communication program.
+0. With the board still connected to a serial port interface, open your serial communication program.
 0. Use the `anjay` command to list possible options:
 
     ```
@@ -98,7 +98,7 @@ To connect the board:
 
 
 0. Use the `anjay start` command to run the Client.
-0. Go to Coiote DM to check if your device connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+0. Go to Coiote DM to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
 ![Registered device](images/registered_device.png "Registered device")
 
