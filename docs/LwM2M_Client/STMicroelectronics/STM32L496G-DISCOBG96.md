@@ -25,15 +25,17 @@ The board is now flashed: you can go to the [Connecting to the LwM2M Server](#co
 !!! Note
     This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
 
-#### Part 1: Cloning the Anjay freeRTOS client repository
+#### Cloning the Anjay freeRTOS client repository
 
 Enter the command line interface on your machine and run the following command:
 
    ```
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
+!!! Note
+    Only the simplest version of the Anjay Client is described here. To build binary with FOTA go to [Anjay Client with FOTA](#anjay-client-with-fota)
 
-#### Part 2: Compiling the board
+#### Compiling the board
 
 0. Connect the STM32L496G-DISCO board to a USB port of your machine.
 0. Go to the STM32CubeIDE.
@@ -103,3 +105,80 @@ To connect the board:
 
 !!! tip
     LwM2M Server URI, endpoint name and other information can be found in the **Configuration** tab.
+
+## Anjay Client with FOTA
+
+Application can be built in basic version according to [Compiling the board](#compiling-the-board) section. Here compiling and flashing of extended version of Anjay Client is described. This version consists of **Secure Boot** and **Secure Firmware Update**.
+
+The **X-CUBE-SBSFU Secure Boot and Secure Firmware Update** solution allows the update of the STM32 microcontroller built-in
+program with new firmware versions, adding new features and correcting issues. The update process is performed
+in a secure way to prevent unauthorized updates and access to confidential on-device data such as code and
+firmware encryption key.
+
+The **Secure Boot** (Root of Trust services) is immutable code, always executed after a system reset, that checks STM32
+static protections, activates STM32 runtime protections and then verifies the authenticity and integrity of user
+application code before every execution in order to ensure that invalid or malicious code won't be run.
+
+### Additional prerequisites
+- **STM32CubeProgrammer** installed.
+- Python with the following modules: `pycryptodomex`, `ecdsa`, `numpy`, `pyelftools`.
+
+### Binary Compilation
+
+You need to follow a strict compilation order:
+
+0. Compile **SECoreBin** application<br/>
+   This step is needed to create the Secure Engine core binary including all the trusted code and keys mapped inside
+   the protected environment. The binary is linked with the SBSFU code in step 2.
+
+0. Compile **SBSFU** application<br/>
+   This step compiles the SBSFU source code implementing the state machine and configuring the protections. In addition,
+   it links the code with the SECore binary generated at step 1 in order to generate a single SBSFU binary including the
+   SE trusted code.
+0. Compile **UserApp** application (set **Build configuration** to **Release**)<br/>
+   It generates:<br/>
+    1. The user application binary file that is uploaded to the device using the Secure Firmware Update process <br/>
+     (`Projects/STM32L496G-DISCO/UserApp/Binary/Anjay-freertos-client-STM32L496G-[MODEM].sfb`).
+    1. A binary file concatenating the SBSFU binary, the user application binary in clear format, and the corresponding
+     FW header <br/>
+     (`Projects/STM32L496G-DISCO/UserApp/Binary/SBSFU_Anjay-freertos-client-STM32L496G-[MODEM].bin`).
+
+    !!! tip
+        You can set a custom firmware version in the `Application/Inc/default_config.h` file (using `FIRMWARE_VERSION` define).
+        It will be useful when performing FOTA to distinguish the firmware images from each other.
+
+### Flashing
+
+Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-STM32L496G-[MODEM].bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to Coiote DM.
+
+After that, you can use Coiote DM to perform firmware update with `Anjay-freertos-client-STM32L496G-[MODEM].sfb` file.
+
+### Disable Secure Protection
+
+!!! important
+    When flashed board with Secure Boot you will need to switch off secure protection to be able to flash the board again.
+
+To deactivate secure application please run **STM32_Programmer_CLI** (Program provided with STM32CubeProgrammer) tool with specific options:
+```
+./<path_to_STM32_Programmer_CLI> -c port=SWD mode=UR -ob RDP=0xBB -ob RDP=0xAA WRP1A_STRT=0xFF WRP1A_END=0x0 -ob displ
+```
+
+ ## Performing firmware update
+
+In order to perform firmware update:
+
+0. Build the application and flash the board with `FIRMWARE_UPDATE` define set to the proper version (see [Flashing the board](#Flashing-the-board) step), e.g.
+    ```
+    #define FIRMWARE_VERSION "v1.0"
+    ```
+0. Make changes to the code (optionally), set `FIRMWARE_UPDATE` define to a different version, e.g.
+    ```
+    #define FIRMWARE_VERSION "v2.0"
+    ```
+    and build the application with a new firmware.
+0. Upload the generated firmware file (`Anjay-freertos-client-STM32L496G-[MODEM].sfb`) to [Coiote DM](https://eu.iot.avsystem.cloud) (go to Device management and select `Firmware update`) and click `Upgrade`.
+0. After the FOTA finishes, the device will reboot and the following log should appear:
+    ```
+    Firmware updated from version 'v1.0' to 'v2.0'
+    ```
+    where `v1.0` and `v2.0` will be set to firmware versions you set earlier.
