@@ -108,12 +108,13 @@ application code before every execution in order to ensure that invalid or malic
 ### Additional prerequisites
 - **STM32CubeProgrammer** installed.
 - Support for shell scripts execution (on Windows for example **Git** or **Cygwin** can be used).
-- Python with the following modules: `pycryptodomex`, `ecdsa`, `numpy`, `pyelftools`.
+- [Python](https://www.python.org/downloads/) with the following modules: `pycryptodomex`, `ecdsa`, `numpy`, `pyelftools`.
 - Import B-L462E-CELL1_2_Images_SBSFU and B-L462E-CELL1_2_Images_SECoreBin projects from previously cloned repository to workspace.
 
 ### Prepare binary
 
-You need to follow a strict compilation order:
+!!! important
+    You need to follow a strict compilation order presented below.
 
 0. Compile **SECoreBin** application<br/>
    This step is needed to create the Secure Engine core binary including all the trusted code and keys mapped inside
