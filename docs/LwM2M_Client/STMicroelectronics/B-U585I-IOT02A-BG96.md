@@ -4,7 +4,7 @@ Integrate your **B-U585I-IOT02A** Discovery kit board along with the default-pro
 
 ## Prerequisites
 
-- The **STM32U585I-IOT02A/BG96** board with a USB micro cable.
+- The **STM32U585I-IOT02A/BG96** board with a Micro-USB cable.
 - The serial communication program, such as **minicom** (for Linux) or RealTerm or PuTTY (for Windows) installed.
 - A user with access to the Coiote IoT Device Management platform.
 - Optional: installed **STM32CubeIDE**.
@@ -43,9 +43,9 @@ Enter the command line interface on your machine and run the following command:
     - From the **General** list, select **Existing Projects into Workspace** and click **Next**.
     - In **Select root directory**, indicate the catalog containing the cloned Anjay freeRTOS client repository.
     - In the **Projects** field, select **Anjay-freertos-client-B-U585I-IOT02A-BG96** and click **Finish**.
-    ![Import project](images/import.PNG "Import project")
+    ![Import project](images/import.png "Import project")
 0. In the Project Explorer, navigate to the **Anjay-freertos-client-B-U585I-IOT02A-BG96** project:
-    - Right-click on the project name and select **Build Project**. The build should take less than one minute to complete.
+    - Right-click on the project name and select **Build Project**. Choose "Debug" configuration. The build should take less than one minute to complete.
     - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
     - In the **Launch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
 0. After the build and run are complete, the board is flashed with compiled binary.

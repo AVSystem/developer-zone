@@ -4,7 +4,7 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 
 ## Prerequisites
 
-- The B-L462E-CELL1/TYPE1SC board with a USB micro cable.
+- The B-L462E-CELL1/TYPE1SC board with a Micro-USB cable.
 - Installed **STM32CubeIDE**.
 - The serial communication program, such as **minicom** (for Linux) or RealTerm or PuTTY (for Windows) installed.
 - A user with access to the Coiote IoT Device Management platform.
@@ -43,9 +43,9 @@ Enter the command line interface on your machine and run the following command:
     - From the **General** list, select **Existing Projects into Workspace** and click **Next**.
     - In **Select root directory**, indicate the catalog containing the cloned Anjay freeRTOS client repository.
     - In the **Projects** field, select **Anjay-freertos-client-B-L462E-CELL1-TYPE1SC** and click **Finish**.
-    ![Import project](images/import.PNG "Import project")
+    ![Import project](images/import.png "Import project")
 0. In the Project Explorer, navigate to the **Anjay-freertos-client-B-L462E-CELL1-TYPE1SC** project:
-    - Right-click on the project name and select **Build Project**. The build should take less than one minute to complete.
+    - Right-click on the project name and select **Build Project**. Choose "Debug" configuration. The build should take less than one minute to complete.
     - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
     - In the **Lauch Configuration Selection**, choose the **Anjay-freertos-client-B-L462E-CELL1-TYPE1SC** option and click **OK**.
 0. After the build and run are complete, the board is flashed with compiled binary.
@@ -92,9 +92,9 @@ To connect the board:
 !!! tip
     LwM2M Server URI, endpoint name and other information can be found in the **Configuration** tab.
 
-## Anjay Client with FOTA
+## Anjay-freertos-client with FOTA (Firmware update Over the Air)
 
-Application can be built in basic version according to [Compiling the board](#compiling-the-board) section. Here compiling and flashing of extended version of Anjay Client is described. This version consists of **Secure Boot** and **Secure Firmware Update**.
+Anjay application can be built in basic version (without FOTA) as described in the [Compiling the board](#compiling-the-board) section. In order to use FOTA, a few additional steps needs to be done, e.g. **Secure Boot** and **Secure Firmware Update** compilation.
 
 The **X-CUBE-SBSFU Secure Boot and Secure Firmware Update** solution allows the update of the STM32 microcontroller built-in
 program with new firmware versions, adding new features and correcting issues. The update process is performed
@@ -107,9 +107,11 @@ application code before every execution in order to ensure that invalid or malic
 
 ### Additional prerequisites
 - **STM32CubeProgrammer** installed.
+- Support for shell scripts execution (on Windows for example **Git** or **Cygwin** can be used).
 - Python with the following modules: `pycryptodomex`, `ecdsa`, `numpy`, `pyelftools`.
+- Import B-L462E-CELL1_2_Images_SBSFU and B-L462E-CELL1_2_Images_SECoreBin projects from previously cloned repository to workspace.
 
-### Binary Compilation
+### Binary Preparation
 
 You need to follow a strict compilation order:
 
@@ -123,11 +125,11 @@ You need to follow a strict compilation order:
    SE trusted code.
 0. Compile **UserApp** application (set **Build configuration** to **Release**)<br/>
    It generates:<br/>
-   - The user application binary file that is uploaded to the device using the Secure Firmware Update process <br/>
-     (`Projects/B-L462E-CELL1/UserApp/Binary/Anjay-freertos-client-B-L462E-CELL1-[MODEM].sfb`).
-   - A binary file concatenating the SBSFU binary, the user application binary in clear format, and the corresponding
+    - The user application binary file that is uploaded to the device using the Secure Firmware Update process <br/>
+     (`Projects/B-L462E-CELL1/UserApp/Binary/Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb`).
+    - A binary file concatenating the SBSFU binary, the user application binary in clear format, and the corresponding
      FW header <br/>
-     (`Projects/B-L462E-CELL1/UserApp/Binary/SBSFU_Anjay-freertos-client-B-L462E-CELL1-[MODEM].bin`).
+     (`Projects/B-L462E-CELL1/UserApp/Binary/SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin`).
 
     !!! tip
         You can set a custom firmware version in the `Application/Inc/default_config.h` file (using `FIRMWARE_VERSION` define).
@@ -135,11 +137,11 @@ You need to follow a strict compilation order:
 
 ### Flashing
 
-Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-B-L462E-CELL1-[MODEM].bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to Coiote DM.
+Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to Coiote DM.
 
-After that, you can use Coiote DM to perform firmware update with `Anjay-freertos-client-B-L462E-CELL1-[MODEM].sfb` file.
+After that, you can use Coiote DM to perform firmware update with `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb` file.
 
-## Performing firmware update
+### Performing firmware update
 
 In order to perform firmware update:
 
@@ -152,7 +154,7 @@ In order to perform firmware update:
     #define FIRMWARE_VERSION "v2.0"
     ```
     and build the application with a new firmware.
-0. Upload the generated firmware file (`Anjay-freertos-client-B-L462E-CELL1-[MODEM].sfb`) to [Coiote DM](https://eu.iot.avsystem.cloud) (go to Device management and select `Firmware update`) and click `Upgrade`.
+0. Upload the generated firmware file (`Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb`) to [Coiote DM](https://eu.iot.avsystem.cloud) (go to Device management and select `Firmware update`) and click `Upgrade`.
 0. After the FOTA finishes, the device will reboot and the following log should appear:
     ```
     Firmware updated from version 'v1.0' to 'v2.0'
