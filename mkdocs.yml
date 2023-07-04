@@ -128,6 +128,26 @@ nav:
             - 'Demo_Projects/Edge_Impulse_demo.md'
             - 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
             - 'Demo_Projects/Air_quality_monitoring_tutorial.md'
+        - 'LwM2M Academy':
+            - 'Welcome': 'academy/index.md'
+            - Module 1 - Introduction to LwM2M:
+                - Theory Module 1: 'academy/module1.md'
+                - Exercise 1 - Connect the RPI to a LwM2M Server: 'academy/exercise1.md'
+            - Module 2 - Getting started:
+                - Theory Module 2: 'academy/module2.md'
+                - Exercise 2A - Analyze Mandatory Objects: 'academy/exercise2a.md'
+                - Exercise 2B - Pre-Shared Key: 'academy/exercise2b.md'
+            - Module 3 - Building applications:
+                - Theory Module 3: 'academy/module3.md'
+                - Exercise 3A - Implement Time Object: 'academy/exercise3a.md'
+                - Exercise 3B - Implement Temperature Object: 'academy/exercise3b.md'
+            - Module 4 - Device management:
+                - Theory Module 4: 'academy/module4.md'
+                - Exercise 4A - Read & Observe: 'academy/exercise4a.md'
+                - Exercise 4B - LwM2M Send: 'academy/exercise4b.md'
+            - Module 5 - Firmware updates:
+                - Theory Module 5: 'academy/module5.md'
+                - Exercise - Graduation Project: 'academy/exercise5.md'
         - 'Release Notes':
             - 2023:
                 - 'Release_Notes/v2023.10.0.md'
