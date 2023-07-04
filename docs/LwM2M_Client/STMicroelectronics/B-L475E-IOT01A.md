@@ -25,11 +25,11 @@ The board is now flashed: you can jump to the [Connecting to the LwM2M Server](#
 !!! Note
     This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 
-#### Part 1: Getting Zephyr and Python dependencies
+#### Part 1: Get Zephyr and Python dependencies
 
 To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
 
-#### Part 2: Cloning the Anjay zephyr repository
+#### Part 2: Clone the Anjay zephyr repository
 
 Enter the command line interface on your machine, then paste and run the following command:
 
@@ -37,7 +37,7 @@ Enter the command line interface on your machine, then paste and run the followi
    git clone https://github.com/AVSystem/Anjay-zephyr-client
    ```
 
-#### Part 3: Compiling the board
+#### Part 3: Build binary and flash the board
 
 0. Connect the B-L475E-IOT01A board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, and manifest file to `west.yml` and do `west update`:
@@ -51,7 +51,7 @@ Enter the command line interface on your machine, then paste and run the followi
 0. Compile the project for **B-L475E-IOT01A** using `west build -b disco_l475_iot1` in the demo directory.
 0. Flash the board using `west flash`.
 
-## Connecting to the LwM2M Server
+## Connect to the LwM2M Server
 
 To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
@@ -70,7 +70,7 @@ To connect the board:
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
-## Configuring the Client
+## Configure the Client
 
 0. With the board still connected to a serial port interface, open your serial communication program.
 0. Use the `anjay` command to list possible options:

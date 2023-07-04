@@ -25,7 +25,7 @@ The board is now flashed: you can go to the [Connecting to the LwM2M Server](#co
 !!! Note
     This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
 
-#### Cloning the Anjay freeRTOS client repository
+#### Clone the Anjay freeRTOS client repository
 
 Enter the command line interface on your machine and run the following command:
 
@@ -33,7 +33,7 @@ Enter the command line interface on your machine and run the following command:
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-#### Compiling the board
+#### Build binary and flash the board
 
 0. Connect the STM32L496G-DISCO board to a USB port of your machine.
 0. Go to the STM32CubeIDE.
@@ -49,7 +49,7 @@ Enter the command line interface on your machine and run the following command:
     - In the **Lauch Configuration Selection**, choose the **Anjay-freertos-client-STM32L496G-BG96** option and click **OK**.
 0. After the build and run are complete, the board is flashed with compiled binary.
 
-## Connecting to the LwM2M Server
+## Connect to the LwM2M Server
 
 To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
 
@@ -81,7 +81,7 @@ To connect the board:
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
-## Configuring the Client
+## Configure the Client
 
 0. With the board still connected to a serial port interface, open your serial communication program.
 0. Press the reset button located on the board. This should trigger the following prompt:
@@ -123,7 +123,7 @@ application code before every execution in order to ensure that invalid or malic
 - Python with the following modules: `pycryptodomex`, `ecdsa`, `numpy`, `pyelftools`.
 - Import STM32L496G-Discovery_2_Images_SBSFU and STM32L496G-Discovery_2_Images_SECoreBin projects from previously cloned repository to workspace.
 
-### Binary Preparation
+### Prepare binary
 
 You need to follow a strict compilation order:
 
@@ -147,7 +147,7 @@ You need to follow a strict compilation order:
         You can set a custom firmware version in the `Application/Inc/default_config.h` file (using `FIRMWARE_VERSION` define).
         It will be useful when performing FOTA to distinguish the firmware images from each other.
 
-### Flashing
+### Flash the board
 
 Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-STM32L496G-BG96.bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to Coiote DM.
 
@@ -160,7 +160,7 @@ After that, you can use Coiote DM to perform firmware update with `Anjay-freerto
 
     ./< path_to_STM32_Programmer_CLI > -c port=SWD mode=UR -ob RDP=0xBB -ob RDP=0xAA WRP1A_STRT=0xFF WRP1A_END=0x0 -ob displ
 
-### Performing firmware update
+### Perform firmware update
 
 In order to perform firmware update:
 

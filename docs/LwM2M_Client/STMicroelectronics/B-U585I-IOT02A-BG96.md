@@ -26,7 +26,7 @@ The board is now flashed: you can go to the [Connecting to the LwM2M Server](#co
 !!! Note
     This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 
-#### Part 1: Cloning the Anjay FreeRTOS client repository
+#### Clone the Anjay freeRTOS client repository
 
 Enter the command line interface on your machine and run the following command:
 
@@ -34,7 +34,7 @@ Enter the command line interface on your machine and run the following command:
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-#### Part 2: Compiling the board
+#### Build binary and flash the board
 
 0. Connect the **STM32U585I-IOT02A** board to a USB port of your machine.
 0. Go to the **STM32CubeIDE**.
@@ -50,7 +50,7 @@ Enter the command line interface on your machine and run the following command:
     - In the **Launch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
 0. After the build and run are complete, the board is flashed with compiled binary.
 
-## Connecting to the LwM2M Server
+## Connect to the LwM2M Server
 
 To connect to Coiote IoT Device Management LwM2M Server, please register [here](https://eu.iot.avsystem.cloud).
 
@@ -82,7 +82,7 @@ To connect the board:
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
     5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
 
-## Configuring the Client
+## Configure the Client
 
 1. With the board still connected to a serial port interface, open your serial communication program.
 2. Press the reset button located on the board. This should trigger the following prompt:
