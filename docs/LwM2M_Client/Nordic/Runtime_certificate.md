@@ -45,7 +45,7 @@ The certificate and private key based on the SECP256R1 curve can be provided thr
 
 !!! Important
 
-    To use the certificate and private key with Coiote DM you must specify a common name that is the same as the client endpoint name.
+    To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
 ```
 openssl ecparam -name secp256r1 -out ecparam.der
@@ -58,7 +58,7 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
 You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the **Anjay-zephyr-client/demo** directory.
 
-## Add certificate to Anjay
+## Configuring the Client
 0. Provide the generated certificate and private key through the shell in the serial communication program.
 
     !!! Note
@@ -74,9 +74,9 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the **Anja
 
 0. Save created changes, start Anjay and go to the next step to add a device to Coiote.
 
-## Add device to Coiote DM and connect
+## Add device to Coiote IoT DM and connect
 
-0. Upon logging in to Coiote DM for the first time, you will see the **Add your LwM2M device** panel.
+0. Upon logging in to Coiote IoT DM for the first time, you will see the **Add your LwM2M device** panel.
 
     !!! note
         If you had previously added a device, in **Device inventory**, click the **Add device** button.
