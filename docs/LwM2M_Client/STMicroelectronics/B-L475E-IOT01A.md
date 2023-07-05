@@ -12,18 +12,18 @@ Integrate your B-L475E-IOT01A Discovery kit board.
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binary file and flash the board:
+To get the latest binary file and flash it to the board:
 
 0. Go to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases).
 0. Download the `demo_B-L475E-IOT01A1_merged.bin` file.
 0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L4IOT** external device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
-The board is now flashed: you can jump to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) section.
+The board is now flashed: you can jump to the [Connect to the LwM2M Server](#connect-to-the-lwm2m-server) section.
 
 ### Start development using samples
 !!! Note
-    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connect to the LwM2M Server](#connect-to-the-lwm2m-server).
 
 #### Part 1: Get Zephyr and Python dependencies
 
@@ -68,7 +68,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
+    5. In the **Connect your device** step, follow the next [section](#configure-the-client) to run the client and connect it to the server.
 
 ## Configure the Client
 

@@ -13,18 +13,14 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binary file and flash it onto the board:
+To get the latest binary file and flash it to the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file.
-0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L462RE** external device.
-0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
-
-The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
 ### Start development using samples
 !!! Note
-    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) right away.
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can go to [Connect to the LwM2M Server](#connect-to-the-lwm2m-server) right away.
 
 #### Clone the Anjay freeRTOS client repository
 
@@ -34,7 +30,7 @@ Enter the command line interface on your machine and run the following command:
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-#### Build binary and flash the board
+#### Build binary
 
 0. Connect the B-L462E-CELL1/TYPE1SC board to a USB port of your machine.
 0. Go to the STM32CubeIDE.
@@ -45,10 +41,13 @@ Enter the command line interface on your machine and run the following command:
     - In the **Projects** field, select **Anjay-freertos-client-B-L462E-CELL1-TYPE1SC** and click **Finish**.
     ![Import project](images/import.png "Import project")
 0. In the Project Explorer, navigate to the **Anjay-freertos-client-B-L462E-CELL1-TYPE1SC** project:
-    - Right-click on the project name and select **Build Project**. Choose "Debug" configuration. The build should take less than one minute to complete.
-    - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
-    - In the **Lauch Configuration Selection**, choose the **Anjay-freertos-client-B-L462E-CELL1-TYPE1SC** option and click **OK**.
-0. After the build and run are complete, the board is flashed with compiled binary.
+    - Choose "Debug" configuration and build the project by right-clicking on the project name and selecting **Build Project**. The build should take less than one minute to complete.
+    - After the build is finished in `/Anjay-freertos-client-B-L462E-CELL1-TYPE1SC/Debug/` directory `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file should appear.
+
+## Flash the board
+
+0. To flash the board, open your **File manager** and drag the downloaded or compiled `.bin` file to your **DIS_L462RE** external device.
+0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
 ## Connect to the LwM2M Server
 
@@ -67,7 +66,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
+    5. In the **Connect your device** step, follow the next [section](#configure-the-client) to run the client and connect it to the server.
 
 ## Configure the Client
 
@@ -80,7 +79,7 @@ To connect the board:
       ![Client configuration](images/config_menu1.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
 
     !!! important
-        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card truphone then change APN to **iot.truphone.com**.
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card Truphone then change APN to **iot.truphone.com**.
 
     !!! Note
         If you use external eSIM card you have to check APN used by SIM card's provider.
@@ -94,7 +93,7 @@ To connect the board:
 
 ## Anjay-freertos-client with FOTA (Firmware update Over the Air)
 
-Anjay application can be built in basic version (without FOTA) as described in the [Compiling the board](#compiling-the-board) section. In order to use FOTA, a few additional steps needs to be done, e.g. **Secure Boot** and **Secure Firmware Update** compilation.
+Anjay application can be built in basic version (without FOTA) as described in the [Build binary](#build-binary) and [Flash the board](#flash-the-board) section. In order to use FOTA, a few additional steps need to be done, e.g. **Secure Boot** and **Secure Firmware Update** compilation.
 
 The **X-CUBE-SBSFU Secure Boot and Secure Firmware Update** solution allows the update of the STM32 microcontroller built-in
 program with new firmware versions, adding new features and correcting issues. The update process is performed
@@ -108,10 +107,10 @@ application code before every execution in order to ensure that invalid or malic
 ### Additional prerequisites
 - **STM32CubeProgrammer** installed.
 - Support for shell scripts execution (on Windows for example **Git** or **Cygwin** can be used).
-- [Python](https://www.python.org/downloads/) with the following modules: `pycryptodomex`, `ecdsa`, `numpy`, `pyelftools`.
+- Python with the following modules: `pycryptodomex`, `ecdsa`, `numpy`, `pyelftools`.
 - Import B-L462E-CELL1_2_Images_SBSFU and B-L462E-CELL1_2_Images_SECoreBin projects from previously cloned repository to workspace.
 
-### Prepare binary
+### Prepare binary with SBSFU
 
 !!! important
     You need to follow a strict compilation order presented below.
@@ -136,7 +135,7 @@ application code before every execution in order to ensure that invalid or malic
         You can set a custom firmware version in the `Application/Inc/default_config.h` file (using `FIRMWARE_VERSION` define).
         It will be useful when performing FOTA to distinguish the firmware images from each other.
 
-### Flash the board
+### Flash the board with SBSFU binary
 
 Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to Coiote DM.
 
@@ -146,7 +145,7 @@ After that, you can use Coiote DM to perform firmware update with `Anjay-freerto
 
 In order to perform firmware update:
 
-0. Build the application and flash the board with `FIRMWARE_UPDATE` define set to the proper version (see [Flashing the board](#Flashing-the-board) step), e.g.
+0. Build the application and flash the board with `FIRMWARE_UPDATE` define set to the proper version (see [Prepare binary with SBSFU](#prepare-binary-with-sbsfu) step), e.g.
     ```
     #define FIRMWARE_VERSION "v1.0"
     ```

@@ -12,14 +12,10 @@ Integrate your **B-U585I-IOT02A** Discovery kit board along with the default-pro
 ## Prepare binaries
 ### Use an already built binary
 
-To get the latest binary file and flash it onto the board:
+To get the latest binary file and flash it to the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file.
-0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_U585AI** external device.
-0. You will see a blinking diode on your board. The diode stops blinking as soon as the flashing is finished.
-
-The board is now flashed: you can go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server) step.
 
 ### Start development using samples
 
@@ -34,7 +30,7 @@ Enter the command line interface on your machine and run the following command:
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-#### Build binary and flash the board
+#### Build binary
 
 0. Connect the **STM32U585I-IOT02A** board to a USB port of your machine.
 0. Go to the **STM32CubeIDE**.
@@ -45,10 +41,13 @@ Enter the command line interface on your machine and run the following command:
     - In the **Projects** field, select **Anjay-freertos-client-B-U585I-IOT02A-BG96** and click **Finish**.
     ![Import project](images/import.png "Import project")
 0. In the Project Explorer, navigate to the **Anjay-freertos-client-B-U585I-IOT02A-BG96** project:
-    - Right-click on the project name and select **Build Project**. Choose "Debug" configuration. The build should take less than one minute to complete.
-    - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
-    - In the **Launch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
-0. After the build and run are complete, the board is flashed with compiled binary.
+    - Choose "Debug" configuration and build the project by right-clicking on the project name and selecting **Build Project**. The build should take less than one minute to complete.
+    - After the build is finished in `/Anjay-freertos-client-B-U585I-IOT02A-BG96/Debug/` directory `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file should appear.
+
+## Flash the board
+
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_U585AI** external device.
+0. You will see a blinking diode on your board. The diode stops blinking as soon as the flashing is finished.
 
 ## Connect to the LwM2M Server
 
@@ -80,7 +79,7 @@ To connect the board:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field
               - In the **Key** field, type the shared secret used in the device-server authentication.
     4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, follow the next [section](#configuring-the-client) to run the client and connect it to the server.
+    5. In the **Connect your device** step, follow the next [section](#configure-the-client) to run the client and connect it to the server.
 
 ## Configure the Client
 
@@ -97,7 +96,7 @@ To connect the board:
     ![Client configuration](images/config_menu1.png "Client configuration"){:style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
 
     !!! important
-        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use a built-in truphone eSIM card, change the APN to **iot.truphone.com**.
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use a built-in Truphone eSIM card, change the APN to **iot.truphone.com**.
 
     !!! Note
         If you use an external eSIM card, you need to verify the APN used by your SIM card provider.
