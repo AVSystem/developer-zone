@@ -4,12 +4,32 @@
   {% set site_url = site_url ~ "/index.html" %}
 {% endif %}
 
+{% block announce %}
+<div class="topLinePageInfo">
+        <h5 class="topLinePageInfo__text">
+            <a href="https://avsystem.clickmeeting.com/fota/register" target="_blank" class="color-black">
+                <strong>Register for the webinar:</strong> How to run FOTA updates using LwM2M &
+                Zephyr? <strong>Registration</strong>
+                <svg class="ml-1" width="22" height="9" viewBox="0 0 22 9" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path id="Arrow 1"
+                          d="M1 4C0.723858 4 0.5 4.22386 0.5 4.5C0.5 4.77614 0.723858 5 1 5V4ZM21.3536 4.85355C21.5488 4.65829 21.5488 4.34171 21.3536 4.14645L18.1716 0.964466C17.9763 0.769204 17.6597 0.769204 17.4645 0.964466C17.2692 1.15973 17.2692 1.47631 17.4645 1.67157L20.2929 4.5L17.4645 7.32843C17.2692 7.52369 17.2692 7.84027 17.4645 8.03553C17.6597 8.2308 17.9763 8.2308 18.1716 8.03553L21.3536 4.85355ZM1 5H21V4H1V5Z"
+                          fill="black"/>
+                </svg>
+            </a>
+        </h5>
+    </div>
+{% endblock %}
+
+
 <!-- Application header -->
-<header class="md-header" data-md-component="header">
+<header class="md-header" data-md-component="header" data-md-state="shadow">
+
+
 
   <!-- Top-level navigation -->
   <nav class="md-header-nav md-grid" aria-label="{{ lang.t('header.title') }}">
-   
+
     <!-- Link to home -->
     <a
       href="https://iotdevzone.avsystem.com/docs/"
@@ -25,8 +45,8 @@
       {% include ".icons/material/menu" ~ ".svg" %}
     </label>
 
-  
-    
+
+
       <svg class="logoMobile" width="150px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 221 48">
         <g>
@@ -39,12 +59,12 @@
                   c0.4,1.1,0.8,2.2,1.1,3.3c0.3-1.1,0.6-2.2,1.1-3.3l2.1-5.4c0.7-1.7,2.6-3.1,4.4-3.1H47.5z"/>
         </g>
       </svg>
-  
+
     <!-- Header title -->
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
+    <div class="md-header-nav__title" data-md-component="header-title" data-md-state="active">
+
       <div class="md-header-nav__ellipsis">
-       
+
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             {{ config.site_name }}
@@ -62,7 +82,7 @@
       </div>
     </div>
 
-    
+
 
     <!-- Button to open search modal -->
     {% if "search" in config["plugins"] %}
@@ -81,4 +101,7 @@
       </div>
     {% endif %}
   </nav>
+
 </header>
+
+
