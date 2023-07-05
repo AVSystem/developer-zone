@@ -1,5 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
+
+.topLinePageInfo {
+  padding: 10px 15px;
+  text-align: center;
+  border-bottom: 1px solid #b3b3b3;
+  background-color: #fff;
+    z-index: 3;
+}
+.topLinePageInfo__text {
+  color: #000;
+  font-size: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  line-height: 32px;
+  letter-spacing: 0.15px;
+  font-weight: 400;
+  margin:0;
+}
+@media (max-width: 1200px) {
+  .topLinePageInfo__text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.topLinePageInfo a:hover{
+    text-decoration: underline;
+}
+
+
 .md-header{
     background-color:#000;
 }
@@ -583,12 +613,14 @@
 /* sticky menu tab */
 @media(min-width:1220px){
     .md-container{
-        margin-top:35px;
+        /*margin-top:35px;*/
     }
     .md-tabs{
-        position:fixed;
+        /*position:fixed;*/
+        position: sticky;
         left:0;
-        top:55px;
+        /*top:55px;*/
+        /*top:110px;*/
     }
     .md-tabs[data-md-state=hidden] .md-tabs__link{
         transform: unset;
@@ -600,7 +632,18 @@
     .md-sidebar{
         top:110px !important;
     }
+
+
+    /*.md-header[data-md-state=shadow] .md-tabs{*/
+    /*    top:55px;*/
+    /*}*/
+
+    /*.md-tabs[data-md-state=hidden]{*/
+    /*    top:55px;*/
+    /*}*/
 }
+
+
 
 /* ./sticky menu tab */
 
