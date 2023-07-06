@@ -146,4 +146,4 @@ If no errors occur, the update process follows this pattern:
 
 
 ## Useful Links
-- [Anjay firmware update documentation](https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial/FU-Introduction.html)
+- [Anjay firmware update documentation](https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial/FU-AdvancedFirmwareUpdate.html)
