@@ -99,7 +99,7 @@ To connect the board:
         APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use a built-in Truphone eSIM card, change the APN to **iot.truphone.com**.
 
     !!! Note
-        If you use an external eSIM card, you need to verify the APN used by your SIM card provider.
+        If you use an external SIM card, you need to verify the APN used by your SIM card provider.
 
 4. Go to Coiote DM to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
