@@ -1,5 +1,12 @@
-# Runtime certificate and private key configuration
-Build a project with a runtime certificate and private key.
+# Runtime Certificate and Private Key Configuration
+
+## Introduction
+Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as was described in [STM32L496G-DISCO/BG96](STM32L496G-DISCO/BG96.md), [B-L462E-CELL1/TYPE1SC](B-L462E-CELL1/TYPE1SC.md), [B-L475E-IOT01A](B-L475E-IOT01A.md), and [B-U585I-IOT02A/BG96](B-U585I-IOT02A/BG96.md) pages or with certificate-based cryptography.
+
+In **Certificate Mode** an asymmetrical public-key cryptographic algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
+
+Read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
+
 
 ## Prerequisites
 * The STM32L496G-DISCO/BG96 board with a USB cable.
@@ -39,7 +46,7 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the direct
 
     ``Press any key in 3 seconds to enter config menu...``
 
-0. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program
+0. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented below:
     - Set **4. Security (none/psk/cert)** to `cert`.
     - Set **5. Endpoint name** to your board endpoint name, e.g. `anjay-demo`.
     - Set **6. Public cert or PSK identity** and paste your generated certificate from `demo-cert.pem` file.
@@ -47,10 +54,10 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the direct
     - Set **8. APN**, **9. APN username**, and **10. APN password** to compatibile with your SIM card.
 
     !!! important
-        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card truphone then change APN to **iot.truphone.com**.
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in SIM card Truphone then change APN to **iot.truphone.com**.
 
     !!! Note
-        If you use external eSIM card you have to check APN used by SIM card's provider.
+        If you use external SIM card you have to check APN used by SIM card's provider.
 
     ![Generate certificate in Anjay](images/anjay_cert.png)
 

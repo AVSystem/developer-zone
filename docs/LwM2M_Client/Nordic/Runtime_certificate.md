@@ -1,8 +1,15 @@
-# Runtime certificate and private key configuration
-Build a project with a runtime certificate and private key.
+# Runtime Certificate and Private Key Configuration
+
+## Introduction
+Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [nRF9160](nRF9160.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
+
+In **Certificate Mode** an asymmetrical public-key cryptographic algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
+
+Read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
 
 ## Prerequisites
 * The nRF9160 board with a USB cable.
+- Cloned [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client#getting-started) repository
 - Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
@@ -24,7 +31,7 @@ Build a project with a runtime certificate and private key.
     west build -b <BOARD> -p -- -DCONFIG_ANJAY_ZEPHYR_RUNTIME_CERT_CONFIG=y
     ```
 
-    where <BOARD\> should be replaced by the selected board from boards/ directory.
+    where <BOARD\> should be replaced by the selected board from `boards/` directory.
 
     !!! Note
 
@@ -36,12 +43,12 @@ Build a project with a runtime certificate and private key.
     west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"
     ```
 
-0. Find the merged.hex file under the **build/zephyr** directory in the project folder.
+0. Find the merged.hex file under the `build/zephyr` directory in the project folder.
 
 0. Use the nRF Connect Programmer with the downloaded `.hex` file and execute steps from the [Updating the application firmware](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware) section.
 
 ## Generate certificate
-The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in PEM format. To generate them open terminal and use the following commands.
+The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in `.pem` format. To generate them open terminal and use the following commands.
 
 !!! Important
 
@@ -56,7 +63,7 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
 ![Fragement of creating certificates](images/create_cert.png)
 
-You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the **Anjay-zephyr-client/demo** directory.
+You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the `Anjay-zephyr-client/demo` directory.
 
 ## Configuring the Client
 0. Provide the generated certificate and private key through the shell in the serial communication program.
