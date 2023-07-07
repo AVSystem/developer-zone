@@ -9,7 +9,7 @@ Integrate your B-L475E-IOT01A Discovery kit board.
 - Installed **ST-Link** or **OpenOCD** debugger.
 - A user with access to the Coiote IoT Device Management platform and appropriate permissions.
 
-## Prepare binaries
+## Prepare Anjay client application
 ### Use an already built binary
 
 To get the latest binary file and flash it to the board:

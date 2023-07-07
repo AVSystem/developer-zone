@@ -9,13 +9,15 @@ Integrate your **B-U585I-IOT02A** Discovery kit board along with the default-pro
 - A user with access to the Coiote IoT Device Management platform.
 - Optional: installed **STM32CubeIDE**.
 
-## Prepare binaries
+## Prepare Anjay client application
 ### Use an already built binary
 
 To get the latest binary file and flash it to the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file.
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_U585AI** external device.
+0. You will see a blinking diode on your board. The diode stops blinking as soon as the flashing is finished.
 
 ### Start development using samples
 
@@ -30,7 +32,7 @@ Enter the command line interface on your machine and run the following command:
    git clone --recursive https://github.com/AVSystem/Anjay-freertos-client
    ```
 
-#### Build binary
+#### Build binary and flash the board
 
 0. Connect the **STM32U585I-IOT02A** board to a USB port of your machine.
 0. Go to the **STM32CubeIDE**.
@@ -42,12 +44,10 @@ Enter the command line interface on your machine and run the following command:
     ![Import project](images/import.png "Import project")
 0. In the Project Explorer, navigate to the **Anjay-freertos-client-B-U585I-IOT02A-BG96** project:
     - Choose "Debug" configuration and build the project by right-clicking on the project name and selecting **Build Project**. The build should take less than one minute to complete.
-    - After the build is finished in `/Anjay-freertos-client-B-U585I-IOT02A-BG96/Debug/` directory `Anjay-freertos-client-B-U585I-IOT02A-BG96.bin` file should appear.
+    - After the build is finished, right-click on the project name, select **Run As** and click the **1 STM32 Cortex-M C/C++ Application** option.
+    - In the **Launch Configuration Selection**, choose the **Anjay-freertos-client-B-U585I-IOT02A-BG96** option and click **OK**.
+0. After the build and run are complete, the board is flashed with compiled binary.
 
-## Flash the board
-
-0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_U585AI** external device.
-0. You will see a blinking diode on your board. The diode stops blinking as soon as the flashing is finished.
 
 ## Connect to the LwM2M Server
 
