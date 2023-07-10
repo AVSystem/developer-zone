@@ -19,8 +19,6 @@ To get the latest binary file and flash it to the board:
 0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L4IOT** external device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
-The board is now flashed: you can jump to the [Connect to the LwM2M Server](#connect-to-the-lwm2m-server) section.
-
 ### Start development using samples
 !!! Note
     This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connect to the LwM2M Server](#connect-to-the-lwm2m-server).

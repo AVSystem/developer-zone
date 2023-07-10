@@ -17,7 +17,7 @@ To get the latest binary file and flash it to the board:
 
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file.
-0. To flash the board, open your **File manager** and drag the downloaded or compiled `.bin` file to your **DIS_L462RE** external device.
+0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L462RE** external device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
 ### Start development using samples
@@ -93,7 +93,7 @@ To connect the board:
 
 ## Anjay-freertos-client with FOTA (Firmware update Over the Air)
 
-Anjay application can be built in basic version (without FOTA) as described in the [Build binary](#build-binary) and [Flash the board](#flash-the-board) section. In order to use FOTA, a few additional steps need to be done, e.g. **Secure Boot** and **Secure Firmware Update** compilation.
+Anjay application can be built in basic version (without FOTA) as described in the [Build binary and flash the board](#build-binary-and-flash-the-board) section. In order to use FOTA, a few additional steps need to be done, e.g. **Secure Boot** and **Secure Firmware Update** compilation.
 
 The **X-CUBE-SBSFU Secure Boot and Secure Firmware Update** solution allows the update of the STM32 microcontroller built-in
 program with new firmware versions, adding new features and correcting issues. The update process is performed

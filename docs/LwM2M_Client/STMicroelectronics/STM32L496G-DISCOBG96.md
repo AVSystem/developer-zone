@@ -104,7 +104,7 @@ To connect the board:
 
 ## Anjay-freertos-client with FOTA (Firmware update Over the Air)
 
-Anjay application can be built in basic version (without FOTA) as described in the [Build binary](#build-binary) and [Flash the board](#flash-the-board) section. In order to use FOTA, a few additional steps need to be done, e.g. **Secure Boot** and **Secure Firmware Update** compilation.
+Anjay application can be built in basic version (without FOTA) as described in the [Build binary and flash the board](#build-binary-and-flash-the-board) section. In order to use FOTA, a few additional steps need to be done, e.g. **Secure Boot** and **Secure Firmware Update** compilation.
 
 The **X-CUBE-SBSFU Secure Boot and Secure Firmware Update** solution allows the update of the STM32 microcontroller built-in
 program with new firmware versions, adding new features and correcting issues. The update process is performed
