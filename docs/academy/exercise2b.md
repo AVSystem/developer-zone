@@ -49,8 +49,8 @@ In this file, we need to modify the `setup_security_object()` function to change
 
 <p style="text-align: center;">main.c</p>
 ```
-static int setup_security_object(anjay_t *anjay) {
-    if (anjay_security_object_install(anjay)) {
+static int setup_security_object() {
+    if (anjay_security_object_install(g_anjay)) {
         return -1;
     }
 
@@ -68,7 +68,7 @@ static int setup_security_object(anjay_t *anjay) {
     };
 
     anjay_iid_t security_instance_id = ANJAY_ID_INVALID;
-    if (anjay_security_object_add_instance(anjay, &security_instance,
+    if (anjay_security_object_add_instance(g_anjay, &security_instance,
                                         &security_instance_id)) {
         return -1;
     }
@@ -128,6 +128,22 @@ After updating the `setup_security_object()` function in the **main.c** file, it
 !!! Note
     The complete code for a similar example targeting desktop platforms can be found in the `secure_communication` subdirectory of the Anjay-pico-client project repository.
 
+## Add the newly created subdirectory to the build
+After creating the **psk-mode** directory with the **main.c** and **CMakeLists.txt** files, we need to add it to the build in order to correctly recompile the application.
+
+Go to the **Anjay-pico-client** directory and open **CMakeLists.txt** located there.
+
+!!! Warning
+    Please do not confuse **Anjay-pico-client/CMakeLists.txt** with **Anjay-pico-client/psk-mode/CMakeLists.txt**. These are two different files and we need to edit the first one.
+
+Now simply add `add_subdirectory(psk-mode)` to the end of the file and save.
+
+<p style="text-align: center;">CMakeLists.txt</p>
+```
+...
+add_subdirectory(psk-mode)
+```
+
 ## Recompile the application and flash the board
 To recompile the application, go to the **Anjay-pico-client/build** directory.
 
@@ -147,9 +163,9 @@ cmake --build . -j
 
 Program your board using the bootloader. Press and hold the **BOOTSEL** button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.
 
-In the **build/mandatory_objects** directory, you will find the **.uf2** file which contains the added changes.
+In the **build/psk-mode** directory, you will find the **.uf2** file which contains the added changes.
 
-Copy the `mandatory_objects.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while
+Copy the `psk-mode.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while
 
 ## Check the logs
 
