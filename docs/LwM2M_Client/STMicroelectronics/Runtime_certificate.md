@@ -3,19 +3,24 @@
 ## Introduction
 Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as was described in [STM32L496G-DISCO/BG96](STM32L496G-DISCO/BG96.md), [B-L462E-CELL1/TYPE1SC](B-L462E-CELL1/TYPE1SC.md), [B-L475E-IOT01A](B-L475E-IOT01A.md), and [B-U585I-IOT02A/BG96](B-U585I-IOT02A/BG96.md) pages or with certificate-based cryptography.
 
-In **Certificate Mode** an asymmetrical public-key cryptographic algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
+In **Certificate Mode** an asymmetrical algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
 
-Read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
+You can read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
 
 
 ## Prerequisites
 * The STM32L496G-DISCO/BG96 board with a USB cable.
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
+* Installed [OpenSSL](https://www.openssl.org/source/)
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+
+!!! Note
+    In this tutorial we will use the STM32L496G-DISCO/BG96 board as an example.
 
 ## Build and flash the device
 To get the latest binary file and flash the board:
 
+0. Connect the STM32L496G-DISCO/BG96 board to a USB port of your machine.
 0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 0. Download the `Anjay-freertos-client-STM32L496G-BG96.bin` file.
 0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L496ZG** external device.
@@ -24,9 +29,6 @@ To get the latest binary file and flash the board:
 ## Generate certificate
 The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in PEM format. To generate them open terminal and use the following commands.
 
-!!! Important
-
-    To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
 ```
 openssl ecparam -name secp256r1 -out ecparam.der
@@ -35,7 +37,11 @@ openssl x509 -in demo-cert.crt -outform pem -out cert.pem
 openssl ec -in demo-cert.key -outform pem -out key.pem
 ```
 
-![Fragement of creating certificates](images/create_cert.png)
+![Fragment of creating certificates](images/create_cert.png)
+
+!!! Important
+
+    To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
 You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the directory.
 
@@ -63,7 +69,7 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the direct
 
 0. Save created changes, by clicking **1. Save & Exit**, and go to the next step to add a device to Coiote.
 
-## Add device to Coiote IoT DM and connect
+## Add device to Coiote IoT DM
 
 0. Upon logging in to Coiote IoT DM for the first time, you will see the **Add your LwM2M device** panel.
 
@@ -79,6 +85,9 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the direct
      - Click **Upload a new certificate** and **Browse**.
      - In the pop-up, go to the directory where your certificate has been generated, select the `demo-cert.crt` file and click **Open**.
      - Click **Add device**.
+
+!!! Note
+    The **Endpoint name** which you enter to the Coiote IoT DM should be the same as it is in the Client configuration.
 
 0. Click **Next**, **Go to Summary** to skip the third step, and **Finish** to see your Device Center.
     ![Registered device](images/registered_cert.png "Registered device")

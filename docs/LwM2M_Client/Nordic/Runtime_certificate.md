@@ -3,19 +3,23 @@
 ## Introduction
 Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [nRF9160](nRF9160.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
 
-In **Certificate Mode** an asymmetrical public-key cryptographic algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
+In **Certificate Mode** an asymmetrical algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
 
-Read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
+You can read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
 
 ## Prerequisites
-* The nRF9160 board with a USB cable.
-- Cloned [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client#getting-started) repository
-- Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
+* The nRF9160DK board with a USB cable.
+* Cloned [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client#getting-started) repository
+* Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
+* Installed [OpenSSL](https://www.openssl.org/source/)
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 
+!!! Note
+    In this tutorial we will use the nRF9160DK board as an example.
+
 ## Build and flash the device
-0. Connect the nRF9160 board to a USB port of your machine.
+0. Connect the nRF9160DK board to a USB port of your machine.
 0. Go to your local **Anjay-zephyr-client** directory
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
 
@@ -37,22 +41,16 @@ Read more about secure communication on [Anjay's documentation](https://avsystem
 
         The runtime certificate and private key do not work with Thingy:91. Other boards should work with this command.
 
-    This feature works with nrf9160dk starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
+    This feature works with nrf9160DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
 
     ```
     west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"
     ```
 
-0. Find the merged.hex file under the `build/zephyr` directory in the project folder.
-
-0. Use the nRF Connect Programmer with the downloaded `.hex` file and execute steps from the [Updating the application firmware](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware) section.
+0. Flash the board with `west flash` command.
 
 ## Generate certificate
-The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in `.pem` format. To generate them open terminal and use the following commands.
-
-!!! Important
-
-    To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
+The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in `.pem` format. To generate them open terminal in the **Anjay-zephyr-client/demo** directory and use the following commands.
 
 ```
 openssl ecparam -name secp256r1 -out ecparam.der
@@ -61,7 +59,11 @@ openssl x509 -in demo-cert.crt -outform pem -out cert.pem
 openssl ec -in demo-cert.key -outform pem -out key.pem
 ```
 
-![Fragement of creating certificates](images/create_cert.png)
+![Fragment of creating certificates](images/create_cert.png)
+
+!!! Important
+
+    To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
 You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the `Anjay-zephyr-client/demo` directory.
 
@@ -79,9 +81,9 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the `Anjay
 
     ![Generate certificate in Anjay](images/anjay_cert.png)
 
-0. Save created changes, start Anjay and go to the next step to add a device to Coiote.
+0. Save changes, start Anjay using `anjay start` command and go to the next step to add a device to Coiote.
 
-## Add device to Coiote IoT DM and connect
+## Add device to Coiote IoT DM
 
 0. Upon logging in to Coiote IoT DM for the first time, you will see the **Add your LwM2M device** panel.
 
@@ -97,6 +99,9 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the `Anjay
      - Click **Upload a new certificate** and **Browse**.
      - In the pop-up, go to the directory where your certificate has been generated, select the `demo-cert.crt` file and click **Open**.
      - Click **Add device**.
+
+!!! Note
+    The **Endpoint name** which you enter to the Coiote IoT DM should be the same as it is in the Client configuration.
 
 0. Click **Next**, **Go to Summary** to skip the third step, and **Finish** to see your Device Center.
     ![Registered device](images/registered_cert.png "Registered device")
