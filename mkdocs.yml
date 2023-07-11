@@ -56,7 +56,6 @@ nav:
             - 'STMicroelectronics':
                 - 'LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md'
                 - 'LwM2M_Client/STMicroelectronics/STM32L496G-DISCOBG96.md'
-                - 'LwM2M_Client/STMicroelectronics/STM32L496G-DISCO-MONARCH.md'
                 - 'LwM2M_Client/STMicroelectronics/B-L462E-CELL1-TYPE1SC.md'
                 - 'LwM2M_Client/STMicroelectronics/B-L475E-IOT01A.md'
                 - 'LwM2M_Client/STMicroelectronics/B-U585I-IOT02A-BG96.md'
