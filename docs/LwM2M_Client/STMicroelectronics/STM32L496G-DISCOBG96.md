@@ -90,7 +90,7 @@ To connect the board:
    ![Client configuration](images/config_menu1.png "Client configuration"){:style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
 
     !!! important
-        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card Truphone then change APN to **iot.truphone.com**.
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use a built-in Truphone eSIM card, change the APN to **iot.truphone.com**.
 
     !!! Note
         If you use external SIM card you have to check APN used by SIM card's provider.
