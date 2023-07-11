@@ -2785,8 +2785,8 @@
 <p>Open the <strong>main.c</strong> file in a code editor (e.g. VS Code).</p>
 <p>In this file, we need to modify the <code>setup_security_object()</code> function to change Anjay’s security settings and add the configuration of PSK-based encryption. This can be done using the code below.</p>
 <p style="text-align: center;">main.c</p>
-<div class="highlight"><pre><span></span><code>static int setup_security_object(anjay_t *anjay) {
-    if (anjay_security_object_install(anjay)) {
+<div class="highlight"><pre><span></span><code>static int setup_security_object() {
+    if (anjay_security_object_install(g_anjay)) {
         return -1;
     }
 
@@ -2804,7 +2804,7 @@
     };
 
     anjay_iid_t security_instance_id = ANJAY_ID_INVALID;
-    if (anjay_security_object_add_instance(anjay, &amp;security_instance,
+    if (anjay_security_object_add_instance(g_anjay, &amp;security_instance,
                                         &amp;security_instance_id)) {
         return -1;
     }
@@ -2842,6 +2842,16 @@ pico_enable_stdio_uart(psk-mode 0)
 
 pico_add_extra_outputs(psk-mode)
 </code></pre></div>
+<p>At the end of the file add the mention about subdirectory to the general CMakeLists.txt.</p>
+<p style="text-align: center;"> Anjay-pico-client/CMakeLists.txt</p>
+
+<div class="highlight"><pre><span></span><code>add_subdirectory(psk_mode)
+</code></pre></div>
+<p>Now the client is ready to be built and connected to LwM2M Server, allowing it to read the Time object.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember that the <strong>Anjay-pico-client/CMakeLists.txt</strong> and <strong>Anjay-pico-client/psk-mode/CMakeLists.txt</strong> are two different files.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Need help? Head over to the <strong>lwm2m-academy</strong> channel on <a href="https://discord.avsystem.com/" target="_blank"><strong>Discord</strong></a> to get in touch with our experts.</p>
@@ -2869,8 +2879,8 @@ Run the following command in the build directory
 <div class="highlight"><pre><span></span><code>cmake --build . -j
 </code></pre></div></p>
 <p>Program your board using the bootloader. Press and hold the <strong>BOOTSEL</strong> button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.</p>
-<p>In the <strong>build/mandatory_objects</strong> directory, you will find the <strong>.uf2</strong> file which contains the added changes.</p>
-<p>Copy the <code>mandatory_objects.uf2</code> file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while</p>
+<p>In the <strong>build/psk-mode</strong> directory, you will find the <strong>.uf2</strong> file which contains the added changes.</p>
+<p>Copy the <code>psk-mode.uf2</code> file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while</p>
 <h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">#</a></h2>
 <p>If all went well and logs show <strong>registration successfully updated</strong>.</p>
 <p><img alt="Check the logs in the serial communication program" src="../images/logs.PNG" /></p>
@@ -2943,7 +2953,7 @@ Run the following command in the build directory
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2023</span>
     
   </small>
 </div>

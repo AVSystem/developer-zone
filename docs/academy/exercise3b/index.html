@@ -2779,10 +2779,6 @@
 <li>Make the Object register to the LwM2M Server at boot</li>
 <li>Make the device responsive to server read commands</li>
 </ul>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Copy and paste the <em>main.c</em> and <em>CMakeLists.txt</em> files from the <strong>Anjay-pico-client/secure_communication</strong> directory to the <strong>Anjay-pico-client/temperature_object_lm35</strong> directory.</p>
-</div>
 <h3 id="generate-the-lm35c-file">Generate the lm35.c file<a class="headerlink" href="#generate-the-lm35c-file" title="Permanent link">#</a></h3>
 <p>Let’s get started by going to the <strong>Anjay-pico-client</strong> directory and creating a new directory called <strong>temperature_object_lm35</strong>.In this directory, we are creating the files:</p>
 <ul>
@@ -2791,6 +2787,10 @@
 <li><em>main.c</em></li>
 <li><em>CMakeLists.txt</em></li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Copy and paste the <em>main.c</em> and <em>CMakeLists.txt</em> files from the <strong>Anjay-pico-client/secure_communication</strong> directory to the <strong>Anjay-pico-client/temperature_object_lm35</strong> directory.</p>
+</div>
 <p>In the <em>lm35.c</em> file we need two functions:</p>
 <ul>
 <li>The <code>lm35_init()</code> for the initialization of the ADC (Analog to Digital Converter) and the ADC GPIO pin.</li>
@@ -2955,11 +2955,9 @@ void temperature_sensor_release(void) {
 void temperature_sensor_install(anjay_t *anjay);
 void temperature_sensor_update(anjay_t *anjay);
 void temperature_sensor_release(void);
-
-
-lm35.h
-
-#pragma once
+</code></pre></div>
+<p style="text-align: center;">lm35.h</p>
+<div class="highlight"><pre><span></span><code>#pragma once
 
 #define ADC_PIN_TO_CHANNEL(Pin) ((Pin) - (26))
 
@@ -3166,7 +3164,7 @@ Run the following command in the build directory
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2023</span>
     
   </small>
 </div>
