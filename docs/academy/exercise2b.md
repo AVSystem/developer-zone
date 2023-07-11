@@ -111,6 +111,18 @@ pico_add_extra_outputs(psk-mode)
 
 ```
 
+At the end of the file add the mention about subdirectory to the general CMakeLists.txt.
+<p style="text-align: center;"> Anjay-pico-client/CMakeLists.txt</p>
+
+```
+add_subdirectory(psk_mode)
+```
+
+Now the client is ready to be built and connected to LwM2M Server, allowing it to read the Time object.
+
+!!! Important
+    Remember that the **Anjay-pico-client/CMakeLists.txt** and **Anjay-pico-client/psk-mode/CMakeLists.txt** are two different files.
+
 !!! tip
     Need help? Head over to the **lwm2m-academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
 
@@ -127,22 +139,6 @@ After updating the `setup_security_object()` function in the **main.c** file, it
 
 !!! Note
     The complete code for a similar example targeting desktop platforms can be found in the `secure_communication` subdirectory of the Anjay-pico-client project repository.
-
-## Add the newly created subdirectory to the build
-After creating the **psk-mode** directory with the **main.c** and **CMakeLists.txt** files, we need to add it to the build in order to correctly recompile the application.
-
-Go to the **Anjay-pico-client** directory and open **CMakeLists.txt** located there.
-
-!!! Warning
-    Please do not confuse **Anjay-pico-client/CMakeLists.txt** with **Anjay-pico-client/psk-mode/CMakeLists.txt**. These are two different files and we need to edit the first one.
-
-Now simply add `add_subdirectory(psk-mode)` to the end of the file and save.
-
-<p style="text-align: center;">CMakeLists.txt</p>
-```
-...
-add_subdirectory(psk-mode)
-```
 
 ## Recompile the application and flash the board
 To recompile the application, go to the **Anjay-pico-client/build** directory.
