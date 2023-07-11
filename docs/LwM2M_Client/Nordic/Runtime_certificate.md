@@ -24,6 +24,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 0. Set manifest file to `west-nrf.yml`, and do `west update`:
 
     ```
+    west config manifest.path Anjay-zephyr-client/demo
     west config manifest.file west-nrf.yml
     west update
     ```
