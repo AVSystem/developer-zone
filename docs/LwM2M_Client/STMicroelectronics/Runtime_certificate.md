@@ -41,11 +41,11 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
 !!! Important
 
-    To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
+    To use the certificate and private key configuration with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
-You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the directory.
+You will see created `cert.pem` and `key.pem` files in the directory.
 
-## Configuring the Client
+## Configure the Client
 
 0. With the board still connected to a serial port interface, open a serial communication program.
 0. Press the reset button located on the board. This should trigger the following prompt:
@@ -60,14 +60,14 @@ You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the direct
     - Set **8. APN**, **9. APN username**, and **10. APN password** to compatibile with your SIM card.
 
     !!! important
-        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in SIM card Truphone then change APN to **iot.truphone.com**.
+        APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in Truphone SIM card then change APN to **iot.truphone.com**.
 
     !!! Note
         If you use external SIM card you have to check APN used by SIM card's provider.
 
     ![Generate certificate in Anjay](images/anjay_cert.png)
 
-0. Save created changes, by clicking **1. Save & Exit**, and go to the next step to add a device to Coiote.
+0. Save changes by clicking **1. Save & Exit**, and go to the next step to add a device to Coiote.
 
 ## Add device to Coiote IoT DM
 

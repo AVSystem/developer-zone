@@ -20,16 +20,15 @@ You can read more about secure communication on [Anjay's documentation](https://
 
 ## Build and flash the device
 0. Connect the nRF9160DK board to a USB port of your machine.
-0. Go to your local **Anjay-zephyr-client** directory
-0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
+0. Go to your local **Anjay-zephyr-client/demo** directory
+0. Set manifest file to `west-nrf.yml`, and do `west update`:
 
     ```
-    west config manifest.path Anjay-zephyr-client/demo
     west config manifest.file west-nrf.yml
     west update
     ```
 
-0. Go to the **Anjay-zephyr-client/demo** folder and build a project with a runtime certificate and private key.
+0. Build a project with a runtime certificate and private key.
 
     ```
     west build -b <BOARD> -p -- -DCONFIG_ANJAY_ZEPHYR_RUNTIME_CERT_CONFIG=y
@@ -39,9 +38,9 @@ You can read more about secure communication on [Anjay's documentation](https://
 
     !!! Note
 
-        The runtime certificate and private key do not work with Thingy:91. Other boards should work with this command.
+        The runtime certificate and private key configuration do not work with Thingy:91. Other boards should work with this command.
 
-    This feature works with nrf9160DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
+    This feature works with nRF9160DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
 
     ```
     west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"
@@ -65,9 +64,9 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
     To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
-You will see created `demo-cert.pem` and `demo-cert.key.pem` files in the `Anjay-zephyr-client/demo` directory.
+You will see created `cert.pem` and `key.pem` files in the `Anjay-zephyr-client/demo` directory.
 
-## Configuring the Client
+## Configure the Client
 0. Provide the generated certificate and private key through the shell in the serial communication program.
 
     !!! Note
