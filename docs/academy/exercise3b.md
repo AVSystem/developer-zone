@@ -23,9 +23,6 @@ In these steps, we are going to generate the temperature sensor files required t
 - Make the Object register to the LwM2M Server at boot
 - Make the device responsive to server read commands
 
-!!! Important
-    Copy and paste the *main.c* and *CMakeLists.txt* files from the **Anjay-pico-client/secure_communication** directory to the **Anjay-pico-client/temperature_object_lm35** directory.
-
 ### Generate the lm35.c file
 Let’s get started by going to the **Anjay-pico-client** directory and creating a new directory called **temperature_object_lm35**.In this directory, we are creating the files:
 
@@ -33,6 +30,9 @@ Let’s get started by going to the **Anjay-pico-client** directory and creating
 - *temperature_sensor.c* and its header file *temperature_sensor.h*
 - *main.c*
 - *CMakeLists.txt*
+
+!!! Important
+    Copy and paste the *main.c* and *CMakeLists.txt* files from the **Anjay-pico-client/secure_communication** directory to the **Anjay-pico-client/temperature_object_lm35** directory.
 
 In the *lm35.c* file we need two functions:
 
@@ -221,10 +221,10 @@ The last things to do is creating the header files (*temperature_sensor.h* and *
 void temperature_sensor_install(anjay_t *anjay);
 void temperature_sensor_update(anjay_t *anjay);
 void temperature_sensor_release(void);
+```
 
-
-lm35.h
-
+<p style="text-align: center;">lm35.h</p>
+```
 #pragma once
 
 #define ADC_PIN_TO_CHANNEL(Pin) ((Pin) - (26))

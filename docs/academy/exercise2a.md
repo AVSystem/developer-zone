@@ -42,8 +42,8 @@ The Resources which are configured for the Security Object are:
 ```
 // Installs Security Object and adds an instance of it.
 // An instance of Security Object provides information needed to connect // to LwM2M server.
-static int setup_security_object(anjay_t *anjay) {
-    if (anjay_security_object_install(anjay)) {
+static int setup_security_object() {
+    if (anjay_security_object_install(g_anjay)) {
         return -1;
     }
     const anjay_security_instance_t security_instance = {
@@ -53,7 +53,7 @@ static int setup_security_object(anjay_t *anjay) {
     };
     // Anjay will assign Instance ID automatically
     anjay_iid_t security_instance_id = ANJAY_ID_INVALID;
-    if (anjay_security_object_add_instance(anjay, &security_instance,
+    if (anjay_security_object_add_instance(g_anjay, &security_instance,
                                         &security_instance_id)) {
         return -1;
     }
@@ -86,8 +86,8 @@ The Resources which are configured for the Server Object are:
 // Installs Server Object and adds an instance of it.
 // An instance of Server Object provides the data related to a LwM2M
 // Server.
-static int setup_server_object(anjay_t *anjay) {
-    if (anjay_server_object_install(anjay)) {
+static int setup_server_object() {
+    if (anjay_server_object_install(g_anjay)) {
         return -1;
     }
     const anjay_server_instance_t server_instance = {
@@ -100,7 +100,7 @@ static int setup_server_object(anjay_t *anjay) {
     };
     // Anjay will assign Instance ID automatically
     anjay_iid_t server_instance_id = ANJAY_ID_INVALID;
-    if (anjay_server_object_add_instance(anjay, &server_instance,
+    if (anjay_server_object_add_instance(g_anjay, &server_instance,
                                         &server_instance_id)) {
         return -1;
     }
