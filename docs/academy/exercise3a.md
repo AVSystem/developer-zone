@@ -47,7 +47,7 @@ python3 deps/anjay/tools/anjay_codegen.py -i time_object/lwm2m_3333.xml -o time_
 !!! important
     If you’re using **Windows**, use `python` instead of `python3`.
 
-The commands use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts to generate the *time_object.xml* and *time_object.c* files in the **Anjay-pico-client/time_object**.
+The commands use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts to generate the *lwm2m_3333.xml* and *time_object.c* files in the **Anjay-pico-client/time_object**.
 
 The generated files still require some modifications to make them operational. In the next part, you can find the highlighted code blocks which should be added to the *time_object.c* files.
 

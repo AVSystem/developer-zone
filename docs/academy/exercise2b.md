@@ -49,8 +49,8 @@ In this file, we need to modify the `setup_security_object()` function to change
 
 <p style="text-align: center;">main.c</p>
 ```
-static int setup_security_object(anjay_t *anjay) {
-    if (anjay_security_object_install(anjay)) {
+static int setup_security_object() {
+    if (anjay_security_object_install(g_anjay)) {
         return -1;
     }
 
@@ -68,7 +68,7 @@ static int setup_security_object(anjay_t *anjay) {
     };
 
     anjay_iid_t security_instance_id = ANJAY_ID_INVALID;
-    if (anjay_security_object_add_instance(anjay, &security_instance,
+    if (anjay_security_object_add_instance(g_anjay, &security_instance,
                                         &security_instance_id)) {
         return -1;
     }
@@ -111,6 +111,18 @@ pico_add_extra_outputs(psk-mode)
 
 ```
 
+At the end of the file add the mention about subdirectory to the general CMakeLists.txt.
+<p style="text-align: center;"> Anjay-pico-client/CMakeLists.txt</p>
+
+```
+add_subdirectory(psk_mode)
+```
+
+Now the client is ready to be built and connected to LwM2M Server, allowing it to read the Time object.
+
+!!! Important
+    Remember that the **Anjay-pico-client/CMakeLists.txt** and **Anjay-pico-client/psk-mode/CMakeLists.txt** are two different files.
+
 !!! tip
     Need help? Head over to the **lwm2m-academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
 
@@ -147,9 +159,9 @@ cmake --build . -j
 
 Program your board using the bootloader. Press and hold the **BOOTSEL** button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.
 
-In the **build/mandatory_objects** directory, you will find the **.uf2** file which contains the added changes.
+In the **build/psk-mode** directory, you will find the **.uf2** file which contains the added changes.
 
-Copy the `mandatory_objects.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while
+Copy the `psk-mode.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while
 
 ## Check the logs
 
