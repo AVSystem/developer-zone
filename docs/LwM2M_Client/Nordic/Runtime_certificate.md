@@ -31,21 +31,22 @@ You can read more about secure communication on [Anjay's documentation](https://
 
 0. Build a project with a runtime certificate and private key.
 
-    ```
-    west build -b <BOARD> -p -- -DCONFIG_ANJAY_ZEPHYR_RUNTIME_CERT_CONFIG=y
-    ```
-
-    where <BOARD\> should be replaced by the selected board from `boards/` directory.
-
-    !!! Note
-
-        The runtime certificate and private key configuration do not work with Thingy:91. Other boards should work with this command.
-
     This feature works with nRF9160DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
 
     ```
     west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"
     ```
+
+    !!! Note
+
+        The runtime certificate and private key configuration do not work with Thingy:91. Other boards should work with this command.
+
+        ```
+        west build -b <BOARD> -p -- -DCONFIG_ANJAY_ZEPHYR_RUNTIME_CERT_CONFIG=y
+        ```
+
+        where <BOARD\> should be replaced by the selected board from `boards/` directory.
+
 
 0. Flash the board with `west flash` command.
 
@@ -74,6 +75,7 @@ You will see created `cert.pem` and `key.pem` files in the `Anjay-zephyr-client/
 
         Before setting configurations in Anjay you need to stop running Anjay by `anjay stop` command.
 
+    Run these commands and paste the content of the `.pem` files.
     ```
     anjay config set public_cert
     anjay config set private_key
