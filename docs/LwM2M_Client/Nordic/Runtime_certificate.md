@@ -16,7 +16,8 @@ You can read more about secure communication on [Anjay's documentation](https://
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
 
 !!! Note
-    In this tutorial we will use the nRF9160DK board as an example.
+
+        The runtime certificate and private key configuration do not work with other boards.
 
 ## Build and flash the device
 0. Connect the nRF9160DK board to a USB port of your machine.
@@ -37,17 +38,6 @@ You can read more about secure communication on [Anjay's documentation](https://
     west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"
     ```
 
-    !!! Note
-
-        The runtime certificate and private key configuration do not work with Thingy:91. Other boards should work with this command.
-
-        ```
-        west build -b <BOARD> -p -- -DCONFIG_ANJAY_ZEPHYR_RUNTIME_CERT_CONFIG=y
-        ```
-
-        where <BOARD\> should be replaced by the selected board from `boards/` directory.
-
-
 0. Flash the board with `west flash` command.
 
 ## Generate certificate
@@ -55,8 +45,7 @@ The certificate and private key based on the SECP256R1 curve can be provided thr
 
 ```
 openssl ecparam -name secp256r1 -out ecparam.der
-openssl req -new -x509 -nodes -newkey ec:ecparam.der -keyout demo-cert.key -out demo-cert.crt -days 3650
-openssl x509 -in demo-cert.crt -outform pem -out cert.pem
+openssl req -new -x509 -nodes -newkey ec:ecparam.der -keyout demo-cert.key -out cert.pem -days 3650
 openssl ec -in demo-cert.key -outform pem -out key.pem
 ```
 
@@ -75,7 +64,8 @@ You will see created `cert.pem` and `key.pem` files in the `Anjay-zephyr-client/
 
         Before setting configurations in Anjay you need to stop running Anjay by `anjay stop` command.
 
-    Run these commands and paste the content of the `.pem` files.
+    Run these commands and paste generated in the previous step files.
+
     ```
     anjay config set public_cert
     anjay config set private_key

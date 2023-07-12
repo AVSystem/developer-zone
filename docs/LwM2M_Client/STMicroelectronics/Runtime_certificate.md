@@ -32,8 +32,7 @@ The certificate and private key based on the SECP256R1 curve can be provided thr
 
 ```
 openssl ecparam -name secp256r1 -out ecparam.der
-openssl req -new -x509 -nodes -newkey ec:ecparam.der -keyout demo-cert.key -out demo-cert.crt -days 3650
-openssl x509 -in demo-cert.crt -outform pem -out cert.pem
+openssl req -new -x509 -nodes -newkey ec:ecparam.der -keyout demo-cert.key -out cert.pem -days 3650
 openssl ec -in demo-cert.key -outform pem -out key.pem
 ```
 
