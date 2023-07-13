@@ -27,7 +27,7 @@ To get the latest binary file and flash the board:
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
 ## Generate certificate
-The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in PEM format. To generate them open terminal and use the following commands.
+The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in PEM format. To generate a self sign certificate and key pair open a  terminal and use the following commands.
 
 
 ```
@@ -42,7 +42,7 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
     To use the certificate and private key configuration with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
-You will see created `cert.pem` and `key.pem` files in the directory.
+You will see two files `cert.pem` and `key.pem` created in the directory.
 
 ## Configure the Client
 
@@ -54,8 +54,8 @@ You will see created `cert.pem` and `key.pem` files in the directory.
 0. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented below:
     - Set **4. Security (none/psk/cert)** to `cert`.
     - Set **5. Endpoint name** to your board endpoint name, e.g. `anjay-demo`.
-    - Set **6. Public cert or PSK identity** and paste your generated certificate from `demo-cert.pem` file.
-    - Set **7. Private cert or PSK** and paste your generated certificate private key from `demo-cert.key.pem` file.
+    - Set **6. Public cert or PSK identity** and paste your generated certificate from `cert.pem` file.
+    - Set **7. Private cert or PSK** and paste your generated certificate private key from `key.pem` file.
     - Set **8. APN**, **9. APN username**, and **10. APN password** to compatibile with your SIM card.
 
     !!! important
@@ -86,7 +86,7 @@ You will see created `cert.pem` and `key.pem` files in the directory.
      - In the **Security mode** section, select **Certificate** mode.
         ![Device credentials step](images/add_mgmt_cert.png "Device credentials step")
      - Click **Upload a new certificate** and **Browse**.
-     - In the pop-up, go to the directory where your certificate has been generated, select the `demo-cert.crt` file and click **Open**.
+     - In the pop-up, go to the directory where your certificate has been generated, select the `cert.pem` file and click **Open**.
      - Click **Add device**.
 
 

@@ -10,6 +10,10 @@ You can read more about secure communication on [Anjay's documentation](https://
 ## Prerequisites
 * The nRF9160 DK board with a USB cable.
 * Cloned [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client#getting-started) repository
+
+!!! Note
+    Go through the README's `Getting Started` part.
+
 * Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
 * Installed [OpenSSL](https://www.openssl.org/source/)
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
@@ -17,10 +21,11 @@ You can read more about secure communication on [Anjay's documentation](https://
 
 !!! Note
 
-        The runtime certificate and private key configuration do not work with other boards.
+    The runtime certificate and private key configuration do not work with other boards.
 
 ## Build and flash the device
 0. Connect the nRF9160 DK board to a USB port of your machine.
+0. Enter the command line interface on your machine and change the directory to the one where you set up the Zephyr project (usually, it's `~/zephyrproject`).
 0. Go to your local **Anjay-zephyr-client/demo** directory
 0. Set manifest file to `west-nrf.yml`, and do `west update`:
 
@@ -41,7 +46,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 0. Flash the board with `west flash` command.
 
 ## Generate certificate
-The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in `.pem` format. To generate them open terminal in the **Anjay-zephyr-client/demo** directory and use the following commands.
+The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in `.pem` format. To generate To generate a self sign certificate and key pair open a terminal in the **Anjay-zephyr-client/demo** directory and use the following commands.
 
 ```
 openssl ecparam -name secp256r1 -out ecparam.der
@@ -55,7 +60,7 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
     To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
 
-You will see created `cert.pem` and `key.pem` files in the `Anjay-zephyr-client/demo` directory.
+You will see two files `cert.pem` and `key.pem` created in the `Anjay-zephyr-client/demo` directory.
 
 ## Configure the Client
 0. Provide the generated certificate and private key through the shell in the serial communication program.
@@ -89,7 +94,7 @@ You will see created `cert.pem` and `key.pem` files in the `Anjay-zephyr-client/
      - In the **Security mode** section, select **Certificate** mode.
         ![Device credentials step](images/add_mgmt_cert.png "Device credentials step")
      - Click **Upload a new certificate** and **Browse**.
-     - In the pop-up, go to the directory where your certificate has been generated, select the `demo-cert.crt` file and click **Open**.
+     - In the pop-up, go to the directory where your certificate has been generated, select the `cert.pem` file and click **Open**.
      - Click **Add device**.
 
 !!! Note
