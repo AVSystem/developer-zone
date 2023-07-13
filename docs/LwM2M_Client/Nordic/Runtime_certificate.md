@@ -8,7 +8,7 @@ In **Certificate Mode** an asymmetrical algorithm is used to authenticate the co
 You can read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
 
 ## Prerequisites
-* The nRF9160DK board with a USB cable.
+* The nRF9160 DK board with a USB cable.
 * Cloned [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client#getting-started) repository
 * Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
 * Installed [OpenSSL](https://www.openssl.org/source/)
@@ -20,7 +20,7 @@ You can read more about secure communication on [Anjay's documentation](https://
         The runtime certificate and private key configuration do not work with other boards.
 
 ## Build and flash the device
-0. Connect the nRF9160DK board to a USB port of your machine.
+0. Connect the nRF9160 DK board to a USB port of your machine.
 0. Go to your local **Anjay-zephyr-client/demo** directory
 0. Set manifest file to `west-nrf.yml`, and do `west update`:
 
@@ -32,7 +32,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 
 0. Build a project with a runtime certificate and private key.
 
-    This feature works with nRF9160DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
+    This feature works with nRF9160 DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
 
     ```
     west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"

@@ -79,14 +79,16 @@ You will see created `cert.pem` and `key.pem` files in the directory.
    ![Add via Mgmt](images/ex1.3.png "Add via Mgmt")
 0. In the **Device credentials** step:
      - In the **Endpoint name** enter your LwM2M device endpoint name, e.g. `anjay-demo`.
+
+    !!! Note
+        The **Endpoint name** should be the same as it is in the Client configuration.
+
      - In the **Security mode** section, select **Certificate** mode.
         ![Device credentials step](images/add_mgmt_cert.png "Device credentials step")
      - Click **Upload a new certificate** and **Browse**.
      - In the pop-up, go to the directory where your certificate has been generated, select the `demo-cert.crt` file and click **Open**.
      - Click **Add device**.
 
-!!! Note
-    The **Endpoint name** which you enter to the Coiote IoT DM should be the same as it is in the Client configuration.
 
 0. Click **Next**, **Go to Summary** to skip the third step, and **Finish** to see your Device Center.
     ![Registered device](images/registered_cert.png "Registered device")
