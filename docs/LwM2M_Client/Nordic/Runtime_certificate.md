@@ -14,7 +14,6 @@ You can read more about secure communication on [Anjay's documentation](https://
 !!! Note
     Go through the README's `Getting Started` part.
 
-* Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
 * Installed [OpenSSL](https://www.openssl.org/source/)
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
