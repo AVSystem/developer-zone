@@ -68,7 +68,7 @@ You will see two files `cert.pem` and `key.pem` created in the `Anjay-zephyr-cli
 
         Before setting configurations in Anjay you need to stop running Anjay by `anjay stop` command.
 
-    Run these commands and paste generated in the previous step files.
+    Run these commands and paste the content of the files generated in the previous step.
 
     ```
     anjay config set public_cert
