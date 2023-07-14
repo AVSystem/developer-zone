@@ -17,7 +17,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 !!! Note
     In this tutorial we will use the STM32L496G-DISCO/BG96 board as an example.
 
-## Build and flash the device
+## Flash the device
 To get the latest binary file and flash the board:
 
 0. Connect the STM32L496G-DISCO/BG96 board to a USB port of your machine.
