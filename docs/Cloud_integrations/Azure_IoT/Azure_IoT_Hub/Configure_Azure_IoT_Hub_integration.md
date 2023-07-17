@@ -1,11 +1,11 @@
 # Connect integration
 
-To enable communication and data flow between the Azure IoT Hub and Coiote DM platforms, you first need to integrate them using the Hyperscaler Integration Center in Coiote DM. Follow the instructions below to learn how to do it.
+To enable communication and data flow between the Azure IoT Hub and {{ short_name }} platforms, you first need to integrate them using the Hyperscaler Integration Center in {{ short_name }}. Follow the instructions below to learn how to do it.
 
 ## Prerequisites
 
   - An active IoT Hub with hub owner access permissions. [Check here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) how to create a hub.
-  - A Coiote DM user account with permissions to use the Hyperscaler Integration Center.
+  - A {{ short_name }} user account with permissions to use the Hyperscaler Integration Center.
   - An active Azure Blob Storage account (creating a new dedicated account for the integration is required).
 
 ## Get the IoT Hub connection string
@@ -27,7 +27,7 @@ The Azure IoT Hub connection string is required in the integration process. Here
 ## Get the Azure Blob storage connection string
 
 !!! important
-    For the integration to work properly, it is required to have an empty Azure Blob storage account dedicated exclusively for the integration. 
+    For the integration to work properly, it is required to have an empty Azure Blob storage account dedicated exclusively for the integration.
 
 An Azure Blob storage connection string is required in the integration process. Here is how to obtain it:
 
@@ -37,9 +37,9 @@ An Azure Blob storage connection string is required in the integration process. 
 
 ## Set up the **Azure IoT Hub integration**
 
-Use the obtained credentials to establish the integration between Coiote DM and your Azure IoT hub:
+Use the obtained credentials to establish the integration between {{ short_name }} and your Azure IoT hub:
 
-0. In your Coiote DM user account, go to **Integrations** → **Hyperscaler Integration Center**
+0. In your {{ short_name }} user account, go to **Integrations** → **Hyperscaler Integration Center**
   ![Hyperscaler Integration Center menu link](images/azure-integration.png "Hyperscaler Integration Center menu link")
 0. In the **Integrations** tab, find the **Azure IoT Hub** tile and click **Connect**.
 0. In the dialog window, paste the previously copied IoT Hub connection string and Azure Blob storage connection string into the relevant fields.

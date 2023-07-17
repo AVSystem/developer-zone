@@ -12,7 +12,7 @@ Learn how to onboard a LwM2M device in just a few clicks using Certificates.
 
 ### Prerequisites
 
-- An active [Coiote DM](https://eu.iot.avsystem.cloud) user account with appropriate roles assigned.
+- An active [{{ short_name }}]({{ site_link }}) user account with appropriate roles assigned.
 - Compiled [Anjay SDK demo library](https://github.com/AVSystem/Anjay) for simulating a device.
 - Installed [OpenSSL](https://www.openssl.org) (or similar) for generating the certificate.
 
@@ -42,9 +42,9 @@ Learn how to onboard a LwM2M device in just a few clicks using Certificates.
     openssl ec -in demo-cert.key -outform der -out demo_key.der
     ```
 
-### Add device to Coiote DM and connect
+### Add device to {{ short_name }} and connect
 
-0. Upon logging in to Coiote DM for the first time, you will see the **Add your LwM2M device** panel.
+0. Upon logging in to {{ short_name }} for the first time, you will see the **Add your LwM2M device** panel.
 
     !!! note
         If you had previously added a device, in **Device inventory**, click the **Add device** button.
@@ -56,16 +56,16 @@ Learn how to onboard a LwM2M device in just a few clicks using Certificates.
      - In the **Security mode** section, select the **Certificate** mode.
         ![Device credentials step](images/add_mgmt_cert.png "Device credentials step")
      - Click **Upload a new certificate** and **Browse**.
-     - In the pop-up, go to the directory where your certificate has been generated, select the `demo-cert.crt` file and click **Open**. 
+     - In the pop-up, go to the directory where your certificate has been generated, select the `demo-cert.crt` file and click **Open**.
      - Click **Add device**.
 0. In the **Connect your device** step, insert the given connection parameters and the path to your certificate and key into the command used for starting the Anjay demo device. The following is an example command:
 
     ```
     ./output/bin/demo --endpoint-name test_device --security-mode cert -C c:/certificates/demo-cert.der -K c:/certificates/demo_key.der --server-uri coaps://eu.iot.avsystem.cloud:5684
     ```
- 
+
     !!! note
-        You need to change the `c:/certificates/` path for the path where your generated certificate and key are stored.   
+        You need to change the `c:/certificates/` path for the path where your generated certificate and key are stored.
 0. In the command line terminal, open the **Anjay** directory, paste the appropriately modified command and run it.
-0. In Coiote DM, click **Next**, **Go to Summary** to skip the third step, and **Finish** to see your Device Center.
+0. In {{ short_name }}, click **Next**, **Go to Summary** to skip the third step, and **Finish** to see your Device Center.
     ![Registered device](images/registered_device_cert.png "Registered device")

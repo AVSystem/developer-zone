@@ -5,26 +5,26 @@ og_title: AVSystem IoT Developer Zone
 
 # Add a device via the Management Server
 
-This guide walks you through the process of adding new devices to Coiote IoT DM using the **Management server**.
+This guide walks you through the process of adding new devices to {{ short_name }} using the **Management server**.
 
 !!! info
     The LwM2M standard defines two methods for device registration:
-    
+
     1. **Management server** (default) - The LwM2M Client negotiates security credentials directly with the LwM2M server.
     2. **Bootstrap server** (enhanced security) - The Bootstrap server is a dedicated server that acts as an intermediate to securely provision LwM2M Clients with the necessary information to register with a LwM2M server. For more information, visit the [**Bootstrap guide**](bootstrap.md).
 
 ## Prerequisites
 
-- An active [Coiote IoT DM](https://eu.iot.avsystem.cloud) user account
+- An active [{{ short_name }}]({{ site_link }}) user account
 - A LwM2M device
 
 !!! tip "Sign up free of charge"
-    You can create a **free developer account** allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud)
+    You can create a **free developer account** allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud]({{ site_link }})
 
 
 ## Add a device via the Management server
 
-1. Log in to Coiote IoT DM and from the left side menu, select **Device inventory**.
+1. Log in to {{ short_name }} and from the left side menu, select **Device inventory**.
 
 1. In **Device inventory** click **Add device**.
 
@@ -48,20 +48,20 @@ This guide walks you through the process of adding new devices to Coiote IoT DM 
 
         !!! note
             For more information about the Security modes, see the [**Security modes**](#security-modes) section.
-            
+
 1. Click **Add device** and **Confirm** in the confirmation dialog window.
 
-1. Once the device is activated using the right connection parameters, the device is added to the Coiote IoT DM platform.
+1. Once the device is activated using the right connection parameters, the device is added to the {{ short_name }} platform.
     ![Registered device](images/connected_device.png "Registered device")
 
 
 ## Security modes
 
 !!! info
-    LwM2M supports three security modes: **Pre-Shared Key**, **Certificate**, and **NoSec**. 
-    
-    * **PSK mode** uses a pre-shared key to establish secure communication between the LwM2M Client and Server. 
-    * **Certificate mode** uses certificates for authentication and secure communication. 
+    LwM2M supports three security modes: **Pre-Shared Key**, **Certificate**, and **NoSec**.
+
+    * **PSK mode** uses a pre-shared key to establish secure communication between the LwM2M Client and Server.
+    * **Certificate mode** uses certificates for authentication and secure communication.
     * **NoSec mode** provides no security and is intended for testing and development purposes only.
 
 

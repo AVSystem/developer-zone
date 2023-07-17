@@ -11,7 +11,7 @@ og_title: AVSystem IoT Developer Zone
 Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for [RaspberryPi-based](https://www.raspberrypi.org/) IoT devices using Python programming language. Svetovid is based on a state-of-the-art Anjay LwM2M client developed by AVSystem.
 It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.
 
-This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.
+This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in {{ short_name }}.
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ If a *Hello World!* message is displayed, you're good to proceed.
 
 0. In file `/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py`, find the `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test` entry and replace it with `https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod`.
 
-## Step 3: Register your device in Coiote DM
+## Step 3: Register your device in {{ short_name }}
 
 0. Disable the Svetovid service:
 
@@ -138,11 +138,11 @@ If a *Hello World!* message is displayed, you're good to proceed.
 
 ## Step 4: Connecting to the LwM2M Server
 
- To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
+ To connect to {{ site_name }}, please register at [{{ site_link }}]({{ site_link }}).
 
  To connect the board:
 
- 1. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+ 1. Log in to {{ short_name }} and from the left side menu, select **Device Inventory**.
  2. In **Device Inventory**, click **Add device**.
  3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")

@@ -1,6 +1,6 @@
 # M5StickC
 
-Integrate your ESP32-based device to manage it via Coiote DM.
+Integrate your ESP32-based device to manage it via {{ short_name }}.
 
 ## Prerequisites
 
@@ -54,13 +54,13 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 
 ![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
-## Step 3: Add device to Coiote DM
+## Step 3: Add device to {{ short_name }}
 
-To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.
+To connect your M5StickC to the {{ site_name }}, use your access to a {{ short_name }} installation, or register at {{ site_link }}/ to get access.
 
 To connect the board:
 
-0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+0. Log in to {{ short_name }} and from the left side menu, select **Device Inventory**.
 0. In **Device Inventory**, click **Add device**.
 0. Select the **Connect your LwM2M device directly via the Management server** tile.
 ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
@@ -125,7 +125,7 @@ Once executed, the device will be reset and run with the configuration you provi
 
 ## M5StickC LwM2M objects
 
-After successful connection to Coiote DM, you can explore the available device objects.
+After successful connection to {{ short_name }}, you can explore the available device objects.
 
 | Target         | Objects
 |----------------|---------------------------------------------
@@ -135,7 +135,7 @@ After successful connection to Coiote DM, you can explore the available device o
 
 ## Upgrade device firmware over the air
 
-To perform a FOTA upgrade, you need an established connection between the M5StickC and Coiote DM (see instructions above).
+To perform a FOTA upgrade, you need an established connection between the M5StickC and {{ short_name }} (see instructions above).
 
 ### Build new firmware version
 
@@ -146,9 +146,9 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 0. Run `idf.py build`.
 0. Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build`.
 
-### Schedule upgrade in Coiote DM
+### Schedule upgrade in {{ short_name }}
 
-0. In your Coiote DM account, select your device in **Device inventory** and click the **LwM2M Firmware** tab.
+0. In your {{ short_name }} account, select your device in **Device inventory** and click the **LwM2M Firmware** tab.
 
     ![LwM2M firmware tab](images/lwm2m_firmware.png "LwM2M firmware tab")
 

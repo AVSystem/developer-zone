@@ -1,6 +1,6 @@
 # Thingy:91
 
-Integrate your Nordic **Thingy:91** board with **Coiote IoT DM** using the [**Anjay LwM2M client**](https://avsystem.github.io/Anjay-doc/index.html).
+Integrate your Nordic **Thingy:91** board with **{{ short_name }}** using the [**Anjay LwM2M client**](https://avsystem.github.io/Anjay-doc/index.html).
 
 ![Thingy:91](images/NordicThingy91.jpeg "Nordic Thingy:91")
 
@@ -8,15 +8,15 @@ Integrate your Nordic **Thingy:91** board with **Coiote IoT DM** using the [**An
 
 - The **Thingy:91** board with a USB cable and SIM card.
 - Installed **minicom** or **RealTerm** (for Linux or Mac) or **PuTTy** (for Windows) or other serial communication program.
-- A user with access to the [**Coiote IoT Device Management**](https://eu.iot.avsystem.cloud/ui/device/inventory) platform.
+- A user with access to the {{ site_name }}.
 
 ## Prepare binaries
 ### Use an already built binary
 
 To get the latest binary file and flash the board:
 
-0. Go to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases).
-0. Download the `demo_thingy91_app_signed.hex` file.
+{{ zephyr_files }}
+{{ thingy91_binary }}
 0. Jump to the [flashing part](#flash-the-binaries) of the tutorial.
 
 ### Start development using samples
@@ -87,11 +87,11 @@ After successful flashing, reboot the board and go to the next step.
 
 ## Connect to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
+To connect to {{ site_name }}, please register at [{{ site_link }}]({{ site_link }}/).
 
 To connect the board:
 
-0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+0. Log in to {{ short_name }} and from the left side menu, select **Device Inventory**.
 0. In **Device Inventory**, click **Add device**.
 0. Select the **Connect your LwM2M device directly via the Management server** tile.
     ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")

@@ -15,14 +15,14 @@ This example runs a motion detection model using the accelerometer of the Thingy
 
 LwM2M Objects used:
 
-- Security: `/0` 
+- Security: `/0`
 - Server: `/1`
 - Device: `/3`
 - Pattern Detector: `/33650` (custom object)
 
 ## Prerequisites
 - Thingy:91
-- [Coiote IoT DM](https://eu.iot.avsystem.cloud/) account
+- [{{ short_name }}]({{ site_link }}/) account
 - Installed <a href="https://docs.zephyrproject.org/latest/getting_started/index.html" target="_blank">Zephyr</a> dependencies
 - Serial communication program e.g. minicom or RealTerm (for Linux or Mac) or PuTTy (for Windows)
 
@@ -91,14 +91,14 @@ west build -b thingy91_nrf9160_ns
 
 ## Connect the Thingy:91 to Coiote IoT Device Management
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at [eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
+To connect to {{ site_name }}, please register at [eu.iot.avsystem.cloud]({{ site_link }}/).
 
 To connect the board:
 
-1. [Log in](https://eu.iot.avsystem.cloud/) to Coiote IoT DM and select **Device Inventory** from the left side menu.
+1. [Log in]({{ site_link }}/) to {{ short_name }} and select **Device Inventory** from the left side menu.
 1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
-    
+
     ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
 
 1. In the **Device credentials** step:
@@ -114,7 +114,7 @@ To connect the board:
 
 Object ID `/33650` refers to the pattern detection model and indicates which pattern has been detected.
 
-To add this custom object, go to the device overview page in Coiote IoT DM and click the top-right button: **Go to previous version**. 
+To add this custom object, go to the device overview page in {{ short_name }} and click the top-right button: **Go to previous version**.
 
 ![Previous Version button](images/previous-version2.png)
 
@@ -169,7 +169,7 @@ To add a new object definition, copy-paste the following `XML file` and click **
                 <Units></Units>
                 <Description><![CDATA[Name of the pattern being detected.]]></Description>
             </Item>
-			
+
          </Resources>
         <Description2></Description2>
     </Object>
