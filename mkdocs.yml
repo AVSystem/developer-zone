@@ -39,6 +39,9 @@ plugins:
             'Coiote_IoT_DM/User_Interface/Device_Center.md': 'Coiote_IoT_DM/Device_Center.md'
             'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md': 'LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md'
             'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md': 'Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates.md'
+  - macros:
+      include_yaml:
+        - templates/default.yaml
 
 google_analytics:
   - UA-25246208-6

@@ -10,7 +10,7 @@ Among many Objects defined in the [OMA LwM2M Object and Resource Registry](https
 * A Raspberry Pi Pico W board with a USB cable
 * A LM35 temperature sensor
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
-* An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+* An active [{{ short_name }}]({{ site_link }}/) user account.
 * Completed [exercise 2B](../academy/exercise2b.md) from module 2
 
 !!! tip

@@ -2,21 +2,21 @@
 
 Azure IoT Hub Device Provisioning Service (DPS) is a helper service for Azure IoT Hub that enables zero-touch provisioning of IoT devices at scale. Azure DPS ensures high availability by providing load balancing across multiple hubs and supporting reprovisioning based on a change in the device. For more information about Azure DPS, refer to the [official documentation](https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps).
 
-Coiote DM communicates with Azure DPS to add a device to the right IoT hub and then receives the credentials to connect to the selected hub. To enable communication between Azure DPS and Coiote DM, you first need to connect them using the Hyperscaler Integration Center in Coiote DM. Follow the instruction below to learn how to do it.
+{{ short_name }} communicates with Azure DPS to add a device to the right IoT hub and then receives the credentials to connect to the selected hub. To enable communication between Azure DPS and {{ short_name }}, you first need to connect them using the Hyperscaler Integration Center in {{ short_name }}. Follow the instruction below to learn how to do it.
 
 
 ## Prerequisites
 
 * An active DPS [with linked IoT hubs](https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision#create-a-new-iot-hub-device-provisioning-service).
 * An active IoT Hub with hub owner access permissions. [Read here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) how to create a hub.
-* A Coiote DM user account with permissions to use the Azure DPS integration.
+* A {{ short_name }} user account with permissions to use the Azure DPS integration.
 
 
 ## Create an Enrollment group
 
 This step describes how to create an Enrollment group. If you already have one, proceed to the [Get the credentials](#get-the-credentials) section.
 
-A device can be enrolled in Azure DPS either [individually or as a group of devices](https://docs.microsoft.com/en-us/azure/iot-dps/tutorial-provision-device-to-hub#enroll-the-device) that share a specific attestation mechanism. Currently, Coiote DM doesn't support Individual Enrollments, so you need to choose the Enrollment group option.
+A device can be enrolled in Azure DPS either [individually or as a group of devices](https://docs.microsoft.com/en-us/azure/iot-dps/tutorial-provision-device-to-hub#enroll-the-device) that share a specific attestation mechanism. Currently, {{ short_name }} doesn't support Individual Enrollments, so you need to choose the Enrollment group option.
 
 To create an Enrollment group:
 
@@ -39,7 +39,7 @@ You’ve just created your enrollment group. The generated Symmetric Key will be
 
 ## Get the credentials
 
-This step explains where you can get the credentials for setting up the Azure DPS integration in Coiote DM.
+This step explains where you can get the credentials for setting up the Azure DPS integration in {{ short_name }}.
 
 ### ID Scope
 
@@ -63,7 +63,7 @@ The ID Scope is used to identify the specific provisioning service for the devic
 
 ## Set up the Azure DPS integration
 
-1. In your Coiote DM account, go to **Administration —> Hyperscaler Integration Center**.
+1. In your {{ short_name }} account, go to **Administration —> Hyperscaler Integration Center**.
 2. In the **Integration** tab, locate the Azure DPS tale and click **Connect**.
 
     ![Click on the Azure DPS tab](images/dps-7.png "Click on the Azure DPS tab")
@@ -77,7 +77,7 @@ The ID Scope is used to identify the specific provisioning service for the devic
 
 ## What happens next
 
-After you set up Azure DPS and connect your Azure DPS integration in Coiote DM, device provisioning and reprovisioning to the proper IoT hub are automated. You aren’t required to make any changes in Coiote DM.
+After you set up Azure DPS and connect your Azure DPS integration in {{ short_name }}, device provisioning and reprovisioning to the proper IoT hub are automated. You aren’t required to make any changes in {{ short_name }}.
 
 Importing and exporting devices, upgrading device firmware, and setting observations—all these operations happen at the level of individual hubs. The detailed instructions are provided in our [Azure IoT Hub documentation](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/).
 

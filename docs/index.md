@@ -32,11 +32,11 @@ Follow the **Getting Started Guides** to kickstart your LwM2M application using 
 [<img src="img/ESP.jpg" alt="ESPPRESSIF" title="ESPPRESSIF" width="24%" />](LwM2M_Client/ESP32/M5Stick/)
 [<img src="img/RPI.jpg" alt="Raspberry Pi" title="Raspberry Pi" width="24%" />](Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
 
-## Learn more about Coiote IoT DM
+## Learn more about {{ short_name }}
 
 Dive into Coiote IoT Device Management, the scalable LwM2M server and explore its numerous features. From device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
 
-[Coiote IoT DM docs](Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
+[{{ short_name }} docs](Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
 
 
 ## Explore cloud integrations

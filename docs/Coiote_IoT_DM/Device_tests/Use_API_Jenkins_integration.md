@@ -1,18 +1,18 @@
 # Jenkins/GitLab integration with device tests API
 
-If you would like to automate your device tests, you can use the Coiote DM API and integrate it with a CI/CD environment like Jenkins or GitLab.
+If you would like to automate your device tests, you can use the {{ short_name }} API and integrate it with a CI/CD environment like Jenkins or GitLab.
 Follow the guide below to learn how to configure the integration, run tests and summarize your test execution using these tools.
 
 !!! note
-    The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - for details, please see subsection on [GitLab](#gitlab-configure-and-run-pipeline).    
+    The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - for details, please see subsection on [GitLab](#gitlab-configure-and-run-pipeline).
 
 ## Prerequisites
 
 - An active Jenkins and GitLab account.
 - A Git project repository.
-- A working Coiote DM installation and a port for communication with the installation API.
+- A working {{ short_name }} installation and a port for communication with the installation API.
 - A device registered in the platform (if the tests require the device to be registered).
-- A Coiote DM user with access to the device and the appropriate API permissions.
+- A {{ short_name }} user with access to the device and the appropriate API permissions.
 
 ## Jenkins - standard pipeline
 
@@ -30,9 +30,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
           # ___Edit below___ #
           DEVICE_NAME = "test-device" # type the endpoint name of your device.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the device.
                   "testCases":[
                           "protocol_test_1",
@@ -95,9 +95,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
           # ___Edit below___ #
           DEVICE_GROUP = "root.mt.embedded.devicetypes.test.demo_client.2_9_0" # type the name of your device group.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the group.
                   "testCases":[
                           "protocol_test_1",
@@ -167,7 +167,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 3. Configure your pipeline:
     - Go to your newly created pipeline and select **Configure** from the menu on the left.
     - In the **Source Code Management** section, select the **Git** option and provide the following:
-        - **Repository URL** - enter the URL address of your GitLab repository that hosts the python script file from [Step 1](#set-up-standard-pipeline).  
+        - **Repository URL** - enter the URL address of your GitLab repository that hosts the python script file from [Step 1](#set-up-standard-pipeline).
 ![Configuring a standard pipeline](images/image113.png "Configuring a standard pipeline")
         - **Credentials** - add the user name and password of your git repository account.
         - **Branch Specifier** - choose the GitLab branch you want to use in the pipeline.
@@ -185,7 +185,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 1. Enter pipeline and select **Build Now**.
 
 !!! note
-    Remember to check if the device you run the tests for is connected and registered in Coiote DM.
+    Remember to check if the device you run the tests for is connected and registered in {{ short_name }}.
 2. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
 ![A standard pipeline build with test result report](images/image109.png "Build with test result report")
 
@@ -238,9 +238,9 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
           # ___Edit below___ #
           DEVICE_NAME = "test-device" # type the endpoint name of your device.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the device.
                   "testCases":[
                           "protocol_test_1",
@@ -303,9 +303,9 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
           # ___Edit below___ #
           DEVICE_GROUP = "root.mt.embedded.devicetypes.test.demo_client.2_9_0" # type the name of your device group.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your Coiote DM installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your Coiote DM user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the group.
                   "testCases":[
                           "protocol_test_1",
@@ -376,7 +376,7 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 4. Configure your pipeline:
     - Go to your newly created pipeline and select **Configure** from the menu on the left.
     - In the **Branch Sources** section, select the **Git** option and provide the following:
-        - **Project Repository** - enter the URL address of your project repository that hosts the `Jenkinsfile` and the python script file from **Step 2**.  
+        - **Project Repository** - enter the URL address of your project repository that hosts the `Jenkinsfile` and the python script file from **Step 2**.
 ![Configuring a multibranch pipeline](images/image115.png "Configuring a multibranch pipeline")
         - **Credentials** - add the user name and password of your GitLab account.
     - In the **Build Configuration** section, select the **by Jenkinsfile** mode from the drop-down list and provide the GitLab path to the `Jenkinsfile` from [Step 1](#set-up-multibranch-pipeline) (if the file is located in the GitLab root folder, it is enough to type `Jenkinsfile`)
@@ -392,13 +392,13 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 2. Enter a chosen branch by clicking on its name and select **Build Now**.
 
 !!! note
-    Remember to check if the device you run the tests for is connected and registered in Coiote DM.
+    Remember to check if the device you run the tests for is connected and registered in {{ short_name }}.
 3. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
 ![A pipeline build with test result report](images/image108.png "Build with test result report")
 
 ## GitLab - configure and run pipeline
 
-Coiote DM interop tests API can also be integrated with GitLab using the GitLab's CI/CD toolset. Here is how to do it:  
+{{ short_name }} interop tests API can also be integrated with GitLab using the GitLab's CI/CD toolset. Here is how to do it:
 
 1. Upload the `gitlab-ci.yml` file that will define your GitLab pipeline to your project repository:
     - Edit the script where required to adjust it to your environment:

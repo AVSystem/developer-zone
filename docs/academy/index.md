@@ -58,7 +58,7 @@ In this course, we will be using the **LM35** analog temperature sensor.
 
 ## Intro to Anjay LwM2M Client
 
-Anjay is a free and open-source LwM2M Client written in C for rapidly building LwM2M solutions. It comes with an SDK comprising pre-built examples and reference implementations for popular hardware platforms such as STM32, Raspberry Pi, Nordic or ESP32. Anjay eases the development of LwM2M applications by taking care of the implementation of the LwM2M protocol. 
+Anjay is a free and open-source LwM2M Client written in C for rapidly building LwM2M solutions. It comes with an SDK comprising pre-built examples and reference implementations for popular hardware platforms such as STM32, Raspberry Pi, Nordic or ESP32. Anjay eases the development of LwM2M applications by taking care of the implementation of the LwM2M protocol.
 
 The project was created and is actively maintained by [AVSystem](https://avsystem.com/). Some expert features such as support for hardware security modules or SMS binding are available commercially.
 
@@ -72,12 +72,12 @@ vStandard implementations available for many hardware platforms
 
 Find [more information](https://www.avsystem.com/coiote-iot-device-management-platform/) about Anjay and its features, or visit the [official documentation](https://avsystem.github.io/Anjay-doc/index.html) website directly.
 
-## Intro to Coiote IoT DM
+## Intro to {{ short_name }}
 Coiote IoT Device Management is a platform built around the LwM2M standard. It acts as a LwM2M Server and is designed as a scalable platform to manage large numbers of devices. The platform comes with tools to monitor groups of devices, manage device configurations, and perform firmware updates. In addition, it supports cloud integrations with platforms such as AWS IoT Core or Azure IoT Hub.
 
-Coiote IoT DM has a developer version, allowing you to connect up to 10 devices free of charge. To create a developer account, visit [**eu.iot.avsystem.cloud**](https://eu.iot.avsystem.cloud/)
+{{ short_name }} has a developer version, allowing you to connect up to 10 devices free of charge. To create a developer account, visit [**eu.iot.avsystem.cloud**]({{ site_link }}/)
 
-**Coiote IoT DM features**
+**{{ short_name }} features**
 
 * **Data collection and storage**
 

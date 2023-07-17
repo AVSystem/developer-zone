@@ -3,20 +3,20 @@ date: 2023-05-10
 og_title: AVSystem IoT Developer Zone
 ---
 
-# Coiote IoT Device Management 
+# Coiote IoT Device Management
 
 Coiote IoT Device Management Platform allows you to manage your LwM2M devices throughout their entire lifecycle. Coiote supports device onboarding, data management, data visualization, automated tests, firmware updates, monitoring & alerting and cloud integrations.
 
-[Visit Coiote IoT DM](https://eu.iot.avsystem.cloud/){: .md-button .md-button--big }
+[Visit {{ short_name }}]({{ site_link }}/){: .md-button .md-button--big }
 
 !!! Tip "Sign up free of charge"
-    Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account which allows you to connect up to 10 devices free of charge.
+    Get started by <a href="{{ site_link }}/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account which allows you to connect up to 10 devices free of charge.
 
 ![Coiote login page](images/login-page-new.png "Coiote login page")
 
 ## Device inventory
 
-Once logged in, you enter the **Device inventory** which provides an overview of all registered LwM2M devices. After selecting one of your devices, you enter the **Device center** which allows you to monitor and manage single devices. 
+Once logged in, you enter the **Device inventory** which provides an overview of all registered LwM2M devices. After selecting one of your devices, you enter the **Device center** which allows you to monitor and manage single devices.
 
 In the **Device center** you can:
 
@@ -49,7 +49,7 @@ Devices can be added to **Groups** allowing for easy management of your device f
 
 ## Integrations
 
-Initiate integrations with popular cloud platforms such as Azure IoT Hub, AWS IoT Core or nRF Cloud. 
+Initiate integrations with popular cloud platforms such as Azure IoT Hub, AWS IoT Core or nRF Cloud.
 
 → **Learn more about [**Cloud integrations**](/Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/).**
 

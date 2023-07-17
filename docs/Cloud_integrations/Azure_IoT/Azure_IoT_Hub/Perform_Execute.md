@@ -11,10 +11,10 @@ In this section, you learn how to:
 ## Prerequisites
 
 1. An active Azure IoT Hub with hub owner access permissions.
-2. A Coiote DM user account with permissions to use the integration extension.
-3. A device group created in Coiote DM.
-4. [A configured extension between Coiote DM and Azure Iot Hub](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/).
-5. [A configured integration template in Coiote DM, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+2. A {{ short_name }} user account with permissions to use the integration extension.
+3. A device group created in {{ short_name }}.
+4. [A configured extension between {{ short_name }} and Azure Iot Hub](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/).
+5. [A configured integration template in {{ short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
 5. [A connected device](https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/).
 
 ## Perform EXECUTE
@@ -43,7 +43,7 @@ Let’s perform an EXECUTE operation on the **Factory Reset** resource with ID *
     ![Direct method in Azure IoT Hub](images/execute_azure.png "Direct method - execute")
 
     !!! note
-    The exact LwM2M path of the **Factory reset** resource depends on the LwM2M client used and may vary slightly, e.g. in the object instance number: **3/1/5**. For the purpose of this tutorial, the Anjay LwM2M Client is used. If needed, modify the snippet according to your case.  
+    The exact LwM2M path of the **Factory reset** resource depends on the LwM2M client used and may vary slightly, e.g. in the object instance number: **3/1/5**. For the purpose of this tutorial, the Anjay LwM2M Client is used. If needed, modify the snippet according to your case.
 
 ## See value changes in Azure IoT Hub
 

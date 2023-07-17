@@ -8,16 +8,16 @@ In this exercise, we will change the security mode from **No-Sec** to **Pre-Shar
 * Completed [exercise 1](../academy/exercise1.md) from module 1.
 * Completed [exercise 2A](../academy/exercise2a.md) from module 2.
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
-* An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+* An active [{{ short_name }}]({{ site_link }}/) user account.
 
 ## Connect to the LwM2M Server
 
-For LwM2M Servers like [Coiote IoT DM](https://www.avsystem.com/coiote-iot-device-management-platform/), server-side configuration needs to be updated to enable LwM2M Clients to connect using PSK. The simplest solution is to edit the connection parameters on the Coiote IoT Device Management configuration page. Follow the next steps to change the parameters and set them to Pre-Shared Key mode.
+For LwM2M Servers like [{{ short_name }}](https://www.avsystem.com/coiote-iot-device-management-platform/), server-side configuration needs to be updated to enable LwM2M Clients to connect using PSK. The simplest solution is to edit the connection parameters on the Coiote IoT Device Management configuration page. Follow the next steps to change the parameters and set them to Pre-Shared Key mode.
 
 
 ### Change connection parameters
 
-0. Log in to Coiote IoT DM: [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
+0. Log in to {{ short_name }}: [{{ site_link }}]({{ site_link }}).
 0. Select **Device Inventory** from the left-side menu.
 0. From the Device Inventory, go to your created device.
 0. Go to the **Configuration** page and click the right pencil icon on the Connection parameters panel.
