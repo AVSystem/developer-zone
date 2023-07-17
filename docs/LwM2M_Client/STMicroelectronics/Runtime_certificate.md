@@ -1,7 +1,7 @@
 # Runtime Certificate and Private Key Configuration
 
 ## Introduction
-Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as was described in [STM32L496G-DISCO/BG96](STM32L496G-DISCO/BG96.md), [B-L462E-CELL1/TYPE1SC](B-L462E-CELL1/TYPE1SC.md), [B-L475E-IOT01A](B-L475E-IOT01A.md), and [B-U585I-IOT02A/BG96](B-U585I-IOT02A/BG96.md) pages or with certificate-based cryptography.
+Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [STM32L496G-DISCO/BG96](STM32L496G-DISCOBG96.md), [B-L462E-CELL1/TYPE1SC](B-L462E-CELL1-TYPE1SC.md), [B-L475E-IOT01A](B-L475E-IOT01A.md), and [B-U585I-IOT02A/BG96](B-U585I-IOT02A-BG96.md) pages or with certificate-based cryptography.
 
 In **Certificate Mode** an asymmetrical algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
 
@@ -27,7 +27,7 @@ To get the latest binary file and flash the board:
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
 ## Generate certificate
-The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in PEM format. To generate a self sign certificate and key pair open a  terminal and use the following commands.
+The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in PEM format. To generate a self-signed certificate and key pair open a  terminal and use the following commands.
 
 
 ```

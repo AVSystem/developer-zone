@@ -45,7 +45,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 0. Flash the board with `west flash` command.
 
 ## Generate certificate
-The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in `.pem` format. To generate To generate a self sign certificate and key pair open a terminal in the **Anjay-zephyr-client/demo** directory and use the following commands.
+The certificate and private key based on the SECP256R1 curve can be provided through the shell interface in `.pem` format. To generate To generate a self-signed certificate and key pair open a terminal in the **Anjay-zephyr-client/demo** directory and use the following commands.
 
 ```
 openssl ecparam -name secp256r1 -out ecparam.der
