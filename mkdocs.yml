@@ -59,10 +59,12 @@ nav:
                 - 'LwM2M_Client/STMicroelectronics/B-L462E-CELL1-TYPE1SC.md'
                 - 'LwM2M_Client/STMicroelectronics/B-L475E-IOT01A.md'
                 - 'LwM2M_Client/STMicroelectronics/B-U585I-IOT02A-BG96.md'
+                - 'LwM2M_Client/STMicroelectronics//Runtime_certificate.md'
             - 'Nordic':
                 - 'LwM2M_Client/Nordic/Thingy91.md'
                 - 'LwM2M_Client/Nordic/nRF9160.md'
                 - 'LwM2M_Client/Nordic/Device_Provisioning.md'
+                - 'LwM2M_Client/Nordic/Runtime_certificate.md'
             - 'ESP32':
                 - 'LwM2M_Client/ESP32/M5Stick.md'
                 - 'LwM2M_Client/ESP32/M5StickBG96.md'
