@@ -43,6 +43,9 @@ plugins:
       include_yaml:
         - templates/default.yaml
 
+hooks:
+  - main.py
+
 google_analytics:
   - UA-25246208-6
   - auto
