@@ -2,7 +2,7 @@
 
 This section describes how to set an Observation in your Azure IoT Hub.
 
-Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to {{ short_name }}, which in turn will transfer it to Azure IoT Hub.
+Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to {{ coiote_short_name }}, which in turn will transfer it to Azure IoT Hub.
 
 In this section, you learn how to:
 
@@ -13,10 +13,10 @@ In this section, you learn how to:
 ## Prerequisites
 
 1. An active Azure IoT Hub with hub owner access permissions.
-2. A {{ short_name }} user account with permissions to use the integration extension.
-3. A device group created in {{ short_name }}.
-4. [A configured extension between {{ short_name }} and Azure Iot Hub](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/).
-5. [A configured integration template in {{ short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+2. A {{ coiote_short_name }} user account with permissions to use the integration extension.
+3. A device group created in {{ coiote_short_name }}.
+4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
 5. [A connected device](https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/).
 
 ## Set an Observation and define its attributes
@@ -86,21 +86,21 @@ The value changes for the observed object and resource are displayed in the same
 ```
 Because we have specified in the **Desired** properties that the maximum time between two notifications for the **Current time (3/0/13)** resource is 1 second (`pmax: 1`), the number next to `value` will be changing every 1 second. E.g., 163465321**8**000 will become 163465321**9**000.
 
-If you don’t see any changes, click **Refresh**. If it doesn’t help, you can check whether observation has been set in {{ short_name }} as well.
+If you don’t see any changes, click **Refresh**. If it doesn’t help, you can check whether observation has been set in {{ coiote_short_name }} as well.
 
 
-### In {{ short_name }}
+### In {{ coiote_short_name }}
 
-This step is optional. If you want to make sure the Observation has been correctly set in {{ short_name }}, do the following:
+This step is optional. If you want to make sure the Observation has been correctly set in {{ coiote_short_name }}, do the following:
 
 1. In Coiote, go to **Device inventory --> Objects**.
 2. For the Observation set on the whole **object (1/1)**, click the vertical Ellipse button next the search field and then click **Refresh**. If the Observation has been set correctly, the checkboxes will be filled in green.
 
-    ![Observed object in {{ short_name }}](images-observation/observation-hub2.png "Observed object in {{ short_name }}")
+    ![Observed object in {{ coiote_short_name }}](images-observation/observation-hub2.png "Observed object in {{ coiote_short_name }}")
 
 3. For the Observation set on the specific **resource (3/0/13)**, find this resource in the list and click the **Refresh** button to the left from the Value tracking. You will see that checkboxes next to **Value tracking** and **Attributes** are now filled in green.
 
-    ![Observed resource in {{ short_name }}](images-observation/observation-hub3.png "Observed object in {{ short_name }}")
+    ![Observed resource in {{ coiote_short_name }}](images-observation/observation-hub3.png "Observed object in {{ coiote_short_name }}")
 
 4. Click **Value tracking**. You will see `pmin` set to 1, which is the same as you defined in the JSON in Azure IoT Hub.
 

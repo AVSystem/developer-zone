@@ -8,7 +8,7 @@ Integrate your Nordic nRF52840-DK board to an active OpenThread Border Router.
 - The **nRF52840-DK** board with a USB cable.
 - Installed **minicom** or **RealTerm** (for Linux or Mac) or **PuTTy** (for Windows) or other serial communication program.
 - Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
-- A user with access to the [**Coiote IoT Device Management**]({{ site_link }}/ui/device/inventory) platform and appropriate permissions.
+- A user with access to the [**Coiote IoT Device Management**]({{ coiote_site_link }}/ui/device/inventory) platform and appropriate permissions.
 
 ## Connecting to the OpenThread
 
@@ -98,11 +98,11 @@ Set West manifest path to *Anjay-zephyr-client/demo*, and manifest file to *west
 
 ## Connecting to the LwM2M Server
 
-To connect to {{ site_name }}, please register at [{{ site_link }}]({{ site_link }}).
+To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
 To connect the board:
 
-1. Log in to {{ short_name }} and from the left side menu, select **Device Inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 2. In **Device Inventory**, click **Add device**.
 3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
@@ -140,7 +140,7 @@ To connect the board:
 
 
     !!! note
-        If your default credentials are different from device credentials provided in {{ short_name }}, change them using the `anjay config set <possible_option> <value>` command.
+        If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
         <br/>
         ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
@@ -160,7 +160,7 @@ To connect the board:
 
         ![Connected device as a router](images/border3.png "Connected device as a router"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
-0. Go to {{ short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+0. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
     ![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 !!! note

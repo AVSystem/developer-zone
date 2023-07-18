@@ -1,8 +1,8 @@
 # LwM2M mappings - Azure IoT Central
 
-In this section you'll get to know how the mappings are arranged between the LwM2M protocol as used in {{ short_name }} and the data retrieval and processing mechanisms of Azure IoT Central.
+In this section you'll get to know how the mappings are arranged between the LwM2M protocol as used in {{ coiote_short_name }} and the data retrieval and processing mechanisms of Azure IoT Central.
 
-These processing mechanisms of Azure IoT Central have the same names as data formats in {{ short_name }}: Properties, Command, and Telemetry. Properties describe the actual value, Command executes commands, and Telemetry observes changes in values over time.
+These processing mechanisms of Azure IoT Central have the same names as data formats in {{ coiote_short_name }}: Properties, Command, and Telemetry. Properties describe the actual value, Command executes commands, and Telemetry observes changes in values over time.
 
 ## Introduction
 
@@ -17,11 +17,11 @@ In terms of operations that can be performed on an LwM2M Client, an LwM2M Server
 !!! info
     If you would like to dive deeper into the details of the Lightweight M2M protocol, please refer to [our brief introduction to LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html).
 
-This division into readable, writable, executable and observable data model entities is the basis for the mapping of LwM2M resources (as interpreted by {{ short_name }}) into the Azure IoT Central data processing mechanisms.
+This division into readable, writable, executable and observable data model entities is the basis for the mapping of LwM2M resources (as interpreted by {{ coiote_short_name }}) into the Azure IoT Central data processing mechanisms.
 
 ## LwM2M readable and writable resources
 
-Within the **{{ short_name }} - Azure IoT Central integration**, readable and writable resources are interpreted as Properties. The data structure is represented in one line where objects, object instances, and resources are separated by `n`. For example: `n1n0n3`, where 1 is object, 0 is object instance, and 3 is resource.
+Within the **{{ coiote_short_name }} - Azure IoT Central integration**, readable and writable resources are interpreted as Properties. The data structure is represented in one line where objects, object instances, and resources are separated by `n`. For example: `n1n0n3`, where 1 is object, 0 is object instance, and 3 is resource.
 
 In Azure IoT Central, Properties as well as other device capabilities (Telemetry and Command, read more on them below) are defined in a model which is part of the [device template](https://docs.microsoft.com/en-us/azure/iot-central/core/concepts-device-templates). The device template defines the characteristics of the device that is connected to your IoT Central application.
 
@@ -33,7 +33,7 @@ Data model resources that are read-only, such as `Manufacturer` (with ID **3/0/0
 
 ### WRITE - Communication flow
 
-On the other hand, a writable resource, such as `Lifetime` (with ID **1/0/1**), apart from being represented as a reported property, can be additionally mapped as a desired property. This enables you to synchronize the device data model and configuration between Azure and {{ short_name }}.
+On the other hand, a writable resource, such as `Lifetime` (with ID **1/0/1**), apart from being represented as a reported property, can be additionally mapped as a desired property. This enables you to synchronize the device data model and configuration between Azure and {{ coiote_short_name }}.
 
 ![Properties WRITE Lifetime](images/Properties-WRITE.png "WRITE Lifetime")
 
@@ -52,20 +52,20 @@ To do so, select a device from the **Devices** page in Azure IoT Central and cli
 
 ### COMMAND - Communication flow
 
-Invoking Command from Azure IoT Central and handling it by {{ short_name }} in the form of a COMMAND operation passed to the device has the following flow:
+Invoking Command from Azure IoT Central and handling it by {{ coiote_short_name }} in the form of a COMMAND operation passed to the device has the following flow:
 
 ![COMMAND Factory reset](images/Command.png "COMMAND Factory reset")
 
 ## LwM2M observable resources
 
-In {{ short_name }}, some of the resources within the device data model can be observed for changes in value. These are generally resources related to telemetry data or other measurements. Their value changes can be monitored by {{ short_name }} and reported to Azure IoT Central with help of Telemetry device capability.
+In {{ coiote_short_name }}, some of the resources within the device data model can be observed for changes in value. These are generally resources related to telemetry data or other measurements. Their value changes can be monitored by {{ coiote_short_name }} and reported to Azure IoT Central with help of Telemetry device capability.
 
 !!! note
     To learn more about Telemetry, go to the [respective subsection](https://docs.microsoft.com/en-us/azure/iot-central/core/concepts-telemetry-properties-commands#telemetry) of the Azure IoT Central documentation.
 
 ### Observe - Communication flow
 
-Setting an Observe operation on a resource in {{ short_name }}, for instance a temperature reading, will result in a Notify message sent by the device upon value change. Then {{ short_name }} transfers this message to Azure IoT Central using Telemetry.
+Setting an Observe operation on a resource in {{ coiote_short_name }}, for instance a temperature reading, will result in a Notify message sent by the device upon value change. Then {{ coiote_short_name }} transfers this message to Azure IoT Central using Telemetry.
 
 ![Telemetry Observe Temperature](images/Telemetry.png "Observe Temperature")
 

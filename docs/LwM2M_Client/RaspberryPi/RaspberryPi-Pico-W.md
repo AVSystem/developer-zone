@@ -68,11 +68,11 @@ Integrate your Raspberry Pi Pico W board.
 
 ## Connecting to the LwM2M Server
 
-To connect to a {{ site_name }}, register at [{{ site_link }}]({{ site_link }}).
+To connect to a {{ coiote_long_name }}, register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
 To connect the board:
 
-1. Log in to {{ short_name }} and from the left side menu, select **Device Inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 2. In **Device Inventory**, click **Add device**.
 3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")

@@ -7,10 +7,10 @@ og_title: AVSystem IoT Developer Zone
 
 Coiote IoT Device Management Platform allows you to manage your LwM2M devices throughout their entire lifecycle. Coiote supports device onboarding, data management, data visualization, automated tests, firmware updates, monitoring & alerting and cloud integrations.
 
-[Visit {{ short_name }}]({{ site_link }}/){: .md-button .md-button--big }
+[Visit {{ coiote_short_name }}]({{ coiote_site_link }}/){: .md-button .md-button--big }
 
 !!! Tip "Sign up free of charge"
-    Get started by <a href="{{ site_link }}/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account which allows you to connect up to 10 devices free of charge.
+    Get started by <a href="{{ coiote_site_link }}/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account which allows you to connect up to 10 devices free of charge.
 
 ![Coiote login page](images/login-page-new.png "Coiote login page")
 

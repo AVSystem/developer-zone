@@ -1,6 +1,6 @@
 # Jenkins/GitLab integration with device tests API
 
-If you would like to automate your device tests, you can use the {{ short_name }} API and integrate it with a CI/CD environment like Jenkins or GitLab.
+If you would like to automate your device tests, you can use the {{ coiote_short_name }} API and integrate it with a CI/CD environment like Jenkins or GitLab.
 Follow the guide below to learn how to configure the integration, run tests and summarize your test execution using these tools.
 
 !!! note
@@ -10,9 +10,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 - An active Jenkins and GitLab account.
 - A Git project repository.
-- A working {{ short_name }} installation and a port for communication with the installation API.
+- A working {{ coiote_short_name }} installation and a port for communication with the installation API.
 - A device registered in the platform (if the tests require the device to be registered).
-- A {{ short_name }} user with access to the device and the appropriate API permissions.
+- A {{ coiote_short_name }} user with access to the device and the appropriate API permissions.
 
 ## Jenkins - standard pipeline
 
@@ -30,9 +30,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
           # ___Edit below___ #
           DEVICE_NAME = "test-device" # type the endpoint name of your device.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ coiote_short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ coiote_short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the device.
                   "testCases":[
                           "protocol_test_1",
@@ -95,9 +95,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
           # ___Edit below___ #
           DEVICE_GROUP = "root.mt.embedded.devicetypes.test.demo_client.2_9_0" # type the name of your device group.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ coiote_short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ coiote_short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the group.
                   "testCases":[
                           "protocol_test_1",
@@ -185,7 +185,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 1. Enter pipeline and select **Build Now**.
 
 !!! note
-    Remember to check if the device you run the tests for is connected and registered in {{ short_name }}.
+    Remember to check if the device you run the tests for is connected and registered in {{ coiote_short_name }}.
 2. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
 ![A standard pipeline build with test result report](images/image109.png "Build with test result report")
 
@@ -238,9 +238,9 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
           # ___Edit below___ #
           DEVICE_NAME = "test-device" # type the endpoint name of your device.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ coiote_short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ coiote_short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the device.
                   "testCases":[
                           "protocol_test_1",
@@ -303,9 +303,9 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 
           # ___Edit below___ #
           DEVICE_GROUP = "root.mt.embedded.devicetypes.test.demo_client.2_9_0" # type the name of your device group.
-          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ short_name }} installation.
+          INSTALLATION_URL = "https://lwm2m-test.avsystem.io" # provide the URL of your {{ coiote_short_name }} installation.
           INSTALLATION_API_PORT = "8087" # provide the port for communication with the API. The default value is `8087`.
-          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ short_name }} user account.
+          CREDENTIALS=('user_login', 'password') # provide user name and password of your {{ coiote_short_name }} user account.
           TEST_NAMES = { # type the names of the tests that you want to execute on the group.
                   "testCases":[
                           "protocol_test_1",
@@ -392,13 +392,13 @@ Alternatively to the standard pipeline, you may configure a multibranch pipeline
 2. Enter a chosen branch by clicking on its name and select **Build Now**.
 
 !!! note
-    Remember to check if the device you run the tests for is connected and registered in {{ short_name }}.
+    Remember to check if the device you run the tests for is connected and registered in {{ coiote_short_name }}.
 3. Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
 ![A pipeline build with test result report](images/image108.png "Build with test result report")
 
 ## GitLab - configure and run pipeline
 
-{{ short_name }} interop tests API can also be integrated with GitLab using the GitLab's CI/CD toolset. Here is how to do it:
+{{ coiote_short_name }} interop tests API can also be integrated with GitLab using the GitLab's CI/CD toolset. Here is how to do it:
 
 1. Upload the `gitlab-ci.yml` file that will define your GitLab pipeline to your project repository:
     - Edit the script where required to adjust it to your environment:

@@ -22,7 +22,7 @@ LwM2M Objects used:
 
 ## Prerequisites
 - Thingy:91
-- [{{ short_name }}]({{ site_link }}/) account
+- [{{ coiote_short_name }}]({{ coiote_site_link }}/) account
 - Installed <a href="https://docs.zephyrproject.org/latest/getting_started/index.html" target="_blank">Zephyr</a> dependencies
 - Serial communication program e.g. minicom or RealTerm (for Linux or Mac) or PuTTy (for Windows)
 
@@ -91,11 +91,11 @@ west build -b thingy91_nrf9160_ns
 
 ## Connect the Thingy:91 to Coiote IoT Device Management
 
-To connect to {{ site_name }}, please register at [eu.iot.avsystem.cloud]({{ site_link }}/).
+To connect to {{ coiote_long_name }}, please register at [eu.iot.avsystem.cloud]({{ coiote_site_link }}/).
 
 To connect the board:
 
-1. [Log in]({{ site_link }}/) to {{ short_name }} and select **Device Inventory** from the left side menu.
+1. [Log in]({{ coiote_site_link }}/) to {{ coiote_short_name }} and select **Device Inventory** from the left side menu.
 1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
 
@@ -114,7 +114,7 @@ To connect the board:
 
 Object ID `/33650` refers to the pattern detection model and indicates which pattern has been detected.
 
-To add this custom object, go to the device overview page in {{ short_name }} and click the top-right button: **Go to previous version**.
+To add this custom object, go to the device overview page in {{ coiote_short_name }} and click the top-right button: **Go to previous version**.
 
 ![Previous Version button](images/previous-version2.png)
 
