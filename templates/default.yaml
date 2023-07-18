@@ -1,6 +1,7 @@
 site_name: Coiote IoT Device Management platform
 site_link: https://eu.iot.avsystem.cloud
 short_name: Coiote IoT DM
+coaps: coaps://eu.iot.avsystem.cloud:5684
 freertos_files:
   0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
 STM32L496G_BG96_binary:
