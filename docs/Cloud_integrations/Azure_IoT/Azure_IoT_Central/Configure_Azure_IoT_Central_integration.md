@@ -1,11 +1,11 @@
 # Connect integration
 
-To enable communication and data flow between the Azure IoT Central and {{ short_name }} platforms, you first need to integrate them using the Hyperscaler Integration Center in {{ short_name }}. Follow the instruction below to learn how to do it.
+To enable communication and data flow between the Azure IoT Central and {{ coiote_short_name }} platforms, you first need to integrate them using the Hyperscaler Integration Center in {{ coiote_short_name }}. Follow the instruction below to learn how to do it.
 
 ## Prerequisites:
 
    - An active IoT Central with hub owner access permissions.
-   - A {{ short_name }} user account with permissions to use the Hyperscaler Integration Center.
+   - A {{ coiote_short_name }} user account with permissions to use the Hyperscaler Integration Center.
 _______________
 ## Get the Azure IoT Central integration credentials
 
@@ -19,13 +19,13 @@ _______________
 0. In the dialog window, provide a name for the token and select **App Administrator** as the role, then click the copy icon for the newly generated token.
      ![token generated](images/generated_token.png "Generate token pop-up"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
-  Now you need to use the obtained credentials in the {{ short_name }} platform.
+  Now you need to use the obtained credentials in the {{ coiote_short_name }} platform.
 
 ## Set up the **Azure IoT Central** integration
 
-Use the obtained credentials to establish the integration between {{ short_name }} and your Azure IoT Central application:
+Use the obtained credentials to establish the integration between {{ coiote_short_name }} and your Azure IoT Central application:
 
-0. In your {{ short_name }} user account, go to **Administration --> Hyperscaler Integration Center**
+0. In your {{ coiote_short_name }} user account, go to **Administration --> Hyperscaler Integration Center**
     ![Hyperscaler Integration Center menu link](images/HIC_menu.png "Hyperscaler Integration Center menu link")
 0. In the **Integration** tab, find the **Azure IoT Central** tile and click **Connect**.
 0. In the dialog window, paste the previously copied **Application URL** and **API token** into the relevant fields.

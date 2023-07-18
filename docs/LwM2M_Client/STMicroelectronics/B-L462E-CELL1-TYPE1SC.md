@@ -7,7 +7,7 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 - The B-L462E-CELL1/TYPE1SC board with a Micro-USB cable.
 - Installed **STM32CubeIDE**.
 - The serial communication program, such as **minicom** (for Linux) or RealTerm or PuTTY (for Windows) installed.
-- A user with access to the {{ site_name }}.
+- A user with access to the {{ coiote_long_name }}.
 
 
 ## Prepare Anjay client application
@@ -15,8 +15,8 @@ Integrate your B-L462E-CELL1 Discovery kit board along with the TYPE 1SE module 
 
 To get the latest binary file and flash it to the board:
 
-{{ freertos_files }}
-{{ L462_binary }}
+{{ freertos_repository_step }}
+{{ B_L462_CELL1_binary_step }}
 0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L462RE** external device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
@@ -51,11 +51,11 @@ Enter the command line interface on your machine and run the following command:
 
 ## Connect to the LwM2M Server
 
-To connect to {{ site_name }}, please register at [{{ site_link }}]({{ site_link }}).
+To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
 To connect the board:
 
-1. Log in to {{ short_name }} and from the left side menu, select **Device Inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 2. In **Device Inventory**, click **Add device**.
 3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
@@ -84,7 +84,7 @@ To connect the board:
     !!! Note
         If you use external SIM card you have to check APN used by SIM card's provider.
 
-4. Go to {{ short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+4. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
 ![Registered device](images/registered_device.png "Registered device")
 
@@ -137,9 +137,9 @@ application code before every execution in order to ensure that invalid or malic
 
 ### Flash the board with SBSFU binary
 
-Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to {{ short_name }}.
+Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to {{ coiote_short_name }}.
 
-After that, you can use {{ short_name }} to perform firmware update with `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb` file.
+After that, you can use {{ coiote_short_name }} to perform firmware update with `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb` file.
 
 ### Perform firmware update
 
@@ -154,7 +154,7 @@ In order to perform firmware update:
     #define FIRMWARE_VERSION "v2.0"
     ```
     and build the application with a new firmware.
-0. Upload the generated firmware file (`Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb`) to [{{ short_name }}]({{ site_link }}) (go to Device management and select `Firmware update`) and click `Upgrade`.
+0. Upload the generated firmware file (`Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb`) to [{{ coiote_short_name }}]({{ coiote_site_link }}) (go to Device management and select `Firmware update`) and click `Upgrade`.
 0. After the FOTA finishes, the device will reboot and the following log should appear:
     ```
     Firmware updated from version 'v1.0' to 'v2.0'

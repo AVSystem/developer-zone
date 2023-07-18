@@ -10,7 +10,7 @@ Fortunately, Anjay provides these Objects in the form of pre-implemented modules
 
 ---
 
-In this exercise, we analyze the application “[Mandatory Objects](https://github.com/AVSystem/Anjay-pico-client/tree/master/mandatory_objects)” which we built in the exercise of **module 1**. This application registers the device to the {{ site_name }} and periodically sends status messages.
+In this exercise, we analyze the application “[Mandatory Objects](https://github.com/AVSystem/Anjay-pico-client/tree/master/mandatory_objects)” which we built in the exercise of **module 1**. This application registers the device to the {{ coiote_long_name }} and periodically sends status messages.
 
 This exercise describes the functionalities of the application that uses the NoSec security mode. In the next exercise we will implement a security mode.
 
@@ -18,7 +18,7 @@ This exercise describes the functionalities of the application that uses the NoS
 
 * A Raspberry Pi Pico W board with a USB cable.
 * Completed [exercise 1](../academy/exercise1.md) from module 1.
-* An active [{{ short_name }}]({{ site_link }}/) user account.
+* An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account.
 
 
 ## Introduction to Mandatory Objects
@@ -121,7 +121,7 @@ The LwM2M Object can be used to define device-related details such as:
 It is also used for invoking a device **Resource `/3/x/4`**: **Reboot** or **Resource `/3/x/5`**: **Factory Reset** .
 
 !!! Note
-    Although the LwM2M specifications define the Device Object as mandatory, the {{ site_name }} works without creating this Object. In module 3 (client-side operations) we are covering the creation of the Device Object.
+    Although the LwM2M specifications define the Device Object as mandatory, the {{ coiote_long_name }} works without creating this Object. In module 3 (client-side operations) we are covering the creation of the Device Object.
 
 ## Initiate Objects
 

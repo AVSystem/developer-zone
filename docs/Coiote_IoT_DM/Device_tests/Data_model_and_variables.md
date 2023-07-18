@@ -2,7 +2,7 @@
 
 ##	Displaying device data model and running simple actions
 
-{{ short_name }} gives you the possibility to view and perform actions on the data model of individual devices defined by the LwM2M protocol. This view is available under the **Objects** panel of your device. Read this chapter to learn how to use the panel.
+{{ coiote_short_name }} gives you the possibility to view and perform actions on the data model of individual devices defined by the LwM2M protocol. This view is available under the **Objects** panel of your device. Read this chapter to learn how to use the panel.
 
 ![The Objects panel](images/image062.png "The Objects panel")
 

@@ -1,7 +1,7 @@
 # Automated Provisioning for Nordic boards
 
 ## Introduction
-With Factory provisioning for Nordic IoT devices, you can load on-device communication credentials and any cloud-related configuration at the factory level to automate secure device onboarding to {{ short_name }} cloud.
+With Factory provisioning for Nordic IoT devices, you can load on-device communication credentials and any cloud-related configuration at the factory level to automate secure device onboarding to {{ coiote_short_name }} cloud.
 
 Here’s a tutorial to get you started with device provisioning using a dedicated script to be found in the [Anjay Zephyr Client repository](https://github.com/AVSystem/Anjay-zephyr-client).
 
@@ -10,7 +10,7 @@ Here’s a tutorial to get you started with device provisioning using a dedicate
 - Installed [Go Programming language](https://go.dev/dl).
 - Installed [mcumgr command line tool](https://docs.zephyrproject.org/3.1.0/services/device_mgmt/mcumgr.html).
 - Zephyr development environment set up.
-- An active [{{ short_name }} cloud]({{ site_link }}) account.
+- An active [{{ coiote_short_name }} cloud]({{ coiote_site_link }}) account.
 - If you're using Windows: possibility to run Linux scripts/tools either via WSL, Cygwin or other.
 
 !!!important
@@ -25,14 +25,14 @@ This section shows how to provision your device using a pre-shared key (PSK).
 
     - Edit `endpoint_cfg` contains LwM2M objects setting that will be uploaded to the device. Set `RID.Security.PKOrIdentity` and `RID.Security.SecretKey`. Make sure that `RID.Security.Mode` is set to `0`.
 
-    - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server. This file is needed if you wish the script to automatically add the new device to {{ short_name }}.
+    - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server. This file is needed if you wish the script to automatically add the new device to {{ coiote_short_name }}.
 
-2. Get the {{ short_name }} Access Token
+2. Get the {{ coiote_short_name }} Access Token
 
-    The provisioning script can register your device to {{ short_name }} automatically. You might use this option for the sake of this tutorial, but this is an optional step.
+    The provisioning script can register your device to {{ coiote_short_name }} automatically. You might use this option for the sake of this tutorial, but this is an optional step.
 
     !!! note
-        If you wish to skip device registration to {{ short_name }}, then call `ptool.py` without `-t` and `-S` options.
+        If you wish to skip device registration to {{ coiote_short_name }}, then call `ptool.py` without `-t` and `-S` options.
 
     First an access token needs to be generated.
 
@@ -40,7 +40,7 @@ This section shows how to provision your device using a pre-shared key (PSK).
         ```
         #!/bin/bash
 
-        SERVER="{{ site_link }}"
+        SERVER="{{ coiote_site_link }}"
 
         echo "Enter your login credentials for $SERVER"
         read -p "Login: " USER
@@ -62,7 +62,7 @@ This section shows how to provision your device using a pre-shared key (PSK).
     !!!important
         The token received is valid only for a short period of time.
 
-    For more informaton how to aquire the access token see [REST API authentication]({{ site_link }}/doc/user/REST_API/REST_API_Authentication/).
+    For more informaton how to aquire the access token see [REST API authentication]({{ coiote_site_link }}/doc/user/REST_API/REST_API_Authentication/).
 
 3. Run provisioning tool
 
@@ -83,7 +83,7 @@ This section shows how to provision your device using a pre-shared key (PSK).
     !!!note
         To see all of the options available in the script run `./ptool.py -h`.
 
-    If everything went well then your device should be visible in {{ short_name }}.
+    If everything went well then your device should be visible in {{ coiote_short_name }}.
 
 ## Provisioning the device using certificates
 Now we will show how to provision the device using certificates. This method is very similar to the provisioning the device with PSK and will require just a few additional steps.
@@ -140,7 +140,7 @@ Now we will show how to provision the device using certificates. This method is 
 
     The certificates for the device need to be uploaded by hand. To do this fallow those steps:
 
-    - Log in {{ short_name }}
+    - Log in {{ coiote_short_name }}
 
     - On the left side choose `Administration -> DTLS/TLS certificates`
 

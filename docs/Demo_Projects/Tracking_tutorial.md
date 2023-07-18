@@ -12,7 +12,7 @@ Build a tracking application using the **Thingy:91** devkit, while leveraging th
 ## Prerequisites
 
 - [Thingy:91](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-91) with SIM with access to LTE-M or NB-IoT networks
-- [{{ short_name }}]({{ site_link }}/) account (premium)
+- [{{ coiote_short_name }}]({{ coiote_site_link }}/) account (premium)
 - [nRF Cloud](https://nrfcloud.com/) account
 - [nRF Connect for Desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop)
 - [Microsoft Azure account](https://azure.microsoft.com/en-us/free/)
@@ -26,7 +26,7 @@ Build a tracking application using the **Thingy:91** devkit, while leveraging th
 This tutorial uses the **Thingy:91** prototyping platform in combination with the **Coiote IoT Device Management** platform to build a cellular-connected tracking application. The integration with **nRF Cloud Locator** enables cell-based localization and optimizes the usage of the onboard GNSS. The location data, in combination with additional telemetry data is sent to **Azure IoT Hub** and visualized using **Microsoft Power BI**.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/FvW2WQDMaSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-*See also a tutorial on how to <a href="https://www.youtube.com/watch?v=dn5JAlIokA4/" target="_blank">Connect {{ short_name }} to Azure IoT Hub and visualize data on Power Bi</a> on our YouTube channel.*
+*See also a tutorial on how to <a href="https://www.youtube.com/watch?v=dn5JAlIokA4/" target="_blank">Connect {{ coiote_short_name }} to Azure IoT Hub and visualize data on Power Bi</a> on our YouTube channel.*
 
 
 ## Part 1 - Connect the Thingy:91 to Coiote using the LwM2M Anjay client
@@ -107,7 +107,7 @@ Open the command line interface on your machine and clone the Anjay Zephyr repos
 
 To connect the board:
 
-1. [Log in]({{ site_link }}/) to {{ short_name }} and from the left side menu, select **Device Inventory**.
+1. [Log in]({{ coiote_site_link }}/) to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
 
@@ -172,7 +172,7 @@ To connect the board:
     anjay start
     ```
 
-0. Go to the {{ short_name }}. If your device is connected successfully its status will change to **Registered**.
+0. Go to the {{ coiote_short_name }}. If your device is connected successfully its status will change to **Registered**.
 
     ![nrf - coiote dashboard.png](images/connected_device.png)
 
@@ -202,7 +202,7 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 
 ### Create a new LwM2M template
 
-1. In {{ short_name }}, go to **Integrations**, open the tab **Templates** and create a new template by clicking the green button **+ Add new**.
+1. In {{ coiote_short_name }}, go to **Integrations**, open the tab **Templates** and create a new template by clicking the green button **+ Add new**.
 
     ![new template](images/new-template.png)
 
@@ -268,9 +268,9 @@ If the connection was successful, your device is now added to your **Azure IoT H
 ![azure device](images/azure-device.png)
 
 
-### Set group value tracking on resources in {{ short_name }}
+### Set group value tracking on resources in {{ coiote_short_name }}
 
-1. In {{ short_name }}, go to **Device Groups**.
+1. In {{ coiote_short_name }}, go to **Device Groups**.
 1. Open up the folder **hyperscalercenter** and open the subfolder which contains your device which is connected to Azure.
 1. Go to the **Value tracking** panel and click **Add new**. In the pop-up:
     - Provide the resource path: `Temperature.0.Sensor Value`.

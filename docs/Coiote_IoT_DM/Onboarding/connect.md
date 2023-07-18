@@ -5,7 +5,7 @@ og_title: AVSystem IoT Developer Zone
 
 # Add a device via the Management Server
 
-This guide walks you through the process of adding new devices to {{ short_name }} using the **Management server**.
+This guide walks you through the process of adding new devices to {{ coiote_short_name }} using the **Management server**.
 
 !!! info
     The LwM2M standard defines two methods for device registration:
@@ -15,16 +15,16 @@ This guide walks you through the process of adding new devices to {{ short_name 
 
 ## Prerequisites
 
-- An active [{{ short_name }}]({{ site_link }}) user account
+- An active [{{ coiote_short_name }}]({{ coiote_site_link }}) user account
 - A LwM2M device
 
 !!! tip "Sign up free of charge"
-    You can create a **free developer account** allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud]({{ site_link }})
+    You can create a **free developer account** allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud]({{ coiote_site_link }})
 
 
 ## Add a device via the Management server
 
-1. Log in to {{ short_name }} and from the left side menu, select **Device inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device inventory**.
 
 1. In **Device inventory** click **Add device**.
 
@@ -51,7 +51,7 @@ This guide walks you through the process of adding new devices to {{ short_name 
 
 1. Click **Add device** and **Confirm** in the confirmation dialog window.
 
-1. Once the device is activated using the right connection parameters, the device is added to the {{ short_name }} platform.
+1. Once the device is activated using the right connection parameters, the device is added to the {{ coiote_short_name }} platform.
     ![Registered device](images/connected_device.png "Registered device")
 
 

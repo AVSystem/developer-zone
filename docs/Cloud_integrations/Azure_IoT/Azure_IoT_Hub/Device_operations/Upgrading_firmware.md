@@ -4,21 +4,21 @@ If you would like to upgrade the firmware of devices using the Azure IoT Hub, fo
 
 ## Prerequisites
 
- - At least one [synchronized](../Synchronize_devices_with_Azure_IoT_Hub) {{ short_name }} - Azure IoT Hub device.
- - A firmware file hosted on an HTTP server that is reachable by the {{ short_name }} server.
+ - At least one [synchronized](../Synchronize_devices_with_Azure_IoT_Hub) {{ coiote_short_name }} - Azure IoT Hub device.
+ - A firmware file hosted on an HTTP server that is reachable by the {{ coiote_short_name }} server.
 
 !!! note
-     In this stage of integration, no authentication method is supported for this endpoint - it is required that the firmware is publicly available (or hosted in a private network but with access granted for the {{ short_name }} server).
+     In this stage of integration, no authentication method is supported for this endpoint - it is required that the firmware is publicly available (or hosted in a private network but with access granted for the {{ coiote_short_name }} server).
 
 ## Scheduling a firmware upgrade
 
 ### Introduction
 
-The process of upgrading device firmware for Azure IoT Hub devices synchronized with {{ short_name }} is based on two main elements: the Azure Direct Method mechanism and the {{ short_name }} Firmware Upgrade task.
-In the process, the Azure *scheduleFirmwareUpdate* direct method is invoked, enabling the {{ short_name }} to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in {{ short_name }} and the upgrade is performed on the device.
+The process of upgrading device firmware for Azure IoT Hub devices synchronized with {{ coiote_short_name }} is based on two main elements: the Azure Direct Method mechanism and the {{ coiote_short_name }} Firmware Upgrade task.
+In the process, the Azure *scheduleFirmwareUpdate* direct method is invoked, enabling the {{ coiote_short_name }} to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in {{ coiote_short_name }} and the upgrade is performed on the device.
 
 !!! info
-    For firmware file recognition in Coiote, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then {{ short_name }} will be able to utilize the once downloaded resource without the need to download it again.
+    For firmware file recognition in Coiote, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then {{ coiote_short_name }} will be able to utilize the once downloaded resource without the need to download it again.
 
 ### Step 1: Invoking the Azure *scheduleFirmwareUpdate* direct method
 
@@ -62,7 +62,7 @@ To initiate the firmware upgrade procedure for your device:
           	"schedule": "always"
           }
           ```
-    - **Connection timeout** - specify a timeout for the Azure - {{ short_name }} connection (the recommended value is not less than 5 seconds).
+    - **Connection timeout** - specify a timeout for the Azure - {{ coiote_short_name }} connection (the recommended value is not less than 5 seconds).
     - **Method timeout** - specify a timeout for direct method result notification.
 
 5. Once you have provided the required data, click **Invoke method**.
@@ -80,7 +80,7 @@ To initiate the firmware upgrade procedure for your device:
     Out of all the parameters provided in Firmware upgrade direct method payload, only two are mandatory:
 
       - **name** - the unique file name used for firmware identification.
-      - **firmwareUrl** - the URL used by {{ short_name }} to download the firmware file and include it as a resource.
+      - **firmwareUrl** - the URL used by {{ coiote_short_name }} to download the firmware file and include it as a resource.
 
     Therefore it is correct to include only those two in the payload, as in here:
       ```
@@ -110,11 +110,11 @@ To check the status of a scheduled firmware upgrade, follow these steps:
 
     ![FOTA status check result](images/direct_method_status_check.png "Direct Method result - status")
 
-### Step 3: Checking {{ short_name }} FOTA task execution
+### Step 3: Checking {{ coiote_short_name }} FOTA task execution
 
-Once you have executed the Azure-side steps of the procedure, you can check its status from the side of {{ short_name }}.
+Once you have executed the Azure-side steps of the procedure, you can check its status from the side of {{ coiote_short_name }}.
 
-1. Go to your {{ short_name }} account and in the **Device Inventory**, select your device.
+1. Go to your {{ coiote_short_name }} account and in the **Device Inventory**, select your device.
 
     ![Device inventory view](images/device_inventory.png "Device inventory view")
 
@@ -148,4 +148,4 @@ To cancel the firmware upgrade procedure, follow these steps:
 
 ## See also
 
-See the relevant section of [LwM2M mappings](https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/) to learn the details of how Azure IoT Hub Direct Methods are mapped in {{ short_name }}.
+See the relevant section of [LwM2M mappings](https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/) to learn the details of how Azure IoT Hub Direct Methods are mapped in {{ coiote_short_name }}.

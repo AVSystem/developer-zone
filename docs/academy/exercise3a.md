@@ -25,7 +25,7 @@ With our **Time Object** we will initiate one Instance, implement the read and w
 * A Raspberry Pi Pico W board with a USB cable
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * <a href="https://www.python.org/downloads/" target="_blank">Python</a>
-* An active [{{ short_name }}]({{ site_link }}/) user account.
+* An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account.
 * Completed [exercise 2B](../academy/exercise2b.md) from module 2
 
 

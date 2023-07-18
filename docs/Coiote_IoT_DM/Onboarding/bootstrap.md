@@ -30,9 +30,9 @@ To add a device using the Bootstrap server:
 5. In the **Configuration** step, select a Management server for your device from the drop-down list:
     ![Bootstrap configuration step](images/bootstrap_config.png "Bootstrap configuration step")
     - **Use the bootstrap configuration set as default for your domain** - use this setting if you want to make use of the inherited bootstrap settings for your domain.
-    - **This {{ short_name }} Management Server (Cert with EST)** - use this setting if you have chosen the **Certificate** mode in the **Device credentials** step.
-    - **This {{ short_name }} Management Server NoSec** - use this setting to establish the device-server communication with no security. Using this mode is not recommended except for testing purposes.
-    - **This {{ short_name }} Management Server PSK** - use this setting to authorize the device-server communication using a pre-shared key.
+    - **This {{ coiote_short_name }} Management Server (Cert with EST)** - use this setting if you have chosen the **Certificate** mode in the **Device credentials** step.
+    - **This {{ coiote_short_name }} Management Server NoSec** - use this setting to establish the device-server communication with no security. Using this mode is not recommended except for testing purposes.
+    - **This {{ coiote_short_name }} Management Server PSK** - use this setting to authorize the device-server communication using a pre-shared key.
     - **Your custom bootstrap setting** - this type of setting will appear if you have configured a bootstrap server setting using the **Bootstrap configuration** panel.
 6.  Click the **Add device** button and **Confirm** in the confirmation pop-up.
 

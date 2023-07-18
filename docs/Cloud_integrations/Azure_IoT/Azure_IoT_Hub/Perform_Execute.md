@@ -11,10 +11,10 @@ In this section, you learn how to:
 ## Prerequisites
 
 1. An active Azure IoT Hub with hub owner access permissions.
-2. A {{ short_name }} user account with permissions to use the integration extension.
-3. A device group created in {{ short_name }}.
-4. [A configured extension between {{ short_name }} and Azure Iot Hub](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/).
-5. [A configured integration template in {{ short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+2. A {{ coiote_short_name }} user account with permissions to use the integration extension.
+3. A device group created in {{ coiote_short_name }}.
+4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
 5. [A connected device](https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/).
 
 ## Perform EXECUTE
