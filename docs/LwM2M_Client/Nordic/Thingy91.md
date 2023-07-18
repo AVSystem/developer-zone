@@ -114,14 +114,14 @@ To connect the board:
 
 0. Use the `anjay` command to list possible options:
 
-    ```
-    uart:~$ anjay
-    anjay - Anjay commands
-    Subcommands:
-    start   :Save config and start Anjay
-    stop    :Stop Anjay
-    config  :Configure Anjay params
-    ```
+    {{ console("Anjay commands",
+'''uart:~$ anjay
+anjay - Anjay commands
+Subcommands:
+start   :Save config and start Anjay
+stop    :Stop Anjay
+config  :Configure Anjay params
+''') }}
 
     !!! tip
         To show available subcommands, use the **Tab** key.
@@ -132,9 +132,19 @@ To connect the board:
     anjay config show
     ```
 
-    ![Anjay configuration](images/anjay_config.png "Anjay configuration")
+    {{ console("Anjay Configuration",
+'''uart:~$ anjay config show
 
-0. Update your device credentials:
+Current Anjay config:
+
+ LwM2M Server URI: ''' + coaps + '''
+ Device lifetime: 50
+ Endpoint name: test_device
+ PSK: psk
+ Bootstrap: n
+''')}}
+
+1. Update your device credentials:
     * To make any changes to the configuration, stop the client:
 
         ```
@@ -153,13 +163,13 @@ To connect the board:
          anjay config set psk <key>
          ```
 
-0. Start the client using the new configurations:
+2. Start the client using the new configurations:
 
     ```
     anjay start
     ```
 
-0. Go to the Coiote DM to check if your device is connected.
+3. Go to the Coiote DM to check if your device is connected.
     ![Registered device](images/registered_device.png "Registered device")
 
 !!! note

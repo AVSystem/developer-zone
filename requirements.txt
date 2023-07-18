@@ -6,3 +6,6 @@ jinja2~=3.0.0 # without specifying the version, the broken one will be installed
 mkdocs-git-revision-date-localized-plugin~=1.1.0
 pygments~=2.12
 mkdocs-redirects~=1.2.0
+mkdocs-with-pdf~=0.9.3
+mkdocs-macros-plugin~=1.0.2
+Pillow~=10.0.0
