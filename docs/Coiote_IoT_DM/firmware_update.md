@@ -86,11 +86,11 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
     !!! Info
         **Pull** supports the following **transport types**:
 
-        - `CoAP` or `coaps` over `UDP`
-        - `CoAP` or `coaps` over `TCP`
+        - `CoAP` or `CoAPs` over `UDP`
+        - `CoAP` or `CoAPs` over `TCP`
         - `HTTP` or `HTTPs`
 
-        **Push** transmits the firmware over the same transport type as is used for device management, which is `coaps` over `UDP` by default.
+        **Push** transmits the firmware over the same transport type as is used for device management, which is `CoAPs` over `UDP` by default.
 
     !!! Tip "Which transport protocol to choose?"
 
@@ -140,9 +140,9 @@ If no errors occur, the update process follows this pattern:
 
 ## Troubleshooting
 
-### Firmware Update only works over CoAP, not over coaps
+### Firmware Update only works over CoAP, not over CoAPs
 
-For the firmware update over coaps transfer to work, the LwM2M Client shall use the same security credentials (i.e. PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.
+For the firmware update over CoAPs transfer to work, the LwM2M Client shall use the same security credentials (i.e. PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.
 
 !!! info "Zephyr LwM2M Client configuration instruction"
 
