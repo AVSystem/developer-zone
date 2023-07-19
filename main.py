@@ -11,9 +11,8 @@ def define_env(env):
         # Check if image exists already and has the same hash, if so, return the image
         hash = description + txt
         hash = hashlib.md5(hash.encode('utf-8')).hexdigest()
-        file_path = 'images/console_gen_' + hash + '.png'
-        p = os.path.dirname(env.page.url).split("/")
-        p = p[:-1]
+        file_path = os.path.join('images', 'console_gen_' + hash + '.png')
+        p = os.path.dirname(env.page.url).split("/")[:-1]
         relative_path = os.path.join(*p, file_path)
         p = os.path.join("docs", *p, file_path)
 
