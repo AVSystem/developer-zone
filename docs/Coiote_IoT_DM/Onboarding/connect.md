@@ -19,7 +19,7 @@ This guide walks you through the process of adding new devices to {{ coiote_shor
 - A LwM2M device
 
 !!! tip "Sign up free of charge"
-    You can create a **free developer account** allowing you connect up to 10 devices, to register visit: [eu.iot.avsystem.cloud]({{ coiote_site_link }})
+    You can create a **free developer account** allowing you connect up to 10 devices, to register visit: [{{ coiote_site_link }}]({{ coiote_site_link }})
 
 
 ## Add a device via the Management server

@@ -55,7 +55,7 @@ This section shows how to provision your device using a pre-shared key (PSK).
         ```
     - If you're using Linux, run `chmod u+x get_token.sh` to give execute rights. Under Windows you can use the GUI to allow execution of this file.
 
-    - Run `./get_token.sh`. The script will ask you for your login and password for eu.iot.avsystem.cloud, please provide them.
+    - Run `./get_token.sh`. The script will ask you for your login and password for {{ coiote_server }}, please provide them.
 
     If a JSON structure containing `"access_token"` appears, you're ready to proceed. Copy your token.
 
@@ -102,9 +102,9 @@ Now we will show how to provision the device using certificates. This method is 
 
     - Edit `cert_info.json`. This file contains information for generating a self signed certificate. This configuration is needed only if user don't want to provide certificates generated ealier.
 
-    - Get the certificate for `eu.iot.avsystem.cloud`. Run:
+    - Get the certificate for `{{ coiote_server }}`. Run:
 
-        `openssl s_client -showcerts eu.iot.avsystem.cloud:5684 > /tmp/server.pem` to download server certificate and then
+        `openssl s_client -showcerts {{ coiote_server }}:5684 > /tmp/server.pem` to download server certificate and then
 
         `openssl  x509 -outform der -in /tmp/server.pem -out /tmp/server.der` to convert it to DER format.
 

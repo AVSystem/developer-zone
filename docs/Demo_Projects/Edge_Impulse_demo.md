@@ -91,7 +91,7 @@ west build -b thingy91_nrf9160_ns
 
 ## Connect the Thingy:91 to {{ coiote_long_name }}
 
-To connect to {{ coiote_long_name }}, please register at [eu.iot.avsystem.cloud]({{ coiote_site_link }}/).
+To connect to {{ coiote_long_name }}, please register at [{{ coiote_server }}]({{ coiote_site_link }}/).
 
 To connect the board:
 

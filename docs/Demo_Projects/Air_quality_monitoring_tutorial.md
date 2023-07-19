@@ -76,7 +76,7 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
 3. Go to your command line and register the device simulators:
     - Paste and run the following command to create a container group:
         ```
-         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS=eu.iot.avsystem.cloud OPEN_WEATHER_API_TOKEN=exampletoken
+         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS={{ coiote_server }} OPEN_WEATHER_API_TOKEN=exampletoken
 
         ```
 
