@@ -156,7 +156,7 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 0. Click **Upload** to select the binary file from your local drive, select **COAP** in the **Image delivery protocol**, and click **Upgrade**.
 
     !!! tip
-        The **coaps_uri** option is also supported. To use it, you may need to additionally provide the **Base URI** parameter (depending on your server settings).
+        The **COAPS** option is also supported. To use it, you may need to additionally provide the **Base URI** parameter (depending on your server settings).
 
     ![Scheduling FOTA](images/schedule_fota.png "Scheduling FOTA")
 
