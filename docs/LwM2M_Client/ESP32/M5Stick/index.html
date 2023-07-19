@@ -2808,10 +2808,6 @@
 <ol>
 <li>
 <p>Create a <code>nvs_config.csv</code> file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [endpoint_name], [identity], [psk], [lwm2m_server_uri] (without the <code>[]</code> brackets). Use the following snippet as a template:</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The <strong>Identity</strong> parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.</p>
-</div>
 <div class="highlight"><pre><span></span><code>key,type,encoding,value
 config,namespace,,
 wifi_ssid,data,string,[wifi_ssid]
@@ -3036,7 +3032,7 @@ python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>
