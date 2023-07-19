@@ -144,7 +144,7 @@ Current Anjay config:
  Bootstrap: n
 ''')}}
 
-1. Update your device credentials:
+0. Update your device credentials:
     * To make any changes to the configuration, stop the client:
 
         ```
@@ -163,13 +163,13 @@ Current Anjay config:
          anjay config set psk <key>
          ```
 
-2. Start the client using the new configurations:
+0. Start the client using the new configurations:
 
     ```
     anjay start
     ```
 
-3. Go to the {{ coiote_short_name }} to check if your device is connected.
+0. Go to the {{ coiote_short_name }} to check if your device is connected.
     ![Registered device](images/registered_device.png "Registered device")
 
 !!! note
