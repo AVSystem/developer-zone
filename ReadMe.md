@@ -15,6 +15,13 @@ To build, for example, a customer-specific documentation, use another configurat
 A customer-specific configuration can have changed TOC, added styles, etc.
 It's technically a completely separate documentation that just happens to share most of the sources.
 
+# Using macros
+To use macros, write repetitive content in `templates/default.yaml`.
+Then, in the documentation, use the following syntax:
+```
+{{ coiote_long_name }}
+```
+
 # Open pull requests
 
 If you have contributed to the IoTDevZone, create a pull request and assign the Lead Technical Writer as a reviewer.
