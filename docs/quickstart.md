@@ -2,7 +2,7 @@
 
 ## Welcome to the DevZone of AVSystem!
 
-This Quick Start walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **Coiote IoT Device Management**.
+This Quick Start walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **{{ coiote_long_name }}**.
 
 Follow this guide to build your first LwM2M application using a simulated device within 20 minutes.
 
@@ -10,7 +10,7 @@ Follow this guide to build your first LwM2M application using a simulated device
 
 ## Access the {{ coiote_short_name }} portal
 
-Get started by <a href="{{ coiote_site_link }}/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
+Get started by <a href="{{ coiote_site_link }}/" target="_blank">**signing up**</a> to {{ coiote_long_name }}. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
 
 [{{ coiote_short_name }}]({{ coiote_site_link }}/){: .md-button .md-button--big }
 
@@ -123,7 +123,7 @@ Add a new device using the option: **Anjay LwM2M Client Demo**
 
 ![Anjay LwM2M Client Demo](img/add-demo-device.png)
 
-Copy the command you find in Coiote.
+Copy the command you find in {{ coiote_short_name }}.
 
 ![Run command in terminal](img/run-command.png)
 
@@ -182,7 +182,7 @@ Follow the **Getting started** guides to kickstart your LwM2M application using 
 
 ### Learn more about {{ coiote_short_name }}
 
-Dive into Coiote IoT Device Management and explore its numerous functionalities. From device onboarding using the [Bootstrap Server](/Coiote_IoT_DM/Onboarding/bootstrap/) to [Data Visualization](/Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](/Coiote_IoT_DM/Device_tests/Overview/).
+Dive into {{ coiote_long_name }} and explore its numerous functionalities. From device onboarding using the [Bootstrap Server](/Coiote_IoT_DM/Onboarding/bootstrap/) to [Data Visualization](/Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](/Coiote_IoT_DM/Device_tests/Overview/).
 
 [{{ coiote_short_name }} docs](/Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
 

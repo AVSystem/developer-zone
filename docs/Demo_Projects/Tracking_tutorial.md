@@ -23,13 +23,13 @@ Build a tracking application using the **Thingy:91** devkit, while leveraging th
 
 ![Architecture tracking app](images/Architecture-tracking-demo.jpg "Anjay menuconfig")
 
-This tutorial uses the **Thingy:91** prototyping platform in combination with the **Coiote IoT Device Management** platform to build a cellular-connected tracking application. The integration with **nRF Cloud Locator** enables cell-based localization and optimizes the usage of the onboard GNSS. The location data, in combination with additional telemetry data is sent to **Azure IoT Hub** and visualized using **Microsoft Power BI**.
+This tutorial uses the **Thingy:91** prototyping platform in combination with the **{{ coiote_long_name }}** to build a cellular-connected tracking application. The integration with **nRF Cloud Locator** enables cell-based localization and optimizes the usage of the onboard GNSS. The location data, in combination with additional telemetry data is sent to **Azure IoT Hub** and visualized using **Microsoft Power BI**.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/FvW2WQDMaSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 *See also a tutorial on how to <a href="https://www.youtube.com/watch?v=dn5JAlIokA4/" target="_blank">Connect {{ coiote_short_name }} to Azure IoT Hub and visualize data on Power Bi</a> on our YouTube channel.*
 
 
-## Part 1 - Connect the Thingy:91 to Coiote using the LwM2M Anjay client
+## Part 1 - Connect the Thingy:91 to {{ coiote_short_name }} using the LwM2M Anjay client
 
 ### Set up the Anjay Zephyr Client
 
@@ -103,7 +103,7 @@ Open the command line interface on your machine and clone the Anjay Zephyr repos
 - Powercycle the Thingy:91 to activate the application.
 
 
-## Connect the Thingy:91 to Coiote IoT Device Management
+## Connect the Thingy:91 to {{ coiote_long_name }}
 
 To connect the board:
 
@@ -154,13 +154,13 @@ To connect the board:
         anjay stop
         ```
 
-    * To update the **endpoint name**, enter the endpoint name you created in Coiote:
+    * To update the **endpoint name**, enter the endpoint name you created in {{ coiote_short_name }}:
 
         ```
         anjay config set endpoint <endpoint name>
         ```
 
-    * To update the **Pre-Shared Key**, enter the key you created in Coiote:
+    * To update the **Pre-Shared Key**, enter the key you created in {{ coiote_short_name }}:
 
          ```
          anjay config set psk <key>
@@ -181,18 +181,18 @@ To connect the board:
 
 Follow [**the instructions listed here**](../../Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/) to enable the nRF Location Service integration.
 
-If the connection to nRF Cloud Locator was successful, you will see the device location as a widget in the Coiote Device Center.
+If the connection to nRF Cloud Locator was successful, you will see the device location as a widget in the {{ coiote_short_name }} Device Center.
 
 ![nrf - location.png](images/location.png)
 
 
-## Part 3 - Connect Coiote to Microsoft Azure
+## Part 3 - Connect {{ coiote_short_name }} to Microsoft Azure
 
 1. Start by logging into your Azure account. [Create a new **IoT Hub**](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) and a new **storage account**.
 
 1. Get the **IoT Hub connection** string and **Azure Blob storage** string from your Azure account. For information on how to retrieve these details, see [Get the IoT hub connection string](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
 
-1. In Coiote, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
+1. In {{ coiote_short_name }}, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
 
     Go to the Azure IoT Hub section and click **Connect**.
 
@@ -259,7 +259,7 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 
 ### Connect your device to Azure
 
-In Coiote, visit your **Device inventory**. Find the device you want to connect to Azure, click the three dots icon and select **Connect to Azure**.
+In {{ coiote_short_name }}, visit your **Device inventory**. Find the device you want to connect to Azure, click the three dots icon and select **Connect to Azure**.
 
 ![azure connect](images/azure-connect.png)
 

@@ -169,7 +169,7 @@ Current Anjay config:
     anjay start
     ```
 
-3. Go to the Coiote DM to check if your device is connected.
+3. Go to the {{ coiote_short_name }} to check if your device is connected.
     ![Registered device](images/registered_device.png "Registered device")
 
 !!! note

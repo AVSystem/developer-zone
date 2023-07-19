@@ -52,7 +52,7 @@ Object `/33629` defines the update process using **4 Update States** represen
 
 ## Prepare the Firmware Update
 
-1. In the Coiote IoT Device Management platform, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
+1. In the {{ coiote_long_name }}, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
 
 1. Select the device you want to update by clicking on its endpoint name.
 
@@ -93,11 +93,11 @@ Object `/33629` defines the update process using **4 Update States** represen
     !!! Info
         **Pull** supports the following **transport types**:
 
-        - `CoAP` or `coaps_uri` over `UDP`
-        - `CoAP` or `coaps_uri` over `TCP`
+        - `CoAP` or `coaps` over `UDP`
+        - `CoAP` or `coaps` over `TCP`
         - `HTTP` or `HTTPs`
 
-        **Push** transmits the firmware over the same transport type as is used for device management, which is `coaps_uri` over `UDP` by default.
+        **Push** transmits the firmware over the same transport type as is used for device management, which is `coaps` over `UDP` by default.
 
     !!! Tip "Which transport protocol to choose?"
 

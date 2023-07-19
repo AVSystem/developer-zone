@@ -384,7 +384,7 @@ With the board still connected to your PC, open a serial communication program. 
 
 ![Check the logs in serial communication program](images/logs.PNG)
 
-If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. In the **Data model** view, you should now see the Temperature Object containing all the created Resources.
+If all went well and logs show **registration successfully updated**, you can go to {{ coiote_long_name }} where the Registration status should show **Registered**. In the **Data model** view, you should now see the Temperature Object containing all the created Resources.
 
 
 ![Temperature Object registered](images/temperature.PNG)

@@ -1,6 +1,6 @@
 # IoT Cloud Integrations
 
-With the Coiote IoT Device Management platform, you can integrate your LwM2M devices with Microsoft Azure, AWS and nRF Cloud.
+With the {{ coiote_long_name }}, you can integrate your LwM2M devices with Microsoft Azure, AWS and nRF Cloud.
 
 These guides will take you on a step-by-step journey to seamlessly activate the integrations.
 

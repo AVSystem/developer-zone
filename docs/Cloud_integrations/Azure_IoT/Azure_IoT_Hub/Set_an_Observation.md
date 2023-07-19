@@ -93,7 +93,7 @@ If you don’t see any changes, click **Refresh**. If it doesn’t help, you can
 
 This step is optional. If you want to make sure the Observation has been correctly set in {{ coiote_short_name }}, do the following:
 
-1. In Coiote, go to **Device inventory --> Objects**.
+1. In {{ coiote_short_name }}, go to **Device inventory --> Objects**.
 2. For the Observation set on the whole **object (1/1)**, click the vertical Ellipse button next the search field and then click **Refresh**. If the Observation has been set correctly, the checkboxes will be filled in green.
 
     ![Observed object in {{ coiote_short_name }}](images-observation/observation-hub2.png "Observed object in {{ coiote_short_name }}")
@@ -115,7 +115,7 @@ To stop observing an object or resource, do the following:
 
     ![Delete an Observation in Azure IoT Hub](images-observation/observation-hub4.png "Delete an Observation in Azure IoT Hub")
 
-3. In Coiote, you can now go to **Device inventory --> Objects** and see how **Value tracking** and **Attributes** boxes are now unchecked.
+3. In {{ coiote_short_name }}, you can now go to **Device inventory --> Objects** and see how **Value tracking** and **Attributes** boxes are now unchecked.
 
 ## Next steps
 [Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)

@@ -55,7 +55,7 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
 
 ## Prepare the Firmware Update
 
-1. In the Coiote IoT Device Management platform, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
+1. In the {{ coiote_long_name }}, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
 
 1. Select the device you want to update by clicking on its endpoint name.
 
@@ -86,11 +86,11 @@ The Firmware Update process is defined in the **Firmware Update Object `/5`**. T
     !!! Info
         **Pull** supports the following **transport types**:
 
-        - `CoAP` or `coaps_uri` over `UDP`
-        - `CoAP` or `coaps_uri` over `TCP`
+        - `CoAP` or `coaps` over `UDP`
+        - `CoAP` or `coaps` over `TCP`
         - `HTTP` or `HTTPs`
 
-        **Push** transmits the firmware over the same transport type as is used for device management, which is `coaps_uri` over `UDP` by default.
+        **Push** transmits the firmware over the same transport type as is used for device management, which is `coaps` over `UDP` by default.
 
     !!! Tip "Which transport protocol to choose?"
 
@@ -140,9 +140,9 @@ If no errors occur, the update process follows this pattern:
 
 ## Troubleshooting
 
-### Firmware Update only works over CoAP, not over coaps_uri
+### Firmware Update only works over CoAP, not over coaps
 
-For the firmware update over coaps_uri transfer to work, the LwM2M Client shall use the same security credentials (i.e. PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.
+For the firmware update over coaps transfer to work, the LwM2M Client shall use the same security credentials (i.e. PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.
 
 !!! info "Zephyr LwM2M Client configuration instruction"
 

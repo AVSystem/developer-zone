@@ -1,6 +1,7 @@
 coiote_long_name: Coiote IoT Device Management platform
 coiote_site_link: https://eu.iot.avsystem.cloud
 coiote_short_name: Coiote IoT DM
+coap_uri: coap://eu.iot.avsystem.cloud:5683
 coaps_uri: coaps://eu.iot.avsystem.cloud:5684
 freertos_repository_step:
   0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).

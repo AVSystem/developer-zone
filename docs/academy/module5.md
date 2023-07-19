@@ -11,7 +11,7 @@ The LwM2M protocol provides a standardized process for remote firmware updates. 
 
 Remote firmware updates know many names, such as Firmware Update OTA (FUOTA) or Device Firmware Upgrade (DFU). Device vendors can develop their own custom FOTA mechanisms, however, these implementations are specific to the vendor or platform and cannot be easily ported to other systems. The problem of vendor compatibility can be resolved by adopting the LwM2M standard, which is hardware agnostic and can be implemented on any hardware platform.
 
-The LwM2M firmware update process consists of four steps: 
+The LwM2M firmware update process consists of four steps:
 
 1. The LwM2M Client is **triggered** to initiate the firmware update process
 1. The Client **downloads** the firmware and reports to the LwM2M Server when the download is finished
@@ -21,10 +21,10 @@ The LwM2M firmware update process consists of four steps:
 This procedure is defined in detail in the LwM2M specifications (see [LwM2M specifications](https://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-1-0-E61-Firmware-Update-State-Machine)). To add firmware update capabilities to a device, the [Firmware Update Object /5](http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2F5.xml) needs to be implemented containing all essential functionalities for conducting the update and reporting the status. Several LwM2M Clients natively support this Firmware Update Object, including [AVSystem’s Anjay LwM2M Client](https://www.avsystem.com/products/anjay/) and [Zephyr’s LwM2M Client](https://docs.zephyrproject.org/latest/samples/net/lwm2m_client/README.html).
 
 ![FOTA in progress](images/module5_in-progress-basic.png)
-*<p style="text-align: center;">Updating a device’s firmware using Coiote IoT Device Management</p>*
+*<p style="text-align: center;">Updating a device’s firmware using {{ coiote_long_name }}</p>*
 
 ## Download a new firmware
-The LwM2M standard defines two methods to perform a firmware update, allowing either the Client or the Server to decide on the best moment to start the download of the new firmware. 
+The LwM2M standard defines two methods to perform a firmware update, allowing either the Client or the Server to decide on the best moment to start the download of the new firmware.
 
 #### PULL method
 

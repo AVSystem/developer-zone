@@ -48,7 +48,7 @@ static int setup_security_object() {
     }
     const anjay_security_instance_t security_instance = {
         .ssid = 1,
-        .server_uri = "coap://eu.iot.avsystem.cloud:5683",
+        .server_uri = "{{ coap_uri }}",
         .security_mode = ANJAY_SECURITY_NOSEC
     };
     // Anjay will assign Instance ID automatically

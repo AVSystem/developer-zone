@@ -6,7 +6,7 @@ Integrate your **B-U585I-IOT02A** Discovery kit board along with the default-pro
 
 - The **STM32U585I-IOT02A/BG96** board with a Micro-USB cable.
 - The serial communication program, such as **minicom** (for Linux) or RealTerm or PuTTY (for Windows) installed.
-- A user with access to the Coiote IoT Device Management platform.
+- A user with access to the {{ coiote_long_name }}.
 - Optional: installed **STM32CubeIDE**.
 
 ## Prepare Anjay client application

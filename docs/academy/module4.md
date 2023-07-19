@@ -3,9 +3,9 @@
 ![module 4 title](images/5management.png)
 
 ## Introduction
-One of the key reasons people choose LwM2M is its ability to manage IoT devices at scale. Device management is critical for ensuring reliable operation of IoT systems throughout their entire lifetime. 
+One of the key reasons people choose LwM2M is its ability to manage IoT devices at scale. Device management is critical for ensuring reliable operation of IoT systems throughout their entire lifetime.
 
-Device management involves the remote configuration of device parameters. This includes renewing security credentials, adjusting the intervals between data collections, updating the device’s firmware and modifying device settings such as the APN, WiFi credentials or sensor calibrations. 
+Device management involves the remote configuration of device parameters. This includes renewing security credentials, adjusting the intervals between data collections, updating the device’s firmware and modifying device settings such as the APN, WiFi credentials or sensor calibrations.
 
 The LwM2M protocol defines a standardized approach for efficiently managing IoT devices deployed in the field. In this module we will dive into the device management capabilities of the standard and explore its features and functionalities in detail.
 
@@ -48,7 +48,7 @@ In this interface, the Server holds the ability to define the behavior of the de
 * **OBSERVE**: When the Observe operation is invoked, the Client starts sending NOTIFY messages to the Server about its data or state at configurable intervals. The OBSERVE operation is canceled when sending **CANCEL OBSERVE**.
 
 ![Set Observations](images/module4_Observation.png)
-*<p style="text-align: center;">Set Observation in Coiote IoT Device Management Platform</p>*
+*<p style="text-align: center;">Set Observation in {{ coiote_long_name }}</p>*
 
 
 **Client Operations**

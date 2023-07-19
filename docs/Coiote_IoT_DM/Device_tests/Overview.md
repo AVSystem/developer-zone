@@ -1,6 +1,6 @@
 # Overview
 
-Device tests - also known as hardware in the loop tests - is a solution to test the performance of LwM2M devices and is offered as part of the **Coiote IoT Device Management** platform. Device tests are an essential tool in the development process of device firmware as they can be used for:
+Device tests - also known as hardware in the loop tests - is a solution to test the performance of LwM2M devices and is offered as part of the **{{ coiote_long_name }}**. Device tests are an essential tool in the development process of device firmware as they can be used for:
 
 - Validating new functionalities
 - Testing the proper implementation of the LwM2M standard

@@ -7,7 +7,7 @@ Integrate your B-L475E-IOT01A Discovery kit board.
 - The B-L475E-IOT01A board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
 - Installed **ST-Link** or **OpenOCD** debugger.
-- A user with access to the Coiote IoT Device Management platform and appropriate permissions.
+- A user with access to the {{ coiote_long_name }} and appropriate permissions.
 
 ## Prepare Anjay client application
 ### Use an already built binary

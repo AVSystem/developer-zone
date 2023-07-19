@@ -16,7 +16,7 @@ In this exercise, we start sending LwM2M Operations to the Client to monitor the
 
 
 ## Notifications support
-Let’s get started by connecting our Raspberry Pi Pico W to the computer via a USB cable. Open a serial communication program to watch the device logs and go to the Coiote IoT Device Management to check if your device has connected successfully. If so, you are ready to perform your first Observe/Read operations on your LwM2M Device (a.k.a. The LwM2M Client).
+Let’s get started by connecting our Raspberry Pi Pico W to the computer via a USB cable. Open a serial communication program to watch the device logs and go to the {{ coiote_long_name }} to check if your device has connected successfully. If so, you are ready to perform your first Observe/Read operations on your LwM2M Device (a.k.a. The LwM2M Client).
 
 Go to **{{ coiote_short_name }}**, select the **Data model** tab and open the **Temperature Object `/3303`**.
 

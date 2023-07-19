@@ -65,7 +65,7 @@ To see logs for your integrated devices:
 0. Go to the single device view in {{ coiote_short_name }}, from the left menu, select the **Logs** tile.
 
     !!! info
-        The logs are only available in the previous version of Coiote. Select **Go to previous version** in the top-right corner.
+        The logs are only available in the previous version of {{ coiote_short_name }}. Select **Go to previous version** in the top-right corner.
 
         ![previous version](images/previous-version.png "previous version")
 

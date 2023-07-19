@@ -73,7 +73,7 @@ vStandard implementations available for many hardware platforms
 Find [more information](https://www.avsystem.com/coiote-iot-device-management-platform/) about Anjay and its features, or visit the [official documentation](https://avsystem.github.io/Anjay-doc/index.html) website directly.
 
 ## Intro to {{ coiote_short_name }}
-Coiote IoT Device Management is a platform built around the LwM2M standard. It acts as a LwM2M Server and is designed as a scalable platform to manage large numbers of devices. The platform comes with tools to monitor groups of devices, manage device configurations, and perform firmware updates. In addition, it supports cloud integrations with platforms such as AWS IoT Core or Azure IoT Hub.
+{{ coiote_long_name }} is built around the LwM2M standard. It acts as a LwM2M Server and is designed as a scalable platform to manage large numbers of devices. The platform comes with tools to monitor groups of devices, manage device configurations, and perform firmware updates. In addition, it supports cloud integrations with platforms such as AWS IoT Core or Azure IoT Hub.
 
 {{ coiote_short_name }} has a developer version, allowing you to connect up to 10 devices free of charge. To create a developer account, visit [**eu.iot.avsystem.cloud**]({{ coiote_site_link }}/)
 
@@ -95,4 +95,4 @@ Coiote IoT Device Management is a platform built around the LwM2M standard. It a
 
     Collect data from your sensors and send them directly in the unified data format to the cloud thanks to various options of data integrations, including AWS IoT Core, Azure IoT Hub, Kafka, and Webhooks.
 
-Find [more information](https://iotdevzone.avsystem.com/docs/) about getting started with Coiote IoT Device Managements.
+Find [more information](https://iotdevzone.avsystem.com/docs/) about getting started with {{ coiote_long_name }}.

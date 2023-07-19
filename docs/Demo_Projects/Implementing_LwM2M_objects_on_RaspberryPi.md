@@ -17,7 +17,7 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 
 - Raspberry Pi 3 or 4 with a configured [operating system](https://downloads.raspberrypi.org/raspios_armhf/images/) and a set-up WiFi connection.
 - A [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) or a [GrovePi](https://www.seeedstudio.com/GrovePi.html) with a temperature sensor ([DHT11](https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/) or similar) and a push button ([Grove-button](https://wiki.seeedstudio.com/Grove-Button/) or similar).
-- A user with access to the Coiote IoT Device Management platform and appropriate permissions.
+- A user with access to the {{ coiote_long_name }} and appropriate permissions.
 
 ## Step 1: Prepare your Sense HAT/GrovePi
 
@@ -90,7 +90,7 @@ If a *Hello World!* message is displayed, you're good to proceed.
 					"1":
 					{
 				    	"ssid": "1",
-				    	"server_uri": "coaps_uri://eu.iot.avsystem.cloud:5684",
+				    	"server_uri": "{{ coaps_uri }}",
 				    	"is_bootstrap": "0",
 				    	"security_mode": "psk",
 				    	"pubkey_or_identity_hex": "XXXX",
@@ -259,7 +259,7 @@ If a *Hello World!* message is displayed, you're good to proceed.
 
     `sudo systemctl restart svetovid.service --now`
 
-0. Refresh device state in Coiote and see if the Temperature object `/3303` has appeared in the Objects tab and values are reported for the Sensor Value `5700` resource:
+0. Refresh device state in {{ coiote_short_name }} and see if the Temperature object `/3303` has appeared in the Objects tab and values are reported for the Sensor Value `5700` resource:
 
    ![Temperature object](images/raspi1.png "/3303")
 
@@ -493,6 +493,6 @@ You should be able to see a default value reported in the command-line terminal.
 0. Plug in the push button to digital port D3 of the GrovePi/Sense HAT.
 0. Restart Svetovid:
     `sudo systemctl restart svetovid.service --now`
-0. Refresh device state in Coiote and see if the Multiple Axis Joystick object `/3345` has appeared in the Objects tab and values are reported for the Digital Input State `5500` and Digital Input Counter `5501` resources:
+0. Refresh device state in {{ coiote_short_name }} and see if the Multiple Axis Joystick object `/3345` has appeared in the Objects tab and values are reported for the Digital Input State `5500` and Digital Input Counter `5501` resources:
 
        ![Joystick button object](images/button.png "/3345")

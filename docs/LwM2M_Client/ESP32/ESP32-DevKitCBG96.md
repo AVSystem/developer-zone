@@ -6,7 +6,7 @@ Integrate your ESP32-based device with Quectel BG96 module to manage it via {{ c
 - An ESP32 device.
 - A BG96 module with internet connection (it is strongly recommended to have a BG96 with firmware version BG96MAR03A06M1G).
 - Installed ESP-IDF and dependencies (installation steps 1-4 from [ESP32 official documentation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)). Supported ESP-IDF version is v4.4.
-- A user with access to the [Coiote IoT Device Management platform]({{ coiote_site_link }}).
+- A user with access to the [{{ coiote_long_name }}]({{ coiote_site_link }}).
 
 ## Step 1: Prepare project
 0. Create a project directory for the integration.
@@ -19,7 +19,7 @@ Integrate your ESP32-based device with Quectel BG96 module to manage it via {{ c
       ![BG96 UART example configuration](images/BG96_uart_config.png "BG96 UART example configuration")
     - In **Client options**, provide device credentials and Server URI:
         - **Endpoint name** - your device endpoint name
-        - **Server URI** - the address and port of your {{ coiote_short_name }} installation, e.g. ``coaps_uri://eu.iot.avsystem.cloud:5684``
+        - **Server URI** - the address and port of your {{ coiote_short_name }} installation, e.g. ``{{ coaps_uri }}``
         - **Security mode** - the PSK security mode
         - **PSK configuration** - the PSK identity and PSK key
     - In the `Connection configuration`, set **APN name** to `internet` for the sake of this tutorial. However, **APN name** depends on your SIM card operator.

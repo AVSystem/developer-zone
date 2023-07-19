@@ -11,14 +11,14 @@ og_title: AVSystem IoT Developer Zone
 
 Welcome to the AVSystem DevZone!
 
-In the DevZone you will find documentation related to our scalable LwM2M Server **Coiote IoT Device Management**, as well as our LwM2M Client **Anjay**.
+In the DevZone you will find documentation related to our scalable LwM2M Server **{{ coiote_long_name }}**, as well as our LwM2M Client **Anjay**.
 
 
 ## Quick Start Guide
 
 Follow the Quick Start to build your first LwM2M application using a simulated device within 20 minutes.
 
-The guide walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **Coiote IoT Device Management**.
+The guide walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **{{ coiote_long_name }}**.
 
 [Quick Start](quickstart/){: .md-button .md-button--big}
 
@@ -34,14 +34,14 @@ Follow the **Getting Started Guides** to kickstart your LwM2M application using 
 
 ## Learn more about {{ coiote_short_name }}
 
-Dive into Coiote IoT Device Management, the scalable LwM2M server and explore its numerous features. From device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
+Dive into {{ coiote_long_name }}, the scalable LwM2M server and explore its numerous features. From device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
 
 [{{ coiote_short_name }} docs](Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
 
 
 ## Explore cloud integrations
 
-With the Coiote IoT Device Management platform, you can easily integrate your LwM2M data with **Azure IoT Hub**, **Azure IoT Central**, **Azure DPS**, **AWS IoT Core** and **nRF Cloud Location Services**.
+With the {{ coiote_long_name }}, you can easily integrate your LwM2M data with **Azure IoT Hub**, **Azure IoT Central**, **Azure DPS**, **AWS IoT Core** and **nRF Cloud Location Services**.
 
 The guides will take you on a step-by-step journey to seamlessly activate the integrations.
 

@@ -18,7 +18,7 @@ The process of upgrading device firmware for Azure IoT Hub devices synchronized 
 In the process, the Azure *scheduleFirmwareUpdate* direct method is invoked, enabling the {{ coiote_short_name }} to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in {{ coiote_short_name }} and the upgrade is performed on the device.
 
 !!! info
-    For firmware file recognition in Coiote, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then {{ coiote_short_name }} will be able to utilize the once downloaded resource without the need to download it again.
+    For firmware file recognition in {{ coiote_short_name }}, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then {{ coiote_short_name }} will be able to utilize the once downloaded resource without the need to download it again.
 
 ### Step 1: Invoking the Azure *scheduleFirmwareUpdate* direct method
 
