@@ -6,7 +6,7 @@ Integrate your ESP32-based device to manage it via {{ coiote_short_name }}.
 
 - An M5StickC device.
 - Installed ESP-IDF and dependencies (installation steps 1-4 from [ESP32 official documentation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)). Supported ESP-IDF version is v4.4.
-- A user with access to the Coiote IoT Device Management platform.
+- A user with access to the {{ coiote_long_name }}.
 
 ## Step 1: Download the Anjay ESP32 client files
 

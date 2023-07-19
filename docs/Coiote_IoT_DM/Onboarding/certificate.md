@@ -61,7 +61,7 @@ Learn how to onboard a LwM2M device in just a few clicks using Certificates.
 0. In the **Connect your device** step, insert the given connection parameters and the path to your certificate and key into the command used for starting the Anjay demo device. The following is an example command:
 
     ```
-    ./output/bin/demo --endpoint-name test_device --security-mode cert -C c:/certificates/demo-cert.der -K c:/certificates/demo_key.der --server-uri coaps_uri://eu.iot.avsystem.cloud:5684
+    ./output/bin/demo --endpoint-name test_device --security-mode cert -C c:/certificates/demo-cert.der -K c:/certificates/demo_key.der --server-uri {{ coaps_uri }}
     ```
 
     !!! note

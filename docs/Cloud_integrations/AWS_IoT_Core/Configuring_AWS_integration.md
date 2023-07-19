@@ -34,7 +34,7 @@ To start integrating AWS with {{ coiote_short_name }}, you first need to create 
 ![Add user button](images/add_button2.png "Add user button")
     - Provide **Email** for new user (which will be its username) and select your domain from the **Domain path** drop-down list.
     - Remember to switch on the **User Verified** and **User Enabled** toggle buttons.
-    - In the **Client Roles** fields, pick the **CoioteDM** client and **awsiottenant** role.
+    - In the **Client Roles** fields, pick the **{{ coiote_short_name }}** client and **awsiottenant** role.
 ![Add REST user](images/add_rest_user2.png "Add REST user")
     - Click **Save**.
     - Go to the **Credentials** tab, type a password for your user (twice), select **Set password**, then confirm by clicking **Set password** in the pop-up.
@@ -95,8 +95,8 @@ https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-i
     !!! important
         The credentials you provide at this point should belong to the user with access to the {{ coiote_short_name }} group which stores the AWS configuration set in a previous step.
 
-    - **coioteDMrestUsername** - username of the created CoioteDM account.
-    - **coioteDMrestPassword** - password of the created CoioteDM account.
+    - **coioteDMrestUsername** - username of the created {{ coiote_short_name }} account.
+    - **coioteDMrestPassword** - password of the created {{ coiote_short_name }} account.
     - **coioteDMrestUri** - URL address and port of your {{ coiote_short_name }} installation. The port should always be `8088` to enable proper mTLS-based authentication.
 
         !!! note
@@ -117,7 +117,7 @@ To learn how to perform operations on your devices, please see the [Performing L
 
 To remove the integration of AWS and {{ coiote_short_name }}, follow the following steps:
 
-1. In **CoioteDM** remove all the devices from the **AWSiotCoreCertAuth** group.
+1. In **{{ coiote_short_name }}** remove all the devices from the **AWSiotCoreCertAuth** group.
 2. Go to the **CloudFormation** service in **AWS** and select the stack that was created while setting up the integration.
 3. Delete the stack.
    ![Delete stack](images/stack_delete.png "Delete stack")

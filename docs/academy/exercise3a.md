@@ -429,7 +429,7 @@ With the board still connected to your PC, open a serial communication program. 
 
 ![Check the logs in serial communication program](images/logs.PNG)
 
-If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the **Data Model** and check if you can see the Time Object in the **Defined objects** section.
+If all went well and logs show **registration successfully updated**, you can go to {{ coiote_long_name }} where the Registration status should show **Registered**. Go to the **Data Model** and check if you can see the Time Object in the **Defined objects** section.
 
 ![Time object in Data Model](images/time_object.PNG)
 

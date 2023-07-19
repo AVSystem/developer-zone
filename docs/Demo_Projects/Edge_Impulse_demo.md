@@ -89,7 +89,7 @@ west build -b thingy91_nrf9160_ns
 *Find more information on flashing the Thingy:91 using MCU Boot <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application" target="_blank">here</a>.*
 
 
-## Connect the Thingy:91 to Coiote IoT Device Management
+## Connect the Thingy:91 to {{ coiote_long_name }}
 
 To connect to {{ coiote_long_name }}, please register at [eu.iot.avsystem.cloud]({{ coiote_site_link }}/).
 
@@ -110,7 +110,7 @@ To connect the board:
     ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
 
 
-## Add the Pattern Detection Object to Coiote
+## Add the Pattern Detection Object to {{ coiote_short_name }}
 
 Object ID `/33650` refers to the pattern detection model and indicates which pattern has been detected.
 

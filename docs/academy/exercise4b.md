@@ -274,7 +274,7 @@ INFO [temperature_sensor]
 [/temperature_object_lm35_send/temperature_sensor.c:135]: Send successful
 ```
 
-Now, open Coiote IoT Device Management and validate if the Resources are updated after each configured time interval.
+Now, open {{ coiote_long_name }} and validate if the Resources are updated after each configured time interval.
 
 ![Temperature Object registered](images/temperature.PNG)
 

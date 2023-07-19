@@ -84,7 +84,7 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
 
 ## Connect to the LwM2M Server
 
-Before connecting your device to the cloud, log in to Coiote IoT Device Management: <a href="{{ coiote_site_link }}" target="_blank">**eu.iot.avsystem.cloud**</a>.
+Before connecting your device to the cloud, log in to {{ coiote_long_name }}: <a href="{{ coiote_site_link }}" target="_blank">**eu.iot.avsystem.cloud**</a>.
 
 Once logged in, select **Device Inventory** from the left-side menu
 
@@ -172,7 +172,7 @@ If all went well and logs show **registration successful/registration successful
 
 ![Device Center](images/no-sec.png)
 
-Did you manage to connect the Raspberry Pi Pico W to the Coiote IoT Device Management server?
+Did you manage to connect the Raspberry Pi Pico W to the {{ coiote_long_name }}?
 
 **Well done! You’ve created your first LwM2M application** 👏
 

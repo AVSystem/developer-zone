@@ -12,7 +12,7 @@ In this exercise, we will change the security mode from **No-Sec** to **Pre-Shar
 
 ## Connect to the LwM2M Server
 
-For LwM2M Servers like [{{ coiote_short_name }}](https://www.avsystem.com/coiote-iot-device-management-platform/), server-side configuration needs to be updated to enable LwM2M Clients to connect using PSK. The simplest solution is to edit the connection parameters on the Coiote IoT Device Management configuration page. Follow the next steps to change the parameters and set them to Pre-Shared Key mode.
+For LwM2M Servers like [{{ coiote_short_name }}](https://www.avsystem.com/coiote-iot-device-management-platform/), server-side configuration needs to be updated to enable LwM2M Clients to connect using PSK. The simplest solution is to edit the connection parameters on the {{ coiote_long_name }} configuration page. Follow the next steps to change the parameters and set them to Pre-Shared Key mode.
 
 
 ### Change connection parameters
@@ -59,7 +59,7 @@ static int setup_security_object() {
 
     const anjay_security_instance_t security_instance = {
         .ssid = 1,
-        .server_uri = "coaps_uri://eu.iot.avsystem.cloud:5684",
+        .server_uri = "{{ coaps_uri }}",
         .security_mode = ANJAY_SECURITY_PSK,
         .public_cert_or_psk_identity = (const uint8_t *) psk_identity,
         .public_cert_or_psk_identity_size = strlen(psk_identity),
@@ -169,7 +169,7 @@ If all went well and logs show **registration successfully updated**.
 
 ![Check the logs in the serial communication program](images/logs.PNG)
 
-In Coiote IoT Device Management, the Registration status should show **Registered** and the **Security mode** in the bottom-left corner panel should now include the tag: `Pre-Shared Key`.
+In {{ coiote_long_name }}, the Registration status should show **Registered** and the **Security mode** in the bottom-left corner panel should now include the tag: `Pre-Shared Key`.
 
 ![Device in Pre-Shared Key mode Registered](images/pre-shared.png)
 

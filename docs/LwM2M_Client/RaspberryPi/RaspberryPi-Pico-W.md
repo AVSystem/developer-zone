@@ -5,7 +5,7 @@ Integrate your Raspberry Pi Pico W board.
 ## Prerequisites
 
 - A Raspberry Pi Pico W board with a USB cable.
-- A user with access to the Coiote IoT Device Management platform and appropriate permissions.
+- A user with access to the {{ coiote_long_name }} and appropriate permissions.
 
 ## Prepare binaries
 ### Step 1: Create a workspace
