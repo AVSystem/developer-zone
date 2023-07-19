@@ -12,7 +12,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 * The STM32L496G-DISCO/BG96 board with a USB cable.
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * Installed [OpenSSL](https://www.openssl.org/source/)
-* An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+* An active [{{ coiote_short_name }}]({{ coiote_site_link }}) user account.
 
 !!! Note
     In this tutorial we will use the STM32L496G-DISCO/BG96 board as an example.
@@ -40,7 +40,7 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
 !!! Important
 
-    To use the certificate and private key configuration with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
+    To use the certificate and private key configuration with {{ coiote_short_name }}  you must specify a common name that is the same as the client endpoint name.
 
 You will see two files `cert.pem` and `key.pem` created in the directory.
 
@@ -68,9 +68,9 @@ You will see two files `cert.pem` and `key.pem` created in the directory.
 
 0. Save changes by clicking **1. Save & Exit**, and go to the next step to add a device to Coiote.
 
-## Add device to Coiote IoT DM
+## Add device to {{ coiote_short_name }}
 
-0. Upon logging in to Coiote IoT DM for the first time, you will see the **Add your LwM2M device** panel.
+0. Upon logging in to {{ coiote_short_name }} for the first time, you will see the **Add your LwM2M device** panel.
 
     !!! note
         If you had previously added a device, in **Device inventory**, click the **Add device** button.
