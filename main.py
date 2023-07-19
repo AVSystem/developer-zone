@@ -4,7 +4,7 @@ import os
 from mkdocs.structure.files import File
 import mmap
 
-BLOCKED_STRINGS = ["Coiote IoT", "eu.iot.avsystem.cloud"]
+BLOCKED_STRINGS = [" Coiote ", " Coiote.", "eu.iot.avsystem.cloud"]
 
 
 def define_env(env):
@@ -45,13 +45,13 @@ def define_env(env):
 
 
 def on_page_read_source(page, config):
-    print("Reading source: " + page.file.src_path)
     path = os.path.join(config.docs_dir, page.file.src_path)
     with open(path, "r") as f:
         s = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
         for b in BLOCKED_STRINGS:
             if s.find(bytes(b, 'utf-8')) != -1:
-                raise Exception(b + " found in " +                                os.path.join("docs", page.file.src_path) + "\n Please remove it before commiting and use one of the macros defined in `templates/default.yaml`")
+                raise Exception(b + " found in " + os.path.join("docs", page.file.src_path) +
+                                "\n Please remove it before commiting and use one of the macros defined in `templates/default.yaml`")
 
 
 def on_page_markdown(_, page, config, files):

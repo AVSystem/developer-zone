@@ -66,7 +66,7 @@ You will see two files `cert.pem` and `key.pem` created in the directory.
 
     ![Generate certificate in Anjay](images/anjay_cert.png)
 
-0. Save changes by clicking **1. Save & Exit**, and go to the next step to add a device to Coiote.
+0. Save changes by clicking **1. Save & Exit**, and go to the next step to add a device to {{ coiote_short_name }}.
 
 ## Add device to {{ coiote_short_name }}
 
