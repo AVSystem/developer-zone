@@ -93,11 +93,11 @@ Object `/33629` defines the update process using **4 Update States** represen
     !!! Info
         **Pull** supports the following **transport types**:
 
-        - `CoAP` or `coaps` over `UDP`
-        - `CoAP` or `coaps` over `TCP`
+        - `CoAP` or `CoAPs` over `UDP`
+        - `CoAP` or `CoAPs` over `TCP`
         - `HTTP` or `HTTPs`
 
-        **Push** transmits the firmware over the same transport type as is used for device management, which is `coaps` over `UDP` by default.
+        **Push** transmits the firmware over the same transport type as is used for device management, which is `CoAPs` over `UDP` by default.
 
     !!! Tip "Which transport protocol to choose?"
 
