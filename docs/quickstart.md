@@ -131,7 +131,7 @@ Go back to your terminal, open your Anjay directory and **run the command** to c
 
 ## Monitor your demo device in the {{ coiote_short_name }}
 
-If the demo application started successfully, a device is shown in the Coiote platform.
+If the demo application started successfully, a device is shown in the{{ coiote_short_name }}platform.
 
 ![Coiote dashboard](img/coiote-dashboard.png)
 
