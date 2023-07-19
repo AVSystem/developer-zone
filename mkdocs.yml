@@ -146,7 +146,7 @@ nav:
                 - Exercise 4B - LwM2M Send: 'academy/exercise4b.md'
             - Module 5 - Firmware updates:
                 - Theory Module 5: 'academy/module5.md'
-                - Exercise - Graduation Project: 'academy/exercise5.md'
+            - Graduation Project: 'academy/exercise5.md'
         - 'Release Notes':
             - 2023:
                 - 'Release_Notes/v2023.10.0.md'
