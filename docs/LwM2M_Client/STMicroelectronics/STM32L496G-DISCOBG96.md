@@ -15,7 +15,7 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the default-provide
 To get the latest binary file and flash it to the board:
 
 {{ freertos_repository_step }}
-{{ STM32L496G_BG96_binary_step}}
+{{ STM32L496G_BG96_binary_step }}
 0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L496ZG** external device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
@@ -66,7 +66,7 @@ To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}
 
 To connect the board:
 
-1. Log in to {{ coiote_short_name}} and from the left side menu, select **Device Inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 2. In **Device Inventory**, click **Add device**.
 3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")

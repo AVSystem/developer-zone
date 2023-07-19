@@ -10,9 +10,9 @@ Follow this guide to build your first LwM2M application using a simulated device
 
 ## Access the {{ coiote_short_name }} portal
 
-Get started by <a href="{{ coiote_site_link }}/" target="_blank">**signing up**</a> to {{ coiote_long_name }}. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
+Get started by <a href="{{ coiote_site_link }}" target="_blank">**signing up**</a> to {{ coiote_long_name }}. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
 
-[{{ coiote_short_name }}]({{ coiote_site_link }}/){: .md-button .md-button--big }
+[{{ coiote_short_name }}]({{ coiote_site_link }}){: .md-button .md-button--big }
 
 ![Coiote Device Inventory](img/Empty-Device-Inventory.png "Empty device inventory at {{ coiote_short_name }}")
 
