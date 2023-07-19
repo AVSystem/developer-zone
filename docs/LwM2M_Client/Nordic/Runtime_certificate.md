@@ -16,7 +16,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 
 * Installed [OpenSSL](https://www.openssl.org/source/)
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
-* An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+* An active [{{ coiote_short_name }}]({{ coiote_site_link }}) user account.
 
 !!! Note
 
@@ -57,7 +57,7 @@ openssl ec -in demo-cert.key -outform pem -out key.pem
 
 !!! Important
 
-    To use the certificate and private key with Coiote IoT DM you must specify a common name that is the same as the client endpoint name.
+    To use the certificate and private key with {{ coiote_short_name }} you must specify a common name that is the same as the client endpoint name.
 
 You will see two files `cert.pem` and `key.pem` created in the `Anjay-zephyr-client/demo` directory.
 
@@ -79,9 +79,9 @@ You will see two files `cert.pem` and `key.pem` created in the `Anjay-zephyr-cli
 
 0. Save changes, start Anjay using `anjay start` command and go to the next step to add a device to Coiote.
 
-## Add device to Coiote IoT DM
+## Add device to {{ coiote_short_name }}
 
-0. Upon logging in to Coiote IoT DM for the first time, you will see the **Add your LwM2M device** panel.
+0. Upon logging in to {{ coiote_short_name }} for the first time, you will see the **Add your LwM2M device** panel.
 
     !!! note
         If you had previously added a device, in **Device inventory**, click the **Add device** button.
@@ -97,7 +97,7 @@ You will see two files `cert.pem` and `key.pem` created in the `Anjay-zephyr-cli
      - Click **Add device**.
 
 !!! Note
-    The **Endpoint name** which you enter to the Coiote IoT DM should be the same as it is in the Client configuration.
+    The **Endpoint name** which you enter to the {{ coiote_short_name }} should be the same as it is in the Client configuration.
 
 0. Click **Next**, **Go to Summary** to skip the third step, and **Finish** to see your Device Center.
     ![Registered device](images/registered_cert.png "Registered device")
