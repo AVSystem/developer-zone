@@ -1,4 +1,4 @@
-# Exercise 1: Graduation Project
+# Graduation Project
 
 Congratulations on your progress in the LwM2M Academy! As you approach graduation, one final task awaits: bringing your IoT idea to life using the LwM2M standard.
 
