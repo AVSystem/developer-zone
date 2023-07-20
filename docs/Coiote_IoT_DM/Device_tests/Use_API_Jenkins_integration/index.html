@@ -2790,19 +2790,19 @@
 
 <!-- Markdown content -->
 <h1 id="jenkinsgitlab-integration-with-device-tests-api">Jenkins/GitLab integration with device tests API<a class="headerlink" href="#jenkinsgitlab-integration-with-device-tests-api" title="Permanent link">#</a></h1>
-<p>If you would like to automate your device tests, you can use the Coiote DM API and integrate it with a CI/CD environment like Jenkins or GitLab.
+<p>If you would like to automate your device tests, you can use the Coiote IoT DM API and integrate it with a CI/CD environment like Jenkins or GitLab.
 Follow the guide below to learn how to configure the integration, run tests and summarize your test execution using these tools.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - for details, please see subsection on <a href="#gitlab-configure-and-run-pipeline">GitLab</a>.    </p>
+<p>The following instruction is based on integration with Jenkins. To integrate with GitLab, you can follow the same steps, but with slight adjustments - for details, please see subsection on <a href="#gitlab-configure-and-run-pipeline">GitLab</a>.</p>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An active Jenkins and GitLab account.</li>
 <li>A Git project repository.</li>
-<li>A working Coiote DM installation and a port for communication with the installation API.</li>
+<li>A working Coiote IoT DM installation and a port for communication with the installation API.</li>
 <li>A device registered in the platform (if the tests require the device to be registered).</li>
-<li>A Coiote DM user with access to the device and the appropriate API permissions.</li>
+<li>A Coiote IoT DM user with access to the device and the appropriate API permissions.</li>
 </ul>
 <h2 id="jenkins-standard-pipeline">Jenkins - standard pipeline<a class="headerlink" href="#jenkins-standard-pipeline" title="Permanent link">#</a></h2>
 <h3 id="set-up-standard-pipeline">Set up standard pipeline<a class="headerlink" href="#set-up-standard-pipeline" title="Permanent link">#</a></h3>
@@ -2819,9 +2819,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 <span class="c1"># ___Edit below___ #</span>
 <span class="n">DEVICE_NAME</span> <span class="o">=</span> <span class="s2">&quot;test-device&quot;</span> <span class="c1"># type the endpoint name of your device.</span>
-<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote DM installation.</span>
+<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote IoT DM installation.</span>
 <span class="n">INSTALLATION_API_PORT</span> <span class="o">=</span> <span class="s2">&quot;8087&quot;</span> <span class="c1"># provide the port for communication with the API. The default value is `8087`.</span>
-<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote DM user account.</span>
+<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote IoT DM user account.</span>
 <span class="n">TEST_NAMES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># type the names of the tests that you want to execute on the device.</span>
         <span class="s2">&quot;testCases&quot;</span><span class="p">:[</span>
                 <span class="s2">&quot;protocol_test_1&quot;</span><span class="p">,</span>
@@ -2884,9 +2884,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 <span class="c1"># ___Edit below___ #</span>
 <span class="n">DEVICE_GROUP</span> <span class="o">=</span> <span class="s2">&quot;root.mt.embedded.devicetypes.test.demo_client.2_9_0&quot;</span> <span class="c1"># type the name of your device group.</span>
-<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote DM installation.</span>
+<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote IoT DM installation.</span>
 <span class="n">INSTALLATION_API_PORT</span> <span class="o">=</span> <span class="s2">&quot;8087&quot;</span> <span class="c1"># provide the port for communication with the API. The default value is `8087`.</span>
-<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote DM user account.</span>
+<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote IoT DM user account.</span>
 <span class="n">TEST_NAMES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># type the names of the tests that you want to execute on the group.</span>
         <span class="s2">&quot;testCases&quot;</span><span class="p">:[</span>
                 <span class="s2">&quot;protocol_test_1&quot;</span><span class="p">,</span>
@@ -2963,7 +2963,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 <li>Configure your pipeline:<ul>
 <li>Go to your newly created pipeline and select <strong>Configure</strong> from the menu on the left.</li>
 <li>In the <strong>Source Code Management</strong> section, select the <strong>Git</strong> option and provide the following:<ul>
-<li><strong>Repository URL</strong> - enter the URL address of your GitLab repository that hosts the python script file from <a href="#set-up-standard-pipeline">Step 1</a>.<br />
+<li><strong>Repository URL</strong> - enter the URL address of your GitLab repository that hosts the python script file from <a href="#set-up-standard-pipeline">Step 1</a>.
 <img alt="Configuring a standard pipeline" src="../images/image113.png" title="Configuring a standard pipeline" /></li>
 <li><strong>Credentials</strong> - add the user name and password of your git repository account.</li>
 <li><strong>Branch Specifier</strong> - choose the GitLab branch you want to use in the pipeline.</li>
@@ -2987,7 +2987,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Remember to check if the device you run the tests for is connected and registered in Coiote DM.</p>
+<p>Remember to check if the device you run the tests for is connected and registered in Coiote IoT DM.</p>
 </div>
 <ol>
 <li>Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
@@ -3047,9 +3047,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 <span class="c1"># ___Edit below___ #</span>
 <span class="n">DEVICE_NAME</span> <span class="o">=</span> <span class="s2">&quot;test-device&quot;</span> <span class="c1"># type the endpoint name of your device.</span>
-<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote DM installation.</span>
+<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote IoT DM installation.</span>
 <span class="n">INSTALLATION_API_PORT</span> <span class="o">=</span> <span class="s2">&quot;8087&quot;</span> <span class="c1"># provide the port for communication with the API. The default value is `8087`.</span>
-<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote DM user account.</span>
+<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote IoT DM user account.</span>
 <span class="n">TEST_NAMES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># type the names of the tests that you want to execute on the device.</span>
         <span class="s2">&quot;testCases&quot;</span><span class="p">:[</span>
                 <span class="s2">&quot;protocol_test_1&quot;</span><span class="p">,</span>
@@ -3112,9 +3112,9 @@ Follow the guide below to learn how to configure the integration, run tests and 
 
 <span class="c1"># ___Edit below___ #</span>
 <span class="n">DEVICE_GROUP</span> <span class="o">=</span> <span class="s2">&quot;root.mt.embedded.devicetypes.test.demo_client.2_9_0&quot;</span> <span class="c1"># type the name of your device group.</span>
-<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote DM installation.</span>
+<span class="n">INSTALLATION_URL</span> <span class="o">=</span> <span class="s2">&quot;https://lwm2m-test.avsystem.io&quot;</span> <span class="c1"># provide the URL of your Coiote IoT DM installation.</span>
 <span class="n">INSTALLATION_API_PORT</span> <span class="o">=</span> <span class="s2">&quot;8087&quot;</span> <span class="c1"># provide the port for communication with the API. The default value is `8087`.</span>
-<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote DM user account.</span>
+<span class="n">CREDENTIALS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user_login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="c1"># provide user name and password of your Coiote IoT DM user account.</span>
 <span class="n">TEST_NAMES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># type the names of the tests that you want to execute on the group.</span>
         <span class="s2">&quot;testCases&quot;</span><span class="p">:[</span>
                 <span class="s2">&quot;protocol_test_1&quot;</span><span class="p">,</span>
@@ -3193,7 +3193,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 <li>Configure your pipeline:<ul>
 <li>Go to your newly created pipeline and select <strong>Configure</strong> from the menu on the left.</li>
 <li>In the <strong>Branch Sources</strong> section, select the <strong>Git</strong> option and provide the following:<ul>
-<li><strong>Project Repository</strong> - enter the URL address of your project repository that hosts the <code>Jenkinsfile</code> and the python script file from <strong>Step 2</strong>.<br />
+<li><strong>Project Repository</strong> - enter the URL address of your project repository that hosts the <code>Jenkinsfile</code> and the python script file from <strong>Step 2</strong>.
 <img alt="Configuring a multibranch pipeline" src="../images/image115.png" title="Configuring a multibranch pipeline" /></li>
 <li><strong>Credentials</strong> - add the user name and password of your GitLab account.</li>
 </ul>
@@ -3216,14 +3216,14 @@ Follow the guide below to learn how to configure the integration, run tests and 
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Remember to check if the device you run the tests for is connected and registered in Coiote DM.</p>
+<p>Remember to check if the device you run the tests for is connected and registered in Coiote IoT DM.</p>
 </div>
 <ol>
 <li>Once the tests are performed, you will see your build status along with a graph reporting the execution status for each test.
 <img alt="A pipeline build with test result report" src="../images/image108.png" title="Build with test result report" /></li>
 </ol>
 <h2 id="gitlab-configure-and-run-pipeline">GitLab - configure and run pipeline<a class="headerlink" href="#gitlab-configure-and-run-pipeline" title="Permanent link">#</a></h2>
-<p>Coiote DM interop tests API can also be integrated with GitLab using the GitLab's CI/CD toolset. Here is how to do it:  </p>
+<p>Coiote IoT DM interop tests API can also be integrated with GitLab using the GitLab's CI/CD toolset. Here is how to do it:</p>
 <ol>
 <li>
 <p>Upload the <code>gitlab-ci.yml</code> file that will define your GitLab pipeline to your project repository:</p>
@@ -3344,7 +3344,7 @@ Follow the guide below to learn how to configure the integration, run tests and 
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

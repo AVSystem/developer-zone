@@ -973,8 +973,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#add-device-to-coiote-dm-and-connect" class="md-nav__link">
-    Add device to Coiote DM and connect
+  <a href="#add-device-to-coiote-iot-dm-and-connect" class="md-nav__link">
+    Add device to Coiote IoT DM and connect
   </a>
   
 </li>
@@ -2687,8 +2687,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#add-device-to-coiote-dm-and-connect" class="md-nav__link">
-    Add device to Coiote DM and connect
+  <a href="#add-device-to-coiote-iot-dm-and-connect" class="md-nav__link">
+    Add device to Coiote IoT DM and connect
   </a>
   
 </li>
@@ -2726,7 +2726,7 @@
 <h2 id="connect-a-demo-device-with-a-certificate">Connect a demo device with a certificate<a class="headerlink" href="#connect-a-demo-device-with-a-certificate" title="Permanent link">#</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
 <ul>
-<li>An active <a href="https://eu.iot.avsystem.cloud">Coiote DM</a> user account with appropriate roles assigned.</li>
+<li>An active <a href="https://eu.iot.avsystem.cloud">Coiote IoT DM</a> user account with appropriate roles assigned.</li>
 <li>Compiled <a href="https://github.com/AVSystem/Anjay">Anjay SDK demo library</a> for simulating a device.</li>
 <li>Installed <a href="https://www.openssl.org">OpenSSL</a> (or similar) for generating the certificate.</li>
 </ul>
@@ -2756,10 +2756,10 @@ openssl ec -in demo-cert.key -outform der -out demo_key.der
 </code></pre></div>
 </li>
 </ol>
-<h3 id="add-device-to-coiote-dm-and-connect">Add device to Coiote DM and connect<a class="headerlink" href="#add-device-to-coiote-dm-and-connect" title="Permanent link">#</a></h3>
+<h3 id="add-device-to-coiote-iot-dm-and-connect">Add device to Coiote IoT DM and connect<a class="headerlink" href="#add-device-to-coiote-iot-dm-and-connect" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p>Upon logging in to Coiote DM for the first time, you will see the <strong>Add your LwM2M device</strong> panel.</p>
+<p>Upon logging in to Coiote IoT DM for the first time, you will see the <strong>Add your LwM2M device</strong> panel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you had previously added a device, in <strong>Device inventory</strong>, click the <strong>Add device</strong> button.</p>
@@ -2774,7 +2774,7 @@ openssl ec -in demo-cert.key -outform der -out demo_key.der
 <li>In the <strong>Security mode</strong> section, select the <strong>Certificate</strong> mode.
     <img alt="Device credentials step" src="../images/add_mgmt_cert.png" title="Device credentials step" /></li>
 <li>Click <strong>Upload a new certificate</strong> and <strong>Browse</strong>.</li>
-<li>In the pop-up, go to the directory where your certificate has been generated, select the <code>demo-cert.crt</code> file and click <strong>Open</strong>. </li>
+<li>In the pop-up, go to the directory where your certificate has been generated, select the <code>demo-cert.crt</code> file and click <strong>Open</strong>.</li>
 <li>Click <strong>Add device</strong>.</li>
 </ul>
 </li>
@@ -2784,11 +2784,11 @@ openssl ec -in demo-cert.key -outform der -out demo_key.der
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You need to change the <code>c:/certificates/</code> path for the path where your generated certificate and key are stored.   </p>
+<p>You need to change the <code>c:/certificates/</code> path for the path where your generated certificate and key are stored.</p>
 </div>
 <ol>
 <li>In the command line terminal, open the <strong>Anjay</strong> directory, paste the appropriately modified command and run it.</li>
-<li>In Coiote DM, click <strong>Next</strong>, <strong>Go to Summary</strong> to skip the third step, and <strong>Finish</strong> to see your Device Center.
+<li>In Coiote IoT DM, click <strong>Next</strong>, <strong>Go to Summary</strong> to skip the third step, and <strong>Finish</strong> to see your Device Center.
 <img alt="Registered device" src="../images/registered_device_cert.png" title="Registered device" /></li>
 </ol>
 </li>
@@ -2854,7 +2854,7 @@ openssl ec -in demo-cert.key -outform der -out demo_key.der
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

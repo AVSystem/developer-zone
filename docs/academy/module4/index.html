@@ -2724,8 +2724,8 @@
 <h1 id="module-4-device-management-using-lwm2m">Module 4: Device Management using LwM2M<a class="headerlink" href="#module-4-device-management-using-lwm2m" title="Permanent link">#</a></h1>
 <p><img alt="module 4 title" src="../images/5management.png" /></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
-<p>One of the key reasons people choose LwM2M is its ability to manage IoT devices at scale. Device management is critical for ensuring reliable operation of IoT systems throughout their entire lifetime. </p>
-<p>Device management involves the remote configuration of device parameters. This includes renewing security credentials, adjusting the intervals between data collections, updating the device’s firmware and modifying device settings such as the APN, WiFi credentials or sensor calibrations. </p>
+<p>One of the key reasons people choose LwM2M is its ability to manage IoT devices at scale. Device management is critical for ensuring reliable operation of IoT systems throughout their entire lifetime.</p>
+<p>Device management involves the remote configuration of device parameters. This includes renewing security credentials, adjusting the intervals between data collections, updating the device’s firmware and modifying device settings such as the APN, WiFi credentials or sensor calibrations.</p>
 <p>The LwM2M protocol defines a standardized approach for efficiently managing IoT devices deployed in the field. In this module we will dive into the device management capabilities of the standard and explore its features and functionalities in detail.</p>
 <h2 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">#</a></h2>
 <p>LwM2M specifies four distinct interfaces. We have already discussed two of them in previous modules: the <strong>Bootstrap Interface</strong> and the <strong>Registration Interface</strong> (see module 2). The standard defines two additional interfaces: the <strong>Device Management Interface</strong> and the <strong>Information Reporting Interface</strong>. Let’s explore these interfaces and understand how they contribute to efficient IoT device management</p>
@@ -2760,7 +2760,7 @@ A variation of the READ operations is the READ-Composite which is used when read
 <li><strong>OBSERVE</strong>: When the Observe operation is invoked, the Client starts sending NOTIFY messages to the Server about its data or state at configurable intervals. The OBSERVE operation is canceled when sending <strong>CANCEL OBSERVE</strong>.</li>
 </ul>
 <p><img alt="Set Observations" src="../images/module4_Observation.png" />
-<em><p style="text-align: center;">Set Observation in Coiote IoT Device Management Platform</p></em></p>
+<em><p style="text-align: center;">Set Observation in Coiote IoT Device Management platform</p></em></p>
 <p><strong>Client Operations</strong></p>
 <ul>
 <li><strong>SEND</strong>: The SEND message is used by the Client to send data to the server without explicit request. Depending on the application firmware it can be used to report new measurements or inform the server about a change in telemetry data or state.</li>
@@ -2839,7 +2839,7 @@ A variation of the READ operations is the READ-Composite which is used when read
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

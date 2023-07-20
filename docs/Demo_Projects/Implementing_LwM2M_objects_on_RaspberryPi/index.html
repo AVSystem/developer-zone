@@ -1837,8 +1837,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-register-your-device-in-coiote-dm" class="md-nav__link">
-    Step 3: Register your device in Coiote DM
+  <a href="#step-3-register-your-device-in-coiote-iot-dm" class="md-nav__link">
+    Step 3: Register your device in Coiote IoT DM
   </a>
   
 </li>
@@ -2753,8 +2753,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-register-your-device-in-coiote-dm" class="md-nav__link">
-    Step 3: Register your device in Coiote DM
+  <a href="#step-3-register-your-device-in-coiote-iot-dm" class="md-nav__link">
+    Step 3: Register your device in Coiote IoT DM
   </a>
   
 </li>
@@ -2807,7 +2807,7 @@
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
 <p>Svetovid is a LwM2M client that gives you tools to implement selected LwM2M objects for <a href="https://www.raspberrypi.org/">RaspberryPi-based</a> IoT devices using Python programming language. Svetovid is based on a state-of-the-art Anjay LwM2M client developed by AVSystem.
 It features the FSDM (File System Data Model) in which LwM2M objects are mapped to folders that follow a particular schema, and executables behave as expected by the LwM2M client that loads and manages them.</p>
-<p>This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote DM.</p>
+<p>This tutorial will show you how to implement a temperature LwM2M object on your device and a push button using Svetovid. This will enable live readings of their resources (temperature, push button state and counter) in Coiote IoT DM.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>Raspberry Pi 3 or 4 with a configured <a href="https://downloads.raspberrypi.org/raspios_armhf/images/">operating system</a> and a set-up WiFi connection.</li>
@@ -2876,7 +2876,7 @@ sense.show_message(&quot;Hello World!&quot;)
 <p>In file <code>/usr/local/share/svetovid/bin/fsdm/lwm2m_object_registry.py</code>, find the <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/test</code> entry and replace it with <code>https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod</code>.</p>
 </li>
 </ol>
-<h2 id="step-3-register-your-device-in-coiote-dm">Step 3: Register your device in Coiote DM<a class="headerlink" href="#step-3-register-your-device-in-coiote-dm" title="Permanent link">#</a></h2>
+<h2 id="step-3-register-your-device-in-coiote-iot-dm">Step 3: Register your device in Coiote IoT DM<a class="headerlink" href="#step-3-register-your-device-in-coiote-iot-dm" title="Permanent link">#</a></h2>
 <ol>
 <li>
 <p>Disable the Svetovid service:</p>
@@ -2943,10 +2943,10 @@ sense.show_message(&quot;Hello World!&quot;)
 </li>
 </ol>
 <h2 id="step-4-connecting-to-the-lwm2m-server">Step 4: Connecting to the LwM2M Server<a class="headerlink" href="#step-4-connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
+<p>To connect to Coiote IoT Device Management platform, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
 <ol>
-<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>
 <p>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
@@ -3081,7 +3081,7 @@ if __name__ == &#39;__main__&#39;:
 <p><code>sudo systemctl restart svetovid.service --now</code></p>
 </li>
 <li>
-<p>Refresh device state in Coiote and see if the Temperature object <code>/3303</code> has appeared in the Objects tab and values are reported for the Sensor Value <code>5700</code> resource:</p>
+<p>Refresh device state in Coiote IoT DM and see if the Temperature object <code>/3303</code> has appeared in the Objects tab and values are reported for the Sensor Value <code>5700</code> resource:</p>
 </li>
 </ol>
 <p><img alt="Temperature object" src="../images/raspi1.png" title="/3303" /></p>
@@ -3316,7 +3316,7 @@ if __name__ == &#39;__main__&#39;:
 <li>Restart Svetovid:
     <code>sudo systemctl restart svetovid.service --now</code></li>
 <li>
-<p>Refresh device state in Coiote and see if the Multiple Axis Joystick object <code>/3345</code> has appeared in the Objects tab and values are reported for the Digital Input State <code>5500</code> and Digital Input Counter <code>5501</code> resources:</p>
+<p>Refresh device state in Coiote IoT DM and see if the Multiple Axis Joystick object <code>/3345</code> has appeared in the Objects tab and values are reported for the Digital Input State <code>5500</code> and Digital Input Counter <code>5501</code> resources:</p>
 <p><img alt="Joystick button object" src="../images/button.png" title="/3345" /></p>
 </li>
 </ol>
@@ -3381,7 +3381,7 @@ if __name__ == &#39;__main__&#39;:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 2, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

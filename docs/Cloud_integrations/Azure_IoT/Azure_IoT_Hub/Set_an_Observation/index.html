@@ -1359,8 +1359,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#in-coiote-dm" class="md-nav__link">
-    In Coiote DM
+  <a href="#in-coiote-iot-dm" class="md-nav__link">
+    In Coiote IoT DM
   </a>
   
 </li>
@@ -2719,8 +2719,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#in-coiote-dm" class="md-nav__link">
-    In Coiote DM
+  <a href="#in-coiote-iot-dm" class="md-nav__link">
+    In Coiote IoT DM
   </a>
   
 </li>
@@ -2769,7 +2769,7 @@
 <!-- Markdown content -->
 <h1 id="set-an-observation">Set an Observation<a class="headerlink" href="#set-an-observation" title="Permanent link">#</a></h1>
 <p>This section describes how to set an Observation in your Azure IoT Hub.</p>
-<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote DM, which in turn will transfer it to Azure IoT Hub.</p>
+<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Hub.</p>
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Set an Observation on objects and resources</li>
@@ -2779,10 +2779,10 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ol>
 <li>An active Azure IoT Hub with hub owner access permissions.</li>
-<li>A Coiote DM user account with permissions to use the integration extension.</li>
-<li>A device group created in Coiote DM.</li>
-<li><a href="https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/">A configured extension between Coiote DM and Azure Iot Hub</a>.</li>
-<li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">A configured integration template in Coiote DM, assigned to the device group</a>.</li>
+<li>A Coiote IoT DM user account with permissions to use the integration extension.</li>
+<li>A device group created in Coiote IoT DM.</li>
+<li><a href="https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/">A configured extension between Coiote IoT DM and Azure Iot Hub</a>.</li>
+<li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
 <li><a href="https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/">A connected device</a>.</li>
 </ol>
 <h2 id="set-an-observation-and-define-its-attributes">Set an Observation and define its attributes<a class="headerlink" href="#set-an-observation-and-define-its-attributes" title="Permanent link">#</a></h2>
@@ -2846,18 +2846,18 @@
                         }
 </code></pre></div>
 Because we have specified in the <strong>Desired</strong> properties that the maximum time between two notifications for the <strong>Current time (3/0/13)</strong> resource is 1 second (<code>pmax: 1</code>), the number next to <code>value</code> will be changing every 1 second. E.g., 163465321<strong>8</strong>000 will become 163465321<strong>9</strong>000.</p>
-<p>If you don’t see any changes, click <strong>Refresh</strong>. If it doesn’t help, you can check whether observation has been set in Coiote DM as well.</p>
-<h3 id="in-coiote-dm">In Coiote DM<a class="headerlink" href="#in-coiote-dm" title="Permanent link">#</a></h3>
-<p>This step is optional. If you want to make sure the Observation has been correctly set in Coiote DM, do the following:</p>
+<p>If you don’t see any changes, click <strong>Refresh</strong>. If it doesn’t help, you can check whether observation has been set in Coiote IoT DM as well.</p>
+<h3 id="in-coiote-iot-dm">In Coiote IoT DM<a class="headerlink" href="#in-coiote-iot-dm" title="Permanent link">#</a></h3>
+<p>This step is optional. If you want to make sure the Observation has been correctly set in Coiote IoT DM, do the following:</p>
 <ol>
-<li>In Coiote, go to <strong>Device inventory --&gt; Objects</strong>.</li>
+<li>In Coiote IoT DM, go to <strong>Device inventory --&gt; Objects</strong>.</li>
 <li>
 <p>For the Observation set on the whole <strong>object (1/1)</strong>, click the vertical Ellipse button next the search field and then click <strong>Refresh</strong>. If the Observation has been set correctly, the checkboxes will be filled in green.</p>
-<p><img alt="Observed object in Coiote DM" src="../images-observation/observation-hub2.png" title="Observed object in Coiote DM" /></p>
+<p><img alt="Observed object in Coiote IoT DM" src="../images-observation/observation-hub2.png" title="Observed object in Coiote IoT DM" /></p>
 </li>
 <li>
 <p>For the Observation set on the specific <strong>resource (3/0/13)</strong>, find this resource in the list and click the <strong>Refresh</strong> button to the left from the Value tracking. You will see that checkboxes next to <strong>Value tracking</strong> and <strong>Attributes</strong> are now filled in green.</p>
-<p><img alt="Observed resource in Coiote DM" src="../images-observation/observation-hub3.png" title="Observed object in Coiote DM" /></p>
+<p><img alt="Observed resource in Coiote IoT DM" src="../images-observation/observation-hub3.png" title="Observed object in Coiote IoT DM" /></p>
 </li>
 <li>
 <p>Click <strong>Value tracking</strong>. You will see <code>pmin</code> set to 1, which is the same as you defined in the JSON in Azure IoT Hub.</p>
@@ -2873,7 +2873,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
 <p><img alt="Delete an Observation in Azure IoT Hub" src="../images-observation/observation-hub4.png" title="Delete an Observation in Azure IoT Hub" /></p>
 </li>
 <li>
-<p>In Coiote, you can now go to <strong>Device inventory --&gt; Objects</strong> and see how <strong>Value tracking</strong> and <strong>Attributes</strong> boxes are now unchecked.</p>
+<p>In Coiote IoT DM, you can now go to <strong>Device inventory --&gt; Objects</strong> and see how <strong>Value tracking</strong> and <strong>Attributes</strong> boxes are now unchecked.</p>
 </li>
 </ol>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
@@ -2939,7 +2939,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

@@ -2810,7 +2810,7 @@
 <li>The nRF9160 board with a USB cable.</li>
 <li>Installed <strong>minicom</strong> (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.</li>
 <li>Installed <strong>nrfjprog</strong> from <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download">Nordic Semiconductor page</a></li>
-<li>A user with access to the Coiote IoT Device Management platform and appropriate permissions.</li>
+<li>A user with access to the Coiote IoT Device Management platform.</li>
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
 <h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
@@ -2857,10 +2857,10 @@ west build -b nrf9160dk_nrf9160ns
 </li>
 </ol>
 <h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
+<p>To connect to Coiote IoT Device Management platform, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
 <ol>
-<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
        <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /><ol>
@@ -2901,7 +2901,7 @@ config  :Configure Anjay params
     <img alt="Anjay configuration" src="../images/anjay_config.png" style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;" title="Anjay configuration" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If your default credentials are different from device credentials provided in Coiote DM, change them using the <code>anjay config set &lt;possible_option&gt; &lt;value&gt;</code> command.
+<p>If your default credentials are different from device credentials provided in Coiote IoT DM, change them using the <code>anjay config set &lt;possible_option&gt; &lt;value&gt;</code> command.
 <br/>
 <img alt="Anjay set configuration" src="../images/anjay_config_set.PNG" style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;" title="Anjay set configuration" /></p>
 </div>
@@ -2909,7 +2909,7 @@ config  :Configure Anjay params
 <li>
 <p>Use the <code>anjay start</code> command to run the Client.</p>
 </li>
-<li>Go to Coiote DM to check if your device is connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:
+<li>Go to Coiote IoT DM to check if your device is connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:
     <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></li>
 </ol>
 <div class="admonition note">
@@ -2988,7 +2988,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

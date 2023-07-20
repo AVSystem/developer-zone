@@ -2804,31 +2804,31 @@
 
 <!-- Markdown content -->
 <h1 id="how-aws-integration-works">How AWS integration works<a class="headerlink" href="#how-aws-integration-works" title="Permanent link">#</a></h1>
-<p>Here's a walkthrough of the main concepts related to the AWS IoT Core - Coiote DM integration that will help you understand the role of each of the integration components and how they are employed for the benefit of LwM2M device management via the AWS services.</p>
+<p>Here's a walkthrough of the main concepts related to the AWS IoT Core - Coiote IoT DM integration that will help you understand the role of each of the integration components and how they are employed for the benefit of LwM2M device management via the AWS services.</p>
 <h2 id="things">Things<a class="headerlink" href="#things" title="Permanent link">#</a></h2>
-<p>Within the AWS IoT Core - Coiote DM integration, things are the AWS representations of LwM2M device entities managed by the Coiote DM platform. They are used to mirror device state, as well as collect, process and act upon device data on the fly using a connection protocol of your choice.</p>
+<p>Within the AWS IoT Core - Coiote IoT DM integration, things are the AWS representations of LwM2M device entities managed by the Coiote IoT DM platform. They are used to mirror device state, as well as collect, process and act upon device data on the fly using a connection protocol of your choice.</p>
 <p><img alt="Example Things" src="../images/things.png" title="Example Things" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Things are automatically added to AWS IoT Core upon completing the integration setup and successful device connection.</p>
 </div>
 <h3 id="thing-types">Thing types<a class="headerlink" href="#thing-types" title="Permanent link">#</a></h3>
-<p>Thing types are containers that store configuration and other device-related information shared by all Things of the same type to simplify their bulk management. Within the integration, they are created automatically when a new device is added to AWS from Coiote DM and they are based on device <strong>Manufacturer</strong> and <strong>Model name</strong>. In case a new device with a specific <strong>Manufacturer</strong> and model name pair can be matched with an existing thing type, then it will be associated with it automatically.</p>
+<p>Thing types are containers that store configuration and other device-related information shared by all Things of the same type to simplify their bulk management. Within the integration, they are created automatically when a new device is added to AWS from Coiote IoT DM and they are based on device <strong>Manufacturer</strong> and <strong>Model name</strong>. In case a new device with a specific <strong>Manufacturer</strong> and model name pair can be matched with an existing thing type, then it will be associated with it automatically.</p>
 <p><img alt="Example Thing types" src="../images/thingtypes.png" title="Example Thing types" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note that you cannot modify a once created thing type, but you can deprecate (allowing no new devices to be associated with it) or delete it when there are no things associated with a given Thing type.</p>
 </div>
 <h2 id="device-shadows">Device Shadows<a class="headerlink" href="#device-shadows" title="Permanent link">#</a></h2>
-<p>A device shadow is a structure that stores the device state and represents it in the form of a JSON file, making the device data available to applications and services regardless of device connection to Coiote DM. To synchronize device state information between the Coiote DM and AWS IoT Core, shadows feature the mechanism of <em>reported</em> and <em>desired</em> values.</p>
+<p>A device shadow is a structure that stores the device state and represents it in the form of a JSON file, making the device data available to applications and services regardless of device connection to Coiote IoT DM. To synchronize device state information between the Coiote IoT DM and AWS IoT Core, shadows feature the mechanism of <em>reported</em> and <em>desired</em> values.</p>
 <ul>
-<li><strong>Reported values</strong> section - presents the current device state as reported by the device itself (and mediated by Coiote DM) in a JSON file structure within a device shadow.</li>
+<li><strong>Reported values</strong> section - presents the current device state as reported by the device itself (and mediated by Coiote IoT DM) in a JSON file structure within a device shadow.</li>
 <li><strong>Desired values</strong> section - used for requesting changes in the reported section of the device <a href="#operation-shadow">Operation shadow</a>.</li>
 </ul>
 <p><img alt="Integration Device Shadows" src="../images/deviceshadows.png" title="Integration Device Shadows" /></p>
 <p>For the purposes of the integration, a default of three different shadows is established for each connected thing: an unnamed shadow, a datamodel shadow and an operation shadow.</p>
 <h3 id="classic-shadow">Classic Shadow<a class="headerlink" href="#classic-shadow" title="Permanent link">#</a></h3>
-<p>The Classic shadow (also unnamed shadow) is used for storing connectivity parameters of a LwM2M device (such as registered lifetime, last lifetime refresh, queue mode, LwM2M URI, device registration status etc.). The <code>reported</code> state refreshes upon each change in these parameters that is reported by Coiote DM (<strong>Register</strong> or <strong>Update</strong> message from device).</p>
+<p>The Classic shadow (also unnamed shadow) is used for storing connectivity parameters of a LwM2M device (such as registered lifetime, last lifetime refresh, queue mode, LwM2M URI, device registration status etc.). The <code>reported</code> state refreshes upon each change in these parameters that is reported by Coiote IoT DM (<strong>Register</strong> or <strong>Update</strong> message from device).</p>
 <h3 id="operation-shadow">Operation Shadow<a class="headerlink" href="#operation-shadow" title="Permanent link">#</a></h3>
 <p>The Operation Shadow is where you request your LwM2M operations to be executed. To this end, the <code>desired</code> values of the device state are used. Thus, you can perform any LwM2M 1.0 operation on the device by defining it inside the <code>desired</code> values section. Also, to check if the operation execution was successful, the <code>reported</code> values section of the Operation Shadow is used (but only in case of the READ, WRITE and READ COMPOSITE operations).</p>
 <h4 id="communication-flow">Communication flow<a class="headerlink" href="#communication-flow" title="Permanent link">#</a></h4>
@@ -2853,22 +2853,22 @@
 <ol>
 <li>A change in the <code>desired</code> section triggers the <em>operationRequest</em> rule.</li>
 <li>The <em>operationRequest</em> rule sends a request to <strong>AWS Lambda</strong>.</li>
-<li><strong>AWS Lambda</strong> validates the request and forwards it as an event to Coiote DM, making it schedule a task and initiate a device session.  </li>
-<li>Coiote DM communicates with the device.
-   <img alt="AWS - Coiote DM communication flow" src="../images/communication_flow.png" title="AWS - Coiote DM communication flow" /></li>
-<li>The device responds to Coiote DM with the operation result.</li>
-<li>Coiote DM forwards the device response back to the Operation Shadow and the results are published in the <code>reported</code> section.</li>
+<li><strong>AWS Lambda</strong> validates the request and forwards it as an event to Coiote IoT DM, making it schedule a task and initiate a device session.</li>
+<li>Coiote IoT DM communicates with the device.
+   <img alt="AWS - Coiote IoT DM communication flow" src="../images/communication_flow.png" title="AWS - Coiote IoT DM communication flow" /></li>
+<li>The device responds to Coiote IoT DM with the operation result.</li>
+<li>Coiote IoT DM forwards the device response back to the Operation Shadow and the results are published in the <code>reported</code> section.</li>
 <li>The change in the <code>reported</code> section triggers the <em>operationResponse</em> rule.</li>
 <li>The results are then republished using the <em>operationResponse</em> rule to the <a href="#datamodel-shadow">Datamodel shadow</a> (but only in case of the READ, WRITE and READ COMPOSITE operations).</li>
 </ol>
 <h3 id="datamodel-shadow">Datamodel Shadow<a class="headerlink" href="#datamodel-shadow" title="Permanent link">#</a></h3>
-<p>The Datamodel Shadow is the place where the cashed data model of the LwM2M device is stored. What this means is that it is a "read-only shadow" that keeps the most recent record of the device state as it has been reported by Coiote DM - no device operations can be performed from here.</p>
+<p>The Datamodel Shadow is the place where the cashed data model of the LwM2M device is stored. What this means is that it is a "read-only shadow" that keeps the most recent record of the device state as it has been reported by Coiote IoT DM - no device operations can be performed from here.</p>
 <p>The Datamodel Shadow is updated in case of the following events:</p>
 <ol>
-<li>Device <strong>Register</strong> message that comes from Coiote DM,</li>
+<li>Device <strong>Register</strong> message that comes from Coiote IoT DM,</li>
 <li>Device <strong>Notify</strong> and <strong>Send</strong> messages,
-      <img alt="AWS - Coiote DM value change on device" src="../images/device_value_change_diagram.png" title="AWS - Coiote DM value change on device" /></li>
-<li>Republishing operation results from the Operation shadow to the Datamodel shadow using the <em>operationResponse</em> rule.  </li>
+      <img alt="AWS - Coiote IoT DM value change on device" src="../images/device_value_change_diagram.png" title="AWS - Coiote IoT DM value change on device" /></li>
+<li>Republishing operation results from the Operation shadow to the Datamodel shadow using the <em>operationResponse</em> rule.</li>
 </ol>
 <h3 id="cloudwatch-logs">CloudWatch logs<a class="headerlink" href="#cloudwatch-logs" title="Permanent link">#</a></h3>
 <p>CloudWatch collects and keeps a record of all the logs generated on the AWS-side of the integration. You can use these data for analysis and troubleshooting in case of all the AWS integration components:</p>
@@ -2940,7 +2940,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

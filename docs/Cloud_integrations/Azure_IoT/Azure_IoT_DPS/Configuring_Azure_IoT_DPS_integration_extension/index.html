@@ -2781,16 +2781,16 @@
 <!-- Markdown content -->
 <h1 id="connect-integration">Connect integration<a class="headerlink" href="#connect-integration" title="Permanent link">#</a></h1>
 <p>Azure IoT Hub Device Provisioning Service (DPS) is a helper service for Azure IoT Hub that enables zero-touch provisioning of IoT devices at scale. Azure DPS ensures high availability by providing load balancing across multiple hubs and supporting reprovisioning based on a change in the device. For more information about Azure DPS, refer to the <a href="https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps">official documentation</a>.</p>
-<p>Coiote DM communicates with Azure DPS to add a device to the right IoT hub and then receives the credentials to connect to the selected hub. To enable communication between Azure DPS and Coiote DM, you first need to connect them using the Hyperscaler Integration Center in Coiote DM. Follow the instruction below to learn how to do it.</p>
+<p>Coiote IoT DM communicates with Azure DPS to add a device to the right IoT hub and then receives the credentials to connect to the selected hub. To enable communication between Azure DPS and Coiote IoT DM, you first need to connect them using the Hyperscaler Integration Center in Coiote IoT DM. Follow the instruction below to learn how to do it.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An active DPS <a href="https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision#create-a-new-iot-hub-device-provisioning-service">with linked IoT hubs</a>.</li>
 <li>An active IoT Hub with hub owner access permissions. <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal">Read here</a> how to create a hub.</li>
-<li>A Coiote DM user account with permissions to use the Azure DPS integration.</li>
+<li>A Coiote IoT DM user account with permissions to use the Azure DPS integration.</li>
 </ul>
 <h2 id="create-an-enrollment-group">Create an Enrollment group<a class="headerlink" href="#create-an-enrollment-group" title="Permanent link">#</a></h2>
 <p>This step describes how to create an Enrollment group. If you already have one, proceed to the <a href="#get-the-credentials">Get the credentials</a> section.</p>
-<p>A device can be enrolled in Azure DPS either <a href="https://docs.microsoft.com/en-us/azure/iot-dps/tutorial-provision-device-to-hub#enroll-the-device">individually or as a group of devices</a> that share a specific attestation mechanism. Currently, Coiote DM doesn't support Individual Enrollments, so you need to choose the Enrollment group option.</p>
+<p>A device can be enrolled in Azure DPS either <a href="https://docs.microsoft.com/en-us/azure/iot-dps/tutorial-provision-device-to-hub#enroll-the-device">individually or as a group of devices</a> that share a specific attestation mechanism. Currently, Coiote IoT DM doesn't support Individual Enrollments, so you need to choose the Enrollment group option.</p>
 <p>To create an Enrollment group:</p>
 <ol>
 <li>Log in to the <a href="https://portal.azure.com">Azure portal</a> and click on your <strong>Device Provisioning Service</strong>.</li>
@@ -2811,7 +2811,7 @@
 <p>You can also define how devices should be assigned to hubs. From the <strong>Select how you want to assign devices to hubs</strong> drop-down menu, the following options are available: Lowest latency, Evenly weighted distribution, Static configuration, or Custom. For more information, refer to the <a href="https://docs.microsoft.com/en-us/azure/iot-dps/how-to-reprovision#configure-the-enrollment-allocation-policy">official Azure DPS documentation</a>.</p>
 </div>
 <h2 id="get-the-credentials">Get the credentials<a class="headerlink" href="#get-the-credentials" title="Permanent link">#</a></h2>
-<p>This step explains where you can get the credentials for setting up the Azure DPS integration in Coiote DM.</p>
+<p>This step explains where you can get the credentials for setting up the Azure DPS integration in Coiote IoT DM.</p>
 <h3 id="id-scope">ID Scope<a class="headerlink" href="#id-scope" title="Permanent link">#</a></h3>
 <p>The ID Scope is used to identify the specific provisioning service for the device registration. The ID Scope is automatically generated and unique.</p>
 <ol>
@@ -2833,7 +2833,7 @@
 <p><img alt="Copy the Primary key" src="../images/dps-6.png" title="Copy the Primary key" /></p>
 <h2 id="set-up-the-azure-dps-integration">Set up the Azure DPS integration<a class="headerlink" href="#set-up-the-azure-dps-integration" title="Permanent link">#</a></h2>
 <ol>
-<li>In your Coiote DM account, go to <strong>Administration —&gt; Hyperscaler Integration Center</strong>.</li>
+<li>In your Coiote IoT DM account, go to <strong>Administration —&gt; Hyperscaler Integration Center</strong>.</li>
 <li>
 <p>In the <strong>Integration</strong> tab, locate the Azure DPS tale and click <strong>Connect</strong>.</p>
 <p><img alt="Click on the Azure DPS tab" src="../images/dps-7.png" title="Click on the Azure DPS tab" /></p>
@@ -2849,7 +2849,7 @@
 </ol>
 <p><img alt="Enter ID Scope, Enrollment group key and click Save" src="../images/dps-8.png" title="Enter ID Scope, Enrollment group key and click Save" /></p>
 <h2 id="what-happens-next">What happens next<a class="headerlink" href="#what-happens-next" title="Permanent link">#</a></h2>
-<p>After you set up Azure DPS and connect your Azure DPS integration in Coiote DM, device provisioning and reprovisioning to the proper IoT hub are automated. You aren’t required to make any changes in Coiote DM.</p>
+<p>After you set up Azure DPS and connect your Azure DPS integration in Coiote IoT DM, device provisioning and reprovisioning to the proper IoT hub are automated. You aren’t required to make any changes in Coiote IoT DM.</p>
 <p>Importing and exporting devices, upgrading device firmware, and setting observations—all these operations happen at the level of individual hubs. The detailed instructions are provided in our <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/">Azure IoT Hub documentation</a>.</p>
 <p>To see to which hub a device has been assigned:</p>
 <ol>
@@ -2924,7 +2924,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

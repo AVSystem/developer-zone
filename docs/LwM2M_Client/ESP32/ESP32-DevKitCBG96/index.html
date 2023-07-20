@@ -825,8 +825,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-add-device-to-coiote-dm" class="md-nav__link">
-    Step 3: Add device to Coiote DM
+  <a href="#step-3-add-device-to-coiote-iot-dm" class="md-nav__link">
+    Step 3: Add device to Coiote IoT DM
   </a>
   
 </li>
@@ -2687,8 +2687,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-add-device-to-coiote-dm" class="md-nav__link">
-    Step 3: Add device to Coiote DM
+  <a href="#step-3-add-device-to-coiote-iot-dm" class="md-nav__link">
+    Step 3: Add device to Coiote IoT DM
   </a>
   
 </li>
@@ -2724,7 +2724,7 @@
 
 <!-- Markdown content -->
 <h1 id="esp32-devkitc-with-bg96">ESP32-DevKitC with BG96<a class="headerlink" href="#esp32-devkitc-with-bg96" title="Permanent link">#</a></h1>
-<p>Integrate your ESP32-based device with Quectel BG96 module to manage it via Coiote DM.</p>
+<p>Integrate your ESP32-based device with Quectel BG96 module to manage it via Coiote IoT DM.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An ESP32 device.</li>
@@ -2744,7 +2744,7 @@
   <img alt="BG96 UART example configuration" src="../images/BG96_uart_config.png" title="BG96 UART example configuration" /></li>
 <li>In <strong>Client options</strong>, provide device credentials and Server URI:<ul>
 <li><strong>Endpoint name</strong> - your device endpoint name</li>
-<li><strong>Server URI</strong> - the address and port of your Coiote DM installation, e.g. <code>coaps://eu.iot.avsystem.cloud:5684</code></li>
+<li><strong>Server URI</strong> - the address and port of your Coiote IoT DM installation, e.g. <code>coaps://eu.iot.avsystem.cloud:5684</code></li>
 <li><strong>Security mode</strong> - the PSK security mode</li>
 <li><strong>PSK configuration</strong> - the PSK identity and PSK key</li>
 </ul>
@@ -2758,11 +2758,11 @@
 <ol>
 <li>Connect the Tx, Rx and GND pins, respectively, to the ESP32-DevKitC pins selected in the previous step.</li>
 </ol>
-<h2 id="step-3-add-device-to-coiote-dm">Step 3: Add device to Coiote DM<a class="headerlink" href="#step-3-add-device-to-coiote-dm" title="Permanent link">#</a></h2>
-<p>To connect your ESP32-DevKitC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.</p>
+<h2 id="step-3-add-device-to-coiote-iot-dm">Step 3: Add device to Coiote IoT DM<a class="headerlink" href="#step-3-add-device-to-coiote-iot-dm" title="Permanent link">#</a></h2>
+<p>To connect your ESP32-DevKitC to the Coiote IoT Device Management platform, use your access to a Coiote IoT DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.</p>
 <p>To connect the board:</p>
 <ol>
-<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
 <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
@@ -2842,7 +2842,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

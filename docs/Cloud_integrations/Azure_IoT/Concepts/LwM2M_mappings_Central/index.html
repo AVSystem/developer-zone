@@ -2804,8 +2804,8 @@
 
 <!-- Markdown content -->
 <h1 id="lwm2m-mappings-azure-iot-central">LwM2M mappings - Azure IoT Central<a class="headerlink" href="#lwm2m-mappings-azure-iot-central" title="Permanent link">#</a></h1>
-<p>In this section you'll get to know how the mappings are arranged between the LwM2M protocol as used in Coiote DM and the data retrieval and processing mechanisms of Azure IoT Central.</p>
-<p>These processing mechanisms of Azure IoT Central have the same names as data formats in Coiote DM: Properties, Command, and Telemetry. Properties describe the actual value, Command executes commands, and Telemetry observes changes in values over time.</p>
+<p>In this section you'll get to know how the mappings are arranged between the LwM2M protocol as used in Coiote IoT DM and the data retrieval and processing mechanisms of Azure IoT Central.</p>
+<p>These processing mechanisms of Azure IoT Central have the same names as data formats in Coiote IoT DM: Properties, Command, and Telemetry. Properties describe the actual value, Command executes commands, and Telemetry observes changes in values over time.</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
 <p>The LwM2M protocol data model is organized as a three-level tree that has the following structure:</p>
 <ul>
@@ -2822,15 +2822,15 @@
 <p class="admonition-title">Info</p>
 <p>If you would like to dive deeper into the details of the Lightweight M2M protocol, please refer to <a href="https://avsystem.github.io/Anjay-doc/LwM2M.html">our brief introduction to LwM2M</a>.</p>
 </div>
-<p>This division into readable, writable, executable and observable data model entities is the basis for the mapping of LwM2M resources (as interpreted by Coiote DM) into the Azure IoT Central data processing mechanisms.</p>
+<p>This division into readable, writable, executable and observable data model entities is the basis for the mapping of LwM2M resources (as interpreted by Coiote IoT DM) into the Azure IoT Central data processing mechanisms.</p>
 <h2 id="lwm2m-readable-and-writable-resources">LwM2M readable and writable resources<a class="headerlink" href="#lwm2m-readable-and-writable-resources" title="Permanent link">#</a></h2>
-<p>Within the <strong>Coiote DM - Azure IoT Central integration</strong>, readable and writable resources are interpreted as Properties. The data structure is represented in one line where objects, object instances, and resources are separated by <code>n</code>. For example: <code>n1n0n3</code>, where 1 is object, 0 is object instance, and 3 is resource.</p>
+<p>Within the <strong>Coiote IoT DM - Azure IoT Central integration</strong>, readable and writable resources are interpreted as Properties. The data structure is represented in one line where objects, object instances, and resources are separated by <code>n</code>. For example: <code>n1n0n3</code>, where 1 is object, 0 is object instance, and 3 is resource.</p>
 <p>In Azure IoT Central, Properties as well as other device capabilities (Telemetry and Command, read more on them below) are defined in a model which is part of the <a href="https://docs.microsoft.com/en-us/azure/iot-central/core/concepts-device-templates">device template</a>. The device template defines the characteristics of the device that is connected to your IoT Central application.</p>
 <h3 id="read-communication-flow">READ - Communication flow<a class="headerlink" href="#read-communication-flow" title="Permanent link">#</a></h3>
 <p>Data model resources that are read-only, such as <code>Manufacturer</code> (with ID <strong>3/0/0</strong>) will be mapped to Azure IoT Central as a reported property.</p>
 <p><img alt="Properties READ" src="../images/Properties.png" title="READ Manufacturer" /></p>
 <h3 id="write-communication-flow">WRITE - Communication flow<a class="headerlink" href="#write-communication-flow" title="Permanent link">#</a></h3>
-<p>On the other hand, a writable resource, such as <code>Lifetime</code> (with ID <strong>1/0/1</strong>), apart from being represented as a reported property, can be additionally mapped as a desired property. This enables you to synchronize the device data model and configuration between Azure and Coiote DM.</p>
+<p>On the other hand, a writable resource, such as <code>Lifetime</code> (with ID <strong>1/0/1</strong>), apart from being represented as a reported property, can be additionally mapped as a desired property. This enables you to synchronize the device data model and configuration between Azure and Coiote IoT DM.</p>
 <p><img alt="Properties WRITE Lifetime" src="../images/Properties-WRITE.png" title="WRITE Lifetime" /></p>
 <p>In Azure IoT Central, changing the value of a writable resource is done by <a href="https://docs.microsoft.com/en-us/azure/iot-central/core/howto-manage-devices-in-bulk">running a job</a>.</p>
 <h2 id="lwm2m-executable-resources">LwM2M executable resources<a class="headerlink" href="#lwm2m-executable-resources" title="Permanent link">#</a></h2>
@@ -2842,16 +2842,16 @@
 <p>To do so, select a device from the <strong>Devices</strong> page in Azure IoT Central and click the <strong>Commands</strong> tab. Click <strong>Run</strong> to run a necessary command.</p>
 <p><img alt="Device twin READ" src="../images/commands.png" title="Commands tab" /></p>
 <h3 id="command-communication-flow">COMMAND - Communication flow<a class="headerlink" href="#command-communication-flow" title="Permanent link">#</a></h3>
-<p>Invoking Command from Azure IoT Central and handling it by Coiote DM in the form of a COMMAND operation passed to the device has the following flow:</p>
+<p>Invoking Command from Azure IoT Central and handling it by Coiote IoT DM in the form of a COMMAND operation passed to the device has the following flow:</p>
 <p><img alt="COMMAND Factory reset" src="../images/Command.png" title="COMMAND Factory reset" /></p>
 <h2 id="lwm2m-observable-resources">LwM2M observable resources<a class="headerlink" href="#lwm2m-observable-resources" title="Permanent link">#</a></h2>
-<p>In Coiote DM, some of the resources within the device data model can be observed for changes in value. These are generally resources related to telemetry data or other measurements. Their value changes can be monitored by Coiote DM and reported to Azure IoT Central with help of Telemetry device capability.</p>
+<p>In Coiote IoT DM, some of the resources within the device data model can be observed for changes in value. These are generally resources related to telemetry data or other measurements. Their value changes can be monitored by Coiote IoT DM and reported to Azure IoT Central with help of Telemetry device capability.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To learn more about Telemetry, go to the <a href="https://docs.microsoft.com/en-us/azure/iot-central/core/concepts-telemetry-properties-commands#telemetry">respective subsection</a> of the Azure IoT Central documentation.</p>
 </div>
 <h3 id="observe-communication-flow">Observe - Communication flow<a class="headerlink" href="#observe-communication-flow" title="Permanent link">#</a></h3>
-<p>Setting an Observe operation on a resource in Coiote DM, for instance a temperature reading, will result in a Notify message sent by the device upon value change. Then Coiote DM transfers this message to Azure IoT Central using Telemetry.</p>
+<p>Setting an Observe operation on a resource in Coiote IoT DM, for instance a temperature reading, will result in a Notify message sent by the device upon value change. Then Coiote IoT DM transfers this message to Azure IoT Central using Telemetry.</p>
 <p><img alt="Telemetry Observe Temperature" src="../images/Telemetry.png" title="Observe Temperature" /></p>
 <p>To set an Observe operation in Azure IoT Central, you need to add a <a href="/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/">Job</a> in the IoT Central application. As you can see in the <strong>Devices &gt; Raw data</strong> tab, an Observation is represented in the following format:</p>
 <div class="highlight"><pre><span></span><code>“n1n1n1_attributes”: “(\”observed\”:true,\”pmin\”:20}”
@@ -2921,7 +2921,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

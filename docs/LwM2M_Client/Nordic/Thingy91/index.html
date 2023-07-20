@@ -2838,7 +2838,7 @@
 <ul>
 <li>The <strong>Thingy:91</strong> board with a USB cable and SIM card.</li>
 <li>Installed <strong>minicom</strong> or <strong>RealTerm</strong> (for Linux or Mac) or <strong>PuTTy</strong> (for Windows) or other serial communication program.</li>
-<li>A user with access to the <a href="https://eu.iot.avsystem.cloud/ui/device/inventory"><strong>Coiote IoT Device Management</strong></a> platform.</li>
+<li>A user with access to the Coiote IoT Device Management platform.</li>
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
 <h3 id="use-an-already-built-binary">Use an already built binary<a class="headerlink" href="#use-an-already-built-binary" title="Permanent link">#</a></h3>
@@ -2903,10 +2903,10 @@ west update
 <p>To program the board, go through the process of <strong>flashing Thingy:91</strong>. Use the nRF Connect Programmer with the downloaded <code>.hex</code> file and follow the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application">program the nRF9160 SiP application</a> section.</p>
 <p>After successful flashing, reboot the board and go to the next step.</p>
 <h2 id="connect-to-the-lwm2m-server">Connect to the LwM2M Server<a class="headerlink" href="#connect-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud/">https://eu.iot.avsystem.cloud</a>.</p>
+<p>To connect to Coiote IoT Device Management platform, please register at <a href="https://eu.iot.avsystem.cloud/">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
 <ol>
-<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
     <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
@@ -2940,13 +2940,7 @@ west update
 </li>
 <li>
 <p>Use the <code>anjay</code> command to list possible options:</p>
-<div class="highlight"><pre><span></span><code>uart:~$ anjay
-anjay - Anjay commands
-Subcommands:
-start   :Save config and start Anjay
-stop    :Stop Anjay
-config  :Configure Anjay params
-</code></pre></div>
+<p><img alt="Anjay commands" src="../images/console_gen_a4968d2dfca4dfcc337f847edc69dd1a.png" title="Anjay commands" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To show available subcommands, use the <strong>Tab</strong> key.</p>
@@ -2956,7 +2950,7 @@ config  :Configure Anjay params
 <p>Check your default credentials by following the instructions in the program:</p>
 <div class="highlight"><pre><span></span><code>anjay config show
 </code></pre></div>
-<p><img alt="Anjay configuration" src="../images/anjay_config.png" title="Anjay configuration" /></p>
+<p><img alt="Anjay Configuration" src="../images/console_gen_6960cd80d4230d2447de0f1632f266fc.png" title="Anjay Configuration" /></p>
 </li>
 <li>
 <p>Update your device credentials:</p>
@@ -2984,7 +2978,7 @@ config  :Configure Anjay params
 </code></pre></div>
 </li>
 <li>
-<p>Go to the Coiote DM to check if your device is connected.
+<p>Go to the Coiote IoT DM to check if your device is connected.
     <img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
 </li>
 </ol>
@@ -3066,7 +3060,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

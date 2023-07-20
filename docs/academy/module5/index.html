@@ -2769,7 +2769,7 @@
 <p>The LwM2M protocol provides a standardized process for remote firmware updates. When developers follow the standardized guidelines provided by the protocol, updating the firmware of resource-constrained devices remotely can be accomplished effortlessly, regardless of the device or platform used.</p>
 <h2 id="the-lwm2m-way-of-updating-firmware">The LwM2M way of updating firmware<a class="headerlink" href="#the-lwm2m-way-of-updating-firmware" title="Permanent link">#</a></h2>
 <p>Remote firmware updates know many names, such as Firmware Update OTA (FUOTA) or Device Firmware Upgrade (DFU). Device vendors can develop their own custom FOTA mechanisms, however, these implementations are specific to the vendor or platform and cannot be easily ported to other systems. The problem of vendor compatibility can be resolved by adopting the LwM2M standard, which is hardware agnostic and can be implemented on any hardware platform.</p>
-<p>The LwM2M firmware update process consists of four steps: </p>
+<p>The LwM2M firmware update process consists of four steps:</p>
 <ol>
 <li>The LwM2M Client is <strong>triggered</strong> to initiate the firmware update process</li>
 <li>The Client <strong>downloads</strong> the firmware and reports to the LwM2M Server when the download is finished</li>
@@ -2778,9 +2778,9 @@
 </ol>
 <p>This procedure is defined in detail in the LwM2M specifications (see <a href="https://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-1-0-E61-Firmware-Update-State-Machine">LwM2M specifications</a>). To add firmware update capabilities to a device, the <a href="http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2F5.xml">Firmware Update Object /5</a> needs to be implemented containing all essential functionalities for conducting the update and reporting the status. Several LwM2M Clients natively support this Firmware Update Object, including <a href="https://www.avsystem.com/products/anjay/">AVSystem’s Anjay LwM2M Client</a> and <a href="https://docs.zephyrproject.org/latest/samples/net/lwm2m_client/README.html">Zephyr’s LwM2M Client</a>.</p>
 <p><img alt="FOTA in progress" src="../images/module5_in-progress-basic.png" />
-<em><p style="text-align: center;">Updating a device’s firmware using Coiote IoT Device Management</p></em></p>
+<em><p style="text-align: center;">Updating a device’s firmware using Coiote IoT Device Management platform</p></em></p>
 <h2 id="download-a-new-firmware">Download a new firmware<a class="headerlink" href="#download-a-new-firmware" title="Permanent link">#</a></h2>
-<p>The LwM2M standard defines two methods to perform a firmware update, allowing either the Client or the Server to decide on the best moment to start the download of the new firmware. </p>
+<p>The LwM2M standard defines two methods to perform a firmware update, allowing either the Client or the Server to decide on the best moment to start the download of the new firmware.</p>
 <h4 id="pull-method">PULL method<a class="headerlink" href="#pull-method" title="Permanent link">#</a></h4>
 <p>In the PULL scenario, the LwM2M Server provides the device with the address of the server containing the firmware file known as the <strong>Package URI</strong>. The device subsequently downloads the firmware from the so-called firmware repository at the earliest available opportunity.</p>
 <h4 id="push-method">PUSH method<a class="headerlink" href="#push-method" title="Permanent link">#</a></h4>
@@ -2959,7 +2959,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

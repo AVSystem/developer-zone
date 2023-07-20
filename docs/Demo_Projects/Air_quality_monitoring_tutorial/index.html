@@ -1842,8 +1842,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub" class="md-nav__link">
-    Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub
+  <a href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-iot-dm-and-azure-iot-hub" class="md-nav__link">
+    Adding and connecting LwM2M air quality meter simulators to Coiote IoT DM and Azure IoT Hub
   </a>
   
 </li>
@@ -1857,15 +1857,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#from-coiote-dm-to-azure-iot-hub" class="md-nav__link">
-    From Coiote DM to Azure IoT Hub
+  <a href="#from-coiote-iot-dm-to-azure-iot-hub" class="md-nav__link">
+    From Coiote IoT DM to Azure IoT Hub
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#from-azure-iot-hub-to-coiote-dm" class="md-nav__link">
-    From Azure IoT Hub to Coiote DM
+  <a href="#from-azure-iot-hub-to-coiote-iot-dm" class="md-nav__link">
+    From Azure IoT Hub to Coiote IoT DM
   </a>
   
 </li>
@@ -1884,8 +1884,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#setting-group-value-tracking-on-resources-in-coiote-dm" class="md-nav__link">
-    Setting group value tracking on resources in Coiote DM
+  <a href="#setting-group-value-tracking-on-resources-in-coiote-iot-dm" class="md-nav__link">
+    Setting group value tracking on resources in Coiote IoT DM
   </a>
   
 </li>
@@ -2779,8 +2779,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub" class="md-nav__link">
-    Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub
+  <a href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-iot-dm-and-azure-iot-hub" class="md-nav__link">
+    Adding and connecting LwM2M air quality meter simulators to Coiote IoT DM and Azure IoT Hub
   </a>
   
 </li>
@@ -2794,15 +2794,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#from-coiote-dm-to-azure-iot-hub" class="md-nav__link">
-    From Coiote DM to Azure IoT Hub
+  <a href="#from-coiote-iot-dm-to-azure-iot-hub" class="md-nav__link">
+    From Coiote IoT DM to Azure IoT Hub
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#from-azure-iot-hub-to-coiote-dm" class="md-nav__link">
-    From Azure IoT Hub to Coiote DM
+  <a href="#from-azure-iot-hub-to-coiote-iot-dm" class="md-nav__link">
+    From Azure IoT Hub to Coiote IoT DM
   </a>
   
 </li>
@@ -2821,8 +2821,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#setting-group-value-tracking-on-resources-in-coiote-dm" class="md-nav__link">
-    Setting group value tracking on resources in Coiote DM
+  <a href="#setting-group-value-tracking-on-resources-in-coiote-iot-dm" class="md-nav__link">
+    Setting group value tracking on resources in Coiote IoT DM
   </a>
   
 </li>
@@ -2870,14 +2870,14 @@
 
 <!-- Markdown content -->
 <h1 id="air-quality-monitoring-using-azure-iot-hub-and-power-bi">Air quality monitoring using Azure IoT Hub and Power BI<a class="headerlink" href="#air-quality-monitoring-using-azure-iot-hub-and-power-bi" title="Permanent link">#</a></h1>
-<p>The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the Coiote DM - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.</p>
+<p>The Coiote IoT DM and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the Coiote IoT DM - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.</p>
 <iframe width="640" height="360"  src="https://www.youtube.com/embed/Ck0WJp4grb0" frameborder="0" allowfullscreen="true"> </iframe>
 
 <p>The text version of the tutorial, complete with the necessary steps and code snippets, is available below:</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An active Azure subscription.</li>
-<li>An active Coiote DM account. Please refer to <a href="https://www.avsystem.com/products/coiote-iot-device-management-platform/">Coiote DM home page</a> for details on how to get it.</li>
+<li>An active Coiote IoT DM account. Please refer to <a href="https://www.avsystem.com/products/coiote-iot-device-management-platform/">Coiote IoT DM home page</a> for details on how to get it.</li>
 <li>An active Microsoft Power BI account.</li>
 <li>An OpenWeatherMap account with a free API token.</li>
 <li>An active and configured Azure CLI - please refer to the <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Azure CLI installation guide</a> for details.</li>
@@ -2920,9 +2920,9 @@
 <li>In the <strong>Review + create</strong> tab, click <strong>Create</strong>.</li>
 </ol>
 <h2 id="configuring-the-azure-iot-hub-integration-extension">Configuring the Azure IoT Hub integration extension<a class="headerlink" href="#configuring-the-azure-iot-hub-integration-extension" title="Permanent link">#</a></h2>
-<p>Once the deployments are complete, go to Coiote DM to set up the Azure IoT Hub extension.
+<p>Once the deployments are complete, go to Coiote IoT DM to set up the Azure IoT Hub extension.
 If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension">instruction for the Azure IoT Hub integration configuration</a>.</p>
-<h2 id="adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub">Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub<a class="headerlink" href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-dm-and-azure-iot-hub" title="Permanent link">#</a></h2>
+<h2 id="adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-iot-dm-and-azure-iot-hub">Adding and connecting LwM2M air quality meter simulators to Coiote IoT DM and Azure IoT Hub<a class="headerlink" href="#adding-and-connecting-lwm2m-air-quality-meter-simulators-to-coiote-iot-dm-and-azure-iot-hub" title="Permanent link">#</a></h2>
 <ol>
 <li>
 <p>Go to your Azure IoT Hub and add new devices:</p>
@@ -2937,12 +2937,12 @@ If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integrat
 <li>Click <strong>Save</strong>.
      <img alt="Saving IoT Hub devices" src="../images/device_save.png" title="New_device_save" /></li>
 <li>Repeat the procedure for the other 5 devices (increase the number included in the device name).</li>
-<li>Go to Coiote DM and sync the previously added devices:</li>
+<li>Go to Coiote IoT DM and sync the previously added devices:</li>
 <li>In <strong>Device inventory</strong>, select <strong>Sync with IoT platform -&gt; Azure IoT Hub</strong>.
 <img alt="Syncing IoT Hub devices" src="../images/hub_sync_menu.png" title="Device_sync" /></li>
 <li>In the pop-up, click <strong>Sync devices</strong>.
 <img alt="Device sync" src="../images/sync_devices.png" title="Device_sync2" /></li>
-<li>Devices should then be visible in <strong>Device inventory</strong>   </li>
+<li>Devices should then be visible in <strong>Device inventory</strong></li>
 <li>Go to your command line and register the device simulators:</li>
 <li>
 <p>Paste and run the following command to create a container group:
@@ -2960,7 +2960,7 @@ If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integrat
 </ul>
 </li>
 <li>
-<p>Go back to Coiote DM and in <strong>Device inventory</strong>, check if the devices have registered to the platform and if their data model has been updated.</p>
+<p>Go back to Coiote IoT DM and in <strong>Device inventory</strong>, check if the devices have registered to the platform and if their data model has been updated.</p>
 <ul>
 <li>Click the <strong>Refresh data</strong> icon if needed.</li>
 <li>Click on a device and in the <strong>Device Management Center</strong>, select the <strong>Actions</strong> panel.</li>
@@ -2972,24 +2972,24 @@ If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integrat
 <h2 id="bidirectional-communication-using-device-twin">Bidirectional communication using Device Twin<a class="headerlink" href="#bidirectional-communication-using-device-twin" title="Permanent link">#</a></h2>
 </li>
 </ol>
-<h3 id="from-coiote-dm-to-azure-iot-hub">From Coiote DM to Azure IoT Hub<a class="headerlink" href="#from-coiote-dm-to-azure-iot-hub" title="Permanent link">#</a></h3>
+<h3 id="from-coiote-iot-dm-to-azure-iot-hub">From Coiote IoT DM to Azure IoT Hub<a class="headerlink" href="#from-coiote-iot-dm-to-azure-iot-hub" title="Permanent link">#</a></h3>
 <ol>
-<li>In your Coiote DM account, go to <strong>Device inventory</strong>, select a device.</li>
+<li>In your Coiote IoT DM account, go to <strong>Device inventory</strong>, select a device.</li>
 <li>In the <strong>Device Management Center</strong>, go to the <strong>Objects</strong> panel.</li>
 <li>In the <code>1 LwM2M Server</code> object, find the <code>Lifetime</code> resource.</li>
 <li>Click the <strong>pen</strong> icon next to it, change the lifetime value and click the <strong>Apply</strong> link.</li>
 <li>Go to your Azure IoT hub, select <strong>IoT devices</strong>, click your device and select the <strong>Device Twin</strong> panel.</li>
-<li>Click <strong>Refresh</strong> and check in the JSON payload if the reported property for the <code>1/0/1</code> (Lifetime) resource has changed.   </li>
+<li>Click <strong>Refresh</strong> and check in the JSON payload if the reported property for the <code>1/0/1</code> (Lifetime) resource has changed.</li>
 </ol>
-<h3 id="from-azure-iot-hub-to-coiote-dm">From Azure IoT Hub to Coiote DM<a class="headerlink" href="#from-azure-iot-hub-to-coiote-dm" title="Permanent link">#</a></h3>
+<h3 id="from-azure-iot-hub-to-coiote-iot-dm">From Azure IoT Hub to Coiote IoT DM<a class="headerlink" href="#from-azure-iot-hub-to-coiote-iot-dm" title="Permanent link">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To read more about how the Device Twins work in the Coiote DM - Azure IoT Hub integration, please refer to <a href="/Concepts/LwM2M_mappings/#lwm2m-readable-and-writable-resources">the LwM2M Mappings section</a>.</p>
+<p>To read more about how the Device Twins work in the Coiote IoT DM - Azure IoT Hub integration, please refer to <a href="/Concepts/LwM2M_mappings/#lwm2m-readable-and-writable-resources">the LwM2M Mappings section</a>.</p>
 </div>
 <ol>
 <li>In your Azure IoT hub, select <strong>IoT devices</strong>, click one of your added devices and select the <strong>Device Twin</strong> panel.</li>
 <li>
-<p>To change the <code>Lifetime</code> resource in Coiote DM, you need to modify the relevant Device Twin desired property.</p>
+<p>To change the <code>Lifetime</code> resource in Coiote IoT DM, you need to modify the relevant Device Twin desired property.</p>
 <ul>
 <li>under the <code>properties</code> tag in the Device Twin JSON payload, paste the following nested structure:</li>
 </ul>
@@ -3009,13 +3009,13 @@ If you haven't done this yet, please follow the <a href="/Azure_IoT_Hub_integrat
   - Click <strong>Save</strong> and <strong>Refresh</strong>.</p>
 </li>
 <li>
-<p>The value of the resource should now be changed in the Device Twin reported properties as well as in the Coiote DM Objects panel, in the <code>Lifetime</code> resource of the <code>1 LwM2M Server</code> object.</p>
+<p>The value of the resource should now be changed in the Device Twin reported properties as well as in the Coiote IoT DM Objects panel, in the <code>Lifetime</code> resource of the <code>1 LwM2M Server</code> object.</p>
 </li>
 </ol>
 <h2 id="passing-telemetry-to-azure-iot-hub">Passing telemetry to Azure IoT Hub<a class="headerlink" href="#passing-telemetry-to-azure-iot-hub" title="Permanent link">#</a></h2>
-<h3 id="setting-group-value-tracking-on-resources-in-coiote-dm">Setting group value tracking on resources in Coiote DM<a class="headerlink" href="#setting-group-value-tracking-on-resources-in-coiote-dm" title="Permanent link">#</a></h3>
+<h3 id="setting-group-value-tracking-on-resources-in-coiote-iot-dm">Setting group value tracking on resources in Coiote IoT DM<a class="headerlink" href="#setting-group-value-tracking-on-resources-in-coiote-iot-dm" title="Permanent link">#</a></h3>
 <ol>
-<li>In Coiote DM, go to <strong>Device inventory</strong> and use the search option to display your air quality meter devices. Then, click the <strong>Add to group</strong> icon.</li>
+<li>In Coiote IoT DM, go to <strong>Device inventory</strong> and use the search option to display your air quality meter devices. Then, click the <strong>Add to group</strong> icon.</li>
 <li>In the pop-up, click <strong>Add to new group</strong>, provide a name for your group (following the pattern root.iothubexample.airqualitymeter), click <strong>Confirm</strong> and <strong>Yes</strong>.</li>
 <li>Go to the <strong>Group management</strong> panel, select your group and click <strong>Devices</strong> to see if all of your devices are added to the group.</li>
 <li>Go to the <strong>Value tracking</strong> panel and click <strong>Add new</strong>. In the pop-up:<ul>
@@ -3151,7 +3151,7 @@ FROM
 <li>Click the <strong>more options</strong> icon and select <strong>Create report</strong><ul>
 <li>From the <strong>Visualizations</strong> menu, select the <strong>table</strong> icon and drag and drop it to the work space.<ul>
 <li>From the <strong>Fields</strong> menu, select the <code>deviceId2</code>, <code>temperature</code>, <code>pm10</code> and <code>pm25</code> parameters.</li>
-<li>In the <strong>Values</strong> submenu, expand the drop-down list for the <code>temperature</code>, <code>pm10</code> and <code>pm25</code> parameters and select <strong>Average</strong> for each.   </li>
+<li>In the <strong>Values</strong> submenu, expand the drop-down list for the <code>temperature</code>, <code>pm10</code> and <code>pm25</code> parameters and select <strong>Average</strong> for each.</li>
 </ul>
 </li>
 </ul>
@@ -3235,7 +3235,7 @@ FROM
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

@@ -2715,11 +2715,11 @@
 <p>Here’s a tutorial to get you started with device provisioning using a dedicated script to be found in the <a href="https://github.com/AVSystem/Anjay-zephyr-client">Anjay Zephyr Client repository</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>A Nordic board connected to your computer. </li>
+<li>A Nordic board connected to your computer.</li>
 <li>Installed <a href="https://go.dev/dl">Go Programming language</a>.</li>
 <li>Installed <a href="https://docs.zephyrproject.org/3.1.0/services/device_mgmt/mcumgr.html">mcumgr command line tool</a>.</li>
 <li>Zephyr development environment set up.</li>
-<li>An active <a href="https://eu.iot.avsystem.cloud">Coiote DM cloud</a> account.</li>
+<li>An active <a href="https://eu.iot.avsystem.cloud">Coiote IoT DM cloud</a> account.</li>
 <li>If you're using Windows: possibility to run Linux scripts/tools either via WSL, Cygwin or other.</li>
 </ul>
 <div class="admonition important">
@@ -2737,16 +2737,16 @@
 <p>Edit <code>endpoint_cfg</code> contains LwM2M objects setting that will be uploaded to the device. Set <code>RID.Security.PKOrIdentity</code> and <code>RID.Security.SecretKey</code>. Make sure that <code>RID.Security.Mode</code> is set to <code>0</code>.</p>
 </li>
 <li>
-<p>Edit <code>lwm2m_server.json</code> modify <code>domain</code> entry to reflect your domain in Coiote server. This file is needed if you wish the script to automatically add the new device to Coiote DM.</p>
+<p>Edit <code>lwm2m_server.json</code> modify <code>domain</code> entry to reflect your domain in Coiote IoT DM server. This file is needed if you wish the script to automatically add the new device to Coiote IoT DM.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Get the Coiote DM Access Token</p>
-<p>The provisioning script can register your device to Coiote DM automatically. You might use this option for the sake of this tutorial, but this is an optional step.</p>
+<p>Get the Coiote IoT DM Access Token</p>
+<p>The provisioning script can register your device to Coiote IoT DM automatically. You might use this option for the sake of this tutorial, but this is an optional step.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you wish to skip device registration to Coiote DM, then call <code>ptool.py</code> without <code>-t</code> and <code>-S</code> options.</p>
+<p>If you wish to skip device registration to Coiote IoT DM, then call <code>ptool.py</code> without <code>-t</code> and <code>-S</code> options.</p>
 </div>
 <p>First an access token needs to be generated.</p>
 <ul>
@@ -2800,14 +2800,14 @@ curl -X POST \
 <p class="admonition-title">Note</p>
 <p>To see all of the options available in the script run <code>./ptool.py -h</code>.</p>
 </div>
-<p>If everything went well then your device should be visible in Coiote DM.</p>
+<p>If everything went well then your device should be visible in Coiote IoT DM.</p>
 </li>
 </ol>
 <h2 id="provisioning-the-device-using-certificates">Provisioning the device using certificates<a class="headerlink" href="#provisioning-the-device-using-certificates" title="Permanent link">#</a></h2>
 <p>Now we will show how to provision the device using certificates. This method is very similar to the provisioning the device with PSK and will require just a few additional steps.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You may need to remove the device from Coiote if you finished the steps in previous section and the device is already registered. Coiote will not allow registration of the device with the same name.</p>
+<p>You may need to remove the device from Coiote IoT DM if you finished the steps in previous section and the device is already registered. Coiote IoT DM will not allow registration of the device with the same name.</p>
 </div>
 <ol>
 <li>
@@ -2819,7 +2819,7 @@ curl -X POST \
 </div>
 <ul>
 <li>
-<p>Edit <code>lwm2m_server.json</code> modify <code>domain</code> entry to reflect your domain in Coiote server.</p>
+<p>Edit <code>lwm2m_server.json</code> modify <code>domain</code> entry to reflect your domain in Coiote IoT DM server.</p>
 </li>
 <li>
 <p>Edit <code>cert_info.json</code>. This file contains information for generating a self signed certificate. This configuration is needed only if user don't want to provide certificates generated ealier.</p>
@@ -2836,7 +2836,7 @@ curl -X POST \
 </div>
 </li>
 <li>
-<p>Getting Coiote Access Token</p>
+<p>Getting Coiote IoT DM Access Token</p>
 <p>Repeat this step from previous section to acquire a new token.</p>
 </li>
 <li>
@@ -2862,11 +2862,11 @@ curl -X POST \
 </div>
 </li>
 <li>
-<p>Connecting device to Coiote</p>
+<p>Connecting device to Coiote IoT DM</p>
 <p>The certificates for the device need to be uploaded by hand. To do this fallow those steps:</p>
 <ul>
 <li>
-<p>Log in Coiote DM</p>
+<p>Log in Coiote IoT DM</p>
 </li>
 <li>
 <p>On the left side choose <code>Administration -&gt; DTLS/TLS certificates</code></p>
@@ -2875,7 +2875,7 @@ curl -X POST \
 <p>Click <code>Add File</code>, in a popup window enter a name and upload the public certificate. The self signed certificate generated by the script should be in <code>Anjay-zephyr-client/demo/cert</code> directory.</p>
 </li>
 </ul>
-<p>If everyting went well you should see your new certificate and the device should be ready to connect to Coiote. </p>
+<p>If everyting went well you should see your new certificate and the device should be ready to connect to Coiote IoT DM.</p>
 </li>
 </ol>
 
@@ -2939,7 +2939,7 @@ curl -X POST \
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

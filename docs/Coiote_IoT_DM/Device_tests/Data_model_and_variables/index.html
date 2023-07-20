@@ -2735,7 +2735,7 @@
 <!-- Markdown content -->
 <h1 id="device-data-model-and-variables">Device data model and variables<a class="headerlink" href="#device-data-model-and-variables" title="Permanent link">#</a></h1>
 <h2 id="displaying-device-data-model-and-running-simple-actions">Displaying device data model and running simple actions<a class="headerlink" href="#displaying-device-data-model-and-running-simple-actions" title="Permanent link">#</a></h2>
-<p>Coiote DM gives you the possibility to view and perform actions on the data model of individual devices defined by the LwM2M protocol. This view is available under the <strong>Objects</strong> panel of your device. Read this chapter to learn how to use the panel.</p>
+<p>Coiote IoT DM gives you the possibility to view and perform actions on the data model of individual devices defined by the LwM2M protocol. This view is available under the <strong>Objects</strong> panel of your device. Read this chapter to learn how to use the panel.</p>
 <p><img alt="The Objects panel" src="../images/image062.png" title="The Objects panel" /></p>
 <ol>
 <li><strong>Search</strong> - use it to find a particular object. To find the object, type its name.</li>
@@ -2801,7 +2801,7 @@ To enter the <strong>Variables</strong> panel, go to <strong>Device Management C
 <p>To use device variables, enter the expression context by typing <code>${variable.&lt;variableName&gt;}</code> while defining a test action. Remember that each variable is treated as a string, therefore, to use it as a different data type, you will have to cast it to the appropriate type. </p>
 <h4 id="using-variables-example">Using variables - example<a class="headerlink" href="#using-variables-example" title="Permanent link">#</a></h4>
 <p>Learn how to use device variables in <strong>Device tests</strong> in a few steps:</p>
-<p>Use case: Testing the <strong>WRITE</strong> action on the <code>LwM2M Server.1.Lifetime</code> resource.  </p>
+<p>Use case: Testing the <strong>WRITE</strong> action on the <code>LwM2M Server.1.Lifetime</code> resource.</p>
 <ol>
 <li>
 <p>Add the variable:</p>
@@ -2850,7 +2850,7 @@ To enter the <strong>Variables</strong> panel, go to <strong>Device Management C
 <li>After the test is finished, check if the <em>Lifetime</em> resource value has changed on the device:<ul>
 <li>Go to the <strong>Objects</strong> panel of your device and under the <strong>LwM2M Server</strong> object, look for the <strong>Lifetime</strong> resource value:
 <img alt="Checking device data model" src="../images/image106.png" title="Checking device data model" /></li>
-<li>If the value has changed accordingly, the variable can be now reused and populated to any other tests.    </li>
+<li>If the value has changed accordingly, the variable can be now reused and populated to any other tests.</li>
 </ul>
 </li>
 </ul>
@@ -2917,7 +2917,7 @@ To enter the <strong>Variables</strong> panel, go to <strong>Device Management C
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

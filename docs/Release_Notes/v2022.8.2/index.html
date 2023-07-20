@@ -2739,13 +2739,13 @@
 <p>Previous version: <a href="../v2022.7.3/">v2022.7.3</a></p>
 <h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
 <h3 id="udp-connector-in-standalone-mode-or-disabled">UDP connector in standalone mode or disabled<a class="headerlink" href="#udp-connector-in-standalone-mode-or-disabled" title="Permanent link">#</a></h3>
-<p>We have removed the option of embedding the UDP connector within the Coiote DM main system process. The UDP connector can be now either disabled or work in standalone mode. When disabling, there is no need for building a new package - setting a single config property in <code>cdm.conf</code> is enough:
+<p>We have removed the option of embedding the UDP connector within the Coiote IoT DM main system process. The UDP connector can be now either disabled or work in standalone mode. When disabling, there is no need for building a new package - setting a single config property in <code>cdm.conf</code> is enough:
 <div class="highlight"><pre><span></span><code>udpConnector.mode = Disabled # Disabled or Enabled
 </code></pre></div></p>
 <h3 id="simplified-setup-of-aws-integration">Simplified setup of AWS integration<a class="headerlink" href="#simplified-setup-of-aws-integration" title="Permanent link">#</a></h3>
 <p>We have simplified the setup of the AWS integration. Now building and updating new lambdas is automated using one configuration template with all the required lambdas and dependencies. The updated integration guide can be found <a href="https://iotdevzone.avsystem.com/docs/AWS_Integration_Guide/Configuring_AWS_integration/">here</a>.</p>
 <h3 id="modification-and-creation-dates-in-device-test-repository">Modification and creation dates in Device test repository<a class="headerlink" href="#modification-and-creation-dates-in-device-test-repository" title="Permanent link">#</a></h3>
-<p>We have added modification and creation dates as new columns in the Device test repository.  </p>
+<p>We have added modification and creation dates as new columns in the Device test repository.</p>
 <p><img alt="Modification and creation dates in device test repository" src="../images/devtests.png" title="Modification and creation dates in device test repository" /></p>
 <h3 id="updating-user-properties-via-api-patch-method">Updating user properties via API PATCH method<a class="headerlink" href="#updating-user-properties-via-api-patch-method" title="Permanent link">#</a></h3>
 <p>We have added a new PATCH method to the Users API. This allows for updating the following user properties via API: <strong>emailVerified</strong>, <strong>userEnabled</strong>, <strong>domain</strong>, <strong>password</strong>, <strong>roles</strong>, <strong>permissions</strong>, <strong>tosAccepted</strong>.</p>
@@ -2810,7 +2810,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

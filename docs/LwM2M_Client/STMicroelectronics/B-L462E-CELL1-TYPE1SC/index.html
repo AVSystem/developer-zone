@@ -2919,10 +2919,10 @@
 <li>After the build and run are complete, the board is flashed with compiled binary.</li>
 </ol>
 <h2 id="connect-to-the-lwm2m-server">Connect to the LwM2M Server<a class="headerlink" href="#connect-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
+<p>To connect to Coiote IoT Device Management platform, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
 <ol>
-<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
        <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /><ol>
@@ -2961,7 +2961,7 @@
 </div>
 </li>
 <li>
-<p>Go to Coiote DM to check if your device is connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:</p>
+<p>Go to Coiote IoT DM to check if your device is connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:</p>
 </li>
 </ol>
 <p><img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
@@ -3020,8 +3020,8 @@ It will be useful when performing FOTA to distinguish the firmware images from e
 </li>
 </ol>
 <h3 id="flash-the-board-with-sbsfu-binary">Flash the board with SBSFU binary<a class="headerlink" href="#flash-the-board-with-sbsfu-binary" title="Permanent link">#</a></h3>
-<p>Use <strong>STM32CubeProgrammer</strong> application with <code>SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin</code> file to program the board (it is advisable to perform <strong>Full chip erase</strong> first). You can open serial port to change default credentials in order to connect to Coiote DM.</p>
-<p>After that, you can use Coiote DM to perform firmware update with <code>Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb</code> file.</p>
+<p>Use <strong>STM32CubeProgrammer</strong> application with <code>SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin</code> file to program the board (it is advisable to perform <strong>Full chip erase</strong> first). You can open serial port to change default credentials in order to connect to Coiote IoT DM.</p>
+<p>After that, you can use Coiote IoT DM to perform firmware update with <code>Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb</code> file.</p>
 <h3 id="perform-firmware-update">Perform firmware update<a class="headerlink" href="#perform-firmware-update" title="Permanent link">#</a></h3>
 <p>In order to perform firmware update:</p>
 <ol>
@@ -3032,7 +3032,7 @@ It will be useful when performing FOTA to distinguish the firmware images from e
     <div class="highlight"><pre><span></span><code>#define FIRMWARE_VERSION &quot;v2.0&quot;
 </code></pre></div>
     and build the application with a new firmware.</li>
-<li>Upload the generated firmware file (<code>Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb</code>) to <a href="https://eu.iot.avsystem.cloud">Coiote DM</a> (go to Device management and select <code>Firmware update</code>) and click <code>Upgrade</code>.</li>
+<li>Upload the generated firmware file (<code>Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb</code>) to <a href="https://eu.iot.avsystem.cloud">Coiote IoT DM</a> (go to Device management and select <code>Firmware update</code>) and click <code>Upgrade</code>.</li>
 <li>After the FOTA finishes, the device will reboot and the following log should appear:
     <div class="highlight"><pre><span></span><code>Firmware updated from version &#39;v1.0&#39; to &#39;v2.0&#39;
 </code></pre></div>
@@ -3099,7 +3099,7 @@ It will be useful when performing FOTA to distinguish the firmware images from e
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 10, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

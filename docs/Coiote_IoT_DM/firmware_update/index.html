@@ -2793,7 +2793,7 @@
 <p>Remotely update the firmware of your LwM2M device using the <strong>Firmware Update Object</strong> <code>/5</code>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>An active <a href="https://eu.iot.avsystem.cloud/">Coiote DM</a> user account</li>
+<li>An active <a href="https://eu.iot.avsystem.cloud/">Coiote IoT DM</a> user account</li>
 <li>A device which supports Firmware Update Object <code>/5</code></li>
 </ul>
 <div class="admonition note">
@@ -2935,7 +2935,7 @@
 <p>Choose between <strong>Pull</strong> and <strong>Push</strong>:</p>
 <ul>
 <li>
-<p><strong>Pull method</strong> (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it. </p>
+<p><strong>Pull method</strong> (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it.</p>
 </li>
 <li>
 <p><strong>Push method</strong>: The LwM2M Server pushes the firmware file to the device.</p>
@@ -2974,14 +2974,14 @@
 </div>
 <h3 id="monitoring-the-update-process">Monitoring the update process<a class="headerlink" href="#monitoring-the-update-process" title="Permanent link">#</a></h3>
 <p>During the update process, the status of the firmware update can be monitored by reviewing the Resources <strong>State</strong> <code>/5/*/3</code> and <strong>Update Results</strong> <code>/5/*/5</code>.</p>
-<p>To find the Resources, select the <strong>Data model</strong> tab and open the <strong>Firmware Update Object</strong> <code>/5</code>. </p>
+<p>To find the Resources, select the <strong>Data model</strong> tab and open the <strong>Firmware Update Object</strong> <code>/5</code>.</p>
 <p><img alt="Firmware upgraded" src="../images/result1.png" /></p>
 <p>If no errors occur, the update process follows this pattern:</p>
 <ol>
-<li><strong>Downloading</strong> <code>state 1</code> &amp; <code>update result 0</code> </li>
-<li><strong>Downloaded</strong> <code>state 2</code> &amp; <code>update result 0</code> </li>
-<li><strong>Updating</strong> <code>state 3</code> &amp; <code>update result 0</code> </li>
-<li><strong>Updated</strong> <code>state 0</code> &amp; <code>update result 1</code> </li>
+<li><strong>Downloading</strong> <code>state 1</code> &amp; <code>update result 0</code></li>
+<li><strong>Downloaded</strong> <code>state 2</code> &amp; <code>update result 0</code></li>
+<li><strong>Updating</strong> <code>state 3</code> &amp; <code>update result 0</code></li>
+<li><strong>Updated</strong> <code>state 0</code> &amp; <code>update result 1</code></li>
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Update successful?</p>
@@ -3076,7 +3076,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

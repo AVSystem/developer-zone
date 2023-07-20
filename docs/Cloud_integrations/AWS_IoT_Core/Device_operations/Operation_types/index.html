@@ -2869,14 +2869,14 @@
 <li>An active LwM2M device already migrated to AWS IoT Core.</li>
 </ul>
 <h2 id="execute-lwm2m-operations-on-device">Execute LwM2M operations on device<a class="headerlink" href="#execute-lwm2m-operations-on-device" title="Permanent link">#</a></h2>
-<p>Within the AWS - Coiote DM integration, LwM2M operations on devices are triggered by modifying the <code>desired</code> section of a device <a href="../../Concepts/AWS_Integration_concepts/#operation-shadow">Operation Shadow</a>. The changes, upon successful execution, are then reported back by Coiote DM and repopulated to the <code>reported</code> section of a device <a href="../../Concepts/AWS_Integration_concepts/#datamodel-shadow">Datamodel Shadow</a>.</p>
+<p>Within the AWS - Coiote IoT DM integration, LwM2M operations on devices are triggered by modifying the <code>desired</code> section of a device <a href="../../Concepts/AWS_Integration_concepts/#operation-shadow">Operation Shadow</a>. The changes, upon successful execution, are then reported back by Coiote IoT DM and repopulated to the <code>reported</code> section of a device <a href="../../Concepts/AWS_Integration_concepts/#datamodel-shadow">Datamodel Shadow</a>.</p>
 <p>The integration supports the following LwM2M operations:</p>
 <h3 id="read">READ<a class="headerlink" href="#read" title="Permanent link">#</a></h3>
 <p>To send a request for a READ operation to a device:</p>
 <ol>
 <li>Enter AWS IoT Core and go to <strong>Manage</strong> &gt; <strong>Things</strong>.</li>
 <li>From the list, select your device.</li>
-<li>Go to the <strong>Device Shadows</strong> section and select the <strong>operation</strong> Shadow.    </li>
+<li>Go to the <strong>Device Shadows</strong> section and select the <strong>operation</strong> Shadow.</li>
 <li>
 <p>Click <strong>Edit</strong> and formulate the request inside the <strong>Device Shadow state</strong> field based on the example input given below:</p>
 <ul>
@@ -3193,7 +3193,7 @@
 </code></pre></div>
 </details>
 <h2 id="check-logs-in-cloudwatch">Check logs in CloudWatch<a class="headerlink" href="#check-logs-in-cloudwatch" title="Permanent link">#</a></h2>
-<p>If you encounter difficulties when forwarding your requests to Coiote DM, it may be helpful to check the logs collected by AWS CloudWatch for all the components of the integration.</p>
+<p>If you encounter difficulties when forwarding your requests to Coiote IoT DM, it may be helpful to check the logs collected by AWS CloudWatch for all the components of the integration.</p>
 <ol>
 <li>
 <p>To check logs for AWS Lambda:</p>
@@ -3275,7 +3275,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
     
   </small>
 </div>

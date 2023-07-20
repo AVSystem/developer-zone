@@ -1612,15 +1612,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-coiote-dm-rest-user" class="md-nav__link">
-    Create a Coiote DM REST user
+  <a href="#create-a-coiote-iot-dm-rest-user" class="md-nav__link">
+    Create a Coiote IoT DM REST user
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-dm" class="md-nav__link">
-    Copy tasks and provide credentials for your device group in Coiote DM
+  <a href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm" class="md-nav__link">
+    Copy tasks and provide credentials for your device group in Coiote IoT DM
   </a>
   
 </li>
@@ -2694,15 +2694,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-coiote-dm-rest-user" class="md-nav__link">
-    Create a Coiote DM REST user
+  <a href="#create-a-coiote-iot-dm-rest-user" class="md-nav__link">
+    Create a Coiote IoT DM REST user
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-dm" class="md-nav__link">
-    Copy tasks and provide credentials for your device group in Coiote DM
+  <a href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm" class="md-nav__link">
+    Copy tasks and provide credentials for your device group in Coiote IoT DM
   </a>
   
 </li>
@@ -2752,16 +2752,16 @@
 
 <!-- Markdown content -->
 <h1 id="configure-aws-integration">Configure AWS integration<a class="headerlink" href="#configure-aws-integration" title="Permanent link">#</a></h1>
-<p>Follow this section to integrate your AWS services with Coiote DM.</p>
+<p>Follow this section to integrate your AWS services with Coiote IoT DM.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager in supported regions.</li>
 <li>Installed <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a>.</li>
 <li>
-<p>A Coiote DM user account with the <strong>awsiottenant</strong> role.</p>
+<p>A Coiote IoT DM user account with the <strong>awsiottenant</strong> role.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>It's recommended to create a Coiote DM user account dedicated exclusively for the integration. Note that the integration will work correctly only until the user with the <strong>awsiottenant</strong> role exists in Coiote DM and the AWS CloudFormation stack is appropriately configured.</p>
+<p>It's recommended to create a Coiote IoT DM user account dedicated exclusively for the integration. Note that the integration will work correctly only until the user with the <strong>awsiottenant</strong> role exists in Coiote IoT DM and the AWS CloudFormation stack is appropriately configured.</p>
 </div>
 </li>
 </ul>
@@ -2778,23 +2778,23 @@
 <li>us-west-2</li>
 </ul>
 <p>If you cannot find your region, please create a GitHub issue or contact AVSystem.</p>
-<h2 id="create-a-coiote-dm-rest-user">Create a Coiote DM REST user<a class="headerlink" href="#create-a-coiote-dm-rest-user" title="Permanent link">#</a></h2>
-<p>To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:</p>
+<h2 id="create-a-coiote-iot-dm-rest-user">Create a Coiote IoT DM REST user<a class="headerlink" href="#create-a-coiote-iot-dm-rest-user" title="Permanent link">#</a></h2>
+<p>To start integrating AWS with Coiote IoT DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote IoT DM. To do that:</p>
 <ol>
-<li>Go to your Coiote DM account and from the <strong>Administration</strong> menu, select <strong>Users management</strong>.</li>
+<li>Go to your Coiote IoT DM account and from the <strong>Administration</strong> menu, select <strong>Users management</strong>.</li>
 <li>Select <strong>Add user</strong> and fill in the form:
 <img alt="Add user button" src="../images/add_button2.png" title="Add user button" /><ul>
 <li>Provide <strong>Email</strong> for new user (which will be its username) and select your domain from the <strong>Domain path</strong> drop-down list.</li>
 <li>Remember to switch on the <strong>User Verified</strong> and <strong>User Enabled</strong> toggle buttons.</li>
-<li>In the <strong>Client Roles</strong> fields, pick the <strong>CoioteDM</strong> client and <strong>awsiottenant</strong> role.
+<li>In the <strong>Client Roles</strong> fields, pick the <strong>Coiote IoT DM</strong> client and <strong>awsiottenant</strong> role.
 <img alt="Add REST user" src="../images/add_rest_user2.png" title="Add REST user" /></li>
 <li>Click <strong>Save</strong>.</li>
 <li>Go to the <strong>Credentials</strong> tab, type a password for your user (twice), select <strong>Set password</strong>, then confirm by clicking <strong>Set password</strong> in the pop-up.</li>
 </ul>
 </li>
 </ol>
-<h2 id="copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-dm">Copy tasks and provide credentials for your device group in Coiote DM<a class="headerlink" href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-dm" title="Permanent link">#</a></h2>
-<p>The Coiote DM-side configuration of the integration is located in the dedicated <code>AWSiotCoreCertAuth</code> device group. To complete this side of the integration, log in as the user with the <strong>awsiottenant</strong> role (only if that user was created in the Root <strong>Domain</strong>. If not, they can not access the root groups and the tasks have to be copied from the <strong>Cloud admin</strong> account.).
+<h2 id="copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm">Copy tasks and provide credentials for your device group in Coiote IoT DM<a class="headerlink" href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm" title="Permanent link">#</a></h2>
+<p>The Coiote IoT DM-side configuration of the integration is located in the dedicated <code>AWSiotCoreCertAuth</code> device group. To complete this side of the integration, log in as the user with the <strong>awsiottenant</strong> role (only if that user was created in the Root <strong>Domain</strong>. If not, they can not access the root groups and the tasks have to be copied from the <strong>Cloud admin</strong> account.).
 Then follow the steps below:</p>
 <ol>
 <li>Go to the <strong>Device groups</strong> panel and select a group:<ul>
@@ -2828,14 +2828,14 @@ Then follow the steps below:</p>
 </li>
 </ul>
 </li>
-<li>Enter your AWS Endpoint Name in Coiote DM:<ul>
+<li>Enter your AWS Endpoint Name in Coiote IoT DM:<ul>
 <li>Go to <strong>Device groups</strong>, select your custom integration group (or the <strong>AWSiotCoreCertAuth</strong> group, depending on the previous step) and go to <strong>Profiles</strong>. Complete the <strong>AWS</strong> setting value:</li>
 <li>Open your command line and run the following command:
        <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS --region &lt;desired-region-for-the-integration&gt;
 </code></pre></div></li>
 <li>Copy the returned result.
   <img alt="Copy data plane endpoint address" src="../images/dataplane.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Copy data plane endpoint address" /></li>
-<li>In Coiote DM, go to the <strong>Profiles</strong> tab of your integration group and paste the result as the value for <code>AWSdataPlaneEndpointAddress</code>.</li>
+<li>In Coiote IoT DM, go to the <strong>Profiles</strong> tab of your integration group and paste the result as the value for <code>AWSdataPlaneEndpointAddress</code>.</li>
 <li>Append <code>:8443</code> port to the pasted value.</li>
 <li>Click <strong>Save</strong>.</li>
 </ul>
@@ -2858,13 +2858,13 @@ Then follow the steps below:</p>
 <p>Choose a name for the stack and provide the parameters:</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The credentials you provide at this point should belong to the user with access to the Coiote DM group which stores the AWS configuration set in a previous step.</p>
+<p>The credentials you provide at this point should belong to the user with access to the Coiote IoT DM group which stores the AWS configuration set in a previous step.</p>
 </div>
 <ul>
-<li><strong>coioteDMrestUsername</strong> - username of the created CoioteDM account.</li>
-<li><strong>coioteDMrestPassword</strong> - password of the created CoioteDM account.</li>
+<li><strong>coioteDMrestUsername</strong> - username of the created Coiote IoT DM account.</li>
+<li><strong>coioteDMrestPassword</strong> - password of the created Coiote IoT DM account.</li>
 <li>
-<p><strong>coioteDMrestUri</strong> - URL address and port of your Coiote DM installation. The port should always be <code>8088</code> to enable proper mTLS-based authentication.</p>
+<p><strong>coioteDMrestUri</strong> - URL address and port of your Coiote IoT DM installation. The port should always be <code>8088</code> to enable proper mTLS-based authentication.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For some installations, port is not required. If you don't know what port to choose, contact our support.</p>
@@ -2883,9 +2883,9 @@ Then follow the steps below:</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <p>To learn how to perform operations on your devices, please see the <a href="https://iotdevzone.avsystem.com/docs/Cloud_integrations/AWS_IoT_Core/Device_operations/Operation_types/">Performing LwM2M operations</a> chapter.</p>
 <h2 id="removing-the-integration">Removing the integration<a class="headerlink" href="#removing-the-integration" title="Permanent link">#</a></h2>
-<p>To remove the integration of AWS and Coiote DM, follow the following steps:</p>
+<p>To remove the integration of AWS and Coiote IoT DM, follow the following steps:</p>
 <ol>
-<li>In <strong>CoioteDM</strong> remove all the devices from the <strong>AWSiotCoreCertAuth</strong> group.</li>
+<li>In <strong>Coiote IoT DM</strong> remove all the devices from the <strong>AWSiotCoreCertAuth</strong> group.</li>
 <li>Go to the <strong>CloudFormation</strong> service in <strong>AWS</strong> and select the stack that was created while setting up the integration.</li>
 <li>Delete the stack.
    <img alt="Delete stack" src="../images/stack_delete.png" title="Delete stack" /></li>
@@ -2954,7 +2954,7 @@ Then follow the steps below:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

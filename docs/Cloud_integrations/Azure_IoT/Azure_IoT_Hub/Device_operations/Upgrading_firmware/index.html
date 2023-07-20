@@ -1330,8 +1330,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-checking-coiote-dm-fota-task-execution" class="md-nav__link">
-    Step 3: Checking Coiote DM FOTA task execution
+  <a href="#step-3-checking-coiote-iot-dm-fota-task-execution" class="md-nav__link">
+    Step 3: Checking Coiote IoT DM FOTA task execution
   </a>
   
 </li>
@@ -2733,8 +2733,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-checking-coiote-dm-fota-task-execution" class="md-nav__link">
-    Step 3: Checking Coiote DM FOTA task execution
+  <a href="#step-3-checking-coiote-iot-dm-fota-task-execution" class="md-nav__link">
+    Step 3: Checking Coiote IoT DM FOTA task execution
   </a>
   
 </li>
@@ -2785,20 +2785,20 @@
 <p>If you would like to upgrade the firmware of devices using the Azure IoT Hub, follow the instruction below.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>At least one <a href="../Synchronize_devices_with_Azure_IoT_Hub">synchronized</a> Coiote DM - Azure IoT Hub device.</li>
-<li>A firmware file hosted on an HTTP server that is reachable by the Coiote DM server.</li>
+<li>At least one <a href="../Synchronize_devices_with_Azure_IoT_Hub">synchronized</a> Coiote IoT DM - Azure IoT Hub device.</li>
+<li>A firmware file hosted on an HTTP server that is reachable by the Coiote IoT DM server.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this stage of integration, no authentication method is supported for this endpoint - it is required that the firmware is publicly available (or hosted in a private network but with access granted for the Coiote DM server).</p>
+<p>In this stage of integration, no authentication method is supported for this endpoint - it is required that the firmware is publicly available (or hosted in a private network but with access granted for the Coiote IoT DM server).</p>
 </div>
 <h2 id="scheduling-a-firmware-upgrade">Scheduling a firmware upgrade<a class="headerlink" href="#scheduling-a-firmware-upgrade" title="Permanent link">#</a></h2>
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h3>
-<p>The process of upgrading device firmware for Azure IoT Hub devices synchronized with Coiote DM is based on two main elements: the Azure Direct Method mechanism and the Coiote DM Firmware Upgrade task.
-In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invoked, enabling the Coiote DM to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in Coiote DM and the upgrade is performed on the device.</p>
+<p>The process of upgrading device firmware for Azure IoT Hub devices synchronized with Coiote IoT DM is based on two main elements: the Azure Direct Method mechanism and the Coiote IoT DM Firmware Upgrade task.
+In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invoked, enabling the Coiote IoT DM to download the specified firmware file and add it to its resources. Then, an XML task is scheduled in Coiote IoT DM and the upgrade is performed on the device.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>For firmware file recognition in Coiote, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then Coiote DM will be able to utilize the once downloaded resource without the need to download it again.</p>
+<p>For firmware file recognition in Coiote IoT DM, global identifiers are used. This means that it is recommended to name your firmware files using the format: yourdomainName + randomized value. If the same firmware file name is used again, then Coiote IoT DM will be able to utilize the once downloaded resource without the need to download it again.</p>
 </div>
 <h3 id="step-1-invoking-the-azure-schedulefirmwareupdate-direct-method">Step 1: Invoking the Azure <em>scheduleFirmwareUpdate</em> direct method<a class="headerlink" href="#step-1-invoking-the-azure-schedulefirmwareupdate-direct-method" title="Permanent link">#</a></h3>
 <p>To initiate the firmware upgrade procedure for your device:</p>
@@ -2840,7 +2840,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
   &quot;schedule&quot;: &quot;always&quot;
 }
 </code></pre></div></li>
-<li><strong>Connection timeout</strong> - specify a timeout for the Azure - Coiote DM connection (the recommended value is not less than 5 seconds).</li>
+<li><strong>Connection timeout</strong> - specify a timeout for the Azure - Coiote IoT DM connection (the recommended value is not less than 5 seconds).</li>
 <li><strong>Method timeout</strong> - specify a timeout for direct method result notification.</li>
 </ul>
 </li>
@@ -2862,7 +2862,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <p>Out of all the parameters provided in Firmware upgrade direct method payload, only two are mandatory:</p>
 <ul>
 <li><strong>name</strong> - the unique file name used for firmware identification.</li>
-<li><strong>firmwareUrl</strong> - the URL used by Coiote DM to download the firmware file and include it as a resource.</li>
+<li><strong>firmwareUrl</strong> - the URL used by Coiote IoT DM to download the firmware file and include it as a resource.</li>
 </ul>
 <p>Therefore it is correct to include only those two in the payload, as in here:
   <div class="highlight"><pre><span></span><code>{
@@ -2892,11 +2892,11 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <p><img alt="FOTA status check result" src="../images/direct_method_status_check.png" title="Direct Method result - status" /></p>
 </li>
 </ol>
-<h3 id="step-3-checking-coiote-dm-fota-task-execution">Step 3: Checking Coiote DM FOTA task execution<a class="headerlink" href="#step-3-checking-coiote-dm-fota-task-execution" title="Permanent link">#</a></h3>
-<p>Once you have executed the Azure-side steps of the procedure, you can check its status from the side of Coiote DM.</p>
+<h3 id="step-3-checking-coiote-iot-dm-fota-task-execution">Step 3: Checking Coiote IoT DM FOTA task execution<a class="headerlink" href="#step-3-checking-coiote-iot-dm-fota-task-execution" title="Permanent link">#</a></h3>
+<p>Once you have executed the Azure-side steps of the procedure, you can check its status from the side of Coiote IoT DM.</p>
 <ol>
 <li>
-<p>Go to your Coiote DM account and in the <strong>Device Inventory</strong>, select your device.</p>
+<p>Go to your Coiote IoT DM account and in the <strong>Device Inventory</strong>, select your device.</p>
 <p><img alt="Device inventory view" src="../images/device_inventory.png" title="Device inventory view" /></p>
 </li>
 <li>
@@ -2933,7 +2933,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 </li>
 </ol>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">#</a></h2>
-<p>See the relevant section of <a href="https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/">LwM2M mappings</a> to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote DM.</p>
+<p>See the relevant section of <a href="https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/">LwM2M mappings</a> to learn the details of how Azure IoT Hub Direct Methods are mapped in Coiote IoT DM.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2995,7 +2995,7 @@ In the process, the Azure <em>scheduleFirmwareUpdate</em> direct method is invok
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>

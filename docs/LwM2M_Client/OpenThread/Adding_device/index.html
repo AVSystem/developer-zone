@@ -2785,7 +2785,7 @@
 <li>The <strong>nRF52840-DK</strong> board with a USB cable.</li>
 <li>Installed <strong>minicom</strong> or <strong>RealTerm</strong> (for Linux or Mac) or <strong>PuTTy</strong> (for Windows) or other serial communication program.</li>
 <li>Installed <strong>nrfjprog</strong> from <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download">Nordic Semiconductor page</a></li>
-<li>A user with access to the <a href="https://eu.iot.avsystem.cloud/ui/device/inventory"><strong>Coiote IoT Device Management</strong></a> platform and appropriate permissions.</li>
+<li>A user with access to the <a href="https://eu.iot.avsystem.cloud/ui/device/inventory"><strong>Coiote IoT Device Management platform</strong></a> platform and appropriate permissions.</li>
 </ul>
 <h2 id="connecting-to-the-openthread">Connecting to the OpenThread<a class="headerlink" href="#connecting-to-the-openthread" title="Permanent link">#</a></h2>
 <div class="admonition note">
@@ -2865,10 +2865,10 @@ Set West manifest path to <em>Anjay-zephyr-client/demo</em>, and manifest file t
 </li>
 </ol>
 <h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
-<p>To connect to Coiote IoT Device Management LwM2M Server, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
+<p>To connect to Coiote IoT Device Management platform, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
 <p>To connect the board:</p>
 <ol>
-<li>Log in to Coiote DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
+<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
 <li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
 <li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
        <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /><ol>
@@ -2912,7 +2912,7 @@ config  :Configure Anjay params
     <img alt="Anjay configuration" src="../images/anjay_config.png" style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;" title="Anjay configuration" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If your default credentials are different from device credentials provided in Coiote DM, change them using the <code>anjay config set &lt;possible_option&gt; &lt;value&gt;</code> command.
+<p>If your default credentials are different from device credentials provided in Coiote IoT DM, change them using the <code>anjay config set &lt;possible_option&gt; &lt;value&gt;</code> command.
 <br/>
 <img alt="Anjay set configuration" src="../images/anjay_config_set.PNG" style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;" title="Anjay set configuration" /></p>
 </div>
@@ -2934,7 +2934,7 @@ config  :Configure Anjay params
 </div>
 </li>
 <li>
-<p>Go to Coiote DM to check if your device is connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:
+<p>Go to Coiote IoT DM to check if your device is connected. Click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view:
     <img alt="Registered device" src="../images/registered_device.png" style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;" title="Registered device" /></p>
 </li>
 </ol>
@@ -3005,7 +3005,7 @@ It does not affect the operation of the application and will no longer appear af
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 28, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
     
   </small>
 </div>
