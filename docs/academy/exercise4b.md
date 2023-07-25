@@ -23,7 +23,6 @@ Let’s start with the *temperature_sensor.c* file where we define the Temperatu
 #include "temperature_sensor.h"
 #define NUM_INSTANCES 1
 
-
 /**
 * Min Measured Value: R, Single, Optional
 * type: float, range: N/A, unit: N/A
@@ -79,10 +78,10 @@ Next, at the end of the *temperature_sensor.c* file, add a handler which is call
 <p style="text-align: center;">temperature_sensor.c</p>
 ```
 static void send_finished_handler(anjay_t *anjay,
-                                anjay_ssid_t ssid,
-                                const anjay_send_batch_t *batch,
-                                int result,
-                                void *data) {
+                                  anjay_ssid_t ssid,
+                                  const anjay_send_batch_t *batch,
+                                  int result,
+                                  void *data) {
     (void) anjay;
     (void) ssid;
     (void) batch;
@@ -120,17 +119,17 @@ void temperature_object_lm35_send(anjay_t *anjay) {
     for (int it = 0; it < NUM_INSTANCES; it++) {
         // Add current values of resources from Temperature Object.
         if (anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                            RID_MIN_MEASURED_VALUE)
+                                              RID_MIN_MEASURED_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_MAX_MEASURED_VALUE)
+                                                     RID_MAX_MEASURED_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_MIN_RANGE_VALUE)
+                                                     RID_MIN_RANGE_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_MAX_RANGE_VALUE)
+                                                     RID_MAX_RANGE_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_SENSOR_VALUE)
+                                                     RID_SENSOR_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_SENSOR_UNITS)) {
+                                                     RID_SENSOR_UNITS)) {
             anjay_send_batch_builder_cleanup(&builder);
             avs_log(temperature_sensor, ERROR,
                     "Failed to add batch data, result: %d", res);
@@ -220,8 +219,8 @@ static void send_job(avs_sched_t *sched, const void *args_ptr) {
 
     // Schedule run of the same function after 10 seconds
     AVS_SCHED_DELAYED(sched, NULL,
-                    avs_time_duration_from_scalar(10, AVS_TIME_S), send_job,
-                    args, sizeof(*args));
+                      avs_time_duration_from_scalar(10, AVS_TIME_S), send_job,
+                      args, sizeof(*args));
 }
 ```
 
@@ -250,8 +249,8 @@ void anjay_task(__unused void *params) {
     }
     temperature_sensor_install(g_anjay);
     xTaskCreateStatic(temperature_sensor_update_task, "TemperatureUpdateTask",
-                    TEMP_UPDATE_TASK_SIZE, NULL, TEMP_UPDATE_TASK_PRIORITY,
-                    temp_update_stack, &temp_update_task_buffer);
+                      TEMP_UPDATE_TASK_SIZE, NULL, TEMP_UPDATE_TASK_PRIORITY,
+                      temp_update_stack, &temp_update_task_buffer);
 
     send_job(anjay_get_scheduler(g_anjay), &(const temperature_object_lm35_job_args_t) {
                                                 .anjay = g_anjay,
@@ -270,8 +269,7 @@ Save the created code, recompile the application and flash the board.
 After flashing the board, open up your serial communication program and wait for the event ** “Send Operation successful” **. This event shows that the Client performs regular Send Operations containing Temperature data.
 
 ```
-INFO [temperature_sensor]
-[/temperature_object_lm35_send/temperature_sensor.c:135]: Send successful
+INFO [temperature_sensor][/temperature_object_lm35_send/temperature_sensor.c:135]: Send successful
 ```
 
 Now, open {{ coiote_long_name }} and validate if the Resources are updated after each configured time interval.
