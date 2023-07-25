@@ -171,7 +171,7 @@ static int resource_read(anjay_t *anjay,
     assert(inst);
 
     switch (rid) {
-    case RID_CURRENT_TIME:
+    case RID_CURRENT_TIME: {
         assert(riid == ANJAY_ID_INVALID);
         int64_t timestamp;
         if (avs_time_real_to_scalar(&timestamp, AVS_TIME_S,
@@ -179,6 +179,7 @@ static int resource_read(anjay_t *anjay,
             return -1;
         }
         return anjay_ret_i64(ctx, timestamp);
+    }
     case RID_APPLICATION_TYPE:
         assert(riid == ANJAY_ID_INVALID);
         return anjay_ret_string(ctx, inst->application_type);
