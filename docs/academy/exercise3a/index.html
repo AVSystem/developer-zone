@@ -2898,12 +2898,12 @@ python3 deps/anjay/tools/anjay_codegen.py -i time_object/lwm2m_3333.xml -o time_
     anjay_iid_t iid;
     char application_type[64];
     char application_type_backup[64];
-    } time_instance_t;
+} time_instance_t;
 
 typedef struct time_object_struct {
         const anjay_dm_object_def_t *def;
         AVS_LIST(time_instance_t) instances;
-    } time_object_t;
+} time_object_t;
 </code></pre></div>
 <h2 id="initiate-release-and-reset-the-instance">Initiate, release, and reset the Instance<a class="headerlink" href="#initiate-release-and-reset-the-instance" title="Permanent link">#</a></h2>
 <p>Next up is implementing the <code>init_instance()</code> and <code>release_instance()</code> functions. These functions are used during the creation and deletion of Instances, usually performed through device work.</p>
@@ -2988,18 +2988,17 @@ typedef struct time_object_struct {
     assert(inst);
 
     switch (rid) {
-    case RID_CURRENT_TIME: {
-    assert(riid == ANJAY_ID_INVALID);
-    int64_t timestamp;
-    if (avs_time_real_to_scalar(&amp;timestamp, AVS_TIME_S,
-                                avs_time_real_now())) {
-        return -1;
-    }
-    return anjay_ret_i64(ctx, timestamp);
-    }
+    case RID_CURRENT_TIME:
+        assert(riid == ANJAY_ID_INVALID);
+        int64_t timestamp;
+        if (avs_time_real_to_scalar(&amp;timestamp, AVS_TIME_S,
+                                    avs_time_real_now())) {
+            return -1;
+        }
+        return anjay_ret_i64(ctx, timestamp);
     case RID_APPLICATION_TYPE:
-    assert(riid == ANJAY_ID_INVALID);
-    return anjay_ret_string(ctx, inst-&gt;application_type);
+        assert(riid == ANJAY_ID_INVALID);
+        return anjay_ret_string(ctx, inst-&gt;application_type);
     default:
         return ANJAY_ERR_METHOD_NOT_ALLOWED;
     }
@@ -3022,9 +3021,9 @@ typedef struct time_object_struct {
 
     switch (rid) {
     case RID_APPLICATION_TYPE:
-    assert(riid == ANJAY_ID_INVALID);
-    return anjay_get_string(ctx, inst-&gt;application_type,
-                            sizeof(inst-&gt;application_type));
+        assert(riid == ANJAY_ID_INVALID);
+        return anjay_get_string(ctx, inst-&gt;application_type,
+                                sizeof(inst-&gt;application_type));
     default:
         return ANJAY_ERR_METHOD_NOT_ALLOWED;
     }
@@ -3106,28 +3105,28 @@ void time_object_release(const anjay_dm_object_def_t **def);
 <div class="highlight"><pre><span></span><code>cmake_minimum_required(VERSION 3.13)
 
 add_executable(time_object
-            main.c
-            time_object.c
-            time_object.h
-            )
+               main.c
+               time_object.c
+               time_object.h
+               )
 
 target_link_libraries(time_object
-                    pico_stdlib
-                    anjay-pico
-                    FreeRTOS
-                    )
+                      pico_stdlib
+                      anjay-pico
+                      FreeRTOS
+                      )
 
 target_include_directories(time_object PRIVATE
-                        ${COMMON_DIR}/config
-                        )
+                           ${COMMON_DIR}/config
+                           )
 
 target_compile_definitions(time_object PRIVATE
-                        WIFI_SSID=\&quot;${WIFI_SSID}\&quot;
-                        WIFI_PASSWORD=\&quot;${WIFI_PASSWORD}\&quot;
-                        ENDPOINT_NAME=\&quot;${ENDPOINT_NAME}\&quot;
-                        PSK_IDENTITY=\&quot;${PSK_IDENTITY}\&quot;
-                        PSK_KEY=\&quot;${PSK_KEY}\&quot;
-                        )
+                           WIFI_SSID=\&quot;${WIFI_SSID}\&quot;
+                           WIFI_PASSWORD=\&quot;${WIFI_PASSWORD}\&quot;
+                           ENDPOINT_NAME=\&quot;${ENDPOINT_NAME}\&quot;
+                           PSK_IDENTITY=\&quot;${PSK_IDENTITY}\&quot;
+                           PSK_KEY=\&quot;${PSK_KEY}\&quot;
+                           )
 pico_enable_stdio_usb(time_object 1)
 pico_enable_stdio_uart(time_object 0)
 
@@ -3144,8 +3143,7 @@ pico_add_extra_outputs(time_object)
 <p>Go back to the <em>time_object.c</em> file and update the file using the following code block:</p>
 <p style="text-align: center;">time_object.c</p>
 <div class="highlight"><pre><span></span><code>static int transaction_begin(anjay_t *anjay,
-
-const anjay_dm_object_def_t *const *obj_ptr) {
+                             const anjay_dm_object_def_t *const *obj_ptr) {
     (void) anjay;
     time_object_t *obj = get_obj(obj_ptr);
     time_instance_t *element;
@@ -3156,8 +3154,7 @@ const anjay_dm_object_def_t *const *obj_ptr) {
 }
 
 static int transaction_rollback(anjay_t *anjay,
-
-const anjay_dm_object_def_t *const *obj_ptr) {
+                                const anjay_dm_object_def_t *const *obj_ptr) {
     (void) anjay;
     time_object_t *obj = get_obj(obj_ptr);
     time_instance_t *element;
@@ -3277,7 +3274,7 @@ Now you are ready to create more difficult Objects. For this, go to the next exe
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2023</span>
     
   </small>
 </div>

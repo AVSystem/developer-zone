@@ -2839,26 +2839,26 @@
 <div class="highlight"><pre><span></span><code>cmake_minimum_required(VERSION 3.13)
 
 add_executable(psk-mode
-            main.c
-            )
+               main.c
+               )
 
 target_link_libraries(psk-mode
-                    pico_stdlib
-                    anjay-pico
-                    FreeRTOS
-                    )
+                      pico_stdlib
+                      anjay-pico
+                      FreeRTOS
+                      )
 
 target_include_directories(psk-mode PRIVATE
-                        ${COMMON_DIR}/config
-                        )
+                           ${COMMON_DIR}/config
+                           )
 
 target_compile_definitions(psk-mode PRIVATE
-                        WIFI_SSID=\&quot;${WIFI_SSID}\&quot;
-                        WIFI_PASSWORD=\&quot;${WIFI_PASSWORD}\&quot;
-                        ENDPOINT_NAME=\&quot;${ENDPOINT_NAME}\&quot;
-                        PSK_IDENTITY=\&quot;${PSK_IDENTITY}\&quot;
-                        PSK_KEY=\&quot;${PSK_KEY}\&quot;
-                        )
+                           WIFI_SSID=\&quot;${WIFI_SSID}\&quot;
+                           WIFI_PASSWORD=\&quot;${WIFI_PASSWORD}\&quot;
+                           ENDPOINT_NAME=\&quot;${ENDPOINT_NAME}\&quot;
+                           PSK_IDENTITY=\&quot;${PSK_IDENTITY}\&quot;
+                           PSK_KEY=\&quot;${PSK_KEY}\&quot;
+                           )
 
 pico_enable_stdio_usb(psk-mode 1)
 pico_enable_stdio_uart(psk-mode 0)
@@ -2976,7 +2976,7 @@ Run the following command in the build directory
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2023</span>
     
   </small>
 </div>

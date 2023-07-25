@@ -2743,7 +2743,6 @@
 #include &quot;temperature_sensor.h&quot;
 #define NUM_INSTANCES 1
 
-
 /**
 * Min Measured Value: R, Single, Optional
 * type: float, range: N/A, unit: N/A
@@ -2796,10 +2795,10 @@
 <p>Next, at the end of the <em>temperature_sensor.c</em> file, add a handler which is called automatically each time a Send operation finishes, to send logs to the serial communication program about the operation result.</p>
 <p style="text-align: center;">temperature_sensor.c</p>
 <div class="highlight"><pre><span></span><code>static void send_finished_handler(anjay_t *anjay,
-                                anjay_ssid_t ssid,
-                                const anjay_send_batch_t *batch,
-                                int result,
-                                void *data) {
+                                  anjay_ssid_t ssid,
+                                  const anjay_send_batch_t *batch,
+                                  int result,
+                                  void *data) {
     (void) anjay;
     (void) ssid;
     (void) batch;
@@ -2834,17 +2833,17 @@
     for (int it = 0; it &lt; NUM_INSTANCES; it++) {
         // Add current values of resources from Temperature Object.
         if (anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                            RID_MIN_MEASURED_VALUE)
+                                              RID_MIN_MEASURED_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_MAX_MEASURED_VALUE)
+                                                     RID_MAX_MEASURED_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_MIN_RANGE_VALUE)
+                                                     RID_MIN_RANGE_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_MAX_RANGE_VALUE)
+                                                     RID_MAX_RANGE_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_SENSOR_VALUE)
+                                                     RID_SENSOR_VALUE)
                 || anjay_send_batch_data_add_current(builder, anjay, 3303, it,
-                                                    RID_SENSOR_UNITS)) {
+                                                     RID_SENSOR_UNITS)) {
             anjay_send_batch_builder_cleanup(&amp;builder);
             avs_log(temperature_sensor, ERROR,
                     &quot;Failed to add batch data, result: %d&quot;, res);
@@ -2927,8 +2926,8 @@ static void send_job(avs_sched_t *sched, const void *args_ptr) {
 
     // Schedule run of the same function after 10 seconds
     AVS_SCHED_DELAYED(sched, NULL,
-                    avs_time_duration_from_scalar(10, AVS_TIME_S), send_job,
-                    args, sizeof(*args));
+                      avs_time_duration_from_scalar(10, AVS_TIME_S), send_job,
+                      args, sizeof(*args));
 }
 </code></pre></div>
 <p>Now let’s call the <code>send_job()</code> function in <code>anjay_task()</code>.</p>
@@ -2954,8 +2953,8 @@ static void send_job(avs_sched_t *sched, const void *args_ptr) {
     }
     temperature_sensor_install(g_anjay);
     xTaskCreateStatic(temperature_sensor_update_task, &quot;TemperatureUpdateTask&quot;,
-                    TEMP_UPDATE_TASK_SIZE, NULL, TEMP_UPDATE_TASK_PRIORITY,
-                    temp_update_stack, &amp;temp_update_task_buffer);
+                      TEMP_UPDATE_TASK_SIZE, NULL, TEMP_UPDATE_TASK_PRIORITY,
+                      temp_update_stack, &amp;temp_update_task_buffer);
 
     send_job(anjay_get_scheduler(g_anjay), &amp;(const temperature_object_lm35_job_args_t) {
                                                 .anjay = g_anjay,
@@ -2971,8 +2970,7 @@ static void send_job(avs_sched_t *sched, const void *args_ptr) {
 Save the created code, recompile the application and flash the board.</p>
 <h2 id="validate-the-new-firmware">Validate the new firmware<a class="headerlink" href="#validate-the-new-firmware" title="Permanent link">#</a></h2>
 <p>After flashing the board, open up your serial communication program and wait for the event <strong> “Send Operation successful” </strong>. This event shows that the Client performs regular Send Operations containing Temperature data.</p>
-<div class="highlight"><pre><span></span><code>INFO [temperature_sensor]
-[/temperature_object_lm35_send/temperature_sensor.c:135]: Send successful
+<div class="highlight"><pre><span></span><code>INFO [temperature_sensor][/temperature_object_lm35_send/temperature_sensor.c:135]: Send successful
 </code></pre></div>
 <p>Now, open Coiote IoT Device Management platform and validate if the Resources are updated after each configured time interval.</p>
 <p><img alt="Temperature Object registered" src="../images/temperature.PNG" /></p>
@@ -3043,7 +3041,7 @@ Save the created code, recompile the application and flash the board.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2023</span>
     
   </small>
 </div>
