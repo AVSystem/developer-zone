@@ -268,8 +268,8 @@ void anjay_task(__unused void *params) {
     }
     temperature_sensor_install(g_anjay);
     xTaskCreateStatic(temperature_sensor_update_task,
-    "TemperatureUpdateTask",TEMP_UPDATE_TASK_SIZE, NULL,
-    TEMP_UPDATE_TASK_PRIORITY,temp_update_stack, &temp_update_task_buffer);
+        "TemperatureUpdateTask", TEMP_UPDATE_TASK_SIZE, NULL,
+        TEMP_UPDATE_TASK_PRIORITY, temp_update_stack, &temp_update_task_buffer);
 
     main_loop();
 
@@ -307,29 +307,29 @@ static StaticTask_t temp_update_task_buffer;
 cmake_minimum_required(VERSION 3.13)
 
 add_executable(temperature_object_lm35
-            main.c
-            temperature_sensor.c
-            lm35.c
-            )
+               main.c
+               temperature_sensor.c
+               lm35.c
+               )
 
 target_link_libraries(temperature_object_lm35
-                    pico_stdlib
-                    hardware_adc
-                    anjay-pico
-                    FreeRTOS
-                    )
+                      pico_stdlib
+                      hardware_adc
+                      anjay-pico
+                      FreeRTOS
+                      )
 
 target_include_directories(temperature_object_lm35 PRIVATE
-                        ${COMMON_DIR}/config
-                        )
+                           ${COMMON_DIR}/config
+                           )
 
 target_compile_definitions(temperature_object_lm35 PRIVATE
-                        WIFI_SSID=\"${WIFI_SSID}\"
-                        WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
-                        ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
-                        PSK_IDENTITY=\"${PSK_IDENTITY}\"
-                        PSK_KEY=\"${PSK_KEY}\"
-                        )
+                           WIFI_SSID=\"${WIFI_SSID}\"
+                           WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
+                           ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
+                           PSK_IDENTITY=\"${PSK_IDENTITY}\"
+                           PSK_KEY=\"${PSK_KEY}\"
+                           )
 pico_enable_stdio_usb(temperature_object_lm35 1)
 pico_enable_stdio_uart(temperature_object_lm35 0)
 

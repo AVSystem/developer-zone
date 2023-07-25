@@ -83,26 +83,26 @@ Next, open the **CMakeLists.txt**, change the file names and add the required in
 cmake_minimum_required(VERSION 3.13)
 
 add_executable(psk-mode
-            main.c
-            )
+               main.c
+               )
 
 target_link_libraries(psk-mode
-                    pico_stdlib
-                    anjay-pico
-                    FreeRTOS
-                    )
+                      pico_stdlib
+                      anjay-pico
+                      FreeRTOS
+                      )
 
 target_include_directories(psk-mode PRIVATE
-                        ${COMMON_DIR}/config
-                        )
+                           ${COMMON_DIR}/config
+                           )
 
 target_compile_definitions(psk-mode PRIVATE
-                        WIFI_SSID=\"${WIFI_SSID}\"
-                        WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
-                        ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
-                        PSK_IDENTITY=\"${PSK_IDENTITY}\"
-                        PSK_KEY=\"${PSK_KEY}\"
-                        )
+                           WIFI_SSID=\"${WIFI_SSID}\"
+                           WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
+                           ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
+                           PSK_IDENTITY=\"${PSK_IDENTITY}\"
+                           PSK_KEY=\"${PSK_KEY}\"
+                           )
 
 pico_enable_stdio_usb(psk-mode 1)
 pico_enable_stdio_uart(psk-mode 0)
