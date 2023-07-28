@@ -157,7 +157,7 @@ void anjay_task(__unused void *params) {
 }
 ```
 
-Did you review all of the code snippets in the Mandatory Objects application? **Nice work! You now understand the basics of building an LwM2M application.** 🎉
+Did you review all of the code snippets in the Mandatory Objects application? **Nice work! You now understand the basics of building a LwM2M application.** 🎉
 
 !!! important "Provide your feedback"
 

@@ -436,8 +436,6 @@ If all went well and logs show **registration successfully updated**, you can go
 !!! Note
     The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC. After refreshing the page you can see that the value changed.
 
-![Time object in Data Model](images/time_object.PNG)
-
 **Good job!** 👏👏
 Now you are ready to create more difficult Objects. For this, go to the next exercise.
 

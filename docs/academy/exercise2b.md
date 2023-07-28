@@ -152,7 +152,7 @@ If you’re using ***Windows***, run the following command:
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" .. -G "MinGW Makefiles"
 ```
-Run the following command in the build directory
+Run the following command in the build directory:
 ```
 cmake --build . -j
 ```
@@ -161,7 +161,7 @@ Program your board using the bootloader. Press and hold the **BOOTSEL** button w
 
 In the **build/psk-mode** directory, you will find the **.uf2** file which contains the added changes.
 
-Copy the `psk-mode.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while
+Copy the `psk-mode.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
 
 ## Check the logs
 
