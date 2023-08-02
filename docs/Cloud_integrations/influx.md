@@ -117,8 +117,8 @@ WHERE
 time >= now() - interval '1 hour'
 ```
 
-Press **► RUN** to run the script.
+Press: "**► RUN**" to run the script.
 
-If the integration is setup correct, the device events are shown in InfluxDB.
+If the integration is setup correct, the device events are shown in the table.
 
 ![Influx incoming data](images/influx-incoming-data.png "Influx incoming data")
