@@ -15,7 +15,7 @@ The webhook event handler delivers HTTP(S) requests to public endpoints. Webhook
 
 ## Create a webhook
 
-To create a new webhook event handler, select **Integrations** > **Data Integration Center**.
+To create a new webhook event handler, select: **Integrations** > **Data Integration Center**.
 
 ![Data integration center](images/data-integration-center.png "Data Integration Center")
 
@@ -55,7 +55,9 @@ Webhook parameters include:
 * **Authorization method**, optionally adding a Username and Password or Bearer token
 * *Optional custom headers*
 
-To validate the correct parameters, it is possible to **test the event handler**.
+To validate the webhook parameters, it is possible to **test the event handler** before creating the event handler.
+
+![Test event handler](images/test-event-handler.png "Test event handler")
 
 !!! Tip "Influx"
     For instructions on integrating data with **Influx**, visit the [InfluxDB guide](influx.md).
@@ -63,6 +65,6 @@ To validate the correct parameters, it is possible to **test the event handler**
 
 ![Define webhook parameters](images/webhook-parameters.png "Define webhook parameters")
 
-When configured correctly, the event hander is added to the Data Integration Center.
+Click **Next step** and **Add event handler** to create the event handler.
 
 ![Active webhook](images/active-webhook.png "Active webhook")

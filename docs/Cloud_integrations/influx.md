@@ -40,7 +40,7 @@ Go to the API Tokens tab.
 **Create a new API token**
 
 !!! info "Create a **custom API Token**"
-    Preferably, create a **custom API Token** which has only access to the specific bucket you just created. Make sure to select *Read* and *Write* rights.
+    Preferably, create a **custom API Token** which has only access to the specific Bucket you just created. Make sure to select *Read* and *Write* rights.
 
 ![Influx API Token](images/influx-api-token.png "Influx API Token")
 
@@ -48,7 +48,7 @@ Go to the API Tokens tab.
 
 ## Create webhook in {{ coiote_short_name }}
 
-In your {{ coiote_short_name }}, select **Integrations** > **Data Integration Center**.
+In your {{ coiote_short_name }}, select: **Integrations** > **Data Integration Center**.
 
 ![Data integration center](images/data-integration-center.png "Data Integration Center")
 
@@ -78,9 +78,9 @@ Select the **Influx data formatting** option.
 
 1. The **Influx URL** e.g.: `https://eu-central-1-1.aws.cloud2.influxdata.com` 
 
-    *You can find the URL in the address bar of your browser.*
+    *You can find the URL in the address bar of your browser when using InfluxDB Cloud.*
 
-2. The **InfluxDB API** `/api/v2/write` 
+2. The **InfluxDB API**: `/api/v2/write` 
 3. The **Bucket ID**, starting with `?bucket=`
 
 When combined, the URL address looks something like: 
@@ -106,7 +106,7 @@ Click **Next step** and **Add event handler** to create the event handler.
 
 ## Monitor events in InfluxDB
 
-Once created the data handler, go back to your InfluxDB account and open your Bucket.
+After activating the event handler, go to your InfluxDB account and open your Bucket.
 
 Add the following script:
 
