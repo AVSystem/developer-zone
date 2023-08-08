@@ -90,13 +90,13 @@ https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?bucket=bc123456789
 ```
 
 !!! info
-    For more information abou the Influx API, visit Influx's [API documentation](https://docs.influxdata.com/influxdb/v2.7/api/). 
+    For more information about the Influx API, visit Influx's [API documentation](https://docs.influxdata.com/influxdb/v2.7/api/). 
 
 **Add the API token** which you previously created in your InfluxDB account.
 
 
 !!! Tip
-    Use the **Test event handler**-option to validate the configuration of the HTTP request before creating the event handler.
+    Use the **Test event handler**-option to validate the configuration of the HTTP request before creating the event handler. When performing such test, an event should arrive in your Influx bucket.
 
     ![Test event handler](images/test-event-handler.png "Test event handler")
     
