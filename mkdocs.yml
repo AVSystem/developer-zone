@@ -97,6 +97,10 @@ nav:
                 - 'Coiote_IoT_DM/Device_tests/Run_tests.md'
                 - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
         - 'Cloud Integrations':
+            - 'Data Integration Center':
+                - 'Webhooks': 'Cloud_integrations/webhooks.md'
+                - 'InfluxDB': 'Cloud_integrations/influx.md'
+
             - 'Azure IoT':
                 - 'Azure IoT Hub':
                     - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md'
