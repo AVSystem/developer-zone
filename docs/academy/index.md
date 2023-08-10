@@ -39,7 +39,7 @@ We're constantly working on improving the LwM2M Academy. Please share with us yo
 
 
 ## Intro to the hardware used in this course
-Throughout this course, we will be using the [Raspberry Pi Pico W](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w), Raspberry Pi's first wireless microcontroller board. It has been designed as a tiny and low-cost yet flexible development platform for the RP2040 MCU.
+Throughout this course, we will be using the [Raspberry Pi Pico W](https://www.raspberrypi.com/products/raspberry-pi-pico/), Raspberry Pi's first wireless microcontroller board. It has been designed as a tiny and low-cost yet flexible development platform for the RP2040 MCU.
 
 ![Raspberry Pi Pico](images/module1_RPI Pico.png){: style="width:300px"}
 
@@ -49,7 +49,7 @@ Reprogramming the Pico W flash can be done using USB (simply drag and drop a fil
 
 **Purchase hardware** via [Raspberry's website](https://www.raspberrypi.com/products/raspberry-pi-pico/?variant=raspberry-pi-pico-w)
 
-### Sensor used in the course:
+### Sensor used in the course
 In this course, we will be using the **LM35** analog temperature sensor.
 
 **Purchase the sensor** via [Kiwi electronics](https://www.kiwi-electronics.com/en/lm35dz-analog-temperature-sensor-10530) (EU), [Amazon](https://www.amazon.com/Bridgold-Analogue-Precision-Centigrade-Temperature/dp/B07Y7FCZYB) (US) or [Mouser](https://www.mouser.com/ProductDetail/Texas-Instruments/LM35DZ-LFT4?qs=QbsRYf82W3FEZkSvxC%252BtOg%3D%3D) (EU/US)

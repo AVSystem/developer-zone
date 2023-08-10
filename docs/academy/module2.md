@@ -79,7 +79,7 @@ At any time, the LwM2M Server can instruct the device to send a new bootstrap re
 
 The Bootstrap Server is defined in the **LwM2M Server URI Resource:** `/0/x/0`, and **Bootstrap-Server Resource** `/0/x/1`.
 
-*Note: Bootstrapping is an advanced feature and won’t be covered in this course.*
+*Note: Bootstrapping is an advanced feature and won’t be covered in detail throughout this course.*
 
 ![Bootstrap](images/module2_bootstrap.png)
 

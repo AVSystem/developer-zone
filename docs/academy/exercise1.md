@@ -115,7 +115,7 @@ Let’s continue building the required files for the application. We are using N
 !!! Warning
     Use the NoSec mode only for development, testing, and debugging purposes, never in production environments unless end-to-end security is provided on a lower layer (e.g. IPSec).
 
-To start the compilation of the application, go to the `Anjay-pico-client` directory. Build the project with `<ssid>` and `<pass>` replaced with your **WiFi network name** and **password** respectively. The LwM2M Client Endpoint Name is configured using the `<endpoint_name>` parameter.
+To start the compilation of the application, **go to the `Anjay-pico-client` directory**. Build the project with `<ssid>` and `<pass>` replaced with your **WiFi network name** and **password** respectively. The LwM2M Client Endpoint Name is configured using the `<endpoint_name>` parameter.
 
 !!! Note
     A LwM2M Client is uniquely identified by an **Endpoint Name**. Use the Endpoint Name you created in the [Connect to the Server](#connect-to-the-lwm2m-server) section.
@@ -144,20 +144,20 @@ It will generate directories that contain the **.uf2** and **.hex** files. The *
 In this example, we will use the **.uf2** file.
 
 ## Flash the board using the bootloader:
-To program the Raspberry Pi using the bootloader, press and hold the **BOOTSEL** button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.
+To program the Raspberry Pi using the bootloader, press and hold the **BOOTSEL** button while connecting the device using a USB cable - it should be recognized as a Mass Storage device.
 
 In the **build/mandatory_objects** directory, you will find the **.uf2** file.
 
-Copy the **mandatory_objects.uf2** file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while
+Copy the **mandatory_objects.uf2** file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
 
 ## Check the logs
-With the board still connected to your PC, open a serial communication program. This will help you to check if everything is working correctly.
+With the board still connected to your PC, open a serial communication program (e.g. Minicom) and connect to the Raspberry Pi over a serial port. This will help you to validate if everything is working correctly.
 !!! Note
-    To open the serial port interface you need to check the name of the connected device and choose the proper baud rate value:
+    To open the serial port interface you need to check the name of the connected device and set the proper baud rate:
 
-    - Linux usually uses **/dev/ttyACM<number>** or **/dev/ttyUSB<number>** for a serial port device name.
-    - Windows uses **COM<number>** for a serial port device name.
-    - macOS uses **/dev/tty.usbmodem<number>** for a serial port device name.
+    - Linux uses **/dev/ttyACM[number]** or **/dev/ttyUSB[number]** for a serial port device name.
+    - Windows uses **COM[number]** for a serial port device name.
+    - macOS uses **/dev/tty.usbmodem[number]** for a serial port device name.
 
     It’s important to set the correct baud rate, too. The baud rate is the number of symbols transferred in a communication channel per second and must be the same both on the serial communication program and on the board. The most common baud rates for serial ports are `9600` and `115200`.
 
@@ -166,9 +166,9 @@ In exercises throughout the academy, we use 115200 baud, since it’s the defaul
 ![Check the logs in serial communication program](images/logs.PNG)
 
 !!! Tip
-    Those logs may help figure out why the device didn't connect to the server (e.g. because of the mistake in writing the WiFi password in the `cmake` command).
+    Those logs may help figure out why the device didn't connect to the server (e.g. because of an incorrect WiFi password in the `cmake` command).
 
-If all went well and logs show **registration successful/registration successfully updated**, you can go to Coiote IoT DM where the Registration status should show **Registered**.
+If all went well and logs show **registration successful/registration successfully updated**, you can go to Coiote IoT DM where the *Registration Status* should show **Registered**.
 
 ![Device Center](images/no-sec.png)
 
