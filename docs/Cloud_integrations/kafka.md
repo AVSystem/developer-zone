@@ -1,18 +1,18 @@
 ---
-title: Kafka
+title: Kafka or Azure Event Hub
 date: 2023-08-08
 og_title: AVSystem IoT Developer Zone
 ---
 
-# Kafka
+# Kafka or Azure Event Hub
 
-Connect {{ coiote_long_name }} to your Kafka cluster by creating a Kafka event handler.
+Connect {{ coiote_long_name }} to your **Kafka cluster** or **Azure Event Hub** by creating a Kafka event handler.
 
 ## Prerequisites
 
 * A user with access to the {{ coiote_long_name }} and appropriate permissions
 * A LwM2M device
-* Access to a Kafka cluster
+* Access to a Kafka cluster or Azure Event Hub
 
 ## Create a Kafka handler
 
@@ -47,7 +47,7 @@ Provide **basic information** such as the name and description, optionally enabl
 
 ## Configure Kafka parameters
 
-Specify the **Topic** and **Producer configuration** to set up the conntion with a Kafka cluster.
+Specify the **Topic** and **Producer configuration** to set up the connection with a Kafka cluster or Azure Event Hub.
 
 ![Configure parameters](images/kafka-configure-parameters.png "Configure parameters")
 
@@ -118,7 +118,7 @@ Click **Next step** and **Add event handler** to create the event handler.
 ![Active kafka](images/active-kafka.png "Active kafka")
 
 
-If the integration is setup correct, the device events are received in your Kafka cluster.
+If the integration is setup correct, the device events are received in your Kafka cluster or Azure Event Hub.
  
 ![Kafka Confluent](images/kafka-event-arrived.png "Kafka Confluent")
 *Example of an event received by a Kafka topic in Confluent*
