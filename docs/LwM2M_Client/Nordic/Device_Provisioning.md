@@ -1,16 +1,16 @@
 # Automated Provisioning for Nordic boards
 
 ## Introduction
-With Factory provisioning for Nordic IoT devices, you can load on-device communication credentials and any cloud-related configuration at the factory level to automate secure device onboarding to Coiote IoT DM cloud.
+With Factory provisioning for Nordic IoT devices, you can load on-device communication credentials and any cloud-related configuration at the factory level to automate secure device onboarding to {{ coiote_short_name }} cloud.
 
 Here’s a tutorial to get you started with device provisioning using a dedicated script to be found in the [Anjay Zephyr Client repository](https://github.com/AVSystem/Anjay-zephyr-client).
 
 ## Prerequisites
-- A Nordic board connected to your computer. 
+- A Nordic board connected to your computer.
 - Installed [Go Programming language](https://go.dev/dl).
 - Installed [mcumgr command line tool](https://docs.zephyrproject.org/3.1.0/services/device_mgmt/mcumgr.html).
 - Zephyr development environment set up.
-- An active [Coiote DM cloud](https://eu.iot.avsystem.cloud) account.
+- An active [{{ coiote_short_name }} cloud]({{ coiote_site_link }}) account.
 - If you're using Windows: possibility to run Linux scripts/tools either via WSL, Cygwin or other.
 
 !!!important
@@ -25,14 +25,14 @@ This section shows how to provision your device using a pre-shared key (PSK).
 
     - Edit `endpoint_cfg` contains LwM2M objects setting that will be uploaded to the device. Set `RID.Security.PKOrIdentity` and `RID.Security.SecretKey`. Make sure that `RID.Security.Mode` is set to `0`.
 
-    - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server. This file is needed if you wish the script to automatically add the new device to Coiote DM.
+    - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in {{ coiote_short_name }} server. This file is needed if you wish the script to automatically add the new device to {{ coiote_short_name }}.
 
-2. Get the Coiote DM Access Token
+2. Get the {{ coiote_short_name }} Access Token
 
-    The provisioning script can register your device to Coiote DM automatically. You might use this option for the sake of this tutorial, but this is an optional step.
+    The provisioning script can register your device to {{ coiote_short_name }} automatically. You might use this option for the sake of this tutorial, but this is an optional step.
 
     !!! note
-        If you wish to skip device registration to Coiote DM, then call `ptool.py` without `-t` and `-S` options.
+        If you wish to skip device registration to {{ coiote_short_name }}, then call `ptool.py` without `-t` and `-S` options.
 
     First an access token needs to be generated.
 
@@ -40,7 +40,7 @@ This section shows how to provision your device using a pre-shared key (PSK).
         ```
         #!/bin/bash
 
-        SERVER="https://eu.iot.avsystem.cloud"
+        SERVER="{{ coiote_site_link }}"
 
         echo "Enter your login credentials for $SERVER"
         read -p "Login: " USER
@@ -55,14 +55,14 @@ This section shows how to provision your device using a pre-shared key (PSK).
         ```
     - If you're using Linux, run `chmod u+x get_token.sh` to give execute rights. Under Windows you can use the GUI to allow execution of this file.
 
-    - Run `./get_token.sh`. The script will ask you for your login and password for eu.iot.avsystem.cloud, please provide them.
+    - Run `./get_token.sh`. The script will ask you for your login and password for {{ coiote_server }}, please provide them.
 
     If a JSON structure containing `"access_token"` appears, you're ready to proceed. Copy your token.
 
     !!!important
         The token received is valid only for a short period of time.
 
-    For more informaton how to aquire the access token see [REST API authentication](https://eu.iot.avsystem.cloud/doc/user/REST_API/REST_API_Authentication/).
+    For more informaton how to aquire the access token see [REST API authentication]({{ coiote_site_link }}/doc/user/REST_API/REST_API_Authentication/).
 
 3. Run provisioning tool
 
@@ -83,13 +83,13 @@ This section shows how to provision your device using a pre-shared key (PSK).
     !!!note
         To see all of the options available in the script run `./ptool.py -h`.
 
-    If everything went well then your device should be visible in Coiote DM.
+    If everything went well then your device should be visible in {{ coiote_short_name }}.
 
 ## Provisioning the device using certificates
 Now we will show how to provision the device using certificates. This method is very similar to the provisioning the device with PSK and will require just a few additional steps.
 
 !!!note
-    You may need to remove the device from Coiote if you finished the steps in previous section and the device is already registered. Coiote will not allow registration of the device with the same name.
+    You may need to remove the device from {{ coiote_short_name }} if you finished the steps in previous section and the device is already registered. {{ coiote_short_name }} will not allow registration of the device with the same name.
 
 1. Prepare configuration
 
@@ -98,20 +98,20 @@ Now we will show how to provision the device using certificates. This method is 
     !!!note
         In this step we will use `endpoint_cfg_cert` configuration file instead of `endpoint_cfg`. You may verify that the `RID.Security.Mode` is set to `2` in this configuration.
 
-    - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in Coiote server.
+    - Edit `lwm2m_server.json` modify `domain` entry to reflect your domain in {{ coiote_short_name }} server.
 
     - Edit `cert_info.json`. This file contains information for generating a self signed certificate. This configuration is needed only if user don't want to provide certificates generated ealier.
 
-    - Get the certificate for `eu.iot.avsystem.cloud`. Run:
+    - Get the certificate for `{{ coiote_server }}`. Run:
 
-        `openssl s_client -showcerts eu.iot.avsystem.cloud:5684 > /tmp/server.pem` to download server certificate and then
+        `openssl s_client -showcerts {{ coiote_server }}:5684 > /tmp/server.pem` to download server certificate and then
 
         `openssl  x509 -outform der -in /tmp/server.pem -out /tmp/server.der` to convert it to DER format.
 
     !!!note
         The above two commands assumes you use a Linux OS and writes the certificate in the `/tmp` directory. If using Windows modify the commands by changing `"/tmp"` with some other valid directory.
 
-2. Getting Coiote Access Token
+2. Getting {{ coiote_short_name }} Access Token
 
     Repeat this step from previous section to acquire a new token.
 
@@ -136,14 +136,14 @@ Now we will show how to provision the device using certificates. This method is 
     !!!important
         By default the script generates certificates for the device using P-384 elliptic curve.
 
-4. Connecting device to Coiote
+4. Connecting device to {{ coiote_short_name }}
 
     The certificates for the device need to be uploaded by hand. To do this fallow those steps:
 
-    - Log in Coiote DM
+    - Log in {{ coiote_short_name }}
 
     - On the left side choose `Administration -> DTLS/TLS certificates`
 
     - Click `Add File`, in a popup window enter a name and upload the public certificate. The self signed certificate generated by the script should be in `Anjay-zephyr-client/demo/cert` directory.
 
-    If everyting went well you should see your new certificate and the device should be ready to connect to Coiote. 
+    If everyting went well you should see your new certificate and the device should be ready to connect to {{ coiote_short_name }}.

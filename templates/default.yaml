@@ -1,0 +1,18 @@
+coiote_long_name: Coiote IoT Device Management platform
+coiote_site_link: https://eu.iot.avsystem.cloud
+coiote_server: eu.iot.avsystem.cloud
+coiote_short_name: Coiote IoT DM
+coap_uri: coap://eu.iot.avsystem.cloud:5683
+coaps_uri: coaps://eu.iot.avsystem.cloud:5684
+freertos_repository_step:
+  0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
+STM32L496G_BG96_binary_step:
+  0. Download the `Anjay-freertos-client-STM32L496G-BG96.bin` file.
+B_L462_CELL1_binary_step:
+  0. Download the `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin` file.
+zephyr_repository_step:
+  0. Go to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases).
+nRF9160DK_binary_step:
+  0. Download the `demo_nrf9160dk_merged.hex` file.
+Thingy91_binary_step:
+  0. Download the `demo_thingy91_app_signed.hex` file.

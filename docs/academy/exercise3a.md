@@ -25,7 +25,7 @@ With our **Time Object** we will initiate one Instance, implement the read and w
 * A Raspberry Pi Pico W board with a USB cable
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * <a href="https://www.python.org/downloads/" target="_blank">Python</a>
-* An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+* An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account.
 * Completed [exercise 2B](../academy/exercise2b.md) from module 2
 
 
@@ -68,12 +68,12 @@ typedef struct time_instance_struct {
     anjay_iid_t iid;
     char application_type[64];
     char application_type_backup[64];
-    } time_instance_t;
+} time_instance_t;
 
 typedef struct time_object_struct {
         const anjay_dm_object_def_t *def;
         AVS_LIST(time_instance_t) instances;
-    } time_object_t;
+} time_object_t;
 ```
 
 
@@ -172,17 +172,17 @@ static int resource_read(anjay_t *anjay,
 
     switch (rid) {
     case RID_CURRENT_TIME: {
-    assert(riid == ANJAY_ID_INVALID);
-    int64_t timestamp;
-    if (avs_time_real_to_scalar(&timestamp, AVS_TIME_S,
-                                avs_time_real_now())) {
-        return -1;
-    }
-    return anjay_ret_i64(ctx, timestamp);
+        assert(riid == ANJAY_ID_INVALID);
+        int64_t timestamp;
+        if (avs_time_real_to_scalar(&timestamp, AVS_TIME_S,
+                                    avs_time_real_now())) {
+            return -1;
+        }
+        return anjay_ret_i64(ctx, timestamp);
     }
     case RID_APPLICATION_TYPE:
-    assert(riid == ANJAY_ID_INVALID);
-    return anjay_ret_string(ctx, inst->application_type);
+        assert(riid == ANJAY_ID_INVALID);
+        return anjay_ret_string(ctx, inst->application_type);
     default:
         return ANJAY_ERR_METHOD_NOT_ALLOWED;
     }
@@ -208,9 +208,9 @@ static int resource_write(anjay_t *anjay,
 
     switch (rid) {
     case RID_APPLICATION_TYPE:
-    assert(riid == ANJAY_ID_INVALID);
-    return anjay_get_string(ctx, inst->application_type,
-                            sizeof(inst->application_type));
+        assert(riid == ANJAY_ID_INVALID);
+        return anjay_get_string(ctx, inst->application_type,
+                                sizeof(inst->application_type));
     default:
         return ANJAY_ERR_METHOD_NOT_ALLOWED;
     }
@@ -308,28 +308,28 @@ Include the `time_object.h` file on the top of the *main.c* file.
 cmake_minimum_required(VERSION 3.13)
 
 add_executable(time_object
-            main.c
-            time_object.c
-            time_object.h
-            )
+               main.c
+               time_object.c
+               time_object.h
+               )
 
 target_link_libraries(time_object
-                    pico_stdlib
-                    anjay-pico
-                    FreeRTOS
-                    )
+                      pico_stdlib
+                      anjay-pico
+                      FreeRTOS
+                      )
 
 target_include_directories(time_object PRIVATE
-                        ${COMMON_DIR}/config
-                        )
+                           ${COMMON_DIR}/config
+                           )
 
 target_compile_definitions(time_object PRIVATE
-                        WIFI_SSID=\"${WIFI_SSID}\"
-                        WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
-                        ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
-                        PSK_IDENTITY=\"${PSK_IDENTITY}\"
-                        PSK_KEY=\"${PSK_KEY}\"
-                        )
+                           WIFI_SSID=\"${WIFI_SSID}\"
+                           WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
+                           ENDPOINT_NAME=\"${ENDPOINT_NAME}\"
+                           PSK_IDENTITY=\"${PSK_IDENTITY}\"
+                           PSK_KEY=\"${PSK_KEY}\"
+                           )
 pico_enable_stdio_usb(time_object 1)
 pico_enable_stdio_uart(time_object 0)
 
@@ -357,8 +357,7 @@ Go back to the *time_object.c* file and update the file using the following code
 <p style="text-align: center;">time_object.c</p>
 ```
 static int transaction_begin(anjay_t *anjay,
-
-const anjay_dm_object_def_t *const *obj_ptr) {
+                             const anjay_dm_object_def_t *const *obj_ptr) {
     (void) anjay;
     time_object_t *obj = get_obj(obj_ptr);
     time_instance_t *element;
@@ -369,8 +368,7 @@ const anjay_dm_object_def_t *const *obj_ptr) {
 }
 
 static int transaction_rollback(anjay_t *anjay,
-
-const anjay_dm_object_def_t *const *obj_ptr) {
+                                const anjay_dm_object_def_t *const *obj_ptr) {
     (void) anjay;
     time_object_t *obj = get_obj(obj_ptr);
     time_instance_t *element;
@@ -429,7 +427,7 @@ With the board still connected to your PC, open a serial communication program. 
 
 ![Check the logs in serial communication program](images/logs.PNG)
 
-If all went well and logs show **registration successfully updated**, you can go to Coiote IoT Device Management where the Registration status should show **Registered**. Go to the **Data Model** and check if you can see the Time Object in the **Defined objects** section.
+If all went well and logs show **registration successfully updated**, you can go to {{ coiote_long_name }} where the Registration status should show **Registered**. Go to the **Data Model** and check if you can see the Time Object in the **Defined objects** section.
 
 ![Time object in Data Model](images/time_object.PNG)
 

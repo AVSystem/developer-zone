@@ -2,7 +2,7 @@
 
 ##	Displaying device data model and running simple actions
 
-Coiote DM gives you the possibility to view and perform actions on the data model of individual devices defined by the LwM2M protocol. This view is available under the **Objects** panel of your device. Read this chapter to learn how to use the panel.
+{{ coiote_short_name }} gives you the possibility to view and perform actions on the data model of individual devices defined by the LwM2M protocol. This view is available under the **Objects** panel of your device. Read this chapter to learn how to use the panel.
 
 ![The Objects panel](images/image062.png "The Objects panel")
 
@@ -61,7 +61,7 @@ To use device variables, enter the expression context by typing ``${variable.<va
 
 Learn how to use device variables in **Device tests** in a few steps:
 
-Use case: Testing the **WRITE** action on the `LwM2M Server.1.Lifetime` resource.  
+Use case: Testing the **WRITE** action on the `LwM2M Server.1.Lifetime` resource.
 
 1. Add the variable:
      - In **Device inventory**, click on a selected device name to enter its **Device Management Center**.
@@ -92,4 +92,4 @@ Use case: Testing the **WRITE** action on the `LwM2M Server.1.Lifetime` resource
      -  After the test is finished, check if the *Lifetime* resource value has changed on the device:
         - Go to the **Objects** panel of your device and under the **LwM2M Server** object, look for the **Lifetime** resource value:
 ![Checking device data model](images/image106.png "Checking device data model")
-        - If the value has changed accordingly, the variable can be now reused and populated to any other tests.    
+        - If the value has changed accordingly, the variable can be now reused and populated to any other tests.

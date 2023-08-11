@@ -6,7 +6,7 @@ og_title: AVSystem IoT Developer Zone
 
 # Air quality monitoring using Azure IoT Hub and Power BI
 
-The Coiote DM and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the Coiote DM - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.
+The {{ coiote_short_name }} and Azure IoT Hub integration lets you create custom use cases with data visualization. See the video and have a sneak peek at the possibilities that the {{ coiote_short_name }} - Azure IoT Hub integration offers you. In the tutorial, you will see how to leverage the integration to create an air quality monitoring in just a few steps.
 
 <iframe width="640" height="360"  src="https://www.youtube.com/embed/Ck0WJp4grb0" frameborder="0" allowfullscreen="true"> </iframe>
 
@@ -16,7 +16,7 @@ The text version of the tutorial, complete with the necessary steps and code sni
 ## Prerequisites
 
 - An active Azure subscription.
-- An active Coiote DM account. Please refer to [Coiote DM home page](https://www.avsystem.com/products/coiote-iot-device-management-platform/) for details on how to get it.
+- An active {{ coiote_short_name }} account. Please refer to [{{ coiote_short_name }} home page](https://www.avsystem.com/products/coiote-iot-device-management-platform/) for details on how to get it.
 - An active Microsoft Power BI account.
 - An OpenWeatherMap account with a free API token.
 - An active and configured Azure CLI - please refer to the [Azure CLI installation guide](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) for details.
@@ -55,10 +55,10 @@ While your new IoT hub is deploying, you can add a new storage account:
 
 ## Configuring the Azure IoT Hub integration extension
 
-Once the deployments are complete, go to Coiote DM to set up the Azure IoT Hub extension.
+Once the deployments are complete, go to {{ coiote_short_name }} to set up the Azure IoT Hub extension.
 If you haven't done this yet, please follow the [instruction for the Azure IoT Hub integration configuration](/Azure_IoT_Hub_integration/Configuring_Azure_IoT_Hub_integration_extension).
 
-## Adding and connecting LwM2M air quality meter simulators to Coiote DM and Azure IoT Hub
+## Adding and connecting LwM2M air quality meter simulators to {{ coiote_short_name }} and Azure IoT Hub
 1. Go to your Azure IoT Hub and add new devices:
     - Under **Device management**, select **Devices** and click **+ Add Device**.
     ![Adding new devices to IoT Hub](images/device_add2.png "New_device_create")
@@ -67,16 +67,16 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
     - Click **Save**.
          ![Saving IoT Hub devices](images/device_save.png "New_device_save")
     - Repeat the procedure for the other 5 devices (increase the number included in the device name).
-2. Go to Coiote DM and sync the previously added devices:
+2. Go to {{ coiote_short_name }} and sync the previously added devices:
     - In **Device inventory**, select **Sync with IoT platform -> Azure IoT Hub**.
     ![Syncing IoT Hub devices](images/hub_sync_menu.png "Device_sync")
     - In the pop-up, click **Sync devices**.
     ![Device sync](images/sync_devices.png "Device_sync2")
-    - Devices should then be visible in **Device inventory**   
+    - Devices should then be visible in **Device inventory**
 3. Go to your command line and register the device simulators:
     - Paste and run the following command to create a container group:
         ```
-         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS=eu.iot.avsystem.cloud OPEN_WEATHER_API_TOKEN=exampletoken
+         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS={{ coiote_server }} OPEN_WEATHER_API_TOKEN=exampletoken
 
         ```
 
@@ -86,7 +86,7 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
      - once the command is executed, you should see a JSON payload that describes the content of the container instance.
 ![Command line JSON payload](images/json_payload.png "JSON_payload")
 
-4. Go back to Coiote DM and in **Device inventory**, check if the devices have registered to the platform and if their data model has been updated.
+4. Go back to {{ coiote_short_name }} and in **Device inventory**, check if the devices have registered to the platform and if their data model has been updated.
 
     - Click the **Refresh data** icon if needed.
     - Click on a device and in the **Device Management Center**, select the **Actions** panel.
@@ -96,22 +96,22 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
     ![Device data model](images/objects.png "Data_model")
 ## Bidirectional communication using Device Twin
 
-### From Coiote DM to Azure IoT Hub
+### From {{ coiote_short_name }} to Azure IoT Hub
 
-1. In your Coiote DM account, go to **Device inventory**, select a device.
+1. In your {{ coiote_short_name }} account, go to **Device inventory**, select a device.
 2. In the **Device Management Center**, go to the **Objects** panel.
 3. In the ``1 LwM2M Server`` object, find the ``Lifetime`` resource.
 4. Click the **pen** icon next to it, change the lifetime value and click the **Apply** link.
 5. Go to your Azure IoT hub, select **IoT devices**, click your device and select the **Device Twin** panel.
-6. Click **Refresh** and check in the JSON payload if the reported property for the ``1/0/1`` (Lifetime) resource has changed.   
+6. Click **Refresh** and check in the JSON payload if the reported property for the ``1/0/1`` (Lifetime) resource has changed.
 
-### From Azure IoT Hub to Coiote DM
+### From Azure IoT Hub to {{ coiote_short_name }}
 
 !!! note
-    To read more about how the Device Twins work in the Coiote DM - Azure IoT Hub integration, please refer to [the LwM2M Mappings section](/Concepts/LwM2M_mappings/#lwm2m-readable-and-writable-resources).
+    To read more about how the Device Twins work in the {{ coiote_short_name }} - Azure IoT Hub integration, please refer to [the LwM2M Mappings section](/Concepts/LwM2M_mappings/#lwm2m-readable-and-writable-resources).
 
 1. In your Azure IoT hub, select **IoT devices**, click one of your added devices and select the **Device Twin** panel.
-2. To change the ``Lifetime`` resource in Coiote DM, you need to modify the relevant Device Twin desired property.
+2. To change the ``Lifetime`` resource in {{ coiote_short_name }}, you need to modify the relevant Device Twin desired property.
 
     - under the ``properties`` tag in the Device Twin JSON payload, paste the following nested structure:
 
@@ -128,16 +128,16 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
            }
          }
        },
-      ```  
+      ```
       - Click **Save** and **Refresh**.
 
-3. The value of the resource should now be changed in the Device Twin reported properties as well as in the Coiote DM Objects panel, in the ``Lifetime`` resource of the ``1 LwM2M Server`` object.
+3. The value of the resource should now be changed in the Device Twin reported properties as well as in the {{ coiote_short_name }} Objects panel, in the ``Lifetime`` resource of the ``1 LwM2M Server`` object.
 
 ## Passing telemetry to Azure IoT Hub
 
-### Setting group value tracking on resources in Coiote DM
+### Setting group value tracking on resources in {{ coiote_short_name }}
 
-1. In Coiote DM, go to **Device inventory** and use the search option to display your air quality meter devices. Then, click the **Add to group** icon.
+1. In {{ coiote_short_name }}, go to **Device inventory** and use the search option to display your air quality meter devices. Then, click the **Add to group** icon.
 2. In the pop-up, click **Add to new group**, provide a name for your group (following the pattern root.iothubexample.airqualitymeter), click **Confirm** and **Yes**.
 3. Go to the **Group management** panel, select your group and click **Devices** to see if all of your devices are added to the group.
 4. Go to the **Value tracking** panel and click **Add new**. In the pop-up:
@@ -236,7 +236,7 @@ Once the query is finished, you can go to Power BI to create a visualization for
 3. Click the **more options** icon and select **Create report**
       - From the **Visualizations** menu, select the **table** icon and drag and drop it to the work space.
            - From the **Fields** menu, select the ``deviceId2``, ``temperature``, ``pm10`` and ``pm25`` parameters.
-           - In the **Values** submenu, expand the drop-down list for the ``temperature``, ``pm10`` and ``pm25`` parameters and select **Average** for each.   
+           - In the **Values** submenu, expand the drop-down list for the ``temperature``, ``pm10`` and ``pm25`` parameters and select **Average** for each.
 4. Create a map with air quality indicators:
       - From the **Visualizations** menu, click the **get more visuals** icon and select **Get more visuals**.
       - Use search to find the **Heatmap** and click **Add**.

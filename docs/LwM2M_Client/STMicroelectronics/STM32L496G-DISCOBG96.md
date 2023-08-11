@@ -7,15 +7,15 @@ Integrate your P-L496G-CELL02 Discovery kit board along with the default-provide
 - The STM32L496G-DISCO/BG96 board with a Micro-USB cable.
 - Installed **STM32CubeIDE**.
 - The serial communication program, such as **minicom** (for Linux) or RealTerm or PuTTY (for Windows) installed.
-- A user with access to the Coiote IoT Device Management platform.
+- A user with access to the {{ coiote_long_name }}.
 
 ## Prepare Anjay client application
 ### Use an already built binary
 
 To get the latest binary file and flash it to the board:
 
-0. Go to [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client/releases/).
-0. Download the `Anjay-freertos-client-STM32L496G-BG96.bin` file.
+{{ freertos_repository_step }}
+{{ STM32L496G_BG96_binary_step }}
 0. To flash the board, open your **File manager** and drag the downloaded `.bin` file to your **DIS_L496ZG** external device.
 0. You will see a blinking diode on your board. The diode will stop blinking as soon as the flashing is finished.
 
@@ -49,7 +49,7 @@ Enter the command line interface on your machine and run the following command:
 
 ## Connect to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
+To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
 !!! note
      If you use the BG96-based configuration, you need to upgrade the modem firmware to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
@@ -66,18 +66,18 @@ To connect to Coiote IoT Device Management LwM2M Server, please register at [htt
 
 To connect the board:
 
-1. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 2. In **Device Inventory**, click **Add device**.
 3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-    3. In the **Device credentials** step:
+    1. In the **Device credentials** step:
          - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
              ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
          - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
               - In the **Key identity** field, type the same name as in the `Endpoint name` field.
               - In the **Key** field, type the shared secret used in the device-server authentication.
-    4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, follow the next [section](#configure-the-client) to run the client and connect it to the server.
+    2. Click the **Add device** button and **Confirm** in the confirmation pop-up.
+    3. In the **Connect your device** step, follow the next [section](#configure-the-client) to run the client and connect it to the server.
 
 ## Configure the Client
 
@@ -95,7 +95,7 @@ To connect the board:
     !!! Note
         If you use external SIM card you have to check APN used by SIM card's provider.
 
-0. Go to Coiote DM to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+0. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
 ![Registered device](images/registered_device.png "Registered device")
 
@@ -148,9 +148,9 @@ application code before every execution in order to ensure that invalid or malic
 
 ### Flash the board with SBSFU binary
 
-Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-STM32L496G-BG96.bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to Coiote DM.
+Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-STM32L496G-BG96.bin` file to program the board (it is advisable to perform **Full chip erase** first). You can open serial port to change default credentials in order to connect to {{ coiote_short_name }}.
 
-After that, you can use Coiote DM to perform firmware update with `Anjay-freertos-client-STM32L496G-BG96.sfb` file.
+After that, you can use {{ coiote_short_name }} to perform firmware update with `Anjay-freertos-client-STM32L496G-BG96.sfb` file.
 
 !!! important
     Disable Secure Protection
@@ -174,7 +174,7 @@ In order to perform firmware update:
     #define FIRMWARE_VERSION "v2.0"
     ```
     and build the application with a new firmware.
-0. Upload the generated firmware file (`Anjay-freertos-client-STM32L496G-BG96.sfb`) to [Coiote DM](https://eu.iot.avsystem.cloud) (go to Device management and select `Firmware update`) and click `Upgrade`.
+0. Upload the generated firmware file (`Anjay-freertos-client-STM32L496G-BG96.sfb`) to [{{ coiote_short_name }}]({{ coiote_site_link }}) (go to Device management and select `Firmware update`) and click `Upgrade`.
 0. After the FOTA finishes, the device will reboot and the following log should appear:
     ```
     Firmware updated from version 'v1.0' to 'v2.0'

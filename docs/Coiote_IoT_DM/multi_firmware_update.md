@@ -12,9 +12,9 @@ Object `/33629` is designed as an extension of the Firmware Update object `/5`. 
 
 ## Prerequisites
 
-- An active [Coiote DM](https://eu.iot.avsystem.cloud/) user account
+- An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account
 - A device which supports the Advanced Firmware Update Object `/33629`
-    
+
 ## Firmware Update Object `/33629`
 
 Object `/33629` defines the update process using **4 Update States** representing the phase of the update process. Additionally, a total of **13 Update Results** may be reported, representing the most common outcomes of the firmware update process.
@@ -52,7 +52,7 @@ Object `/33629` defines the update process using **4 Update States** represen
 
 ## Prepare the Firmware Update
 
-1. In the Coiote IoT Device Management platform, go to [**Device Inventory**](https://eu.iot.avsystem.cloud/ui/device/inventory).
+1. In the {{ coiote_long_name }}, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
 
 1. Select the device you want to update by clicking on its endpoint name.
 
@@ -83,11 +83,11 @@ Object `/33629` defines the update process using **4 Update States** represen
 1. Upload the **firmware image**.
 
     ![Upload Firmware Image](images/upload.png)
-        
+
 1. Choose between **Pull** and **Push**:
 
-    * **Pull method** (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it. 
-    
+    * **Pull method** (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it.
+
     * **Push method**: The LwM2M Server pushes the firmware file to the device.
 
     !!! Info
@@ -100,7 +100,7 @@ Object `/33629` defines the update process using **4 Update States** represen
         **Push** transmits the firmware over the same transport type as is used for device management, which is `CoAPs` over `UDP` by default.
 
     !!! Tip "Which transport protocol to choose?"
-        
+
         Downloads using `CoAP(s)` over `UDP` tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
 
         Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually results in faster download speeds. However, not every device supports these transport protocols.
@@ -130,16 +130,16 @@ Once executed successfully, the status in the **Update list** panel changes to `
 
 During the update process, the status of the firmware update can be monitored by reviewing the Resources **State** `/33629/*/3` and **Update Results** `/33629/*/5`.
 
-To find the Resources, select the **Data model** tab and open the **Advanced Firmware Update Object** `/33629`. 
+To find the Resources, select the **Data model** tab and open the **Advanced Firmware Update Object** `/33629`.
 
 ![Firmware upgraded](images/object-33629-downloading.png)
 
 If no errors occur, the update process follows this pattern:
 
-1. **Downloading** `state 1` & `update result 0` 
-2. **Downloaded** `state 2` & `update result 0` 
-3. **Updating** `state 3` & `update result 0` 
-4. **Updated** `state 0` & `update result 1` 
+1. **Downloading** `state 1` & `update result 0`
+2. **Downloaded** `state 2` & `update result 0`
+3. **Updating** `state 3` & `update result 0`
+4. **Updated** `state 0` & `update result 1`
 
 !!! important "Update successful?"
     Does the **State** `/33629/*/3` report `0` and the **Update Results** `/33629/*/5` report `1`? Congratulations! You've successfully updated the firmware of your device. 🎉

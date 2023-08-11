@@ -3,20 +3,20 @@ date: 2023-05-10
 og_title: AVSystem IoT Developer Zone
 ---
 
-# Coiote IoT Device Management 
+# {{ coiote_long_name }}
 
-Coiote IoT Device Management Platform allows you to manage your LwM2M devices throughout their entire lifecycle. Coiote supports device onboarding, data management, data visualization, automated tests, firmware updates, monitoring & alerting and cloud integrations.
+{{ coiote_long_name }} allows you to manage your LwM2M devices throughout their entire lifecycle. {{ coiote_short_name }} supports device onboarding, data management, data visualization, automated tests, firmware updates, monitoring & alerting and cloud integrations.
 
-[Visit Coiote IoT DM](https://eu.iot.avsystem.cloud/){: .md-button .md-button--big }
+[Visit {{ coiote_short_name }}]({{ coiote_site_link }}/){: .md-button .md-button--big }
 
 !!! Tip "Sign up free of charge"
-    Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account which allows you to connect up to 10 devices free of charge.
+    Get started by <a href="{{ coiote_site_link }}/" target="_blank">**signing up**</a> to {{ coiote_long_name }}. You can sign up for a developer account which allows you to connect up to 10 devices free of charge.
 
-![Coiote login page](images/login-page-new.png "Coiote login page")
+![Coiote login page](images/login-page-new.png "{{ coiote_short_name }} login page")
 
 ## Device inventory
 
-Once logged in, you enter the **Device inventory** which provides an overview of all registered LwM2M devices. After selecting one of your devices, you enter the **Device center** which allows you to monitor and manage single devices. 
+Once logged in, you enter the **Device inventory** which provides an overview of all registered LwM2M devices. After selecting one of your devices, you enter the **Device center** which allows you to monitor and manage single devices.
 
 In the **Device center** you can:
 
@@ -43,13 +43,13 @@ Use the **Operations center** to easily monitor your devices. It provides a cle
 ## Device groups*
 
 !!! Note
-    Features marked with an "*****" are only included in the premium version of Coiote.
+    Features marked with an "*****" are only included in the premium version of {{ coiote_short_name }}.
 
 Devices can be added to **Groups** allowing for easy management of your device fleet. Instead of managing devices one by one, configurations and firmware can be updated for a group of devices with a single click.
 
 ## Integrations
 
-Initiate integrations with popular cloud platforms such as Azure IoT Hub, AWS IoT Core or nRF Cloud. 
+Initiate integrations with popular cloud platforms such as Azure IoT Hub, AWS IoT Core or nRF Cloud.
 
 → **Learn more about [**Cloud integrations**](/Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/).**
 

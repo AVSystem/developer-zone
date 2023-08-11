@@ -1,15 +1,15 @@
 # Configure AWS integration
 
-Follow this section to integrate your AWS services with Coiote DM.
+Follow this section to integrate your AWS services with {{ coiote_short_name }}.
 
 ## Prerequisites
 
 - An active AWS subscription with access to IoT Core, CloudFormation, CloudWatch, Lambda and Secrets Manager in supported regions.
 - Installed [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
-- A Coiote DM user account with the **awsiottenant** role.
+- A {{ coiote_short_name }} user account with the **awsiottenant** role.
 
     !!! important
-        It's recommended to create a Coiote DM user account dedicated exclusively for the integration. Note that the integration will work correctly only until the user with the **awsiottenant** role exists in Coiote DM and the AWS CloudFormation stack is appropriately configured.
+        It's recommended to create a {{ coiote_short_name }} user account dedicated exclusively for the integration. Note that the integration will work correctly only until the user with the **awsiottenant** role exists in {{ coiote_short_name }} and the AWS CloudFormation stack is appropriately configured.
 
 ## Supported regions
 
@@ -25,23 +25,23 @@ Follow this section to integrate your AWS services with Coiote DM.
 
 If you cannot find your region, please create a GitHub issue or contact AVSystem.
 
-## Create a Coiote DM REST user
+## Create a {{ coiote_short_name }} REST user
 
-To start integrating AWS with Coiote DM, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in Coiote DM. To do that:
+To start integrating AWS with {{ coiote_short_name }}, you first need to create a user account that will be used to authorize and authenticate API calls from AWS in {{ coiote_short_name }}. To do that:
 
-1. Go to your Coiote DM account and from the **Administration** menu, select **Users management**.
+1. Go to your {{ coiote_short_name }} account and from the **Administration** menu, select **Users management**.
 2. Select **Add user** and fill in the form:
 ![Add user button](images/add_button2.png "Add user button")
     - Provide **Email** for new user (which will be its username) and select your domain from the **Domain path** drop-down list.
     - Remember to switch on the **User Verified** and **User Enabled** toggle buttons.
-    - In the **Client Roles** fields, pick the **CoioteDM** client and **awsiottenant** role.
+    - In the **Client Roles** fields, pick the **{{ coiote_short_name }}** client and **awsiottenant** role.
 ![Add REST user](images/add_rest_user2.png "Add REST user")
     - Click **Save**.
     - Go to the **Credentials** tab, type a password for your user (twice), select **Set password**, then confirm by clicking **Set password** in the pop-up.
 
-## Copy tasks and provide credentials for your device group in Coiote DM
+## Copy tasks and provide credentials for your device group in {{ coiote_short_name }}
 
-The Coiote DM-side configuration of the integration is located in the dedicated `AWSiotCoreCertAuth` device group. To complete this side of the integration, log in as the user with the **awsiottenant** role (only if that user was created in the Root **Domain**. If not, they can not access the root groups and the tasks have to be copied from the **Cloud admin** account.).
+The {{ coiote_short_name }}-side configuration of the integration is located in the dedicated `AWSiotCoreCertAuth` device group. To complete this side of the integration, log in as the user with the **awsiottenant** role (only if that user was created in the Root **Domain**. If not, they can not access the root groups and the tasks have to be copied from the **Cloud admin** account.).
 Then follow the steps below:
 
 1. Go to the **Device groups** panel and select a group:
@@ -64,7 +64,7 @@ Then follow the steps below:
             - In the pop-up window, click **Select group** and select the **AWSiotCoreCertAuth** group.
             - Pick the `AWSdataPlaneEndpointAddress` setting value from the list by checking it in the **Selected** column, then click **Copy**.
               ![Copy setting values pop-up](images/copy_sv_popup.png "Copy setting values pop-up")
-2. Enter your AWS Endpoint Name in Coiote DM:
+2. Enter your AWS Endpoint Name in {{ coiote_short_name }}:
     - Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting value:
     - Open your command line and run the following command:
            ```
@@ -72,7 +72,7 @@ Then follow the steps below:
            ```
     - Copy the returned result.
       ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
-    - In Coiote DM, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
+    - In {{ coiote_short_name }}, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
     - Append `:8443` port to the pasted value.
     - Click **Save**.
 3. Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.
@@ -93,11 +93,11 @@ https://coiote-aws-int-[REGION-NAME].s3.[REGION-NAME].amazonaws.com/coiote-aws-i
 0. Choose a name for the stack and provide the parameters:
 
     !!! important
-        The credentials you provide at this point should belong to the user with access to the Coiote DM group which stores the AWS configuration set in a previous step.
+        The credentials you provide at this point should belong to the user with access to the {{ coiote_short_name }} group which stores the AWS configuration set in a previous step.
 
-    - **coioteDMrestUsername** - username of the created CoioteDM account.
-    - **coioteDMrestPassword** - password of the created CoioteDM account.
-    - **coioteDMrestUri** - URL address and port of your Coiote DM installation. The port should always be `8088` to enable proper mTLS-based authentication.
+    - **coioteDMrestUsername** - username of the created {{ coiote_short_name }} account.
+    - **coioteDMrestPassword** - password of the created {{ coiote_short_name }} account.
+    - **coioteDMrestUri** - URL address and port of your {{ coiote_short_name }} installation. The port should always be `8088` to enable proper mTLS-based authentication.
 
         !!! note
             For some installations, port is not required. If you don't know what port to choose, contact our support.
@@ -115,9 +115,9 @@ To learn how to perform operations on your devices, please see the [Performing L
 
 ## Removing the integration
 
-To remove the integration of AWS and Coiote DM, follow the following steps:
+To remove the integration of AWS and {{ coiote_short_name }}, follow the following steps:
 
-1. In **CoioteDM** remove all the devices from the **AWSiotCoreCertAuth** group.
+1. In **{{ coiote_short_name }}** remove all the devices from the **AWSiotCoreCertAuth** group.
 2. Go to the **CloudFormation** service in **AWS** and select the stack that was created while setting up the integration.
 3. Delete the stack.
    ![Delete stack](images/stack_delete.png "Delete stack")

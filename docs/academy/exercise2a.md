@@ -10,7 +10,7 @@ Fortunately, Anjay provides these Objects in the form of pre-implemented modules
 
 ---
 
-In this exercise, we analyze the application “[Mandatory Objects](https://github.com/AVSystem/Anjay-pico-client/tree/master/mandatory_objects)” which we built in the exercise of **module 1**. This application registers the device to the Coiote IoT Device Management LwM2M Server and periodically sends status messages.
+In this exercise, we analyze the application “[Mandatory Objects](https://github.com/AVSystem/Anjay-pico-client/tree/master/mandatory_objects)” which we built in the exercise of **module 1**. This application registers the device to the {{ coiote_long_name }} and periodically sends status messages.
 
 This exercise describes the functionalities of the application that uses the NoSec security mode. In the next exercise we will implement a security mode.
 
@@ -18,7 +18,7 @@ This exercise describes the functionalities of the application that uses the NoS
 
 * A Raspberry Pi Pico W board with a USB cable.
 * Completed [exercise 1](../academy/exercise1.md) from module 1.
-* An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+* An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account.
 
 
 ## Introduction to Mandatory Objects
@@ -48,7 +48,7 @@ static int setup_security_object() {
     }
     const anjay_security_instance_t security_instance = {
         .ssid = 1,
-        .server_uri = "coap://eu.iot.avsystem.cloud:5683",
+        .server_uri = "{{ coap_uri }}",
         .security_mode = ANJAY_SECURITY_NOSEC
     };
     // Anjay will assign Instance ID automatically

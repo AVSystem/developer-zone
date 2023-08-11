@@ -2,19 +2,19 @@
 
 ## Welcome to the DevZone of AVSystem!
 
-This Quick Start walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **Coiote IoT Device Management**.
+This Quick Start walks you through the process of building your first LwM2M application using AVSystem’s LwM2M Client **Anjay** and AVSystem’s LwM2M Server **{{ coiote_long_name }}**.
 
 Follow this guide to build your first LwM2M application using a simulated device within 20 minutes.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/m-9zYqV5bLQ" title="AVSystem Quickstart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Access the Coiote IoT DM portal
+## Access the {{ coiote_short_name }} portal
 
-Get started by <a href="https://eu.iot.avsystem.cloud/" target="_blank">**signing up**</a> to Coiote IoT Device Management. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
+Get started by <a href="{{ coiote_site_link }}" target="_blank">**signing up**</a> to {{ coiote_long_name }}. You can sign up for a developer account, which allows you to connect up to 10 devices free of charge.
 
-[Coiote IoT DM](https://eu.iot.avsystem.cloud/){: .md-button .md-button--big }
+[{{ coiote_short_name }}]({{ coiote_site_link }}){: .md-button .md-button--big }
 
-![Coiote Device Inventory](img/Empty-Device-Inventory.png "Empty device inventory at Coiote IoT DM")
+![Coiote Device Inventory](img/Empty-Device-Inventory.png "Empty device inventory at {{ coiote_short_name }}")
 
 
 ## Run Anjay LwM2M Client Demo
@@ -111,9 +111,9 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
     make
     ```
 
-## Add a new device in Coiote IoT DM
+## Add a new device in {{ coiote_short_name }}
 
-After compiling the demo project, go back to the [Coiote IoT DM portal](https://eu.iot.avsystem.cloud/).
+After compiling the demo project, go back to the [{{ coiote_short_name }} portal]({{ coiote_site_link }}/).
 
 Click **+ Add device** in the top-right corner.
 
@@ -123,15 +123,15 @@ Add a new device using the option: **Anjay LwM2M Client Demo**
 
 ![Anjay LwM2M Client Demo](img/add-demo-device.png)
 
-Copy the command you find in Coiote.
+Copy the command you find in {{ coiote_short_name }}.
 
 ![Run command in terminal](img/run-command.png)
 
 Go back to your terminal, open your Anjay directory and **run the command** to configure and activate the demo application.
 
-## Monitor your demo device in the Coiote IoT DM
+## Monitor your demo device in the {{ coiote_short_name }}
 
-If the demo application started successfully, a device is shown in the Coiote platform.
+If the demo application started successfully, a device is shown in the{{ coiote_short_name }}platform.
 
 ![Coiote dashboard](img/coiote-dashboard.png)
 
@@ -180,11 +180,11 @@ Follow the **Getting started** guides to kickstart your LwM2M application using 
 [<img src="../img/ESP.jpg" alt="ESPPRESSIF" title="ESPPRESSIF" width="24%" />](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/)
 [<img src="../img/RPI.jpg" alt="Raspberry Pi" title="Raspberry Pi" width="24%" />](/LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W/)
 
-### Learn more about Coiote IoT DM
+### Learn more about {{ coiote_short_name }}
 
-Dive into Coiote IoT Device Management and explore its numerous functionalities. From device onboarding using the [Bootstrap Server](/Coiote_IoT_DM/Onboarding/bootstrap/) to [Data Visualization](/Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](/Coiote_IoT_DM/Device_tests/Overview/).
+Dive into {{ coiote_long_name }} and explore its numerous functionalities. From device onboarding using the [Bootstrap Server](/Coiote_IoT_DM/Onboarding/bootstrap/) to [Data Visualization](/Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](/Coiote_IoT_DM/Device_tests/Overview/).
 
-[Coiote IoT DM docs](/Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
+[{{ coiote_short_name }} docs](/Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
 
 ### Join our community on Discord
 

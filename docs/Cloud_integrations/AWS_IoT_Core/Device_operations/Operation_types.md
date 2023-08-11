@@ -9,7 +9,7 @@ This section will give you an overview of how to perform LwM2M operations on dev
 
 ## Execute LwM2M operations on device
 
-Within the AWS - Coiote DM integration, LwM2M operations on devices are triggered by modifying the `desired` section of a device [Operation Shadow](../Concepts/AWS_Integration_concepts.md#operation-shadow). The changes, upon successful execution, are then reported back by Coiote DM and repopulated to the `reported` section of a device [Datamodel Shadow](../Concepts/AWS_Integration_concepts.md#datamodel-shadow).
+Within the AWS - {{ coiote_short_name }} integration, LwM2M operations on devices are triggered by modifying the `desired` section of a device [Operation Shadow](../Concepts/AWS_Integration_concepts.md#operation-shadow). The changes, upon successful execution, are then reported back by {{ coiote_short_name }} and repopulated to the `reported` section of a device [Datamodel Shadow](../Concepts/AWS_Integration_concepts.md#datamodel-shadow).
 
 The integration supports the following LwM2M operations:
 
@@ -19,7 +19,7 @@ To send a request for a READ operation to a device:
 
 1. Enter AWS IoT Core and go to **Manage** > **Things**.
 2. From the list, select your device.
-3. Go to the **Device Shadows** section and select the **operation** Shadow.    
+3. Go to the **Device Shadows** section and select the **operation** Shadow.
 4. Click **Edit** and formulate the request inside the **Device Shadow state** field based on the example input given below:
      - In the `operation` section, type the operation name
      - In the `keys` section, type the LwM2M object and resource paths for which you want to execute the operation.
@@ -341,7 +341,7 @@ Here are example inputs for other operations supported by the integration: READ 
 
 ## Check logs in CloudWatch
 
-If you encounter difficulties when forwarding your requests to Coiote DM, it may be helpful to check the logs collected by AWS CloudWatch for all the components of the integration.
+If you encounter difficulties when forwarding your requests to {{ coiote_short_name }}, it may be helpful to check the logs collected by AWS CloudWatch for all the components of the integration.
 
 1. To check logs for AWS Lambda:
     - Go to AWS CloudWatch and select **Logs** > **Log groups**.

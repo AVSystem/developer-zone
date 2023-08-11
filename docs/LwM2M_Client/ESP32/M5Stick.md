@@ -1,12 +1,12 @@
 # M5StickC
 
-Integrate your ESP32-based device to manage it via Coiote DM.
+Integrate your ESP32-based device to manage it via {{ coiote_short_name }}.
 
 ## Prerequisites
 
 - An M5StickC device.
 - Installed ESP-IDF and dependencies (installation steps 1-4 from [ESP32 official documentation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)). Supported ESP-IDF version is v4.4.
-- A user with access to the Coiote IoT Device Management platform.
+- A user with access to the {{ coiote_long_name }}.
 
 ## Step 1: Download the Anjay ESP32 client files
 
@@ -16,10 +16,6 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 ## Step 2: Configure the client using an NVS partition
 
 0. Create a `nvs_config.csv` file and save it in your project directory. In the file, provide your credentials in [wifi_ssid], [wifi_password], [endpoint_name], [identity], [psk], [lwm2m_server_uri] (without the `[]` brackets). Use the following snippet as a template:
-
-    !!! important
-        The **Identity** parameter stands for both the device endpoint name and its PSK identity, therefore these two must be identical in Coiote DM.
-
 
     ```
     key,type,encoding,value
@@ -58,13 +54,13 @@ Integrate your ESP32-based device to manage it via Coiote DM.
 
 ![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
 
-## Step 3: Add device to Coiote DM
+## Step 3: Add device to {{ coiote_short_name }}
 
-To connect your M5StickC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.
+To connect your M5StickC to the {{ coiote_long_name }}, use your access to a {{ coiote_short_name }} installation, or register at {{ coiote_site_link }}/ to get access.
 
 To connect the board:
 
-0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+0. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 0. In **Device Inventory**, click **Add device**.
 0. Select the **Connect your LwM2M device directly via the Management server** tile.
 ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
@@ -129,7 +125,7 @@ Once executed, the device will be reset and run with the configuration you provi
 
 ## M5StickC LwM2M objects
 
-After successful connection to Coiote DM, you can explore the available device objects.
+After successful connection to {{ coiote_short_name }}, you can explore the available device objects.
 
 | Target         | Objects
 |----------------|---------------------------------------------
@@ -139,7 +135,7 @@ After successful connection to Coiote DM, you can explore the available device o
 
 ## Upgrade device firmware over the air
 
-To perform a FOTA upgrade, you need an established connection between the M5StickC and Coiote DM (see instructions above).
+To perform a FOTA upgrade, you need an established connection between the M5StickC and {{ coiote_short_name }} (see instructions above).
 
 ### Build new firmware version
 
@@ -150,9 +146,9 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 0. Run `idf.py build`.
 0. Once executed, check if the binary file has been built in the following path `$PROJECT_DIR/build/anjay-esp32-client/build`.
 
-### Schedule upgrade in Coiote DM
+### Schedule upgrade in {{ coiote_short_name }}
 
-0. In your Coiote DM account, select your device in **Device inventory** and click the **LwM2M Firmware** tab.
+0. In your {{ coiote_short_name }} account, select your device in **Device inventory** and click the **LwM2M Firmware** tab.
 
     ![LwM2M firmware tab](images/lwm2m_firmware.png "LwM2M firmware tab")
 

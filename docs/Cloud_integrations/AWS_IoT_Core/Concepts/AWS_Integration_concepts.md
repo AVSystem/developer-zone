@@ -1,10 +1,10 @@
 # How AWS integration works
 
-Here's a walkthrough of the main concepts related to the AWS IoT Core - Coiote DM integration that will help you understand the role of each of the integration components and how they are employed for the benefit of LwM2M device management via the AWS services.
+Here's a walkthrough of the main concepts related to the AWS IoT Core - {{ coiote_short_name }} integration that will help you understand the role of each of the integration components and how they are employed for the benefit of LwM2M device management via the AWS services.
 
 ## Things
 
-Within the AWS IoT Core - Coiote DM integration, things are the AWS representations of LwM2M device entities managed by the Coiote DM platform. They are used to mirror device state, as well as collect, process and act upon device data on the fly using a connection protocol of your choice.
+Within the AWS IoT Core - {{ coiote_short_name }} integration, things are the AWS representations of LwM2M device entities managed by the {{ coiote_short_name }} platform. They are used to mirror device state, as well as collect, process and act upon device data on the fly using a connection protocol of your choice.
 
 ![Example Things](images/things.png "Example Things")
 
@@ -13,7 +13,7 @@ Within the AWS IoT Core - Coiote DM integration, things are the AWS representati
 
 ### Thing types
 
-Thing types are containers that store configuration and other device-related information shared by all Things of the same type to simplify their bulk management. Within the integration, they are created automatically when a new device is added to AWS from Coiote DM and they are based on device **Manufacturer** and **Model name**. In case a new device with a specific **Manufacturer** and model name pair can be matched with an existing thing type, then it will be associated with it automatically.
+Thing types are containers that store configuration and other device-related information shared by all Things of the same type to simplify their bulk management. Within the integration, they are created automatically when a new device is added to AWS from {{ coiote_short_name }} and they are based on device **Manufacturer** and **Model name**. In case a new device with a specific **Manufacturer** and model name pair can be matched with an existing thing type, then it will be associated with it automatically.
 
 ![Example Thing types](images/thingtypes.png "Example Thing types")
 
@@ -22,9 +22,9 @@ Thing types are containers that store configuration and other device-related inf
 
 ## Device Shadows
 
-A device shadow is a structure that stores the device state and represents it in the form of a JSON file, making the device data available to applications and services regardless of device connection to Coiote DM. To synchronize device state information between the Coiote DM and AWS IoT Core, shadows feature the mechanism of *reported* and *desired* values.
+A device shadow is a structure that stores the device state and represents it in the form of a JSON file, making the device data available to applications and services regardless of device connection to {{ coiote_short_name }}. To synchronize device state information between the {{ coiote_short_name }} and AWS IoT Core, shadows feature the mechanism of *reported* and *desired* values.
 
-- **Reported values** section - presents the current device state as reported by the device itself (and mediated by Coiote DM) in a JSON file structure within a device shadow.
+- **Reported values** section - presents the current device state as reported by the device itself (and mediated by {{ coiote_short_name }}) in a JSON file structure within a device shadow.
 - **Desired values** section - used for requesting changes in the reported section of the device [Operation shadow](#operation-shadow).
 
 ![Integration Device Shadows](images/deviceshadows.png "Integration Device Shadows")
@@ -33,7 +33,7 @@ For the purposes of the integration, a default of three different shadows is est
 
 ### Classic Shadow
 
-The Classic shadow (also unnamed shadow) is used for storing connectivity parameters of a LwM2M device (such as registered lifetime, last lifetime refresh, queue mode, LwM2M URI, device registration status etc.). The `reported` state refreshes upon each change in these parameters that is reported by Coiote DM (**Register** or **Update** message from device).
+The Classic shadow (also unnamed shadow) is used for storing connectivity parameters of a LwM2M device (such as registered lifetime, last lifetime refresh, queue mode, LwM2M URI, device registration status etc.). The `reported` state refreshes upon each change in these parameters that is reported by {{ coiote_short_name }} (**Register** or **Update** message from device).
 
 ### Operation Shadow
 
@@ -65,11 +65,11 @@ Once a value change in the `desired` section of the operation shadow is saved, a
 
    1. A change in the `desired` section triggers the *operationRequest* rule.
    2. The *operationRequest* rule sends a request to **AWS Lambda**.
-   3. **AWS Lambda** validates the request and forwards it as an event to Coiote DM, making it schedule a task and initiate a device session.  
-   4. Coiote DM communicates with the device.
-   ![AWS - Coiote DM communication flow](images/communication_flow.png "AWS - Coiote DM communication flow")
-   5. The device responds to Coiote DM with the operation result.
-   6. Coiote DM forwards the device response back to the Operation Shadow and the results are published in the `reported` section.
+   3. **AWS Lambda** validates the request and forwards it as an event to {{ coiote_short_name }}, making it schedule a task and initiate a device session.
+   4. {{ coiote_short_name }} communicates with the device.
+   ![AWS - {{ coiote_short_name }} communication flow](images/communication_flow.png "AWS - {{ coiote_short_name }} communication flow")
+   5. The device responds to {{ coiote_short_name }} with the operation result.
+   6. {{ coiote_short_name }} forwards the device response back to the Operation Shadow and the results are published in the `reported` section.
    7. The change in the `reported` section triggers the *operationResponse* rule.
    8. The results are then republished using the *operationResponse* rule to the [Datamodel shadow](#datamodel-shadow) (but only in case of the READ, WRITE and READ COMPOSITE operations).
 
@@ -77,14 +77,14 @@ Once a value change in the `desired` section of the operation shadow is saved, a
 
 ### Datamodel Shadow
 
-The Datamodel Shadow is the place where the cashed data model of the LwM2M device is stored. What this means is that it is a "read-only shadow" that keeps the most recent record of the device state as it has been reported by Coiote DM - no device operations can be performed from here.
+The Datamodel Shadow is the place where the cashed data model of the LwM2M device is stored. What this means is that it is a "read-only shadow" that keeps the most recent record of the device state as it has been reported by {{ coiote_short_name }} - no device operations can be performed from here.
 
 The Datamodel Shadow is updated in case of the following events:
 
-1. Device **Register** message that comes from Coiote DM,
+1. Device **Register** message that comes from {{ coiote_short_name }},
 2. Device **Notify** and **Send** messages,
-      ![AWS - Coiote DM value change on device](images/device_value_change_diagram.png "AWS - Coiote DM value change on device")
-3. Republishing operation results from the Operation shadow to the Datamodel shadow using the *operationResponse* rule.  
+      ![AWS - {{ coiote_short_name }} value change on device](images/device_value_change_diagram.png "AWS - {{ coiote_short_name }} value change on device")
+3. Republishing operation results from the Operation shadow to the Datamodel shadow using the *operationResponse* rule.
 
 ### CloudWatch logs
 

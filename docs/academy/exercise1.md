@@ -1,6 +1,6 @@
 # Exercise 1: Connect the Raspberry Pi Pico W to a LwM2M Server
 
-Let’s start with the first exercise on building an end-to-end LwM2M application by running Anjay LwM2M Client on the Raspberry Pi Pico W, and connecting your device to Coiote IoT Device Management LwM2M Server over WiFi.
+Let’s start with the first exercise on building an end-to-end LwM2M application by running Anjay LwM2M Client on the Raspberry Pi Pico W, and connecting your device to {{ coiote_long_name }} over WiFi.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ Let’s start with the first exercise on building an end-to-end LwM2M applicatio
 * <a href="https://git-scm.com/downloads" target="_blank">Git</a>
 * Access to a WiFi network
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
-* An active [Coiote IoT DM](https://eu.iot.avsystem.cloud/) user account.
+* An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account.
 
 ## Prepare binaries
 
@@ -79,12 +79,12 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
 
 !!! tip
     Need help? Head over to the **lwm2m-academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
- 
 
-     
+
+
 ## Connect to the LwM2M Server
 
-Before connecting your device to the cloud, log in to Coiote IoT Device Management: <a href="https://eu.iot.avsystem.cloud" target="_blank">**eu.iot.avsystem.cloud**</a>.
+Before connecting your device to the cloud, log in to {{ coiote_long_name }}: <a href="{{ coiote_site_link }}" target="_blank">**{{ coiote_server }}**</a>.
 
 Once logged in, select **Device Inventory** from the left-side menu
 
@@ -168,11 +168,11 @@ In exercises throughout the academy, we use 115200 baud, since it’s the defaul
 !!! Tip
     Those logs may help figure out why the device didn't connect to the server (e.g. because of an incorrect WiFi password in the `cmake` command).
 
-If all went well and logs show **registration successful/registration successfully updated**, you can go to {{ coiote_short_name }} where the *Registration Status* should show **Registered**.
+If all went well and logs show **registration successful/registration successfully updated**, you can go to {{ coiote_short_name }} where the Registration status should show **Registered**.
 
 ![Device Center](images/no-sec.png)
 
-Did you manage to connect the Raspberry Pi Pico W to the Coiote IoT Device Management server?
+Did you manage to connect the Raspberry Pi Pico W to the {{ coiote_long_name }}?
 
 **Well done! You’ve created your first LwM2M application** 👏
 

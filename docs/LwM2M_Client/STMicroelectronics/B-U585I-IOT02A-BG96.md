@@ -6,7 +6,7 @@ Integrate your **B-U585I-IOT02A** Discovery kit board along with the default-pro
 
 - The **STM32U585I-IOT02A/BG96** board with a Micro-USB cable.
 - The serial communication program, such as **minicom** (for Linux) or RealTerm or PuTTY (for Windows) installed.
-- A user with access to the Coiote IoT Device Management platform.
+- A user with access to the {{ coiote_long_name }}.
 - Optional: installed **STM32CubeIDE**.
 
 ## Prepare Anjay client application
@@ -51,7 +51,7 @@ Enter the command line interface on your machine and run the following command:
 
 ## Connect to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register [here](https://eu.iot.avsystem.cloud).
+To connect to {{ coiote_long_name }}, please register [here]({{ coiote_site_link }}).
 
 !!! note
      If you use BG96-based configuration, you must upgrade the firmware of the modem to at least the `BG96MAR02A08M1G` revision. Older versions may cause unexpected loss of connection.
@@ -68,7 +68,7 @@ To connect to Coiote IoT Device Management LwM2M Server, please register [here](
 
 To connect the board:
 
-1. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 2. In **Device Inventory**, click **Add device**.
 3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
@@ -101,6 +101,6 @@ To connect the board:
     !!! Note
         If you use an external SIM card, you need to verify the APN used by your SIM card provider.
 
-4. Go to Coiote DM to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
+4. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
     ![Registered device](images/registered_device.png "Registered device")

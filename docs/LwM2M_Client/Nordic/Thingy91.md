@@ -1,6 +1,6 @@
 # Thingy:91
 
-Integrate your Nordic **Thingy:91** board with **Coiote IoT DM** using the [**Anjay LwM2M client**](https://avsystem.github.io/Anjay-doc/index.html).
+Integrate your Nordic **Thingy:91** board with **{{ coiote_short_name }}** using the [**Anjay LwM2M client**](https://avsystem.github.io/Anjay-doc/index.html).
 
 ![Thingy:91](images/NordicThingy91.jpeg "Nordic Thingy:91")
 
@@ -8,15 +8,15 @@ Integrate your Nordic **Thingy:91** board with **Coiote IoT DM** using the [**An
 
 - The **Thingy:91** board with a USB cable and SIM card.
 - Installed **minicom** or **RealTerm** (for Linux or Mac) or **PuTTy** (for Windows) or other serial communication program.
-- A user with access to the [**Coiote IoT Device Management**](https://eu.iot.avsystem.cloud/ui/device/inventory) platform.
+- A user with access to the {{ coiote_long_name }}.
 
 ## Prepare binaries
 ### Use an already built binary
 
 To get the latest binary file and flash the board:
 
-0. Go to [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client/releases).
-0. Download the `demo_thingy91_app_signed.hex` file.
+{{ zephyr_repository_step }}
+{{ Thingy91_binary_step }}
 0. Jump to the [flashing part](#flash-the-binaries) of the tutorial.
 
 ### Start development using samples
@@ -87,11 +87,11 @@ After successful flashing, reboot the board and go to the next step.
 
 ## Connect to the LwM2M Server
 
-To connect to Coiote IoT Device Management LwM2M Server, please register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud/).
+To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}/).
 
 To connect the board:
 
-0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+0. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 0. In **Device Inventory**, click **Add device**.
 0. Select the **Connect your LwM2M device directly via the Management server** tile.
     ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
@@ -114,14 +114,14 @@ To connect the board:
 
 0. Use the `anjay` command to list possible options:
 
-    ```
-    uart:~$ anjay
-    anjay - Anjay commands
-    Subcommands:
-    start   :Save config and start Anjay
-    stop    :Stop Anjay
-    config  :Configure Anjay params
-    ```
+    {{ console("Anjay commands",
+'''uart:~$ anjay
+anjay - Anjay commands
+Subcommands:
+start   :Save config and start Anjay
+stop    :Stop Anjay
+config  :Configure Anjay params
+''') }}
 
     !!! tip
         To show available subcommands, use the **Tab** key.
@@ -132,7 +132,17 @@ To connect the board:
     anjay config show
     ```
 
-    ![Anjay configuration](images/anjay_config.png "Anjay configuration")
+    {{ console("Anjay Configuration",
+'''uart:~$ anjay config show
+
+Current Anjay config:
+
+ LwM2M Server URI: ''' + coaps_uri + '''
+ Device lifetime: 50
+ Endpoint name: test_device
+ PSK: psk
+ Bootstrap: n
+''')}}
 
 0. Update your device credentials:
     * To make any changes to the configuration, stop the client:
@@ -159,7 +169,7 @@ To connect the board:
     anjay start
     ```
 
-0. Go to the Coiote DM to check if your device is connected.
+0. Go to the {{ coiote_short_name }} to check if your device is connected.
     ![Registered device](images/registered_device.png "Registered device")
 
 !!! note

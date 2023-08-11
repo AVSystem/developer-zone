@@ -1,6 +1,6 @@
 #   Overview
 
-Explore the guide to learn how to integrate your IoT assets with the Coiote IoT Device Management platform.
+Explore the guide to learn how to integrate your IoT assets with the {{ coiote_long_name }}.
 
 To get started, follow the [Configuration](../Configuring_AWS_integration/) chapter.
 

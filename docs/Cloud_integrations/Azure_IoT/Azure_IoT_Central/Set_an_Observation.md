@@ -2,11 +2,11 @@
 
 This section describes how to set an Observation in your Azure IoT Central application.
 
-Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote DM, which in turn will transfer it to Azure IoT Central.
+Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to {{ coiote_short_name }}, which in turn will transfer it to Azure IoT Central.
 
 In this section, you learn how to:
 
-* Assign a device template that acts as a translator between Coiote DM and Azure IoT Central.
+* Assign a device template that acts as a translator between {{ coiote_short_name }} and Azure IoT Central.
 * Create a device group in Azure IoT Central, because an Observation is set at the group level.
 * Run Jobs to add, edit or delete Observations.
 * See value changes for the observed resources.
@@ -14,19 +14,19 @@ In this section, you learn how to:
 ## Prerequisites
 
 1. An active Azure IoT Central with hub owner access permissions.
-2. A Coiote DM user account with permissions to use the Azure IoT Central integration.
-3. A device group created in Coiote DM.
-4. [A configured integration between Coiote DM and Azure Iot Central](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/).
-5. [A configured integration template in Coiote DM, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
-5. A connected device in Coiote DM that has been [exported to](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/) or [imported from](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/) Azure IoT Central.
+2. A {{ coiote_short_name }} user account with permissions to use the Azure IoT Central integration.
+3. A device group created in {{ coiote_short_name }}.
+4. [A configured integration between {{ coiote_short_name }} and Azure Iot Central](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+5. A connected device in {{ coiote_short_name }} that has been [exported to](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/) or [imported from](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/) Azure IoT Central.
 
 ## Assign a device template
 
-To enable correct communication between Coiote DM and Azure IoT Central, you need two templates. The first template configures the Coiote DM integration with Azure. ([Follow the instruction](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.
+To enable correct communication between {{ coiote_short_name }} and Azure IoT Central, you need two templates. The first template configures the {{ coiote_short_name }} integration with Azure. ([Follow the instruction](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.
 
-### Download LwM2M template in Coiote DM
+### Download LwM2M template in {{ coiote_short_name }}
 
-1. In Coiote DM, go to **Administration → Hyperscaler Integration Center** and select the **Templates** tab.
+1. In {{ coiote_short_name }}, go to **Administration → Hyperscaler Integration Center** and select the **Templates** tab.
 2. In the list of templates, find the one from which you want to generate the IoT Central template.
 
     !!! attention
@@ -58,7 +58,7 @@ To enable correct communication between Coiote DM and Azure IoT Central, you nee
 
 5. On the **Review** page, click **Create**.
 
-6. Now you'll be prompted to create a model for your template. Select the **Import a model** tile. This is where you import the .JSON file you exported from Coiote DM.
+6. Now you'll be prompted to create a model for your template. Select the **Import a model** tile. This is where you import the .JSON file you exported from {{ coiote_short_name }}.
 
     ![Import a model](images-observation/azure_import.png "Import a model")
 
@@ -148,7 +148,7 @@ Click **Run**.
 ![Velocity column](images-observation/azure_c_velocity.png "Any value changes for this resource will be shown in the Velocity column")
 
 !!! Tip
-    If you don’t see any value in the relevant column (e.g., Velocity), scroll all the way right to the very last column **Unmodeled data**. If it contains an entry similar to ``{"n6n0n4":"1634741504000"}``, it means there is a mismatch between Coiote DM and the Azure IoT Central templates. Velocity is a Telemetry resource, but apparently it's set as Property in Azure. To fix this error, go to **Device templates** in Azure IoT Central, select the relevant template and find the resource you want to edit. In the **Capability type** column, select `Telemetry` from the drop-down menu so that it’s consistent with what you have in Coiote DM. Click **Save**. Go back to **Devices** and refresh the page to see the changes.
+    If you don’t see any value in the relevant column (e.g., Velocity), scroll all the way right to the very last column **Unmodeled data**. If it contains an entry similar to ``{"n6n0n4":"1634741504000"}``, it means there is a mismatch between {{ coiote_short_name }} and the Azure IoT Central templates. Velocity is a Telemetry resource, but apparently it's set as Property in Azure. To fix this error, go to **Device templates** in Azure IoT Central, select the relevant template and find the resource you want to edit. In the **Capability type** column, select `Telemetry` from the drop-down menu so that it’s consistent with what you have in {{ coiote_short_name }}. Click **Save**. Go back to **Devices** and refresh the page to see the changes.
 
 ## Edit or delete an Observation
 To edit or delete an Observation, you need to create a new job.
@@ -161,16 +161,16 @@ To edit or delete an Observation, you need to create a new job.
 
 ![Edit or delete an Observation](images-observation/azure_c14.png "Edit or delete an Observation in Job properties")
 
-## Check an Observation in Coiote DM
-This step is optional. If you want to make sure that the Observation has been set in Coiote DM as well, do the following:
+## Check an Observation in {{ coiote_short_name }}
+This step is optional. If you want to make sure that the Observation has been set in {{ coiote_short_name }} as well, do the following:
 
-1. In Coiote DM, go to **Device inventory** and click on the observed device.
+1. In {{ coiote_short_name }}, go to **Device inventory** and click on the observed device.
 2. From the left pane of the device panel, go to **Objects**.
 2. Find the resource you want to check. In our example, this is `4 Velocity` resource in the `6 Location` object.
 3. Click the refresh button to the left from the **Value tracking**.
 You'll see that checkboxes next to **Value tracking** and **Attributes** are now filled in green.
 
-![Observation set in Azure from the Coiote DM perspective](images-observation/azure_coiote.png "Observation set in Azure from the Coiote DM perspective")
+![Observation set in Azure from the {{ coiote_short_name }} perspective](images-observation/azure_coiote.png "Observation set in Azure from the {{ coiote_short_name }} perspective")
 
 ## Next steps
 [Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)

@@ -24,6 +24,7 @@ jobs:
       - run: pip install ghp-import
 #      - run: mkdocs --version
       - run: pip install jinja2==3.0.0
+      - run: pip install -r requirements.txt
       - run: mkdocs build
       - run: cp -R site dist/docs
       - run: python ghpages.py

@@ -1,12 +1,12 @@
 # ESP32-DevKitC with BG96
 
-Integrate your ESP32-based device with Quectel BG96 module to manage it via Coiote DM.
+Integrate your ESP32-based device with Quectel BG96 module to manage it via {{ coiote_short_name }}.
 
 ## Prerequisites
 - An ESP32 device.
 - A BG96 module with internet connection (it is strongly recommended to have a BG96 with firmware version BG96MAR03A06M1G).
 - Installed ESP-IDF and dependencies (installation steps 1-4 from [ESP32 official documentation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)). Supported ESP-IDF version is v4.4.
-- A user with access to the [Coiote IoT Device Management platform](https://eu.iot.avsystem.cloud).
+- A user with access to the [{{ coiote_long_name }}]({{ coiote_site_link }}).
 
 ## Step 1: Prepare project
 0. Create a project directory for the integration.
@@ -19,7 +19,7 @@ Integrate your ESP32-based device with Quectel BG96 module to manage it via Coio
       ![BG96 UART example configuration](images/BG96_uart_config.png "BG96 UART example configuration")
     - In **Client options**, provide device credentials and Server URI:
         - **Endpoint name** - your device endpoint name
-        - **Server URI** - the address and port of your Coiote DM installation, e.g. ``coaps://eu.iot.avsystem.cloud:5684``
+        - **Server URI** - the address and port of your {{ coiote_short_name }} installation, e.g. ``{{ coaps_uri }}``
         - **Security mode** - the PSK security mode
         - **PSK configuration** - the PSK identity and PSK key
     - In the `Connection configuration`, set **APN name** to `internet` for the sake of this tutorial. However, **APN name** depends on your SIM card operator.
@@ -28,12 +28,12 @@ Integrate your ESP32-based device with Quectel BG96 module to manage it via Coio
 ## Step 2: Connect BG96 module to a ESP32-DevKitC
 0. Connect the Tx, Rx and GND pins, respectively, to the ESP32-DevKitC pins selected in the previous step.
 
-## Step 3: Add device to Coiote DM
-To connect your ESP32-DevKitC to the Coiote IoT Device Management LwM2M Server, use your access to a Coiote DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.
+## Step 3: Add device to {{ coiote_short_name }}
+To connect your ESP32-DevKitC to the {{ coiote_long_name }}, use your access to a {{ coiote_short_name }} installation, or register at {{ coiote_site_link }}/ to get access.
 
 To connect the board:
 
-0. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+0. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 0. In **Device Inventory**, click **Add device**.
 0. Select the **Connect your LwM2M device directly via the Management server** tile.
 ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")

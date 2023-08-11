@@ -39,6 +39,12 @@ plugins:
             'Coiote_IoT_DM/User_Interface/Device_Center.md': 'Coiote_IoT_DM/Device_Center.md'
             'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md': 'LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md'
             'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md': 'Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates.md'
+  - macros:
+      include_yaml:
+        - templates/default.yaml
+
+hooks:
+  - main.py
 
 google_analytics:
   - UA-25246208-6
@@ -59,10 +65,12 @@ nav:
                 - 'LwM2M_Client/STMicroelectronics/B-L462E-CELL1-TYPE1SC.md'
                 - 'LwM2M_Client/STMicroelectronics/B-L475E-IOT01A.md'
                 - 'LwM2M_Client/STMicroelectronics/B-U585I-IOT02A-BG96.md'
+                - 'LwM2M_Client/STMicroelectronics//Runtime_certificate.md'
             - 'Nordic':
                 - 'LwM2M_Client/Nordic/Thingy91.md'
                 - 'LwM2M_Client/Nordic/nRF9160.md'
                 - 'LwM2M_Client/Nordic/Device_Provisioning.md'
+                - 'LwM2M_Client/Nordic/Runtime_certificate.md'
             - 'ESP32':
                 - 'LwM2M_Client/ESP32/M5Stick.md'
                 - 'LwM2M_Client/ESP32/M5StickBG96.md'
@@ -89,6 +97,10 @@ nav:
                 - 'Coiote_IoT_DM/Device_tests/Run_tests.md'
                 - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
         - 'Cloud Integrations':
+            - 'Data Integration Center':
+                - Webhooks: 'Cloud_integrations/webhooks.md'
+                - InfluxDB: 'Cloud_integrations/influx.md'
+                - Kafka or Azure Event Hub: 'Cloud_integrations/kafka.md'
             - 'Azure IoT':
                 - 'Azure IoT Hub':
                     - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md'
@@ -144,7 +156,7 @@ nav:
                 - Exercise 4B - LwM2M Send: 'academy/exercise4b.md'
             - Module 5 - Firmware updates:
                 - Theory Module 5: 'academy/module5.md'
-                - Exercise - Graduation Project: 'academy/exercise5.md'
+            - Graduation Project: 'academy/exercise5.md'
         - 'Release Notes':
             - 2023:
                 - 'Release_Notes/v2023.10.0.md'

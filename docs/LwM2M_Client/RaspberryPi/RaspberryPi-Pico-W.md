@@ -5,7 +5,7 @@ Integrate your Raspberry Pi Pico W board.
 ## Prerequisites
 
 - A Raspberry Pi Pico W board with a USB cable.
-- A user with access to the Coiote IoT Device Management platform and appropriate permissions.
+- A user with access to the {{ coiote_long_name }} and appropriate permissions.
 
 ## Prepare binaries
 ### Step 1: Create a workspace
@@ -68,11 +68,11 @@ Integrate your Raspberry Pi Pico W board.
 
 ## Connecting to the LwM2M Server
 
-To connect to a Coiote IoT Device Management LwM2M Server, register at [https://eu.iot.avsystem.cloud](https://eu.iot.avsystem.cloud).
+To connect to a {{ coiote_long_name }}, register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
 To connect the board:
 
-1. Log in to Coiote DM and from the left side menu, select **Device Inventory**.
+1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
 2. In **Device Inventory**, click **Add device**.
 3. Select the **Connect your LwM2M device directly via the Management server** tile.
        ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
