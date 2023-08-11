@@ -3245,14 +3245,14 @@ static const anjay_dm_object_def_t OBJ_DEF = {
 <p>If you’re using <strong>Linux</strong> or <strong>Mac</strong>, run the following command:
 <div class="highlight"><pre><span></span><code>cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID=&quot;&lt;ssid&gt;&quot; -DWIFI_PASSWORD=&quot;&lt;pass&gt;&quot; -DENDPOINT_NAME=&quot;&lt;endpoint_name&gt;&quot; -DPSK_IDENTITY=&quot;&lt;identity&gt;&quot; -DPSK_KEY=&quot;&lt;psk&gt;&quot; ..
 </code></pre></div></p>
-<p>If you’re using <strong><em>Windows</em></strong>, run the following command:
+<p>If you’re using <strong>Windows</strong>, run the following command:
 <div class="highlight"><pre><span></span><code>cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID=&quot;&lt;ssid&gt;&quot; -DWIFI_PASSWORD=&quot;&lt;pass&gt;&quot; -DENDPOINT_NAME=&quot;&lt;endpoint_name&gt;&quot; -DPSK_IDENTITY=&quot;&lt;identity&gt;&quot; -DPSK_KEY=&quot;&lt;psk&gt;&quot; .. -G &quot;MinGW Makefiles&quot;
 </code></pre></div>
 Run the following command in the build directory
 <div class="highlight"><pre><span></span><code>cmake --build . -j
 </code></pre></div></p>
 <p>Program your board using the bootloader. Press and hold the <strong>BOOTSEL</strong> button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.</p>
-<p>In the <strong>build/time_object</strong> directory, you will find the <em>.uf2</em> file which has our added changes.</p>
+<p>In the <strong>build/time_object</strong> directory, you will find the <strong>.uf2</strong> file which has our added changes.</p>
 <p>Copy the <code>time_object.uf2</code> file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.</p>
 <h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">#</a></h2>
 <p>With the board still connected to your PC, open a serial communication program. This will help you to check if everything is working correctly.</p>
@@ -3263,7 +3263,6 @@ Run the following command in the build directory
 <p class="admonition-title">Note</p>
 <p>The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC. After refreshing the page you can see that the value changed.</p>
 </div>
-<p><img alt="Time object in Data Model" src="../images/time_object.PNG" /></p>
 <p><strong>Good job!</strong> 👏👏
 Now you are ready to create more difficult Objects. For this, go to the next exercise.</p>
 <div class="admonition important">
@@ -3332,7 +3331,7 @@ Now you are ready to create more difficult Objects. For this, go to the next exe
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2023</span>
     
   </small>
 </div>

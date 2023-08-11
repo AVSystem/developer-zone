@@ -3144,13 +3144,13 @@ pico_add_extra_outputs(temperature_object_lm35)
 <p style="text-align: center;">Anjay-pico-client/CMakeLists.txt</p>
 <div class="highlight"><pre><span></span><code>add_subdirectory(temperature_object_lm35)
 </code></pre></div>
-<p>Save the created code and go to the next step to build the <em>.uf2</em> file.</p>
+<p>Save the created code and go to the next step to build the <strong>.uf2</strong> file.</p>
 <h2 id="recompile-the-application-and-flash-the-board">Recompile the application and flash the board<a class="headerlink" href="#recompile-the-application-and-flash-the-board" title="Permanent link">#</a></h2>
 <p>To recompile the application, go to the <strong>Anjay-pico-client/build</strong> directory.</p>
 <p>If you’re using <strong>Linux</strong> or <strong>Mac</strong>, run the following command:
 <div class="highlight"><pre><span></span><code>cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID=&quot;&lt;ssid&gt;&quot; -DWIFI_PASSWORD=&quot;&lt;pass&gt;&quot; -DENDPOINT_NAME=&quot;&lt;endpoint_name&gt;&quot; -DPSK_IDENTITY=&quot;&lt;identity&gt;&quot; -DPSK_KEY=&quot;&lt;psk&gt;&quot; ..
 </code></pre></div></p>
-<p>If you’re using <strong><em>Windows</em></strong>, run the following command:
+<p>If you’re using <strong>Windows</strong>, run the following command:
 <div class="highlight"><pre><span></span><code>cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID=&quot;&lt;ssid&gt;&quot; -DWIFI_PASSWORD=&quot;&lt;pass&gt;&quot; -DENDPOINT_NAME=&quot;&lt;endpoint_name&gt;&quot; -DPSK_IDENTITY=&quot;&lt;identity&gt;&quot; -DPSK_KEY=&quot;&lt;psk&gt;&quot; .. -G &quot;MinGW Makefiles&quot;
 </code></pre></div>
 Run the following command in the build directory
@@ -3165,7 +3165,7 @@ Run the following command in the build directory
 <li><code>OUT</code>  is the temperature sensor analog output pin, the output voltage on this pin is directly proportional to the temperature. We connect this pin to the <code>GPIO 26</code> pin of the RPI Pico W.</li>
 </ul>
 <p><img alt="Connection between Pico W device and LM35 sensor" src="../images/connection_lm35_pico.jpeg" /></p>
-<p>Once the sensor is connected, it’s time to flash the <em>.uf2</em> file to the Pico.</p>
+<p>Once the sensor is connected, it’s time to flash the <strong>.uf2</strong> file to the Pico.</p>
 <p>Program your board using the bootloader. Press and hold the <strong>BOOTSEL</strong> button while connecting the device through a USB cable, it should be recognized as a Mass Storage device.</p>
 <p>Go to the <strong>Anjay-pico-client/build/temperature_object_lm35</strong> directory, copy the <code>temperature_object_lm35.uf2</code> file to the Mass Storage device directory and wait until the process finishes - copying the firmware image may take a while.</p>
 <h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">#</a></h2>
@@ -3244,7 +3244,7 @@ Run the following command in the build directory
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2023</span>
     
   </small>
 </div>

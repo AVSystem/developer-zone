@@ -2929,7 +2929,7 @@ cd Anjay-pico-client &amp;&amp; git submodule update --init --recursive &amp;&am
 <p class="admonition-title">Warning</p>
 <p>Use the NoSec mode only for development, testing, and debugging purposes, never in production environments unless end-to-end security is provided on a lower layer (e.g. IPSec).</p>
 </div>
-<p>To start the compilation of the application, go to the <code>Anjay-pico-client</code> directory. Build the project with <code>&lt;ssid&gt;</code> and <code>&lt;pass&gt;</code> replaced with your <strong>WiFi network name</strong> and <strong>password</strong> respectively. The LwM2M Client Endpoint Name is configured using the <code>&lt;endpoint_name&gt;</code> parameter.</p>
+<p>To start the compilation of the application, <strong>go to the <code>Anjay-pico-client</code> directory</strong>. Build the project with <code>&lt;ssid&gt;</code> and <code>&lt;pass&gt;</code> replaced with your <strong>WiFi network name</strong> and <strong>password</strong> respectively. The LwM2M Client Endpoint Name is configured using the <code>&lt;endpoint_name&gt;</code> parameter.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A LwM2M Client is uniquely identified by an <strong>Endpoint Name</strong>. Use the Endpoint Name you created in the <a href="#connect-to-the-lwm2m-server">Connect to the Server</a> section.</p>
@@ -2949,18 +2949,18 @@ If you’re using <strong>Linux</strong> or <strong>Mac</strong>, run the follow
 <p>It will generate directories that contain the <strong>.uf2</strong> and <strong>.hex</strong> files. The <strong>.uf2</strong> files can be programmed using the bootloader (e.g. drag-and-drop method) and <strong>.hex</strong> files can be loaded directly into the memory of the device using the <strong>rp2</strong> tool.</p>
 <p>In this example, we will use the <strong>.uf2</strong> file.</p>
 <h2 id="flash-the-board-using-the-bootloader">Flash the board using the bootloader:<a class="headerlink" href="#flash-the-board-using-the-bootloader" title="Permanent link">#</a></h2>
-<p>To program the Raspberry Pi using the bootloader, press and hold the <strong>BOOTSEL</strong> button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.</p>
+<p>To program the Raspberry Pi using the bootloader, press and hold the <strong>BOOTSEL</strong> button while connecting the device using a USB cable - it should be recognized as a Mass Storage device.</p>
 <p>In the <strong>build/mandatory_objects</strong> directory, you will find the <strong>.uf2</strong> file.</p>
-<p>Copy the <strong>mandatory_objects.uf2</strong> file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while</p>
+<p>Copy the <strong>mandatory_objects.uf2</strong> file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.</p>
 <h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">#</a></h2>
-<p>With the board still connected to your PC, open a serial communication program. This will help you to check if everything is working correctly.</p>
+<p>With the board still connected to your PC, open a serial communication program (e.g. Minicom) and connect to the Raspberry Pi over a serial port. This will help you to validate if everything is working correctly.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To open the serial port interface you need to check the name of the connected device and choose the proper baud rate value:</p>
+<p>To open the serial port interface you need to check the name of the connected device and set the proper baud rate:</p>
 <ul>
-<li>Linux usually uses <strong>/dev/ttyACM<number></strong> or <strong>/dev/ttyUSB<number></strong> for a serial port device name.</li>
-<li>Windows uses <strong>COM<number></strong> for a serial port device name.</li>
-<li>macOS uses <strong>/dev/tty.usbmodem<number></strong> for a serial port device name.</li>
+<li>Linux uses <strong>/dev/ttyACM[number]</strong> or <strong>/dev/ttyUSB[number]</strong> for a serial port device name.</li>
+<li>Windows uses <strong>COM[number]</strong> for a serial port device name.</li>
+<li>macOS uses <strong>/dev/tty.usbmodem[number]</strong> for a serial port device name.</li>
 </ul>
 <p>It’s important to set the correct baud rate, too. The baud rate is the number of symbols transferred in a communication channel per second and must be the same both on the serial communication program and on the board. The most common baud rates for serial ports are <code>9600</code> and <code>115200</code>.</p>
 </div>
@@ -2968,7 +2968,7 @@ If you’re using <strong>Linux</strong> or <strong>Mac</strong>, run the follow
 <p><img alt="Check the logs in serial communication program" src="../images/logs.PNG" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Those logs may help figure out why the device didn't connect to the server (e.g. because of the mistake in writing the WiFi password in the <code>cmake</code> command).</p>
+<p>Those logs may help figure out why the device didn't connect to the server (e.g. because of an incorrect WiFi password in the <code>cmake</code> command).</p>
 </div>
 <p>If all went well and logs show <strong>registration successful/registration successfully updated</strong>, you can go to Coiote IoT DM where the Registration status should show <strong>Registered</strong>.</p>
 <p><img alt="Device Center" src="../images/no-sec.png" /></p>
@@ -3044,7 +3044,7 @@ If you’re using <strong>Linux</strong> or <strong>Mac</strong>, run the follow
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2023</span>
     
   </small>
 </div>

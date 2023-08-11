@@ -2873,7 +2873,7 @@ static int setup_security_object() {
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Resource <code>/1/x/2</code></strong>: <strong>Default Min Period</strong> and <strong>Resource <code>/1/x/3</code></strong>: <strong>Default Max Period</strong> show usage of LwM2M Notifications which will be described in the next module: <strong>Module 3 - Building a LwM2M application/device firmware</strong>.</p>
+<p><strong>Resource <code>/1/x/2</code></strong>: <strong>Default Min Period</strong> and <strong>Resource <code>/1/x/3</code></strong>: <strong>Default Max Period</strong> show usage of LwM2M Notifications which will be described in the next module: <strong>Module 4 - Device Management using LwM2M</strong>.</p>
 </div>
 <ul>
 <li><strong>Resource <code>/1/x/5</code></strong>: <strong>Disable Timeout</strong> - This Resource controls the time period after which, the LwM2M Client will re-register to the server. In this application, we use “-1” which means the Disable Timeout is disabled. When this Resource is not set, the default timeout value of 86400 seconds (1 day) is used.</li>
@@ -2915,7 +2915,7 @@ static int setup_server_object() {
 <p>It is also used for invoking a device <strong>Resource <code>/3/x/4</code></strong>: <strong>Reboot</strong> or <strong>Resource <code>/3/x/5</code></strong>: <strong>Factory Reset</strong> .</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Although the LwM2M specifications define the Device Object as mandatory, the Coiote IoT Device Management platform works without creating this Object. In module 3 (client-side operations) we are covering the creation of the Device Object.</p>
+<p>Although the LwM2M specifications define the Device Object as mandatory, the Coiote IoT Device Management platform works without creating this Object.</p>
 </div>
 <h2 id="initiate-objects">Initiate Objects<a class="headerlink" href="#initiate-objects" title="Permanent link">#</a></h2>
 <p>After the <code>setup_server_object()</code> and the <code>setup_security_object()</code> have been added to the <strong>main.c</strong> file, these Objects need to be initiated using <code>anjay_task()</code>. This is done using the code below.</p>
@@ -2945,7 +2945,7 @@ static int setup_server_object() {
     anjay_delete(g_anjay);
 }
 </code></pre></div>
-<p>Did you review all of the code snippets in the Mandatory Objects application? <strong>Nice work! You now understand the basics of building an LwM2M application.</strong> 🎉</p>
+<p>Did you review all of the code snippets in the Mandatory Objects application? <strong>Nice work! You now understand the basics of building a LwM2M application.</strong> 🎉</p>
 <div class="admonition important">
 <p class="admonition-title">Provide your feedback</p>
 <p>We're constantly working on improving the LwM2M Academy. Please share with us your feedback about this module so we can create an even better learning experience.</p>
@@ -3012,7 +3012,7 @@ static int setup_server_object() {
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2023</span>
     
   </small>
 </div>
