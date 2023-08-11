@@ -76,7 +76,7 @@ The Resources which are configured for the Server Object are:
 - **Resource `/1/x/3`**: **Default Max Period** (pmax) -  If this Resource is set, notifications will always be sent at least once every pmax seconds, if this parameter isn't configured on a particular Observation, even if the value did not change. In this application, we use “-1” which means the Default Maximum Period is disabled.
 
 !!! Note
-    **Resource `/1/x/2`**: **Default Min Period** and **Resource `/1/x/3`**: **Default Max Period** show usage of LwM2M Notifications which will be described in the next module: **Module 3 - Building a LwM2M application/device firmware**.
+    **Resource `/1/x/2`**: **Default Min Period** and **Resource `/1/x/3`**: **Default Max Period** show usage of LwM2M Notifications which will be described in the next module: **Module 4 - Device Management using LwM2M**.
 
 - **Resource `/1/x/5`**: **Disable Timeout** - This Resource controls the time period after which, the LwM2M Client will re-register to the server. In this application, we use “-1” which means the Disable Timeout is disabled. When this Resource is not set, the default timeout value of 86400 seconds (1 day) is used.
 - **Resource `/1/x/7`**: **Binding** - This Resource sets the preferred transport method. In this application, it is set to UDP. The LwM2M standard provides the option to set the binding to TCP, SMS, LoRaWAN, CIoT, or WebSockets.
@@ -121,7 +121,7 @@ The LwM2M Object can be used to define device-related details such as:
 It is also used for invoking a device **Resource `/3/x/4`**: **Reboot** or **Resource `/3/x/5`**: **Factory Reset** .
 
 !!! Note
-    Although the LwM2M specifications define the Device Object as mandatory, the {{ coiote_long_name }} works without creating this Object. In module 3 (client-side operations) we are covering the creation of the Device Object.
+    Although the LwM2M specifications define the Device Object as mandatory, the {{ coiote_long_name }} works without creating this Object.
 
 ## Initiate Objects
 
@@ -157,7 +157,7 @@ void anjay_task(__unused void *params) {
 }
 ```
 
-Did you review all of the code snippets in the Mandatory Objects application? **Nice work! You now understand the basics of building an LwM2M application.** 🎉
+Did you review all of the code snippets in the Mandatory Objects application? **Nice work! You now understand the basics of building a LwM2M application.** 🎉
 
 !!! important "Provide your feedback"
 

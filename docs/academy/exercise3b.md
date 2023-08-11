@@ -342,7 +342,7 @@ At the end of the file add the mention about subdirectory to the general CMakeLi
 add_subdirectory(temperature_object_lm35)
 ```
 
-Save the created code and go to the next step to build the *.uf2* file.
+Save the created code and go to the next step to build the **.uf2** file.
 
 ## Recompile the application and flash the board
 To recompile the application, go to the **Anjay-pico-client/build** directory.
@@ -352,7 +352,7 @@ If you’re using **Linux** or **Mac**, run the following command:
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
 ```
 
-If you’re using ***Windows***, run the following command:
+If you’re using **Windows**, run the following command:
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" .. -G "MinGW Makefiles"
 ```
@@ -372,7 +372,7 @@ Now, let’s connect the LM35 temperature sensor to the Raspberry Pi Pico W. For
 
 ![Connection between Pico W device and LM35 sensor](images/connection_lm35_pico.jpeg)
 
-Once the sensor is connected, it’s time to flash the *.uf2* file to the Pico.
+Once the sensor is connected, it’s time to flash the **.uf2** file to the Pico.
 
 Program your board using the bootloader. Press and hold the **BOOTSEL** button while connecting the device through a USB cable, it should be recognized as a Mass Storage device.
 

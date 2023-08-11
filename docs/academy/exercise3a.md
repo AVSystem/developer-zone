@@ -407,7 +407,7 @@ If you’re using **Linux** or **Mac**, run the following command:
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
 ```
 
-If you’re using ***Windows***, run the following command:
+If you’re using **Windows**, run the following command:
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" .. -G "MinGW Makefiles"
 ```
@@ -418,7 +418,7 @@ cmake --build . -j
 
 Program your board using the bootloader. Press and hold the **BOOTSEL** button while connecting the device through a USB cable - it should be recognized as a Mass Storage device.
 
-In the **build/time_object** directory, you will find the *.uf2* file which has our added changes.
+In the **build/time_object** directory, you will find the **.uf2** file which has our added changes.
 
 Copy the `time_object.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
 
@@ -433,8 +433,6 @@ If all went well and logs show **registration successfully updated**, you can go
 
 !!! Note
     The Object allows LwM2M Clients to report the current time in seconds since January 1, 1970, UTC. After refreshing the page you can see that the value changed.
-
-![Time object in Data Model](images/time_object.PNG)
 
 **Good job!** 👏👏
 Now you are ready to create more difficult Objects. For this, go to the next exercise.

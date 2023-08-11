@@ -45,7 +45,7 @@ Let’s get started by going to the **Anjay-pico-client** directory and creating
 
 Open the **main.c** file in a code editor (e.g. VS Code).
 
-In this file, we need to modify the `setup_security_object()` function to change Anjay’s security settings and add the configuration of PSK-based encryption. This can be done using the code below.
+In this file, modify the `setup_security_object()` function to change Anjay’s security settings and add the configuration of PSK-based encryption. This can be done using the code below.
 
 <p style="text-align: center;">main.c</p>
 ```
@@ -121,7 +121,7 @@ add_subdirectory(psk_mode)
 Now the client is ready to be built and connected to LwM2M Server, allowing it to read the Time object.
 
 !!! Important
-    Remember that the **Anjay-pico-client/CMakeLists.txt** and **Anjay-pico-client/psk-mode/CMakeLists.txt** are two different files.
+    Be aware that the **Anjay-pico-client/CMakeLists.txt** and **Anjay-pico-client/psk-mode/CMakeLists.txt** are two different files.
 
 !!! tip
     Need help? Head over to the **lwm2m-academy** channel on <a href="https://discord.avsystem.com/" target="_blank">**Discord**</a> to get in touch with our experts.
@@ -148,11 +148,11 @@ If you’re using **Linux** or **Mac**, run the following command:
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" ..
 ```
 
-If you’re using ***Windows***, run the following command:
+If you’re using **Windows**, run the following command:
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID="<ssid>" -DWIFI_PASSWORD="<pass>" -DENDPOINT_NAME="<endpoint_name>" -DPSK_IDENTITY="<identity>" -DPSK_KEY="<psk>" .. -G "MinGW Makefiles"
 ```
-Run the following command in the build directory
+Run the following command in the build directory:
 ```
 cmake --build . -j
 ```
@@ -161,7 +161,7 @@ Program your board using the bootloader. Press and hold the **BOOTSEL** button w
 
 In the **build/psk-mode** directory, you will find the **.uf2** file which contains the added changes.
 
-Copy the `psk-mode.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while
+Copy the `psk-mode.uf2` file to the Mass Storage device directory, and wait until the process finishes - copying the firmware image may take a while.
 
 ## Check the logs
 
