@@ -121,7 +121,7 @@ The LwM2M Object can be used to define device-related details such as:
 It is also used for invoking a device **Resource `/3/x/4`**: **Reboot** or **Resource `/3/x/5`**: **Factory Reset** .
 
 !!! Note
-    Although the LwM2M specifications define the Device Object as mandatory, the Coiote IoT Device Management LwM2M Server works without creating this Object.
+    Although the LwM2M specifications define the Device Object as mandatory, the {{ coiote_long_name }} works without creating this Object.
 
 ## Initiate Objects
 

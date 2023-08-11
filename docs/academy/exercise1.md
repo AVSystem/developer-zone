@@ -168,7 +168,7 @@ In exercises throughout the academy, we use 115200 baud, since it’s the defaul
 !!! Tip
     Those logs may help figure out why the device didn't connect to the server (e.g. because of an incorrect WiFi password in the `cmake` command).
 
-If all went well and logs show **registration successful/registration successfully updated**, you can go to Coiote IoT DM where the *Registration Status* should show **Registered**.
+If all went well and logs show **registration successful/registration successfully updated**, you can go to {{ coiote_short_name }} where the *Registration Status* should show **Registered**.
 
 ![Device Center](images/no-sec.png)
 
