@@ -60,7 +60,7 @@ To validate the webhook parameters, it is possible to **test the event handler**
 ![Test event handler](images/test-event-handler.png "Test event handler")
 
 !!! Tip "Influx"
-    For instructions on integrating data with **Influx**, visit the [InfluxDB guide](influx.md).
+    For instructions on integrating data with **Influx**, visit the [InfluxDB guide](influx.md). To see how to integrate with **Datacake**, see the [Datacake guide](datacake.md).
 
 
 ![Define webhook parameters](images/webhook-parameters.png "Define webhook parameters")
