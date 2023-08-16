@@ -90,4 +90,22 @@ Apply the filter and go to the connection configuration step to configure the fi
 
 ## Monitor events in Datacake
 
-After activating the event handler, go to your Datacake account and open the Dashboard of your device. TODO @mikegpl
+After activating the event handler, go to your Datacake account and open the Dashboard of your device. If you have already [set an observation on the Temperature object](/Coiote_IoT_DM/Device_Center/#set-observation), you should see that the **Last update** field of your device in Datacake changed to the time when Datacake received last information from {{ coiote_short_name }}.
+
+![Last update time of the device in Datacake](images/datacake-last-update.png "Last update time of the device in Datacake")
+
+Let's set up a Datacake dashboard to display the received Temperature data. **Enter the edit mode** by clicking the toggle on the right side of the dashboard. Click **Add Widget** and pick **Chart** type.
+
+![Create chart in Datacake](images/datacake-add-chart.png "Create chart in Datacake")
+
+In the configuration view, go to **Data** tab and select the previously created `TEMPERATURE` field as the source of data for your chart.
+
+![Configure chart in Datacake](images/datacake-configure-chart.png "Configure chart in Datacake")
+
+To see better the incoming data, go to **Timeframe** tab and select **Custom** one. Change the **Resolution** to `1 minute. 
+
+![Adjust chart timeframe in Datacake](images/datacake-adjust-timeframe.png "Adjust chart timeframe in Datacake")
+
+Save the chart and resize it on the dashboard according to your taste. You can read more about Datacake's device dashboards [in their docs](https://docs.datacake.de/dashboards/public-dashboard).
+
+![Datacake final dashboard](images/datacake-final-dashboard.png "Datacake final dashboard")
