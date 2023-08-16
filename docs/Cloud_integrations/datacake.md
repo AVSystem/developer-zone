@@ -45,6 +45,8 @@ Select the device from the devices list and open its details by clicking on the 
 
 ![Create device field](images/datacake-add-field.png "Create device field")
 
+### Configure payload decoder
+
 Follow to the **HTTP Payload Decoder** section to configure the decoder for JSON values that will arrive from {{ coiote_short_name }}. To parse the incoming Webhook data from {{ coiote_short_name }}, you will need a decoder similar to the following one:
 
 ```javascript
@@ -76,9 +78,16 @@ This decoder does several things required to ingest device data into Datacake da
 - it accepts only changes from LwM2M URL `/3303/0/5700` which represents the Temperature/Sensor value resource,
 - it parses the value and timestamp from the payload of the event.
 
-**Save the configuration** and copy the `HTTP Endpoint URL`, which will be used as webhook target for {{ coiote_short_name }} event handler. Go back to your domain in {{ coiote_long_name }}. Go to **Integrations > Data Integration Center** and create a Webhook event handler that will forward device telemetry.
+
+**Save the configuration** and copy the `HTTP Endpoint URL`, which will be used as webhook target for {{ coiote_short_name }} event handler.
+
+## Create webhook in {{ coiote_long_name }}
+
+Go back to your domain in {{ coiote_long_name }}. Go to **Integrations > Data Integration Center** and create a Webhook event handler that will forward device telemetry.
 
 ![Forward device telemetry](images/datacake-filter-config.png "Forward device telemetry")
+
+### Configure Datacake webhook parameters
 
 Apply the filter and go to the connection configuration step to configure the fields as follows:
 
@@ -94,7 +103,11 @@ After activating the event handler, go to your Datacake account and open the Das
 
 ![Last update time of the device in Datacake](images/datacake-last-update.png "Last update time of the device in Datacake")
 
-Let's set up a Datacake dashboard to display the received Temperature data. **Enter the edit mode** by clicking the toggle on the right side of the dashboard. Click **Add Widget** and pick **Chart** type.
+Let's set up a Datacake dashboard to display the received Temperature data.
+
+### Create widget in Datacake
+
+**Enter the edit mode** by clicking the toggle on the right side of the dashboard. Click **Add Widget** and pick **Chart** type.
 
 ![Create chart in Datacake](images/datacake-add-chart.png "Create chart in Datacake")
 
