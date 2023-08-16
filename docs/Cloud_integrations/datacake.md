@@ -27,11 +27,11 @@ Select or create a [Product](https://docs.datacake.de/device/product) that will 
 
 ![Create new Product](images/datacake-add-product.png "Create new Product")
 
-**Name your device** and enter its endpointname as the device serial number.
+**Name your device** and enter its endpoint name as the device serial number.
 
 ![Enter device data](images/datacake-enter-device-data.png "Enter device data")
 
-**Pick a plan** for billing of your integration and complete the process. You can add up to 5 devices in Free plan in your worspace.
+**Pick a plan** for billing of your integration and complete the process. You can add up to 5 devices in the Free plan of your workspace.
 
 ![Pick billing plan](images/datacake-select-plan.png "Pick billing plan")
 
@@ -45,7 +45,7 @@ Select the device from the devices list and open its details by clicking on the 
 
 ![Create device field](images/datacake-add-field.png "Create device field")
 
-Follow to the **HTTP Payload Decoder** section to configure the decoder for JSON values that will arrive from { coiote_short_name }. To parse the incoming Webhook data from { coiote_short_name }, you will need a decoder similar to the following one:
+Follow to the **HTTP Payload Decoder** section to configure the decoder for JSON values that will arrive from {{ coiote_short_name }}. To parse the incoming Webhook data from {{ coiote_short_name }}, you will need a decoder similar to the following one:
 
 ```javascript
 function Decoder(request) {
@@ -62,7 +62,7 @@ function Decoder(request) {
    			device: endpointName,
    			field: "TEMPERATURE",
    			value: temperature,
-   			timestamp: time
+   			timestamp: time / 1000
    		}];
     } else {
     	return [];
@@ -71,19 +71,20 @@ function Decoder(request) {
 ```
 
 This decoder does several things required to ingest device data into Datacake database:
+
 - it selects the `endpointName` field used for identification of the device in the platform,
 - it accepts only changes from LwM2M URL `/3303/0/5700` which represents the Temperature/Sensor value resource,
 - it parses the value and timestamp from the payload of the event.
 
-**Save the configuration** and copy the `HTTP Endpoint URL`, which will be used as webhook target for { coiote_short_name } event handler. Go back to your domain in { coiote_long_name }. Go to **Integrations > Data Integration Center** and create a Webhook event handler that will forward device telemetry.
+**Save the configuration** and copy the `HTTP Endpoint URL`, which will be used as webhook target for {{ coiote_short_name }} event handler. Go back to your domain in {{ coiote_long_name }}. Go to **Integrations > Data Integration Center** and create a Webhook event handler that will forward device telemetry.
 
 ![Forward device telemetry](images/datacake-filter-config.png "Forward device telemetry")
 
-Apply the filter and go to the connection configuration step. In the connection configuration configure the fields as follows:
+Apply the filter and go to the connection configuration step to configure the fields as follows:
 
 - set the formatting to `Generic`,
 - set the URL to the `HTTP Endpoint URL` you copied before from the Datacake configuration view. It should look like this: `https://api.datacake.co/integrations/api/aaaaaaaa-bbbb-cccc-dddd-eeeeffffggg/`,
-- set the Authorization to `None`, as Datacake treats the endpoint URL as a token itself.
+- set the Authorization to `No authorization`, as Datacake treats the endpoint URL as a token itself.
 
 **Test the event handler** to confirm that you entered your data correctly. Then, click **Next step** and **Add event handler** to create the event handler.
 
