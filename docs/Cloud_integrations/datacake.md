@@ -23,7 +23,7 @@ Open your Datacake account. Create a new workspace or select an existing one.
 
 ![Add a device](images/datacake-add-device.png "Add a device")
 
-Select or create a [Product](https://docs.datacake.de/device/product) that will be used as a template for your device. Since Products aggregate devices sharing similar configuration, you will later use an endpoint dedicated for your Product to ingest data for your device. Let's create a dedicated product for the demo device we will be using in this tutorial. 
+Select or create a [Product](https://docs.datacake.de/device/product) that will be used as a template for your device. Products aggregate devices sharing similar configurations, you will later use an endpoint dedicated to your Product to ingest data for your device. Let's create a dedicated product for the demo device we will be using in this tutorial. 
 
 ![Create new Product](images/datacake-add-product.png "Create new Product")
 
