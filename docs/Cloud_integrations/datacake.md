@@ -37,7 +37,7 @@ Select or create a [Product](https://docs.datacake.de/device/product) that will 
 
 ### Configure fields for your device
 
-Select the device from the devices list and open its details by clicking on the device name. Open the **Configuration** tab to configure the data model of your device. Scroll down to find the fields of the device.
+Select the device from the devices list and open its details by clicking on the device name. Open the **Configuration** tab to configure the data model of your device. Scroll down to find the **Fields** of the device.
 
 ![Device fields configuration](images/datacake-fields.png "Device fields configuration")
 
