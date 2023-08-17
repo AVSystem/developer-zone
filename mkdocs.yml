@@ -100,6 +100,7 @@ nav:
             - 'Data Integration Center':
                 - Webhooks: 'Cloud_integrations/webhooks.md'
                 - InfluxDB: 'Cloud_integrations/influx.md'
+                - Datacake: 'Cloud_integrations/datacake.md'
                 - Kafka or Azure Event Hub: 'Cloud_integrations/kafka.md'
             - 'Azure IoT':
                 - 'Azure IoT Hub':
