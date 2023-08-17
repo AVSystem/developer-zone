@@ -115,7 +115,7 @@ In the configuration view, go to **Data** tab and select the previously created 
 
 ![Configure chart in Datacake](images/datacake-configure-chart.png "Configure chart in Datacake")
 
-To see better the incoming data, go to **Timeframe** tab and select **Custom** one. Change the **Resolution** to `1 minute. 
+To see better the incoming data, go to **Timeframe** tab and select **Custom** one. Change the **Resolution** to `1 minute`. 
 
 ![Adjust chart timeframe in Datacake](images/datacake-adjust-timeframe.png "Adjust chart timeframe in Datacake")
 
