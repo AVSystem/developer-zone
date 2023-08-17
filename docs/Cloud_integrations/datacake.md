@@ -31,7 +31,7 @@ Select or create a [Product](https://docs.datacake.de/device/product) that will 
 
 ![Enter device data](images/datacake-enter-device-data.png "Enter device data")
 
-**Pick a plan** for billing of your integration and complete the process. You can add up to 5 devices in the Free plan of your workspace.
+**Pick a plan** for billing your integration and complete the process. You can add up to 5 devices in the Free plan of your workspace.
 
 ![Pick billing plan](images/datacake-select-plan.png "Pick billing plan")
 
