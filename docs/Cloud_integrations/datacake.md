@@ -72,7 +72,7 @@ function Decoder(request) {
 }
 ```
 
-This decoder does several things required to ingest device data into Datacake database:
+This decoder does several things required to ingest device data into the Datacake database:
 
 - it selects the `endpointName` field used for identification of the device in the platform,
 - it accepts only changes from LwM2M URL `/3303/0/5700` which represents the Temperature/Sensor value resource,
