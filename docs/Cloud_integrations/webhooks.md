@@ -73,4 +73,4 @@ Click **Next step** and **Add event handler** to create the event handler.
 ![Active webhook](images/active-webhook.png "Active webhook")
 
 !!! warning
-    An event handler is automatically deactivated after several failed attempts. Manually reactivate the event handler to continue using the data integration.
+    An event handler is automatically deactivated after several consecutive failed attempts. Manually reactivate the event handler to continue using the data integration.
