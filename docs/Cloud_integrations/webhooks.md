@@ -6,12 +6,15 @@ og_title: AVSystem IoT Developer Zone
 
 # Webhooks
 
-The webhook event handler delivers HTTP(S) requests to public endpoints. Webhooks contain lifecycle events and/or telemetry data which can be delivered to web applications, IoT platforms, API gateways or hyperscaler lambda functions.
+The **webhook event handler** delivers HTTP(S) requests to public endpoints. Webhooks contain lifecycle events and/or telemetry data which can be delivered to web applications, IoT platforms, API gateways or hyperscaler lambda functions.
 
 ## Prerequisites
 
 * A user with access to the {{ coiote_long_name }} and appropriate permissions
 * A LwM2M device
+
+!!! info
+    You can create up to 10 *event handlers* in your domain. 
 
 ## Create a webhook
 
@@ -68,3 +71,6 @@ To validate the webhook parameters, it is possible to **test the event handler**
 Click **Next step** and **Add event handler** to create the event handler.
 
 ![Active webhook](images/active-webhook.png "Active webhook")
+
+!!! warning
+    An event handler is automatically deactivated after several consecutive failed attempts. Manually reactivate the event handler to continue using the data integration.
