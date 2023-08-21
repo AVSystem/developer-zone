@@ -2766,12 +2766,16 @@
 
 <!-- Markdown content -->
 <h1 id="webhooks">Webhooks<a class="headerlink" href="#webhooks" title="Permanent link">#</a></h1>
-<p>The webhook event handler delivers HTTP(S) requests to public endpoints. Webhooks contain lifecycle events and/or telemetry data which can be delivered to web applications, IoT platforms, API gateways or hyperscaler lambda functions.</p>
+<p>The <strong>webhook event handler</strong> delivers HTTP(S) requests to public endpoints. Webhooks contain lifecycle events and/or telemetry data which can be delivered to web applications, IoT platforms, API gateways or hyperscaler lambda functions.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>A user with access to the Coiote IoT Device Management platform and appropriate permissions</li>
 <li>A LwM2M device</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can create up to 10 <em>event handlers</em> in your domain. </p>
+</div>
 <h2 id="create-a-webhook">Create a webhook<a class="headerlink" href="#create-a-webhook" title="Permanent link">#</a></h2>
 <p>To create a new webhook event handler, select: <strong>Integrations</strong> &gt; <strong>Data Integration Center</strong>.</p>
 <p><img alt="Data integration center" src="../images/data-integration-center.png" title="Data Integration Center" /></p>
@@ -2812,6 +2816,10 @@
 <p><img alt="Define webhook parameters" src="../images/webhook-parameters.png" title="Define webhook parameters" /></p>
 <p>Click <strong>Next step</strong> and <strong>Add event handler</strong> to create the event handler.</p>
 <p><img alt="Active webhook" src="../images/active-webhook.png" title="Active webhook" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>An event handler is automatically deactivated after several consecutive failed attempts. Manually reactivate the event handler to continue using the data integration.</p>
+</div>
 
 <!-- Link to previous and/or next page -->
 
@@ -2873,7 +2881,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
     
   </small>
 </div>
