@@ -4,7 +4,7 @@ date: 2023-06-22
 og_title: LwM2M Academy
 ---
 
-# LwM2M Academy (beta)
+# LwM2M Academy
 
 ![module 1 title](images/LwM2M-Academy-cover_1500x844.png)
 
@@ -17,6 +17,10 @@ The course consists of **5 modules** which will journey you through the diverse 
 By the end of the course, you will understand the advantages of the LwM2M standard and possess the skills to implement it effectively. With a strong emphasis on real-world applications, the course is designed to provide you with practical experience, empowering you to build IoT applications confidently using LwM2M.
 
 **Embark on this learning journey and explore the fascinating world of LwM2M.**
+
+!!! tip "LwM2M Academy available on Udemy"
+    The LwM2M Academy is now also available as an **official course on Udemy**. [Follow the course on Udemy](https://www.udemy.com/course/lwm2m-academy/).
+ 
 
 ## Invitation to Discord Community
 

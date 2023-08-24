@@ -135,6 +135,7 @@ nav:
                     - 'Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
         - 'Demo Projects':
             - 'Demo_Projects/Tracking_tutorial.md'
+            - CO2 office sensor: https://www.hackster.io/ferre111/iot-solution-for-co2-measurement-in-the-office-f3b213
             - 'Demo_Projects/Edge_Impulse_demo.md'
             - 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
             - 'Demo_Projects/Air_quality_monitoring_tutorial.md'

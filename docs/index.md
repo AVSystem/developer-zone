@@ -34,18 +34,26 @@ Follow the **Getting Started Guides** to kickstart your LwM2M application using 
 
 ## Learn more about {{ coiote_short_name }}
 
-Dive into {{ coiote_long_name }}, the scalable LwM2M server and explore its numerous features. From device onboarding using the [Bootstrapping Server](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
+Dive into {{ coiote_long_name }}, the scalable LwM2M server and explore its numerous features. From [device onboarding](Coiote_IoT_DM/User_Interface/Device_onboarding/) to [Data Visualization](Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](Coiote_IoT_DM/Device_tests/Overview/).
 
 [{{ coiote_short_name }} docs](Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
 
 
 ## Explore cloud integrations
 
-With the {{ coiote_long_name }}, you can easily integrate your LwM2M data with **Azure IoT Hub**, **Azure IoT Central**, **Azure DPS**, **AWS IoT Core** and **nRF Cloud Location Services**.
+With the {{ coiote_long_name }}, you can easily integrate your LwM2M data with platforms such as **Azure IoT Hub**, **AWS IoT Core**, **nRF Cloud Location Services**, **InfluxDB** or any public endpoint or Kafka cluster using the Data Integration Center.
 
 The guides will take you on a step-by-step journey to seamlessly activate the integrations.
 
-[Microsoft Azure](Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} [AWS IoT Core](Cloud_integrations/AWS_IoT_Core/Configuring_AWS_integration.md){: .md-button .md-button--big } [nRF Cloud](Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md){: .md-button .md-button--big }
+[Webhooks](Cloud_integrations/webhooks.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
+[Kafka](Cloud_integrations/kafka.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
+[Azure IoT](Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
+
+## LwM2M Academy
+
+**Take a deep-dive into the LwM2M standard by following the LwM2M Academy**. A comprehensive online course designed to provide you with both the theoretical understanding and hands-on skills necessary to utilize the powerful LwM2M standard.
+
+[Join course](/academy){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
 
 
 ## Join our community on Discord
