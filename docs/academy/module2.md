@@ -12,6 +12,8 @@ og_title: LwM2M Academy
 
 Welcome to the second module of the LwM2M Academy. In the previous module, we introduced the LwM2M protocol and its key features. In this module, we will dive deeper into the technical details of LwM2M by focusing on the mandatory Objects that must be implemented by all compliant devices. These Objects provide a standardized way to represent various aspects of an IoT device, such as its security settings, device information, and server connection. Additionally, we will discuss the different security modes of LwM2M both in theory as well as in practice.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/LSEIyz7F8_A" title="Getting started with LwM2M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ![Smart objects](images/module2_smart-objects.png)
 *<p style="text-align: center;">Mandatory Objects are: Security `/0`, Server Object `/1` & Device `/3`</p>*
 

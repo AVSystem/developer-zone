@@ -9,6 +9,8 @@ Device management involves the remote configuration of device parameters. This i
 
 The LwM2M protocol defines a standardized approach for efficiently managing IoT devices deployed in the field. In this module we will dive into the device management capabilities of the standard and explore its features and functionalities in detail.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/6nhRZXwAmTU" title="Device Management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Interfaces
 LwM2M specifies four distinct interfaces. We have already discussed two of them in previous modules: the **Bootstrap Interface** and the **Registration Interface** (see module 2). The standard defines two additional interfaces: the **Device Management Interface** and the **Information Reporting Interface**. Let’s explore these interfaces and understand how they contribute to efficient IoT device management
 

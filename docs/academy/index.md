@@ -16,6 +16,8 @@ The course consists of **5 modules** which will journey you through the diverse 
 
 By the end of the course, you will understand the advantages of the LwM2M standard and possess the skills to implement it effectively. With a strong emphasis on real-world applications, the course is designed to provide you with practical experience, empowering you to build IoT applications confidently using LwM2M.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/VmH34mcfApU" title="Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 **Embark on this learning journey and explore the fascinating world of LwM2M.**
 
 !!! tip "LwM2M Academy available on Udemy"
