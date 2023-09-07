@@ -20,6 +20,8 @@ og_title: LwM2M Academy
 
     ---
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/ORztipxn2ls" title="Introduction to LwM2M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Lightweight M2M
 
 To answer the industry’s need for an easy, fast, and power-efficient device management mechanism, the [OMA SpecWorks](https://omaspecworks.org/) created a communication standard for IoT devices called **Lightweight Machine-to-Machine (LwM2M)**.

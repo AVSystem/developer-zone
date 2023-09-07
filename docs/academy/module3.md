@@ -11,6 +11,8 @@ og_title: LwM2M Academy
 ## Introduction
 LwM2M uses a Client-Server architecture, designed to efficiently communicate data between IoT devices and cloud services. Let’s dive into the communication process and discuss the underlying communication mechanisms to ensure reliable communication of application payload and device management operations.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/SncFNZfw3nM" title="Building LwM2M Applications" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## IoT Communication Protocols
 In order to convey a message from the device to the cloud and vice versa, both the Client and the Server need to agree on a common language to make sense of the data, as well as a delivery method to communicate effectively. As we learned in the previous modules, the LwM2M standard uses the **LwM2M Object Model** to format the data so it can be comprehended by both the Client and Server.
 

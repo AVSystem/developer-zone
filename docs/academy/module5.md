@@ -7,6 +7,8 @@ Firmware updates over the air (FOTA) are becoming increasingly important as more
 
 The LwM2M protocol provides a standardized process for remote firmware updates. When developers follow the standardized guidelines provided by the protocol, updating the firmware of resource-constrained devices remotely can be accomplished effortlessly, regardless of the device or platform used.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/_3GfJ6Nq9U8" title="FOTA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## The LwM2M way of updating firmware
 
 Remote firmware updates know many names, such as Firmware Update OTA (FUOTA) or Device Firmware Upgrade (DFU). Device vendors can develop their own custom FOTA mechanisms, however, these implementations are specific to the vendor or platform and cannot be easily ported to other systems. The problem of vendor compatibility can be resolved by adopting the LwM2M standard, which is hardware agnostic and can be implemented on any hardware platform.
