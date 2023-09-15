@@ -60,7 +60,7 @@ Initiate integrations with popular cloud platforms such as Azure IoT Hub, AWS Io
 
 Test the performance of your device firmware by mimicking real-world scenarios. Device tests allow you to validate new application firmware, to test the implementation of the LwM2M standard, and run regression tests to ensure new firmware doesn’t break existing functionality.
 
-→ **Learn more about [**Device tests**](/docs/Coiote_IoT_DM/Device_tests/Overview.md).**
+→ **Learn more about [**Device tests**](/Coiote_IoT_DM/Device_tests/Overview/).**
 
 ![Device test](images/device-tests.png "Device test")
 
