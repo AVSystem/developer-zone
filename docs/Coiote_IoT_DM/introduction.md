@@ -24,7 +24,7 @@ In the **Device center** you can:
 * Set observations
 * Schedule firmware updates
 
-→ **Learn more about the [**Device center**](/Coiote_IoT_DM/Device_Center/).**
+→ **Learn more about the [**Device center**](/docs/Coiote_IoT_DM/Device_Center.md).**
 
 ![Access DC from Device inventory](images/device-inventory.png "Access DC from Device inventory")
 
@@ -32,7 +32,7 @@ In the **Device center** you can:
 
 The Dashboard is composed of widgets which display telemetry data. Widgets use different kinds of charts depending on the type of data collected. Go to the **Device center** to configure widgets.
 
-→ **Learn more about [**Data visualization**](/Coiote_IoT_DM/Visualize_data/).**
+→ **Learn more about [**Data visualization**](/docs/Coiote_IoT_DM/Visualize_data.md).**
 
 ## Operations center
 
@@ -51,16 +51,16 @@ Devices can be added to **Groups** allowing for easy management of your device f
 
 Initiate integrations with popular cloud platforms such as Azure IoT Hub, AWS IoT Core or nRF Cloud.
 
-→ **Learn more about [**Cloud integrations**](/Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/).**
+→ **Learn more about [**Cloud integrations**](/docs/Cloud_integrations/AWS_IoT_Core/Overview.md).**
 
 ![Data Integrations](images/integrations.png "Data Integrations")
 
 
 ## Device test repository*
 
-Test the performance of your device firmware by mimicking real-world scenarios. Device tests allow you to validate new application firmware, to test the implementation of the LwM2M standard, and to run regression tests to ensure new firmware doesn’t break existing functionality.
+Test the performance of your device firmware by mimicking real-world scenarios. Device tests allow you to validate new application firmware, to test the implementation of the LwM2M standard, and run regression tests to ensure new firmware doesn’t break existing functionality.
 
-→ **Learn more about [**Device tests**](/Coiote_IoT_DM/Device_tests/Overview/).**
+→ **Learn more about [**Device tests**](/docs/Coiote_IoT_DM/Device_tests/Overview.md).**
 
 ![Device test](images/device-tests.png "Device test")
 
