@@ -161,6 +161,11 @@ nav:
             - Graduation Project: 'academy/exercise5.md'
         - 'Release Notes':
             - 2023:
+                - 'Release_Notes/v2023.27.md'
+                - 'Release_Notes/v2023.26.1.md'
+                - 'Release_Notes/v2023.25.2.md'
+                - 'Release_Notes/v2023.24.0.md'
+                - 'Release_Notes/v2023.22.0.md'
                 - 'Release_Notes/v2023.19.0.md'
                 - 'Release_Notes/v2023.17.0.md'
                 - 'Release_Notes/v2023.16.0.md'
