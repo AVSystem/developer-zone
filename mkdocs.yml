@@ -77,6 +77,7 @@ nav:
                 - 'LwM2M_Client/ESP32/ESP32-DevKitCBG96.md'
             - 'OpenThread':
                 - 'LwM2M_Client/OpenThread/Adding_device.md'
+                - 'LwM2M_Client/OpenThread/OTBR_with_svetovid.md'
         - 'Coiote IoT DM':
             - 'Introduction': 'Coiote_IoT_DM/introduction.md'
             - 'Connecting devices':
@@ -172,7 +173,7 @@ nav:
                 - 'Release_Notes/v2023.15.0.md'
                 - 'Release_Notes/v2023.14.0.md'
                 - 'Release_Notes/v2023.12.0.md'
-                - 'Release_Notes/v2023.11.0.md'                
+                - 'Release_Notes/v2023.11.0.md'
                 - 'Release_Notes/v2023.10.0.md'
                 - 'Release_Notes/v2023.9.0.md'
                 - 'Release_Notes/v2023.7.0.md'
