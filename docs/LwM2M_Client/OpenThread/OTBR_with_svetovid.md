@@ -161,22 +161,22 @@ After that you can run your image in a new container:
     docker run --sysctl "net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI avsystem/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
 ```
 
-## Configure your Boarder Router through {{ coiote_short_name }}
+## Configure your Border Router through {{ coiote_short_name }}
 
 After a while you should see that your Border Router successfully connected to server. Now you can click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view.
 ![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 Now you can switch to **Data model** tab. Here you can find objects related to **OpenThread Border Router**:
 
-0. 33630 - by using this object you can configured and form a Thread network
+* **/33630** - `OTBR Configuration` - by using this object you can configure and form a Thread network
 
-0. 33633 - each entry in this object shall correspond to an entry in the local Thread node's neighbor table
+* **/33633** - `OpenThread Neighbor List` - each instance of this object shall correspond to an entry in the local Thread node's neighbor table
 
-0. 33634 - each instance of this object shall correspond to a single entry in the commissioner joiner table
+* **/33634** - `OpenThread Commissioner Joiner Table` - each instance of this object shall correspond to a single entry in the commissioner's joiner table
 
-0. 33639 - each instance of this object corresponds to one of the neighboring networks
+* **/33639** - `OpenThread Neighbor Networks` - each instance of this object shall correspond to one of the neighboring networks
 
-0. 33640 - by using this object you can join existing Thread network
+* **/33640** - `OpenThread Join Existing Network` - by using this object you can join existing Thread network
 
 ## Form a Thread network
 

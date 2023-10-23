@@ -86,9 +86,9 @@ Integrate your nRF52840-DK board using our Anjay LwM2M Client based on Zephyr OS
 
 [Start integration](./OpenThread/Adding_device.md){: .md-button .md-button--big }
 
-### Manage your OpenThread Boarder Router
+### Manage your OpenThread Border Router
 
-Integrate your Linux-based device using our Svetovid LwM2M Client to manage OpenThread Boarder Router.
+Integrate your Linux-based device using our Svetovid LwM2M Client to manage OpenThread Border Router.
 
 ![RPi_with_nRF52840](images/RPi_with_nRF52840.jpg "RPi_with_nRF52840"){ width=70% }
 
