@@ -118,9 +118,9 @@ Download the newest version of `svetovid-with-otbr` docker image:
     docker pull avsystem/svetovid-with-otbr
 ```
 
-## Environmental variables
+## Shell variables
 
-To make it easier to run the docker container, we will set a bunch of environmental variables.
+To make it easier to run the docker container, we will set a bunch of shell variables (note that the variables in the below manner are set for current shell session only, which means that when a new session is opened, the previous variables will not be restored).
 
 At first let's check the RCP path:
 ```
