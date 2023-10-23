@@ -10,7 +10,7 @@ With the help of **Svetovid**, we will be able to manage the Border Router remot
 - Installed [**Docker Engine**](https://docs.docker.com/engine/install/).
 - Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download) (for **nRF52840-DK**)
 - Installed **nrfutil** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nRF-Util) (for **nRF52840-dongle**)
-- A user with access to the {{ coiote_long_name }} and appropriate permissions.
+- A user with access to the {{ coiote_long_name }}.
 
 ## Flash Radio Co-Processor
 

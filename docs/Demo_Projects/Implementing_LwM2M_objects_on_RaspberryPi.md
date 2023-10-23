@@ -17,7 +17,7 @@ This tutorial will show you how to implement a temperature LwM2M object on your 
 
 - Raspberry Pi 3 or 4 with a configured [operating system](https://downloads.raspberrypi.org/raspios_armhf/images/) and a set-up WiFi connection.
 - A [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) or a [GrovePi](https://www.seeedstudio.com/GrovePi.html) with a temperature sensor ([DHT11](https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/) or similar) and a push button ([Grove-button](https://wiki.seeedstudio.com/Grove-Button/) or similar).
-- A user with access to the {{ coiote_long_name }} and appropriate permissions.
+- A user with access to the {{ coiote_long_name }}.
 
 ## Step 1: Prepare your Sense HAT/GrovePi
 
