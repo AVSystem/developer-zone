@@ -5,11 +5,11 @@ With the help of **Svetovid**, we will be able to manage the Border Router remot
 
 ## Prerequisites
 
-- The [**nRF52840-DK**](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk) or the [**nRF52840-dongle**](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dongle).
+- The [**nRF52840 DK**](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk) or the [**nRF52840 Dongle**](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dongle).
 - A Linux-based machine (in this tutorial we will use Raspberry Pi 3 model B with Raspbian) with `AMD64`, `ARMv7` or `ARM64` architecture.
 - Installed [**Docker Engine**](https://docs.docker.com/engine/install/).
-- Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download) (for **nRF52840-DK**)
-- Installed **nrfutil** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nRF-Util) (for **nRF52840-dongle**)
+- Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download) (for **nRF52840 DK**)
+- Installed **nrfutil** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nRF-Util) (for **nRF52840 Dongle**)
 - A user with access to the {{ coiote_long_name }}.
 
 ## Flash Radio Co-Processor
@@ -18,7 +18,7 @@ Our Border Router will run on an RCP design, which means that the core of the Op
 
 Now we will build and flash image for Radio Co-Processor.
 
-0. Connect your nRF board to your computer. In case of **nRF52840-DK** you should choose `MCU USB` port.
+0. Connect your nRF board to your computer. In case of **nRF52840 DK** you should choose `MCU USB` port.
 
 0. Clone the OpenThread repository:
 ```
@@ -37,11 +37,11 @@ Now we will build and flash image for Radio Co-Processor.
 
 0. Build the image:
 
-    === "**nRF52840-DK**"
+    === "**nRF52840 DK**"
         ```
             script/build nrf52840 USB_trans
         ```
-    === "**nRF52840-dongle**"
+    === "**nRF52840 Dongle**"
         ```
             script/build nrf52840 USB_trans -DOT_BOOTLOADER=USB
         ```
@@ -59,13 +59,13 @@ Now we will build and flash image for Radio Co-Processor.
 
 0. Flash the RCP:
 
-    === "**nRF52840-DK**"
+    === "**nRF52840 DK**"
         ```
             nrfjprog -f nrf52  --verify --chiperase --program build/bin/ot-rcp.hex --reset
         ```
         After flashing, you must switch the `MCU USB` port to the `nRF USB` in order to communicate with the Border Router (although, if you would like to avoid this switching, you can disable the Mass Storage feature on the `MCU USB` port using `J-Link Commander`, so that it does not interfere with the core RCP functionalities, but then you will need to change selected transport to `UART_trans` in the build command). Afterward, set the `nRF power source` to USB by proper switch on the board.
 
-    === "**nRF52840-dongle**"
+    === "**nRF52840 Dongle**"
         Install `nrf5sdk-tools`:
         ```
             nrfutil install nrf5sdk-tools
