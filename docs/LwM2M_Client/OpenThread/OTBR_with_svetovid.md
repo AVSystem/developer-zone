@@ -1,6 +1,6 @@
 # OpenThread Border Router configurable through LwM2M server
 
-In this tutorial, we will configure OpenThread Border Router with [**Svetovid**](https://github.com/AVSystem/Svetovid-raspberry-client) which is a LwM2M Client for Linux-based devices based on [**Anjay**](https://anjay.io).
+In this tutorial, we will configure OpenThread Border Router with [**Svetovid**](https://github.com/AVSystem/Svetovid-raspberry-client) which is an LwM2M Client for Linux-based devices based on [**Anjay**](https://anjay.io).
 With the help of **Svetovid**, we will be able to manage the Border Router remotely, through the LwM2M server. Within this guide, we will use the {{ coiote_long_name }} as the server.
 
 ## Prerequisites
@@ -139,7 +139,7 @@ Now we will set variables related to LwM2M server and credentials.
     SERVER_URI='{{ coiote_server }}'
 ```
 
-0. Endpoint name (it will also be used as an DTLS Identity):
+0. Endpoint name (it will also be used as an DTLS Identity, this is the **Key identity** field on the server):
 ```
     ENDPOINT_NAME='<your endpoint name>'
 ```
