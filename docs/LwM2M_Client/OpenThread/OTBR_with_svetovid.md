@@ -16,26 +16,26 @@ With the help of **Svetovid**, we will be able to manage the Border Router remot
 
 Our Border Router will run on an RCP design, which means that the core of the OpenThread stack will run on the host side and communicate via `Spinel` protocol with another device with a Thread radio.
 
-Now we will build and flash image for Radio Co-Processor:
+Now we will build and flash image for Radio Co-Processor.
 
 0. Connect your nRF board to your computer. In case of **nRF52840-DK** you should choose `MCU USB` port.
 
-0. Clone the OpenThread repository
+0. Clone the OpenThread repository:
 ```
     git clone --recursive https://github.com/openthread/ot-nrf528xx.git
 ```
 
-0. Enter new directory
+0. Enter new directory:
 ```
     cd ot-nrf528xx
 ```
 
-0. Install required dependencies
+0. Install required dependencies:
 ```
     script/bootstrap
 ```
 
-0. Build the image
+0. Build the image:
 
     === "**nRF52840-DK**"
         ```
@@ -47,17 +47,17 @@ Now we will build and flash image for Radio Co-Processor:
         ```
 
     !!! Note
-        If you have built an image before, don't forget to remove the `build` directory before the next compilation.
+        If you have built an image before, don't forget to remove the `build` directory before the next compilation:
         ```
             rm -rf build
         ```
 
-0. Convert the image to the hex format
+0. Convert the image to the `hex` format:
 ```
     arm-none-eabi-objcopy -O ihex build/bin/ot-rcp build/bin/ot-rcp.hex
 ```
 
-0. Flash the RCP
+0. Flash the RCP:
 
     === "**nRF52840-DK**"
         ```
@@ -66,24 +66,24 @@ Now we will build and flash image for Radio Co-Processor:
         After flashing, you must switch the `MCU USB` port to the `nRF USB` in order to communicate with the Border Router (although, if you would like to avoid this switching, you can disable the Mass Storage feature on the `MCU USB` port using `J-Link Commander`, so that it does not interfere with the core RCP functionalities, but then you will need to change selected transport to `UART_trans` in the build command). Afterward, set the `nRF power source` to USB by proper switch on the board.
 
     === "**nRF52840-dongle**"
-        Install `nrf5sdk-tools`
+        Install `nrf5sdk-tools`:
         ```
             nrfutil install nrf5sdk-tools
         ```
 
-        Generate the RCP firmware package
+        Generate the RCP firmware package:
         ```
             nrfutil pkg generate --hw-version 52 --sd-req=0x00 --application build/bin/ot-rcp.hex --application-version 1 build/bin/ot-rcp.zip
         ```
 
         Press the `reset` button to enter the bootloader mode, the onboard LED should start pulsing red.
 
-        Check the dongle path
+        Check the dongle path:
         ```
             ls -l /dev/ttyACM*
         ```
 
-        Flash the dongle (assuming that the dongle path is `/dev/ttyACM0`)
+        Flash the dongle (assuming that the dongle path is `/dev/ttyACM0`):
         ```
             nrfutil dfu usb-serial -pkg build/bin/ot-rcp.zip -p /dev/ttyACM0
         ```
@@ -113,7 +113,7 @@ If you haven't worked on your target device thus far, it's time to switch to it,
 
 ## Downloading Docker image
 
-Download the newest version of `svetovid-with-otbr` docker image
+Download the newest version of `svetovid-with-otbr` docker image:
 ```
     docker pull avsystem/svetovid-with-otbr
 ```
@@ -122,41 +122,41 @@ Download the newest version of `svetovid-with-otbr` docker image
 
 To make it easier to run the docker container, we will set a bunch of environmental variables.
 
-At first let's check the RCP path
+At first let's check the RCP path:
 ```
     ls -l /dev/ttyACM*
 ```
 
-And set `RCP_PATH` variable, for example `/dev/ttyACM0`
+And set `RCP_PATH` variable, for example `/dev/ttyACM0`:
 ```
     RCP_PATH='/dev/ttyACM0'
 ```
 
-Now we will set variables related to LwM2M server and credentials:
+Now we will set variables related to LwM2M server and credentials.
 
-0. Server URI (e.g. {{ coiote_server }})
+0. Server URI (e.g. {{ coiote_server }}):
 ```
     SERVER_URI='{{ coiote_server }}'
 ```
 
-0. Endpoint name (it will also be used as an DTLS Identity)
+0. Endpoint name (it will also be used as an DTLS Identity):
 ```
     ENDPOINT_NAME='<your endpoint name>'
 ```
 
-0. Pre-shared key
+0. Pre-shared key:
 ```
     PSK='<your PSK>'
 ```
 
 ## Run docker container
 
-Before you run docker container you need to add `ip6table_filter` module to Linux Kernel
+Before you run docker container you need to add `ip6table_filter` module to Linux Kernel:
 ```
     sudo modprobe ip6table_filter
 ```
 
-After that you can run your image in a new container
+After that you can run your image in a new container:
 ```
     docker run --sysctl "net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI avsystem/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
 ```
@@ -166,7 +166,7 @@ After that you can run your image in a new container
 After a while you should see that your Border Router successfully connected to server. Now you can click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view.
 ![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
-Now you can switch to **Data model** tab. Here you can find objects related to **OpenThread Border Router**
+Now you can switch to **Data model** tab. Here you can find objects related to **OpenThread Border Router**:
 
 0. 33630 - by using this object you can configured and form a Thread network
 
