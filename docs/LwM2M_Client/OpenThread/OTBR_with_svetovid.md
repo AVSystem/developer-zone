@@ -180,4 +180,4 @@ Now you can switch to **Data model** tab. Here you can find objects related to *
 
 ## Form a Thread network
 
-Use the **OTBR Configuration** object to form a Thread network. Replace all default values from the `Network Name`, `Network Extended PAN ID`, `PAN ID`, `Commissioner Credential` and `Network Key` resources to ensure a secure Thread network. Specify the `On_Mesh Prefix`, select the desired `Channel` and execute the `Form` resource to form your Thread network.
+Use the **OTBR Configuration** object to form a Thread network. Replace all default values from the `Network Name`, `Network Extended PAN ID`, `PAN ID`, `Commissioner Credential` and `Network Key` resources to ensure a secure Thread network. Specify the `On_Mesh Prefix` (e.g. `fd11:22::/64`), select the desired `Channel` and execute the `Form` resource to form your Thread network.
