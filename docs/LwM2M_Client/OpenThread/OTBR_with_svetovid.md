@@ -1,6 +1,6 @@
 # OpenThread Border Router configurable through LwM2M server
 
-In this tutorial, we will configure OpenThread Border Router with [**Svetovid**](https://github.com/AVSystem/Svetovid-raspberry-client) which is an LwM2M Client for Linux-based devices based on [**Anjay**](https://anjay.io).
+In this tutorial, we will configure OpenThread Border Router with [**Svetovid**](https://github.com/AVSystem/Svetovid-raspberry-client) which is a LwM2M Client for Linux-based devices based on [**Anjay**](https://anjay.io).
 With the help of **Svetovid**, we will be able to manage the Border Router remotely, through the LwM2M server. Within this guide, we will use the {{ coiote_long_name }} as the server.
 
 ## Prerequisites
@@ -52,7 +52,7 @@ Now we will build and flash image for Radio Co-Processor.
             rm -rf build
         ```
 
-0. Convert the image to the `hex` format:
+0. Convert the image to the `.hex` format:
 ```
     arm-none-eabi-objcopy -O ihex build/bin/ot-rcp build/bin/ot-rcp.hex
 ```
@@ -63,7 +63,7 @@ Now we will build and flash image for Radio Co-Processor.
         ```
             nrfjprog -f nrf52  --verify --chiperase --program build/bin/ot-rcp.hex --reset
         ```
-        After flashing, you must switch the `MCU USB` port to the `nRF USB` in order to communicate with the Border Router (although, if you would like to avoid this switching, you can disable the Mass Storage feature on the `MCU USB` port using `J-Link Commander`, so that it does not interfere with the core RCP functionalities, but then you will need to change selected transport to `UART_trans` in the build command). Afterward, set the `nRF power source` to USB by proper switch on the board.
+        After flashing, you must switch the physical USB port called `MCU USB` to the `nRF USB` port in order to communicate with the Border Router (although, if you would like to avoid this switching, you can disable the Mass Storage feature on the `MCU USB` port using `J-Link Commander`, so that it does not interfere with the core RCP functionalities, but then you will need to change selected transport to `UART_trans` in the build command). Afterward, set the `nRF power source` to USB by proper switch on the board.
 
     === "**nRF52840 Dongle**"
         Install `nrf5sdk-tools`:
@@ -109,7 +109,7 @@ To connect the device:
 
 ## Switch to the target device
 
-If you haven't worked on your target device thus far, it's time to switch to it, in our case it is the `Raspberry Pi 3B`. Connect the RCP to the target device and proceed with this tutorial while working on it.
+If you haven't worked on your target device thus far, it's time to switch to it, in our case it is the `Raspberry Pi 3B`. Connect the RCP to the target device and continue this tutorial while working on the target device.
 
 ## Downloading Docker image
 
