@@ -11,6 +11,7 @@ With the help of **Svetovid**, we will be able to manage the Border Router remot
 - Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download) (for **nRF52840 DK**)
 - Installed **nrfutil** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nRF-Util) (for **nRF52840 Dongle**)
 - A user with access to the {{ coiote_long_name }}.
+- For some commands you will need sudo privileges.
 
 ## Flash Radio Co-Processor
 
