@@ -20,7 +20,7 @@ og_title: LwM2M Academy
 
     ---
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ORztipxn2ls" title="Introduction to LwM2M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/6omSIRPdl90" title="Introduction to LwM2M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Lightweight M2M
 
