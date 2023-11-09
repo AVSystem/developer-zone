@@ -12,13 +12,14 @@
 - `POST /observations/device/{deviceId}/{path}`
 - `POST /devices/{id}`
 
-<br>
+
+
 
 ## Step 1: Add a single device or multiple devices 
 
-### Adding a single device
+### Add a single device
 
-Send a `POST` request to the endpoint `/devices`. In the request body provide the device object. The information that you have to provide is domain, security, and connector type. If you don’t provide device identity, you have to set properties.endpointName instead. 
+Send a `POST` request to the endpoint `/devices`. In the request body provide the device object. The information that you have to provide is domain, security, and connector type. If you don’t provide device identity, you have to set *properties.endpointName* instead. 
 
 !!! Note
     It is recommended to use *properties.endpointName* instead of *id* in `POST` requests. 
@@ -96,7 +97,7 @@ The following is an example of the request:
 
 Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual hostname.
 
-### Adding multiple devices in a batch
+### Add multiple devices in a batch
 
 Send a `POST` request to the endpoint `/devices/batch` with an array of device objects in the request body. You can add up to 100 devices. 
 The following is an example of the request creating two devices:
@@ -209,9 +210,9 @@ Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual 
 
 ## Step 3: Get data about devices
 
-### Retrieving all data about a specific device
+### Retrieve all data about a specific device
 
-Send a GET request to the endpoint /devices/{id} using the device ID as the path parameter. 
+Send a `GET` request to the endpoint `/devices/{id}` using the device ID as the path parameter. 
 
 The following is an example of the request:
 
@@ -239,7 +240,7 @@ The following is an example of the request:
 
 Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual hostname.
 
-### Retrieving specific data about all devices
+### Retrieve specific data about all devices
 
 Send a `GET` request to the endpoint `/devices/find/details`. 
 Use query parameters to adjust your request: 

@@ -11,9 +11,9 @@ To use the {{coiote_short_name}} API you need to have a user account in the plat
 {{coiote_short_name}} API uses OAuth 2.0 Password Grant authentication. In this form of authentication you have to provide the username and password in a `POST` request to the server. The server then exchanges the password for an access token.
 The `POST` request contains the following parameters:
 
-- grant_type - by providing the value “password” you indicate the password grant authentication type
-- username - your username
-- password - your password
+- *grant_type* - by providing the value “password” you indicate the password grant authentication type
+- *username* - your username
+- *password* - your password
 
 !!! Note
     SSO users (usually business users) need to have an IAM service account. Contact the platform administrator to have this account created. 
@@ -50,8 +50,8 @@ curl -i -X - `GET` "http://#HOSTNAME/api/coiotedm/v3/devices" -H "accept: applic
 
 **Error messages related to invalid authentication**
 
-- 401 - Unauthorized - you may encounter this error, if you provide incorrect access token
-- 403 - Forbidden - you may encounter this error, if you attempt to access an endpoint without the necessary permission
+- 401: Unauthorized - you may encounter this error, if you provide incorrect access token
+- 403: Forbidden - you may encounter this error, if you attempt to access an endpoint without the necessary permission
   
 **Token expiration time**
 

@@ -10,7 +10,8 @@
 - `POST /deviceEvents/handler/webhook`
 - `POST /deviceEvents/handler/test/existing/{id}`
 
-<br>
+
+
 
 ## Overview
 
@@ -54,11 +55,11 @@ Decide which events you want to send. Event handlers can forward events of two t
 
 The device event handler determines whether an event, telemetry or lifecycle, should be forwarded, decides how it should be forwarded, and then forwards the data. Each domain can have up to 10 event handlers. One event can trigger one or more event handlers. If the event handler fails 5 times in a row, then it is deactivated.
 
-### Creating a Kafka event handler
+### Create a Kafka event handler
 
 Send a POST request to the endpoint /deviceEvents/handler/kafka. Use the domain query parameter to specify the domain, otherwise, the domain of the user authorizing the request will be selected. In the request body, provide the event handler configuration. It consists of two parts:
 
-#### Configuring the connection to the Kafka instance
+#### Configure the connection to the Kafka instance
 
 You can specify the configuration of the connection to the target Kafka instance:
 
@@ -90,7 +91,7 @@ The following example of a request body creates a handler from Kafka config stor
 
 - Using custom Kafka producer configuration
 
-You can specify the Kafka configuration directly in the request body. This configuration must follow the .properties file format syntax and contain at least the addresses for bootstrap servers of your Kafka cluster. If your config contains "sasl.jaas.config" property, it is advised to skip the “ character in the "username" and "password" fields using \.
+You can specify the Kafka configuration directly in the request body. This configuration must follow the *.properties* file format syntax and contain at least the addresses for bootstrap servers of your Kafka cluster. If your config contains "sasl.jaas.config" property, it is advised to skip the “ character in the "username" and "password" fields using \.
 
 The following example of a request body creates a handler from custom Kafka properties:
 
@@ -123,7 +124,7 @@ retries = 0
 max.block.ms = 8000
 ```
 
-#### Selecting forwarded events by applying the filter
+#### Select forwarded events by applying the filter
 
 Each handler can forward events of only one of two types: Telemetry events or Device events.
 
@@ -210,17 +211,17 @@ The following is an example of the request creating a handler with custom Kafka 
 
 Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual hostname.
 
-### Creating a Webhook event handler
+### Create a Webhook event handler
 
-Send a POST request to the endpoint /deviceEvents/handler/webhook. Use the domain query parameter to specify the domain, otherwise, the domain of the user authorizing the request will be selected. In the request body, provide the event handler configuration. It consists of three parts:
+Send a `POST` request to the endpoint `/deviceEvents/handler/webhook`. Use the domain query parameter to specify the domain, otherwise, the domain of the user authorizing the request will be selected. In the request body, provide the event handler configuration. It consists of three parts:
 
-#### Configuring the connection
+#### Configure the connection
 
 Each Webhook event handler can forward events both to HTTP and HTTPS endpoints. If you specify the target URL to be HTTPS, handler execution will fail if the certificate is not valid.
 
 The requests can be authorized:
 
-- using basic auth (user and password), by specifying connectionConfig.auth field of request body:
+- using basic auth (user and password), by specifying *connectionConfig.auth* field of request body:
 
 ``` json
 {
@@ -233,7 +234,7 @@ The requests can be authorized:
 }
 ```
 
-- using bearer auth (token), by specifying connectionConfig.token field of request body:
+- using bearer auth (token), by specifying *connectionConfig.token* field of request body:
 
 ``` json
 {
@@ -245,7 +246,7 @@ The requests can be authorized:
 }
 ```
 
-- using custom static header, by specifying connectionConfig.additionalHeaders field of request body:
+- using custom static header, by specifying *connectionConfig.additionalHeaders* field of request body:
 
 ``` json
 {
@@ -257,13 +258,13 @@ The requests can be authorized:
 }
 ```
 
-#### Specifying delivery method and payload format
+#### Specify delivery method and payload format
 
-If you do not select the HTTP method using connectionConfig.method field, the requests will be sent using HTTP POST. You can specify the method to be one of "post", "put" or "patch".
+If you do not select the HTTP method using *connectionConfig.method* field, the requests will be sent using HTTP POST. You can specify the method to be one of "post", "put" or "patch".
 
-By default, the events are represented as JSON when the request payload is prepared. You can change the format to InfluxDB line protocol by setting the connectionConfig.format field to "influxDb".
+By default, the events are represented as JSON when the request payload is prepared. You can change the format to InfluxDB line protocol by setting the *connectionConfig.format* field to "influxDb".
 
-#### Selecting forwarded events by applying the filter
+#### Select forwarded events by applying the filter
 
 Each handler can forward events of only one of two types: Telemetry events or Device events.
 

@@ -11,15 +11,16 @@
 - `GET /deviceMonitoring/data/{deviceId}/alias/{alias}`
 - `GET /deviceMonitoring/data/{deviceId}/resourceUrl/{lwm2mUrl}`
 
-<br>
+
+
 
 ## Overview
 
 You can retrieve monitoring data from a device resource identified by its alias or LwM2M URL.
 
-## Retrieving monitoring data from a device using its resource alias
+## Retrieve monitoring data from a device using its resource alias
 
-Send a GET request to the endpoint `/deviceMonitoring/data/{deviceId}/alias/{alias}`. You have to provide the path parameters `deviceId` and `alias`, and the query parameter `timeRangeStart`. You can also use two additional parameters: `timeRangeEnd` and `limit`. To provide `timeRangeStart` and `timeRangeEnd` use ISO format (for example, 2022-12-01T08:05:35Z). If you don’t provide the `timeRangeEnd` parameter the current time is assumed to be the range end. The default and max value for the `limit` parameter is 2048 records.
+Send a `GET` request to the endpoint `/deviceMonitoring/data/{deviceId}/alias/{alias}`. You have to provide the path parameters `deviceId` and `alias`, and the query parameter `timeRangeStart`. You can also use two additional parameters: `timeRangeEnd` and `limit`. To provide `timeRangeStart` and `timeRangeEnd` use ISO format (for example, 2022-12-01T08:05:35Z). If you don’t provide the `timeRangeEnd` parameter the current time is assumed to be the range end. The default and max value for the `limit` parameter is 2048 records.
 
 !!! Note
     The value of `timeRangeStart` is exclusive and the value of `timeRangeEnd` is inclusive. 
@@ -56,7 +57,7 @@ The following is an example of the request, where you want to get monitoring dat
 
 Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual hostname.
 
-## Retrieving monitoring data from the device using its resource LwM2M URL
+## Retrieve monitoring data from the device using its resource LwM2M URL
 
 Send a `GET` request to the endpoint `/deviceMonitoring/data/{deviceId}/resourceUrl/{lwm2mUrl}`. You have to provide the path parameters `deviceId` and `lwm2mUrl`, and the query parameter `timeRangeStart`. You can also use two additional parameters: `timeRangeEnd` and `limit`. To provide the `lwm2mUrl` parameter use the format “/x/y/”' with numeric values. 
 

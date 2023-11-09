@@ -9,7 +9,8 @@
 - `POST /domains`
 - `POST /users`
 
-<br>
+
+
 
 ### Step 1: Create a domain
 

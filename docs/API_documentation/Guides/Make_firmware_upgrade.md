@@ -16,7 +16,8 @@
 - `POST /tasks/upgrade/{deviceId}/{fileResourceId}`
 - `GET /taskReports/summary`
 
-<br>
+
+
 
 ## Step 1: Check if the device firmware needs to be upgraded
 
