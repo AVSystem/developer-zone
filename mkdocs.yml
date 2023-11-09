@@ -6,6 +6,7 @@ theme:
   favicon: assets/favicon/favicon-32x32.png
   features:
     - navigation.tabs
+    - content.code.annotate
     - content.code.copy
 
 markdown_extensions:
