@@ -4,6 +4,9 @@
 
 After obtaining your access token, you can use any available method to send HTTP requests to the {{coiote_short_name}} API. The following are a few tools that you may find useful.
 
+!!! Note
+    You can learn how to get your access token in the [Authentication](Getting_access.md#authentication) section.
+
 **cURL**
 
 cURL is a command-line tool used for making requests to various servers and retrieving data. It is widely used for making HTTP requests. To test {{coiote_short_name}} API using cURL:
@@ -15,15 +18,13 @@ cURL is a command-line tool used for making requests to various servers and retr
     ```
     curl -i -X GET "http://#HOSTNAME/api/coiotedm/v3/devices" -H "accept: application/json" -H "authorization: Bearer #TOKEN"
     ```
-
-    !!! Note
-        You can learn how to get your access token in the [Authentication](Getting_access.md#authentication) section.
+Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual hostname.
 
 3. Execute the command by pressing Enter. cURL will send the request to the server and display the response on the terminal.
 
 **Postman**
 
-Postman is a popular API development and testing tool with a user-friendly interface for making HTTP requests. To test {{coiote_short_name}} API using Postman:
+[Postman](https://www.postman.com/) is a popular API development and testing tool with a user-friendly interface for making HTTP requests. To test {{coiote_short_name}} API using Postman:
 
 1. Open Postman in the browser or download the Postman desktop app.
 2. Navigate to the new request tab.
@@ -32,27 +33,25 @@ Postman is a popular API development and testing tool with a user-friendly inter
     ```
     https://#HOSTNAME/api/coiotedm/v3/ 
     ```
+Replace `#HOSTNAME` with your actual hostname.
 
-4. Include the API endpoint to which you want to send a request, for example: 
+1. Include the API endpoint to which you want to send a request, for example: 
    
     ```
     https://#HOSTNAME/api/coiotedm/v3/devices
     ```
+Replace `#HOSTNAME` with your actual hostname.
 
-5. Go to the **Authorization** tab. From the **Type** dropdown list select *Bearer Token*. Paste your access token.
-   
-    !!! Note
-        You can learn how to get your access token in the [Authentication](Getting_access.md#authentication) section.
-
-6. Customize your request by adding headers, query parameters, or request body content. You can do this by clicking on the corresponding tabs.
-7. Click **Send**. Postman will display the response received from the server, including the status code, headers, and response body.
-8. You can analyze the response data, save it, or perform additional actions. Postman provides features like response validation, saving requests in collections, or organizing requests into folders.
+1. Go to the **Authorization** tab. From the **Type** dropdown list select *Bearer Token*. Paste your access token.
+2. Customize your request by adding headers, query parameters, or request body content. You can do this by clicking on the corresponding tabs.
+3. Click **Send**. Postman will display the response received from the server, including the status code, headers, and response body.
+4. You can analyze the response data, save it, or perform additional actions. Postman provides features like response validation, saving requests in collections, or organizing requests into folders.
 
 
 **Swagger UI**
 
 !!! Note
-    Swagger can be used only if the user's password is stored in the {{coiote_short_name}} DM IAM. It doesn’t work for SSO users.
+    Swagger can be used only if the user's password is stored in the {{coiote_short_name}} DM IAM. It doesn’t work for Single sign-on users.
 
 Swagger UI is a tool for visualizing and interacting with APIs that are documented using the OpenAPI Specification. Using Swagger you can expand API endpoints, view request/response details, try out requests directly from the UI, and see the corresponding responses.
 
@@ -60,7 +59,7 @@ To access {{coiote_short_name}} API in Swagger UI:
 
 1. Log in to your {{coiote_short_name}} account.
 2. Click the question mark icon in the top navigation bar.
-3. Go to **Specification –> API v3**.
+3. Go to **Specification > API v3**.
    
 In the Swagger UI:
 
@@ -100,9 +99,11 @@ Once you decide on a tool, you can start to form a request.
 
 You can encounter the following success response codes: 
 
-- 200 - Success - the request was successfully processed and the server sends back the requested content in the response body.
-- 201 - Created - the request to create a new resource was successful. The server includes information about the newly created resource in the response body or through headers.
-- 204 - No Content - the request was successfully processed, but there is no new data to include in the response body. This status code is often used for requests that update or delete a resource.
+| Code | Text       | Description                                                                                                                                                                     |
+|------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 200  | Success    | The request was successfully processed and the server sends back the requested content in the response body.                                                                    |
+| 201  | Created    | The request to create a new resource was successful. The server includes information about the newly created resource in the response body or through headers.                  |
+| 204  | No Content | The request was successfully processed, but there is no new data to include in the response body. This status code is often used for requests that update or delete a resource. |
 
 ## Error responses
 

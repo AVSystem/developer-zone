@@ -16,7 +16,7 @@ The `POST` request contains the following parameters:
 - *password* - your password
 
 !!! Note
-    SSO users (usually business users) need to have an IAM service account. Contact the platform administrator to have this account created. 
+    SSO users (usually business users) need to have an Identity Access Management (IAM) service account. Contact the platform administrator to have this account created. 
 
 !!! Note
     In some installations the users obtain access token through exchange token procedure. Contact the platform administrator for more information.
@@ -24,7 +24,6 @@ The `POST` request contains the following parameters:
 **How to get access token**
 
 You can obtain a REST API access token by sending the `POST` request on an authentication endpoint:
-
 ```
 curl -X - `POST` \                                                                                     
 -H "Content-Type:application/x-www-form-urlencoded" \
@@ -33,12 +32,12 @@ curl -X - `POST` \
    --data-urlencode "password=pass" \
   'https://#HOSTNAME/api/auth/oauth_password'
 ```
+You can do it using any of the tool described in section [Tools to test our API]().
 
-
-The response to this request contains the access token and its expiration time expressed in seconds:  
+The response to this request will contain the access token and its expiration time expressed in seconds:  
 
 ```
-{"access_token":"#TOKEN","token_type":"Bearer","expires_in":"#EXPIRATION_TIME"}
+{"access_token":"your_access_token","token_type":"Bearer","expires_in":"number_of_seconds"}
 ```
 
 **How to authenticate requests**
@@ -47,6 +46,7 @@ Include the obtained token in the "authorization" header of the request. For exa
 ```
 curl -i -X - `GET` "http://#HOSTNAME/api/coiotedm/v3/devices" -H "accept: application/json" -H "authorization: Bearer #TOKEN"
 ```
+Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual hostname.
 
 **Error messages related to invalid authentication**
 
@@ -55,11 +55,11 @@ curl -i -X - `GET` "http://#HOSTNAME/api/coiotedm/v3/devices" -H "accept: applic
   
 **Token expiration time**
 
-The expiration time of the token is determined by the administrator and remains consistent for all user types. The token expires after 5 minutes.
+The expiration time of the token is determined by the administrator and remains consistent for all user types. Typically, the token expires after around 5 minutes.
 
 ## Permissions
 
-Each endpoint has a separate permission. You can find information about permissions required for accessing a specific endpoint in the Guides section.
+Each endpoint has a separate permission. 
 
 Developer and Business accounts have permissions for the access to the following set of API endpoints:
 

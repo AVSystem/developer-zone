@@ -2,7 +2,7 @@
 
 **Prerequisites:**
 
-- An active {{coiote_short_name}} user account
+- An active [{{coiote_short_name}}]({{coiote_site_link}}) user account
 - Permission *monitoring.manageMonitoring*
 - Devices already connected to {{coiote_short_name}}
 
@@ -10,9 +10,6 @@
 
 - `GET /deviceMonitoring/data/{deviceId}/alias/{alias}`
 - `GET /deviceMonitoring/data/{deviceId}/resourceUrl/{lwm2mUrl}`
-
-
-
 
 ## Overview
 

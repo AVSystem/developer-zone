@@ -2,7 +2,7 @@
 
 **Prerequisites:**
 
-- An active {{coiote_short_name}} user account with proper permissions
+- An active [{{coiote_short_name}}]({{coiote_site_link}}) user account with proper permissions
 - A device which supports Firmware Update Object /5
 
 **Endpoints used:**

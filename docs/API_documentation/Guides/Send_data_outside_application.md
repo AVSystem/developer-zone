@@ -2,16 +2,13 @@
 
 **Prerequisites:**
 
-- An active {{coiote_short_name}} DM user with a domain
+- An active [{{coiote_short_name}}]({{coiote_site_link}}) user account with a domain
 
 **Endpoints used:**
 
 - `POST /deviceEvents/handler/kafka`
 - `POST /deviceEvents/handler/webhook`
 - `POST /deviceEvents/handler/test/existing/{id}`
-
-
-
 
 ## Overview
 
@@ -221,7 +218,7 @@ Each Webhook event handler can forward events both to HTTP and HTTPS endpoints. 
 
 The requests can be authorized:
 
-- using basic auth (user and password), by specifying *connectionConfig.auth* field of request body:
+- using basic authorization (user and password), by specifying *connectionConfig.auth* field of request body:
 
 ``` json
 {
@@ -234,7 +231,7 @@ The requests can be authorized:
 }
 ```
 
-- using bearer auth (token), by specifying *connectionConfig.token* field of request body:
+- using bearer authorization (token), by specifying *connectionConfig.token* field of request body:
 
 ``` json
 {

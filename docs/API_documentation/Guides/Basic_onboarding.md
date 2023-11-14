@@ -1,9 +1,9 @@
-# How to make basic onboarding: adding single device or device batch, setting observations and getting data about devices
+# How to make basic onboarding
 
 
 **Prerequisites:**
 
-- An active {{coiote_short_name}} DM user account.
+- An active [{{coiote_short_name}}]({{coiote_site_link}}) user account
   
 **Endpoints used:**
 
@@ -12,8 +12,9 @@
 - `POST /observations/device/{deviceId}/{path}`
 - `POST /devices/{id}`
 
+## Overview
 
-
+Basic onboarding includes adding single device or device batch, setting observations and getting data about devices.
 
 ## Step 1: Add a single device or multiple devices 
 
