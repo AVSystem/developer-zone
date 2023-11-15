@@ -400,7 +400,7 @@ Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual 
 
 - **FOTA task for a single device**
   
-To create an upgrade task for a single device send a `POST` request to the endpoint `/tasks/upgrade/{deviceId}/{fileResourceId}` with your device id and the id of the created resource as the path parameters. Use default values for the query parameters or adjust them if needed. You can find the description of additional parameters in the API reference for this endpoint. The following is an example of the request with default parameters:
+To create an upgrade task for a single device send a `POST` request to the endpoint `/tasks/upgrade/{deviceId}/{fileResourceId}` with your device ID and the ID of the created resource as the path parameters. Use default values for the query parameters or adjust them if needed. You can find the description of additional parameters in the API reference for this endpoint. The following is an example of the request with default parameters:
 
 === "cURL"
 

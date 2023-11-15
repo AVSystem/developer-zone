@@ -21,7 +21,7 @@ You can send data outside the application using one of two methods - **Kafka** o
 
 ## Step 1: Prepare a “receiver” for the data from {{coiote_short_name}}
 
-Configure a destination to which you want to forward the data. It can be a Kafka cluster ([https://www.confluent.io/confluent-cloud/](https://www.confluent.io/confluent-cloud/)), a bucket for data in Influx Cloud ([https://www.influxdata.com/products/influxdb-cloud/](https://www.influxdata.com/products/influxdb-cloud/)), or your own HTTP server.
+Configure a destination to which you want to forward the data. It can be a [Kafka cluster](https://www.confluent.io/confluent-cloud/), a bucket for data in [Influx Cloud](https://www.influxdata.com/products/influxdb-cloud/), or your own HTTP server.
 
 ## Step 2: Configure the authentication
 
@@ -54,7 +54,7 @@ The device event handler determines whether an event, telemetry or lifecycle, sh
 
 ### Create a Kafka event handler
 
-Send a POST request to the endpoint /deviceEvents/handler/kafka. Use the domain query parameter to specify the domain, otherwise, the domain of the user authorizing the request will be selected. In the request body, provide the event handler configuration. It consists of two parts:
+Send a POST request to the endpoint /deviceEvents/handler/kafka. Use the domain query parameter to specify the domain, otherwise, the domain of the user authorizing the request will be used as default. In the request body, provide the event handler configuration. It consists of two parts:
 
 #### Configure the connection to the Kafka instance
 

@@ -53,6 +53,7 @@ Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual 
 ### Step 2: Add users to your domain
 
 To add users, send a `POST` request to the endpoint `/users`. Specify your domain in the path parameter. In the request body provide a user object. You have to include the following information:
+
 - login - user's login
 - email - user's email
 - emailVerified - set true to create a user with already verified email
