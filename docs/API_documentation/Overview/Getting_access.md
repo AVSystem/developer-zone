@@ -23,7 +23,8 @@ The `POST` request contains the following parameters:
 
 **How to get access token**
 
-You can obtain a REST API access token by sending the `POST` request on an authentication endpoint:
+You can obtain a REST API access token by sending the `POST` request on an authentication endpoint. If you want to use cURL enter the following command in the terminal:
+
 ```
 curl -X - `POST` \                                                                                     
 -H "Content-Type:application/x-www-form-urlencoded" \
@@ -32,7 +33,8 @@ curl -X - `POST` \
    --data-urlencode "password=pass" \
   'https://#HOSTNAME/api/auth/oauth_password'
 ```
-You can do it using any of the tool described in section [Tools to test our API]().
+
+You can send the request using any of the tools described in section [Tools to test our API](./Using_the_API.md#tools-to-test-our-api).
 
 The response to this request will contain the access token and its expiration time expressed in seconds:  
 
@@ -63,50 +65,50 @@ Each endpoint has a separate permission.
 
 Developer and Business accounts have permissions for the access to the following set of API endpoints:
 
-- `GET` cachedDataModels/{deviceId}
-- `DELETE` deviceEvents/handler/{id}
-- `GET` deviceEvents/handler
-- `GET` deviceEvents/handler/{id}
-- `POST` deviceMonitoring/configuration/{group_groupId}/enable/
-- `GET` deviceMonitoring/{data_deviceId}/alias/{alias}
-- `GET` deviceMonitoring/{data_deviceId}/resourceUrl/{lwm2mUrl}
-- `DELETE` devices/{id}
-- `GET` devices
-- `GET` devices/{id}
-- `POST` devices
-- `PUT` devices/{id}
-- `GET` devices/all/count
-- `POST` dialects/addObject
-- `GET` domains
-- `GET` domains/{id}
-- `DELETE` groups/{id}
-- `GET` groups
-- `GET` groups/{id}
-- `POST` groups
-- `PUT` groups/{id}
-- `GET` instantiatedResources/dataModelDefinition/{deviceId}
-- `GET` instantiatedResources/resourcesData/{deviceId}
-- `DELETE` monitoring/{monitoringName}
-- `GET` monitoring    
-- `GET` monitoring/{monitoringName}
-- `POST` monitoring
-- `PUT` monitoring/{monitoringName}
-- `GET` monitoringData/aggregates/numerical/{monitoringName}/{groupId}/{resourceName}
-- `GET` monitoringData/aggregates/textual/{monitoringName}/{groupId}/{resourceName}
-- `GET` monitoringData/moreSamples
-- `GET` monitoringData/samples/{monitoringName}/{deviceId}
-- `GET` observations
-- `DELETE` observations/device/{deviceId}/{path}
-- `GET` observations/device/{deviceId}/{path}
-- `POST` observations/device/{deviceId}/{path}
-- `POST` sessions/{deviceId}
-- `GET` settingValues
-- `PUT` settingValues
-- `GET` settingValues/deviceProfile/{deviceId}
-- `GET` settingValues/groupProfile/{groupId}
-- `GET` taskReports
-- `GET` taskReports/{taskId}/{deviceId}
-- `GET` tasks
-- `GET` tasks/{id}
-- `DELETE` tasks/callback/{taskId}/{callbackName}
-- `GET` users/{id}
+- `GET cachedDataModels/{deviceId}`
+- `DELETE deviceEvents/handler/{id}`
+- `GET deviceEvents/handler`
+- `GET deviceEvents/handler/{id}`
+- `POST deviceMonitoring/configuration/{group_groupId}/enable/`
+- `GET deviceMonitoring/{data_deviceId}/alias/{alias}`
+- `GET deviceMonitoring/{data_deviceId}/resourceUrl/{lwm2mUrl}`
+- `DELETE devices/{id}`
+- `GET devices`
+- `GET devices/{id}`
+- `POST devices`
+- `PUT devices/{id}`
+- `GET devices/all/count`
+- `POST dialects/addObject`
+- `GET domains`
+- `GET domains/{id}`
+- `DELETE groups/{id}`
+- `GET groups`
+- `GET groups/{id}`
+- `POST groups`
+- `PUT groups/{id}`
+- `GET instantiatedResources/dataModelDefinition/{deviceId}`
+- `GET instantiatedResources/resourcesData/{deviceId}`
+- `DELETE monitoring/{monitoringName}`
+- `GET monitoring`
+- `GET monitoring/{monitoringName}`
+- `POST monitoring`
+- `PUT monitoring/{monitoringName}`
+- `GET monitoringData/aggregates/numerical/{monitoringName}/{groupId}/{resourceName}`
+- `GET monitoringData/aggregates/textual/{monitoringName}/{groupId}/{resourceName}`
+- `GET monitoringData/moreSamples`
+- `GET monitoringData/samples/{monitoringName}/{deviceId}`
+- `GET observations`
+- `DELETE observations/device/{deviceId}/{path}`
+- `GET observations/device/{deviceId}/{path}`
+- `POST observations/device/{deviceId}/{path}`
+- `POST sessions/{deviceId}`
+- `GET settingValues`
+- `PUT settingValues`
+- `GET settingValues/deviceProfile/{deviceId}`
+- `GET settingValues/groupProfile/{groupId}`
+- `GET taskReports`
+- `GET taskReports/{taskId}/{deviceId}`
+- `GET tasks`
+- `GET tasks/{id}`
+- `DELETE tasks/callback/{taskId}/{callbackName}`
+- `GET users/{id}`

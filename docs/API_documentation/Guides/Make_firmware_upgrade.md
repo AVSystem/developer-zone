@@ -282,7 +282,7 @@ Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual 
 
 In the response body you will get the resource ID necessary for the next steps, for example `demo-file-resource-id`.
 
-The example above creates the required resource, but it is recommended to assign it to a group. It makes upgrading a device through Coiote GUI easier because this file resource will appear in the “Available files” domain of the group.
+The example above creates the required resource, but it is recommended to assign it to a group. It makes upgrading a device through Coiote GUI easier because this file resource will appear in the “Available files” group.
 
 The following is an example of the request body and the request with the optional settings added:
 
@@ -648,7 +648,7 @@ Replace `#TOKEN` with your actual access token and `#HOSTNAME` with your actual 
     }
     ```
 
-The report will be returned in the response body. If FOTA is successful, the response body will look like the following example:
+The Response body will contain the report. If FOTA is successful, the report will look similar to this example:
 
 ```json
 {
@@ -685,7 +685,7 @@ The report will be returned in the response body. If FOTA is successful, the res
 }
 ```
 
-If the FOTA task raises an error, the report will look like the following example:
+If the FOTA task raises an error, the report will look similar to this example:
 
 ```json
 {

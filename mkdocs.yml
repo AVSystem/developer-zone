@@ -12,7 +12,8 @@ theme:
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - attr_list
   - admonition
   - pymdownx.details
