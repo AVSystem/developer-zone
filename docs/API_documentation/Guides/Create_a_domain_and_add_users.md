@@ -16,6 +16,7 @@
 
 To create a domain, send a `POST` request to the endpoint `/domains`. Customize the data in the request body with the necessary parameters for creating a domain: the domain identity and description. Domain identity consists of the root domain name followed by any number of sub-domain names, and must start and end with ”/”, for example: “/sub_domain1/sub_domain2/”. The following is an example of the request:
 
+
 === "cURL"
 
     ```
