@@ -4,7 +4,7 @@ import os
 from mkdocs.structure.files import File
 import mmap
 
-BLOCKED_STRINGS = [" Coiote.", "eu.iot.avsystem.cloud"]
+BLOCKED_STRINGS = [" Coiote ", " Coiote.", "eu.iot.avsystem.cloud"]
 
 
 def define_env(env):
