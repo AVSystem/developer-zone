@@ -6,13 +6,14 @@ theme:
   favicon: assets/favicon/favicon-32x32.png
   features:
     - navigation.tabs
+    - content.code.annotate
+    - content.code.copy
 
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - attr_list
   - admonition
   - pymdownx.details
@@ -25,7 +26,7 @@ markdown_extensions:
 
 plugins:
   - search
-  - git-revision-date-localized
+#   - git-revision-date-localized
   - redirects:
         redirect_maps:
             'IoT_quick_start/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
@@ -159,6 +160,18 @@ nav:
             - Module 5 - Firmware updates:
                 - Theory Module 5: 'academy/module5.md'
             - Graduation Project: 'academy/exercise5.md'
+        - 'API documentation':
+            - 'Overview': 
+                - 'API_documentation/Overview/About_Coiote_API.md'
+                - 'API_documentation/Overview/Getting_access.md'
+                - 'API_documentation/Overview/Using_the_API.md'
+            - 'Guides':
+                - How to make basic onboarding: 'API_documentation/Guides/Basic_onboarding.md'
+                - How to create a domain and add users: 'API_documentation/Guides/Create_a_domain_and_add_users.md'
+                - How to make firmware upgrade (FOTA): 'API_documentation/Guides/Make_firmware_upgrade.md'
+                - How to send data outside the application with event handlers: 'API_documentation/Guides/Send_data_outside_application.md'
+                - How to use Device monitoring: 'API_documentation/Guides/Use_device_monitoring.md'
+            - API reference: 'API_documentation/api_reference.md'
         - 'Release Notes':
             - 2023:
                 - 'Release_Notes/v2023.29.md'
