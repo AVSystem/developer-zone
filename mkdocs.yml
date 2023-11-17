@@ -4,16 +4,15 @@ theme:
   custom_dir: overrides
   logo: assets/images/logo.svg
   favicon: assets/favicon/favicon-32x32.png
-#   features:
-#     - navigation.tabs
-#     - content.code.annotate
-#     - content.code.copy
+  features:
+    - navigation.tabs
+    - content.code.annotate
+    - content.code.copy
 
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.tabbed
   - attr_list
   - admonition
   - pymdownx.details
