@@ -227,6 +227,166 @@
       
       
         
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LwM2M_Client/Getting_started/" class="md-tabs__link">
+        LwM2M Client
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Coiote_IoT_DM/introduction/" class="md-tabs__link">
+        Coiote IoT DM
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Cloud_integrations/webhooks/" class="md-tabs__link">
+        Cloud Integrations
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Demo_Projects/Tracking_tutorial/" class="md-tabs__link">
+        Demo Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../academy/" class="md-tabs__link">
+        LwM2M Academy
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Overview/About_Coiote_API/" class="md-tabs__link md-tabs__link--active">
+        API documentation
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Release_Notes/v2023.29/" class="md-tabs__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -240,8 +400,10 @@
 
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="IoT Developer Zone" class="md-nav__button md-logo" aria-label="IoT Developer Zone">
       
@@ -3228,9 +3390,7 @@
 </tbody>
 </table>
 <p>The following is an example of the request:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">cURL</label><label for="__tabbed_1_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;Content-Type: application/json&quot; \
@@ -3239,7 +3399,7 @@
 https://#HOSTNAME/api/coiotedm/v3/devices
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.devices</span> <span class="kn">import</span> <span class="n">ConnectorType</span><span class="p">,</span> <span class="n">Device</span><span class="p">,</span> <span class="n">HexStringPsk</span>
 
@@ -3266,14 +3426,11 @@ https://#HOSTNAME/api/coiotedm/v3/devices
 </code></pre></div>
 </div>
 </div>
-</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <h3 id="add-multiple-devices-in-a-batch">Add multiple devices in a batch<a class="headerlink" href="#add-multiple-devices-in-a-batch" title="Permanent link">#</a></h3>
 <p>Send a <code>POST</code> request to the endpoint <code>/devices/batch</code> with an array of device objects in the request body. You can add up to 100 devices. 
 The following is an example of the request creating two devices:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;Content-Type: application/json&quot; \
@@ -3281,7 +3438,7 @@ The following is an example of the request creating two devices:</p>
 https://#HOSTNAME/api/coiotedm/v3/devices/batch
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.devices</span> <span class="kn">import</span> <span class="n">ConnectorType</span><span class="p">,</span> <span class="n">Device</span><span class="p">,</span> <span class="n">HexStringPsk</span>
 
@@ -3322,7 +3479,6 @@ https://#HOSTNAME/api/coiotedm/v3/devices/batch
 </code></pre></div>
 </div>
 </div>
-</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <h2 id="step-2-create-observations">Step 2: Create observations<a class="headerlink" href="#step-2-create-observations" title="Permanent link">#</a></h2>
 <p>To create observations for a device, send a <code>POST</code> request to the endpoint <code>/observations/device/{deviceId}/{path}</code>. Provide the ID of the device to which you want to add the observation and the path to the device resource you want to use. Use the Human readable path format (for example, “Device.0.Battery Level”). The path can point to Object, Object Instance, or Resource. </p>
@@ -3337,9 +3493,7 @@ https://#HOSTNAME/api/coiotedm/v3/devices/batch
 </div>
 <p>If you create ensureObservationTask, the system automatically checks if the observations are enabled on the device, during every provisioning session. </p>
 <p>The following is an example of the request, where you want to get a notification about the level of battery power every two minutes:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">cURL</label><label for="__tabbed_3_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;Content-Type: application/json&quot; \
@@ -3347,7 +3501,7 @@ https://#HOSTNAME/api/coiotedm/v3/devices/batch
 https://#HOSTNAME/api/coiotedm/v3/observations/device/api-test-device/Device.0.Battery%20Level
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.observations</span> <span class="kn">import</span> <span class="n">ObservationAttribute</span><span class="p">,</span> <span class="n">SetObservationRequest</span>
 
@@ -3369,21 +3523,18 @@ https://#HOSTNAME/api/coiotedm/v3/observations/device/api-test-device/Device.0.B
 </code></pre></div>
 </div>
 </div>
-</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <h2 id="step-3-get-data-about-devices">Step 3: Get data about devices<a class="headerlink" href="#step-3-get-data-about-devices" title="Permanent link">#</a></h2>
 <h3 id="retrieve-all-data-about-a-specific-device">Retrieve all data about a specific device<a class="headerlink" href="#retrieve-all-data-about-a-specific-device" title="Permanent link">#</a></h3>
 <p>Send a <code>GET</code> request to the endpoint <code>/devices/{id}</code> using the device ID as the path parameter. </p>
 <p>The following is an example of the request:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">cURL</label><label for="__tabbed_4_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X GET \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 https://#HOSTNAME/api/coiotedm/v3/devices/api-test-device
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="n">coiote_auth</span> <span class="o">=</span> <span class="s2">&quot;#TOKEN&quot;</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Coiote</span><span class="p">(</span>
@@ -3394,7 +3545,6 @@ https://#HOSTNAME/api/coiotedm/v3/devices/api-test-device
     <span class="n">client</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">get_one</span><span class="p">(</span><span class="n">device_id</span><span class="o">=</span><span class="s2">&quot;api-test-device&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
@@ -3408,16 +3558,14 @@ Use query parameters to adjust your request: </p>
 <li><em>pageBookmark</em> -  if you leave this parameter empty, you will get the first page. To get the next page, use the bookmark value returned in the previous request.</li>
 </ul>
 <p>The following is an example of the request, where you want to get domains of devices that have enabled management and limit the result to 10:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">cURL</label><label for="__tabbed_5_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X GET \
 -H &quot;accept: application/json&quot; \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 &quot;https://#HOSTNAME/api/coiotedm/v3/devices/find/details?searchCriteria=managementEnabled%20eq%20true&amp;fieldSelection=domain&amp;limit=10&quot; 
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 
 <span class="n">coiote_auth</span> <span class="o">=</span> <span class="s2">&quot;#TOKEN&quot;</span>
@@ -3433,7 +3581,6 @@ Use query parameters to adjust your request: </p>
     <span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
@@ -3592,7 +3739,7 @@ Use query parameters to adjust your request: </p>
       <script>
         app = initialize({
           base: "../../..",
-          features: [],
+          features: ['navigation.tabs', 'content.code.annotate', 'content.code.copy'],
           search: Object.assign({
             worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
