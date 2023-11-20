@@ -38,8 +38,6 @@ In the import process, you will need a list of devices that you want to import a
         - If you already have a CSV file with devices for import, click **Browse** and select the file.
         - If you don't have a CSV with devices for import yet, click the **device template** link to download an empty template that you can fill in with your data:
             - **EndpointName** - provide endpoint name of your device.
-            - **IMSI** - provide a random but unique number for each entry (or provide IMSI number if your device has one).
-              ![CSV device template](images/device_template_csv.png "CSV device template")
             - **PSK_Identity_Key** - provide a unique plain-text PSK identity key used for secure communication between the device and {{ coiote_short_name }}.
             - **PSK_Key** -  provide a unique HEX-encoded PSK key used for secure communication between the device and {{ coiote_short_name }}.
             - Save the template and upload it using the **Browse** button and dialog window.
