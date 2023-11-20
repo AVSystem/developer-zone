@@ -374,7 +374,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Release_Notes/v2023.29/" class="md-tabs__link">
+      <a href="../../Release_Notes/v2023.31/" class="md-tabs__link">
         Release Notes
       </a>
     </li>
@@ -2594,6 +2594,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Release_Notes/v2023.31/" class="md-nav__link">
+        v2023.31
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/v2023.30.0/" class="md-nav__link">
+        v2023.30.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Release_Notes/v2023.29/" class="md-nav__link">
         v2023.29
       </a>
@@ -3323,12 +3347,12 @@
 <h2 id="compilation">Compilation<a class="headerlink" href="#compilation" title="Permanent link">#</a></h2>
 <h3 id="clone-the-anjay-zephyr-repository">Clone the Anjay Zephyr repository<a class="headerlink" href="#clone-the-anjay-zephyr-repository" title="Permanent link">#</a></h3>
 <p>Open the command line interface on your machine and clone the <a href="https://github.com/AVSystem/Anjay-zephyr-client">Anjay Zephyr repository</a> using <a href="https://formulae.brew.sh/formula/git">Git</a>:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/AVSystem/Anjay-zephyr-client
+<div class="highlight"><pre><span></span><code><span class="nx">git</span><span class="w"> </span><span class="nx">clone</span><span class="w"> </span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/AVSystem/Anjay-zephyr-client</span>
 </code></pre></div>
 <p>Set West manifest path to <code>Anjay-zephyr-client/ei_demo</code>, and manifest file to <code>west-nrf.yml</code> and run <code>west update</code>:</p>
-<div class="highlight"><pre><span></span><code>west config manifest.path Anjay-zephyr-client/ei_demo
-west config manifest.file west-nrf.yml
-west update
+<div class="highlight"><pre><span></span><code><span class="nx">west</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="nx">manifest</span><span class="p">.</span><span class="nx">path</span><span class="w"> </span><span class="nx">Anjay</span><span class="o">-</span><span class="nx">zephyr</span><span class="o">-</span><span class="nx">client</span><span class="o">/</span><span class="nx">ei_demo</span>
+<span class="nx">west</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="nx">manifest</span><span class="p">.</span><span class="nx">file</span><span class="w"> </span><span class="nx">west</span><span class="o">-</span><span class="nx">nrf</span><span class="p">.</span><span class="nx">yml</span>
+<span class="nx">west</span><span class="w"> </span><span class="nx">update</span>
 </code></pre></div>
 <h3 id="update-the-endpoint-name-and-psk-optional">Update the endpoint name and PSK (optional)<a class="headerlink" href="#update-the-endpoint-name-and-psk-optional" title="Permanent link">#</a></h3>
 <div class="admonition info">
@@ -3350,7 +3374,7 @@ west update
 <p>After making the changes, press <code>Q</code> to close the config menu and <code>Y</code> to save.</p>
 <h3 id="compile-the-project">Compile the project<a class="headerlink" href="#compile-the-project" title="Permanent link">#</a></h3>
 <p>Go to the <code>ei_demo</code> directory and compile the project for the Thingy:91:</p>
-<div class="highlight"><pre><span></span><code>west build -b thingy91_nrf9160_ns
+<div class="highlight"><pre><span></span><code><span class="nx">west</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="o">-</span><span class="nx">b</span><span class="w"> </span><span class="nx">thingy91_nrf9160_ns</span>
 </code></pre></div>
 <h2 id="write-the-firmware-to-the-thingy91">Write the firmware to the Thingy:91<a class="headerlink" href="#write-the-firmware-to-the-thingy91" title="Permanent link">#</a></h2>
 <ol>
