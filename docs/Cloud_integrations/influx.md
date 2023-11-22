@@ -80,13 +80,14 @@ Select the **Influx data formatting** option.
 
     *You can find the URL in the address bar of your browser when using InfluxDB Cloud.*
 
-2. The **InfluxDB API**: `/api/v2/write` 
-3. The **Bucket ID**, starting with `?bucket=`
+2. The **InfluxDB API**: `/api/v2/write`
+3. The **precision** parameter indicading our data is ingested with millisecond precision: `?precision=ms`
+4. The **Bucket ID**, starting with `&bucket=`
 
 When combined, the URL address looks something like: 
 
 ```
-https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?bucket=bc123456789ABCDE
+https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?precision=ms&bucket=bc123456789ABCDE
 ```
 
 !!! info
