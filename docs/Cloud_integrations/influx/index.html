@@ -3300,12 +3300,13 @@
 <p><em>You can find the URL in the address bar of your browser when using InfluxDB Cloud.</em></p>
 </li>
 <li>
-<p>The <strong>InfluxDB API</strong>: <code>/api/v2/write</code> </p>
+<p>The <strong>InfluxDB API</strong>: <code>/api/v2/write</code></p>
 </li>
-<li>The <strong>Bucket ID</strong>, starting with <code>?bucket=</code></li>
+<li>The <strong>precision</strong> parameter indicading our data is ingested with millisecond precision: <code>?precision=ms</code></li>
+<li>The <strong>Bucket ID</strong>, starting with <code>&amp;bucket=</code></li>
 </ol>
 <p>When combined, the URL address looks something like: </p>
-<div class="highlight"><pre><span></span><code>https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?bucket=bc123456789ABCDE
+<div class="highlight"><pre><span></span><code>https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?precision=ms&amp;bucket=bc123456789ABCDE
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -3390,7 +3391,7 @@ time &gt;= now() - interval &#39;1 hour&#39;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 8, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2023</span>
     
   </small>
 </div>
