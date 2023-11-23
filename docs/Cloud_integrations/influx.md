@@ -74,7 +74,7 @@ Select the **Influx data formatting** option.
 
 ![Select Influx](images/influx-data-formatting.png "Select Influx")
 
-**The URL address** is composed of 4 parts:
+**The URL address** is composed of the following parts:
 
 1. The **Influx URL** e.g.: `https://eu-central-1-1.aws.cloud2.influxdata.com` 
 
