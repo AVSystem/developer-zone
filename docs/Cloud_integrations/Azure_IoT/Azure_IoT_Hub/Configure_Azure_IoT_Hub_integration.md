@@ -63,7 +63,7 @@ This section illustrates the configuration of Azure resources through the Comman
 2. **Authenticated to Azure CLI:**
    Authenticate your Azure CLI by following the steps outlined in [this guide](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively).
 
-3. **Created Resource Group `coiote-dm-experiments`:**
+3. **Created Resource Group e.g. `coiote-dm-experiments`:**
    Execute the following command to create the required resource group:
    ```bash
    # Adjust the group name as needed
@@ -90,7 +90,10 @@ az iot hub connection-string show -n $USER-hub -g $GROUP
 
 ### Clean up resources
 
-To delete previously created Azure resources, including the specified storage account and IoT hub, execute this script: 
+To delete previously created Azure resources, including the specified storage account and IoT hub, execute this script:
+
+!!! Warning
+    Removal of these resources will cause the integration with {{ coiote_short_name }} to stop working.
 
 ```bash
 # Delete the storage account
