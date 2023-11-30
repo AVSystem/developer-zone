@@ -55,7 +55,20 @@ Your integration should now be established. To get the integration up and runnin
 
 ## Configuring Azure resources via CLI
 
-This section illustrates the configuration of Azure resources through the Command-Line Interface (CLI), offering a streamlined and scriptable approach to resource management.
+This section illustrates the configuration of Azure resources through the Command-Line Interface (CLI), offering a streamlined and scriptable approach to resource management. It is assumed that you have completed the following prerequisites:
+
+1. **Installed Azure CLI:**
+   Ensure that Azure CLI is installed on your system. If not, refer to the [official installation guide](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) for detailed instructions.
+
+2. **Authenticated to Azure CLI:**
+   Authenticate your Azure CLI by following the steps outlined in [this guide](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively).
+
+3. **Created Resource Group `coiote-dm-experiments`:**
+   Execute the following command to create the required resource group:
+   ```bash
+   # Adjust the group name as needed
+   az group create --name coiote-dm-experiments
+   ```
 
 ### Resources creation and connection string retrieval
 
