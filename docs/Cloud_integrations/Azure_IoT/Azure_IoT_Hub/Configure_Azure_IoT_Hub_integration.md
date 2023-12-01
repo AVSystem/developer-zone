@@ -63,16 +63,17 @@ This section illustrates the configuration of Azure resources through the Comman
 2. **Authenticated to Azure CLI:**
    Authenticate your Azure CLI by following the steps outlined in [this guide](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively).
 
-3. **Created Resource Group e.g. `coiote-dm-experiments`:**
+3. **Created Resource Group e.g. `coiote-dm-integration`:**
    Execute the following command to create the required resource group:
    ```bash
-   # Adjust the group name as needed
-   az group create --name coiote-dm-experiments
+   # Adjust the group name for your needs
+   az group create --name coiote-dm-integration
    ```
 
 ### Resources creation and connection string retrieval
 
-Using this script, you can automate the creation of Azure resources. The script sanitizes and normalizes the username and then proceeds to create and configure a storage account and an IoT hub. Additionally, it retrieves and displays the connection strings associated with these resources, enabling a streamlined process for setting up essential Azure components.
+Using this script, you can automate the creation of Azure resources. The script sanitizes and normalizes the username and then proceeds to create and configure a storage account and an IoT hub. 
+Feel free to customize the names of your resources as desired. Additionally, it retrieves and displays the connection strings associated with these resources, enabling a streamlined process for setting up essential Azure components.
 
 ```bash
 # Sanitize and normalize the current user's username for Azure purposes
