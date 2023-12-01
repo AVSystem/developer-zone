@@ -1334,23 +1334,63 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuring-azure-resources-via-gui" class="md-nav__link">
+    Configuring Azure resources via GUI
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Azure resources via GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#get-the-iot-hub-connection-string" class="md-nav__link">
     Get the IoT Hub connection string
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#get-the-azure-blob-storage-connection-string" class="md-nav__link">
     Get the Azure Blob storage connection string
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#set-up-the-azure-iot-hub-integration" class="md-nav__link">
     Set up the Azure IoT Hub integration
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-azure-resources-via-cli" class="md-nav__link">
+    Configuring Azure resources via CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Azure resources via CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources-creation-and-connection-string-retrieval" class="md-nav__link">
+    Resources creation and connection string retrieval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-resources" class="md-nav__link">
+    Clean up resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3160,23 +3200,63 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuring-azure-resources-via-gui" class="md-nav__link">
+    Configuring Azure resources via GUI
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Azure resources via GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#get-the-iot-hub-connection-string" class="md-nav__link">
     Get the IoT Hub connection string
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#get-the-azure-blob-storage-connection-string" class="md-nav__link">
     Get the Azure Blob storage connection string
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#set-up-the-azure-iot-hub-integration" class="md-nav__link">
     Set up the Azure IoT Hub integration
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-azure-resources-via-cli" class="md-nav__link">
+    Configuring Azure resources via CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Azure resources via CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources-creation-and-connection-string-retrieval" class="md-nav__link">
+    Resources creation and connection string retrieval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-resources" class="md-nav__link">
+    Clean up resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3211,7 +3291,9 @@
 <li>A Coiote IoT DM user account with permissions to use the Hyperscaler Integration Center.</li>
 <li>An active Azure Blob Storage account (creating a new dedicated account for the integration is required).</li>
 </ul>
-<h2 id="get-the-iot-hub-connection-string">Get the IoT Hub connection string<a class="headerlink" href="#get-the-iot-hub-connection-string" title="Permanent link">#</a></h2>
+<h2 id="configuring-azure-resources-via-gui">Configuring Azure resources via GUI<a class="headerlink" href="#configuring-azure-resources-via-gui" title="Permanent link">#</a></h2>
+<p>This section guides you through the process of configuring Azure resources using the intuitive Graphical User Interface (GUI) provided by Azure.</p>
+<h3 id="get-the-iot-hub-connection-string">Get the IoT Hub connection string<a class="headerlink" href="#get-the-iot-hub-connection-string" title="Permanent link">#</a></h3>
 <p>The Azure IoT Hub connection string is required in the integration process. Here is how to obtain it:</p>
 <ol>
 <li>
@@ -3230,7 +3312,7 @@
 </div>
 </li>
 </ol>
-<h2 id="get-the-azure-blob-storage-connection-string">Get the Azure Blob storage connection string<a class="headerlink" href="#get-the-azure-blob-storage-connection-string" title="Permanent link">#</a></h2>
+<h3 id="get-the-azure-blob-storage-connection-string">Get the Azure Blob storage connection string<a class="headerlink" href="#get-the-azure-blob-storage-connection-string" title="Permanent link">#</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>For the integration to work properly, it is required to have an empty Azure Blob storage account dedicated exclusively for the integration.</p>
@@ -3241,7 +3323,7 @@
    <img alt="Azure Blob Storage" src="../images/blob_storage.png" title="Getting Azure Blob Storage connection string" /></li>
 <li>Click <strong>Show keys</strong>, click the copy icon next to the <strong>connection string</strong> and paste it into Notepad or any other safe place to keep it for later.</li>
 </ol>
-<h2 id="set-up-the-azure-iot-hub-integration">Set up the <strong>Azure IoT Hub integration</strong><a class="headerlink" href="#set-up-the-azure-iot-hub-integration" title="Permanent link">#</a></h2>
+<h3 id="set-up-the-azure-iot-hub-integration">Set up the <strong>Azure IoT Hub integration</strong><a class="headerlink" href="#set-up-the-azure-iot-hub-integration" title="Permanent link">#</a></h3>
 <p>Use the obtained credentials to establish the integration between Coiote IoT DM and your Azure IoT hub:</p>
 <ol>
 <li>In your Coiote IoT DM user account, go to <strong>Integrations</strong> → <strong>Hyperscaler Integration Center</strong>
@@ -3254,6 +3336,52 @@
 </li>
 </ol>
 <p>Your integration should now be established. To get the integration up and running, try <a href="../Device_operations/Synchronize_devices_with_Azure_IoT_Hub/">synchronizing devices with Azure IoT Hub</a></p>
+<h2 id="configuring-azure-resources-via-cli">Configuring Azure resources via CLI<a class="headerlink" href="#configuring-azure-resources-via-cli" title="Permanent link">#</a></h2>
+<p>This section illustrates the configuration of Azure resources through the Command-Line Interface (CLI), offering a streamlined and scriptable approach to resource management. It is assumed that you have completed the following prerequisites:</p>
+<ol>
+<li>
+<p><strong>Installed Azure CLI:</strong>
+   Ensure that Azure CLI is installed on your system. If not, refer to the <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli">official installation guide</a> for detailed instructions.</p>
+</li>
+<li>
+<p><strong>Authenticated to Azure CLI:</strong>
+   Authenticate your Azure CLI by following the steps outlined in <a href="https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively">this guide</a>.</p>
+</li>
+<li>
+<p><strong>Created Resource Group e.g. <code>coiote-dm-integration</code>:</strong>
+   Execute the following command to create the required resource group:
+   <div class="highlight"><pre><span></span><code><span class="c1"># Adjust the group name for your needs</span>
+az<span class="w"> </span>group<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>coiote-dm-integration
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="resources-creation-and-connection-string-retrieval">Resources creation and connection string retrieval<a class="headerlink" href="#resources-creation-and-connection-string-retrieval" title="Permanent link">#</a></h3>
+<p>Using this script, you can automate the creation of Azure resources. The script sanitizes and normalizes the username and then proceeds to create and configure a storage account and an IoT hub. 
+Feel free to customize the names of your resources as desired. Additionally, it retrieves and displays the connection strings associated with these resources, enabling a streamlined process for setting up essential Azure components.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Sanitize and normalize the current user&#39;s username for Azure purposes</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">USER</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$USER</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/[^[:alnum:]]//g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;[:upper:]&#39;</span><span class="w"> </span><span class="s1">&#39;[:lower:]&#39;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GROUP</span><span class="o">=</span>coiote-dm-integration
+
+<span class="c1"># Create and configure a storage account</span>
+az<span class="w"> </span>storage<span class="w"> </span>account<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>hub<span class="w"> </span>-g<span class="w"> </span><span class="nv">$GROUP</span>
+az<span class="w"> </span>storage<span class="w"> </span>account<span class="w"> </span>show-connection-string<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>hub<span class="w"> </span>-g<span class="w"> </span><span class="nv">$GROUP</span>
+
+<span class="c1"># Create and configure an IoT hub</span>
+az<span class="w"> </span>iot<span class="w"> </span>hub<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="nv">$USER</span>-hub<span class="w"> </span>-g<span class="w"> </span><span class="nv">$GROUP</span>
+az<span class="w"> </span>iot<span class="w"> </span>hub<span class="w"> </span>connection-string<span class="w"> </span>show<span class="w"> </span>-n<span class="w"> </span><span class="nv">$USER</span>-hub<span class="w"> </span>-g<span class="w"> </span><span class="nv">$GROUP</span>
+</code></pre></div>
+<h3 id="clean-up-resources">Clean up resources<a class="headerlink" href="#clean-up-resources" title="Permanent link">#</a></h3>
+<p>To delete previously created Azure resources, including the specified storage account and IoT hub, execute this script:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Removal of these resources will cause the integration with Coiote IoT DM to stop working.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Delete the storage account</span>
+az<span class="w"> </span>storage<span class="w"> </span>account<span class="w"> </span>delete<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>hub<span class="w"> </span>--yes
+
+<span class="c1"># Delete the IoT hub</span>
+az<span class="w"> </span>iot<span class="w"> </span>hub<span class="w"> </span>delete<span class="w"> </span>-n<span class="w"> </span><span class="nv">$USER</span>-hub
+</code></pre></div>
 
 <!-- Link to previous and/or next page -->
 
@@ -3315,7 +3443,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 1, 2023</span>
     
   </small>
 </div>
