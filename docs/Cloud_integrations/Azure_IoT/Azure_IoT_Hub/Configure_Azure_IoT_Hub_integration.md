@@ -78,7 +78,7 @@ Feel free to customize the names of your resources as desired. Additionally, it 
 ```bash
 # Sanitize and normalize the current user's username for Azure purposes
 export USER=$(echo $USER | sed 's/[^[:alnum:]]//g' | tr '[:upper:]' '[:lower:]')
-export GROUP=coiote-dm-experiments
+export GROUP=coiote-dm-integration
 
 # Create and configure a storage account
 az storage account create -n ${USER}hub -g $GROUP
