@@ -51,8 +51,6 @@ Below you can find the description of each step:
 
 ### Configure your device connection
 		
-![Step 1](images/Step_1.png)
-
 In this step provide the information about the LoRaWAN gateway device and choose device connection settings.
 		
 In the section *Device credentials*, fill in the following information:
@@ -71,18 +69,21 @@ In the section *LwM2M security mode for device-server interaction* select the se
 
 - Pre-shared key - authorize your device using a pre-shared key. To use this option, provide the following:
     - Key identity - define the name that the device will use during the DTLS handshake. Can be equal to the LwM2M device endpoint name.
-    - Key format 
+    - Key format. 
     - Key - provide the shared secret used in the device-server authentication.
 - NoSec - use the device with no security established for the device-server communication. Use this mode only for testing purposes.
 - Certificate - secure your device-server communication with a certificate:
     - Select *Use a previously uploaded certificate* if you have already uploaded a certificate to the platform using the DTLS/TLS Certificates panel.
     - Select *Upload a new certificate* to load your certificate by clicking **Browse**.
 
-### Configure server connection
+![Step 1](images/Step_1.png)
 
-![Step 2](images/Step_2.png)
+### Configure server connection 
 
-In this step, provide new bootstrap connection settings. You can choose from the options in the drop-down list:
+This step is only for the connection via the Bootstrap Server. 
+
+
+Provide new bootstrap connection settings. You can choose from the options in the drop-down list:
 
 - *Use the bootstrap configuration set as default for your domain* - use this setting if you want to employ the inherited bootstrap settings for your domain.
 - *This Coiote IoT DM Management Server (Cert with EST)* - use this setting if you have chosen the Certificate mode in the Device credentials step.
@@ -90,10 +91,11 @@ In this step, provide new bootstrap connection settings. You can choose from the
 - *This Coiote IoT DM Management Server PSK* - use this setting to authorize the device-server communication using a pre-shared key.
 - *Your custom bootstrap setting* - this option is available if you configured a bootstrap server setting using the Bootstrap configuration panel.
 
+![Step 2](images/Step_2.png)
+
 ### Connect your device (optional)
 
+In the last step, you can connect your device by inserting the displayed parameters into your device. It's an optional step. You can finish the configuration and connect the device later.
+
 ![Step 3](images/Step_3.png)
-
-You can connect your device in this step by inserting the displayed parameters into your device. If you choose to skip this step, you can finish the configuration and connect the device later.
-
 
