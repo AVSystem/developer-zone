@@ -2,46 +2,46 @@
 
 ## Overview
 
-A LoRaWAN gateway is a radio module that functions as a communication device between end devices and a LoRaWAN network server (LNS) within a LoRa network.
+A LoRaWAN Gateway is a radio module that functions as a communication device between end devices and a LoRaWAN Network Server (LNS) within a LoRaWAN network.
 
-A LoRa network is a low-power, wide-area network (LPWAN) designed for connecting devices over long distances with low power consumption. This network is perfect for IoT sensor networks and asset-tracking applications.
+A LoRaWAN network is a low-power, wide-area network (LPWAN) designed for connecting devices over long distances with low power consumption. This network is perfect for IoT sensor networks and asset-tracking applications.
 
 Once a gateway receives data from an end-device, it forwards it to the LNS which processes and delivers the data to the appropriate application server.
 
 ## Prerequisites
 
-You need an active [The Things Stack Cloud](https://www.thethingsindustries.com/stack/plans/) account. For more information, read The Things Stack Cloud [documentation](https://www.thethingsindustries.com/docs/the-things-stack/cloud/).
+You need an active [The Things Stack Cloud](https://www.thethingsindustries.com/stack/plans/) account. For more information, read [The Things Stack Cloud documentation](https://www.thethingsindustries.com/docs/the-things-stack/cloud/).
 
 ## Integration with LoRaWAN Network Server
 
-To connect LoRa gateway devices with Coiote, you need to set up integration with a LoRaWAN Network Server - The Things Stack. To set up the integration:
+To connect LoRaWAN Gateway devices with {{coiote_short_name}}, you need to set up integration with a LoRaWAN Network Server. {{coiote_short_name}} supports one of the LoRaWAN Network Servers - The Things Stack. To set up the integration:
 
-1. Go to *Integration > LoRaWAN gateways*.
+1. Go to *Integration > LoRaWAN Gateways*.
 2. Click **Connect** in The Things Stack card.
 3. Provide the required data and click **Save**.
 
 !!! Important
-    The integration data is not validated when setting the configuration. It will be validated once you add the first LoRaWAN device. If the validation results in an error when adding the first LoRaWAN device, return to the integration panel and correct the configuration.
+    The integration data is not validated when setting the configuration. It will be validated once you add the first LoRaWAN device. If the validation results in an error when adding the first LoRaWAN Gateway device, return to the integration panel and correct the configuration.
 
-## Adding LoRaWAN gateway devices
+## Adding LoRaWAN Gateway devices
 
-To add a LoRaWAN gateway:
+To add a LoRaWAN Gateway:
 
 1. Go to *Device Inventory*.
 2. Click **Add device** and then **Add device manually** under LORAWAN GATEWAY DEVICES.
 3. Select connection via the Bootstrap Server or via the Management Server.
 
     !!! Info
-        Connecting a device via the Bootstrap Server is unavailable in the Developer plan.
+        Connecting devices via the Bootstrap Server is unavailable in the Developer plan.
 
 4. Follow the steps in the device creator.
 
-Adding a LoRaWAN gateway via the Management Server consists of two steps: 
+Adding a LoRaWAN Gateway via the Management Server consists of two steps: 
 
 - **Step 1: Configure your device connection**
 - **Step 2: Connect your device** 
 
-Adding a gateway via the Bootstrap Server consists of three steps: 
+Adding a LoRaWAN Gateway via the Bootstrap Server consists of three steps: 
 
 - **Step 1: Configure your device connection** 
 - **Step 2: Configure server connection**
@@ -51,17 +51,17 @@ Below you can find the description of each step:
 
 ### Configure your device connection
 		
-In this step provide the information about the LoRaWAN gateway device and choose device connection settings.
+In this step provide the information about the LoRaWAN Gateway device and choose device connection settings.
 		
-In the section *Device credentials*, fill in the following information:
+In the section *Device credentials*, provide the following information:
 
 - *Gateway EUI* - choose one of two options:
-    - *Manufacturer* - select this option, if you have a gateway from a manufacturer with a Gateway EUI. Provide the information in two fields:
+    - *Manufacturer* - select this option, if you have a gateway from a manufacturer with a Gateway EUI. The following field is available for this option:
         - *Endpoint name - Gateway EUI*: A 64-bit extended unique identifier for your gateway. It should be provided by the manufacturer or printed on the gateway packaging. It will become the endpoint name by which the platform server will identify the device.
-        - *Gateway ID*:  A unique identifier for your gateway.
-    - *No gateway EUI* - select this option if your gateway doesn't have a Gateway EUI. Provide the information in one field:
-        - *Endpoint name - gateway ID*: A unique identifier for your gateway. It will become the endpoint name by which the platform server will identify the device.
-- *Friendly name* - Gateway name: An optional human-readable name to help you identify your gateway. The Things Stack will use this name instead of the gateway ID to refer to your gateway.
+    - *No gateway EUI* - select this option if your gateway doesn't have a Gateway EUI. The following field is available for this option:
+        - *Endpoint name*: Provide an endpoint name by which the platform server will identify your device.
+- *Gateway ID*:  Unique identifier for your gateway that will be used by The Thinks Stack to identify your device.
+- *Friendly name - Gateway name*: An optional human-readable name to help you identify your gateway. The Things Stack will use this name instead of the gateway ID to refer to your gateway.
 
 In the section *Settings*, select your Frequency plan. The frequency plan defines data rates that your end device or gateway is set up to use. The gateway and end devices within reach must use the same frequency plan to communicate. 
 
