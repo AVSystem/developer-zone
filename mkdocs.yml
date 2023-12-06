@@ -69,6 +69,7 @@ nav:
             - 'Nordic':
                 - 'LwM2M_Client/Nordic/Thingy91.md'
                 - 'LwM2M_Client/Nordic/nRF9160.md'
+                - 'LwM2M_Client/Nordic/nRF7002.md'
                 - 'LwM2M_Client/Nordic/Device_Provisioning.md'
                 - 'LwM2M_Client/Nordic/Runtime_certificate.md'
             - 'ESP32':
@@ -160,7 +161,7 @@ nav:
                 - Theory Module 5: 'academy/module5.md'
             - Graduation Project: 'academy/exercise5.md'
         - 'API documentation':
-            - 'Overview': 
+            - 'Overview':
                 - 'API_documentation/Overview/About_Coiote_API.md'
                 - 'API_documentation/Overview/Getting_access.md'
                 - 'API_documentation/Overview/Using_the_API.md'
@@ -188,7 +189,7 @@ nav:
                 - 'Release_Notes/v2023.15.0.md'
                 - 'Release_Notes/v2023.14.0.md'
                 - 'Release_Notes/v2023.12.0.md'
-                - 'Release_Notes/v2023.11.0.md'                
+                - 'Release_Notes/v2023.11.0.md'
                 - 'Release_Notes/v2023.10.0.md'
                 - 'Release_Notes/v2023.9.0.md'
                 - 'Release_Notes/v2023.7.0.md'

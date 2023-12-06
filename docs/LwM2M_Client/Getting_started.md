@@ -75,3 +75,11 @@ Integrate your nRF9160 board using our Anjay LwM2M Client based on Zephyr OS.
 ![nRF9160](images/nRF9160.png "nRF9160"){ width=70% }
 
 [Start integration](./Nordic/nRF9160.md){: .md-button .md-button--big }
+
+### nRF7002
+
+Integrate your nRF7002 board using our Anjay LwM2M Client based on Zephyr OS and connect to Coiote through Wi-Fi network.
+
+![nRF9160](images/nRF7002.png "nRF7002"){ width=70% }
+
+[Start integration](./Nordic/nRF7002.md){: .md-button .md-button--big }
