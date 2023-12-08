@@ -133,6 +133,7 @@ nav:
                     - 'Cloud_integrations/AWS_IoT_Core/Concepts/AWS_Integration_concepts.md'
             - 'nRF Cloud Location services':
                     - 'Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
+            - 'LoRaWAN Gateway': 'Cloud_integrations/LoRaWAN/LoRagateway.md'
         - 'Demo Projects':
             - 'Demo_Projects/Tracking_tutorial.md'
             - CO2 office sensor: https://www.hackster.io/ferre111/iot-solution-for-co2-measurement-in-the-office-f3b213
