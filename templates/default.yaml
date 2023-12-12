@@ -21,6 +21,6 @@ nRF9160DK_flash_downloaded_binary_step:
 nRF7002DK_binary_step:
   0. Download the `demo_nRF7002.hex` file.
 nRF7002DK_flash_downloaded_binary_step:
-  0. Run `nrfjprog -f UNKNOWN --program demo_nRF7002.hex`
+  0. Run `nrfjprog -f NRF53 --program demo_nRF7002.hex` --verify --reset
 Thingy91_binary_step:
   0. Download the `demo_thingy91_app_signed.hex` file.
