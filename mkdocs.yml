@@ -31,7 +31,6 @@ plugins:
             'IoT_quick_start/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
             'Anjay_integrations/Getting_started.md': 'LwM2M_Client/Getting_started.md'
             'Anjay_integrations/RaspberryPi_integration/Implementing_LwM2M_objects_on_RaspberryPi.md': 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
-            'Anjay_integrations/RaspberryPi_integration/Implementing_LwM2M_objects_on_RaspberryPi.md': 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
             'Coiote_IoT_DM/Quick_Start/Connect_device_quickstart.md': 'Coiote_IoT_DM/Onboarding/connect.md'
             'Coiote_IoT_DM/Quick_Start/Visualize_device_data.md': 'Coiote_IoT_DM/Visualize_data.md'
             'Coiote_IoT_DM/User_Interface/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
@@ -98,10 +97,18 @@ nav:
                 - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
         - 'Cloud Integrations':
             - 'Data Integration Center':
-                - Webhooks: 'Cloud_integrations/webhooks.md'
-                - InfluxDB: 'Cloud_integrations/influx.md'
-                - Datacake: 'Cloud_integrations/datacake.md'
-                - Kafka or Azure Event Hub: 'Cloud_integrations/kafka.md'
+                - Templating: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - Webhooks: 'Cloud_integrations/Device_Integration_Center/webhooks.md'
+                - InfluxDB: 'Cloud_integrations/Device_Integration_Center/influx.md'
+                - Datacake: 'Cloud_integrations/Device_Integration_Center/datacake.md'
+                - Kafka or Azure Event Hub: 'Cloud_integrations/Device_Integration_Center/kafka.md'
+                - GraphQL: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - IFTTT: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - Datadog: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - Atlas: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - Azure: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - AWS: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - Slack: 'Cloud_integrations/Device_Integration_Center/todo.md'
             - 'Azure IoT':
                 - 'Azure IoT Hub':
                     - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md'
