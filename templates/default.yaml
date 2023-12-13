@@ -19,8 +19,8 @@ nRF9160DK_flashing_nRF_docs_step:
 nRF9160DK_flash_downloaded_binary_step:
   0. Use the nRF Connect Programmer with the downloaded `.hex` file and execute steps from the [Updating the application firmware](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware) section.
 nRF7002DK_binary_step:
-  0. Download the `demo_nRF7002.hex` file.
+  0. Download the `demo_nrf7002dk.hex` file.
 nRF7002DK_flash_downloaded_binary_step:
-  0. Run `nrfjprog -f NRF53 --program demo_nRF7002.hex` --verify --reset
+  0. Run `nrfjprog -f NRF53 --program demo_nrf7002dk.hex` --verify --reset
 Thingy91_binary_step:
   0. Download the `demo_thingy91_app_signed.hex` file.

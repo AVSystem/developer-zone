@@ -68,18 +68,18 @@ Integrate your Thingy:91 board using our Anjay LwM2M Client based on Zephyr OS.
 
 [Start integration](./Nordic/Thingy91.md){: .md-button .md-button--big }
 
-### nRF9160
+### nRF9160 DK
 
-Integrate your nRF9160 board using our Anjay LwM2M Client based on Zephyr OS.
+Integrate your nRF9160 DK board using our Anjay LwM2M Client based on Zephyr OS.
 
-![nRF9160](images/nRF9160.png "nRF9160"){ width=70% }
+![nRF9160 DK](images/nRF9160.png "nRF9160 DK"){ width=70% }
 
 [Start integration](./Nordic/nRF9160.md){: .md-button .md-button--big }
 
-### nRF7002
+### nRF7002 DK
 
-Integrate your nRF7002 board using our Anjay LwM2M Client based on Zephyr OS and connect to Coiote through Wi-Fi network.
+Integrate your nRF7002 DK board using our Anjay LwM2M Client based on Zephyr OS and connect to Coiote through Wi-Fi network.
 
-![nRF9160](images/nRF7002.png "nRF7002"){ width=70% }
+![nRF7002 DK](images/nRF7002.png "nRF7002 DK"){ width=70% }
 
 [Start integration](./Nordic/nRF7002.md){: .md-button .md-button--big }
