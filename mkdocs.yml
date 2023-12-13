@@ -100,7 +100,7 @@ nav:
                 - 'Coiote_IoT_DM/Coiote_videos/How_to_simply_onboard_and_provision_IoT_devices.md'
                 - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_configure_IoT_devices.md'
                 - 'Coiote_IoT_DM/Coiote_videos/How_to_perform_secure_Over-the-Air_updates.md'
-                - 'Coiote_IoT_DM/Coiote_videos/What_collected_IoT_data_can_you_find_in_the_Coiote.md'
+                - 'Coiote_IoT_DM/Coiote_videos/What_types_of_IoT_data_are_collected_and_stored_in_the_Coiote.md'
                 - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_monitor_IoT_devices_and_diagnose_issues.md'
         - 'Cloud Integrations':
             - 'Data Integration Center':
