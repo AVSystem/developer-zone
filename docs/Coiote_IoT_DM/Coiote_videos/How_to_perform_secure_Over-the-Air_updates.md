@@ -1,4 +1,4 @@
-# How to perform secure Over-the-Air (OTA) updates? (nRF 9160)
+# How to perform secure Over-the-Air (OTA) updates? (nRF9160 DK)
 
 The LwM2M standard makes Over-the-Air (OTA) updates straightforward, reducing the complexity of implementation and management. What's crucial is that it enhances security through authentication and encryption.
 
