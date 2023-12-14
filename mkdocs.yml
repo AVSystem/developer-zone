@@ -96,6 +96,12 @@ nav:
                 - 'Coiote_IoT_DM/Device_tests/Data_model_and_variables.md'
                 - 'Coiote_IoT_DM/Device_tests/Run_tests.md'
                 - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
+            - 'Video tutorials':
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_simply_onboard_and_provision_IoT_devices.md'
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_configure_IoT_devices.md'
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_perform_secure_Over-the-Air_updates.md'
+                - 'Coiote_IoT_DM/Coiote_videos/What_types_of_IoT_data_are_collected_and_stored_in_the_Coiote.md'
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_monitor_IoT_devices_and_diagnose_issues.md'
         - 'Cloud Integrations':
             - 'Data Integration Center':
                 - Webhooks: 'Cloud_integrations/webhooks.md'
@@ -161,7 +167,7 @@ nav:
                 - Theory Module 5: 'academy/module5.md'
             - Graduation Project: 'academy/exercise5.md'
         - 'API documentation':
-            - 'Overview': 
+            - 'Overview':
                 - 'API_documentation/Overview/About_Coiote_API.md'
                 - 'API_documentation/Overview/Getting_access.md'
                 - 'API_documentation/Overview/Using_the_API.md'
@@ -189,7 +195,7 @@ nav:
                 - 'Release_Notes/v2023.15.0.md'
                 - 'Release_Notes/v2023.14.0.md'
                 - 'Release_Notes/v2023.12.0.md'
-                - 'Release_Notes/v2023.11.0.md'                
+                - 'Release_Notes/v2023.11.0.md'
                 - 'Release_Notes/v2023.10.0.md'
                 - 'Release_Notes/v2023.9.0.md'
                 - 'Release_Notes/v2023.7.0.md'
