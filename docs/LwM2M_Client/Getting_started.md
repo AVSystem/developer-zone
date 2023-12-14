@@ -74,7 +74,7 @@ Integrate your nRF9160 DK board using our Anjay LwM2M Client based on Zephyr OS.
 
 ![nRF9160 DK](images/nRF9160.png "nRF9160 DK"){ width=70% }
 
-[Start integration](./Nordic/nRF9160.md){: .md-button .md-button--big }
+[Start integration](./Nordic/nRF9160DK.md){: .md-button .md-button--big }
 
 ### nRF7002 DK
 
@@ -82,4 +82,4 @@ Integrate your nRF7002 DK board using our Anjay LwM2M Client based on Zephyr OS 
 
 ![nRF7002 DK](images/nRF7002.png "nRF7002 DK"){ width=70% }
 
-[Start integration](./Nordic/nRF7002.md){: .md-button .md-button--big }
+[Start integration](./Nordic/nRF7002DK.md){: .md-button .md-button--big }
