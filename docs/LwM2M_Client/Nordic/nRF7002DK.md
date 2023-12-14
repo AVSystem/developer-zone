@@ -6,7 +6,7 @@ Integrate your Nordic nRF7002 DK board.
 
 - The nRF7002 DK board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
-- Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download).
+- {{ nRF7002DK_flashing_tool_prerequisit }}
 - A user with access to the {{ coiote_long_name }}.
 
 
