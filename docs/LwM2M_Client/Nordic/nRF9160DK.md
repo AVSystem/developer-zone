@@ -1,10 +1,10 @@
-# nRF9160 DK
+# {{ nRF9160DK_board_name }}
 
-Integrate your Nordic nRF9160 DK board.
+Integrate your Nordic {{ nRF9160DK_board_name }} board.
 
 ## Prerequisites
 
-- The nRF9160 DK board with a USB cable.
+- The {{ nRF9160DK_board_name }} board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
 - {{ nRF9160DK_flashing_tool_prerequisit }}
 - A user with access to the {{ coiote_long_name }}.
@@ -41,7 +41,7 @@ Enter the command line interface on your machine and change the directory to the
 
 #### Part 3: Compiling the example
 
-0. Connect the nRF9160 DK board to a USB port of your machine.
+0. Connect the {{ nRF9160DK_board_name }} board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
 
     ```
@@ -50,7 +50,7 @@ Enter the command line interface on your machine and change the directory to the
     west update
     ```
 
-0. Compile and flash the project for **nRF9160 DK**:
+0. Compile and flash the project for **{{ nRF9160DK_board_name }}**:
 
 
     ```
@@ -114,7 +114,7 @@ To connect the board:
     ![Registered device](images/registered_device.png "Registered device")
 
 !!! note
-    **nRF9160 DK** uses the same radio for GPS and LTE connectivity. GPS signal is
+    **{{ nRF9160DK_board_name }}** uses the same radio for GPS and LTE connectivity. GPS signal is
     caught between LTE transmissions and in case GPS "cold" fix acquisition takes
     too much time, Anjay turns off LTE transmissions for the time of fix acquisition.
     It can be seen by the following warning: `gps_nrf: GPS was interrupted multiple

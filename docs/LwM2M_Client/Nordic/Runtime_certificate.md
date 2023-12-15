@@ -1,14 +1,14 @@
 # Runtime Certificate and Private Key Configuration
 
 ## Introduction
-Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [nRF9160 DK](nRF9160DK.md), [nRF7002 DK](nRF7002DK.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
+Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [{{ nRF9160DK_board_name }}](nRF9160DK.md), [{{ nRF7002DK_board_name }}](nRF7002DK.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
 
 In **Certificate Mode** an asymmetrical algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
 
 You can read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
 
 ## Prerequisites
-* The nRF9160 DK board with a USB cable.
+* The {{ nRF9160DK_board_name }} board with a USB cable.
 * Cloned [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client#getting-started) repository
 
 !!! Note
@@ -23,7 +23,7 @@ You can read more about secure communication on [Anjay's documentation](https://
     The runtime certificate and private key configuration do not work with other boards.
 
 ## Build and flash the device
-0. Connect the nRF9160 DK board to a USB port of your machine.
+0. Connect the {{ nRF9160DK_board_name }} board to a USB port of your machine.
 0. Enter the command line interface on your machine and change the directory to the one where you set up the Zephyr project (usually, it's `~/zephyrproject`).
 0. Go to your local **Anjay-zephyr-client/demo** directory
 0. Set manifest file to `west-nrf.yml`, and do `west update`:
@@ -36,7 +36,7 @@ You can read more about secure communication on [Anjay's documentation](https://
 
 0. Build a project with a runtime certificate and private key.
 
-    This feature works with nRF9160 DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
+    This feature works with {{ nRF9160DK_board_name }} starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
 
     ```
     west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"

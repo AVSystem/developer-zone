@@ -1,10 +1,10 @@
-# nRF7002 DK
+# {{ nRF7002DK_board_name }}
 
-Integrate your Nordic nRF7002 DK board.
+Integrate your Nordic {{ nRF7002DK_board_name }} board.
 
 ## Prerequisites
 
-- The nRF7002 DK board with a USB cable.
+- The {{ nRF7002DK_board_name }} board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
 - {{ nRF7002DK_flashing_tool_prerequisit }}
 - A user with access to the {{ coiote_long_name }}.
@@ -40,14 +40,14 @@ Enter the command line interface on your machine and change the directory to the
 
 #### Part 3: Compiling the example
 
-0. Connect the nRF7002 DK board to a USB port of your machine.
+0. Connect the {{ nRF7002DK_board_name }} board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
     ```
     west config manifest.path Anjay-zephyr-client/demo
     west config manifest.file west-nrf.yml
     west update
     ```
-0. Compile and flash the project for **nRF7002 DK**:
+0. Compile and flash the project for **{{ nRF7002DK_board_name }}**:
     ```
     cd Anjay-zephyr-client/demo
     west build -b nrf7002dk_nrf5340_cpuapp
@@ -104,7 +104,7 @@ To connect the board:
 
 
     !!! note
-        **nRF7002 DK** connects to the Internet via a Wi-Fi network. Remember to set the credentials of your network using `anjay config set wifi_ssid <value>` and `anjay config set wifi_password <value>`.
+        **{{ nRF7002DK_board_name }}** connects to the Internet via a Wi-Fi network. Remember to set the credentials of your network using `anjay config set wifi_ssid <value>` and `anjay config set wifi_password <value>`.
         ![Set WiFi credentials](images/set_wifi_credentials.png "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 0. Use the `anjay start` command to run the Client.
