@@ -71,6 +71,10 @@ To connect the board:
 ## Configure the Client
 
 0. With the board still connected to a serial port interface, open your serial communication program.
+
+    !!! note
+        Use the `anjay stop` command to stop LwM2M Client and change credentials.
+
 0. Use the `anjay` command to list possible options:
 
     ```

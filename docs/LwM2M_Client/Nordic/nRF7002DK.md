@@ -76,6 +76,10 @@ To connect the board:
 ## Configuring the Client
 
 0. With the board still connected to a serial port interface, open a serial communication program.
+
+    !!! note
+        Use the `anjay stop` command to stop LwM2M Client and change credentials.
+
 0. Use the `anjay` command to list possible options:
 
     ```
@@ -90,7 +94,6 @@ To connect the board:
     !!! tip
         To show available subcommands, use the **Tab** key.
 
-0. Use the `anjay stop` command to stop LwM2M Client and change credentials.
 0. Check your default credentials by following the instructions in the program:
     ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
 
