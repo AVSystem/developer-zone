@@ -6,7 +6,7 @@ Integrate your Nordic {{ nRF7002DK_board_name }} board.
 
 - The {{ nRF7002DK_board_name }} board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
-- {{ nRF7002DK_flashing_tool_prerequisit }}
+- {{ nRF7002DK_flashing_tool_prerequisite }}
 - A user with access to the {{ coiote_long_name }}.
 
 
@@ -77,9 +77,6 @@ To connect the board:
 
 0. With the board still connected to a serial port interface, open a serial communication program.
 
-    !!! note
-        Use the `anjay stop` command to stop LwM2M Client and change credentials.
-
 0. Use the `anjay` command to list possible options:
 
     ```
@@ -98,13 +95,13 @@ To connect the board:
     ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
 
     !!! note
-        If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
+        Use the `anjay stop` command to stop LwM2M Client if you are going to change credentials.
+
+    If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
         <br/>
         ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
-
-    !!! note
-        **{{ nRF7002DK_board_name }}** connects to the Internet via a Wi-Fi network. Remember to set the credentials of your network using `anjay config set wifi_ssid <value>` and `anjay config set wifi_password <value>`.
+0. The **{{ nRF7002DK_board_name }}** connects to the Internet via a Wi-Fi network. Remember to set the credentials of your network using `anjay config set wifi_ssid <value>` and `anjay config set wifi_password <value>`.
         ![Set WiFi credentials](images/set_wifi_credentials.png "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 0. Use the `anjay start` command to run the Client.

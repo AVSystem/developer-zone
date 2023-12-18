@@ -6,7 +6,7 @@ Integrate your Nordic {{ nRF9160DK_board_name }} board.
 
 - The {{ nRF9160DK_board_name }} board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
-- {{ nRF9160DK_flashing_tool_prerequisit }}
+- {{ nRF9160DK_flashing_tool_prerequisite }}
 - A user with access to the {{ coiote_long_name }}.
 
 
@@ -82,9 +82,6 @@ To connect the board:
 
 0. With the board still connected to a serial port interface, open a serial communication program.
 
-    !!! note
-        Use the `anjay stop` command to stop LwM2M Client and change credentials.
-
 0. Use the `anjay` command to list possible options:
 
     ```
@@ -102,11 +99,12 @@ To connect the board:
 0. Check your default credentials by following the instructions in the program:
     ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
 
-
     !!! note
-        If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
-        <br/>
-        ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+        Use the `anjay stop` command to stop LwM2M Client if you are going to change credentials.
+
+    If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
+    <br/>
+    ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 
 0. Use the `anjay start` command to run the Client.
