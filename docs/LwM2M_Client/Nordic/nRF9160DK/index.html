@@ -17,7 +17,7 @@
 
     
       
-        <title>nRF9160 - IoT Developer Zone</title>
+        <title>nRF9160 DK - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nrf9160" class="md-skip">
+        <a href="#nrf9160-dk" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              nRF9160
+              nRF9160 DK
             
           </span>
         </div>
@@ -711,12 +711,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          nRF9160
+          nRF9160 DK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        nRF9160
+        nRF9160 DK
       </a>
       
         
@@ -811,6 +811,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nRF7002DK/" class="md-nav__link">
+        nRF7002 DK
+      </a>
     </li>
   
 
@@ -3419,13 +3431,13 @@
 
 
 <!-- Markdown content -->
-<h1 id="nrf9160">nRF9160<a class="headerlink" href="#nrf9160" title="Permanent link">#</a></h1>
-<p>Integrate your Nordic nRF9160 board.</p>
+<h1 id="nrf9160-dk">nRF9160 DK<a class="headerlink" href="#nrf9160-dk" title="Permanent link">#</a></h1>
+<p>Integrate your Nordic nRF9160 DK board.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>The nRF9160 board with a USB cable.</li>
+<li>The nRF9160 DK board with a USB cable.</li>
 <li>Installed <strong>minicom</strong> (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.</li>
-<li>Installed <strong>nrfjprog</strong> from <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download">Nordic Semiconductor page</a></li>
+<li>Installed <strong>nrfjprog</strong> from <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download">Nordic Semiconductor page</a>.</li>
 <li>A user with access to the Coiote IoT Device Management platform.</li>
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
@@ -3451,7 +3463,7 @@
 </code></pre></div>
 <h4 id="part-3-compiling-the-example">Part 3: Compiling the example<a class="headerlink" href="#part-3-compiling-the-example" title="Permanent link">#</a></h4>
 <ol>
-<li>Connect the nRF9160 board to a USB port of your machine.</li>
+<li>Connect the nRF9160 DK board to a USB port of your machine.</li>
 <li>
 <p>Set West manifest path to <code>Anjay-zephyr-client/demo</code>, manifest file to <code>west-nrf.yml</code>, and do <code>west update</code>:</p>
 <div class="highlight"><pre><span></span><code>west config manifest.path Anjay-zephyr-client/demo
@@ -3460,7 +3472,7 @@ west update
 </code></pre></div>
 </li>
 <li>
-<p>Compile the project for <strong>nRF9160</strong>:</p>
+<p>Compile the project for <strong>nRF9160 DK</strong>:</p>
 <div class="highlight"><pre><span></span><code>cd Anjay-zephyr-client/demo
 west build -b nrf9160dk_nrf9160ns
 </code></pre></div>
@@ -3517,10 +3529,11 @@ config  :Configure Anjay params
     <img alt="Anjay configuration" src="../images/anjay_config.png" style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;" title="Anjay configuration" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>Use the <code>anjay stop</code> command to stop LwM2M Client if you are going to change credentials.</p>
+</div>
 <p>If your default credentials are different from device credentials provided in Coiote IoT DM, change them using the <code>anjay config set &lt;possible_option&gt; &lt;value&gt;</code> command.
 <br/>
 <img alt="Anjay set configuration" src="../images/anjay_config_set.PNG" style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;" title="Anjay set configuration" /></p>
-</div>
 </li>
 <li>
 <p>Use the <code>anjay start</code> command to run the Client.</p>
@@ -3530,13 +3543,7 @@ config  :Configure Anjay params
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When Anjay has no connection with the server or network for a long time, warning
-<code>at_monitor: No heap space for incoming notification: &lt;notification&gt;</code> may appear.
-It does not affect the operation of the application and will no longer appear after reconnection.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>nRF9160</strong> uses the same radio for GPS and LTE connectivity. GPS signal is
+<p><strong>nRF9160 DK</strong> uses the same radio for GPS and LTE connectivity. GPS signal is
 caught between LTE transmissions and in case GPS "cold" fix acquisition takes
 too much time, Anjay turns off LTE transmissions for the time of fix acquisition.
 It can be seen by the following warning: <code>gps_nrf: GPS was interrupted multiple
@@ -3575,7 +3582,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
   <!-- Link to next page -->
   
     <a
-      href="../Device_Provisioning/"
+      href="../nRF7002DK/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -3584,7 +3591,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
           <span class="md-navbottom__direction">
             Next
           </span>
-          Automated Provisioning for Nordic boards
+          nRF7002 DK
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -3604,7 +3611,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
     
   </small>
 </div>
@@ -3642,13 +3649,13 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
             </a>
           
           
-            <a href="../Device_Provisioning/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../nRF7002DK/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  Automated Provisioning for Nordic boards
+                  nRF7002 DK
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
