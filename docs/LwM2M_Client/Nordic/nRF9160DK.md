@@ -1,12 +1,12 @@
-# nRF9160
+# nRF9160 DK
 
-Integrate your Nordic nRF9160 board.
+Integrate your Nordic nRF9160 DK board.
 
 ## Prerequisites
 
-- The nRF9160 board with a USB cable.
+- The nRF9160 DK board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
-- Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download)
+- Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download).
 - A user with access to the {{ coiote_long_name }}.
 
 
@@ -17,8 +17,8 @@ To get the latest binary file and flash the board:
 
 {{ zephyr_repository_step }}
 {{ nRF9160DK_binary_step }}
-0. To program the board, go through the whole process of **flashing nRF** [described here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html).
-0. Use the nRF Connect Programmer with the downloaded `.hex` file and execute steps from the [Updating the application firmware](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware) section.
+{{ nRF9160DK_flashing_nRF_docs_step }}
+{{ nRF9160DK_flash_downloaded_binary_step }}
 0. Reset the board and go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 
 ### Start development using samples
@@ -40,7 +40,7 @@ Enter the command line interface on your machine and change the directory to the
 
 #### Part 3: Compiling the example
 
-0. Connect the nRF9160 board to a USB port of your machine.
+0. Connect the nRF9160 DK board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
 
     ```
@@ -49,7 +49,7 @@ Enter the command line interface on your machine and change the directory to the
     west update
     ```
 
-0. Compile the project for **nRF9160**:
+0. Compile the project for **nRF9160 DK**:
 
     ```
     cd Anjay-zephyr-client/demo
@@ -99,11 +99,12 @@ To connect the board:
 0. Check your default credentials by following the instructions in the program:
     ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
 
-
     !!! note
-        If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
-        <br/>
-        ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+        Use the `anjay stop` command to stop LwM2M Client if you are going to change credentials.
+
+    If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
+    <br/>
+    ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 
 0. Use the `anjay start` command to run the Client.
@@ -111,12 +112,7 @@ To connect the board:
     ![Registered device](images/registered_device.png "Registered device")
 
 !!! note
-    When Anjay has no connection with the server or network for a long time, warning
-    `at_monitor: No heap space for incoming notification: <notification>` may appear.
-    It does not affect the operation of the application and will no longer appear after reconnection.
-
-!!! note
-    **nRF9160** uses the same radio for GPS and LTE connectivity. GPS signal is
+    **nRF9160 DK** uses the same radio for GPS and LTE connectivity. GPS signal is
     caught between LTE transmissions and in case GPS "cold" fix acquisition takes
     too much time, Anjay turns off LTE transmissions for the time of fix acquisition.
     It can be seen by the following warning: `gps_nrf: GPS was interrupted multiple
