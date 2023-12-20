@@ -1,10 +1,14 @@
 # Device Integration Center - Templating
 
+Templating feature allow you to define how your payload (or headers) looks like.
+
 ## Variables
+
+There are several variables that can be used. Available variables differs from context where they are used/
 
 ### Headers
 
-Variables can be used in `value` field.
+Variables can be used in `value` field (variable defined in header name will not be considered).
 
 #### Device Events
 
@@ -54,7 +58,10 @@ Possible variables:
 * url - lwm2m path (type: string)
 * value - lwm2m resource value (type: string)
 
-#### Body type
+## Body type
 
-JSON / TEXT
+Format type of body can be adjusted to your needs. You can choose between JSON and TEXT.
 
+Webhook: JSON / TEXT
+Influx: TEXT (with indeed in influx line protocol)
+Kafka: JSON

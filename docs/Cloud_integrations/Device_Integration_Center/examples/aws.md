@@ -28,5 +28,39 @@ SIGNATURE=$(echo -ne "POST\n/\n\nhost:dynamodb.$AWS_REGION.amazonaws.com\nx-amz-
 
 # Make the HTTP request to insert data
 curl -X POST -H "Content-Type: application/x-amz-json-1.0" -H "X-Amz-Date: $REQUEST_DATE" -H "Authorization: AWS $AWS_ACCESS_KEY:$SIGNATURE" --data "$DATA_TO_INSERT" $DYNAMODB_ENDPOINT/
+```
+
+`Authorization: AWS $AWS_ACCESS_KEY:$SIGNATURE`
+
+```json
+{
+  "TableName": "'$TABLE_NAME'",
+  "Item": {
+    "id": {"S": "1"},
+    "name": {"S": "John Doe"},
+    "age": {"N": "25"}
+  }
+}
+```
+
+```shell
+aws dynamodb create-table \
+    --table-name YourTableName \
+    --attribute-definitions AttributeName=YourPrimaryKey,AttributeType=S \
+    --key-schema AttributeName=YourPrimaryKey,KeyType=HASH \
+    --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
+
+endpoint="https://dynamodb.YourRegion.amazonaws.com"
+table="YourTableName"
+access_key="YourAccessKey"
+secret_key="YourSecretKey"
+
+curl -X POST \
+     -H "Content-Type: application/x-amz-json-1.0" \
+     -H "X-Amz-Target: DynamoDB_20120810.PutItem" \
+     -H "X-Amz-Date: $(date -u +'%Y%m%dT%H%M%SZ')" \
+     -H "Authorization: AWS4-HMAC-SHA256 Credential=$access_key/$(date -u +'%Y%m%d/us-east-1/dynamodb/aws4_request'), SignedHeaders=content-type;host;x-amz-date, Signature=$(echo -n $(echo -n $(date -u +'%Y%m%dT%H%M%SZ') | openssl dgst -sha256 -hmac $(echo -n $(echo -n $(date -u +'%Y%m%d') | openssl dgst -sha256 -hmac $(echo -n $(echo -n "AWS4$secret_key" | openssl dgst -sha256 -hmac "AWS4$secret_key" -binary) | xxd -p -c 256) -binary) | xxd -p -c 256) -binary) | xxd -p -c 256)" \
+     --data-binary "{\"TableName\":\"$table\",\"Item\":$(cat item.json)}"
+     $endpoint
 
 ```

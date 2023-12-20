@@ -31,7 +31,32 @@ Steps to Send Data to MongoDB Atlas:
    using cURL:
 
 ```shell
-curl -X POST -H "Content-Type: application/json" -H "Api-Key: YOUR_API_KEY" --data @your_data.json https://<your-api-base-url>/databaseName/collectionName
+curl --location --request POST 'https://europe-west1.gcp.data.mongodb-api.com/app/data-kjqsw/endpoint/data/v1/action/findOne' \
+--header 'Content-Type: application/json' \
+--header 'Access-Control-Request-Headers: *' \
+--header 'api-key: DYJSIQRASUTVFx2G6QTMi6aXq06HcjarVGMQj0zAC2HmUXvFYp3m1hCFVMt2CCpL' \
+--data-raw '{
+    "collection":"<COLLECTION_NAME>",
+    "database":"<DATABASE_NAME>",
+    "dataSource":"coiote",
+    "projection": {"_id": 1}
+}'
+
+```
+
+`apiKey: YOUR_API_KEY`
+`https://<your-api-base-url>/databaseName/collectionName`
+`https://data.mongodb-api.com/app/myapp-abcde/endpoint/data/v1/action/insertOne`
+
+```json
+{
+  "dataSource": "mongodb-atlas",
+  "database": "learn-data-api",
+  "collection": "hello",
+  "document": {
+    "text": "Hello, world!"
+  }
+}
 ```
    
 Replace YOUR_API_KEY with your MongoDB Atlas API key, your_data.json with the file containing your data, and <
