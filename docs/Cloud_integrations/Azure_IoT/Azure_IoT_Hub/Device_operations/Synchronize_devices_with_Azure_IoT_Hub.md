@@ -75,3 +75,8 @@ To see logs for your integrated devices:
 ![Integration logs](images/hic_logs.png "Integration logs")
 
 The communication logs will be displayed, allowing you to check, diagnose, or debug any issues.
+
+## Removing devices
+
+If a device is removed from {{ coiote_short_name }} then it is also removed from IoT Hub, please note that if some communication error occurs during deletion
+then device must be removed manually from IoT Hub
