@@ -1,11 +1,11 @@
 # Adding nRF board to OpenThread
 
-Integrate your Nordic nRF52840-DK board to an active OpenThread Border Router.
+Integrate your Nordic nRF52840 DK board to an active OpenThread Border Router.
 
 ## Prerequisites
 
 - An active **OpenThread Border Router**.
-- The **nRF52840-DK** board with a USB cable.
+- The **nRF52840 DK** board with a USB cable.
 - Installed **minicom** or **RealTerm** (for Linux or Mac) or **PuTTy** (for Windows) or other serial communication program.
 - Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download).
 - A user with access to the [**{{ coiote_long_name }}**]({{ coiote_site_link }}/ui/device/inventory) platform and appropriate permissions.
