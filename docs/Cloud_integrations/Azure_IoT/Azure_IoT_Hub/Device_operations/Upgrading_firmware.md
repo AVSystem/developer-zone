@@ -54,8 +54,8 @@ To initiate the firmware upgrade procedure for your device:
           	"useCachedData": false,
           	// optional - default=false
           	"resumeAfterDownlinkFailure": false,
-          	// optional - default="pull", possible values = ["pull", "push"]
-          	"imageDeliveryMethod": "pull",
+          	// optional - default="Pull", possible values = ["Pull", "Push"]
+          	"imageDeliveryMethod": "Pull",
           	// optional - default="WithoutObservations", possible values = ["ObservationTrigger", "WithoutObservations", "ObservationBased", "SendBased"]
           	"upgradeStrategy": "WithoutObservations",
           	// optional - default="always", possible values = ["always", "weekends", "nights-home", "nights-enterprise-weekends", "nights-enterprise", user-defined schedules]

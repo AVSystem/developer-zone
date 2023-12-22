@@ -74,19 +74,20 @@ Select the **Influx data formatting** option.
 
 ![Select Influx](images/influx-data-formatting.png "Select Influx")
 
-**The URL address** is composed of 3 parts:
+**The URL address** is composed of the following parts:
 
 1. The **Influx URL** e.g.: `https://eu-central-1-1.aws.cloud2.influxdata.com` 
 
     *You can find the URL in the address bar of your browser when using InfluxDB Cloud.*
 
-2. The **InfluxDB API**: `/api/v2/write` 
-3. The **Bucket ID**, starting with `?bucket=`
+2. The **InfluxDB API**: `/api/v2/write`
+3. The **precision** parameter indicading our data is ingested with millisecond precision: `?precision=ms`
+4. The **Bucket ID**, starting with `&bucket=`
 
 When combined, the URL address looks something like: 
 
 ```
-https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?bucket=bc123456789ABCDE
+https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?precision=ms&bucket=bc123456789ABCDE
 ```
 
 !!! info

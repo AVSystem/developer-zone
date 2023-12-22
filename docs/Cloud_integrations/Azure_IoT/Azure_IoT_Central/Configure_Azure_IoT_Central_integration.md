@@ -33,3 +33,8 @@ Use the obtained credentials to establish the integration between {{ coiote_shor
       - click **Save** to keep the setting.
 
 Your integration should now be established. To get the integration up and running, try [synchronizing devices with Azure IoT Central](Device_operations/Synchronize_devices_with_Azure_IoT_Central.md)
+
+## Removing devices
+
+If a device is removed from {{ coiote_short_name }} then it is also removed from IoT Central, please note that if some communication error occurs during deletion
+then device must be removed manually from IoT Central

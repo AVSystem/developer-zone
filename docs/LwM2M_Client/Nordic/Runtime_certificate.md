@@ -1,7 +1,7 @@
 # Runtime Certificate and Private Key Configuration
 
 ## Introduction
-Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [nRF9160](nRF9160.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
+Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [nRF9160 DK](nRF9160DK.md), [nRF7002 DK](nRF7002DK.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
 
 In **Certificate Mode** an asymmetrical algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
 

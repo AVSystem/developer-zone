@@ -6,13 +6,13 @@ theme:
   favicon: assets/favicon/favicon-32x32.png
   features:
     - navigation.tabs
+    - content.code.annotate
+    - content.code.copy
 
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.superfences
   - pymdownx.tabbed
-  - pymdownx.superfences
   - attr_list
   - admonition
   - pymdownx.details
@@ -68,7 +68,8 @@ nav:
                 - 'LwM2M_Client/STMicroelectronics//Runtime_certificate.md'
             - 'Nordic':
                 - 'LwM2M_Client/Nordic/Thingy91.md'
-                - 'LwM2M_Client/Nordic/nRF9160.md'
+                - 'LwM2M_Client/Nordic/nRF9160DK.md'
+                - 'LwM2M_Client/Nordic/nRF7002DK.md'
                 - 'LwM2M_Client/Nordic/Device_Provisioning.md'
                 - 'LwM2M_Client/Nordic/Runtime_certificate.md'
             - 'ESP32':
@@ -97,6 +98,12 @@ nav:
                 - 'Coiote_IoT_DM/Device_tests/Data_model_and_variables.md'
                 - 'Coiote_IoT_DM/Device_tests/Run_tests.md'
                 - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
+            - 'Video tutorials':
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_simply_onboard_and_provision_IoT_devices.md'
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_configure_IoT_devices.md'
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_perform_secure_Over-the-Air_updates.md'
+                - 'Coiote_IoT_DM/Coiote_videos/What_types_of_IoT_data_are_collected_and_stored_in_the_Coiote.md'
+                - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_monitor_IoT_devices_and_diagnose_issues.md'
         - 'Cloud Integrations':
             - 'Data Integration Center':
                 - Webhooks: 'Cloud_integrations/webhooks.md'
@@ -134,6 +141,7 @@ nav:
                     - 'Cloud_integrations/AWS_IoT_Core/Concepts/AWS_Integration_concepts.md'
             - 'nRF Cloud Location services':
                     - 'Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
+            - 'LoRaWAN Gateway': 'Cloud_integrations/LoRaWAN/LoRagateway.md'
         - 'Demo Projects':
             - 'Demo_Projects/Tracking_tutorial.md'
             - CO2 office sensor: https://www.hackster.io/ferre111/iot-solution-for-co2-measurement-in-the-office-f3b213
@@ -160,8 +168,26 @@ nav:
             - Module 5 - Firmware updates:
                 - Theory Module 5: 'academy/module5.md'
             - Graduation Project: 'academy/exercise5.md'
+        - 'API documentation':
+            - 'Overview':
+                - 'API_documentation/Overview/About_Coiote_API.md'
+                - 'API_documentation/Overview/Getting_access.md'
+                - 'API_documentation/Overview/Using_the_API.md'
+            - 'Guides':
+                - How to make basic onboarding: 'API_documentation/Guides/Basic_onboarding.md'
+                - How to create a domain and add users: 'API_documentation/Guides/Create_a_domain_and_add_users.md'
+                - How to make firmware upgrade (FOTA): 'API_documentation/Guides/Make_firmware_upgrade.md'
+                - How to send data outside the application with event handlers: 'API_documentation/Guides/Send_data_outside_application.md'
+                - How to use Device monitoring: 'API_documentation/Guides/Use_device_monitoring.md'
+            - API reference: 'API_documentation/api_reference.md'
         - 'Release Notes':
             - 2023:
+                - 'Release_Notes/v2023.33.md'
+                - 'Release_Notes/v2023.32.md'
+                - 'Release_Notes/v2023.31.md'
+                - 'Release_Notes/v2023.30.0.md'
+                - 'Release_Notes/v2023.29.md'
+                - 'Release_Notes/v2023.28.md'
                 - 'Release_Notes/v2023.27.md'
                 - 'Release_Notes/v2023.26.1.md'
                 - 'Release_Notes/v2023.25.2.md'
