@@ -94,3 +94,7 @@ To see to which hub a device has been assigned:
 
 * [Device operations on Azure IoT Hub](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/)
 * [Azure DPS documentation](https://docs.microsoft.com/en-us/azure/iot-dps/)
+
+## Removing devices
+
+When a device is removed from {{ coiote_short_name }} then it is not removed from DPS enrollment group and corresponding IoT Hub
