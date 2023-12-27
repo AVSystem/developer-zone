@@ -3525,7 +3525,7 @@ After flashing, you must switch the physical USB port called <code>MCU USB</code
 <p>If you haven't worked on your target device thus far, it's time to switch to it, in our case it is the <code>Raspberry Pi 3B</code>. Connect the RCP to the target device and continue this tutorial while working on the target device.</p>
 <h2 id="downloading-docker-image">Downloading Docker image<a class="headerlink" href="#downloading-docker-image" title="Permanent link">#</a></h2>
 <p>Download the newest version of <code>svetovid-with-otbr</code> docker image:
-<div class="highlight"><pre><span></span><code>    docker pull avsystem/svetovid-with-otbr
+<div class="highlight"><pre><span></span><code>    docker pull avsystemcom/svetovid-with-otbr
 </code></pre></div></p>
 <h2 id="shell-variables">Shell variables<a class="headerlink" href="#shell-variables" title="Permanent link">#</a></h2>
 <p>To make it easier to run the docker container, we will set a bunch of shell variables (note that the variables in the below manner are set for current shell session only, which means that when a new session is opened, the previous variables will not be restored).</p>
@@ -3558,10 +3558,10 @@ After flashing, you must switch the physical USB port called <code>MCU USB</code
 <div class="highlight"><pre><span></span><code>    sudo modprobe ip6table_filter
 </code></pre></div></p>
 <p>After that you can run your image in a new container:
-<div class="highlight"><pre><span></span><code>    docker run --sysctl &quot;net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1&quot; -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI avsystem/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
+<div class="highlight"><pre><span></span><code>    docker run --sysctl &quot;net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1&quot; -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI avsystemcom/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
 </code></pre></div></p>
 <h2 id="configure-your-border-router-through-coiote-iot-dm">Configure your Border Router through Coiote IoT DM<a class="headerlink" href="#configure-your-border-router-through-coiote-iot-dm" title="Permanent link">#</a></h2>
-<p>After a while you should see that your Border Router successfully connected to server. Now you can click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view.
+<p>After a while (about 10 minutes) you should see that your Border Router successfully connected to server. Now you can click <strong>Next</strong>, then <strong>Go to Summary</strong>, then <strong>Finish</strong>. You will see your Device Center view.
 <img alt="Registered device" src="../images/registered_device.png" style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;" title="Registered device" /></p>
 <p>Now you can switch to <strong>Data model</strong> tab. Here you can find objects related to <strong>OpenThread Border Router</strong>:</p>
 <ul>
@@ -3644,7 +3644,7 @@ After flashing, you must switch the physical USB port called <code>MCU USB</code
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2023</span>
     
   </small>
 </div>
