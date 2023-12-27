@@ -116,7 +116,7 @@ If you haven't worked on your target device thus far, it's time to switch to it,
 
 Download the newest version of `svetovid-with-otbr` docker image:
 ```
-    docker pull avsystem/svetovid-with-otbr
+    docker pull avsystemcom/svetovid-with-otbr
 ```
 
 ## Shell variables
@@ -159,12 +159,12 @@ Before you run docker container you need to add `ip6table_filter` module to Linu
 
 After that you can run your image in a new container:
 ```
-    docker run --sysctl "net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI avsystem/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
+    docker run --sysctl "net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI avsystemcom/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
 ```
 
 ## Configure your Border Router through {{ coiote_short_name }}
 
-After a while you should see that your Border Router successfully connected to server. Now you can click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view.
+After a while (about 10 minutes) you should see that your Border Router successfully connected to server. Now you can click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view.
 ![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
 
 Now you can switch to **Data model** tab. Here you can find objects related to **OpenThread Border Router**:
