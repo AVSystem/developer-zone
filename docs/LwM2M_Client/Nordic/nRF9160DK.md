@@ -6,7 +6,7 @@ Integrate your Nordic nRF9160 DK board.
 
 - The nRF9160 DK board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
-- Installed **nrfjprog** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download).
+- Installed **nRF Connect** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop).
 - A user with access to the {{ coiote_long_name }}.
 
 
@@ -17,9 +17,10 @@ To get the latest binary file and flash the board:
 
 {{ zephyr_repository_step }}
 {{ nRF9160DK_binary_step }}
-{{ nRF9160DK_flashing_nRF_docs_step }}
+{{ nRF9160DK_updating_dk_firmware_step}}
 {{ nRF9160DK_flash_downloaded_binary_step }}
-0. Reset the board and go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+
+Go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
 
 ### Start development using samples
 !!! Note
@@ -49,16 +50,14 @@ Enter the command line interface on your machine and change the directory to the
     west update
     ```
 
-0. Compile the project for **nRF9160 DK**:
+0. Compile and flash the project for **nRF9160 DK**:
+
 
     ```
     cd Anjay-zephyr-client/demo
     west build -b nrf9160dk_nrf9160ns
+    west flash
     ```
-
-0. Find the `merged.hex` file under the `build/zephyr` directory in the project folder.
-
-0. Use the nRF Connect Programmer to flash the created `.hex` file onto the board. For more information, follow the [updating the application firmware](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware) documentation.
 
 ## Connecting to the LwM2M Server
 
