@@ -3449,7 +3449,7 @@
 <ul>
 <li>The nRF9160 DK board with a USB cable.</li>
 <li>Installed <strong>minicom</strong> (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.</li>
-<li>Installed <strong>nrfjprog</strong> from <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download">Nordic Semiconductor page</a>.</li>
+<li>Installed <strong>nRF Connect</strong> from <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop">Nordic Semiconductor page</a>.</li>
 <li>A user with access to the Coiote IoT Device Management platform.</li>
 </ul>
 <h2 id="prepare-binaries">Prepare binaries<a class="headerlink" href="#prepare-binaries" title="Permanent link">#</a></h2>
@@ -3458,10 +3458,10 @@
 <ol>
 <li>Go to <a href="https://github.com/AVSystem/Anjay-zephyr-client/releases">Anjay-zephyr-client</a>.</li>
 <li>Download the <code>demo_nrf9160dk_merged.hex</code> file.</li>
-<li>To program the board, go through the whole process of <strong>flashing nRF</strong> <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html">described here</a>.</li>
-<li>Use the nRF Connect Programmer with the downloaded <code>.hex</code> file and execute steps from the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware">Updating the application firmware</a> section.</li>
-<li>Reset the board and go to the <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a>.</li>
+<li>You may need to update your DK firmware. To do this download new DK firmware from <a href="https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download#infotabs">nRF9160 DK Downloads page</a> and follow <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/device_guides/working_with_nrf/nrf91/nrf9160.html#updating-the-modem-firmware">Updating the modem firmware</a> steps.</li>
+<li>Use the nRF Connect Programmer and execute steps from the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/device_guides/working_with_nrf/nrf91/nrf9160.html#updating-the-application-firmware">Updating the application firmware</a> section. Skip the point 6 and at the point 7 select already downloaded <code>demo_nrf9160dk_merged.hex</code> file.</li>
 </ol>
+<p>Go to the <a href="#connecting-to-the-lwm2m-server">Connecting to the LwM2M Server</a>.</p>
 <h3 id="start-development-using-samples">Start development using samples<a class="headerlink" href="#start-development-using-samples" title="Permanent link">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3484,16 +3484,11 @@ west update
 </code></pre></div>
 </li>
 <li>
-<p>Compile the project for <strong>nRF9160 DK</strong>:</p>
+<p>Compile and flash the project for <strong>nRF9160 DK</strong>:</p>
 <div class="highlight"><pre><span></span><code>cd Anjay-zephyr-client/demo
 west build -b nrf9160dk_nrf9160ns
+west flash
 </code></pre></div>
-</li>
-<li>
-<p>Find the <code>merged.hex</code> file under the <code>build/zephyr</code> directory in the project folder.</p>
-</li>
-<li>
-<p>Use the nRF Connect Programmer to flash the created <code>.hex</code> file onto the board. For more information, follow the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware">updating the application firmware</a> documentation.</p>
 </li>
 </ol>
 <h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
@@ -3623,7 +3618,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2023</span>
     
   </small>
 </div>
