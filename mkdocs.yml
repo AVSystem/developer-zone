@@ -97,18 +97,15 @@ nav:
                 - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
         - 'Cloud Integrations':
             - 'Data Integration Center':
-                - Templating: 'Cloud_integrations/Device_Integration_Center/todo.md'
+                - Overview: 'Cloud_integrations/Device_Integration_Center/overview.md'
                 - Webhooks: 'Cloud_integrations/Device_Integration_Center/webhooks.md'
-                - InfluxDB: 'Cloud_integrations/Device_Integration_Center/influx.md'
-                - Datacake: 'Cloud_integrations/Device_Integration_Center/datacake.md'
-                - Kafka or Azure Event Hub: 'Cloud_integrations/Device_Integration_Center/kafka.md'
-                - GraphQL: 'Cloud_integrations/Device_Integration_Center/examples/graphql.md'
-                - IFTTT: 'Cloud_integrations/Device_Integration_Center/examples/ifttt.md'
-                - Datadog: 'Cloud_integrations/Device_Integration_Center/examples/datadog.md'
-                - Atlas: 'Cloud_integrations/Device_Integration_Center/examples/atlas.md'
-                - Azure: 'Cloud_integrations/Device_Integration_Center/examples/azure.md'
-                - AWS: 'Cloud_integrations/Device_Integration_Center/examples/aws.md'
-                - Slack: 'Cloud_integrations/Device_Integration_Center/examples/slack.md'
+                - Kafka: 'Cloud_integrations/Device_Integration_Center/kafka.md'
+                - 'Integrations':
+                    - InfluxDB: 'Cloud_integrations/Device_Integration_Center/integrations/influx.md'
+                    - Datacake: 'Cloud_integrations/Device_Integration_Center/integrations/datacake.md'
+                    - GraphQL: 'Cloud_integrations/Device_Integration_Center/integrations/graphql.md'
+                    - Slack: 'Cloud_integrations/Device_Integration_Center/integrations/slack.md'
+                    - Atlas: 'Cloud_integrations/Device_Integration_Center/integrations/atlas.md'
             - 'Azure IoT':
                 - 'Azure IoT Hub':
                     - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md'
