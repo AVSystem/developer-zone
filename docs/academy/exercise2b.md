@@ -115,7 +115,7 @@ At the end of the file add the mention about subdirectory to the general CMakeLi
 <p style="text-align: center;"> Anjay-pico-client/CMakeLists.txt</p>
 
 ```
-add_subdirectory(psk_mode)
+add_subdirectory(psk-mode)
 ```
 
 Now the client is ready to be built and connected to LwM2M Server, allowing it to read the Time object.
