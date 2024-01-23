@@ -1,22 +1,22 @@
 # Data Integration Center
 
-Data Integration Center is our feature that allows you to forward device related data to your systems, databases,
-message brokers etc. There are two kind of events:
+Data Integration Center is a feature that allows you to forward device related data to your systems, databases, message
+brokers etc. There are two kind of events:
 
-* Lifecycle - these are related to device life cycle events like creation, update, deletion
-* Telemetry - these are related to telemetry gathered by device like temperature measurement
+* Lifecycle - these are related to device life cycle events like creation, update, deletion.
+* Telemetry - these are related to telemetry gathered by device like temperature measurement.
 
-![overview](./images/data-integration-center-overview.webp)
+![Overview](./images/data-integration-center-overview.webp)
 
 ## Templating
 
-Templating feature allow you to define how your payload (or headers) looks like. This enables you to integrate with
-almost all available services, gathering your data where you desire.
+Templating feature allows for defining how your payload (or headers) looks like. This enables you to integrate with
+almost all available services, gathering your data according to your preferences.
 
-![wizard-form-body](./images/wizard-form-body.webp){ width=50% }
+![Wizard Form Body](./images/wizard-form-body.webp){ width=50% }
 
-You are free to modify body template as long as it proper JSON. If you want different content type you can use `Text`
-that have not validation at all.
+You can modify a body template as long as it is proper `JSON`. If you want a different content type you can use `Text`
+that have no validation at all.
 
 ```json
 {
@@ -29,24 +29,24 @@ that have not validation at all.
 }
 ```
 
-As you can notice there are values starting with `$` e.g. `$endpointName`. These are called variables.
+There are values starting with `$` e.g. `$endpointName`. These are called variables.
 
 ## Variables
 
-Variables are predefined, and allows you to use some device context in payload. When sending variables are replaced with
-actual value e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used, if
-variable do not exist e.g. `$notExisting` then this will be send as it is. Available variables differs from context
-where they are used.
+Variables are predefined and allow for using some device context in a payload. When sending event, variables are replaced 
+with actual value e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used, if
+variable does not exist e.g. `$notExisting` then it is sent as normal text. Available variables differs from context where
+they are used.
 
 ### Headers
 
-Variables can be used in `Header value` field (variables defined in `Header key` will not be considered). You can enter
-any header value e.g. some token. If you change type to `$` you will be allowed to easily select some variable. However,
-in `abc` mode, variables can be also used.
+Variables can be used in the `Header value` field (variables defined in `Header key` will not be considered). You can
+enter any header value e.g. some token. If you change type to `$` you will be allowed to easily select some variable.
+However, in `abc` mode, variables can also be used.
 
-![custom-headers-dialog](./images/custom-headers-dialog.webp){ width=80% }
+![Custom Headers Dialog](./images/custom-headers-dialog.webp){ width=80% }
 
-For device lifecycle events, we have such possible variables:
+For device lifecycle events, there are the following variables:
 
 * `version` - version of the event (type: string)
 * `timestamp` - time in milliseconds (type: long)
@@ -55,7 +55,7 @@ For device lifecycle events, we have such possible variables:
 * `domainName` - name of the last subdomain (type: string)
 * `subtype` - type of device event (type: string)
 
-In device telemetry events, we have such possible variables:
+In device telemetry events, there are the following variables:
 
 * `version` - version of the event (type: string)
 * `timestamp` - time in milliseconds (type: long)
@@ -65,9 +65,9 @@ In device telemetry events, we have such possible variables:
 
 ### Body
 
-![body-dialog](./images/body-dialog.webp){ width=80% }
+![Body Dialog](./images/body-dialog.webp){ width=80% }
 
-For device lifecycle events, we have such possible variables:
+For device lifecycle events, there are the following variables:
 
 * `version` - version of the event (type: string)
 * `timestamp` - time in milliseconds (type: long)
@@ -77,7 +77,7 @@ For device lifecycle events, we have such possible variables:
 * `subtype` - type of device event (type: string)
 * `metadata` - complex data about device event (type: json)
 
-In device telemetry events, we have such possible variables:
+In device telemetry events, there are the following variables:
 
 * `version` - version of the event (type: string)
 * `timestamp` - time in milliseconds (type: long)

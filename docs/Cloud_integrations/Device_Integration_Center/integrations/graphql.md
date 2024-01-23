@@ -32,6 +32,6 @@ Host URL must point to your server.
 
 ## Monitor GraphQL
 
-Query devices to check if there are new entities.
+If there are new entities, query devices to check.
 
 ![graphql-explorer](../images/graphql-explorer.webp)

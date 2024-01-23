@@ -9,24 +9,30 @@ To send data to MongoDB Atlas using its API, you can utilize *Data Integration C
 
 ## Setup atlas
 
-1. Enable [Data API](https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/) Access. 
-2. Create user (In `User` tab) `coiote-integration` and copy API key.
-3. Copy `URL Endpoint`
+1. Enable [Data API](https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/) access.
+2. In the User tab, create a user and copy the API key.
+3. Copy `URL Endpoint`.
 
-![atlas-setup](../images/atlas-setup.webp)
+!!! Info
 
+    It's worth reading [the official mongo website](https://www.mongodb.com/developer/products/atlas/atlas-data-api-introduction/)
+
+![Atlas Setup](../images/atlas-setup.webp)
 
 ## Create webhook
 
-Get API url from previous section, and append `action/insertOne` e.g. 
-`https://europe-west1.gcp.data.mongodb-api.com/app/data-kjqsw/endpoint/data/v1/action/insertOne`
+From the previous section, get the API url and append `action/insertOne` e.g.
 
-As a header set:
+```text
+https://europe-west1.gcp.data.mongodb-api.com/app/data-kjqsw/endpoint/data/v1/action/insertOne
+```
+
+As a headers, set:
 
 - `api-key: <api-key-from-previous-section>`
 - `Access-Control-Request-Headers: *`
 
-And as a body template set
+As a body template, set:
 
 ```json
 {
@@ -39,12 +45,12 @@ And as a body template set
 }
 ```
 
-You can adjust payload to your needs.
+You can adjust the payload according to your needs.
 
-![atlas-configuration](../images/atlas-configuration.webp)
+![Atlas Configuration](../images/atlas-configuration.webp)
 
 ## Investigate database
 
-Now go to collections and see if there is new entity.
+Now, go to **Collections** and verify if there is a new entity.
 
-![atlas-database](../images/atlas-database.webp)
+![Atlas Database](../images/atlas-database.webp)
