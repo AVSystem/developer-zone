@@ -1,6 +1,6 @@
 # Atlas
 
-To send data to MongoDB Atlas using its API, you can utilize *Data Integration Center*.
+To send data to MongoDB Atlas using its API, you can utilize **Data Integration Center**.
 
 ## Prerequisites
 
@@ -15,37 +15,37 @@ To send data to MongoDB Atlas using its API, you can utilize *Data Integration C
 
 !!! Info
 
-    It's worth reading [the official mongo website](https://www.mongodb.com/developer/products/atlas/atlas-data-api-introduction/)
+    It's worth reading [the official mongodb website](https://www.mongodb.com/developer/products/atlas/atlas-data-api-introduction/).
 
 ![Atlas Setup](../images/atlas-setup.webp)
 
 ## Create webhook
 
-From the previous section, get the API url and append `action/insertOne` e.g.
+1. From the previous section, get the API url and append `action/insertOne` to it. Example:
 
-```text
-https://europe-west1.gcp.data.mongodb-api.com/app/data-kjqsw/endpoint/data/v1/action/insertOne
-```
+    ```text
+    https://europe-west1.gcp.data.mongodb-api.com/app/data-kjqsw/endpoint/data/v1/action/insertOne
+    ```
 
-As a headers, set:
+2. As a headers, set:
 
-- `api-key: <api-key-from-previous-section>`
-- `Access-Control-Request-Headers: *`
+    - `api-key: <api-key-from-previous-section>`
+    - `Access-Control-Request-Headers: *`
 
-As a body template, set:
+3. As a body template, set e.g:
 
-```json
-{
-  "collection":"devices",
-  "database":"coiote",
-  "dataSource":"coiote",
-  "document": {
-    "endpointName": "$endpointName"
-  }
-}
-```
+    ```json
+    {
+      "collection":"devices",
+      "database":"coiote",
+      "dataSource":"coiote",
+      "document": {
+        "endpointName": "$endpointName"
+      }
+    }
+    ```
 
-You can adjust the payload according to your needs.
+    You can adjust the payload according to your needs.
 
 ![Atlas Configuration](../images/atlas-configuration.webp)
 

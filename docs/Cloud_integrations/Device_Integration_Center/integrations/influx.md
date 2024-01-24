@@ -113,12 +113,12 @@ needs by editing the body template.
 <measurement>[,<tag_key>=<tag_value>] <field_key>=<field_value> [<timestamp>]
 ```
 
-!!! Note
+!!! Note "You should first define the body template"
 
-     When influx creates a measurement table, columns types are defined and all requests that don't match the type are 
+     When influx creates a measurement table, columns types are defined and all requests that don't match the type will be 
      rejected. It implies that any further changes are impossible and you will need to setup a proper body template before sending data.
 
-!!! Warning "Telemetry with resources whose values are of string type"
+!!! Warning "Telemetry with string type resources"
 
     For influx to work with string value resources, you should add extra quotes around `$value`. This will cause all 
     value resources to be of string type. Therefore to create e.g. diagrams, you need [casting](https://docs.influxdata.com/influxdb/cloud-serverless/query-data/sql/cast-types/).

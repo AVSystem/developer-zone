@@ -20,6 +20,8 @@ To create a new event handler:
 
 1. Select: **Integrations** > **Data Integration Center**.
 
+    ![Data integration center](images/data-integration-center.webp "Data Integration Center")
+
 2. Click **Add event handler** and select **Kafka**.
 
     ![Add event handler](images/add-kafka-handler.webp "Add event handler"){ width=25% }

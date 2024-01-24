@@ -12,24 +12,29 @@
 To send messages to Slack:
 
 1. Install [Incoming Webhooks](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks).
-2. Configure it by choosing a channel.
+2. Configure it by choosing a channel e.g `coiote-integration`.
 3. Copy Webhook URL.
    ![Slack App Settings](../images/slack-app-settings.webp)
 
 ## Create webhook
 
-You can adjust the webhook according to your needs.
+!!! Info
+
+    For detailed instructions on how to create webhooks, see the [Webhook](../webhooks.md) and [Overview](../overview.md) chapters.
 
 1. From the previous step, paste `Webhook URL` as url.
 2. Set the Authorization to `No authorization`, as Slack treats the URL as a token itself.
 3. As body template, set e.g:
+
     ```json
     {
       "text": "Created new device: $endpointName"
     }
     ```
+   
+    You can adjust the webhook according to your needs.
 
-    ![Slack Configuration](../images/slack-configuration.webp)
+![Slack Configuration](../images/slack-configuration.webp)
 
 ## Follow chat
 
