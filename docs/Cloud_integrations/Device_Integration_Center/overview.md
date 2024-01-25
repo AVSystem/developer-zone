@@ -49,9 +49,9 @@ Note that there are values starting with `$` e.g. `$endpointName`. These are cal
 
 ## Variables
 
-Variables are predefined and allow for using some device context in a payload. When sending events, variables are replaced 
-with actual values e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used.
-If a variable does not exist e.g. `$notExisting`, then it is sent as a normal text.
+Variables allow for using some device context in a payload. When sending events, variables are replaced 
+with actual values e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used,
+they are predefined. If a variable does not exist e.g. `$notExisting`, then it is sent as a normal text.
 
 === "Device Lifecycle Variables"
 
@@ -77,7 +77,7 @@ If a variable does not exist e.g. `$notExisting`, then it is sent as a normal te
       * `value` *(type: string|number)* - the value of the changed LwM2M resource. 
 
         !!! Note "Value format"
-            Although it can be a number, in the case of the `JSON` content type it must be enclosed in quotation marks.
+            Although it can be a number, in the case of the `JSON` content type, it must be enclosed in quotation marks.
 
 Available variables differs from context where they are used. For detailed information, see [headers](#headers) and [body](#body).
 

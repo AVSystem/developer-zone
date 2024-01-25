@@ -49,6 +49,8 @@ To send data to MongoDB Atlas using its API, you can utilize **Data Integration 
 
 ![Atlas Configuration](../images/atlas-configuration.webp)
 
+![Atlas Headers](../images/atlas-headers.webp)
+
 ## Investigate database
 
 Now, go to **Collections** and verify if there is a new entity.
