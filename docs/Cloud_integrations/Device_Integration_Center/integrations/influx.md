@@ -115,7 +115,7 @@ needs by editing the body template.
 
 !!! Note "You should first define the body template"
 
-     When influx creates a measurement table, columns types are defined and all requests that don't match the type will be 
+     When influx creates a measurement table, columns types are defined and all requests that don't match the type are
      rejected. It implies that any further changes are impossible and you will need to setup a proper body template before sending data.
 
 !!! Warning "Telemetry with string type resources"

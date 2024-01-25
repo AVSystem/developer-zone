@@ -15,7 +15,7 @@ To send data to MongoDB Atlas using its API, you can utilize **Data Integration 
 
 !!! Info
 
-    It's worth reading [the official mongodb website](https://www.mongodb.com/developer/products/atlas/atlas-data-api-introduction/).
+    To learn more details on MongoDB Atlas, see [Introduction to the MongoDB Atlas Data API](https://www.mongodb.com/developer/products/atlas/atlas-data-api-introduction/).
 
 ![Atlas Setup](../images/atlas-setup.webp)
 
@@ -27,7 +27,7 @@ To send data to MongoDB Atlas using its API, you can utilize **Data Integration 
     https://europe-west1.gcp.data.mongodb-api.com/app/data-kjqsw/endpoint/data/v1/action/insertOne
     ```
 
-2. As a headers, set:
+2. As headers, set:
 
     - `api-key: <api-key-from-previous-section>`
     - `Access-Control-Request-Headers: *`

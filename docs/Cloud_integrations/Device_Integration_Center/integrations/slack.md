@@ -18,10 +18,6 @@ To send messages to Slack:
 
 ## Create webhook
 
-!!! Info
-
-    For detailed instructions on how to create webhooks, see the [Webhook](../webhooks.md) and [Overview](../overview.md) chapters.
-
 1. From the previous step, paste `Webhook URL` as url.
 2. Set the Authorization to `No authorization`, as Slack treats the URL as a token itself.
 3. As body template, set e.g:
@@ -33,6 +29,10 @@ To send messages to Slack:
     ```
    
     You can adjust the webhook according to your needs.
+
+!!! Info
+
+    For detailed instructions on how to create webhooks, see the [Webhook](../webhooks.md) and [Overview](../overview.md) chapters.
 
 ![Slack Configuration](../images/slack-configuration.webp)
 

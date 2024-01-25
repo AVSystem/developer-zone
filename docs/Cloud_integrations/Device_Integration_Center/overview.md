@@ -18,8 +18,8 @@ almost all available services, gathering your data according to your preferences
 
 ![Wizard Form Body](./images/wizard-form-body.webp){ width=49% } ![Wizard Preview](./images/wizard-preview.webp){ width=49% }
 
-You can modify a body template as long as it is proper `JSON`. If you want a different content type you can use `Text`
-option that have no validation at all.
+You can modify a body template as long as it is proper `JSON`. If you want a different content type, you can use the `Text`
+that has no validation at all.
 
 === "JSON"
 
@@ -49,43 +49,43 @@ Note that there are values starting with `$` e.g. `$endpointName`. These are cal
 
 ## Variables
 
-Variables are predefined and allow for using some device context in a payload. When sending event, variables are replaced 
-with actual value e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used, if
-variable does not exist e.g. `$notExisting` then it is sent as normal text.
+Variables are predefined and allow for using some device context in a payload. When sending events, variables are replaced 
+with actual values e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used.
+If a variable does not exist e.g. `$notExisting`, then it is sent as a normal text.
 
 === "Device Lifecycle Variables"
 
-      * `version` *(type: string)* - The version in which events are sent. Any changes will be reflected in it.
-      * `timestamp` *(type: long)* - Time of occurrence of the event in milliseconds.
-      * `endpointName` *(type: string)* - The device endpoint name given at creation.
-      * `domainId` *(type: string)* - The entire ID of the domain in which the device is located.
-      * `domainName` *(type: string)* - The name of the last subdomain without slashes.
-      * `subtype` *(type: string)* - Enumeration type of the event.
-      * `metadata` *(type: json|string)* - Additional details about the event in relation to its subtype.
+      * `version` *(type: string)* - the version of changes (such as new variables) to the mechanism.
+      * `timestamp` *(type: long)* - the time of occurrence of the event in milliseconds.
+      * `endpointName` *(type: string)* - the device endpoint name.
+      * `domainId` *(type: string)* - the entire ID of the domain with the device.
+      * `domainName` *(type: string)* - the name of the last subdomain without slashes.
+      * `subtype` *(type: string)* - enumeration type of the event.
+      * `metadata` *(type: json|string)* - additional details about the event in relation to its subtype.
 
         !!! Note "Metadata format"
             For the `JSON` content type, it is an object with possibly nested fields. Whereas for `TEXT` it is a simple string with fields separated by commas.
 
 === "Device Telemetry Variables"
 
-      * `version` *(type: string)* - The version in which events are sent. Any changes will be reflected in it.
-      * `timestamp` *(type: long)* - Time of occurrence of the event in milliseconds.
-      * `endpointName` *(type: string)* - The device endpoint name given at creation.
-      * `domainId` *(type: string)* - The entire ID of the domain in which the device is located.
-      * `domainName` *(type: string)* - The name of the last subdomain without slashes.
-      * `url` *(type: string)* - LwM2M path (Resource Id) for which changes are occurring.
-      * `value` *(type: string|number)* - The value of the changed LwM2M resource. 
+      * `version` *(type: string)* - the version of changes (such as new variables) to the mechanism.
+      * `timestamp` *(type: long)* - the time of occurrence of the event in milliseconds.
+      * `endpointName` *(type: string)* - the device endpoint name.
+      * `domainId` *(type: string)* - the entire ID of the domain with the device.
+      * `domainName` *(type: string)* - the name of the last subdomain without slashes.
+      * `url` *(type: string)* - the lwm2m path (resource id) with changes.
+      * `value` *(type: string|number)* - the value of the changed LwM2M resource. 
 
         !!! Note "Value format"
-            Although it can be a number, in the case of `JSON` content type it must be enclosed in quotation marks.
+            Although it can be a number, in the case of the `JSON` content type it must be enclosed in quotation marks.
 
-Available variables differs from context where they are used. See [headers](#headers) and [body](#body) for detailed information.
+Available variables differs from context where they are used. For detailed information, see [headers](#headers) and [body](#body).
 
 ### Headers
 
-Variables can be used in the `Header value` field. You can
-enter any header value e.g. some token. If you change type to `$` you will be allowed to easily select available variables.
-However, in `abc` mode, variables can also be used with the help of the `$` sign.
+Variables can be used in the `Header value` field. You can enter any header value e.g. some token. 
+If you change the type to `$` you will be allowed to easily select available variables.
+However, in the `abc` mode, variables can also be used with the help of the `$` sign.
 
 !!! Note
 
@@ -116,8 +116,8 @@ However, in `abc` mode, variables can also be used with the help of the `$` sign
 
 ### Body
 
-As mentioned in [Templating](#templating) section, you can define how your payload looks like.
-If you want to return to the default template, use the **Return to default** button.
+As mentioned in the [Templating](#templating) section, you can adjust the look of your payload.
+If you want to return to the default template, click **Return to default**.
 
 === "Webhook body"
 
@@ -129,7 +129,7 @@ If you want to return to the default template, use the **Return to default** but
 
 === "Kafka body"
 
-    For integration with kafka, only `JSON` content type is allowed.
+    For integration with Kafka, only the `JSON` content type is allowed.
 
 ![Body Dialog](./images/body-dialog.webp){ width=80% }
 
