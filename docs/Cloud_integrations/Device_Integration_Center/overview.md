@@ -49,9 +49,9 @@ Note that there are values starting with `$` e.g. `$endpointName`. These are cal
 
 ## Variables
 
-Variables are predefined and allow for using some device context in a payload. When sending events, variables are replaced 
-with actual values e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used.
-If a variable does not exist e.g. `$notExisting`, then it is sent as a normal text.
+Variables allow for using some device context in a payload. When sending events, variables are replaced 
+with actual values e.g. `$endpointName` with `test-device-47193512895`. There are several variables that can be used,
+they are predefined. If a variable does not exist e.g. `$notExisting`, then it is sent as a normal text.
 
 === "Device Lifecycle Variables"
 
