@@ -77,7 +77,7 @@ If a variable does not exist e.g. `$notExisting`, then it is sent as a normal te
       * `value` *(type: string|number)* - the value of the changed LwM2M resource. 
 
         !!! Note "Value format"
-            Although it can be a number, in the case of the `JSON` content type it must be enclosed in quotation marks.
+            Although it can be a number, in the case of the `JSON` content type must be enclosed in quotation marks.
 
 Available variables differs from context where they are used. For detailed information, see [headers](#headers) and [body](#body).
 
