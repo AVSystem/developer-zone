@@ -3478,9 +3478,9 @@ value: $value
 </div>
 <p>Note that there are values starting with <code>$</code> e.g. <code>$endpointName</code>. These are called variables.</p>
 <h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h2>
-<p>Variables are predefined and allow for using some device context in a payload. When sending events, variables are replaced 
-with actual values e.g. <code>$endpointName</code> with <code>test-device-47193512895</code>. There are several variables that can be used.
-If a variable does not exist e.g. <code>$notExisting</code>, then it is sent as a normal text.</p>
+<p>Variables allow for using some device context in a payload. When sending events, variables are replaced 
+with actual values e.g. <code>$endpointName</code> with <code>test-device-47193512895</code>. There are several variables that can be used,
+they are predefined. If a variable does not exist e.g. <code>$notExisting</code>, then it is sent as a normal text.</p>
 <div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Device Lifecycle Variables</label><div class="tabbed-content">
 <ul>
 <li><code>version</code> <em>(type: string)</em> - the version of changes (such as new variables) to the mechanism.</li>
@@ -3510,7 +3510,7 @@ If a variable does not exist e.g. <code>$notExisting</code>, then it is sent as 
 <p><code>value</code> <em>(type: string|number)</em> - the value of the changed LwM2M resource. </p>
 <div class="admonition note">
 <p class="admonition-title">Value format</p>
-<p>Although it can be a number, in the case of the <code>JSON</code> content type it must be enclosed in quotation marks.</p>
+<p>Although it can be a number, in the case of the <code>JSON</code> content type, it must be enclosed in quotation marks.</p>
 </div>
 </li>
 </ul>
