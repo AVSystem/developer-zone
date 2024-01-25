@@ -19,7 +19,7 @@ almost all available services, gathering your data according to your preferences
 ![Wizard Form Body](./images/wizard-form-body.webp){ width=49% } ![Wizard Preview](./images/wizard-preview.webp){ width=49% }
 
 You can modify a body template as long as it is proper `JSON`. If you want a different content type, you can use the `Text`
-that has no validation at all.
+option that has no validation at all.
 
 === "JSON"
 
