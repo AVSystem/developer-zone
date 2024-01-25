@@ -45,8 +45,8 @@ With the {{ coiote_long_name }}, you can easily integrate your LwM2M data with p
 
 The guides will take you on a step-by-step journey to seamlessly activate the integrations.
 
-[Webhooks](Cloud_integrations/webhooks.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
-[Kafka](Cloud_integrations/kafka.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
+[Webhooks](Cloud_integrations/Device_Integration_Center/webhooks.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
+[Kafka](Cloud_integrations/Device_Integration_Center/kafka.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
 [Azure IoT](Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} 
 
 ## LwM2M Academy
