@@ -114,6 +114,21 @@ However, in the `abc` mode, variables can also be used with the help of the `$` 
       * `domainId`
       * `domainName`
 
+### Forbidden headers
+
+Note that not all headers can be overwritten. Below is a list of forbidden headers:
+
+* `Authorization`
+* `Content-Type`
+* `Content-Length`
+* `User-Agent`
+* `Accept`
+* `Accept-Encoding`
+* `Host`
+* `Connection`
+* `Origin`
+* `Cache-Control`
+
 ### Body
 
 As mentioned in the [Templating](#templating) section, you can adjust the look of your payload.
