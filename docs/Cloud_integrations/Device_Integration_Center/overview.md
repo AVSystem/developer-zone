@@ -116,7 +116,7 @@ However, in the `abc` mode, variables can also be used with the help of the `$` 
 
 ### Forbidden headers
 
-Note that not all headers can be overwritten. Below is a list of forbidden headers:
+Note that not all headers can be overwritten for a webhook. Below is a list of forbidden headers:
 
 * `Authorization`
 * `Content-Type`
