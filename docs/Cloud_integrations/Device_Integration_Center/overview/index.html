@@ -1361,6 +1361,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#forbidden-headers" class="md-nav__link">
+    Forbidden headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#body" class="md-nav__link">
     Body
   </a>
@@ -3455,6 +3462,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#forbidden-headers" class="md-nav__link">
+    Forbidden headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#body" class="md-nav__link">
     Body
   </a>
@@ -3600,6 +3614,21 @@ However, in the <code>abc</code> mode, variables can also be used with the help 
 </ul>
 </div>
 </div>
+<h3 id="forbidden-headers">Forbidden headers<a class="headerlink" href="#forbidden-headers" title="Permanent link">#</a></h3>
+<p>Certain headers can't be overwritten when using a webhook.
+The following list includes headers that are restricted and can't be modified:</p>
+<ul>
+<li><code>Authorization</code></li>
+<li><code>Content-Type</code></li>
+<li><code>Content-Length</code></li>
+<li><code>User-Agent</code></li>
+<li><code>Accept</code></li>
+<li><code>Accept-Encoding</code></li>
+<li><code>Host</code></li>
+<li><code>Connection</code></li>
+<li><code>Origin</code></li>
+<li><code>Cache-Control</code></li>
+</ul>
 <h3 id="body">Body<a class="headerlink" href="#body" title="Permanent link">#</a></h3>
 <p>As mentioned in the <a href="#templating">Templating</a> section, you can adjust the look of your payload.
 If you want to return to the default template, click <strong>Return to default</strong>.</p>
@@ -3702,7 +3731,7 @@ If you want to return to the default template, click <strong>Return to default</
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2024</span>
     
   </small>
 </div>
