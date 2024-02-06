@@ -114,6 +114,22 @@ However, in the `abc` mode, variables can also be used with the help of the `$` 
       * `domainId`
       * `domainName`
 
+### Forbidden headers
+
+Certain headers can't be overwritten when using a webhook.
+The following list includes headers that are restricted and can't be modified:
+
+* `Authorization`
+* `Content-Type`
+* `Content-Length`
+* `User-Agent`
+* `Accept`
+* `Accept-Encoding`
+* `Host`
+* `Connection`
+* `Origin`
+* `Cache-Control`
+
 ### Body
 
 As mentioned in the [Templating](#templating) section, you can adjust the look of your payload.
