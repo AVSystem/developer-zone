@@ -4,21 +4,21 @@ date: 2024-01-22
 og_title: AVSystem IoT Developer Zone
 ---
 # FOTA configurations
-FOTA Configuration is an entity that determines the technical hard settings for the campaigns. The settings cover:
+FOTA Configuration is an entity that determines the technical settings for the campaigns. The settings cover:
 
   - image delivery method
   - image transport type
   - URI format
-  - execution time
+  - timeout
   - expiration time
-  - firmware update progress
+  - firmware update steps
 
 You can create and manage Fleet FOTA configuration for your devices. 
 
 ## FOTA configurations dashboard
 
 ![FOTA configuration dashboard](images/FOTA_Confiuration_Dashboard.png)
-The FOTA configuration dashboard consists of a list of configurations with the possibility to filter information per: **Status** (active or expired), **Name**, **Type** (multi-component or basic), **Domain**, **Expiration date**, **Created**, **Created by**, and **Visible in subdomains** (visible or not visible).
+The FOTA configuration dashboard contains a list of configurations with the possibility to filter information per: **Status** (active or expired), **Name**, **Type** (multi-component or basic), **Domain**, **Expiration date**, **Created**, **Created by**, and **Visible in subdomains** (visible or not visible).
 
 The **cogwheel** icon allows for adjusting the table by adding or hiding columns. If you want to search for specific configurations, you can type the configuration name in the search bar or filter entities per status and domain. 
 
@@ -34,8 +34,8 @@ In the dashboard view, by clicking the **ellipsis** icon you can execute the fol
 2. To start creating a new configuration, click **Add FOTA configuration** > **Basic**.
 3. In the **Basic data** section, type in the configuration name.
 4. Upload a firmware image from the repository or from your desktop. For a newly uploaded image, provide a file name and confirm your choice by clicking **Save**.
-5. To see the configuration in the domains under yours, enable the **Visible in subdomains** option.
-6. Optionally, in the **Description** filed, provide information on your firmware.
+5. To see the configuration in the domains under yours, enable the **Visible in subdomains** option. This option essentially allows your subcustomers to use the FOTA Firmware update.
+6. Optionally, in the **Description** field, provide information on your firmware.
 7. To go to **Settings**, click **Next**.
 8. Choose the image delivery method:
 

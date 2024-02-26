@@ -23,11 +23,13 @@ The cards show Firmware update statuses and number of affected devices. The foll
  - Failed - updates with the **Error** status
  - Canceled - updates canceled manually or automatically while being in progress
 
-By clicking on a chosen status card, you will be taken to the **Updates started** or **Updates not started** tab, depending whether the update is finished or in progress. This view shows a list of devices concerned with assigned statuses, campaign start time, campaign finish time, and the last time when the device was active. The **Updates started** tab allows for filtering devices per status.
+By clicking on a chosen status card, you will be taken to the **Updates started** or **Updates not started** tab, depending whether the update is finished, in progress or not started yet. This view shows a list of devices concerned with assigned statuses, campaign start time, campaign finish time, and the last time when the device was active. The **Updates started** tab allows for filtering devices per status.
 
 The **Information** tab consists of information on a chosen FOTA campaign and the used FOTA configuration.
 
-The left-side panel summarizes FOTA campaign information and allows for deactivating the campaign with no possibility to reactivate it. This action also cancels ongoing firmware updates used in this campaign. However, deactivation doesn't remove the historical data.
+The left-side panel summarizes FOTA campaign information and allows for deactivating the campaign with no possibility to reactivate it. If there are any ongoing FOTA Firmware updates, they will be finished normally, but the new updates won't start if they haven't yet managed to do so.
+
+However, deactivation doesn't remove the historical data.
 
 ## Manage groups
 
@@ -47,7 +49,7 @@ You can manage groups of devices according to your preferences.
 
 1. To add FOTA campaign, go to **Firmware Update** > **FOTA campaigns**.
 2. In the upper-right corner, click **Add FOTA campaign** > **Basic**.
-3. In the **Basic data** view, provide a campaign name, (optionally) description of the firmware and select FOTA configuration. 
+3. In the **Basic data** view, provide a campaign name, description of the firmware (optionally) and select FOTA configuration. 
    You can choose between subordinate or superior domains as well as your own domain. 
 4. In the preview section, verify the details before moving next.
 5. To schedule campaign time, click **Next**. 
