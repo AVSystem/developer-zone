@@ -28,6 +28,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - print-site
 #   - git-revision-date-localized
   - redirects:
         redirect_maps:
@@ -90,9 +91,9 @@ nav:
             - 'Device center': 'Coiote_IoT_DM/Device_Center.md'
             - 'Data visualization': 'Coiote_IoT_DM/Visualize_data.md'
             - 'Firmware update':
-                - Firmware configurations: 'Coiote_IoT_DM/Firmware_configurations.md'
-                - Firmware update: 'Coiote_IoT_DM/Firmware_update.md'
-                - Firmware campaigns: 'Coiote_IoT_DM/Firmware_campaigns.md'
+                - Configurations: 'Coiote_IoT_DM/Configurations.md'
+                - Single update: 'Coiote_IoT_DM/Single_update.md'
+                - Campaigns: 'Coiote_IoT_DM/Campaigns.md'
             - 'Device tests':
                 - 'Coiote_IoT_DM/Device_tests/Overview.md'
                 - 'Coiote_IoT_DM/Device_tests/Getting_started.md'
