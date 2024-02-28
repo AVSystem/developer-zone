@@ -1119,8 +1119,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/firmware_update/" class="md-nav__link">
-        Basic firmware update
+      <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -1131,8 +1131,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/multi_firmware_update/" class="md-nav__link">
-        Multi-component firmware update
+      <a href="../../../Coiote_IoT_DM/Single_update/" class="md-nav__link">
+        Single update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
+        Campaigns
       </a>
     </li>
   
@@ -3596,13 +3608,16 @@ With the help of <strong>Svetovid</strong>, we will be able to manage the Border
 </li>
 <li>
 <p>Build the image:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1"><strong>nRF52840 DK</strong></label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>nRF52840 DK</strong></label><label for="__tabbed_1_2"><strong>nRF52840 Dongle</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>    script/build nrf52840 USB_trans
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2"><strong>nRF52840 Dongle</strong></label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>    script/build nrf52840 USB_trans -DOT_BOOTLOADER=USB
 </code></pre></div>
+</div>
 </div>
 </div>
 <div class="admonition note">
@@ -3619,12 +3634,14 @@ With the help of <strong>Svetovid</strong>, we will be able to manage the Border
 </li>
 <li>
 <p>Flash the RCP:</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1"><strong>nRF52840 DK</strong></label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><strong>nRF52840 DK</strong></label><label for="__tabbed_2_2"><strong>nRF52840 Dongle</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><div class="highlight"><pre><span></span><code>    nrfjprog -f nrf52  --verify --chiperase --program build/bin/ot-rcp.hex --reset
 </code></pre></div>
 After flashing, you must switch the physical USB port called <code>MCU USB</code> to the <code>nRF USB</code> port in order to communicate with the Border Router (although, if you would like to avoid this switching, you can disable the Mass Storage feature on the <code>MCU USB</code> port using <code>J-Link Commander</code>, so that it does not interfere with the core RCP functionalities, but then you will need to change selected transport to <code>UART_trans</code> in the build command). Afterward, set the <code>nRF power source</code> to USB by proper switch on the board.</p>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2"><strong>nRF52840 Dongle</strong></label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Install <code>nrf5sdk-tools</code>:
 <div class="highlight"><pre><span></span><code>    nrfutil install nrf5sdk-tools
 </code></pre></div></p>
@@ -3638,6 +3655,7 @@ After flashing, you must switch the physical USB port called <code>MCU USB</code
 <p>Flash the dongle (assuming that the dongle path is <code>/dev/ttyACM0</code>):
 <div class="highlight"><pre><span></span><code>    nrfutil dfu usb-serial -pkg build/bin/ot-rcp.zip -p /dev/ttyACM0
 </code></pre></div></p>
+</div>
 </div>
 </div>
 </li>

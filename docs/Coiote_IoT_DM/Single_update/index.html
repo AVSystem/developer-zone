@@ -17,7 +17,7 @@
 
     
       
-        <title>Firmware Update - IoT Developer Zone</title>
+        <title>Single update - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-firmware-update" class="md-skip">
+        <a href="#single-update" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Firmware Update
+              Single update
             
           </span>
         </div>
@@ -1023,6 +1023,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../Configurations/" class="md-nav__link">
+        Configurations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -1034,12 +1046,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Basic firmware update
+          Single update
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Basic firmware update
+        Single update
       </a>
       
         
@@ -1070,9 +1082,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#firmware-update-object-33629" class="md-nav__link">
+    Firmware Update Object /33629
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-update-dashboard" class="md-nav__link">
+    Firmware Update Dashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prepare-the-firmware-update" class="md-nav__link">
     Prepare the Firmware Update
   </a>
+  
+    <nav class="md-nav" aria-label="Prepare the Firmware Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-basic-firmware-update-from-an-existing-configuration" class="md-nav__link">
+    Create Basic Firmware update from an existing configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-basic-firmware-update" class="md-nav__link">
+    Create new Basic Firmware update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-multi-component-firmware-update" class="md-nav__link">
+    Create new, multi-component Firmware update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1097,6 +1150,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    REST API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -1105,8 +1165,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#firmware-update-only-works-over-coap-not-over-coaps" class="md-nav__link">
-    Firmware Update only works over CoAP, not over CoAPs
+  <a href="#firmware-update-only-works-over-coap-not-over-coaps-sample-issue" class="md-nav__link">
+    Firmware Update only works over CoAP, not over CoAPs - sample issue
   </a>
   
 </li>
@@ -1136,8 +1196,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../multi_firmware_update/" class="md-nav__link">
-        Multi-component firmware update
+      <a href="../Campaigns/" class="md-nav__link">
+        Campaigns
       </a>
     </li>
   
@@ -3493,9 +3553,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#firmware-update-object-33629" class="md-nav__link">
+    Firmware Update Object /33629
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-update-dashboard" class="md-nav__link">
+    Firmware Update Dashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prepare-the-firmware-update" class="md-nav__link">
     Prepare the Firmware Update
   </a>
+  
+    <nav class="md-nav" aria-label="Prepare the Firmware Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-basic-firmware-update-from-an-existing-configuration" class="md-nav__link">
+    Create Basic Firmware update from an existing configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-basic-firmware-update" class="md-nav__link">
+    Create new Basic Firmware update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-multi-component-firmware-update" class="md-nav__link">
+    Create new, multi-component Firmware update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3520,6 +3621,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    REST API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -3528,8 +3636,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#firmware-update-only-works-over-coap-not-over-coaps" class="md-nav__link">
-    Firmware Update only works over CoAP, not over CoAPs
+  <a href="#firmware-update-only-works-over-coap-not-over-coaps-sample-issue" class="md-nav__link">
+    Firmware Update only works over CoAP, not over CoAPs - sample issue
   </a>
   
 </li>
@@ -3569,8 +3677,16 @@
 
 
 <!-- Markdown content -->
-<h1 id="basic-firmware-update">Basic Firmware Update<a class="headerlink" href="#basic-firmware-update" title="Permanent link">#</a></h1>
-<p>Remotely update the firmware of your LwM2M device using the <strong>Firmware Update Object</strong> <code>/5</code>.</p>
+<h1 id="single-update">Single update<a class="headerlink" href="#single-update" title="Permanent link">#</a></h1>
+<p>There are two types of Firmware update:</p>
+<ul>
+<li><strong>Basic Firmware Update</strong> for a remote update of the LwM2M device firmware by using the <strong>Firmware Update Object</strong> <code>/5</code>.</li>
+<li><strong>Multi-component Firmware Update</strong> for a remote update of the LwM2M device's firmware component by using the <strong>Advanced Firmware Update Object</strong> <code>/33629</code>. Object <code>/33629</code> is designed as an extension of the Firmware Update object <code>/5</code>. It supports multiple instances, each representing a "component" of the device's firmware that can be upgraded separately. The specific meaning and purpose of these components are not standardized and can vary depending on the implementation. However, they typically encompass elements such as bootloaders, application code, cellular modem firmwares, security processor firmwares, and other related firmware entities.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>Multi-component Firmware Update</strong> is the internal implementation, while <strong>Advanced Firmware Update Object</strong> <code>/33629</code> is supported by CoioteDM and Anjay only.</p>
+</div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>An active <a href="https://eu.iot.avsystem.cloud/">Coiote IoT DM</a> user account</li>
@@ -3586,7 +3702,9 @@
 <li><strong>Resource</strong> <code>/5/*/3</code> represents the <strong>State</strong></li>
 <li><strong>Resource</strong> <code>/5/*/5</code> represents the <strong>Update Result</strong></li>
 </ul>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1"><strong>Update States</strong></label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>Update States</strong></label><label for="__tabbed_1_2"><strong>Update Results</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -3619,7 +3737,7 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2"><strong>Update Results</strong></label><div class="tabbed-content">
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -3680,10 +3798,138 @@
 </table>
 </div>
 </div>
+</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Learn more about the Firmware Update Object in the <a href="https://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=https%3A%2F%2Fraw.githubusercontent.com%2FOpenMobileAlliance%2Flwm2m-registry%2Fprod%2F5.xml" target="_blank"><strong>OMA LwM2M Object and Resource Registry</strong></a>.</p>
 </div>
+<h2 id="firmware-update-object-33629">Firmware Update Object <code>/33629</code><a class="headerlink" href="#firmware-update-object-33629" title="Permanent link">#</a></h2>
+<p>Object <code>/33629</code> defines the update process using <strong>4 Update States</strong> representing the phase of the update process. Additionally, a total of <strong>13 Update Results</strong> may be reported, representing the most common outcomes of the firmware update process.</p>
+<ul>
+<li><strong>Resource</strong> <code>/33629/*/3</code> represents the <strong>State</strong></li>
+<li><strong>Resource</strong> <code>/33629/*/5</code> represents the <strong>Update Result</strong></li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><strong>Update States</strong></label><label for="__tabbed_2_2"><strong>Update Results</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>state 0</code></td>
+<td><strong>Idle</strong></td>
+<td>Before downloading and after successfully updating</td>
+</tr>
+<tr>
+<td><code>state 1</code></td>
+<td><strong>Downloading</strong></td>
+<td>The new firmware is on the way</td>
+</tr>
+<tr>
+<td><code>state 2</code></td>
+<td><strong>Downloaded</strong></td>
+<td>The firmware download is completed</td>
+</tr>
+<tr>
+<td><code>state 3</code></td>
+<td><strong>Updating</strong></td>
+<td>The Client starts updating its firmware, after which it changes its state back to <em>Idle</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>update result 0</code></td>
+<td><strong>Initial value</strong></td>
+</tr>
+<tr>
+<td><code>update result 1</code></td>
+<td><strong>Firmware updated successfully</strong></td>
+</tr>
+<tr>
+<td><code>update result 2</code></td>
+<td><strong>Insufficient flash memory for the new firmware package</strong></td>
+</tr>
+<tr>
+<td><code>update result 3</code></td>
+<td><strong>Out of RAM during downloading proces</strong></td>
+</tr>
+<tr>
+<td><code>update result 4</code></td>
+<td><strong>Connection lost during downloading process</strong></td>
+</tr>
+<tr>
+<td><code>update result 5</code></td>
+<td><strong>Integrity check failure for new downloaded package</strong></td>
+</tr>
+<tr>
+<td><code>update result 6</code></td>
+<td><strong>Unsupported package type</strong></td>
+</tr>
+<tr>
+<td><code>update result 7</code></td>
+<td><strong>Invalid URI</strong></td>
+</tr>
+<tr>
+<td><code>update result 8</code></td>
+<td><strong>Firmware update failed</strong></td>
+</tr>
+<tr>
+<td><code>update result 9</code></td>
+<td><strong>Unsupported protocol</strong></td>
+</tr>
+<tr>
+<td><code>update result 10</code></td>
+<td><strong>Firmware update cancelled</strong></td>
+</tr>
+<tr>
+<td><code>update result 11</code></td>
+<td><strong>Firmware update deferred</strong></td>
+</tr>
+<tr>
+<td><code>update result 12</code></td>
+<td><strong>Conflicting state</strong></td>
+</tr>
+<tr>
+<td><code>update result 13</code></td>
+<td><strong>Dependency error</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="firmware-update-dashboard">Firmware Update Dashboard<a class="headerlink" href="#firmware-update-dashboard" title="Permanent link">#</a></h2>
+<p>In the <strong>Device Center</strong>, in the <strong>Firmware update</strong> tab, you can find cards with information on the selected Firmware Update.</p>
+<ul>
+<li><strong>Device Firmware</strong> shows the last recorded information on the current firmware version.    </li>
+<li><strong>Status</strong> contains the information on the firmware concerned and shows if this firmware is a part of the FOTA campaign. It also indicates the status of the following stages of the Firmware update: <strong>Preparing update</strong>, <strong>Transferring package</strong>, <strong>Executing update</strong> and <strong>Cleanup</strong>. The <strong>Cancel update</strong> button allows you to end already started updating process which means that the Firmware update progress won't be saved. This action is only applicable for the devices supporting this feature.</li>
+<li><strong>Upcoming FOTA Campaign update</strong> shows the campaign which is identified as the first to perform the next Firmware update on a given device as per the time of creation and its schedule. Once the update starts, the campaign will be moved to the <strong>Updates list</strong>.</li>
+<li>
+<p><strong>Updates list</strong> points at the Firmware updates history with the possibility to filter information by: <strong>Status</strong>, <strong>Name</strong>, <strong>Start time</strong>, <strong>Finish time</strong>, <strong>Type</strong>, <strong>Created</strong>, <strong>Created by</strong>, and <strong>Part of FOTA campaign</strong>. A reference link to a campaign name enables you to access the FOTA campaign details providing you have the appropriate permissions. </p>
+<ul>
+<li>No information in this field, marked by a hyphen <strong>-</strong>, means that it's a Single FOTA Firmware update which is not a part of a campaign. </li>
+<li>Whereas inactive information means that you are not eligible to view the details. </li>
+</ul>
+</li>
+</ul>
+<p>The <strong>Settings</strong> icon allows for enabling and disabling the filters according to your preferences. The <strong>More action</strong> icon allows for previewing configuration details of a chosen firmware, copying the configuration or canceling the existing one.</p>
+<p><img alt="Dashboard preview" src="../images/Dashboard_preview.png" /></p>
 <h2 id="prepare-the-firmware-update">Prepare the Firmware Update<a class="headerlink" href="#prepare-the-firmware-update" title="Permanent link">#</a></h2>
 <ol>
 <li>
@@ -3693,68 +3939,167 @@
 <p>Select the device you want to update by clicking on its endpoint name.</p>
 </li>
 <li>
-<p>Go to the <strong>Data model</strong> tab to validate if the Firmware Update Object <code>/5</code> is present. If so, the Object is supported by the LwM2M Client.</p>
-<p><img alt="Firmware update object" src="../images/object5-purple.png" /></p>
-</li>
-<li>
-<p>Go to the <strong>Firmware update</strong> tab.</p>
-</li>
-<li>
-<p>Click the <strong>Update Firmware</strong> button.</p>
-<p><img alt="Update Firmware Tab" src="../images/basic-firmware-update-tab.png" /></p>
-</li>
-<li>
-<p>Select <strong>Basic Firmware Update</strong>.</p>
-<p><img alt="Basic Firmware Update" src="../images/basic-fota.png" /></p>
-</li>
-<li>
-<p>Upload the <strong>firmware image</strong>.</p>
-<p><img alt="Upload Firmware Image" src="../images/upload.png" /></p>
-</li>
-<li>
-<p>Choose between <strong>Pull</strong> and <strong>Push</strong>:</p>
+<p>Go to the <strong>Data model</strong> tab to validate if: </p>
 <ul>
-<li>
-<p><strong>Pull method</strong> (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it.</p>
-</li>
-<li>
-<p><strong>Push method</strong>: The LwM2M Server pushes the firmware file to the device.</p>
-</li>
+<li>the Firmware Update Object <code>/5</code> is present for Basic Firmware Update</li>
+<li>the Firmware Update Object <code>/33629</code> is present for Multi-component Firmware Update</li>
 </ul>
+<p>If so, the Object is supported by the LwM2M Client.</p>
+<p><img alt="Firmware update object" src="../images/Device_Inventory_View.png" /></p>
+</li>
+<li>
+<p>Go to the <strong>Firmware update</strong> tab and click <strong>Update Firmware</strong>.</p>
+</li>
+<li>
+<p>From the drop-down menu, choose the type of Firmware Update that you want to create:</p>
+<ul>
+<li>Basic Firmware Update from an existing configuration</li>
+<li>New Basic Firmware Update</li>
+<li>New Multi-component Firmware Update</li>
+</ul>
+</li>
+</ol>
+<h3 id="create-basic-firmware-update-from-an-existing-configuration">Create Basic Firmware update from an existing configuration<a class="headerlink" href="#create-basic-firmware-update-from-an-existing-configuration" title="Permanent link">#</a></h3>
+<p>To create basic Firmware update from an existing configuration, perform the following steps:</p>
+<ol>
+<li>Provide a name of the Firmware update.</li>
+<li>Select a FOTA configuration for your Firmware update. </li>
+<li>In the FOTA configuration settings section, preview configuration details before scheduling update.</li>
+<li>
+<p>To create Firmware update, click <strong>Schedule Update</strong>. </p>
+<p>If you fill in details correctly, you will see the confirmation that your update has been scheduled successfully. </p>
+</li>
+</ol>
+<h3 id="create-new-basic-firmware-update">Create new Basic Firmware update<a class="headerlink" href="#create-new-basic-firmware-update" title="Permanent link">#</a></h3>
+<p>To create new, basic Firmware update, perform the following steps:</p>
+<ol>
+<li>Provide a name of the Firmware update.</li>
+<li>Upload a new firmware image or choose one from the resources.</li>
+<li>
+<p>Optionally, in the <strong>Description</strong> field, provide information about the Firmware version.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p><strong>Pull</strong> supports the following <strong>transport types</strong>:</p>
+<p>You can save FOTA configuration after its creation by enabling the appropriate toggle switch. Once it's activated, you can also make the configuration visible in subdomains by enabling <strong>Visible in domains</strong>. In case the configuration is saved for later purposes, the underlying files expiration date is extend to 6 months.
+<br>
+<img alt="FOTA configuration togglers" src="../images/togglers.png" /></p>
+</div>
+</li>
+<li>
+<p>To go to <strong>Settings</strong>, click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Choose the image delivery method:</p>
+<p><img alt="Basic Firmware Update" src="../images/push-pull.png" /></p>
+<ul>
+<li><strong>Pull method</strong> (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it.
+  <strong>Pull</strong> supports the following <strong>transport types</strong>:<ul>
+<li><code>CoAP</code> or <code>CoAPs</code> over <code>UDP</code></li>
+<li><code>CoAP</code> or <code>CoAPs</code> over <code>TCP</code></li>
+<li><code>HTTP</code> or <code>HTTPs</code></li>
+</ul>
+</li>
+<li><strong>Push method</strong>: The LwM2M Server pushes the firmware file to the device.
+    <strong>Push</strong> transmits the firmware over the same transport type as is used for device management, which is <code>CoAPs</code> over <code>UDP</code> by default.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Which transport protocol to choose?</p>
+<p>Downloads using <code>CoAP(s)</code> over <code>UDP</code> tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
+Choosing <code>CoAP(s)</code> over <code>TCP</code> or <code>HTTP(s)</code> usually results in faster download speeds. However, not every device supports these transport protocols.</p>
+</div>
+</li>
+<li>
+<p>Choose the URI format in which the URL will be send to the firmware package. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In the <strong>Preview</strong> field, you can verify the location of the security token.</p>
+</div>
+</li>
+<li>
+<p>Once you check the details in <strong>Firmware Update Flow Preview</strong>, click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Summary</strong> section, preview the Firmware update information and click <strong>Schedule Update</strong>. </p>
+<p>If you filled in the details correctly, you will see the confirmation that the Firmware update has been scheduled successfully. </p>
+</li>
+</ol>
+<h3 id="create-new-multi-component-firmware-update">Create new, multi-component Firmware update<a class="headerlink" href="#create-new-multi-component-firmware-update" title="Permanent link">#</a></h3>
+<p>To create new, multi-component Firmware update, perform the following steps:</p>
+<ol>
+<li>Provide a name of the Firmware update.</li>
+<li>
+<p>Optionally, in the <strong>Description</strong> field, provide information about your Firmware version.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can save FOTA configuration after its creation by enabling the appropriate toggle switch. Once it's activated, you can also make the configuration visible in subdomains by enabling <strong>Visible in domains</strong>. In case the configuration is saved for later purposes, the underlying files expiration date is extended to 6 months.
+<img alt="FOTA configuration togglers" src="../images/togglers.png" /></p>
+</div>
+</li>
+<li>
+<p>To go to the component selection, click <strong>Next</strong>.</p>
+</li>
+<li>To select more than one component, click <strong>Add new component</strong> and upload a new firmware or choose one from resources. 
+    <img alt="Select components" src="../images/selected_components.png" />  </li>
+<li>To go to <strong>Settings</strong>, click <strong>Next</strong>.</li>
+<li>
+<p>Choose the image delivery method:</p>
+<p><img alt="Basic Firmware Update" src="../images/push-pull.png" /></p>
+<ul>
+<li>
+<p><strong>Pull method</strong> (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it.
+  <strong>Pull</strong> supports the following <strong>transport types</strong>:</p>
 <ul>
 <li><code>CoAP</code> or <code>CoAPs</code> over <code>UDP</code></li>
 <li><code>CoAP</code> or <code>CoAPs</code> over <code>TCP</code></li>
 <li><code>HTTP</code> or <code>HTTPs</code></li>
 </ul>
-<p><strong>Push</strong> transmits the firmware over the same transport type as is used for device management, which is <code>CoAPs</code> over <code>UDP</code> by default.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Which transport protocol to choose?</p>
-<p>Downloads using <code>CoAP(s)</code> over <code>UDP</code> tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.</p>
-<p>Choosing <code>CoAP(s)</code> over <code>TCP</code> or <code>HTTP(s)</code> usually results in faster download speeds. However, not every device supports these transport protocols.</p>
-</div>
-<p><img alt="Basic Firmware Update" src="../images/push-pull.png" /></p>
 </li>
 <li>
-<p>Click <strong>Schedule Update</strong> to trigger the Firmware Update process.</p>
+<p><strong>Push method</strong>: The LwM2M Server pushes the firmware file to the device.
+  <strong>Push</strong> transmits the firmware over the same transport type as is used for device management, which is <code>CoAPs</code> over <code>UDP</code> by default.</p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Which transport protocol to choose?</p>
+<p>Downloads using <code>CoAP(s)</code> over <code>UDP</code> tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
+Choosing <code>CoAP(s)</code> over <code>TCP</code> or <code>HTTP(s)</code> usually results in faster download speeds. However, not every device supports these transport protocols.</p>
+</div>
+</li>
+<li>
+<p>Choose the URI format in which the URL will be send to the firmware package. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In the <strong>Preview</strong> field, you can verify the location of the security token.</p>
+</div>
+</li>
+<li>
+<p>Once you check the details in the <strong>Firmware Update Flow Preview</strong> section, click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Summary</strong> section, preview the Firmware update information and click <strong>Schedule Update</strong>. </p>
+<p>If you filled in the details correctly, the Firmware update will be scheduled successfully. </p>
 </li>
 </ol>
 <h2 id="download-upgrade-process">Download &amp; Upgrade Process<a class="headerlink" href="#download-upgrade-process" title="Permanent link">#</a></h2>
-<p>If the Firmware Update is scheduled successfully, the device starts <strong>downloading</strong> the firmware at the next practical opportunity. The actual firmware <strong>update</strong> starts once the integrity and authenticity of the firmware image has been validated by the LwM2M Client.</p>
+<p>If the Firmware Update is scheduled successfully, the device starts downloading the firmware at the next practical opportunity. The actual firmware <strong>update</strong> starts once the integrity and authenticity of the firmware image has been validated by the LwM2M Client.</p>
 <p><img alt="Upgrading" src="../images/in-progress-basic.png" /></p>
 <p>Once executed successfully, the status in the <strong>Update list</strong> panel changes to <code>Success</code>.</p>
-<p><img alt="Successful update" src="../images/success.png" /></p>
+<p><img alt="Successful update" src="../images/success-multi.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>While the device is updating its firmware, it will deregister and reboot using the new firmware. This process may time several minutes.</p>
+<p>While the device is updating its firmware, it will deregister and reboot by using the new firmware. This process may time several minutes.</p>
 <p><img alt="Deregistered while upgrading" src="../images/deregistered.png" /></p>
 </div>
 <h3 id="monitoring-the-update-process">Monitoring the update process<a class="headerlink" href="#monitoring-the-update-process" title="Permanent link">#</a></h3>
-<p>During the update process, the status of the firmware update can be monitored by reviewing the Resources <strong>State</strong> <code>/5/*/3</code> and <strong>Update Results</strong> <code>/5/*/5</code>.</p>
-<p>To find the Resources, select the <strong>Data model</strong> tab and open the <strong>Firmware Update Object</strong> <code>/5</code>.</p>
+<p>You can monitor the status of the Firmware update by reviewing the following resources:</p>
+<ul>
+<li><strong>State</strong> <code>/5/*/3</code> and <strong>Update Results</strong> <code>/5/*/5</code> for <strong>Basic Firmware Update</strong></li>
+<li><strong>State</strong> <code>/33629/*/3</code> and <strong>Update Results</strong> <code>/33629/*/5</code> for <strong>Multi-component Firmware Update</strong></li>
+</ul>
+<p>To find the Resources, select the <strong>Data model</strong> tab and open:</p>
+<ul>
+<li><strong>Firmware Update Object</strong> <code>/5</code> for <strong>Basic Firmware Update</strong></li>
+<li><strong>Advanced Firmware Update Object</strong> <code>/33629</code> for <strong>Multi-component Firmware Update</strong></li>
+</ul>
 <p><img alt="Firmware upgraded" src="../images/result1.png" /></p>
 <p>If no errors occur, the update process follows this pattern:</p>
 <ol>
@@ -3765,11 +4110,16 @@
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Update successful?</p>
-<p>Does the <strong>State</strong> <code>/5/*/3</code> report <code>0</code> and the <strong>Update Results</strong> <code>/5/*/5</code> report <code>1</code>? Congratulations! You've successfully updated the firmware of your device. 🎉</p>
+<ul>
+<li>If the <strong>State</strong> <code>/5/*/3</code> reports <code>0</code> and the <strong>Update Results</strong> <code>/5/*/5</code> reports <code>1</code> for <strong>Basic Firmware Update</strong>, the firmware device has been completed successfully. Congratulations! </li>
+<li>If the <strong>State</strong> <code>/33629/*/3</code> reports <code>0</code> and the <strong>Update Results</strong> <code>/33629/*/5</code> reports <code>1</code>for <strong>Multi-component Firmware Update</strong>, the firmware device has been completed successfully. Congratulations! </li>
+</ul>
 </div>
+<h2 id="rest-api">REST API<a class="headerlink" href="#rest-api" title="Permanent link">#</a></h2>
+<p><a href="http://cdm-tc-main-fleetfota.kube.si:8086/apidoc/coiotedm/v3">REST API Documentation</a> supports <strong>Basic Firmware Update</strong> and <strong>Multi-component Firmware Update</strong> for the the updates which use an existing configuration. For more information, see the <a href="Firmware_configurations.md">Firmware Configurations</a>, <a href="Firmware_campaigns.md">Firmware Campaigns</a> or <a href="Firmware_update.md">Firmware Update</a> sections.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
-<h3 id="firmware-update-only-works-over-coap-not-over-coaps">Firmware Update only works over CoAP, not over CoAPs<a class="headerlink" href="#firmware-update-only-works-over-coap-not-over-coaps" title="Permanent link">#</a></h3>
-<p>For the firmware update over CoAPs transfer to work, the LwM2M Client shall use the same security credentials (i.e. PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.</p>
+<h3 id="firmware-update-only-works-over-coap-not-over-coaps-sample-issue">Firmware Update only works over CoAP, not over CoAPs - sample issue<a class="headerlink" href="#firmware-update-only-works-over-coap-not-over-coaps-sample-issue" title="Permanent link">#</a></h3>
+<p>For the firmware update over CoAPs transfer to work, the LwM2M Client must use the same security credentials (i.e. PSK or certificates) as those used for the management interface. This is the default behavior of the Anjay client, but you might need to configure it explicitly when using other LwM2M Client implementations.</p>
 <div class="admonition info">
 <p class="admonition-title">Zephyr LwM2M Client configuration instruction</p>
 <p>The <strong>security tags</strong> needs to the same in the "<strong>Security tag for FOTA download library</strong>" as in the "<strong>LwM2M server TLS tag</strong>" (e.g. using Nordic's default tag: <code>35724861</code>).</p>
@@ -3806,7 +4156,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../Visualize_data/"
+      href="../Configurations/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -3818,7 +4168,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Data visualization
+          Configurations
         </div>
       </div>
     </a>
@@ -3827,7 +4177,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../multi_firmware_update/"
+      href="../Campaigns/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -3836,7 +4186,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          Multi-component firmware update
+          Campaigns
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -3856,7 +4206,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
     
   </small>
 </div>
@@ -3879,7 +4229,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../Visualize_data/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../Configurations/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -3888,19 +4238,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Data visualization
+                  Configurations
                 </div>
               </div>
             </a>
           
           
-            <a href="../multi_firmware_update/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../Campaigns/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  Multi-component firmware update
+                  Campaigns
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">

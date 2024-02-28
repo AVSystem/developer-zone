@@ -1021,8 +1021,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/firmware_update/" class="md-nav__link">
-        Basic firmware update
+      <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -1033,8 +1033,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/multi_firmware_update/" class="md-nav__link">
-        Multi-component firmware update
+      <a href="../../../Coiote_IoT_DM/Single_update/" class="md-nav__link">
+        Single update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
+        Campaigns
       </a>
     </li>
   
@@ -3587,7 +3599,9 @@
 <span class="na">sasl.jaas.config</span><span class="o">=</span><span class="s">org.apache.kafka.common.security.plain.PlainLoginModule required username=&#39;&lt;enter username&gt;&#39; password=&#39;&lt;enter password&gt;&#39;;</span>
 <span class="na">sasl.mechanism</span><span class="o">=</span><span class="s">PLAIN</span>
 </code></pre></div>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Confluent’s Kafka</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Confluent’s Kafka</label><label for="__tabbed_1_2">Azure Event Hub</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>When using <strong>Confluent’s Kafka</strong>, copy the connection settings from your topic configuration view. </p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -3600,7 +3614,7 @@
 </div>
 <hr />
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Azure Event Hub</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>When using the <strong>Azure Event Hub</strong>, the configuration requires a <em>Shared Access Key</em> to be placed it in the password field of the configuration. Additionally, you must use at least a <em>Standard tier</em> of your service bus to enable ingesting data using Kafka producer.</p>
 <p>Azure Event Hub configuration example:
 <div class="highlight"><pre><span></span><code><span class="na">bootstrap.servers</span><span class="o">=</span><span class="s">&lt;service bus namespace&gt;.servicebus.windows.net:9093</span>
@@ -3609,6 +3623,7 @@
 <span class="na">sasl.jaas.config</span><span class="o">=</span><span class="s">org.apache.kafka.common.security.plain.PlainLoginModule required username=&quot;$ConnectionString&quot; password=&quot;Endpoint=sb://&lt;service bus namespace&gt;.servicebus.windows.net/;SharedAccessKeyName=XXXXXX;SharedAccessKey=XXXXXX&quot;;</span>
 </code></pre></div></p>
 <hr />
+</div>
 </div>
 </div>
 <p><img alt="Configure parameters" src="../images/kafka-config-set.webp" title="Configure parameters" /></p>

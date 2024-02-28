@@ -17,7 +17,7 @@
 
     
       
-        <title>Multi-component Firmware Update - IoT Developer Zone</title>
+        <title>Campaigns - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#multi-component-firmware-update" class="md-skip">
+        <a href="#campaigns" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Multi-component Firmware Update
+              Campaigns
             
           </span>
         </div>
@@ -1025,8 +1025,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../firmware_update/" class="md-nav__link">
-        Basic firmware update
+      <a href="../Configurations/" class="md-nav__link">
+        Configurations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Single_update/" class="md-nav__link">
+        Single update
       </a>
     </li>
   
@@ -1046,12 +1058,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Multi-component firmware update
+          Campaigns
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Multi-component firmware update
+        Campaigns
       </a>
       
         
@@ -1068,49 +1080,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#fota-campaigns-dashboard" class="md-nav__link">
+    FOTA campaigns dashboard
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#firmware-update-object-33629" class="md-nav__link">
-    Firmware Update Object /33629
+  <a href="#manage-groups" class="md-nav__link">
+    Manage groups
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-firmware-update" class="md-nav__link">
-    Prepare the Firmware Update
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-upgrade-process" class="md-nav__link">
-    Download &amp; Upgrade Process
-  </a>
-  
-    <nav class="md-nav" aria-label="Download &amp; Upgrade Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-the-update-process" class="md-nav__link">
-    Monitoring the update process
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-links" class="md-nav__link">
-    Useful Links
+  <a href="#add-fota-campaigns" class="md-nav__link">
+    Add FOTA campaigns
   </a>
   
 </li>
@@ -3459,49 +3444,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#fota-campaigns-dashboard" class="md-nav__link">
+    FOTA campaigns dashboard
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#firmware-update-object-33629" class="md-nav__link">
-    Firmware Update Object /33629
+  <a href="#manage-groups" class="md-nav__link">
+    Manage groups
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-firmware-update" class="md-nav__link">
-    Prepare the Firmware Update
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-upgrade-process" class="md-nav__link">
-    Download &amp; Upgrade Process
-  </a>
-  
-    <nav class="md-nav" aria-label="Download &amp; Upgrade Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-the-update-process" class="md-nav__link">
-    Monitoring the update process
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-links" class="md-nav__link">
-    Useful Links
+  <a href="#add-fota-campaigns" class="md-nav__link">
+    Add FOTA campaigns
   </a>
   
 </li>
@@ -3529,221 +3487,87 @@
 
 
 <!-- Markdown content -->
-<h1 id="multi-component-firmware-update">Multi-component Firmware Update<a class="headerlink" href="#multi-component-firmware-update" title="Permanent link">#</a></h1>
-<p>Remotely update a component of your LwM2M device's firmware using the <strong>Advanced Firmware Update Object</strong> <code>/33629</code>.</p>
-<p>Object <code>/33629</code> is designed as an extension of the Firmware Update object <code>/5</code>. It supports multiple instances, each representing a "component" of the device's firmware that can be upgraded separately. The specific meaning and purpose of these components are not standardized and can vary depending on the implementation. However, they typically encompass elements such as bootloaders, application code, cellular modem firmwares, security processor firmwares, and other related firmware entities.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<h1 id="campaigns">Campaigns<a class="headerlink" href="#campaigns" title="Permanent link">#</a></h1>
+<p>Firmware campaigns allows for updating a group of devices simultaneously. This feature enables configuration, activation, and tracking the Fleet FOTA campaign process. </p>
+<h2 id="fota-campaigns-dashboard">FOTA campaigns dashboard<a class="headerlink" href="#fota-campaigns-dashboard" title="Permanent link">#</a></h2>
+<p><img alt="FOTA campaigns dashboard" src="../images/FOTA_Campaigns_Dashboard.png" />
+The FOTA campaigns dashboard consists of a list of campaigns with the possibility to add or hide columns with: </p>
 <ul>
-<li>An active <a href="https://eu.iot.avsystem.cloud/">Coiote IoT DM</a> user account</li>
-<li>A device which supports the Advanced Firmware Update Object <code>/33629</code></li>
+<li><strong>Status</strong></li>
+<li><strong>Name</strong></li>
+<li><strong>Domain</strong></li>
+<li><strong>Target device type</strong></li>
+<li><strong>Start time</strong></li>
+<li><strong>Finish time</strong></li>
+<li><strong>Created</strong></li>
+<li><strong>Created by</strong></li>
 </ul>
-<h2 id="firmware-update-object-33629">Firmware Update Object <code>/33629</code><a class="headerlink" href="#firmware-update-object-33629" title="Permanent link">#</a></h2>
-<p>Object <code>/33629</code> defines the update process using <strong>4 Update States</strong> representing the phase of the update process. Additionally, a total of <strong>13 Update Results</strong> may be reported, representing the most common outcomes of the firmware update process.</p>
+<p>The possible statuses for a campaign can be as follows:</p>
 <ul>
-<li><strong>Resource</strong> <code>/33629/*/3</code> represents the <strong>State</strong></li>
-<li><strong>Resource</strong> <code>/33629/*/5</code> represents the <strong>Update Result</strong></li>
+<li><strong>Active</strong> - The campaign is in progress.</li>
+<li><strong>Finished</strong> - The campaign ended.</li>
+<li><strong>Canceled</strong> - The Firmware configuration has been removed, as a result of which all the Firmware updates in this campaign are canceled.</li>
+<li><strong>Deactivated</strong> - The campaign is no longer active, as it was stopped while being in progress.</li>
+<li><strong>Scheduled</strong> - The start time for the campaign has been scheduled, but it hasn't started yet. </li>
 </ul>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1"><strong>Update States</strong></label><div class="tabbed-content">
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>State</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>state 0</code></td>
-<td><strong>Idle</strong></td>
-<td>Before downloading and after successfully updating</td>
-</tr>
-<tr>
-<td><code>state 1</code></td>
-<td><strong>Downloading</strong></td>
-<td>The new firmware is on the way</td>
-</tr>
-<tr>
-<td><code>state 2</code></td>
-<td><strong>Downloaded</strong></td>
-<td>The firmware download is completed</td>
-</tr>
-<tr>
-<td><code>state 3</code></td>
-<td><strong>Updating</strong></td>
-<td>The Client starts updating its firmware, after which it changes its state back to <em>Idle</em></td>
-</tr>
-</tbody>
-</table>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2"><strong>Update Results</strong></label><div class="tabbed-content">
-<table>
-<thead>
-<tr>
-<th>Result</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>update result 0</code></td>
-<td><strong>Initial value</strong></td>
-</tr>
-<tr>
-<td><code>update result 1</code></td>
-<td><strong>Firmware updated successfully</strong></td>
-</tr>
-<tr>
-<td><code>update result 2</code></td>
-<td><strong>Insufficient flash memory for the new firmware package</strong></td>
-</tr>
-<tr>
-<td><code>update result 3</code></td>
-<td><strong>Out of RAM during downloading proces</strong></td>
-</tr>
-<tr>
-<td><code>update result 4</code></td>
-<td><strong>Connection lost during downloading process</strong></td>
-</tr>
-<tr>
-<td><code>update result 5</code></td>
-<td><strong>Integrity check failure for new downloaded package</strong></td>
-</tr>
-<tr>
-<td><code>update result 6</code></td>
-<td><strong>Unsupported package type</strong></td>
-</tr>
-<tr>
-<td><code>update result 7</code></td>
-<td><strong>Invalid URI</strong></td>
-</tr>
-<tr>
-<td><code>update result 8</code></td>
-<td><strong>Firmware update failed</strong></td>
-</tr>
-<tr>
-<td><code>update result 9</code></td>
-<td><strong>Unsupported protocol</strong></td>
-</tr>
-<tr>
-<td><code>update result 10</code></td>
-<td><strong>Firmware update cancelled</strong></td>
-</tr>
-<tr>
-<td><code>update result 11</code></td>
-<td><strong>Firmware update deferred</strong></td>
-</tr>
-<tr>
-<td><code>update result 12</code></td>
-<td><strong>Conflicting state</strong></td>
-</tr>
-<tr>
-<td><code>update result 13</code></td>
-<td><strong>Dependency error</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<h2 id="prepare-the-firmware-update">Prepare the Firmware Update<a class="headerlink" href="#prepare-the-firmware-update" title="Permanent link">#</a></h2>
+<p>The <strong>Settings</strong> icon allows for adjusting the table according to your preferences. If you want to search for specific campaigns, you can type the campaign name in the search bar or filter entities per status and domain. </p>
+<p>In the dashboard view, by clicking the <strong>Actions</strong> icon &gt; <strong>Go to campaign details</strong>, you can preview details on the chosen campaign.
+<img alt="FOTA campaign details" src="../images/Firmware_Updates_On_Devices_dashboard.png" />
+The cards show Firmware update statuses and number of affected devices. The following statuses are possible:</p>
+<ul>
+<li>Finished - completed updates with the <strong>Error</strong> and <strong>Success</strong> status</li>
+<li>Not started - scheduled updates with the <strong>Not started</strong> status</li>
+<li>Ongoing - updates that are in progress</li>
+<li>Successful - successfully completed updates</li>
+<li>Failed - updates with the <strong>Error</strong> status</li>
+<li>Canceled - updates canceled manually or automatically while being in progress</li>
+</ul>
+<p>By clicking on a chosen status card, you will be taken to the <strong>Updates started</strong> or <strong>Updates not started</strong> tab, depending whether the update is finished, in progress or not started yet. This view shows a list of devices concerned with assigned statuses, campaign start time, campaign finish time, and the last time when the device was active. The <strong>Updates started</strong> tab allows for filtering Firmware updates by status.</p>
+<p>The <strong>Information</strong> tab consists of information on a chosen FOTA campaign and the used FOTA configuration.</p>
+<p>The left-side panel summarizes FOTA campaign information and allows for deactivating the campaign with no possibility to reactivate it. If there are any ongoing FOTA Firmware updates, they will be finished normally, but the new updates won't start.</p>
+<h2 id="manage-groups">Manage groups<a class="headerlink" href="#manage-groups" title="Permanent link">#</a></h2>
+<p>You can manage groups of devices according to your preferences. 
+<img alt="Manage groups" src="../images/Manage_group_dashboard.png" /></p>
 <ol>
-<li>
-<p>In the Coiote IoT Device Management platform, go to <a href="https://eu.iot.avsystem.cloud/ui/device/inventory"><strong>Device Inventory</strong></a>.</p>
-</li>
-<li>
-<p>Select the device you want to update by clicking on its endpoint name.</p>
-</li>
-<li>
-<p>Go to the <strong>Data model</strong> tab to validate if the Firmware Update Object <code>/33629</code> is present. If so, the Object is supported by the LwM2M Client.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Each <strong>Object Instance</strong> represents a component of the device's firmware which can be updated. Click the Object Instances of Object <code>/33629</code> to see what components can be updated.</p>
-</div>
-<p><img alt="Firmware update object" src="../images/object-33629-instance0.png" /></p>
-</li>
-<li>
-<p>Go to the <strong>Firmware update</strong> tab.</p>
-</li>
-<li>
-<p>Click the <strong>Update Firmware</strong> button.</p>
-<p><img alt="Update Firmware Tab" src="../images/firmware-update-tab.png" /></p>
-</li>
-<li>
-<p>Select <strong>Multi-component Firmware Update</strong>.</p>
-<p><img alt="Multi-Component Firmware Update" src="../images/multi-component.png" /></p>
-</li>
-<li>
-<p>Select the components you would like to update, e.g. modem, application or bootloader.</p>
-<p><img alt="Select component" src="../images/select-component.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this example, the modem firmware of the nRF9160 SiP is being updated using the delta update file: <code>mfw_nrf9160_update_from_1.3.3_to_1.3.4.bin</code> which is provided by <a href="https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download?lang=en#infotabs">Nordic</a>.</p>
-</div>
-</li>
-<li>
-<p>Upload the <strong>firmware image</strong>.</p>
-<p><img alt="Upload Firmware Image" src="../images/upload.png" /></p>
-</li>
-<li>
-<p>Choose between <strong>Pull</strong> and <strong>Push</strong>:</p>
-<ul>
-<li>
-<p><strong>Pull method</strong> (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it.</p>
-</li>
-<li>
-<p><strong>Push method</strong>: The LwM2M Server pushes the firmware file to the device.</p>
-</li>
+<li>In the left-side panel, go to <strong>Device inventory</strong>.</li>
+<li>Select devices that you want to carry out actions on. </li>
+<li>Click <strong>Actions</strong> and choose the action that you want to execute.<ul>
+<li>To add selected devices to a group, click <strong>Add to group</strong> and specify your preferences in the dialog window.</li>
+<li>To remove devices from a group, click <strong>Remove from group</strong> and follow the instruction in the dialog window.</li>
+<li>To change a domain, click <strong>Change domain</strong> and follow the instruction in the dialog window.</li>
+<li>To permanently delete devices, click <strong>Delete</strong>. You won't be able to recover deleted devices.</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><strong>Pull</strong> supports the following <strong>transport types</strong>:</p>
-<ul>
-<li><code>CoAP</code> or <code>CoAPs</code> over <code>UDP</code></li>
-<li><code>CoAP</code> or <code>CoAPs</code> over <code>TCP</code></li>
-<li><code>HTTP</code> or <code>HTTPs</code></li>
-</ul>
-<p><strong>Push</strong> transmits the firmware over the same transport type as is used for device management, which is <code>CoAPs</code> over <code>UDP</code> by default.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Which transport protocol to choose?</p>
-<p>Downloads using <code>CoAP(s)</code> over <code>UDP</code> tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.</p>
-<p>Choosing <code>CoAP(s)</code> over <code>TCP</code> or <code>HTTP(s)</code> usually results in faster download speeds. However, not every device supports these transport protocols.</p>
-</div>
-<p><img alt="Basic Firmware Update" src="../images/push-pull.png" /></p>
-</li>
-<li>
-<p>Click <strong>Schedule Update</strong> to trigger the Firmware Update process.</p>
 </li>
 </ol>
-<h2 id="download-upgrade-process">Download &amp; Upgrade Process<a class="headerlink" href="#download-upgrade-process" title="Permanent link">#</a></h2>
-<p>If the Firmware Update is scheduled successfully, the device starts <strong>downloading</strong> the firmware at the next practical opportunity. The actual firmware <strong>update</strong> starts once the integrity and authenticity of the firmware image has been validated by the LwM2M Client.</p>
-<p><img alt="Upgrading" src="../images/in-progress.png" /></p>
-<p>Once executed successfully, the status in the <strong>Update list</strong> panel changes to <code>Success</code>.</p>
-<p><img alt="Successful update" src="../images/success-multi.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>While the device is updating its firmware, it will deregister and reboot using the new firmware. This process may time several minutes.</p>
-<p><img alt="Deregistered while upgrading" src="../images/deregistered.png" /></p>
-</div>
-<h3 id="monitoring-the-update-process">Monitoring the update process<a class="headerlink" href="#monitoring-the-update-process" title="Permanent link">#</a></h3>
-<p>During the update process, the status of the firmware update can be monitored by reviewing the Resources <strong>State</strong> <code>/33629/*/3</code> and <strong>Update Results</strong> <code>/33629/*/5</code>.</p>
-<p>To find the Resources, select the <strong>Data model</strong> tab and open the <strong>Advanced Firmware Update Object</strong> <code>/33629</code>.</p>
-<p><img alt="Firmware upgraded" src="../images/object-33629-downloading.png" /></p>
-<p>If no errors occur, the update process follows this pattern:</p>
+<h2 id="add-fota-campaigns">Add FOTA campaigns<a class="headerlink" href="#add-fota-campaigns" title="Permanent link">#</a></h2>
 <ol>
-<li><strong>Downloading</strong> <code>state 1</code> &amp; <code>update result 0</code></li>
-<li><strong>Downloaded</strong> <code>state 2</code> &amp; <code>update result 0</code></li>
-<li><strong>Updating</strong> <code>state 3</code> &amp; <code>update result 0</code></li>
-<li><strong>Updated</strong> <code>state 0</code> &amp; <code>update result 1</code></li>
-</ol>
-<div class="admonition important">
-<p class="admonition-title">Update successful?</p>
-<p>Does the <strong>State</strong> <code>/33629/*/3</code> report <code>0</code> and the <strong>Update Results</strong> <code>/33629/*/5</code> report <code>1</code>? Congratulations! You've successfully updated the firmware of your device. 🎉</p>
+<li>To add FOTA campaign, go to <strong>Firmware Update</strong> &gt; <strong>FOTA campaigns</strong>.</li>
+<li>In the upper-right corner, click <strong>Add FOTA campaign</strong> &gt; <strong>Basic</strong>.</li>
+<li>
+<p>In the <strong>Basic data</strong> view, provide a campaign name, description of the firmware (optionally) and select FOTA configuration. 
+   <img alt="Domain selection" src="../images/Domains_selection.png" />    </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can choose between subordinate, superior or your own domain. If you select a configuration from a domain below yours, the devices included in the update will be limited to the devices under that sub-domain.</p>
 </div>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="https://avsystem.github.io/Anjay-doc/FirmwareUpdateTutorial/FU-AdvancedFirmwareUpdate.html">Anjay firmware update documentation</a></li>
-</ul>
+</li>
+<li>
+<p>In the preview section, verify the details before moving next.</p>
+</li>
+<li>To schedule campaign time, click <strong>Next</strong>. </li>
+<li>Specify campaign start and finish time by choosing the date and time. The campaign can last for up to 6 months.</li>
+<li>To proceed, click <strong>Next</strong>.</li>
+<li>In the <strong>Devices</strong> section, select target device type and device group. The table shows a list of affected devices with a corresponding status, endpoint name and the last time they were active. </li>
+<li>To go to the <strong>Summary</strong> section, click <strong>Next</strong>. </li>
+<li>
+<p>Once you review the details of your campaign, click <strong>Add FOTA campaign</strong>. </p>
+<p>If you fill in the details correctly, you will see the confirmation that your campaign has been added successfully.    </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For more information on adding devices to a group, see <a href="#manage-groups">Manage groups</a>.</p>
+</div>
+</li>
+</ol>
 
 <!-- Link to previous and/or next page -->
 
@@ -3755,7 +3579,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../firmware_update/"
+      href="../Single_update/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -3767,7 +3591,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Basic firmware update
+          Single update
         </div>
       </div>
     </a>
@@ -3805,7 +3629,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
     
   </small>
 </div>
@@ -3828,7 +3652,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../firmware_update/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../Single_update/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -3837,7 +3661,7 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Basic firmware update
+                  Single update
                 </div>
               </div>
             </a>

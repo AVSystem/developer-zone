@@ -1021,8 +1021,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/firmware_update/" class="md-nav__link">
-        Basic firmware update
+      <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -1033,8 +1033,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/multi_firmware_update/" class="md-nav__link">
-        Multi-component firmware update
+      <a href="../../../Coiote_IoT_DM/Single_update/" class="md-nav__link">
+        Single update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
+        Campaigns
       </a>
     </li>
   
@@ -3496,13 +3508,15 @@
 <p>The value of <code>timeRangeStart</code> is exclusive and the value of <code>timeRangeEnd</code> is inclusive. </p>
 </div>
 <p>The following is an example of the request, where you want to get monitoring data of the device with id “device123” about the temperature sensor (alias temperature), gathered in the time period starting from 2022-12-01T08:05:35Z.</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">cURL</label><label for="__tabbed_1_2">Coiote Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl -X GET \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 &quot;https://#HOSTNAME/api/coiotedm/v3/deviceMonitoring/data/device123/alias/temperature?timeRangeStart=2022-12-01T08:05:35Z&quot;
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Coiote Python</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
@@ -3521,17 +3535,20 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <h2 id="retrieve-monitoring-data-from-the-device-using-its-resource-lwm2m-url">Retrieve monitoring data from the device using its resource LwM2M URL<a class="headerlink" href="#retrieve-monitoring-data-from-the-device-using-its-resource-lwm2m-url" title="Permanent link">#</a></h2>
 <p>Send a <code>GET</code> request to the endpoint <code>/deviceMonitoring/data/{deviceId}/resourceUrl/{lwm2mUrl}</code>. You have to provide the path parameters <code>deviceId</code> and <code>lwm2mUrl</code>, and the query parameter <code>timeRangeStart</code>. You can also use two additional parameters: <code>timeRangeEnd</code> and <code>limit</code>. To provide the <code>lwm2mUrl</code> parameter use the format “/x/y/”' with numeric values. </p>
 <p>The following is an example of the request, where you want to get monitoring data of the device with id “device123” about the temperature sensor (path /3303/0/5700), gathered in the time period starting from 2022-12-01T08:05:35Z.</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">Coiote Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl -X GET \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 &quot;https://#HOSTNAME/api/coiotedm/v3/deviceMonitoring/data/device123/resourceUrl//3303/0/5700?timeRangeStart=2022-12-01T08:05:35Z&quot;
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Coiote Python</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
@@ -3548,6 +3565,7 @@
     <span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>

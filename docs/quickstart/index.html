@@ -1149,8 +1149,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Coiote_IoT_DM/firmware_update/" class="md-nav__link">
-        Basic firmware update
+      <a href="../Coiote_IoT_DM/Configurations/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -1161,8 +1161,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../Coiote_IoT_DM/multi_firmware_update/" class="md-nav__link">
-        Multi-component firmware update
+      <a href="../Coiote_IoT_DM/Single_update/" class="md-nav__link">
+        Single update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
+        Campaigns
       </a>
     </li>
   
@@ -3649,7 +3661,9 @@
 <p>For more information about the Anjay LwM2M Client, visit the <a href="https://avsystem.github.io/Anjay-doc/index.html" target="_blank"><strong>Anjay Library Documentation</strong></a>.</p>
 </div>
 <h3 id="compile-the-anjay-demo-client">Compile the Anjay demo client:<a class="headerlink" href="#compile-the-anjay-demo-client" title="Permanent link">#</a></h3>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Linux</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label><label for="__tabbed_1_2">Mac</label><label for="__tabbed_1_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Open up your command line interface and install the required dependencies:</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install git build-essential cmake libmbedtls-dev zlib1g-dev
 </code></pre></div>
@@ -3665,7 +3679,7 @@
     &amp;&amp; make -j
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Mac</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Open up your terminal and install the required dependencies using <a href="https://brew.sh/">Homebrew</a>:</p>
 <div class="highlight"><pre><span></span><code>brew install cmake mbedtls
 </code></pre></div>
@@ -3681,7 +3695,7 @@
     &amp;&amp; make -j
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Windows</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p><strong>Install the required dependencies</strong></p>
 <ol>
 <li>
@@ -3705,6 +3719,7 @@
 <div class="highlight"><pre><span></span><code>cmake -G&quot;MSYS Makefiles&quot; -DDTLS_BACKEND=&quot;mbedtls&quot; .
 make
 </code></pre></div>
+</div>
 </div>
 </div>
 <h2 id="add-a-new-device-in-coiote-iot-dm">Add a new device in Coiote IoT DM<a class="headerlink" href="#add-a-new-device-in-coiote-iot-dm" title="Permanent link">#</a></h2>

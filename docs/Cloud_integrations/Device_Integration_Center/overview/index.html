@@ -1021,8 +1021,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/firmware_update/" class="md-nav__link">
-        Basic firmware update
+      <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -1033,8 +1033,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/multi_firmware_update/" class="md-nav__link">
-        Multi-component firmware update
+      <a href="../../../Coiote_IoT_DM/Single_update/" class="md-nav__link">
+        Single update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
+        Campaigns
       </a>
     </li>
   
@@ -3533,7 +3545,9 @@ almost all available services, gathering your data according to your preferences
 <p><img alt="Wizard Form Body" src="../images/wizard-form-body.webp" width="49%" /> <img alt="Wizard Preview" src="../images/wizard-preview.webp" width="49%" /></p>
 <p>You can modify a body template as long as it is proper <code>JSON</code>. If you want a different content type, you can use the <code>Text</code>
 option that has no validation at all.</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">JSON</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">JSON</label><label for="__tabbed_1_2">TEXT</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$version&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="kc">t</span><span class="err">imes</span><span class="kc">ta</span><span class="err">mp</span><span class="p">,</span>
@@ -3544,7 +3558,7 @@ option that has no validation at all.</p>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">TEXT</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>version: $version
 timestamp: $timestamp
 endpointName: $endpointName
@@ -3554,12 +3568,15 @@ value: $value
 </code></pre></div>
 </div>
 </div>
+</div>
 <p>Note that there are values starting with <code>$</code> e.g. <code>$endpointName</code>. These are called variables.</p>
 <h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h2>
 <p>Variables allow for using some device context in a payload. When sending events, variables are replaced 
 with actual values e.g. <code>$endpointName</code> with <code>test-device-47193512895</code>. There are several variables that can be used,
 they are predefined. If a variable does not exist e.g. <code>$notExisting</code>, then it is sent as a normal text.</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Device Lifecycle Variables</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Device Lifecycle Variables</label><label for="__tabbed_2_2">Device Telemetry Variables</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ul>
 <li><code>version</code> <em>(type: string)</em> - the version of changes (such as new variables) to the mechanism.</li>
 <li><code>timestamp</code> <em>(type: long)</em> - the time of occurrence of the event in milliseconds.</li>
@@ -3576,7 +3593,7 @@ they are predefined. If a variable does not exist e.g. <code>$notExisting</code>
 </li>
 </ul>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Device Telemetry Variables</label><div class="tabbed-content">
+<div class="tabbed-block">
 <ul>
 <li><code>version</code> <em>(type: string)</em> - the version of changes (such as new variables) to the mechanism.</li>
 <li><code>timestamp</code> <em>(type: long)</em> - the time of occurrence of the event in milliseconds.</li>
@@ -3594,6 +3611,7 @@ they are predefined. If a variable does not exist e.g. <code>$notExisting</code>
 </ul>
 </div>
 </div>
+</div>
 <p>Available variables differs from context where they are used. For detailed information, see <a href="#headers">headers</a> and <a href="#body">body</a>.</p>
 <h3 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">#</a></h3>
 <p>Variables can be used in the <code>Header value</code> field. You can enter any header value e.g. some token. 
@@ -3604,7 +3622,9 @@ However, in the <code>abc</code> mode, variables can also be used with the help 
 <p>Variables cannot be used in the header key. Thus, any <code>$</code> references defined in the <code>Header key</code> will not be considered.</p>
 </div>
 <p><img alt="Custom Headers Dialog" src="../images/custom-headers-dialog.webp" width="80%" /></p>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Available lifecycle variables</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Available lifecycle variables</label><label for="__tabbed_3_2">Available telemetry variables</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>For device lifecycle events, there are the following variables:</p>
 <ul>
 <li><code>version</code></li>
@@ -3615,7 +3635,7 @@ However, in the <code>abc</code> mode, variables can also be used with the help 
 <li><code>subtype</code></li>
 </ul>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Available telemetry variables</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>For device telemetry events, there are the following variables:</p>
 <ul>
 <li><code>version</code></li>
@@ -3624,6 +3644,7 @@ However, in the <code>abc</code> mode, variables can also be used with the help 
 <li><code>domainId</code></li>
 <li><code>domainName</code></li>
 </ul>
+</div>
 </div>
 </div>
 <h3 id="forbidden-headers">Forbidden headers<a class="headerlink" href="#forbidden-headers" title="Permanent link">#</a></h3>
@@ -3644,7 +3665,9 @@ The following list includes headers that are restricted and can't be modified:</
 <h3 id="body">Body<a class="headerlink" href="#body" title="Permanent link">#</a></h3>
 <p>As mentioned in the <a href="#templating">Templating</a> section, you can adjust the look of your payload.
 If you want to return to the default template, click <strong>Return to default</strong>.</p>
-<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Webhook body</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Webhook body</label><label for="__tabbed_4_2">Kafka body</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>In the webhook integration, you can choose between two <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type">content types</a>:</p>
 <ul>
 <li><code>JSON</code> - It enforces <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">the JSON format</a>.
@@ -3652,12 +3675,15 @@ If you want to return to the default template, click <strong>Return to default</
 <li><code>TEXT</code> - In this case there is no format validation.</li>
 </ul>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Kafka body</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>For integration with Kafka, only the <code>JSON</code> content type is allowed.</p>
 </div>
 </div>
+</div>
 <p><img alt="Body Dialog" src="../images/body-dialog.webp" width="80%" /></p>
-<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Available lifecycle variables</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Available lifecycle variables</label><label for="__tabbed_5_2">Available telemetry variables</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>For device lifecycle events, there are the following variables:</p>
 <ul>
 <li><code>version</code></li>
@@ -3669,7 +3695,7 @@ If you want to return to the default template, click <strong>Return to default</
 <li><code>metadata</code></li>
 </ul>
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Available telemetry variables</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>For device telemetry events, there are the following variables:</p>
 <ul>
 <li><code>version</code></li>
@@ -3680,6 +3706,7 @@ If you want to return to the default template, click <strong>Return to default</
 <li><code>url</code></li>
 <li><code>value</code></li>
 </ul>
+</div>
 </div>
 </div>
 

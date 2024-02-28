@@ -1021,8 +1021,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/firmware_update/" class="md-nav__link">
-        Basic firmware update
+      <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -1033,8 +1033,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Coiote_IoT_DM/multi_firmware_update/" class="md-nav__link">
-        Multi-component firmware update
+      <a href="../../../Coiote_IoT_DM/Single_update/" class="md-nav__link">
+        Single update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
+        Campaigns
       </a>
     </li>
   
@@ -3473,7 +3485,9 @@
 </ul>
 <h3 id="step-1-create-a-domain">Step 1: Create a domain<a class="headerlink" href="#step-1-create-a-domain" title="Permanent link">#</a></h3>
 <p>To create a domain, send a <code>POST</code> request to the endpoint <code>/domains</code>. Customize the data in the request body with the necessary parameters for creating a domain: the domain identity and description. Domain identity consists of the root domain name followed by any number of sub-domain names, and must start and end with ”/”, for example: “/sub_domain1/sub_domain2/”. The following is an example of the request:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">cURL</label><label for="__tabbed_1_2">Coiote Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;Content-Type: application/json&quot; \
@@ -3481,7 +3495,7 @@
 https://#HOSTNAME/api/coiotedm/v3/domains
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Coiote Python</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.domains</span> <span class="kn">import</span> <span class="n">Domain</span>
 
@@ -3500,6 +3514,7 @@ https://#HOSTNAME/api/coiotedm/v3/domains
 </code></pre></div>
 </div>
 </div>
+</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <h3 id="step-2-add-users-to-your-domain">Step 2: Add users to your domain<a class="headerlink" href="#step-2-add-users-to-your-domain" title="Permanent link">#</a></h3>
 <p>To add users, send a <code>POST</code> request to the endpoint <code>/users</code>. Specify your domain in the path parameter. In the request body provide a user object. You have to include the following information:</p>
@@ -3514,7 +3529,9 @@ https://#HOSTNAME/api/coiotedm/v3/domains
 <li>tosAccepted - set true to create a user with already accepted Terms of Service</li>
 </ul>
 <p>The following is an example of the request:</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">Coiote Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;Content-Type: application/json&quot; \
@@ -3522,7 +3539,7 @@ https://#HOSTNAME/api/coiotedm/v3/domains
 https://#HOSTNAME/api/coiotedm/v3/users
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Coiote Python</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.users</span> <span class="kn">import</span> <span class="n">UserCreateRequest</span>
 
@@ -3546,6 +3563,7 @@ https://#HOSTNAME/api/coiotedm/v3/users
     <span class="n">client</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">create_one</span><span class="p">(</span><span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="p">)</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
