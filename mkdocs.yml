@@ -88,9 +88,9 @@ nav:
             - 'Device center': 'Coiote_IoT_DM/Device_Center.md'
             - 'Data visualization': 'Coiote_IoT_DM/Visualize_data.md'
             - 'Firmware update':
-                - Configurations: 'Coiote_IoT_DM/Configurations.md'
+                - FOTA Configurations: 'Coiote_IoT_DM/Configurations.md'
                 - Single update: 'Coiote_IoT_DM/Single_update.md'
-                - Campaigns: 'Coiote_IoT_DM/Campaigns.md'
+                - FOTA Campaigns: 'Coiote_IoT_DM/Campaigns.md'
             - 'Device tests':
                 - 'Coiote_IoT_DM/Device_tests/Overview.md'
                 - 'Coiote_IoT_DM/Device_tests/Getting_started.md'
