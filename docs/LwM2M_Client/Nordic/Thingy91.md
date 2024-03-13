@@ -21,7 +21,7 @@ To get the latest binary file and flash the board:
 
 ### Start development using samples
 !!! Note
-    If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+    If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connect to the LwM2M Server](#connect-to-the-lwm2m-server).
 
 #### Part 1: Get Zephyr and Python dependencies
 

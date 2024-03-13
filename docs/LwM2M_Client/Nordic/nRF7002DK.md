@@ -19,11 +19,11 @@ To get the latest binary file and flash the board:
 {{ nRF7002DK_binary_step }}
 {{ nRF7002DK_flash_downloaded_binary_step }}
 
-Go to the [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+Go to the [Connect to the LwM2M Server](#connect-to-the-lwm2m-server).
 
 ### Start development using samples
 !!! Note
-    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connecting to the LwM2M Server](#connecting-to-the-lwm2m-server).
+    This step is optional. If you've gone through the [Use an already built binary](#use-an-already-built-binary) step, you can jump to [Connect to the LwM2M Server](#connect-to-the-lwm2m-server).
 
 
 #### Part 1: Getting Zephyr and Python dependencies
@@ -54,7 +54,7 @@ Enter the command line interface on your machine and change the directory to the
     west flash
     ```
 
-## Connecting to the LwM2M Server
+## Connect to the LwM2M Server
 
 To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 

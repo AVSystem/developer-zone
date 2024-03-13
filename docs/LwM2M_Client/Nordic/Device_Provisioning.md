@@ -136,7 +136,7 @@ Now we will show how to provision the device using certificates. This method is 
     !!!important
         By default the script generates certificates for the device using P-384 elliptic curve.
 
-4. Connecting device to {{ coiote_short_name }}
+4. Connect device to {{ coiote_short_name }}
 
     The certificates for the device need to be uploaded by hand. To do this fallow those steps:
 
