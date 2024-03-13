@@ -1022,7 +1022,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
-        Configurations
+        FOTA Configurations
       </a>
     </li>
   
@@ -1046,7 +1046,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
-        Campaigns
+        FOTA Campaigns
       </a>
     </li>
   
@@ -3753,9 +3753,7 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">cURL</label><label for="__tabbed_1_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &#39;Authorization: Bearer YOUR_TOKEN&#39; \
 -H &#39;Content-Type: application/json&#39; \
@@ -3763,7 +3761,7 @@
 &#39;https://YOUR_HOSTNAME/api/coiotedm/v3/tasks/configure/api-test-device&#39;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.tasks</span> <span class="kn">import</span> <span class="n">ConfigurationTaskDefinition</span><span class="p">,</span> <span class="n">DeviceOperation</span><span class="p">,</span> <span class="n">ReadOperation</span>
 
@@ -3788,7 +3786,6 @@
 </code></pre></div>
 </div>
 </div>
-</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <p>In the response body you will get the task ID, for example: <code>d:yV3cYCNpbGpNuVWpFo9eHlQHJZIghQ8emN5z9g:1</code></p>
 <p>Next, send a <code>GET</code> request to the endpoint <code>/taskReports/{taskId}/{deviceId}</code> to get the task report. Include the ID of the task you’ve created in the previous step and the ID of your device as the path parameters.</p>
@@ -3802,16 +3799,14 @@
 </code></pre></div>
 </div>
 <p>The following is an example of the request:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X GET  \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;accept: application/json&quot; \
 &#39;https://#HOSTNAME/api/coiotedm/v3/taskReports/d%3AyV3cYCNpbGpNuVWpFo9eHlQHJZIghQ8emN5z9g%3A1/api-test-device&#39; 
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.tasks</span> <span class="kn">import</span> <span class="n">ConfigurationTaskDefinition</span><span class="p">,</span> <span class="n">DeviceOperation</span><span class="p">,</span> <span class="n">ReadOperation</span>
 
@@ -3826,7 +3821,6 @@
         <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;d:yV3cYCNpbGpNuVWpFo9eHlQHJZIghQ8emN5z9g:1&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
@@ -3863,9 +3857,7 @@
 <span class="w">  </span><span class="nt">&quot;expirationTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE_DAY&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">cURL</label><label for="__tabbed_3_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST \ 
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;Content-Type: application/json&quot; \
@@ -3873,7 +3865,7 @@
 &quot;https://#HOSTNAME/api/coiotedm/v3/resources&quot;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.resources</span> <span class="kn">import</span> <span class="n">InternalLocation</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">ResourceCategory</span><span class="p">,</span> <span class="n">ResourceExpirationTime</span>
 
@@ -3894,7 +3886,6 @@
     <span class="n">client</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">create_resource</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
@@ -3922,9 +3913,7 @@
 <span class="w">  </span><span class="nt">&quot;visibleForSubtenants&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">cURL</label><label for="__tabbed_4_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &quot;accept: application/json&quot; \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
@@ -3933,7 +3922,7 @@
 &quot;https://#HOSTNAME/api/coiotedm/v3/resources&quot; 
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.resources</span> <span class="kn">import</span> <span class="n">DeviceDirectGroup</span><span class="p">,</span> <span class="n">InternalLocation</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">ResourceCategory</span><span class="p">,</span> <span class="n">ResourceExpirationTime</span>
 
@@ -3961,7 +3950,6 @@
 </code></pre></div>
 </div>
 </div>
-</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <p>You can find all the request body parameters with possible values in the API reference for this endpoint.</p>
 <h3 id="upload-the-upgrade-file-to-the-resource">Upload the upgrade file to the resource<a class="headerlink" href="#upload-the-upgrade-file-to-the-resource" title="Permanent link">#</a></h3>
@@ -3971,9 +3959,7 @@
 <p>When using cURL from the example below, make sure you are in the same directory as the firmware file that you want to upload.</p>
 </div>
 <p>Specify the content type header "Content-Type: application/octet-stream". The following is an example of the request:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">cURL</label><label for="__tabbed_5_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X PUT \
 -H &quot;Authorization: Bearer #TOKEN&quot; \
 -H &quot;accept: application/json&quot; \
@@ -3982,7 +3968,7 @@
 &quot;https://#HOSTNAME/api/coiotedm/v3/resources/demo-file-resource-id/data&quot;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
 <span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.resources</span> <span class="kn">import</span> <span class="n">Base64FileData</span>
@@ -4003,23 +3989,20 @@
 </code></pre></div>
 </div>
 </div>
-</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <h3 id="create-the-fota-task">Create the FOTA task<a class="headerlink" href="#create-the-fota-task" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>FOTA task for a single device</strong></li>
 </ul>
 <p>To create an upgrade task for a single device send a <code>POST</code> request to the endpoint <code>/tasks/upgrade/{deviceId}/{fileResourceId}</code> with your device ID and the ID of the created resource as the path parameters. Use default values for the query parameters or adjust them if needed. You can find the description of additional parameters in the API reference for this endpoint. The following is an example of the request with default parameters:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">cURL</label><label for="__tabbed_6_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST  \
 -H &quot;accept: application/json&quot; \
 -H &quot;Authorization: Bearer TOKEN” \
 &quot;https://#HOSTNAME/api/coiotedm/v3/tasks/upgrade/api-test-device/demo-file-resource-id?transferMethod=Pull&amp;transferProtocol=HTTP&amp;timeout=20m&amp;useQuota=true&amp;upgradeStrategy=WithoutObservations&amp;blocking=true&amp;useCacheForInitialStateRead=false&amp;checkDeliveryAndProtocol=true&amp;resumeAfterDownlinkFailure=false&amp;useObservation=false&amp;extendLifetime=true&amp;executeImmediately=false&quot;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.tasks</span> <span class="kn">import</span> <span class="n">TransferMethod</span><span class="p">,</span> <span class="n">TransferProtocol</span><span class="p">,</span> <span class="n">UpgradeStrategy</span>
 
@@ -4047,7 +4030,6 @@
     <span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
@@ -4115,9 +4097,7 @@ Send a <code>POST</code> request to the endpoint  <code>/tasksFromTemplates/grou
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">cURL</label><label for="__tabbed_7_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X POST \
 -H &quot;Authorization: Bearer TOKEN” \
 -H &quot;accept: application/json&quot; \
@@ -4126,7 +4106,7 @@ Send a <code>POST</code> request to the endpoint  <code>/tasksFromTemplates/grou
 &quot;https://#HOSTNAME/api/coiotedm/v3/tasksFromTemplates/group/root.mt.demo.api-test&quot;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 <span class="kn">from</span> <span class="nn">coiote.v3.model.task_templates</span> <span class="kn">import</span> <span class="n">TaskTemplateConfig</span><span class="p">,</span> <span class="n">TaskTemplateInvocation</span>
 
@@ -4201,23 +4181,20 @@ Send a <code>POST</code> request to the endpoint  <code>/tasksFromTemplates/grou
 </code></pre></div>
 </div>
 </div>
-</div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
 <p>In the response body, you will get the task ID that will be used in the next steps, for example <code>g:root.mt.demo.api-test:1</code>.</p>
 <h2 id="step-3-check-if-the-firmware-upgrade-was-successful">Step 3: Check if the firmware upgrade was successful<a class="headerlink" href="#step-3-check-if-the-firmware-upgrade-was-successful" title="Permanent link">#</a></h2>
 <h3 id="firmware-upgrade-status-for-a-single-device">Firmware upgrade status for a single device<a class="headerlink" href="#firmware-upgrade-status-for-a-single-device" title="Permanent link">#</a></h3>
 <p>To check the firmware upgrade status for a single device send a <code>GET</code> request to the endpoint <code>/taskReports/{taskId}/{deviceId}</code> to get the task report.
 Provide the task and device IDs as the path parameters. The following is an example of the request:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">cURL</label><label for="__tabbed_8_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X GET \
 -H &quot;Authorization: Bearer TOKEN” \
 -H &quot;accept: application/json&quot; \
 &quot;https://#HOSTNAME/api/coiotedm/v3/taskReports/d%3AyV3cYCNpbGpNuVWpFo9eHlQHJZIghQ8emN5z9g%3A2/api-test-device&quot;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 
 <span class="n">coiote_auth</span> <span class="o">=</span> <span class="s2">&quot;#TOKEN&quot;</span>
@@ -4232,7 +4209,6 @@ Provide the task and device IDs as the path parameters. The following is an exam
     <span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>
@@ -4294,16 +4270,14 @@ Provide the task and device IDs as the path parameters. The following is an exam
 </code></pre></div>
 <h3 id="task-report-statistics-for-a-group">Task report statistics for a group<a class="headerlink" href="#task-report-statistics-for-a-group" title="Permanent link">#</a></h3>
 <p>To get the overall task report statistics for a group send a <code>GET</code> request to the endpoint <code>/taskReports/summary</code>. Provide the ID of the task you created in the previous steps as the query parameter <code>taskId</code>. The following is an example of the request:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">cURL</label><label for="__tabbed_9_2">Coiote Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl -X GET \
 -H &quot;Authorization: Bearer TOKEN” \
 -H &quot;accept: application/json&quot; \
 &quot;https://#HOSTNAME/api/coiotedm/v3/taskReports/summary?taskId=g%3Aroot.mt.demo.api-test%3A1&quot;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Coiote Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">coiote.client</span> <span class="kn">import</span> <span class="n">Coiote</span>
 
 
@@ -4315,7 +4289,6 @@ Provide the task and device IDs as the path parameters. The following is an exam
 <span class="nb">print</span><span class="p">(</span>  <span class="n">client</span><span class="o">.</span><span class="n">task_reports</span><span class="o">.</span><span class="n">get_task_summary</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;g:root.mt.demo.api-test:1&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-</div>
 </div>
 </div>
 <p>Replace <code>#TOKEN</code> with your actual access token and <code>#HOSTNAME</code> with your actual hostname.</p>

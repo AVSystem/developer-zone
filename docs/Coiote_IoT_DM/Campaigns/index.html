@@ -17,7 +17,7 @@
 
     
       
-        <title>Campaigns - IoT Developer Zone</title>
+        <title>FOTA Campaigns - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#campaigns" class="md-skip">
+        <a href="#fota-campaigns" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Campaigns
+              FOTA Campaigns
             
           </span>
         </div>
@@ -1026,7 +1026,7 @@
   
     <li class="md-nav__item">
       <a href="../Configurations/" class="md-nav__link">
-        Configurations
+        FOTA Configurations
       </a>
     </li>
   
@@ -1058,12 +1058,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Campaigns
+          FOTA Campaigns
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Campaigns
+        FOTA Campaigns
       </a>
       
         
@@ -3511,11 +3511,11 @@
 
 
 <!-- Markdown content -->
-<h1 id="campaigns">Campaigns<a class="headerlink" href="#campaigns" title="Permanent link">#</a></h1>
-<p>Firmware campaigns allows for updating a group of devices simultaneously. This feature enables configuration, activation, and tracking the Fleet FOTA campaign process. </p>
+<h1 id="fota-campaigns">FOTA Campaigns<a class="headerlink" href="#fota-campaigns" title="Permanent link">#</a></h1>
+<p>Firmware campaigns allows for updating a group of devices simultaneously. This feature enables configuration, activation, and tracking the Fleet FOTA campaign process.</p>
 <h2 id="fota-campaigns-dashboard">FOTA campaigns dashboard<a class="headerlink" href="#fota-campaigns-dashboard" title="Permanent link">#</a></h2>
 <p><img alt="FOTA campaigns dashboard" src="../images/FOTA_Campaigns_Dashboard.png" />
-The FOTA campaigns dashboard consists of a list of campaigns with the possibility to add or hide columns with: </p>
+The FOTA campaigns dashboard consists of a list of campaigns with the possibility to add or hide columns with:</p>
 <ul>
 <li><strong>Status</strong></li>
 <li><strong>Name</strong></li>
@@ -3532,9 +3532,9 @@ The FOTA campaigns dashboard consists of a list of campaigns with the possibilit
 <li><strong>Finished</strong> - The campaign ended.</li>
 <li><strong>Canceled</strong> - The Firmware configuration has been removed, as a result of which all the Firmware updates in this campaign are canceled.</li>
 <li><strong>Deactivated</strong> - The campaign is no longer active, as it was stopped while being in progress.</li>
-<li><strong>Scheduled</strong> - The start time for the campaign has been scheduled, but it hasn't started yet. </li>
+<li><strong>Scheduled</strong> - The start time for the campaign has been scheduled, but it hasn't started yet.</li>
 </ul>
-<p>The <strong>Settings</strong> icon allows for adjusting the table according to your preferences. If you want to search for specific campaigns, you can type the campaign name in the search bar or filter entities per status and domain. </p>
+<p>The <strong>Settings</strong> icon allows for adjusting the table according to your preferences. If you want to search for specific campaigns, you can type the campaign name in the search bar or filter entities per status and domain.</p>
 <p>In the dashboard view, by clicking the <strong>Actions</strong> icon &gt; <strong>Go to campaign details</strong>, you can preview details on the chosen campaign.
 <img alt="FOTA campaign details" src="../images/Firmware_Updates_On_Devices_dashboard.png" />
 The cards show Firmware update statuses and number of affected devices. The following statuses are possible:</p>
@@ -3550,11 +3550,11 @@ The cards show Firmware update statuses and number of affected devices. The foll
 <p>The <strong>Information</strong> tab consists of information on a chosen FOTA campaign and the used FOTA configuration.</p>
 <p>The left-side panel summarizes FOTA campaign information and allows for deactivating the campaign with no possibility to reactivate it. If there are any ongoing FOTA Firmware updates, they will be finished normally, but the new updates won't start.</p>
 <h2 id="manage-groups">Manage groups<a class="headerlink" href="#manage-groups" title="Permanent link">#</a></h2>
-<p>You can manage groups of devices according to your preferences. 
+<p>You can manage groups of devices according to your preferences.
 <img alt="Manage groups" src="../images/Manage_group_dashboard.png" /></p>
 <ol>
 <li>In the left-side panel, go to <strong>Device inventory</strong>.</li>
-<li>Select devices that you want to carry out actions on. </li>
+<li>Select devices that you want to carry out actions on.</li>
 <li>Click <strong>Actions</strong> and choose the action that you want to execute.<ul>
 <li>To add selected devices to a group, click <strong>Add to group</strong> and specify your preferences in the dialog window.</li>
 <li>To remove devices from a group, click <strong>Remove from group</strong> and follow the instruction in the dialog window.</li>
@@ -3568,8 +3568,8 @@ The cards show Firmware update statuses and number of affected devices. The foll
 <li>To add FOTA campaign, go to <strong>Firmware Update</strong> &gt; <strong>FOTA campaigns</strong>.</li>
 <li>In the upper-right corner, click <strong>Add FOTA campaign</strong> &gt; <strong>Basic</strong>.</li>
 <li>
-<p>In the <strong>Basic data</strong> view, provide a campaign name, description of the firmware (optionally) and select FOTA configuration. 
-   <img alt="Domain selection" src="../images/Domains_selection.png" />    </p>
+<p>In the <strong>Basic data</strong> view, provide a campaign name, description of the firmware (optionally) and select FOTA configuration.
+   <img alt="Domain selection" src="../images/Domains_selection.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>You can choose between subordinate, superior or your own domain. If you select a configuration from a domain below yours, the devices included in the update will be limited to the devices under that sub-domain.</p>
@@ -3578,14 +3578,14 @@ The cards show Firmware update statuses and number of affected devices. The foll
 <li>
 <p>In the preview section, verify the details before moving next.</p>
 </li>
-<li>To schedule campaign time, click <strong>Next</strong>. </li>
+<li>To schedule campaign time, click <strong>Next</strong>.</li>
 <li>Specify campaign start and finish time by choosing the date and time. The campaign can last for up to 6 months.</li>
 <li>To proceed, click <strong>Next</strong>.</li>
-<li>In the <strong>Devices</strong> section, select target device type and device group. The table shows a list of affected devices with a corresponding status, endpoint name and the last time they were active. </li>
-<li>To go to the <strong>Summary</strong> section, click <strong>Next</strong>. </li>
+<li>In the <strong>Devices</strong> section, select target device type and device group. The table shows a list of affected devices with a corresponding status, endpoint name and the last time they were active.</li>
+<li>To go to the <strong>Summary</strong> section, click <strong>Next</strong>.</li>
 <li>
-<p>Once you review the details of your campaign, click <strong>Add FOTA campaign</strong>. </p>
-<p>If you fill in the details correctly, you will see the confirmation that your campaign has been added successfully.    </p>
+<p>Once you review the details of your campaign, click <strong>Add FOTA campaign</strong>.</p>
+<p>If you fill in the details correctly, you will see the confirmation that your campaign has been added successfully.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>For more information on adding devices to a group, see <a href="#manage-groups">Manage groups</a>.</p>
@@ -3653,7 +3653,7 @@ The cards show Firmware update statuses and number of affected devices. The foll
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 12, 2024</span>
     
   </small>
 </div>

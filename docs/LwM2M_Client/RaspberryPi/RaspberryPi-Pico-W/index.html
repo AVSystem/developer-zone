@@ -1105,7 +1105,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
-        Configurations
+        FOTA Configurations
       </a>
     </li>
   
@@ -1129,7 +1129,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
-        Campaigns
+        FOTA Campaigns
       </a>
     </li>
   
@@ -3608,16 +3608,13 @@ mkdir build &amp;&amp; cd build
 </li>
 <li>
 <p>Build the project with <code>&lt;ssid&gt;</code> and <code>&lt;pass&gt;</code> replaced with your WIFI name and password respectively. LwM2M Client Endpoint Name is also configured by <code>&lt;endpoint_name&gt;</code> parameter. If you want to use the Pre-Shared Key option, you need to provide <code>&lt;identity&gt;</code> and <code>&lt;psk&gt;</code>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pre-Shared Key</label><label for="__tabbed_1_2">NoSec</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Pre-Shared Key</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID=&quot;&lt;ssid&gt;&quot; -DWIFI_PASSWORD=&quot;&lt;pass&gt;&quot; -DENDPOINT_NAME=&quot;&lt;endpoint_name&gt;&quot; -DPSK_IDENTITY=&quot;&lt;identity&gt;&quot; -DPSK_KEY=&quot;&lt;psk&gt;&quot; ..
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">NoSec</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>cmake -DCMAKE_BUILD_TYPE=Debug -DWIFI_SSID=&quot;&lt;ssid&gt;&quot; -DWIFI_PASSWORD=&quot;&lt;pass&gt;&quot; -DENDPOINT_NAME=&quot;&lt;endpoint_name&gt;&quot; ..
 </code></pre></div>
-</div>
 </div>
 </div>
 </li>

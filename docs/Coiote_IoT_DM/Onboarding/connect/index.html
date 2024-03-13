@@ -1085,7 +1085,7 @@
   
     <li class="md-nav__item">
       <a href="../../Configurations/" class="md-nav__link">
-        Configurations
+        FOTA Configurations
       </a>
     </li>
   
@@ -1109,7 +1109,7 @@
   
     <li class="md-nav__item">
       <a href="../../Campaigns/" class="md-nav__link">
-        Campaigns
+        FOTA Campaigns
       </a>
     </li>
   
@@ -3597,9 +3597,7 @@
 <li><strong>NoSec mode</strong> provides no security and is intended for testing and development purposes only.</li>
 </ul>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>Pre-Shared Key</strong> (PSK)</label><label for="__tabbed_1_2"><strong>Certificate</strong></label><label for="__tabbed_1_3"><strong>NoSec</strong></label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1"><strong>Pre-Shared Key</strong> (PSK)</label><div class="tabbed-content">
 <p>Authorize your device using a pre-shared key. To use this option, provide the following:</p>
 <ul>
 <li><strong>Key identity</strong> - Define the name that the device will use during the DTLS handshake. The Key identity can be equal to the LwM2M device endpoint name.</li>
@@ -3607,7 +3605,7 @@
 </ul>
 <hr />
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2"><strong>Certificate</strong></label><div class="tabbed-content">
 <p>Secure the device-server communication with a certificate:</p>
 <ul>
 <li>Select <strong>Use a previously uploaded certificate</strong> if you have already uploaded a certificate to the platform using the <strong>DTLS/TLS Certificates</strong> panel.</li>
@@ -3619,10 +3617,9 @@
 </div>
 <hr />
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3"><strong>NoSec</strong></label><div class="tabbed-content">
 <p>Use the device with no security established for the device-server communication. Using this mode is not recommended except for testing purposes.</p>
 <hr />
-</div>
 </div>
 </div>
 <h2 id="useful-resources">Useful resources<a class="headerlink" href="#useful-resources" title="Permanent link">#</a></h2>

@@ -1022,7 +1022,7 @@
   
     <li class="md-nav__item">
       <a href="../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
-        Configurations
+        FOTA Configurations
       </a>
     </li>
   
@@ -1046,7 +1046,7 @@
   
     <li class="md-nav__item">
       <a href="../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
-        Campaigns
+        FOTA Campaigns
       </a>
     </li>
   
@@ -3919,9 +3919,7 @@ You should be able to see a default value reported in the command-line terminal.
 </li>
 <li>
 <p>In home directory, create the file <code>~/button_object_forwarder.py</code> and paste the following into it:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SenseHat</label><label for="__tabbed_1_2">GrovePi</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">SenseHat</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>  from sense_hat import SenseHat
   from time import sleep
   from fsdm import KvStore
@@ -3961,7 +3959,7 @@ You should be able to see a default value reported in the command-line terminal.
     sense.clear()
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">GrovePi</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>  from time import sleep
   import grovepi
   from fsdm import KvStore
@@ -4000,7 +3998,6 @@ You should be able to see a default value reported in the command-line terminal.
       except IOError:
           print(&quot;Error&quot;)
 </code></pre></div>
-</div>
 </div>
 </div>
 </li>

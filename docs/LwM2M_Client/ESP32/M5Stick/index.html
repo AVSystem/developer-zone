@@ -1126,7 +1126,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
-        Configurations
+        FOTA Configurations
       </a>
     </li>
   
@@ -1150,7 +1150,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
-        Campaigns
+        FOTA Campaigns
       </a>
     </li>
   
@@ -3651,18 +3651,15 @@ wifi_inter_en,data,u8,0
 <p>Open a command line interface, go to your project directory, and generate the NVS partition:</p>
 </li>
 </ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label><label for="__tabbed_1_2">Windows</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Linux</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>pip3 install future cryptography
 python3 nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Windows</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>pip3 install future cryptography
 python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 </code></pre></div>
-</div>
 </div>
 </div>
 <p><img alt="Client configuration" src="../images/nvs_config.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Client configuration" /></p>
@@ -3698,45 +3695,36 @@ python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 <p>Flash the board:</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip<p>Before flashing the device you should erase the flash first to make sure you have correct settings:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux</label><label for="__tabbed_2_2">Windows</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Linux</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>esptool.py erase_flash
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Windows</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>esptool erase_flash
 </code></pre></div>
 </div>
 </div>
-</div>
 </p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Linux</label><label for="__tabbed_3_2">Windows</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Linux</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>esptool.py -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Windows</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>esptool -b 750000 --chip esp32 write_flash 0x0000 m5stickc-plus.bin
 </code></pre></div>
-</div>
 </div>
 </div>
 </li>
 <li>
 <p>Flash the NVS partition binary:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Linux</label><label for="__tabbed_4_2">Windows</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Linux</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>esptool.py -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Windows</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>esptool -b 750000 --chip esp32 write_flash 0x9000 nvs_config.bin
 </code></pre></div>
-</div>
 </div>
 </div>
 </li>

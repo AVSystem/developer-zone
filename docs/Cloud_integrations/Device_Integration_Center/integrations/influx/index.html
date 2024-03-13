@@ -1022,7 +1022,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../Coiote_IoT_DM/Configurations/" class="md-nav__link">
-        Configurations
+        FOTA Configurations
       </a>
     </li>
   
@@ -1046,7 +1046,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../Coiote_IoT_DM/Campaigns/" class="md-nav__link">
-        Campaigns
+        FOTA Campaigns
       </a>
     </li>
   
@@ -3712,22 +3712,19 @@ value resources to be of string type. Therefore to create e.g. diagrams, you nee
 </li>
 <li>
 <p>Add the following query:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Telemetry events</label><label for="__tabbed_1_2">Device events</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Telemetry events</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>SELECT *
 FROM &quot;telemetryEvent&quot;
 WHERE
 time &gt;= now() - interval &#39;1 hour&#39;
 </code></pre></div>
 </div>
-<div class="tabbed-block">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Device events</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>SELECT *
 FROM &quot;deviceEvent&quot;
 WHERE
 time &gt;= now() - interval &#39;1 hour&#39;
 </code></pre></div>
-</div>
 </div>
 </div>
 </li>
