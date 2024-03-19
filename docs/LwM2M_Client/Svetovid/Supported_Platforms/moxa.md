@@ -1,0 +1,278 @@
+# moxa
+
+The ``moxa`` target is intended for [Moxa](https://www.moxa.com/) industrial
+devices based on ARM Debian.
+
+## Supported hardware
+
+The officially supported device that was used for development and testing is
+[Moxa UC-2116-T-LX](https://moxastore.express-inc.com/UC_2116_T_LX_p/uc-2116-t-lx.html)
+running Debian 9, however, it should also work on other devices based on the
+same OS.
+
+## Features
+
+### Implemented objects
+
+Without any external additions, the ``moxa`` platform implements the following
+LwM2M objects:
+
+- Security (/0),
+- Server (/1),
+- Device (/3),
+- Connectivity Monitoring (/4),
+- Firmware Update (/5) - as a stub,
+- Location (/6),
+- LWM2M APN Connection Profile (/11),
+- Portfolio (/16),
+- Event Log (/20),
+- Modbus Connection (/10374),
+- Modbus Register Cluster (/10375).
+
+The commercial version also supports [FSDM](../FSDM.md) to facilitate extending
+this basic functionality easily.
+
+The Firmware Update object expects an executable binary for the target platform,
+and the update process will just perform ``exec()`` on that binary. This is
+intended mostly for testing or as a proof-of-concept, not as a production
+solution.
+
+### ModBus support
+
+This target platform includes support for the ModBus protocol, based on the
+libmodbus library.
+
+## Device identity
+
+If not configured otherwise (see [Client
+configuration](../Client_Configuration.md)), the client will use the following
+information to connect to the LwM2M Server:
+
+| | |
+| :-: | :-: |
+| **Endpoint name** | ``moxa`` |
+| **Default LwM2M Server** | ``coap://127.0.0.1:5683`` |
+
+!!! Note
+    DTLS is disabled in the default configuration. To enable it, the PSK key
+    needs to be configured explicitly in the
+    [security.json](../Client_Configuration.md#connection-settings) file.
+
+## Build instructions
+
+### Build environment
+
+1. Install Debian 9. A virtual machine, chroot environment or a container is
+   recommended for development.
+
+    - Main repositories for Debian 9 are no longer maintained. You may need to
+      edit ``/etc/apt/sources.list`` to use http://archive.debian.org/ or
+      http://snapshot.debian.org/.
+
+2. Add ``/etc/apt/sources.list.d/moxa.sources.list`` file with the following
+   line:
+
+    ```
+    deb http://debian.moxa.com/debian stretch main contrib non-free
+    ```
+
+3. Run ``apt-get update``, ``apt-get install moxa-archive-keyring`` and
+   ``apt-get update`` once again.
+
+4. Execute ``dpkg --add-architecture armhf`` and then ``apt-get update`` once
+   again, to be able to install non-amd64 packages.
+
+5. Install the toolchain and required built-time dependencies:
+
+      ```
+      apt install \
+          cmake \
+          crossbuild-essential-armhf \
+          git \
+          pkg-config
+      ```
+
+6. Install libmodbus development package:
+   ``apt-get install libmodbus-dev:armhf`` (note: this conflicts with
+   ``libmodbus-dev`` for the host platform, so a dedicated development VM or
+   chroot environment is highly recommended)
+
+### Compilation
+
+To compile Svetovid for Moxa industrial computers, run:
+
+```
+git submodule update --init --recursive
+cmake \
+    -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain/arm-linux-gnueabihf.cmake \
+    -DTARGET_PLATFORM=moxa \
+    -DWITH_AVS_HTTP_ZLIB=OFF \
+    -DWITH_SYSTEM_BOOST=OFF \
+    .
+make -j$(nproc)
+make package
+```
+
+!!! Note
+    Boost C++ Libraries will be downloaded and built as part of the build
+    process.
+
+The ``*.deb`` files ready to install on the device will be generated in the
+source root directory.
+
+## Installation instructions
+
+### Preparing the device
+
+``libmodbus5`` needs to be installed on the Moxa device for it to be able to run
+Svetovid. It is not installed by default.
+
+To install ``fsdmtool`` or ``fsdmtool-runtime-python`` (only available in the
+commercial version), **Python** has to be installed on the Moxa device itself.
+It is not installed by default.
+
+You can install these dependencies by running:
+
+```
+sudo apt-get update
+sudo apt-get install libmodbus5 python3
+```
+
+### Installing the packages
+
+The build result is the following set of Debian packages:
+
+- **svetovid_{version}_armhf.deb** - base binary of Svetovid itself and the
+  systemd service unit file; note: the post-install script will automatically
+  start Svetovid as a daemon
+
+Additionally, the following packages can be built from the commercial codebase:
+
+- **svetovid-plugin-fsdm_{version}_{version}.deb** - dynamically loadable
+  library that enables the FSDM functionality in Svetovid
+
+- **avsystem_svetovid-{version}-Linux-fsdmtool.deb** -
+  [fsdmtool](../FSDM.md#fsdm-script-stub-generator) script, that allows creating
+  stubs of FSDM scripts from XML object definitions and/or downloading them from
+  the LwM2M Object Registry
+
+- **avsystem_svetovid-{version}-Linux-fsdmtool-runtime-python.deb** - runtime
+  library used by the Python scripts generated by ``svetovid-fsdmtool``
+
+- **avsystem_svetovid-{version}-Linux-fsdmtool-runtime-sh.deb** - runtime
+  library used by the shell scripts generated by ``svetovid-fsdmtool``
+
+You can put those files on the industrial computer using any method available,
+e.g. using a USB drive, or by copying them using ``scp`` (requires SSH to be
+enabled on the device):
+
+```
+scp *.deb {Moxa_IP_ADDRESS}:/tmp/
+```
+
+The preferred method of installing Svetovid is to install some or all of the
+aformentioned files, depending on your needs, for example (on the Moxa device
+terminal):
+
+```
+sudo apt install /tmp/*.deb
+```
+
+Directory structure of an installed client
+------------------------------------------
+
+Assuming that all the packages mentioned above are installed:
+
+- ``/etc/svetovid/``
+
+    - ``/etc/svetovid/config/`` - configuration files, see
+      [Client configuration](../Client_Configuration.md)
+
+    - ``/etc/svetovid/dm/`` - default directory for FSDM-based object
+      implementations
+
+    - ``/etc/svetovid/persistence/`` - data persisted across firmware updates
+
+    - ``/etc/svetovid/volatile_persistence/`` - data persisted across reboots,
+      but not firmware updates
+
+- ``/tmp/`` - temporary directory used by the Firmare Update object and the FSDM
+  plugin
+
+    - ``/tmp/fsdm_local_socket`` - UNIX domain socket used for additional
+      communication between the FSDM scripts and the Svetovid binary
+
+- ``/usr/``
+
+    - ``/usr/bin/svetovid`` - main LwM2M client executable
+
+    - ``/usr/bin/svetovid-fsdmtool`` - convenience symbolic link for the
+      ``fsdmtool`` executable
+
+    - ``/usr/lib/python2.7/dist-packages/fsdm`` - symbolic link to the FSDM
+      Python runtime for Python 2.7
+
+    - ``/usr/lib/python3/dist-packages/fsdm`` - symbolic link to the FSDM Python
+      runtime for Python 3
+
+    - ``/usr/lib/svetovid/`` - LwM2M client extensions loaded at runtime
+
+        - ``/usr/lib/svetovid/libfsdm_plugin.so`` - [FSDM](../FSDM.md) support
+          plugin
+
+    - ``/usr/lib/systemd/system/svetovid.service`` - systemd unit file for
+      Svetovid
+
+    - ``/usr/local/share/svetovid/`` - FSDM runtime and utilities
+
+        - ``/usr/local/share/svetovid/bin/svetovid-fsdmtool`` - main executable
+          for the [fsdmtool](../FSDM.md#fsdm-script-stub-generator)
+
+        - ``/usr/local/share/svetovid/bin/fsdm/`` - ``fsdmtool`` support modules
+
+        - ``/usr/local/share/svetovid/lib/fsdm/python/`` - FSDM runtime for
+          Python
+
+        - ``/usr/local/share/svetovid/lib/fsdm/sh/`` - FSDM runtime for shell
+          scripts
+
+## Launch instructions
+
+Svetovid is configured to launch through ``systemd`` and the install scripts
+enable and launch it by default.
+
+To manually start the client, use:
+
+```
+sudo systemctl start svetovid
+```
+
+To manually stop the client, use:
+
+```
+sudo systemctl stop svetovid
+```
+
+LwM2M client process logs are sent to syslog. To access them, either:
+
+- read syslog directly, e.g.:
+
+    ```
+    journalctl -fu svetovid
+    ```
+
+- or stop the LwM2M client service as described above, then run it in
+  foreground:
+
+    ```
+    /usr/bin/svetovid
+    ```
+
+## ModBus configuration
+
+The built-in serial ports of the Moxa computer are switchable between RS-232 and
+RS-485 modes, but the way this is configured on this hardware is incompatible
+with libmodbus. To make these serial ports work, the ports shall always be
+configured as RS-232 in the Modbus Connection object. The actual mode of
+operation can be configured via the device's command line using the
+``mx-uart-ctl`` utility.
