@@ -31,51 +31,38 @@ To start integrating AWS with {{ coiote_short_name }}, you first need to create 
 
 1. Go to your {{ coiote_short_name }} account and from the **Administration** menu, select **Users management**.
 2. Select **Add user** and fill in the form:
-![Add user button](images/add_button2.png "Add user button")
+![Add user button](images/user_management.png "Add user button")
     - Provide **Email** for new user (which will be its username) and select your domain from the **Domain path** drop-down list.
-    - Remember to switch on the **User Verified** and **User Enabled** toggle buttons.
-    - In the **Client Roles** fields, pick the **{{ coiote_short_name }}** client and **awsiottenant** role.
-![Add REST user](images/add_rest_user2.png "Add REST user")
-    - Click **Save**.
-    - Go to the **Credentials** tab, type a password for your user (twice), select **Set password**, then confirm by clicking **Set password** in the pop-up.
+    - Remember to switch off the **Require e-mail verification after first login** and switch on 
+      **Activate user account after creation** toggle buttons.
+![Add REST user 1](images/add_rest_user.png "Add REST user 1")
+    - Click **Next step**
+    - In the "Permissions" step select **awsiottenant** role
+![Add REST user 2](images/add_rest_user_2.png "Add REST user 2")
+    - Click **Next step**, review data and click **Add user**
+    - Go to the **User account** details view
+    - change a password if needed (remember to switch off **Require user to change password on next login**)
+    - remove **Accept Terms of Service** from the Next login actions
+![Add REST user 3](images/add_rest_user_3.png "Add REST user 3")
 
-## Copy tasks and provide credentials for your device group in {{ coiote_short_name }}
-
-The {{ coiote_short_name }}-side configuration of the integration is located in the dedicated `AWSiotCoreCertAuth` device group. To complete this side of the integration, log in as the user with the **awsiottenant** role (only if that user was created in the Root **Domain**. If not, they can not access the root groups and the tasks have to be copied from the **Cloud admin** account.).
-Then follow the steps below:
-
-1. Go to the **Device groups** panel and select a group:
-    - For the default setting, select the **AWSiotCoreCertAuth** group which already contains all the necessary tasks and setting values.
-    - Alternatively, create a new group and migrate the required tasks and setting values:
-        - Select the **Add** button, name your group and click **Add**.
-        ![Add group button](images/add_group_button.png "Add group button")
-        - Migrate all the five tasks that have the **AWS** prefix in their task name:
-            - Select the **AWSiotCoreCertAuth** group and go to **Group tasks**, select the first **AWS** task and click **Copy**.
-              ![Copy task](images/copy_task.png "Copy task")
-            - In the pop-up window, click **Select group** in the **Task target** field and choose your custom integration group from the list.
-            - !!! important
-                  Remember to select the **Domain** of the user you created earlier.
-            - In the **Actions** field, select **Add new task**.
-              ![Copy task pop-up](images/copy_task_popup.png "Copy task pop-up")
-            - Repeat the action for the remaining four tasks.
-        - Migrate the `AWSdataPlaneEndpointAddress` setting value:
-            - Select your custom integration group and go to **Profiles**, then select **Copy from**.
-              ![Copy setting values](images/copy_svs.png "Copy setting values")
-            - In the pop-up window, click **Select group** and select the **AWSiotCoreCertAuth** group.
-            - Pick the `AWSdataPlaneEndpointAddress` setting value from the list by checking it in the **Selected** column, then click **Copy**.
-              ![Copy setting values pop-up](images/copy_sv_popup.png "Copy setting values pop-up")
-2. Enter your AWS Endpoint Name in {{ coiote_short_name }}:
-    - Go to **Device groups**, select your custom integration group (or the **AWSiotCoreCertAuth** group, depending on the previous step) and go to **Profiles**. Complete the **AWS** setting value:
+## Set up the **AWS** integration
+1. Get the AWS Data Plane Endpoint Address
     - Open your command line and run the following command:
-           ```
-           aws iot describe-endpoint --endpoint-type iot:Data-ATS --region <desired-region-for-the-integration>
-           ```
-    - Copy the returned result.
-      ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
-    - In {{ coiote_short_name }}, go to the **Profiles** tab of your integration group and paste the result as the value for `AWSdataPlaneEndpointAddress`.
-    - Append `:8443` port to the pasted value.
-    - Click **Save**.
-3. Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.
+      ```
+      aws iot describe-endpoint --endpoint-type iot:Data-ATS --region <desired-region-for-the-integration>
+      ```
+    - Copy the returned result.<br>
+      ![Copy data plane endpoint address](images/dataplane.png "Copy data plane endpoint address")
+2. In your {{ coiote_short_name }} user account, go to **Integrations** → **AWS Integration**
+   ![AWS Integration menu link](images/aws_integration.png "AWS Integration menu link")
+3. On the **AWS IoT Core** tile click **Connect**
+4. In the dialog window, paste the previously copied **AWS Data Plane Endpoint Address** into the relevant field. Remember to append **:8843** port to the pasted value<br>
+![AWS Integration configuration](images/aws-config.png "AWS Integration configuration")
+<!-- end of the list -->
+* After those steps in the **Device groups** panel a new group **AWSIotCoreIntegration** should be created.
+![AWS IoT Core Group](images/aws_group.png "AWS IoT Core Group")
+
+Once the setup is completed you may add your LwM2M devices to the **AWSIotCoreIntegration** group to synchronize them with AWS IoT Core.
 
 ## Add AWS resources using the integration repository
 
