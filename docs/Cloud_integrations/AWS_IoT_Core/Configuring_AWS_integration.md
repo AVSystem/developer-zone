@@ -56,7 +56,7 @@ To start integrating AWS with {{ coiote_short_name }}, you first need to create 
 2. In your {{ coiote_short_name }} user account, go to **Integrations** → **AWS Integration**
    ![AWS Integration menu link](images/aws_integration.png "AWS Integration menu link")
 3. On the **AWS IoT Core** tile click **Connect**
-4. In the dialog window, paste the previously copied **AWS Data Plane Endpoint Address** into the relevant field. Remember to append **:8843** port to the pasted value<br>
+4. In the dialog window, paste the previously copied **AWS Data Plane Endpoint Address** into the relevant field. Remember to append **:8443** port to the pasted value<br>
 ![AWS Integration configuration](images/aws-config.png "AWS Integration configuration")
 <!-- end of the list -->
 * After those steps in the **Device groups** panel a new group **AWSIotCoreIntegration** should be created.
