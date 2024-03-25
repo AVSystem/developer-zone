@@ -25,8 +25,8 @@ _______________
 
 Use the obtained credentials to establish the integration between {{ coiote_short_name }} and your Azure IoT Central application:
 
-0. In your {{ coiote_short_name }} user account, go to **Administration --> Hyperscaler Integration Center**
-    ![Hyperscaler Integration Center menu link](images/HIC_menu.png "Hyperscaler Integration Center menu link")
+0. In your {{ coiote_short_name }} user account, go to **Integrations** → **Hyperscaler Integration Center**
+   ![Hyperscaler Integration Center menu link](images/azure-integration.png "Hyperscaler Integration Center menu link")
 0. In the **Integration** tab, find the **Azure IoT Central** tile and click **Connect**.
 0. In the dialog window, paste the previously copied **Application URL** and **API token** into the relevant fields.
   ![Setting up the integration](images/central_extension_setup.png "Setting up the Azure integration"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}

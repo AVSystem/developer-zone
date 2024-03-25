@@ -28,15 +28,15 @@ The Azure IoT Hub connection string is required in the integration process. Here
     !!! info
         For detailed information about the IoT Hub permissions, please visit the [Control access to IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#access-control-and-permissions) section of the Azure IoT Hub documentation.
 
-### Get the Azure Blob storage connection string
+### Get the Azure Storage Account connection string
 
 !!! important
-    For the integration to work properly, it is required to have an empty Azure Blob storage account dedicated exclusively for the integration.
+    For the integration to work properly, it is required to have an empty Azure Storage Account dedicated exclusively for the integration.
 
-An Azure Blob storage connection string is required in the integration process. Here is how to obtain it:
+An Azure Storage Account connection string is required in the integration process. Here is how to obtain it:
 
-0. In your Azure Blob storage account, go to **Access keys**.
-   ![Azure Blob Storage](images/blob_storage.png "Getting Azure Blob Storage connection string")
+0. In your Azure Storage account, go to **Access keys**.
+   ![Azure Blob Storage](images/blob_storage.png "Getting Azure Storage Account connection string")
 0. Click **Show keys**, click the copy icon next to the **connection string** and paste it into Notepad or any other safe place to keep it for later.
 
 ### Set up the **Azure IoT Hub integration**
@@ -46,7 +46,7 @@ Use the obtained credentials to establish the integration between {{ coiote_shor
 0. In your {{ coiote_short_name }} user account, go to **Integrations** → **Hyperscaler Integration Center**
   ![Hyperscaler Integration Center menu link](images/azure-integration.png "Hyperscaler Integration Center menu link")
 0. In the **Integrations** tab, find the **Azure IoT Hub** tile and click **Connect**.
-0. In the dialog window, paste the previously copied IoT Hub connection string and Azure Blob storage connection string into the relevant fields.
+0. In the dialog window, paste the previously copied IoT Hub connection string and Azure Storage Account connection string into the relevant fields.
   ![Setting up the integration](images/connect_hub.png "Setting up the Azure integration"){:style="float: left;margin-right: 1177px;margin-top: 17px;"}
       - click **Save** to keep the setting.
 
