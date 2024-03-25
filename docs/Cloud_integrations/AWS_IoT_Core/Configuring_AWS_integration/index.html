@@ -1912,8 +1912,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm" class="md-nav__link">
-    Copy tasks and provide credentials for your device group in Coiote IoT DM
+  <a href="#set-up-the-aws-integration" class="md-nav__link">
+    Set up the AWS integration
   </a>
   
 </li>
@@ -3517,8 +3517,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm" class="md-nav__link">
-    Copy tasks and provide credentials for your device group in Coiote IoT DM
+  <a href="#set-up-the-aws-integration" class="md-nav__link">
+    Set up the AWS integration
   </a>
   
 </li>
@@ -3599,65 +3599,44 @@
 <ol>
 <li>Go to your Coiote IoT DM account and from the <strong>Administration</strong> menu, select <strong>Users management</strong>.</li>
 <li>Select <strong>Add user</strong> and fill in the form:
-<img alt="Add user button" src="../images/add_button2.png" title="Add user button" /><ul>
+<img alt="Add user button" src="../images/user_management.png" title="Add user button" /><ul>
 <li>Provide <strong>Email</strong> for new user (which will be its username) and select your domain from the <strong>Domain path</strong> drop-down list.</li>
-<li>Remember to switch on the <strong>User Verified</strong> and <strong>User Enabled</strong> toggle buttons.</li>
-<li>In the <strong>Client Roles</strong> fields, pick the <strong>Coiote IoT DM</strong> client and <strong>awsiottenant</strong> role.
-<img alt="Add REST user" src="../images/add_rest_user2.png" title="Add REST user" /></li>
-<li>Click <strong>Save</strong>.</li>
-<li>Go to the <strong>Credentials</strong> tab, type a password for your user (twice), select <strong>Set password</strong>, then confirm by clicking <strong>Set password</strong> in the pop-up.</li>
+<li>Remember to switch off the <strong>Require e-mail verification after first login</strong> and switch on 
+  <strong>Activate user account after creation</strong> toggle buttons.
+<img alt="Add REST user 1" src="../images/add_rest_user.png" title="Add REST user 1" /></li>
+<li>Click <strong>Next step</strong></li>
+<li>In the "Permissions" step select <strong>awsiottenant</strong> role
+<img alt="Add REST user 2" src="../images/add_rest_user_2.png" title="Add REST user 2" /></li>
+<li>Click <strong>Next step</strong>, review data and click <strong>Add user</strong></li>
+<li>Go to the <strong>User account</strong> details view</li>
+<li>change a password if needed (remember to switch off <strong>Require user to change password on next login</strong>)</li>
+<li>remove <strong>Accept Terms of Service</strong> from the Next login actions
+<img alt="Add REST user 3" src="../images/add_rest_user_3.png" title="Add REST user 3" /></li>
 </ul>
 </li>
 </ol>
-<h2 id="copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm">Copy tasks and provide credentials for your device group in Coiote IoT DM<a class="headerlink" href="#copy-tasks-and-provide-credentials-for-your-device-group-in-coiote-iot-dm" title="Permanent link">#</a></h2>
-<p>The Coiote IoT DM-side configuration of the integration is located in the dedicated <code>AWSiotCoreCertAuth</code> device group. To complete this side of the integration, log in as the user with the <strong>awsiottenant</strong> role (only if that user was created in the Root <strong>Domain</strong>. If not, they can not access the root groups and the tasks have to be copied from the <strong>Cloud admin</strong> account.).
-Then follow the steps below:</p>
+<h2 id="set-up-the-aws-integration">Set up the <strong>AWS</strong> integration<a class="headerlink" href="#set-up-the-aws-integration" title="Permanent link">#</a></h2>
 <ol>
-<li>Go to the <strong>Device groups</strong> panel and select a group:<ul>
-<li>For the default setting, select the <strong>AWSiotCoreCertAuth</strong> group which already contains all the necessary tasks and setting values.</li>
-<li>Alternatively, create a new group and migrate the required tasks and setting values:<ul>
-<li>Select the <strong>Add</strong> button, name your group and click <strong>Add</strong>.
-<img alt="Add group button" src="../images/add_group_button.png" title="Add group button" /></li>
-<li>Migrate all the five tasks that have the <strong>AWS</strong> prefix in their task name:<ul>
-<li>Select the <strong>AWSiotCoreCertAuth</strong> group and go to <strong>Group tasks</strong>, select the first <strong>AWS</strong> task and click <strong>Copy</strong>.
-  <img alt="Copy task" src="../images/copy_task.png" title="Copy task" /></li>
-<li>In the pop-up window, click <strong>Select group</strong> in the <strong>Task target</strong> field and choose your custom integration group from the list.</li>
-<li>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-  Remember to select the <strong>Domain</strong> of the user you created earlier.</div>
-</li>
-<li>In the <strong>Actions</strong> field, select <strong>Add new task</strong>.
-  <img alt="Copy task pop-up" src="../images/copy_task_popup.png" title="Copy task pop-up" /></li>
-<li>Repeat the action for the remaining four tasks.</li>
-</ul>
-</li>
-<li>Migrate the <code>AWSdataPlaneEndpointAddress</code> setting value:<ul>
-<li>Select your custom integration group and go to <strong>Profiles</strong>, then select <strong>Copy from</strong>.
-  <img alt="Copy setting values" src="../images/copy_svs.png" title="Copy setting values" /></li>
-<li>In the pop-up window, click <strong>Select group</strong> and select the <strong>AWSiotCoreCertAuth</strong> group.</li>
-<li>Pick the <code>AWSdataPlaneEndpointAddress</code> setting value from the list by checking it in the <strong>Selected</strong> column, then click <strong>Copy</strong>.
-  <img alt="Copy setting values pop-up" src="../images/copy_sv_popup.png" title="Copy setting values pop-up" /></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Enter your AWS Endpoint Name in Coiote IoT DM:<ul>
-<li>Go to <strong>Device groups</strong>, select your custom integration group (or the <strong>AWSiotCoreCertAuth</strong> group, depending on the previous step) and go to <strong>Profiles</strong>. Complete the <strong>AWS</strong> setting value:</li>
+<li>Get the AWS Data Plane Endpoint Address<ul>
 <li>Open your command line and run the following command:
-       <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS --region &lt;desired-region-for-the-integration&gt;
+  <div class="highlight"><pre><span></span><code>aws iot describe-endpoint --endpoint-type iot:Data-ATS --region &lt;desired-region-for-the-integration&gt;
 </code></pre></div></li>
-<li>Copy the returned result.
-  <img alt="Copy data plane endpoint address" src="../images/dataplane.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Copy data plane endpoint address" /></li>
-<li>In Coiote IoT DM, go to the <strong>Profiles</strong> tab of your integration group and paste the result as the value for <code>AWSdataPlaneEndpointAddress</code>.</li>
-<li>Append <code>:8443</code> port to the pasted value.</li>
-<li>Click <strong>Save</strong>.</li>
+<li>Copy the returned result.<br>
+  <img alt="Copy data plane endpoint address" src="../images/dataplane.png" title="Copy data plane endpoint address" /></li>
 </ul>
 </li>
-<li>Optionally, you may now add your LwM2M devices to the integration device group so that they are ready once the integration setup is complete.</li>
+<li>In your Coiote IoT DM user account, go to <strong>Integrations</strong> → <strong>AWS Integration</strong>
+   <img alt="AWS Integration menu link" src="../images/aws_integration.png" title="AWS Integration menu link" /></li>
+<li>On the <strong>AWS IoT Core</strong> tile click <strong>Connect</strong></li>
+<li>In the dialog window, paste the previously copied <strong>AWS Data Plane Endpoint Address</strong> into the relevant field. Remember to append <strong>:8443</strong> port to the pasted value<br>
+<img alt="AWS Integration configuration" src="../images/aws-config.png" title="AWS Integration configuration" /></li>
 </ol>
+<!-- end of the list -->
+<ul>
+<li>After those steps in the <strong>Device groups</strong> panel a new group <strong>AWSIotCoreIntegration</strong> should be created.
+<img alt="AWS IoT Core Group" src="../images/aws_group.png" title="AWS IoT Core Group" /></li>
+</ul>
+<p>Once the setup is completed you may add your LwM2M devices to the <strong>AWSIotCoreIntegration</strong> group to synchronize them with AWS IoT Core.</p>
 <h2 id="add-aws-resources-using-the-integration-repository">Add AWS resources using the integration repository<a class="headerlink" href="#add-aws-resources-using-the-integration-repository" title="Permanent link">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -3770,7 +3749,7 @@ Then follow the steps below:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2024</span>
     
   </small>
 </div>
