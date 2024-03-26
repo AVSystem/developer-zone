@@ -32,7 +32,7 @@ Settings not directly related to LwM2M server connections are stored in
 !!! Note
     This file can generally be left empty if you are fine with the defaults.
 
-```
+```json
 {
     "device": {
         "endpoint_name": "53r14l",
@@ -220,7 +220,7 @@ adding an instance to the ``server.json`` file.
 #### Bootstrap server
 
   - **security.json**
-    ```
+    ```json
     {
         "2": {
             "server_uri": "coap:\/\/{{ coiote_server }}:5693",
@@ -236,14 +236,14 @@ adding an instance to the ``server.json`` file.
     ```
 
   - **server.json**
-    ```
+    ```json
     {}
     ```
 
 #### Non-bootstrap server with DTLS in Pre-Shared Key mode
 
   - **security.json**
-    ```
+    ```json
     {
         "2": {
             "server_uri": "coaps:\/\/{{ coiote_server }}:5684",
@@ -259,7 +259,7 @@ adding an instance to the ``server.json`` file.
     ```
 
   - **server.json**
-    ```
+    ```json
     {
         "0": {
             "ssid": "7",
@@ -274,7 +274,7 @@ In the ``security.json`` file you may need to change the ``privkey_or_psk_hex``
 with hexlified pre-shared-key of your choice. To convert raw string to
 hexlified string, you can use:
 
-```
+```sh
 $ echo -n 'your-secret-key' | xxd -p
 ```
 

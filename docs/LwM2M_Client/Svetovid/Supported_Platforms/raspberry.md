@@ -94,7 +94,7 @@ required dependencies by running the following commands (identical or similar
 commands should work on other distributions from the Debian family; finding
 packages for other distributions is outside the scope of this documentation):
 
-```
+```sh
 sudo apt update &&
 sudo apt install \
     build-essential \
@@ -110,7 +110,7 @@ sudo apt install \
 The preferred way to build Svetovid for the ``raspberry`` target on the
 Raspberry Pi itself is running:
 
-```
+```sh
 git submodule update --init --recursive
 env CC=clang CXX=clang++ cmake \
     -DCMAKE_BUILD_TYPE=MinSizeRel \
@@ -123,7 +123,7 @@ The preferred compiler is Clang, but Svetovid will compile using GCC as well.
 
 To additionally build the Debian packages, run:
 
-```
+```sh
 make package
 ```
 
@@ -146,7 +146,7 @@ To build Svetovid for the Raspberry Pi on another machine, you will need:
 Once in the Debian build environment, you can install all the required
 dependencies by running the following commands:
 
-```
+```sh
 sudo apt update &&
 sudo apt install \
     cmake \
@@ -161,7 +161,7 @@ sudo apt install \
 
 To cross-compile Svetovid for the Raspberry Pi, run:
 
-```
+```sh
 git submodule update --init --recursive
 cmake \
     -DCMAKE_BUILD_TYPE=MinSizeRel \
@@ -220,14 +220,14 @@ You can put those files on a Raspberry Pi using any method available, e.g. using
 a USB drive, or by copying them using ``scp`` (requires SSH to be enabled on the
 Pi):
 
-```
+```sh
 scp *.deb {Pi_IP_ADDRESS}:/tmp/
 ```
 
 The preferred method of installing Svetovid is to install some or all of the
 aformentioned files, depending on your needs, for example (on the Pi terminal):
 
-```
+```sh
 sudo apt install /tmp/*.deb
 ```
 
@@ -297,13 +297,13 @@ enable and launch it by default.
 
 To manually start the client, use:
 
-```
+```sh
 sudo systemctl start svetovid
 ```
 
 To manually stop the client, use:
 
-```
+```sh
 sudo systemctl stop svetovid
 ```
 
@@ -311,14 +311,14 @@ LwM2M client process logs are sent to syslog. To access them, either:
 
 - read syslog directly, e.g.:
 
-    ```
+    ```sh
     journalctl -fu svetovid
     ```
 
 - or stop the LwM2M client service as described above, then run it in
   foreground:
 
-    ```
+    ```sh
     /usr/bin/svetovid
     ```
 
@@ -355,7 +355,7 @@ Configuration options:
 
 Example configuration file (`ipso_light.json`):
 
-```
+```json
 {
     "1": {
         "data_pin": "20",
@@ -379,7 +379,7 @@ Configuration options:
 
 Example configuration file (`ipso_pushbutton.json`):
 
-```
+```json
 {
     "1": {
         "data_pin": "19"

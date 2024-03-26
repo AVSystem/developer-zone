@@ -112,7 +112,7 @@ following commands (identical or similar commands should work on other
 distributions from the Debian family; finding packages for other distributions
 is outside the scope of this documentation):
 
-```
+```sh
 sudo apt update &&
 sudo apt install \
     build-essential \
@@ -128,7 +128,7 @@ sudo apt install \
 The preferred way to build Svetovid for the ``generic`` target on the host
 platform itself is running:
 
-```
+```sh
 git submodule update --init --recursive
 env CC=clang CXX=clang++ cmake -DTARGET_PLATFORM=generic .
 make -j$(nproc)
@@ -136,7 +136,7 @@ make -j$(nproc)
 
 To additionally build the Debian packages, run:
 
-```
+```sh
 make package
 ```
 
@@ -151,7 +151,7 @@ contains only necessary stuff and is as lightweight as possible.
 
 To build the Docker image, run:
 
-```
+```sh
 git submodule update --init --recursive
 docker build . -f ./dockerfiles/Dockerfile.clean_svetovid
 ```
@@ -190,7 +190,7 @@ Additionally in the commercial version only:
 The preferred method of installing Svetovid is to install some or all of the
 aformentioned files, depending on your needs, for example:
 
-```
+```sh
 sudo apt install ./*.deb
 ```
 
@@ -198,7 +198,7 @@ If you're running an RPM-based distribution, you can use ``alien`` (installing
 ``alien`` itself is beyond the scope of this documentation) to convert the
 ``*.deb`` files into ``*.rpm`` and install those:
 
-```
+```sh
 sudo alien --to-rpm --scripts *.deb
 sudo rpm --replacefiles -ivh *.rpm
 ```
@@ -317,13 +317,13 @@ enable and launch it by default.
 
 To manually start the client, use:
 
-```
+```sh
 sudo systemctl start svetovid
 ```
 
 To manually stop the client, use:
 
-```
+```sh
 sudo systemctl stop svetovid
 ```
 
@@ -331,14 +331,14 @@ LwM2M client process logs are sent to syslog. To access them, either:
 
 - read syslog directly, e.g.:
 
-    ```
+    ```sh
     journalctl -fu svetovid
     ```
 
 - or stop the LwM2M client service as described above, then run it in the
   foreground:
 
-    ```
+    ```sh
     /usr/bin/svetovid
     ```
 
@@ -355,42 +355,42 @@ LwM2M Client:
 
 - run Svetovid LwM2M Client in background (as a daemon)
 
-    ```
+    ```sh
     docker run -d -e EP='foo' -e PSK='bar' -e SERVER_HOST='{{ coiote_server }}' svetovid
     ```
 
 - stop LwM2M Client by stopping Svetovid container
 
-    ```
+    ```sh
     docker stop <containerId>
     ```
 
 - resume LwM2M Client by stopping Svetovid container
 
-    ```
+    ```sh
     docker start <containerId>
     ```
 
 - run container interactively with automatic container deletion after existing
 
-    ```
+    ```sh
     docker run -it --rm -e EP='foo' -e PSK='bar' -e SERVER_HOST='{{ coiote_server }}' svetovid
     ```
 
 - run container with custom Svetovid log level e.g. to troubleshoot
 
-    ```
+    ```sh
     docker run -it --rm -e EP='foo' -e PSK='bar' -e SERVER_HOST='{{ coiote_server }}' -e LOG_LEVEL='debug' svetovid
     ```
 
 - start container without running the Sevetovid LwM2M client (e.g. to prototype your own objects)
 
-    ```
+    ```sh
     docker run -it -e EP='foo' -e PSK='bar' -e SERVER_HOST='{{ coiote_server }}' svetovid /bin/bash
     ```
 
 - run container interactively with OTBR (remember to connect RCP and edit its path if necessary)
 
-    ```
+    ```sh
     docker run --rm --sysctl "net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume /dev/ttyACM0:/dev/ttyACM0 --privileged -e DNS64_ONLY=1 -e EP='foo' -e PSK='bar' -e SERVER_HOST='{{ coiote_server }}' openthread/svetovid_with_otbr --radio-url spinel+hdlc+uart:///dev/ttyACM0
     ```

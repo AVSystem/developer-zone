@@ -56,7 +56,7 @@ examples.
 
 FSDM settings are stored in ``fsdm.json`` file. Example:
 
-```
+```json
 {
     "dirs": {
         "datamodel": "/tmp/datamodel"
@@ -71,7 +71,7 @@ FSDM settings are stored in ``fsdm.json`` file. Example:
 
 Each Resource is an executable script, which is called as follows:
 
-```
+```sh
 script OPERATION [ OPTIONS... ]
 ```
 
@@ -131,7 +131,7 @@ script OPERATION [ OPTIONS... ]
 
       Example:
 
-      ```
+      ```json
       {
           "operations": "RW",
           "datatype": "opaque",
@@ -167,7 +167,7 @@ script OPERATION [ OPTIONS... ]
 
       For example:
 
-      ```
+      ```sh
       --args 2=foo 1 8=bar
       ```
 
@@ -246,7 +246,7 @@ The following exit status codes are handled by Svetovid:
 
 ``instances`` script is called as follows:
 
-```
+```sh
 instances OPERATION [ ID ]
 ```
 
@@ -300,7 +300,7 @@ instances OPERATION [ ID ]
 ``transaction`` script, if present, is called before and after every mutating
 operation on an LwM2M object, i.e. Write/Create/Delete.
 
-```
+```sh
 transaction OPERATION
 ```
 
@@ -386,7 +386,7 @@ launch in Svetovid temporary directory (by default: ``/tmp/fsdm_local_socket``).
 User may send JSON containing information about changed state of instances and
 resources as follows:
 
-```
+```json
 { "notify": ["/10", "/20", "/9/0/1", "/9/0/2"] }
 ```
 
@@ -401,7 +401,7 @@ To send the message through the socket user can use standard tools like `nc` or
 
 #### nc
 
-```
+```sh
 echo '{ "notify": ["/10", "/20", "/9/0/1", "/9/0/2"] }' | nc -NU /tmp/fsdm_local_socket
 ```
 
@@ -411,7 +411,7 @@ echo '{ "notify": ["/10", "/20", "/9/0/1", "/9/0/2"] }' | nc -NU /tmp/fsdm_local
 
 #### socat
 
-```
+```sh
 echo '{ "notify": ["/10", "/20", "/9/0/1", "/9/0/2"] }' | socat - UNIX-CONNECT:/tmp/fsdm_local_socket
 ```
 
@@ -447,7 +447,7 @@ are 3 kinds of result:
 
 ``"details"`` section for ``"OK"`` result is absent:
 
-```
+```sh
 user@host $ echo '{ "notify": ["/1337"] }' | nc -NU /tmp/fsdm_local_socket
 {
     "result": "OK"
@@ -457,7 +457,7 @@ user@host $
 
 ``"details"`` for ``"warning"`` result is an array of failure reasons:
 
-```
+```sh
 user@host $ echo '{ "notify": [":-)", "/1/2/3"] }' | nc -NU /tmp/fsdm_local_socket
 {
     "result": "warning",
@@ -477,7 +477,7 @@ user@host $
 
 ``"details"`` for the ``"error"`` result is a single diagnostic string:
 
-```
+```sh
 user@host $ echo abcdefgh | nc -NU /tmp/fsdm_local_socket
 {
     "result": "error",
@@ -493,7 +493,7 @@ server about a specific resource. Similar to the Notify trigger in
 **push-mode** the user can pass a JSON to the Unix domain socket to communicate
 with Svetovid:
 
-```
+```json
 { "send": ["/10", "/20/0", "/9/0/1", "/9/0/2"] }
 ```
 
@@ -523,7 +523,7 @@ used our pre-implemented simple key-value store accessible through
 
 Sets or replaces keys to specified values. Example use:
 
-```
+```sh
 user@host $ echo '{ "store": { "set": { "foo1": "bar", "foo2": "baz" } } }' | nc -NU /tmp/fsdm_local_socket
 {
     "result": "OK"
@@ -535,7 +535,7 @@ Which sets `foo1` to `bar` and `foo2` to `baz`.
 
 #### get
 
-```
+```sh
 user@host $ echo '{ "store": { "get": ["foo1", "foo2"] } }' | nc -NU /tmp/fsdm_local_socket
 {
     "result": "OK",
@@ -552,12 +552,12 @@ get more than one key, and if the key is not set, it is not returned.
 
 #### delete
 
-````
+```sh
 user@host $ echo '{ "store": { "delete": ["foo1"] } }' | nc -NU /tmp/fsdm_local_socket
 {
     "result": "OK"
 }
 user@host $
-````
+```
 
 Deletes the key `foo1` and a key assigned to it from the store.

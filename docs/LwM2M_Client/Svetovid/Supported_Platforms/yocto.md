@@ -82,7 +82,7 @@ To install Svetovid on an existing device using RPM, copy the main RPM (or IPK)
 file onto the device using any method available (e.g. using a USB drive or
 ``scp``), and run (in case of RPM):
 
-```
+```sh
 rpm -ivh svetovid-*.rpm
 ```
 
@@ -148,13 +148,13 @@ enabled by default.
 
 To manually start the client, use:
 
-```
+```sh
 service svetovid start
 ```
 
 To manually stop the client, use:
 
-```
+```sh
 service svetovid stop
 ```
 
@@ -162,13 +162,13 @@ LwM2M client process logs are sent to syslog. To access them, either:
 
 - read syslog directly, e.g.:
 
-    ```
+    ```sh
     tail -f /var/log/messages
     ```
 
 - or stop the LwM2M client service as described above, then run it in the
   foreground:
 
-    ```
+    ```sh
     /usr/bin/svetovid
     ```

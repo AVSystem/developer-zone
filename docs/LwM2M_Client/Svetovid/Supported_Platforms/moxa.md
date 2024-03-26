@@ -72,7 +72,7 @@ information to connect to the LwM2M Server:
 2. Add ``/etc/apt/sources.list.d/moxa.sources.list`` file with the following
    line:
 
-    ```
+    ```sh
     deb http://debian.moxa.com/debian stretch main contrib non-free
     ```
 
@@ -84,7 +84,7 @@ information to connect to the LwM2M Server:
 
 5. Install the toolchain and required built-time dependencies:
 
-      ```
+      ```sh
       apt install \
           cmake \
           crossbuild-essential-armhf \
@@ -101,7 +101,7 @@ information to connect to the LwM2M Server:
 
 To compile Svetovid for Moxa industrial computers, run:
 
-```
+```sh
 git submodule update --init --recursive
 cmake \
     -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain/arm-linux-gnueabihf.cmake \
@@ -133,7 +133,7 @@ It is not installed by default.
 
 You can install these dependencies by running:
 
-```
+```sh
 sudo apt-get update
 sudo apt-get install libmodbus5 python3
 ```
@@ -166,7 +166,7 @@ You can put those files on the industrial computer using any method available,
 e.g. using a USB drive, or by copying them using ``scp`` (requires SSH to be
 enabled on the device):
 
-```
+```sh
 scp *.deb {Moxa_IP_ADDRESS}:/tmp/
 ```
 
@@ -174,7 +174,7 @@ The preferred method of installing Svetovid is to install some or all of the
 aformentioned files, depending on your needs, for example (on the Moxa device
 terminal):
 
-```
+```sh
 sudo apt install /tmp/*.deb
 ```
 
@@ -243,13 +243,13 @@ enable and launch it by default.
 
 To manually start the client, use:
 
-```
+```sh
 sudo systemctl start svetovid
 ```
 
 To manually stop the client, use:
 
-```
+```sh
 sudo systemctl stop svetovid
 ```
 
@@ -257,14 +257,14 @@ LwM2M client process logs are sent to syslog. To access them, either:
 
 - read syslog directly, e.g.:
 
-    ```
+    ```sh
     journalctl -fu svetovid
     ```
 
 - or stop the LwM2M client service as described above, then run it in
   foreground:
 
-    ```
+    ```sh
     /usr/bin/svetovid
     ```
 
