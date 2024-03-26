@@ -29,6 +29,9 @@ when starting a Svetovid binary.
 Settings not directly related to LwM2M server connections are stored in
 ``svd.json`` file. Example:
 
+!!! Note
+    This file can generally be left empty if you are fine with the defaults.
+
 ```
 {
     "device": {
@@ -267,6 +270,14 @@ adding an instance to the ``server.json`` file.
     }
     ```
 
+In the ``security.json`` file you may need to change the ``privkey_or_psk_hex``
+with hexlified pre-shared-key of your choice. To convert raw string to
+hexlified string, you can use:
+
+```
+$ echo -n 'your-secret-key' | xxd -p
+```
+
 ### Possible configuration options
 
 Specific options directly correspond to LwM2M Security/LwM2M Server Object
@@ -316,3 +327,16 @@ Resources. See the LwM2M protocol specification for more details.
       (boolean)
 
     - ``disable_timeout`` - Disable Timeout (seconds)
+
+### Using a Bootstrap Server
+
+When using a Bootstrap Server, it may modify the contents of the Security and
+Server objects. These changes will **NOT** be written back to ``security.json``
+or ``server.json`` files - instead, they will be persisted into
+``/etc/svetovid/persistence/persistence.dat``. Note that this is a binary file
+that is not intended for user modification.
+
+The configuration in ``security.json`` and ``server.json`` will take preference
+if the ``persistence.dat`` file doesn't exist, or if either of the JSON files
+is newer than the last time Svetovid has been bootstrapped from them. In other
+words, if you modify or ``touch`` the JSON files, they shall take preference.
