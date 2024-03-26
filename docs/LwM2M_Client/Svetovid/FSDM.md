@@ -40,6 +40,59 @@ Other remarks:
 
     - "Resource"-level files/directories with non-numeric names.
 
+- Every LwM2M operation is mapped to execution of one or more scripts located
+  under the ``OBJECT_ID/`` directory. Examples:
+
+    - LwM2M Read on some ``/Object ID/Instance ID/Resource ID`` will be
+      transformed into:
+
+        - getting the list of instances from ``Object ID/instances`` script to
+          verify if the targeted instance exists,
+
+        - calling the ``Object ID/Resource ID`` script to read the value of the
+          resource for that instance (the Instance ID is passed to
+          ``Resource ID`` script as parameter).
+
+    - LwM2M Read on some ``/Object ID/Instance ID`` will be transformed into:
+
+        - getting the list of instances from ``Object ID/instances`` script to
+          enumerate instance to be read,
+
+        - calling resource scripts (as above), but for every present instance.
+
+    - LwM2M Delete is transformed into:
+
+        - calls to ``instances`` script to delete instances.
+
+    - LwM2M Observe is transformed into:
+
+        - periodical LwM2M Reads to see if resource values changed. It is
+          default Pull-mode mechanism. You can control the frequency of
+          reads/notifications by ``pmin`` and ``pmax`` LwM2M Attributes.
+
+            !!! Note
+                Apart of Pull-mode, there is Push-mode called "external notify".
+                When it is enebled then it is the user responsibility to notify
+                Svetovid about the changes in FSDM (more in section
+                [external notify](#fsdm-external-notify-trigger)).
+
+## Input and output
+
+Resource scripts obtain necessary information either from parameters passed to
+them or from the standard input. For example, the LwM2M Write on a Resource
+containing payload "example", will execute the corresponding Resource script,
+passing the "example" string on its standard input.
+
+Resource scripts return values to Svetovid via standard output when they're used
+to extract the value they represent. Apart from that, the scripts' exit codes
+are translated to CoAP error responses. In the Python implementations, any
+errors are communicated by exceptions, which are in turn translated to error
+codes by the runtime in a way transparent to the user.
+
+LwM2M Execute arguments are passed as arguments to the script body. In Python
+implementations, execute arguments are passed as a parameter to ``execute()``
+method.
+
 ## FSDM script stub generator
 
 FSDM plugin comes with a helper tool for generating stubs of required scripts.
