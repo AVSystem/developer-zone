@@ -66,7 +66,7 @@ Integrate your Raspberry Pi Pico W board.
 0. Copy the `.uf2` file to the open Mass Storage device folder. Depending on the application you want to program, copy the `.uf2` file from available directories, e.g. `mandatory_objects`.
 0. Once the Pico has been programmed, disconnect the board and connect it again to make it execute the code.
 
-## Connecting to the LwM2M Server
+## Connect to the LwM2M Server
 
 To connect to a {{ coiote_long_name }}, register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
