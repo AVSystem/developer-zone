@@ -124,7 +124,7 @@ FSDM settings are stored in ``fsdm.json`` file. Example:
 
 Each Resource is an executable script, which is called as follows:
 
-```sh
+```
 script OPERATION [ OPTIONS... ]
 ```
 
@@ -220,7 +220,7 @@ script OPERATION [ OPTIONS... ]
 
       For example:
 
-      ```sh
+      ```
       --args 2=foo 1 8=bar
       ```
 
@@ -299,7 +299,7 @@ The following exit status codes are handled by Svetovid:
 
 ``instances`` script is called as follows:
 
-```sh
+```
 instances OPERATION [ ID ]
 ```
 
@@ -353,7 +353,7 @@ instances OPERATION [ ID ]
 ``transaction`` script, if present, is called before and after every mutating
 operation on an LwM2M object, i.e. Write/Create/Delete.
 
-```sh
+```
 transaction OPERATION
 ```
 
