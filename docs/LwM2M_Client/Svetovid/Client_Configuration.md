@@ -211,6 +211,12 @@ Settings not directly related to LwM2M server connections are stored in
 
 ## Connection settings
 
+!!! Note
+    The default configuration is designed to let you easily connect to our
+    [{{ coiote_long_name }}](https://www.avsystem.com/products/coiote-iot-device-management-platform/).
+    Please register at [{{ coiote_server }}]({{ coiote_site_link }}) to get
+    access.
+
 To configure an LwM2M Bootstrap Server, an instance has to be created in
 ``security.json`` file. A non-Bootstrap LwM2M Server additionally requires
 adding an instance to the ``server.json`` file.

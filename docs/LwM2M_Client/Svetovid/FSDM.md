@@ -4,7 +4,7 @@ FSDM (File System Data Model) is a framework that allows implementing LwM2M
 objects using Python or Bash scripts. It is provided as a plugin for Svetovid,
 available in the commercial version and in certain binary distribution.
 
-## FSDM plugin
+## Directory mapping
 
 When enabled, this plugin maps a specific directory to LwM2M Objects, Instances
 and Resources. Default mapped directory is ``/etc/svetovid/dm`` and it can be
@@ -101,8 +101,8 @@ examples.
 
 !!! Note
     ``svetovid-fsdmtool`` is distributed as a separate installation package (e.g
-    ``avsystem_svetovid-21.12-raspberry-Linux-fsdmtool.deb`` in case of the
-    Raspberry Pi platform), so please make sure that it is installed before
+    ``avsystem_svetovid-24.04-raspberry-Linux-fsdmtool.deb`` in case of
+    the Raspberry Pi platform), so please make sure that it is installed before
     starting.
 
 ## FSDM config file
@@ -396,12 +396,12 @@ transaction OPERATION
 There are two ways Svetovid can be notified about changes occurring in the File
 System Data Model.
 
-1. **Pull-mode:** The default mode. Svetovid regularly polls ``instances list``
-   and ``resource read`` operations to check if some changes in their outputs
-   have appeared.
+1. **Pull-mode** (external notify): The default mode. Svetovid regularly polls
+   ``instances list`` and ``resource read`` operations to check if some changes
+   in their outputs have appeared.
 
-2. **Push-mode:** The mode in which it is the user responsibility to notify
-   Svetovid about the following changes in FSDM:
+2. **Push-mode** (external notify): The mode in which it is the user
+   responsibility to notify Svetovid about the following changes in FSDM:
 
       - list of valid Instance IDs for an object (returned value of
         ``instances list`` operation) has changed for **other** reason than
@@ -448,6 +448,9 @@ In example above we want to inform that:
 - instances lists of objects 10 and 20 have changed
 
 - values of resources ``/9/0/1`` and ``/9/0/2`` have changed
+
+If any of these resources is indeed observed, Svetovid will then invoke the Read
+operation on the appropriate FSDM script to query the actual resource value.
 
 To send the message through the socket user can use standard tools like `nc` or
 `socat`.
