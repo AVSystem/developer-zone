@@ -65,18 +65,15 @@ The default configuration of Poky (the reference Yocto distribution) currently
 uses RPM. The packages will be generated in the
 ``build/tmp/deploy/rpm/{platform}`` directory of your Yocto directory:
 
-* **svetovid-{version}.{platform}.rpm** - all files necessary to run Svetovid
+- **svetovid-{version}.{platform}.rpm** - all files necessary to run Svetovid
   and all the additional plugins and scripts (e.g. [FSDM](../FSDM.md) in the
   commercial version)
-
-* **svetovid-dbg-{version}.{platform}.rpm** - debugging symbols for the binaries
+- **svetovid-dbg-{version}.{platform}.rpm** - debugging symbols for the binaries
   contained in the main package
-
-* **svetovid-src-{version}.{platform}.rpm** - source code that was used to build
+- **svetovid-src-{version}.{platform}.rpm** - source code that was used to build
   the main package; note that it does NOT include build scripts and as such is
   only usable as a debugging aid
-
-* **svetovid-dev-{version}.{platform}.rpm** - currently empty and unused
+- **svetovid-dev-{version}.{platform}.rpm** - currently empty and unused
 
 To install Svetovid on an existing device using RPM, copy the main RPM (or IPK)
 file onto the device using any method available (e.g. using a USB drive or
@@ -91,53 +88,34 @@ rpm -ivh svetovid-*.rpm
 Assuming that all the packages mentioned above are installed:
 
 - ``/etc/svetovid/``
-
     - ``/etc/svetovid/config/`` - configuration files, see
       [Client configuration](../Client_Configuration.md)
-
     - ``/etc/svetovid/dm/`` - default directory for FSDM-based object
       implementations
-
     - ``/etc/svetovid/persistence/`` - data persisted across firmware updates
-
     - ``/etc/svetovid/volatile_persistence/`` - data persisted across reboots,
       but not firmware updates
-
 - ``/tmp/`` - temporary directory used by the Firmare Update object and the FSDM
   plugin
-
     - ``/tmp/fsdm_local_socket`` - UNIX domain socket used for additional
       communication between the FSDM scripts and the Svetovid binary
-
 - ``/usr/``
-
     - ``/usr/bin/svetovid`` - main LwM2M client executable
-
     - ``/usr/bin/svetovid-fsdmtool`` - convenience symbolic link for the
       ``fsdmtool`` executable
-
     - ``/usr/lib/python2.7/dist-packages/fsdm`` - symbolic link to the FSDM
       Python runtime for Python 2.7
-
     - ``/usr/lib/python3/dist-packages/fsdm`` - symbolic link to the FSDM Python
       runtime for Python 3
-
     - ``/usr/lib/svetovid/`` - LwM2M client extensions loaded at runtime
-
         - ``/usr/lib/svetovid/libfsdm_plugin.so`` - FSDM support plugin
-
     - ``/usr/lib/systemd/system/svetovid.service`` - systemd unit file for
       Svetovid
-
     - ``/usr/local/share/svetovid/`` - FSDM runtime and utilities
-
         - ``/usr/local/share/svetovid/bin/svetovid-fsdmtool`` - main executable
           for the ``fsdmtool``
-
       - ``/usr/local/share/svetovid/bin/fsdm/`` - ``fsdmtool`` support modules
-
       - ``/usr/local/share/svetovid/lib/fsdm/python/`` - FSDM runtime for Python
-
       - ``/usr/local/share/svetovid/lib/fsdm/sh/`` - FSDM runtime for shell
         scripts
 
@@ -147,13 +125,11 @@ Svetovid is configured to launch through the System V init scripts and it is
 enabled by default.
 
 To manually start the client, use:
-
 ```sh
 service svetovid start
 ```
 
 To manually stop the client, use:
-
 ```sh
 service svetovid stop
 ```
@@ -161,14 +137,12 @@ service svetovid stop
 LwM2M client process logs are sent to syslog. To access them, either:
 
 - read syslog directly, e.g.:
-
     ```sh
     tail -f /var/log/messages
     ```
 
 - or stop the LwM2M client service as described above, then run it in the
   foreground:
-
     ```sh
     /usr/bin/svetovid
     ```
