@@ -50,7 +50,7 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
 
     === "Windows"
         !!! note
-            For Windows systems you will also require to install the [MinGW](https://sourceforge.net/projects/mingw/) and [cmake](https://cmake.org/download/) program.
+            For Windows systems you will also require to install the [MinGW](https://sourceforge.net/projects/mingw/) and [CMake](https://cmake.org/download/)program.
 
         Download and run the [installer](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-win32.exe) to install `arm-none-eabi-gcc` and `arm-none-eabi-gdb`.
 
