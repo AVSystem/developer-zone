@@ -8,11 +8,9 @@ Let’s start with the first exercise on building an end-to-end LwM2M applicatio
 * <a href="https://git-scm.com/downloads" target="_blank">Git</a>
 * Access to a WiFi network
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
-* Installed [**cmake**](https://cmake.org/download/).
 * An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account.
 
-!!! note
-    For Windows systems you will also require to install the [MinGW](https://sourceforge.net/projects/mingw/) program.
+
 
 ## Prepare binaries
 
@@ -51,6 +49,9 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
         ```
 
     === "Windows"
+        !!! note
+            For Windows systems you will also require to install the [MinGW](https://sourceforge.net/projects/mingw/) and [cmake](https://cmake.org/download/) program.
+
         Download and run the [installer](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-win32.exe) to install `arm-none-eabi-gcc` and `arm-none-eabi-gdb`.
 
         Select the default destination directory (E.g. `C:\GNU_Arm_Embedded_Toolchain`).
