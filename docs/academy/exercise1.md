@@ -36,7 +36,7 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
         When using **Fedora**, run the following command:
 
         ```
-        sudo dnf install python3 cmake minicom arm-none-eabi-newlib arm-none-eabi-gcc-cs-c++ arm-none-eabi-gcc-cs arm-none-eabi-binutils-cs gcc-arm-linux-gnu gcc-c++-arm-linux-gnu gcc gcc-c++
+        sudo dnf install python3 cmake arm-none-eabi-newlib arm-none-eabi-gcc-cs-c++ arm-none-eabi-gcc-cs arm-none-eabi-binutils-cs gcc-arm-linux-gnu gcc-c++-arm-linux-gnu gcc gcc-c++
         ```
 
     === "Mac"
@@ -47,7 +47,7 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
         ```
 
     === "Windows"
-        When using Windows install the [Python](https://www.python.org/downloads/windows/), [MinGW](https://sourceforge.net/projects/mingw/) and [CMake](https://cmake.org/download/) programs.
+        When using Windows, install the following dependencies: [Python3](https://www.python.org/downloads/windows/), [MinGW](https://sourceforge.net/projects/mingw/) and [CMake](https://cmake.org/download/).
 
         Download and run the [installer](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-win32.exe) to install `arm-none-eabi-gcc` and `arm-none-eabi-gdb`.
 
