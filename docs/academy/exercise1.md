@@ -30,24 +30,26 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
         When using **Ubuntu**, run the following command:
 
         ```
-        sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+        sudo apt install python3 cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
         ```
 
         When using **Fedora**, run the following command:
 
         ```
-        sudo dnf install python3 cmake minicom arm-none-eabi-newlib arm-none-eabi-gcc-cs-c++ arm-none-eabi-gcc-cs arm-none-eabi-binutils-cs gcc-arm-linux-gnu gcc-c++-arm-linux-gnu gcc gcc-c++
+        sudo dnf install python3 cmake arm-none-eabi-newlib arm-none-eabi-gcc-cs-c++ arm-none-eabi-gcc-cs arm-none-eabi-binutils-cs gcc-arm-linux-gnu gcc-c++-arm-linux-gnu gcc gcc-c++
         ```
 
     === "Mac"
         When using MacOS, run the following command:
 
         ```
-        brew install armmbed/formulae/arm-none-eabi-gcc
+        brew install python cmake armmbed/formulae/arm-none-eabi-gcc
         ```
 
     === "Windows"
-        Download and run the [installer](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-win32.exec) to install `arm-none-eabi-gcc` and `arm-none-eabi-gdb`.
+        When using Windows, install the following dependencies: [Python3](https://www.python.org/downloads/windows/), [MinGW](https://sourceforge.net/projects/mingw/) and [CMake](https://cmake.org/download/).
+
+        Download and run the [installer](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-win32.exe) to install `arm-none-eabi-gcc` and `arm-none-eabi-gdb`.
 
         Select the default destination directory (E.g. `C:\GNU_Arm_Embedded_Toolchain`).
 
