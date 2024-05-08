@@ -188,6 +188,7 @@ nav:
             - API reference: 'API_documentation/api_reference.md'
         - 'Release Notes':
             - 2024:
+                - 'Release_Notes/v2024.5.0.md'
                 - 'Release_Notes/v2024.4.0.md'
                 - 'Release_Notes/v2024.3.0.md'
                 - 'Release_Notes/v2024.2.0.md'
