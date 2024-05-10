@@ -167,7 +167,8 @@ nav:
                 - Exercise 4B - LwM2M Send: 'academy/exercise4b.md'
             - Module 5 - Firmware updates:
                 - Theory Module 5: 'academy/module5.md'
-            - Graduation Project: 'academy/exercise5.md'
+                - Exercise 5 - Implement Firmware Update: 'academy/exercise5.md'
+            - Graduation Project: 'academy/gradproject.md'
         - 'API documentation':
             - 'Overview':
                 - 'API_documentation/Overview/About_Coiote_API.md'
