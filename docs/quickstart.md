@@ -66,7 +66,7 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
     Open up your terminal and install the required dependencies using [Homebrew](https://brew.sh/):
 
     ```
-    brew install cmake mbedtls
+    brew install cmake mbedtls openssl
     ```
 
     Create a new directory, e.g. called `AVSystem`:
