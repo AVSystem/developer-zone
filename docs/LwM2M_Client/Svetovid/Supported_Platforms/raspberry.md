@@ -238,30 +238,33 @@ Assuming that all the packages mentioned above are installed:
     - ``/etc/svetovid/persistence/`` - data persisted across firmware updates
     - ``/etc/svetovid/volatile_persistence/`` - data persisted across reboots,
       but not firmware updates
-- ``/tmp/`` - temporary directory used by the Firmare Update object and the FSDM
-  plugin
+- ``/tmp/`` - temporary directory used by the Firmare Update object and the
+  [FSDM](../FSDM.md) plugin
     - ``/tmp/fsdm_local_socket`` - UNIX domain socket used for additional
-      communication between the FSDM scripts and the Svetovid binary
+      communication between the [FSDM](../FSDM.md) scripts and the Svetovid
+      binary
 - ``/usr/``
     - ``/usr/bin/svetovid`` - main LwM2M client executable
     - ``/usr/bin/svetovid-fsdmtool`` - convenience symbolic link for the
-      ``fsdmtool`` executable
-    - ``/usr/lib/python2.7/dist-packages/fsdm`` - symbolic link to the FSDM
-      Python runtime for Python 2.7
-    - ``/usr/lib/python3/dist-packages/fsdm`` - symbolic link to the FSDM Python
-      runtime for Python 3
+      [fsdmtool](../FSDM.md#fsdm-script-stub-generator) executable
+    - ``/usr/lib/python2.7/dist-packages/fsdm`` - symbolic link to the
+      [FSDM](../FSDM.md) Python runtime for Python 2.7
+    - ``/usr/lib/python3/dist-packages/fsdm`` - symbolic link to the
+      [FSDM](../FSDM.md) Python runtime for Python 3
     - ``/usr/lib/svetovid/`` - LwM2M client extensions loaded at runtime
-        - ``/usr/lib/svetovid/libfsdm_plugin.so`` - FSDM support plugin
+        - ``/usr/lib/svetovid/libfsdm_plugin.so`` - [FSDM](../FSDM.md) support
+          plugin
     - ``/usr/lib/systemd/system/svetovid.service`` - systemd unit file for
       Svetovid
-    - ``/usr/local/share/svetovid/`` - FSDM runtime and utilities
-      - ``/usr/local/share/svetovid/bin/svetovid-fsdmtool`` - main executable
-        for the ``fsdmtool``
-        - ``/usr/local/share/svetovid/bin/fsdm/`` - ``fsdmtool`` support modules
-        - ``/usr/local/share/svetovid/lib/fsdm/python/`` - FSDM runtime for
-          Python
-        - ``/usr/local/share/svetovid/lib/fsdm/sh/`` - FSDM runtime for shell
-          scripts
+    - ``/usr/local/share/svetovid/`` - [FSDM](../FSDM.md) runtime and utilities
+        - ``/usr/local/share/svetovid/bin/svetovid-fsdmtool`` - main executable
+          for the [fsdmtool](../FSDM.md#fsdm-script-stub-generator)
+        - ``/usr/local/share/svetovid/bin/fsdm/`` -
+          [fsdmtool](../FSDM.md#fsdm-script-stub-generator) support modules
+        - ``/usr/local/share/svetovid/lib/fsdm/python/`` - [FSDM](../FSDM.md)
+          runtime for Python
+        - ``/usr/local/share/svetovid/lib/fsdm/sh/`` - [FSDM](../FSDM.md)
+          runtime for shell scripts
 
 ## Launch instructions
 
