@@ -26,10 +26,10 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
 !!! note
     If preferred, you can directly jump to the Getting Started guides of the popular hardware platforms:
 
-    * [Nordic](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/)
-    * [STMicroelectronics](https://iotdevzone.avsystem.com/docs/LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/),
-    * [ESP32](https://iotdevzone.avsystem.com/docs/LwM2M_Client/ESP32/M5Stick/)
-    * [Raspberry Pi](https://iotdevzone.avsystem.com/docs/Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W/)
+    * [Nordic](./LwM2M_Client/Nordic/Thingy91.md)
+    * [STMicroelectronics](./LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md)
+    * [ESP32](./LwM2M_Client/ESP32/ESP32-DevKitCBG96.md)
+    * [Raspberry Pi](./LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md)
 
 
 !!! Info
@@ -182,9 +182,9 @@ Follow the **Getting started** guides to kickstart your LwM2M application using 
 
 ### Learn more about {{ coiote_short_name }}
 
-Dive into {{ coiote_long_name }} and explore its numerous functionalities. From device onboarding using the [Bootstrap Server](/Coiote_IoT_DM/Onboarding/bootstrap/) to [Data Visualization](/Coiote_IoT_DM/Quick_Start/Visualize_device_data/) and running automated [Device Tests](/Coiote_IoT_DM/Device_tests/Overview/).
+Dive into {{ coiote_long_name }} and explore its numerous functionalities. From device onboarding using the [Bootstrap Server](./Coiote_IoT_DM/Onboarding/bootstrap.md) to [Data Visualization](./Coiote_IoT_DM/Visualize_data.md) and running automated [Device Tests](./Coiote_IoT_DM/Device_tests/Overview.md).
 
-[{{ coiote_short_name }} docs](/Coiote_IoT_DM/introduction/){: .md-button .md-button--big }
+[{{ coiote_short_name }} docs](./Coiote_IoT_DM/introduction.md){: .md-button .md-button--big }
 
 ### Join our community on Discord
 

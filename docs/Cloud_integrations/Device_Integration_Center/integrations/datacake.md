@@ -17,7 +17,7 @@ You can easily integrate with [Datacake](https://datacake.co/) using webhooks an
 
 ## Setup Datacake
 
-1. Open your Datacake account. 
+1. Open your Datacake account.
 2. Create a new workspace or select an existing one.
 3. Create a new API Device representing your device by going to: **Devices** > **Add device**.
     ![Add a device](../images/datacake-add-device.webp "Add a device")
@@ -46,7 +46,7 @@ function Decoder(request) {
 
     // Parse JSON into Object
     var payload = JSON.parse(request.body);
-    
+
     var endpointName = payload.endpointName;
     var temperatureUrl = "/3303/0/5700";
     if (payload.url == temperatureUrl) {
@@ -75,7 +75,7 @@ This decoder does several things required to ingest device data into the Datacak
 
 ## Create webhook in {{ coiote_long_name }}
 
-1. Go back to your domain in {{ coiote_long_name }}. 
+1. Go back to your domain in {{ coiote_long_name }}.
 2. Go to **Integrations > Data Integration Center** and create a Webhook event handler that will forward device telemetry.
 
 ![Forward device telemetry](../images/datacake-filter-config.webp "Forward device telemetry")
@@ -93,7 +93,7 @@ This decoder does several things required to ingest device data into the Datacak
 
 ## Monitor events in Datacake
 
-After activating the event handler, go to your Datacake account and open the Dashboard of your device. If you have already [set an observation on the Temperature object](/Coiote_IoT_DM/Device_Center/#set-observation), you should see that the **Last update** field of your device in Datacake changed to the time when Datacake received last information from {{ coiote_short_name }}.
+After activating the event handler, go to your Datacake account and open the Dashboard of your device. If you have already [set an observation on the Temperature object](../../../Coiote_IoT_DM/Device_Center.md), you should see that the **Last update** field of your device in Datacake changed to the time when Datacake received last information from {{ coiote_short_name }}.
 
 ![Last update time of the device in Datacake](../images/datacake-last-update.webp "Last update time of the device in Datacake")
 
@@ -101,7 +101,7 @@ Let's set up a Datacake dashboard to display the received Temperature data.
 
 ### Create widget in Datacake
 
-1. Enter the edit mode by clicking the toggle on the right side of the dashboard. 
+1. Enter the edit mode by clicking the toggle on the right side of the dashboard.
 
 2. Click **Add Widget** and pick **Chart** type.
     ![Create chart in Datacake](../images/datacake-add-chart.webp "Create chart in Datacake")

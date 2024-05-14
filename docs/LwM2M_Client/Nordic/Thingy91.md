@@ -178,7 +178,7 @@ Current Anjay config:
     It does not affect the operation of the application and will no longer appear after reconnection.
 
 ## Next Steps
-After configuring the Anjay Client, you can use the **nRF Cloud Location Service** to enable cell-based location services, or assisted GPS. [**Learn how to do it here.**](/Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/)
+After configuring the Anjay Client, you can use the **nRF Cloud Location Service** to enable cell-based location services, or assisted GPS. [**Learn how to do it here.**](../../Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md)
 
 !!! note
     **Thingy:91** uses the same radio for GPS and LTE connectivity. GPS signal is

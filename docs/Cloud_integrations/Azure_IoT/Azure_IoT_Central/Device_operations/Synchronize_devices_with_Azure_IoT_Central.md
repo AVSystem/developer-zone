@@ -7,7 +7,7 @@ Importing devices to {{ coiote_short_name }} and synchronizing them with Azure I
 
 ## Prerequisites
 
- - A [connected Azure IoT Central integration](/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configure_Azure_IoT_Central_integration/) in the Hyperscaler Integration Center.
+ - A [connected Azure IoT Central integration](../Configure_Azure_IoT_Central_integration.md) in the Hyperscaler Integration Center.
  ____________________
 
 
@@ -20,7 +20,7 @@ When a device is already added to {{ coiote_short_name }}'s Device inventory, yo
 
 ## Import devices from CSV using a default integration template (option 2)
 
-In the import process, you will need a list of devices that you want to import along with an integration template to be used by Azure IoT Central. To learn more about Azure integration templates, see the [Configure integration templates](/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) section.
+In the import process, you will need a list of devices that you want to import along with an integration template to be used by Azure IoT Central. To learn more about Azure integration templates, see the [Configure integration templates](../../Configure_integration_templates/Azure_integration_templates.md) section.
 
 0. In {{ coiote_short_name }}, go to **Administration** -> **Hyperscaler Integration Center**.
 0. Make sure you have an integration connected in the **Integration** tab.
@@ -30,7 +30,7 @@ In the import process, you will need a list of devices that you want to import a
         - Default minimal LwM2M schema - a pre-defined template implementing a basic device data model.
         - Default rich LwM2M schema - a pre-defined template implementing an extended device data model.
     !!! note
-        Integration templates are crucial in the device import process. Optionally, you can create your custom device template and use it in importing. Check the instructions in the [Configure integration templates](/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) section.
+        Integration templates are crucial in the device import process. Optionally, you can create your custom device template and use it in importing. Check the instructions in the [Configure integration templates](../../Configure_integration_templates/Azure_integration_templates.md) section.
     - In the **Import devices from a CSV file** section:
         ![Importing devices](images/import_view.png "Importing devices")
         - If you already have a CSV file with devices for import, click **Browse** and select the file.

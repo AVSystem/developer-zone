@@ -207,4 +207,4 @@ Now start moving the Thingy:91 around to detect all three patterns. When a new m
 
 The LwM2M standard allows you to instruct the device about the minimum and maximum allowed intervals between two updates. The intervals can be set from 1 second to multiple days. To instruct the device, an OBSERVE operation can be sent from the LwM2M Server to the LwM2M Client.
 
-For more information, see [how to set observations](/Coiote_IoT_DM/Device_Center/#set-observation)
+For more information, see [how to set observations](../Coiote_IoT_DM/Device_Center.md)
