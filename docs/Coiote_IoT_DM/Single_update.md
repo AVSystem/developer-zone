@@ -9,7 +9,7 @@ There are two types of Firmware update:
 
  - **Basic Firmware Update** for a remote update of the LwM2M device firmware by using the **Firmware Update Object** `/5`.
  - **Multi-component Firmware Update** for a remote update of the LwM2M device's firmware component by using the **Advanced Firmware Update Object** `/33629`. Object `/33629` is designed as an extension of the Firmware Update object `/5`. It supports multiple instances, each representing a "component" of the device's firmware that can be upgraded separately. The specific meaning and purpose of these components are not standardized and can vary depending on the implementation. However, they typically encompass elements such as bootloaders, application code, cellular modem firmwares, security processor firmwares, and other related firmware entities.
-   
+
 !!! info
     **Multi-component Firmware Update** is the internal implementation, while **Advanced Firmware Update Object** `/33629` is supported by CoioteDM and Anjay only.
 
@@ -95,13 +95,13 @@ Object `/33629` defines the update process using **4 Update States** represen
 ## Firmware Update Dashboard
 In the **Device Center**, in the **Firmware update** tab, you can find cards with information on the selected Firmware Update.
 
- - **Device Firmware** shows the last recorded information on the current firmware version.    
+ - **Device Firmware** shows the last recorded information on the current firmware version.
  - **Status** contains the information on the firmware concerned and shows if this firmware is a part of the FOTA campaign. It also indicates the status of the following stages of the Firmware update: **Preparing update**, **Transferring package**, **Executing update** and **Cleanup**. The **Cancel update** button allows you to end already started updating process which means that the Firmware update progress won't be saved. This action is only applicable for the devices supporting this feature.
  - **Upcoming FOTA Campaign update** shows the campaign which is identified as the first to perform the next Firmware update on a given device as per the time of creation and its schedule. Once the update starts, the campaign will be moved to the **Updates list**.
- - **Updates list** points at the Firmware updates history with the possibility to filter information by: **Status**, **Name**, **Start time**, **Finish time**, **Type**, **Created**, **Created by**, and **Part of FOTA campaign**. A reference link to a campaign name enables you to access the FOTA campaign details providing you have the appropriate permissions. 
-    
-    - No information in this field, marked by a hyphen **-**, means that it's a Single FOTA Firmware update which is not a part of a campaign. 
-    - Whereas inactive information means that you are not eligible to view the details. 
+ - **Updates list** points at the Firmware updates history with the possibility to filter information by: **Status**, **Name**, **Start time**, **Finish time**, **Type**, **Created**, **Created by**, and **Part of FOTA campaign**. A reference link to a campaign name enables you to access the FOTA campaign details providing you have the appropriate permissions.
+
+    - No information in this field, marked by a hyphen **-**, means that it's a Single FOTA Firmware update which is not a part of a campaign.
+    - Whereas inactive information means that you are not eligible to view the details.
 
 The **Settings** icon allows for enabling and disabling the filters according to your preferences. The **More action** icon allows for previewing configuration details of a chosen firmware, copying the configuration or canceling the existing one.
 
@@ -114,7 +114,7 @@ The **Settings** icon allows for enabling and disabling the filters according to
 
 2. Select the device you want to update by clicking on its endpoint name.
 
-3. Go to the **Data model** tab to validate if: 
+3. Go to the **Data model** tab to validate if:
 
     * the Firmware Update Object `/5` is present for Basic Firmware Update
     * the Firmware Update Object `/33629` is present for Multi-component Firmware Update
@@ -135,11 +135,11 @@ The **Settings** icon allows for enabling and disabling the filters according to
 To create basic Firmware update from an existing configuration, perform the following steps:
 
 1. Provide a name of the Firmware update.
-2. Select a FOTA configuration for your Firmware update. 
+2. Select a FOTA configuration for your Firmware update.
 3. In the FOTA configuration settings section, preview configuration details before scheduling update.
-4. To create Firmware update, click **Schedule Update**. 
-    
-    If you fill in details correctly, you will see the confirmation that your update has been scheduled successfully. 
+4. To create Firmware update, click **Schedule Update**.
+
+    If you fill in details correctly, you will see the confirmation that your update has been scheduled successfully.
 
 ### Create new Basic Firmware update
 
@@ -171,29 +171,29 @@ To create new, basic Firmware update, perform the following steps:
         Downloads using `CoAP(s)` over `UDP` tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
         Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually results in faster download speeds. However, not every device supports these transport protocols.
 
-6. Choose the URI format in which the URL will be send to the firmware package. 
+6. Choose the URI format in which the URL will be send to the firmware package.
 
     !!! Info
         In the **Preview** field, you can verify the location of the security token.
 
 7. Once you check the details in **Firmware Update Flow Preview**, click **Next**.
-8. In the **Summary** section, preview the Firmware update information and click **Schedule Update**. 
+8. In the **Summary** section, preview the Firmware update information and click **Schedule Update**.
 
-    If you filled in the details correctly, you will see the confirmation that the Firmware update has been scheduled successfully. 
+    If you filled in the details correctly, you will see the confirmation that the Firmware update has been scheduled successfully.
 
 ### Create new, multi-component Firmware update
 To create new, multi-component Firmware update, perform the following steps:
 
 1. Provide a name of the Firmware update.
 2. Optionally, in the **Description** field, provide information about your Firmware version.
-    
+
     !!! Info
         You can save FOTA configuration after its creation by enabling the appropriate toggle switch. Once it's activated, you can also make the configuration visible in subdomains by enabling **Visible in domains**. In case the configuration is saved for later purposes, the underlying files expiration date is extended to 6 months.
         ![FOTA configuration togglers](images/togglers.png)
 
 3. To go to the component selection, click **Next**.
-4. To select more than one component, click **Add new component** and upload a new firmware or choose one from resources. 
-    ![Select components](images/selected_components.png)  
+4. To select more than one component, click **Add new component** and upload a new firmware or choose one from resources.
+    ![Select components](images/selected_components.png)
 5. To go to **Settings**, click **Next**.
 6. Choose the image delivery method:
 
@@ -212,16 +212,16 @@ To create new, multi-component Firmware update, perform the following steps:
         Downloads using `CoAP(s)` over `UDP` tend to be slow due to the limitation of the maximum CoAP Block size of 1024 bytes and the required acknowledgements for each Block transfer.
         Choosing `CoAP(s)` over `TCP` or `HTTP(s)` usually results in faster download speeds. However, not every device supports these transport protocols.
 
-6. Choose the URI format in which the URL will be send to the firmware package. 
+6. Choose the URI format in which the URL will be send to the firmware package.
 
     !!! Info
         In the **Preview** field, you can verify the location of the security token.
 
 7. Once you check the details in the **Firmware Update Flow Preview** section, click **Next**.
 
-8. In the **Summary** section, preview the Firmware update information and click **Schedule Update**. 
+8. In the **Summary** section, preview the Firmware update information and click **Schedule Update**.
 
-    If you filled in the details correctly, the Firmware update will be scheduled successfully. 
+    If you filled in the details correctly, the Firmware update will be scheduled successfully.
 
 
 ## Download & Upgrade Process
@@ -261,11 +261,11 @@ If no errors occur, the update process follows this pattern:
 4. **Updated** `state 0` & `update result 1`
 
 !!! important "Update successful?"
-    - If the **State** `/5/*/3` reports `0` and the **Update Results** `/5/*/5` reports `1` for **Basic Firmware Update**, the firmware device has been completed successfully. Congratulations! 
-    - If the **State** `/33629/*/3` reports `0` and the **Update Results** `/33629/*/5` reports `1`for **Multi-component Firmware Update**, the firmware device has been completed successfully. Congratulations! 
+    - If the **State** `/5/*/3` reports `0` and the **Update Results** `/5/*/5` reports `1` for **Basic Firmware Update**, the firmware device has been completed successfully. Congratulations!
+    - If the **State** `/33629/*/3` reports `0` and the **Update Results** `/33629/*/5` reports `1`for **Multi-component Firmware Update**, the firmware device has been completed successfully. Congratulations!
 
 ## REST API
- [REST API Documentation](http://cdm-tc-main-fleetfota.kube.si:8086/apidoc/coiotedm/v3) supports **Basic Firmware Update** and **Multi-component Firmware Update** for the the updates which use an existing configuration. For more information, see the [Firmware Configurations](Firmware_configurations.md), [Firmware Campaigns](Firmware_campaigns.md) or [Firmware Update](Firmware_update.md) sections.
+ [REST API Documentation](http://cdm-tc-main-fleetfota.kube.si:8086/apidoc/coiotedm/v3) supports **Basic Firmware Update** and **Multi-component Firmware Update** for the the updates which use an existing configuration. For more information, see the [Firmware Configurations](Configurations.md), [Firmware Campaigns](Campaigns.md) or [Single Update](Single_update.md) sections.
 
 ## Troubleshooting
 

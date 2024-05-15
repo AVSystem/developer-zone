@@ -2,7 +2,7 @@
 
 This section describes how to set an Observation in your Azure IoT Central application.
 
-Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to {{ coiote_short_name }}, which in turn will transfer it to Azure IoT Central.
+Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](../Concepts/LwM2M_mappings_Central.md ): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to {{ coiote_short_name }}, which in turn will transfer it to Azure IoT Central.
 
 In this section, you learn how to:
 
@@ -16,13 +16,13 @@ In this section, you learn how to:
 1. An active Azure IoT Central with hub owner access permissions.
 2. A {{ coiote_short_name }} user account with permissions to use the Azure IoT Central integration.
 3. A device group created in {{ coiote_short_name }}.
-4. [A configured integration between {{ coiote_short_name }} and Azure Iot Central](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/).
-5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+4. [A configured integration between {{ coiote_short_name }} and Azure Iot Central]( Configure_Azure_IoT_Central_integration.md).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](../Configure_integration_templates/Azure_integration_templates.md).
 5. A connected device in {{ coiote_short_name }} that has been [exported to](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/) or [imported from](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/) Azure IoT Central.
 
 ## Assign a device template
 
-To enable correct communication between {{ coiote_short_name }} and Azure IoT Central, you need two templates. The first template configures the {{ coiote_short_name }} integration with Azure. ([Follow the instruction](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/) to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.
+To enable correct communication between {{ coiote_short_name }} and Azure IoT Central, you need two templates. The first template configures the {{ coiote_short_name }} integration with Azure. ([Follow the instruction](../Configure_integration_templates/Azure_integration_templates.md) to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.
 
 ### Download LwM2M template in {{ coiote_short_name }}
 
@@ -173,4 +173,4 @@ You'll see that checkboxes next to **Value tracking** and **Attributes** are now
 ![Observation set in Azure from the {{ coiote_short_name }} perspective](images-observation/azure_coiote.png "Observation set in Azure from the {{ coiote_short_name }} perspective")
 
 ## Next steps
-[Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)
+[Air quality monitoring - tutorial](../../../Demo_Projects/Air_quality_monitoring_tutorial.md)

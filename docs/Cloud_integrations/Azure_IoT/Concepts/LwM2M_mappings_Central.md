@@ -69,7 +69,7 @@ Setting an Observe operation on a resource in {{ coiote_short_name }}, for insta
 
 ![Telemetry Observe Temperature](images/Telemetry.png "Observe Temperature")
 
-To set an Observe operation in Azure IoT Central, you need to add a [Job](/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/) in the IoT Central application. As you can see in the **Devices > Raw data** tab, an Observation is represented in the following format:
+To set an Observe operation in Azure IoT Central, you need to add a [Job](../Azure_IoT_Central/Set_an_Observation.md) in the IoT Central application. As you can see in the **Devices > Raw data** tab, an Observation is represented in the following format:
 
 ```
 “n1n1n1_attributes”: “(\”observed\”:true,\”pmin\”:20}”
@@ -77,4 +77,4 @@ To set an Observe operation in Azure IoT Central, you need to add a [Job](/Azure
 
 **Next steps**
 
-* [Configure integration templates](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/)
+* [Configure integration templates](../Configure_integration_templates/Azure_integration_templates.md)

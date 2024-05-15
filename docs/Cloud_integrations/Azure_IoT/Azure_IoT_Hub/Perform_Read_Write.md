@@ -2,7 +2,7 @@
 
 This section describes how to perform a LwM2M WRITE and READ operations in your Azure IoT Hub and {{ coiote_short_name }}.
 
-A WRITE operation lets you change the current value on the given [data model](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/) component: object, object instance, and resource. The READ enables you to see the updated value of an object, object instance, or resource.
+A WRITE operation lets you change the current value on the given [data model](../Concepts/LwM2M_mappings_Hub.md) component: object, object instance, and resource. The READ enables you to see the updated value of an object, object instance, or resource.
 
 In this section, you learn how to:
 
@@ -15,9 +15,9 @@ In this section, you learn how to:
 1. An active Azure IoT Hub with hub owner access permissions.
 2. A {{ coiote_short_name }} user account with permissions to use the integration extension.
 3. A device group created in {{ coiote_short_name }}.
-4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/).
-5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
-5. [A connected device](https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/).
+4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](../Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](../Configure_integration_templates/Azure_integration_templates.md).
+5. [A connected device](../../../Coiote_IoT_DM/Onboarding/connect.md).
 
 ## Perform WRITE
 
@@ -88,9 +88,9 @@ You have successfully performed a LwM2M WRITE on a resource.
 
 ## Perform READ
 
-Let’s perform a READ operation on the **Temperature** object's **Sensor Value** resource with ID **3303/0/5700** defined as a *Property* in the [integration template in {{ coiote_short_name }}](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/).
+Let’s perform a READ operation on the **Temperature** object's **Sensor Value** resource with ID **3303/0/5700** defined as a *Property* in the [integration template in {{ coiote_short_name }}](../Configure_integration_templates/Azure_integration_templates.md).
 
-To learn more about reading value changes for both *Telemetry* and *Property*, refer to [LwM2M mappings for Azure IoT Hub](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-readable-and-writable-resources). To perform a READ operation, do the following:
+To learn more about reading value changes for both *Telemetry* and *Property*, refer to [LwM2M mappings for Azure IoT Hub](../Concepts/LwM2M_mappings_Hub.md). To perform a READ operation, do the following:
 
 1. In {{ coiote_short_name }}, go to your device and select the **Data model** tab.
 2. Expand the **Temperature** object, and find the **Sensor Value (3303/0/5700)** resource in the list.
@@ -121,4 +121,4 @@ The value change for the resource is displayed in the Device Twin JSON snippet. 
 If you don’t see any changes, click **Refresh**. If it doesn’t help, you can check whether the READ operation has been performed in {{ coiote_short_name }} as well.
 
 ## Next steps
-[Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)
+[Air quality monitoring - tutorial](../../../Demo_Projects/Air_quality_monitoring_tutorial.md)

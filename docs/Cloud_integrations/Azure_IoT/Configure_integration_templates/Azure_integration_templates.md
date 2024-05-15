@@ -2,7 +2,7 @@
 
 Integration templates define the format in which the data is exchanged between devices and Azure. The data can be either a property or a telemetry. Property describes the actual value. For example: at 1:00 PM a thermometer shows 5°C, and only this value is sent. Telemetry is used to observe changes in values. For example: it was 5°C at 1:00 PM, and one hour later it’s 6°C. In other words, you need to decide whether you want to send and receive historical data or not.
 
-If you select the Property option, then {{ coiote_short_name }} reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the [LwM2M mappings](/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/) section.
+If you select the Property option, then {{ coiote_short_name }} reports data to Azure using Device Twins. For the Telemetry data it uses Azure IoT Hub Device-to-cloud mechanism. Read more about these key concepts in the [LwM2M mappings](../Concepts/LwM2M_mappings_Hub.md) section.
 
 Follow the instruction below to create integration templates and learn how they work.
 
@@ -42,7 +42,7 @@ Follow the instruction below to create integration templates and learn how they 
 
 ### How integration templates work
 
-As you now know, the Azure integration template is based on a data model which consists of the objects and resources. {{ coiote_short_name }} sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in [Azure IoT Hub](/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Set_an_Observation/) and [Azure IoT Central](/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Set_an_Observation/).)
+As you now know, the Azure integration template is based on a data model which consists of the objects and resources. {{ coiote_short_name }} sends data to Azure every time a device data model is changed, provided that you have set an Observation on the objects and resources in this data model. (Read about setting an Observation in [Azure IoT Hub](../Azure_IoT_Hub/Set_an_Observation.md) and [Azure IoT Central](../Azure_IoT_Central/Set_an_Observation.md).)
 
 Let’s illustrate the process with two examples. In the first case, the change in the data model is triggered by the device. `Battery level` is defined as a property. When the value of the `Battery level` resource changes, the device sends **Send** or **Notify** messages via LwM2M. The device information in {{ coiote_short_name }} is then updated and translated to Device Twin JSON, which in turn is sent to Azure.
 
@@ -52,4 +52,4 @@ Let’s illustrate the process with two examples. In the first case, the change 
 In the second example, the change in the data model is triggered by {{ coiote_short_name }}. When you set an Observation on the `Battery level`, this information is sent to Azure in the Device Twin JSON. To check whether the values of the `Battery level` resource on the device and {{ coiote_short_name }} are the same, {{ coiote_short_name }} performs a **READ** operation on this resource. If the value is different, a **WRITE** operation is performed to change the value in {{ coiote_short_name }}. Then the Device Twin JSON is updated and sent to Azure.
 
 ## Next steps
- - [Air quality monitoring - tutorial](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/)
+ - [Air quality monitoring - tutorial](../../../Demo_Projects/Air_quality_monitoring_tutorial.md)

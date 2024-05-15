@@ -79,7 +79,7 @@ The ID Scope is used to identify the specific provisioning service for the devic
 
 After you set up Azure DPS and connect your Azure DPS integration in {{ coiote_short_name }}, device provisioning and reprovisioning to the proper IoT hub are automated. You aren’t required to make any changes in {{ coiote_short_name }}.
 
-Importing and exporting devices, upgrading device firmware, and setting observations—all these operations happen at the level of individual hubs. The detailed instructions are provided in our [Azure IoT Hub documentation](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/).
+Importing and exporting devices, upgrading device firmware, and setting observations—all these operations happen at the level of individual hubs. The detailed instructions are provided in our [Azure IoT Hub documentation](../Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md).
 
 To see to which hub a device has been assigned:
 
@@ -92,7 +92,7 @@ To see to which hub a device has been assigned:
 
 ## Next steps
 
-* [Device operations on Azure IoT Hub](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Device_operations/Overview/)
+* [Device operations on Azure IoT Hub](../Azure_IoT_Hub/Device_operations/Overview.md)
 * [Azure DPS documentation](https://docs.microsoft.com/en-us/azure/iot-dps/)
 
 ## Removing devices
