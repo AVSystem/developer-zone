@@ -1,10 +1,9 @@
 # Exercise 5: Implement Firmware Update
-In this exercise, we implement Object 5 - Firmware Update.  It utilizes the pico_fota_bootloader to swap the flash partitions after downloading the appropriate binary file from Coiote IoT DM.
+In this exercise, we implement Object 5 - Firmware Update.  It utilizes the [pico_fota_bootloader](https://github.com/JZimnol/pico_fota_bootloader) to swap the flash partitions after downloading the appropriate binary file from Coiote IoT DM.
 
 ## Prerequisites
 
 * A Raspberry Pi Pico W board with a USB cable
-* A LM35 temperature sensor
 * Installed **minicom** (for Linux), **RealTerm**, **PuTTy** (for Windows), or another serial communication program.
 * An active [{{ coiote_short_name }}]({{ coiote_site_link }}/) user account
 * Completed [exercise 4A](../academy/exercise4a.md) from module 4
@@ -15,12 +14,12 @@ In this exercise, we implement Object 5 - Firmware Update.  It utilizes the pico
 Anjay comes with a built-in Firmware Update module, which simplifies FOTA implementation for the user. Let’s dive into the code and discuss its most important fragments.
 
 !!! Note
-    This part only describes functions that are in the code. The user doesn’t have to modify the code.
+    This part only describes functions that are in the code in **Anjay-pico-client/firmware_update** folder. The user doesn’t have to modify the code.
 
 In our code, firmware update module installation will be taken by the function declared in **firmware_update.h**:
 
 <p style="text-align: center;">firmware_update.h</p>
-```
+``` c
 #pragma once
 
 #include <anjay/anjay.h>
@@ -28,25 +27,10 @@ In our code, firmware update module installation will be taken by the function d
 int fw_update_install(anjay_t *anjay);
 ```
 
-In the main.c file the installation of the Firmware Update module takes place in two fragments:
+In the main.c file the installation of the Firmware Update module takes place in the *anjay_task()* funktion:
 
 <p style="text-align: center;">main.c</p>
-```
-#include "lwip/sockets.h"
-#include <anjay/anjay.h>
-#include <anjay/core.h>
-#include <anjay/security.h>
-#include <anjay/server.h>
-#include <avsystem/commons/avs_list.h>
-#include <avsystem/commons/avs_log.h>
-#include <avsystem/commons/avs_prng.h>
-#include <avsystem/commons/avs_time.h>
-
-#include "firmware_update.h"
-```
-
-<p style="text-align: center;">main.c</p>
-```
+``` c
 void anjay_task(__unused void *params) {
     init_wifi();
 
@@ -78,150 +62,118 @@ void anjay_task(__unused void *params) {
 }
 ```
 
-To implement I/O operations required to download the firmware a new globally defined structure with the entire shared state is used. This is stored in the **firmware_update.c** file:
-
-<p style="text-align: center;">firmware_update.c</p>
-```
-#include <assert.h>
-#include <stddef.h>
-#include <stdint.h>
-
-#include <anjay/anjay.h>
-#include <anjay/fw_update.h>
-
-#include <avsystem/commons/avs_defs.h>
-#include <avsystem/commons/avs_log.h>
-#include <avsystem/commons/avs_sched.h>
-#include <avsystem/commons/avs_time.h>
-
-#include "hardware/flash.h"
-#include "hardware/sync.h"
-#include "hardware/watchdog.h"
-
-#include "firmware_update.h"
-#include "flash_aligned_writer.h"
-#include "pico_fota_bootloader.h"
-
-static bool update_initialized;
-static size_t downloaded_bytes;
-
-static uint8_t writer_buf[256];
-static flash_aligned_writer_t writer;
-```
-
-
 The Firmware Update module consists of user-implemented callbacks of various sorts implemented in the firmware_update.c file:
 
-- stream_open is called whenever a new firmware download is started by the Server. Its main responsibility is to prepare for receiving firmware chunks - e.g. by opening a file or getting flash storage ready, etc.
+- `stream_open` is called whenever a new firmware download is started by the server. Its main responsibility is to prepare client for receiving firmware chunks - e.g. by opening a file or getting flash storage ready, etc.
 
-<p style="text-align: center;">firmware_update.c</p>
-```
-static int fw_stream_open(void *user_ptr,
-                          const char *package_uri,
-                          const struct anjay_etag *package_etag) {
-    (void) user_ptr;
-    (void) package_uri;
-    (void) package_etag;
+    <p style="text-align: center;">firmware_update.c</p>
+    ``` c
+    static int fw_stream_open(void *user_ptr,
+                            const char *package_uri,
+                            const struct anjay_etag *package_etag) {
+        (void) user_ptr;
+        (void) package_uri;
+        (void) package_etag;
 
-    pfb_initialize_download_slot();
-    flash_aligned_writer_new(writer_buf, AVS_ARRAY_SIZE(writer_buf),
-                             pfb_write_to_flash_aligned_256_bytes, &writer);
+        pfb_initialize_download_slot();
+        flash_aligned_writer_new(writer_buf, AVS_ARRAY_SIZE(writer_buf),
+                                pfb_write_to_flash_aligned_256_bytes, &writer);
 
-    downloaded_bytes = 0;
-    update_initialized = true;
-    avs_log(fw_update, INFO, "Init successful");
+        downloaded_bytes = 0;
+        update_initialized = true;
+        avs_log(fw_update, INFO, "Init successful");
 
-    return 0;
-}
-```
+        return 0;
+    }
+    ```
 
 
-- stream_write is called whenever there is a next firmware chunk received, ready to be stored. Its responsibility is to append the chunk to the storage.
+- `stream_write` is called whenever there is a next firmware chunk received, ready to be stored. Its responsibility is to append the chunk to the storage.
 
-<p style="text-align: center;">firmware_update.c</p>
-```
-static int fw_stream_write(void *user_ptr, const void *data, size_t length) {
-    (void) user_ptr;
+    <p style="text-align: center;">firmware_update.c</p>
+    ``` c
+    static int fw_stream_write(void *user_ptr, const void *data, size_t length) {
+        (void) user_ptr;
 
-    assert(update_initialized);
+        assert(update_initialized);
 
-    int res = flash_aligned_writer_write(&writer, data, length);
-    if (res) {
-        return res;
+        int res = flash_aligned_writer_write(&writer, data, length);
+        if (res) {
+            return res;
+        }
+
+        downloaded_bytes += length;
+        avs_log(fw_update, INFO, "Downloaded %zu bytes.", downloaded_bytes);
+
+        return 0;
+    }
+    ```
+
+
+- `stream_finish` is called whenever the writing process is finished and the stored data can now be thought of as a complete firmware image. It may be a good moment here to verify if the entire firmware image is valid.
+
+    <p style="text-align: center;">firmware_update.c</p>
+    ``` c
+    static int fw_stream_finish(void *user_ptr) {
+        (void) user_ptr;
+
+        assert(update_initialized);
+        update_initialized = false;
+
+        int res = flash_aligned_writer_flush(&writer);
+        if (res) {
+            avs_log(fw_update, ERROR,
+                    "Failed to finish download: flash aligned writer flush failed, "
+                    "result: %d",
+                    res);
+            return -1;
+        }
+
+        return 0;
+    }
+    ```
+
+
+- `reset` is called whenever there is an error during firmware download, or if the Server decides to not pursue firmware update with downloaded firmware (e.g. because it was notified that firmware verification failed).
+
+    <p style="text-align: center;">firmware_update.c</p>
+    ``` c
+    static void fw_reset(void *user_ptr) {
+        (void) user_ptr;
+
+        update_initialized = false;
     }
 
-    downloaded_bytes += length;
-    avs_log(fw_update, INFO, "Downloaded %zu bytes.", downloaded_bytes);
+    static void fw_update_reboot(avs_sched_t *sched, const void *data) {
+        (void) sched;
+        (void) data;
 
-    return 0;
-}
-```
+        avs_log(fw_update, INFO, "Rebooting.....");
+        pfb_perform_update();
+    }
+    ```
 
 
-- stream_finish is called whenever the writing process is finished and the stored data can now be thought of as a complete firmware image. It may be a good moment here to verify if the entire firmware image is valid.
+- `perform_upgrade` is called whenever the download is finished, the firmware is successfully verified on the Client and the Server decides to upgrade the device.
 
-<p style="text-align: center;">firmware_update.c</p>
-```
-static int fw_stream_finish(void *user_ptr) {
-    (void) user_ptr;
+    <p style="text-align: center;">firmware_update.c</p>
+    ``` c
+    static int fw_perform_upgrade(void *anjay) {
+        pfb_mark_download_slot_as_valid();
+        avs_log(fw_update, INFO,
+                "The firmware will be updated at the next device reset");
 
-    assert(update_initialized);
-    update_initialized = false;
-
-    int res = flash_aligned_writer_flush(&writer);
-    if (res) {
-        avs_log(fw_update, ERROR,
-                "Failed to finish download: flash aligned writer flush failed, "
-                "result: %d",
-                res);
-        return -1;
+        return AVS_SCHED_DELAYED(anjay_get_scheduler(anjay), NULL,
+                                avs_time_duration_from_scalar(1, AVS_TIME_S),
+                                fw_update_reboot, NULL, 0);
     }
 
-    return 0;
-}
-```
-
-
-- reset is called whenever there is an error during firmware download, or if the Server decides to not pursue firmware update with downloaded firmware (e.g. because it was notified that firmware verification failed).
-
-<p style="text-align: center;">firmware_update.c</p>
-```
-static void fw_reset(void *user_ptr) {
-    (void) user_ptr;
-
-    update_initialized = false;
-}
-
-static void fw_update_reboot(avs_sched_t *sched, const void *data) {
-    (void) sched;
-    (void) data;
-
-    avs_log(fw_update, INFO, "Rebooting.....");
-    pfb_perform_update();
-}
-```
-
-
-- perform_upgrade is called whenever the download is finished, the firmware is successfully verified on the Client and the Server decides to upgrade the device.
-
-<p style="text-align: center;">firmware_update.c</p>
-```
-static int fw_perform_upgrade(void *anjay) {
-    pfb_mark_download_slot_as_valid();
-    avs_log(fw_update, INFO,
-            "The firmware will be updated at the next device reset");
-
-    return AVS_SCHED_DELAYED(anjay_get_scheduler(anjay), NULL,
-                             avs_time_duration_from_scalar(1, AVS_TIME_S),
-                             fw_update_reboot, NULL, 0);
-}
-
-```
+    ```
 
 To install the module, we are going to use the *fw_update_install()* function which is called in the main.c file:
 
 <p style="text-align: center;">firmware_update.c</p>
-```
+``` c
 static const anjay_fw_update_handlers_t handlers = {
     .stream_open = fw_stream_open,
     .stream_write = fw_stream_write,
@@ -236,18 +188,23 @@ int fw_update_install(anjay_t *anjay) {
         state.result = ANJAY_FW_UPDATE_INITIAL_SUCCESS;
         avs_log(fw_update, INFO, "Running on a new firmware");
     }
+    if (pfb_firmware_sha256_check(downloaded_bytes)) {
+        avs_log(fw_update, ERROR, "SHA256 check failed");
+        return -1;
+    }
 
     return anjay_fw_update_install(anjay, &handlers, anjay, &state);
 }
 ```
+
 ## Flash alignment
 
-Flash APIs require that the length of data to write will be a multiple of 256, so we need to enforce that by additional buffering. For this in the firmware_update folder there are two more files:
+Flash APIs require that the length of data to write will be a multiple of 256 bytes, so we need to enforce that by additional buffering. For this in the firmware_update directory there are two more files:
 
 - flash_aligned_writer.c
 
 <p style="text-align: center;">flash_aligned_writer.c</p>
-```
+``` c
     #include <assert.h>
     #include <stddef.h>
     #include <stdint.h>
@@ -320,7 +277,7 @@ Flash APIs require that the length of data to write will be a multiple of 256, s
 
 
 <p style="text-align: center;">flash_aligned_writer.h</p>
-```
+``` c
     #pragma once
 
     #include <stddef.h>
@@ -346,22 +303,17 @@ Flash APIs require that the length of data to write will be a multiple of 256, s
                                 size_t length);
     int flash_aligned_writer_flush(flash_aligned_writer_t *writer);
 ```
+## Recompile the application and flash the board
 
+Your data model doesn't have Firmware Update Object `/5`. For updating this set Raspberry Pi Pico W to the BOOTSEL state (by powering it up with the BOOTSEL button pressed) and copy the `build/firmware_update/pico_fota_bootloader/pico_fota_bootloader.uf2` file into it. Right now the Raspberry Pi Pico W is flashed with the bootloader but does not have proper application in the application FLASH memory slot yet. Then, set Raspberry Pi Pico W to the BOOTSEL state again and copy the `build/firmware_update/firmware_update.uf2` file. The board should reboot and start the firmware_update application.
 
-## What is Bootloader and why do I need this here?
-
-A bootloader as a program is responsible for loading and launching the operating system or firmware of a computer or embedded system. It is typically the initial program that runs when a device is powered on or restarted. The bootloader undertakes the essential configuration of internal modules, ensuring that fundamental settings are established for subsequent operations.
-
-## Prepare the Firmware Update
+## Prepare the Firmware Update in Coiote
 
 1. In the {{ coiote_long_name }}, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
 
 1. Go to the **Data model** tab to validate if the Firmware Update Object `/5` is present. If so, the Object is supported by the LwM2M Client.
 
     ![Firmware update object](images/datamodel_fota.JPG)
-
-    !!! Important
-        If yor Data model doesn't have Firmware Update Object `/5` set Raspberry Pi Pico W to the BOOTSEL state (by powering it up with the BOOTSEL button pressed) and copy the `build/firmware_update/pico_fota_bootloader/pico_fota_bootloader.uf2` file into it. Right now the Raspberry Pi Pico W is flashed with the bootloader but does not have proper application in the application FLASH memory slot yet. Then, set Raspberry Pi Pico W to the BOOTSEL state again and copy the `build/firmware_update/firmware_update.uf2` file. The board should reboot and start the firmware_update application.
 
 1. Go to the **Firmware update** tab.
 
@@ -378,7 +330,7 @@ A bootloader as a program is responsible for loading and launching the operating
     ![Upload Firmware Image](images/upload.png)
 
     !!! Note
-        The firmware image can be found in the `build/firmware_update/firmware_update_fota_image_encrypted.bin` file.
+        The firmware image `firmware_update_fota_image_encrypted.bin` file can be found in the `build/firmware_update` directory.
 
 1. Choose between **Pull** and **Push**:
 
@@ -407,10 +359,10 @@ A bootloader as a program is responsible for loading and launching the operating
 
 1. Click **Schedule Update** to trigger the Firmware Update process.
 
-!!! Note
-    After doing so, a Firmware Update process will begin. Check the serial output logs - `the INFO [fw_update] [/anjay-pico-client/firmware_update/firmware_update.c]: Downloaded X bytes` logs should appear.
+    !!! Note
+        After doing so, a Firmware Update process will begin. Check the serial output logs - the `INFO [fw_update] [/anjay-pico-client/firmware_update/firmware_update.c]: Downloaded X bytes` logs should appear.
 
-    ![Firmware Update Logs](images/fw_logs.PNG)
+        ![Firmware Update Logs](images/fw_logs.PNG)
 
 ## Download & Upgrade Process
 
@@ -429,7 +381,7 @@ Once executed successfully, the status in the **Update list** panel changes to `
 
 ### Monitoring the update process
 
-During the update process, the status of the firmware update can be monitored by reviewing the Resources **State** `/5/*/3` and **Update Results** `/5/*/5`.
+During the update process, the status of the firmware update can be monitored by reviewing the Resources **State** `/5/0/3` and **Update Results** `/5/0/5`.
 
 To find the Resources, select the **Data model** tab and open the **Firmware Update Object** `/5`.
 
@@ -443,4 +395,4 @@ If no errors occur, the update process follows this pattern:
 4. **Updated** `state 0` & `update result 1`
 
 !!! important "Update successful?"
-    Does the **State** `/5/*/3` report `0` and the **Update Results** `/5/*/5` report `1`? Congratulations! You've successfully updated the firmware of your device. 🎉
+    Does the **State** `/5/*/3` report `0` and the **Update Result** `/5/*/5` report `1`? Congratulations! You've successfully updated the firmware of your device. 🎉
