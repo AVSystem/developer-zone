@@ -3597,7 +3597,7 @@
 <!-- Markdown content -->
 <h1 id="set-an-observation">Set an Observation<a class="headerlink" href="#set-an-observation" title="Permanent link">#</a></h1>
 <p>This section describes how to set an Observation in your Azure IoT Hub.</p>
-<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Hub.</p>
+<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="../../Concepts/LwM2M_mappings_Hub/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Hub.</p>
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Set an Observation on objects and resources</li>
@@ -3609,13 +3609,13 @@
 <li>An active Azure IoT Hub with hub owner access permissions.</li>
 <li>A Coiote IoT DM user account with permissions to use the integration extension.</li>
 <li>A device group created in Coiote IoT DM.</li>
-<li><a href="https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Hub_integration/Configure_Azure_IoT_Hub_integration/">A configured extension between Coiote IoT DM and Azure Iot Hub</a>.</li>
-<li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
-<li><a href="https://iotdevzone.avsystem.com/docs/Coiote_DM_Device_Onboarding/Quick_start/">A connected device</a>.</li>
+<li><a href="../Configure_Azure_IoT_Hub_integration/">A configured extension between Coiote IoT DM and Azure Iot Hub</a>.</li>
+<li><a href="../../Configure_integration_templates/Azure_integration_templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
+<li><a href="../../../../Coiote_IoT_DM/Onboarding/connect/">A connected device</a>.</li>
 </ol>
 <h2 id="set-an-observation-and-define-its-attributes">Set an Observation and define its attributes<a class="headerlink" href="#set-an-observation-and-define-its-attributes" title="Permanent link">#</a></h2>
 <p>Let’s set two Observations: one on the whole object with ID <strong>1/1 (1 LwM2M Server, 1 Lifetime)</strong> and on the resource with ID <strong>3/0/13</strong> (3 Device, 13 Current time). Both of them are Properties.</p>
-<p>In Azure IoT Hub, value changes for both Telemetry and Property are stored in <a href="https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-readable-and-writable-resources">Device twin</a>, because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:</p>
+<p>In Azure IoT Hub, value changes for both Telemetry and Property are stored in <a href="../../Concepts/LwM2M_mappings_Hub/">Device twin</a>, because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:</p>
 <ol>
 <li>
 <p>In your Azure IoT Hub account, go to <strong>Devices</strong> from the left pane.</p>
@@ -3705,7 +3705,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
 </li>
 </ol>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
-<p><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/">Air quality monitoring - tutorial</a></p>
+<p><a href="../../../../Demo_Projects/Air_quality_monitoring_tutorial/">Air quality monitoring - tutorial</a></p>
 
 <!-- Link to previous and/or next page -->
 
@@ -3767,7 +3767,7 @@ Because we have specified in the <strong>Desired</strong> properties that the ma
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2024</span>
     
   </small>
 </div>

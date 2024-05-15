@@ -3653,7 +3653,7 @@
 <!-- Markdown content -->
 <h1 id="set-an-observation">Set an Observation<a class="headerlink" href="#set-an-observation" title="Permanent link">#</a></h1>
 <p>This section describes how to set an Observation in your Azure IoT Central application.</p>
-<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Central.</p>
+<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="../../Concepts/LwM2M_mappings_Central/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Central.</p>
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Assign a device template that acts as a translator between Coiote IoT DM and Azure IoT Central.</li>
@@ -3666,12 +3666,12 @@
 <li>An active Azure IoT Central with hub owner access permissions.</li>
 <li>A Coiote IoT DM user account with permissions to use the Azure IoT Central integration.</li>
 <li>A device group created in Coiote IoT DM.</li>
-<li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Configuring_Azure_IoT_Central_integration_extension/">A configured integration between Coiote IoT DM and Azure Iot Central</a>.</li>
-<li><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
+<li><a href="../Configure_Azure_IoT_Central_integration/">A configured integration between Coiote IoT DM and Azure Iot Central</a>.</li>
+<li><a href="../../Configure_integration_templates/Azure_integration_templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
 <li>A connected device in Coiote IoT DM that has been <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/">exported to</a> or <a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/">imported from</a> Azure IoT Central.</li>
 </ol>
 <h2 id="assign-a-device-template">Assign a device template<a class="headerlink" href="#assign-a-device-template" title="Permanent link">#</a></h2>
-<p>To enable correct communication between Coiote IoT DM and Azure IoT Central, you need two templates. The first template configures the Coiote IoT DM integration with Azure. (<a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates/">Follow the instruction</a> to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.</p>
+<p>To enable correct communication between Coiote IoT DM and Azure IoT Central, you need two templates. The first template configures the Coiote IoT DM integration with Azure. (<a href="../../Configure_integration_templates/Azure_integration_templates/">Follow the instruction</a> to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.</p>
 <h3 id="download-lwm2m-template-in-coiote-iot-dm">Download LwM2M template in Coiote IoT DM<a class="headerlink" href="#download-lwm2m-template-in-coiote-iot-dm" title="Permanent link">#</a></h3>
 <ol>
 <li>In Coiote IoT DM, go to <strong>Administration → Hyperscaler Integration Center</strong> and select the <strong>Templates</strong> tab.</li>
@@ -3843,7 +3843,7 @@ You'll see that checkboxes next to <strong>Value tracking</strong> and <strong>A
 </ol>
 <p><img alt="Observation set in Azure from the Coiote IoT DM perspective" src="../images-observation/azure_coiote.png" title="Observation set in Azure from the Coiote IoT DM perspective" /></p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
-<p><a href="https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Tutorials/Air_quality_monitoring_tutorial/">Air quality monitoring - tutorial</a></p>
+<p><a href="../../../../Demo_Projects/Air_quality_monitoring_tutorial/">Air quality monitoring - tutorial</a></p>
 
 <!-- Link to previous and/or next page -->
 
@@ -3905,7 +3905,7 @@ You'll see that checkboxes next to <strong>Value tracking</strong> and <strong>A
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2024</span>
     
   </small>
 </div>
