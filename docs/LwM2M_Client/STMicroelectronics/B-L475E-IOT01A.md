@@ -46,7 +46,7 @@ Enter the command line interface on your machine, then paste and run the followi
     west update
     ```
 
-0. Compile the project for **B-L475E-IOT01A** using `west build -b disco_l475_iot1` in the demo directory.
+0. Compile the project for **B-L475E-IOT01A** using `west build -b disco_l475_iot1 --sysbuild` in the demo directory.
 0. Flash the board using `west flash`.
 
 ## Connect to the LwM2M Server

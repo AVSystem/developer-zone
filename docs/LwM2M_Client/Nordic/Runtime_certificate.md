@@ -36,11 +36,14 @@ You can read more about secure communication on [Anjay's documentation](https://
 
 0. Build a project with a runtime certificate and private key.
 
-    This feature works with nRF9160 DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:
+    In order to build application using software cryptography, build using following command:
 
     ```
-    west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG="overlay_nrf_mbedtls.conf"
+    west build -b nrf9160dk_nrf9160_ns -p -- -DEXTRA_CONF_FILE="overlay_nrf_mbedtls.conf"
     ```
+
+    !!! Note
+        This feature works with nRF9160 DK starting from revision v0.14.0, which is used by default for `nrf9160dk_nrf9160_ns` target, but you can pass revision explicitly in order to protect against further NCS updates.
 
 0. Flash the board with `west flash` command.
 
