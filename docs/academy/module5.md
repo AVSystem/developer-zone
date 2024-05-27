@@ -74,10 +74,6 @@ Learn more about the Firmware Update Object on the [OMA LwM2M Object and Resourc
     | `update result 11`  | **Firmware update deferred** |
 
 
-## What is Bootloader and why do I need this here?
-
-A bootloader as a program is responsible for loading and launching the operating system or firmware of a computer or embedded system. It is typically the initial program that runs when a device is powered on or restarted. The bootloader undertakes the essential configuration of internal modules, ensuring that fundamental settings are established for subsequent operations.
-
 ## Conclusion
 
 Remote IoT device updates are essential for the long-term success of IoT applications, as physical access to devices is often impossible to realize. Updating firmware remotely poses some serious challenges, such as limited memory, battery capacity, available bandwidth, and unstable connections to the cloud. However, by adopting the LwM2M standard and following a structured approach with standardized states and error codes, developers can ensure that new firmware images can be safely sent to their fleet of devices in the field, regardless of hardware vendor or cloud platform used.
