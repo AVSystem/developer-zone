@@ -18,7 +18,7 @@ In this section, you learn how to:
 3. A device group created in {{ coiote_short_name }}.
 4. [A configured integration between {{ coiote_short_name }} and Azure Iot Central]( Configure_Azure_IoT_Central_integration.md).
 5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](../Configure_integration_templates/Azure_integration_templates.md).
-5. A connected device in {{ coiote_short_name }} that has been [exported to](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Exporting_devices_to_Azure_IoT_Central/) or [imported from](https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Azure_IoT_Central_integration/Device_operations/Importing_devices_to_Coiote_DM/) Azure IoT Central.
+5. A connected device in {{ coiote_short_name }} that has been [exported to](./Configure_Azure_IoT_Central_integration.md) or [imported from](./Configure_Azure_IoT_Central_integration.md) Azure IoT Central.
 
 ## Assign a device template
 
