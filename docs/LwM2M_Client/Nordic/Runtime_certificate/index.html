@@ -3602,9 +3602,13 @@ west update
 </li>
 <li>
 <p>Build a project with a runtime certificate and private key.</p>
-<p>This feature works with nRF9160 DK starting from revision v0.14.0. For this board use configuration that utilizes an external flash chip and software-based cryptography:</p>
-<div class="highlight"><pre><span></span><code>west build -b nrf9160dk_nrf9160_ns@0.14.0 -p -- -DCONF_FILE=prj_extflash.conf -DOVERLAY_CONFIG=&quot;overlay_nrf_mbedtls.conf&quot;
+<p>In order to build application using software cryptography, build using following command:</p>
+<div class="highlight"><pre><span></span><code>west build -b nrf9160dk_nrf9160_ns -p -- -DEXTRA_CONF_FILE=&quot;overlay_nrf_mbedtls.conf&quot;
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature works with nRF9160 DK starting from revision v0.14.0, which is used by default for <code>nrf9160dk_nrf9160_ns</code> target, but you can pass revision explicitly in order to protect against further NCS updates.</p>
+</div>
 </li>
 <li>
 <p>Flash the board with <code>west flash</code> command.</p>
@@ -3732,7 +3736,7 @@ anjay config set private_key
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2024</span>
     
   </small>
 </div>
