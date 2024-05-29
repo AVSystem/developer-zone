@@ -55,7 +55,7 @@ Enter the command line interface on your machine and change the directory to the
 
     ```
     cd Anjay-zephyr-client/demo
-    west build -b nrf9160dk_nrf9160ns
+    west build -b nrf9160dk_nrf9160_ns
     west flash
     ```
 
