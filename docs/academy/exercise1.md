@@ -63,7 +63,7 @@ Start by creating a new workspace, installing the dependencies, and cloning all 
     * Clone the RPi Pico SDK repository and update its submodules
 
         ```
-        git clone -b 1.4.0 https://github.com/raspberrypi/pico-sdk.git
+        git clone -b 1.5.1 https://github.com/raspberrypi/pico-sdk.git
         cd pico-sdk/ && git submodule update --init && cd ..
         ```
 

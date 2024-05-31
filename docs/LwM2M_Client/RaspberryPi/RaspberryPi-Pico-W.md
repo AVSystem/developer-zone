@@ -14,7 +14,7 @@ Integrate your Raspberry Pi Pico W board.
 0. Clone the **Raspberry Pi Pico SDK** and the **FreeRTOS kernel** into a base directory, parallel to the `Anjay-pico-client` Github repository:
 
     ```
-    git clone -b 1.4.0 https://github.com/raspberrypi/pico-sdk.git
+    git clone -b 1.5.1 https://github.com/raspberrypi/pico-sdk.git
     cd pico-sdk/ && git submodule update --init && cd ..
     git clone -b V10.5.0 https://github.com/FreeRTOS/FreeRTOS-Kernel.git
     git clone https://github.com/AVSystem/Anjay-pico-client.git
