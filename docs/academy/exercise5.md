@@ -74,15 +74,15 @@ The Firmware Update module consists of user-implemented callbacks of various sor
     <p style="text-align: center;">firmware_update.c</p>
     ``` c
     static int fw_stream_open(void *user_ptr,
-                            const char *package_uri,
-                            const struct anjay_etag *package_etag) {
+                              const char *package_uri,
+                              const struct anjay_etag *package_etag) {
         (void) user_ptr;
         (void) package_uri;
         (void) package_etag;
 
         pfb_initialize_download_slot();
         flash_aligned_writer_new(writer_buf, AVS_ARRAY_SIZE(writer_buf),
-                                pfb_write_to_flash_aligned_256_bytes, &writer);
+                                 pfb_write_to_flash_aligned_256_bytes, &writer);
 
         downloaded_bytes = 0;
         update_initialized = true;
@@ -169,8 +169,8 @@ The Firmware Update module consists of user-implemented callbacks of various sor
                 "The firmware will be updated at the next device reset");
 
         return AVS_SCHED_DELAYED(anjay_get_scheduler(anjay), NULL,
-                                avs_time_duration_from_scalar(1, AVS_TIME_S),
-                                fw_update_reboot, NULL, 0);
+                                 avs_time_duration_from_scalar(1, AVS_TIME_S),
+                                 fw_update_reboot, NULL, 0);
     }
 
     ```
@@ -210,102 +210,102 @@ Flash APIs require that the length of data to write will be a multiple of 256 by
 
     <p style="text-align: center;">flash_aligned_writer.c</p>
     ``` c
-        #include <assert.h>
-        #include <stddef.h>
-        #include <stdint.h>
+    #include <assert.h>
+    #include <stddef.h>
+    #include <stdint.h>
 
-        #include <avsystem/commons/avs_utils.h>
+    #include <avsystem/commons/avs_utils.h>
 
-        #include "flash_aligned_writer.h"
+    #include "flash_aligned_writer.h"
 
-        void flash_aligned_writer_new(uint8_t *batch_buf,
-                                    size_t batch_buf_max_len_bytes,
-                                    flash_aligned_writer_cb_t *writer_cb,
-                                    flash_aligned_writer_t *out_writer) {
-            assert(batch_buf);
-            assert(batch_buf_max_len_bytes);
-            assert(writer_cb);
+    void flash_aligned_writer_new(uint8_t *batch_buf,
+                                  size_t batch_buf_max_len_bytes,
+                                  flash_aligned_writer_cb_t *writer_cb,
+                                  flash_aligned_writer_t *out_writer) {
+        assert(batch_buf);
+        assert(batch_buf_max_len_bytes);
+        assert(writer_cb);
 
-            out_writer->batch_buf = batch_buf;
-            out_writer->batch_buf_max_len_bytes = batch_buf_max_len_bytes;
-            out_writer->batch_buf_len_bytes = 0;
-            out_writer->write_offset_bytes = 0;
-            out_writer->writer_cb = writer_cb;
-        }
+        out_writer->batch_buf = batch_buf;
+        out_writer->batch_buf_max_len_bytes = batch_buf_max_len_bytes;
+        out_writer->batch_buf_len_bytes = 0;
+        out_writer->write_offset_bytes = 0;
+        out_writer->writer_cb = writer_cb;
+    }
 
-        int flash_aligned_writer_write(flash_aligned_writer_t *writer,
-                                    const uint8_t *data,
-                                    size_t length_bytes) {
-            while (length_bytes > 0) {
-                const size_t bytes_to_copy = AVS_MIN(
-                        writer->batch_buf_max_len_bytes - writer->batch_buf_len_bytes,
-                        length_bytes);
-                memcpy(writer->batch_buf + writer->batch_buf_len_bytes, data,
-                    bytes_to_copy);
-                data += bytes_to_copy;
-                length_bytes -= bytes_to_copy;
-                writer->batch_buf_len_bytes += bytes_to_copy;
+    int flash_aligned_writer_write(flash_aligned_writer_t *writer,
+                                   const uint8_t *data,
+                                   size_t length_bytes) {
+        while (length_bytes > 0) {
+            const size_t bytes_to_copy = AVS_MIN(
+                    writer->batch_buf_max_len_bytes - writer->batch_buf_len_bytes,
+                    length_bytes);
+            memcpy(writer->batch_buf + writer->batch_buf_len_bytes, data,
+                   bytes_to_copy);
+            data += bytes_to_copy;
+            length_bytes -= bytes_to_copy;
+            writer->batch_buf_len_bytes += bytes_to_copy;
 
-                if (writer->batch_buf_len_bytes == writer->batch_buf_max_len_bytes) {
-                    int res = writer->writer_cb(writer->batch_buf,
-                                                writer->write_offset_bytes,
-                                                writer->batch_buf_len_bytes);
-                    if (res) {
-                        return res;
-                    }
-                    writer->write_offset_bytes += writer->batch_buf_len_bytes;
-                    writer->batch_buf_len_bytes = 0;
+            if (writer->batch_buf_len_bytes == writer->batch_buf_max_len_bytes) {
+                int res = writer->writer_cb(writer->batch_buf,
+                                            writer->write_offset_bytes,
+                                            writer->batch_buf_len_bytes);
+                if (res) {
+                    return res;
                 }
+                writer->write_offset_bytes += writer->batch_buf_len_bytes;
+                writer->batch_buf_len_bytes = 0;
             }
+        }
 
+        return 0;
+    }
+
+    int flash_aligned_writer_flush(flash_aligned_writer_t *writer) {
+        if (writer->batch_buf_len_bytes == 0) {
             return 0;
         }
 
-        int flash_aligned_writer_flush(flash_aligned_writer_t *writer) {
-            if (writer->batch_buf_len_bytes == 0) {
-                return 0;
-            }
-
-            int res = writer->writer_cb(writer->batch_buf, writer->write_offset_bytes,
-                                        writer->batch_buf_len_bytes);
-            if (res) {
-                return res;
-            }
-            writer->write_offset_bytes += writer->batch_buf_len_bytes;
-            writer->batch_buf_len_bytes = 0;
-
-            return 0;
+        int res = writer->writer_cb(writer->batch_buf, writer->write_offset_bytes,
+                                    writer->batch_buf_len_bytes);
+        if (res) {
+            return res;
         }
+        writer->write_offset_bytes += writer->batch_buf_len_bytes;
+        writer->batch_buf_len_bytes = 0;
+
+        return 0;
+    }
     ```
 
 - flash_aligned_writer.h
 
     <p style="text-align: center;">flash_aligned_writer.h</p>
     ``` c
-        #pragma once
+    #pragma once
 
-        #include <stddef.h>
-        #include <stdint.h>
+    #include <stddef.h>
+    #include <stdint.h>
 
-        typedef int
-        flash_aligned_writer_cb_t(uint8_t *src, size_t offset_bytes, size_t len_bytes);
+    typedef int
+    flash_aligned_writer_cb_t(uint8_t *src, size_t offset_bytes, size_t len_bytes);
 
-        typedef struct {
-            uint8_t *batch_buf;
-            size_t batch_buf_max_len_bytes;
-            size_t batch_buf_len_bytes;
-            size_t write_offset_bytes;
-            flash_aligned_writer_cb_t *writer_cb;
-        } flash_aligned_writer_t;
+    typedef struct {
+        uint8_t *batch_buf;
+        size_t batch_buf_max_len_bytes;
+        size_t batch_buf_len_bytes;
+        size_t write_offset_bytes;
+        flash_aligned_writer_cb_t *writer_cb;
+    } flash_aligned_writer_t;
 
-        void flash_aligned_writer_new(uint8_t *batch_buf,
-                                    size_t batch_buf_max_len_bytes,
-                                    flash_aligned_writer_cb_t *writer_cb,
-                                    flash_aligned_writer_t *out_writer);
-        int flash_aligned_writer_write(flash_aligned_writer_t *writer,
-                                    const uint8_t *data,
-                                    size_t length);
-        int flash_aligned_writer_flush(flash_aligned_writer_t *writer);
+    void flash_aligned_writer_new(uint8_t *batch_buf,
+                                  size_t batch_buf_max_len_bytes,
+                                  flash_aligned_writer_cb_t *writer_cb,
+                                  flash_aligned_writer_t *out_writer);
+    int flash_aligned_writer_write(flash_aligned_writer_t *writer,
+                                   const uint8_t *data,
+                                   size_t length);
+    int flash_aligned_writer_flush(flash_aligned_writer_t *writer);
     ```
 
 ## Recompile the application and flash the board
