@@ -73,6 +73,7 @@ Learn more about the Firmware Update Object on the [OMA LwM2M Object and Resourc
     | `update result 10`  | **Firmware update cancelled** |
     | `update result 11`  | **Firmware update deferred** |
 
+
 ## Conclusion
 
 Remote IoT device updates are essential for the long-term success of IoT applications, as physical access to devices is often impossible to realize. Updating firmware remotely poses some serious challenges, such as limited memory, battery capacity, available bandwidth, and unstable connections to the cloud. However, by adopting the LwM2M standard and following a structured approach with standardized states and error codes, developers can ensure that new firmware images can be safely sent to their fleet of devices in the field, regardless of hardware vendor or cloud platform used.
