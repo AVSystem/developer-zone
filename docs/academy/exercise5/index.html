@@ -3685,19 +3685,19 @@
 <div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">fw_stream_open</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">user_ptr</span><span class="p">,</span>
 <span class="w">                          </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">package_uri</span><span class="p">,</span>
 <span class="w">                          </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">anjay_etag</span><span class="w"> </span><span class="o">*</span><span class="n">package_etag</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">package_uri</span><span class="p">;</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">package_etag</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">package_uri</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">package_etag</span><span class="p">;</span>
 
-<span class="n">pfb_initialize_download_slot</span><span class="p">();</span>
-<span class="n">flash_aligned_writer_new</span><span class="p">(</span><span class="n">writer_buf</span><span class="p">,</span><span class="w"> </span><span class="n">AVS_ARRAY_SIZE</span><span class="p">(</span><span class="n">writer_buf</span><span class="p">),</span>
+<span class="w">    </span><span class="n">pfb_initialize_download_slot</span><span class="p">();</span>
+<span class="w">    </span><span class="n">flash_aligned_writer_new</span><span class="p">(</span><span class="n">writer_buf</span><span class="p">,</span><span class="w"> </span><span class="n">AVS_ARRAY_SIZE</span><span class="p">(</span><span class="n">writer_buf</span><span class="p">),</span>
 <span class="w">                         </span><span class="n">pfb_write_to_flash_aligned_256_bytes</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">writer</span><span class="p">);</span>
 
-<span class="n">downloaded_bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="n">update_initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-<span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Init successful&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">downloaded_bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">update_initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Init successful&quot;</span><span class="p">);</span>
 
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 </li>
@@ -3705,19 +3705,19 @@
 <p><code>stream_write</code> is called whenever there is a next firmware chunk received, ready to be stored. Its responsibility is to append the chunk to the storage.</p>
 <p><p style="text-align: center;">firmware_update.c</p>
 <div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">fw_stream_write</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">user_ptr</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
 
-<span class="n">assert</span><span class="p">(</span><span class="n">update_initialized</span><span class="p">);</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">update_initialized</span><span class="p">);</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flash_aligned_writer_write</span><span class="p">(</span><span class="o">&amp;</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flash_aligned_writer_write</span><span class="p">(</span><span class="o">&amp;</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="n">downloaded_bytes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
-<span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Downloaded %zu bytes.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">downloaded_bytes</span><span class="p">);</span>
+<span class="w">    </span><span class="n">downloaded_bytes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<span class="w">    </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Downloaded %zu bytes.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">downloaded_bytes</span><span class="p">);</span>
 
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 </li>
@@ -3725,26 +3725,26 @@
 <p><code>stream_finish</code> is called whenever the writing process is finished and the stored data can now be thought of as a complete firmware image. It may be a good moment here to verify if the entire firmware image is valid.</p>
 <p><p style="text-align: center;">firmware_update.c</p>
 <div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">fw_stream_finish</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">user_ptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
 
-<span class="n">assert</span><span class="p">(</span><span class="n">update_initialized</span><span class="p">);</span>
-<span class="n">update_initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">update_initialized</span><span class="p">);</span>
+<span class="w">    </span><span class="n">update_initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flash_aligned_writer_flush</span><span class="p">(</span><span class="o">&amp;</span><span class="n">writer</span><span class="p">);</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">ERROR</span><span class="p">,</span>
-<span class="w">            </span><span class="s">&quot;Failed to finish download: flash aligned writer flush failed, &quot;</span>
-<span class="w">            </span><span class="s">&quot;result: %d&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">res</span><span class="p">);</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flash_aligned_writer_flush</span><span class="p">(</span><span class="o">&amp;</span><span class="n">writer</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">ERROR</span><span class="p">,</span>
+<span class="w">                </span><span class="s">&quot;Failed to finish download: flash aligned writer flush failed, &quot;</span>
+<span class="w">                </span><span class="s">&quot;result: %d&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">res</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pfb_firmware_sha256_check</span><span class="p">(</span><span class="n">downloaded_bytes</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SHA256 check failed&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pfb_firmware_sha256_check</span><span class="p">(</span><span class="n">downloaded_bytes</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SHA256 check failed&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 </li>
@@ -3752,17 +3752,17 @@
 <p><code>reset</code> is called whenever there is an error during firmware download, or if the Server decides to not pursue firmware update with downloaded firmware (e.g. because it was notified that firmware verification failed).</p>
 <p><p style="text-align: center;">firmware_update.c</p>
 <div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fw_reset</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">user_ptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">user_ptr</span><span class="p">;</span>
 
-<span class="n">update_initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">update_initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fw_update_reboot</span><span class="p">(</span><span class="n">avs_sched_t</span><span class="w"> </span><span class="o">*</span><span class="n">sched</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">sched</span><span class="p">;</span>
-<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">sched</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
 
-<span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Rebooting.....&quot;</span><span class="p">);</span>
-<span class="n">pfb_perform_update</span><span class="p">();</span>
+<span class="w">    </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Rebooting.....&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pfb_perform_update</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></p>
 </li>
@@ -3770,13 +3770,13 @@
 <p><code>perform_upgrade</code> is called whenever the download is finished, the firmware is successfully verified on the Client and the Server decides to upgrade the device.</p>
 <p><p style="text-align: center;">firmware_update.c</p>
 <div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">fw_perform_upgrade</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">anjay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="n">pfb_mark_download_slot_as_valid</span><span class="p">();</span>
-<span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;The firmware will be updated at the next device reset&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pfb_mark_download_slot_as_valid</span><span class="p">();</span>
+<span class="w">    </span><span class="n">avs_log</span><span class="p">(</span><span class="n">fw_update</span><span class="p">,</span><span class="w"> </span><span class="n">INFO</span><span class="p">,</span>
+<span class="w">            </span><span class="s">&quot;The firmware will be updated at the next device reset&quot;</span><span class="p">);</span>
 
-<span class="k">return</span><span class="w"> </span><span class="n">AVS_SCHED_DELAYED</span><span class="p">(</span><span class="n">anjay_get_scheduler</span><span class="p">(</span><span class="n">anjay</span><span class="p">),</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span>
-<span class="w">                         </span><span class="n">avs_time_duration_from_scalar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">AVS_TIME_S</span><span class="p">),</span>
-<span class="w">                         </span><span class="n">fw_update_reboot</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">AVS_SCHED_DELAYED</span><span class="p">(</span><span class="n">anjay_get_scheduler</span><span class="p">(</span><span class="n">anjay</span><span class="p">),</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">avs_time_duration_from_scalar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">AVS_TIME_S</span><span class="p">),</span>
+<span class="w">                             </span><span class="n">fw_update_reboot</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></p>
 </li>
@@ -4061,7 +4061,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2024</span>
     
   </small>
 </div>
