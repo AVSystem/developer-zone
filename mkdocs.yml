@@ -90,6 +90,7 @@ nav:
             - 'Firmware update':
                 - FOTA Configurations: 'Coiote_IoT_DM/Configurations.md'
                 - Single update: 'Coiote_IoT_DM/Single_update.md'
+                - Multi-Component update: 'Coiote_IoT_DM/Multi_Component_update.md'
                 - FOTA Campaigns: 'Coiote_IoT_DM/Campaigns.md'
             - 'Device tests':
                 - 'Coiote_IoT_DM/Device_tests/Overview.md'
