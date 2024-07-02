@@ -49,39 +49,39 @@ Object `/33629` defines the update process using **4 Update States** represen
 
 ## Prepare the Firmware Update
 
-1. In the {{ coiote_long_name }}, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
+0. In the {{ coiote_long_name }}, go to [**Device Inventory**]({{ coiote_site_link }}/ui/device/inventory).
 
-1. Select the device you want to update by clicking on its endpoint name.
+0. Select the device you want to update by clicking on its endpoint name.
 
-1. Go to the **Data model** tab to validate if the Firmware Update Object `/33629` is present. If so, the Object is supported by the LwM2M Client.
+0. Go to the **Data model** tab to validate if the Firmware Update Object `/33629` is present. If so, the Object is supported by the LwM2M Client.
 
     !!! info
         Each **Object Instance** represents a component of the device's firmware which can be updated. Click the Object Instances of Object `/33629` to see what components can be updated.
 
     ![Firmware update object](images/object-33629-instance0.png)
 
-1. Go to the **Firmware update** tab.
+0. Go to the **Firmware update** tab.
 
-1. Click the **Update Firmware** button.
+0. Click the **Update Firmware** button.
 
     ![Update Firmware Tab](images/firmware-update-tab.png)
 
-1. Select **Multi-component Firmware Update**.
+0. Select **Multi-component Firmware Update**.
 
     ![Multi-Component Firmware Update](images/multi-component.png)
 
-1. Select the components you would like to update, e.g. modem, application or bootloader.
+0. Select the components you would like to update, e.g. modem, application or bootloader.
 
     ![Select component](images/select-component.png)
 
     !!! note
         In this example, the modem firmware of the nRF9160 SiP is being updated using the delta update file: `mfw_nrf9160_update_from_1.3.3_to_1.3.4.bin` which is provided by [Nordic](https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download?lang=en#infotabs).
 
-1. Upload the **firmware image**.
+0. Upload the **firmware image**.
 
     ![Upload Firmware Image](images/upload.png)
 
-1. Choose between **Pull** and **Push**:
+0. Choose between **Pull** and **Push**:
 
     * **Pull method** (recommended): The LwM2M Client receives the URI of the file that is to be downloaded and pulls the file from it.
 
@@ -106,7 +106,7 @@ Object `/33629` defines the update process using **4 Update States** represen
     ![Basic Firmware Update](images/push-pull.png)
 
 
-1. Click **Schedule Update** to trigger the Firmware Update process.
+0. Click **Schedule Update** to trigger the Firmware Update process.
 
 ## Download & Upgrade Process
 
@@ -114,12 +114,12 @@ If the Firmware Update is scheduled successfully, the device starts **downloadin
 
 ![Upgrading](images/in-progress.png)
 
-Once executed successfully, the status in the **Update list** panel changes to `Success`.
+Once the updated is executed successfully, the status in the **Update list** panel changes to `Success`.
 
 ![Successful update](images/success-multi.png)
 
 !!! note
-    While the device is updating its firmware, it will deregister and reboot using the new firmware. This process may time several minutes.
+    While the device is updating its firmware, it will deregister and reboot using the new firmware. This process may take several minutes.
 
     ![Deregistered while upgrading](images/deregistered.png)
 
