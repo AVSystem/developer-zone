@@ -2,6 +2,14 @@
 
 Start developing LwM2M applications on your boards and IoT devices in just a few clicks using our Anjay LwM2M Client.
 
+## Svetovid
+
+Integrate your Linux-based device with our Svetovid LwM2M Client.
+
+![RaspberryPi](images/raspberry_pi.jpg "Raspberry Pi"){ width=50% }
+
+[Start integration](./Svetovid/Intro.md){: .md-button .md-button--big }
+
 ## Espressif ESP32
 ### M5StickC
 
