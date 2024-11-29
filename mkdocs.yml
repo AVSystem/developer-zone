@@ -18,27 +18,27 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+#   - pymdownx.emoji:
+#       emoji_index: !!python/name:materialx.emoji.twemoji
+#       emoji_generator: !!python/name:materialx.emoji.to_svg
   - toc:
      permalink: "#"
 
 plugins:
   - search
-  - git-revision-date-localized
-  - redirects:
-        redirect_maps:
-            'IoT_quick_start/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
-            'Anjay_integrations/Getting_started.md': 'LwM2M_Client/Getting_started.md'
-            'Anjay_integrations/RaspberryPi_integration/Implementing_LwM2M_objects_on_RaspberryPi.md': 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
-            'Coiote_IoT_DM/Quick_Start/Connect_device_quickstart.md': 'Coiote_IoT_DM/Onboarding/connect.md'
-            'Coiote_IoT_DM/Quick_Start/Visualize_device_data.md': 'Coiote_IoT_DM/Visualize_data.md'
-            'Coiote_IoT_DM/User_Interface/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
-            'Coiote_IoT_DM/User_Interface/Dashboard.md': 'Coiote_IoT_DM/Visualize_data.md'
-            'Coiote_IoT_DM/User_Interface/Device_Center.md': 'Coiote_IoT_DM/Device_Center.md'
-            'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md': 'LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md'
-            'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md': 'Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates.md'
+#   - git-revision-date-localized
+#   - redirects:
+#         redirect_maps:
+#             'IoT_quick_start/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
+#             'Anjay_integrations/Getting_started.md': 'LwM2M_Client/Getting_started.md'
+#             'Anjay_integrations/RaspberryPi_integration/Implementing_LwM2M_objects_on_RaspberryPi.md': 'Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi.md'
+#             'Coiote_IoT_DM/Quick_Start/Connect_device_quickstart.md': 'Coiote_IoT_DM/Onboarding/connect.md'
+#             'Coiote_IoT_DM/Quick_Start/Visualize_device_data.md': 'Coiote_IoT_DM/Visualize_data.md'
+#             'Coiote_IoT_DM/User_Interface/Device_onboarding.md': 'Coiote_IoT_DM/Onboarding/connect.md'
+#             'Coiote_IoT_DM/User_Interface/Dashboard.md': 'Coiote_IoT_DM/Visualize_data.md'
+#             'Coiote_IoT_DM/User_Interface/Device_Center.md': 'Coiote_IoT_DM/Device_Center.md'
+#             'Anjay_integrations/RaspberryPi_integration/RaspberryPi-Pico-W.md': 'LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md'
+#             'Azure_IoT_Integration_Guide/Configure_integration_templates/Azure_integration_templates.md': 'Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates.md'
   - macros:
       include_yaml:
         - templates/default.yaml
@@ -46,9 +46,9 @@ plugins:
 hooks:
   - main.py
 
-google_analytics:
-  - UA-25246208-6
-  - auto
+# google_analytics:
+#   - UA-25246208-6
+#   - auto
 
 nav:
         - 'Getting Started':
@@ -81,74 +81,95 @@ nav:
                 - 'LwM2M_Client/OpenThread/OTBR_with_svetovid.md'
         - 'Coiote IoT DM':
             - 'Introduction': 'Coiote_IoT_DM/introduction.md'
-            - 'Connecting devices':
-                - Management server (default): 'Coiote_IoT_DM/Onboarding/connect.md'
-                - Bootstrap server (advanced): 'Coiote_IoT_DM/Onboarding/bootstrap.md'
-                - Certificate mode: 'Coiote_IoT_DM/Onboarding/certificate.md'
-            - 'Device center': 'Coiote_IoT_DM/Device_Center.md'
-            - 'Data visualization': 'Coiote_IoT_DM/Visualize_data.md'
-            - 'Firmware update':
-                - FOTA Configurations: 'Coiote_IoT_DM/Configurations.md'
-                - Single update: 'Coiote_IoT_DM/Single_update.md'
-                - Multi-Component update: 'Coiote_IoT_DM/Multi_Component_update.md'
-                - FOTA Campaigns: 'Coiote_IoT_DM/Campaigns.md'
-            - 'Device tests':
-                - 'Coiote_IoT_DM/Device_tests/Overview.md'
-                - 'Coiote_IoT_DM/Device_tests/Getting_started.md'
-                - 'Coiote_IoT_DM/Device_tests/Test_actions.md'
-                - 'Coiote_IoT_DM/Device_tests/Configure_tests.md'
-                - 'Coiote_IoT_DM/Device_tests/Data_model_and_variables.md'
-                - 'Coiote_IoT_DM/Device_tests/Run_tests.md'
-                - 'Coiote_IoT_DM/Device_tests/Use_API_Jenkins_integration.md'
-            - 'Video tutorials':
-                - 'Coiote_IoT_DM/Coiote_videos/How_to_simply_onboard_and_provision_IoT_devices.md'
-                - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_configure_IoT_devices.md'
-                - 'Coiote_IoT_DM/Coiote_videos/How_to_perform_secure_Over-the-Air_updates.md'
-                - 'Coiote_IoT_DM/Coiote_videos/What_types_of_IoT_data_are_collected_and_stored_in_the_Coiote.md'
-                - 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_monitor_IoT_devices_and_diagnose_issues.md'
-        - 'Cloud Integrations':
-            - 'Data Integration Center':
-                - Overview: 'Cloud_integrations/Device_Integration_Center/overview.md'
-                - Webhooks: 'Cloud_integrations/Device_Integration_Center/webhooks.md'
-                - Kafka: 'Cloud_integrations/Device_Integration_Center/kafka.md'
-                - 'Integrations':
-                    - InfluxDB: 'Cloud_integrations/Device_Integration_Center/integrations/influx.md'
-                    - Datacake: 'Cloud_integrations/Device_Integration_Center/integrations/datacake.md'
-                    - GraphQL: 'Cloud_integrations/Device_Integration_Center/integrations/graphql.md'
-                    - Slack: 'Cloud_integrations/Device_Integration_Center/integrations/slack.md'
-                    - Atlas: 'Cloud_integrations/Device_Integration_Center/integrations/atlas.md'
-            - 'Azure IoT':
+            - 'Cloud integration tutorials':
+                - 'Data Integration Center':
+                    - InfluxDB: 'Coiote_IoT_DM/Cloud_integrations/Device_Integration_Center/influx.md'
+                    - Datacake: 'Coiote_IoT_DM/Cloud_integrations/Device_Integration_Center/datacake.md'
+                    - GraphQL: 'Coiote_IoT_DM/Cloud_integrations/Device_Integration_Center/graphql.md'
+                    - Slack: 'Coiote_IoT_DM/Cloud_integrations/Device_Integration_Center/slack.md'
+                    - Atlas: 'Coiote_IoT_DM/Cloud_integrations/Device_Integration_Center/atlas.md'
                 - 'Azure IoT Hub':
-                    - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md'
-                    - 'Device operations':
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Overview.md'
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Synchronize_devices_with_Azure_IoT_Hub.md'
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Device_operations/Upgrading_firmware.md'
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Perform_Read_Write.md'
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Perform_Execute.md'
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Set_an_Observation.md'
-                - 'Azure DPS':
-                    -  'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_DPS/Configuring_Azure_IoT_DPS_integration_extension.md'
+                    - 'Coiote_IoT_DM/Cloud_integrations/Azure_IoT_Hub/Upgrading_firmware.md'
+                    - 'Coiote_IoT_DM/Cloud_integrations/Azure_IoT_Hub/Perform_Read_Write.md'
+                    - 'Coiote_IoT_DM/Cloud_integrations/Azure_IoT_Hub/Perform_Execute.md'
+                    - 'Coiote_IoT_DM/Cloud_integrations/Azure_IoT_Hub/Set_an_Observation.md'
                 - 'Azure IoT Central':
-                    - 'Configure integration': 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Configure_Azure_IoT_Central_integration.md'
-                    - 'Device operations':
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Device_operations/Overview.md'
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Device_operations/Synchronize_devices_with_Azure_IoT_Central.md'
-                        - 'Cloud_integrations/Azure_IoT/Azure_IoT_Central/Set_an_Observation.md'
-                - 'Configure integration templates': 'Cloud_integrations/Azure_IoT/Configure_integration_templates/Azure_integration_templates.md'
-                - 'Concepts':
-                    - 'Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub.md'
-                    - 'Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Central.md'
-            - 'AWS IoT Core':
-                - 'Cloud_integrations/AWS_IoT_Core/Overview.md'
-                - 'Cloud_integrations/AWS_IoT_Core/Configuring_AWS_integration.md'
-                - 'Device operations':
-                    - 'Cloud_integrations/AWS_IoT_Core/Device_operations/Operation_types.md'
-                - 'Concepts':
-                    - 'Cloud_integrations/AWS_IoT_Core/Concepts/AWS_Integration_concepts.md'
-            - 'nRF Cloud Location services':
-                    - 'Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration.md'
-            - 'LoRaWAN Gateway': 'Cloud_integrations/LoRaWAN/LoRagateway.md'
+                    - 'Coiote_IoT_DM/Cloud_integrations/Azure_IoT_Central/Set_an_Observation.md'
+            - Video tutorials:
+                - How to simply onboard and provision IoT devices?: 'Coiote_IoT_DM/Coiote_videos/How_to_simply_onboard_and_provision_IoT_devices.md'
+                - How to remotely configure IoT devices?: 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_configure_IoT_devices.md'
+                - How to perform secure Over-the-Air (OTA) updates? (nRF9160 DK): 'Coiote_IoT_DM/Coiote_videos/How_to_perform_secure_Over-the-Air_updates.md'
+                - How to remotely monitor IoT devices and diagnose issues?: 'Coiote_IoT_DM/Coiote_videos/How_to_remotely_monitor_IoT_devices_and_diagnose_issues.md'
+                - What types of IoT data are collected and stored in the Coiote?: 'Coiote_IoT_DM/Coiote_videos/What_types_of_IoT_data_are_collected_and_stored_in_the_Coiote.md'
+            - 'API documentation':
+                - 'Overview':
+                    - 'Coiote_IoT_DM/API_documentation/Overview/About_Coiote_API.md'
+                    - 'Coiote_IoT_DM/API_documentation/Overview/Getting_access.md'
+                    - 'Coiote_IoT_DM/API_documentation/Overview/Using_the_API.md'
+                - 'Guides':
+                    - How to make basic onboarding: 'Coiote_IoT_DM/API_documentation/Guides/Basic_onboarding.md'
+                    - How to create a domain and add users: 'Coiote_IoT_DM/API_documentation/Guides/Create_a_domain_and_add_users.md'
+                    - How to make firmware upgrade (FOTA): 'Coiote_IoT_DM/API_documentation/Guides/Make_firmware_upgrade.md'
+                    - How to send data outside the application with event handlers: 'Coiote_IoT_DM/API_documentation/Guides/Send_data_outside_application.md'
+                    - How to use Device monitoring: 'Coiote_IoT_DM/API_documentation/Guides/Use_device_monitoring.md'
+                    - API reference: 'Coiote_IoT_DM/API_documentation/api_reference.md'
+            - 'Release Notes':
+                        - 2024:
+                            - 'Coiote_IoT_DM/Release_Notes/v2024.5.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2024.4.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2024.3.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2024.2.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2024.1.0.md'
+                        - 2023:
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.34.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.33.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.32.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.31.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.30.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.29.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.28.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.27.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.26.1.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.25.2.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.24.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.22.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.19.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.17.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.16.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.15.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.14.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.12.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.11.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.10.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.9.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.7.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.6.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.5.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.4.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2023.3.0.md'
+                        - 2022:
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.27.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.26.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.25.20.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.24.14.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.23.11.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.22.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.21.6.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.20.4.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.19.2.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.18.3.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.17.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.16.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.13.5.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.9.2.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.8.2.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.7.3.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.5.3.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2022.3.2.md'
+                        - 2021:
+                            - 'Coiote_IoT_DM/Release_Notes/v2021.24.5.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2021.23.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2021.22.1.md'
         - 'Demo Projects':
             - 'Demo_Projects/Tracking_tutorial.md'
             - CO2 office sensor: https://www.hackster.io/ferre111/iot-solution-for-co2-measurement-in-the-office-f3b213
@@ -176,75 +197,7 @@ nav:
                 - Theory Module 5: 'academy/module5.md'
                 - Exercise 5 - Implement Firmware Update: 'academy/exercise5.md'
             - Graduation Project: 'academy/gradproject.md'
-        - 'API documentation':
-            - 'Overview':
-                - 'API_documentation/Overview/About_Coiote_API.md'
-                - 'API_documentation/Overview/Getting_access.md'
-                - 'API_documentation/Overview/Using_the_API.md'
-            - 'Guides':
-                - How to make basic onboarding: 'API_documentation/Guides/Basic_onboarding.md'
-                - How to create a domain and add users: 'API_documentation/Guides/Create_a_domain_and_add_users.md'
-                - How to make firmware upgrade (FOTA): 'API_documentation/Guides/Make_firmware_upgrade.md'
-                - How to send data outside the application with event handlers: 'API_documentation/Guides/Send_data_outside_application.md'
-                - How to use Device monitoring: 'API_documentation/Guides/Use_device_monitoring.md'
-            - API reference: 'API_documentation/api_reference.md'
-        - 'Release Notes':
-            - 2024:
-                - 'Release_Notes/v2024.5.0.md'
-                - 'Release_Notes/v2024.4.0.md'
-                - 'Release_Notes/v2024.3.0.md'
-                - 'Release_Notes/v2024.2.0.md'
-                - 'Release_Notes/v2024.1.0.md'
-            - 2023:
-                - 'Release_Notes/v2023.34.0.md'
-                - 'Release_Notes/v2023.33.md'
-                - 'Release_Notes/v2023.32.md'
-                - 'Release_Notes/v2023.31.md'
-                - 'Release_Notes/v2023.30.0.md'
-                - 'Release_Notes/v2023.29.md'
-                - 'Release_Notes/v2023.28.md'
-                - 'Release_Notes/v2023.27.md'
-                - 'Release_Notes/v2023.26.1.md'
-                - 'Release_Notes/v2023.25.2.md'
-                - 'Release_Notes/v2023.24.0.md'
-                - 'Release_Notes/v2023.22.0.md'
-                - 'Release_Notes/v2023.19.0.md'
-                - 'Release_Notes/v2023.17.0.md'
-                - 'Release_Notes/v2023.16.0.md'
-                - 'Release_Notes/v2023.15.0.md'
-                - 'Release_Notes/v2023.14.0.md'
-                - 'Release_Notes/v2023.12.0.md'
-                - 'Release_Notes/v2023.11.0.md'
-                - 'Release_Notes/v2023.10.0.md'
-                - 'Release_Notes/v2023.9.0.md'
-                - 'Release_Notes/v2023.7.0.md'
-                - 'Release_Notes/v2023.6.0.md'
-                - 'Release_Notes/v2023.5.0.md'
-                - 'Release_Notes/v2023.4.0.md'
-                - 'Release_Notes/v2023.3.0.md'
-            - 2022:
-                - 'Release_Notes/v2022.27.0.md'
-                - 'Release_Notes/v2022.26.0.md'
-                - 'Release_Notes/v2022.25.20.md'
-                - 'Release_Notes/v2022.24.14.md'
-                - 'Release_Notes/v2022.23.11.md'
-                - 'Release_Notes/v2022.22.0.md'
-                - 'Release_Notes/v2022.21.6.md'
-                - 'Release_Notes/v2022.20.4.md'
-                - 'Release_Notes/v2022.19.2.md'
-                - 'Release_Notes/v2022.18.3.md'
-                - 'Release_Notes/v2022.17.0.md'
-                - 'Release_Notes/v2022.16.0.md'
-                - 'Release_Notes/v2022.13.5.md'
-                - 'Release_Notes/v2022.9.2.md'
-                - 'Release_Notes/v2022.8.2.md'
-                - 'Release_Notes/v2022.7.3.md'
-                - 'Release_Notes/v2022.5.3.md'
-                - 'Release_Notes/v2022.3.2.md'
-            - 2021:
-                - 'Release_Notes/v2021.24.5.md'
-                - 'Release_Notes/v2021.23.0.md'
-                - 'Release_Notes/v2021.22.1.md'
+
 extra_css:
   - stylesheets/extra.css
 
