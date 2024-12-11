@@ -1,5 +1,6 @@
 coiote_long_name: Coiote IoT Device Management platform
 coiote_site_link: https://eu.iot.avsystem.cloud
+avsystem_coiote_link: https://avsystem.com/coiote-iot-device-management-platform
 coiote_server: eu.iot.avsystem.cloud
 coiote_short_name: Coiote IoT DM
 coap_uri: coap://eu.iot.avsystem.cloud:5683
