@@ -1,0 +1,2934 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/favicon/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-6.2.6">
+    
+  <meta content="https://iotdevzone.avsystem.com/docs/img/AVSystem-social.png" property="og:image" />
+
+    
+      
+        <title>v2023.29 - IoT Developer Zone</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1572272-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1572272-2');
+    </script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-25246208-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#v202329" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <!-- Mitigate bug: https://github.com/mkdocs/mkdocs/issues/2191 -->
+
+
+
+<!--
+
+<div class="topLinePageInfo">
+        <h5 class="topLinePageInfo__text">
+            <a href="https://avsystem.clickmeeting.com/lwm2m/register" class="color-black">
+              Join the webinar on Aug 16: <strong>Building end-to-end LwM2M applications</strong> 
+                <svg class="ml-1" width="22" height="9" viewBox="0 0 22 9" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path id="Arrow 1"
+                          d="M1 4C0.723858 4 0.5 4.22386 0.5 4.5C0.5 4.77614 0.723858 5 1 5V4ZM21.3536 4.85355C21.5488 4.65829 21.5488 4.34171 21.3536 4.14645L18.1716 0.964466C17.9763 0.769204 17.6597 0.769204 17.4645 0.964466C17.2692 1.15973 17.2692 1.47631 17.4645 1.67157L20.2929 4.5L17.4645 7.32843C17.2692 7.52369 17.2692 7.84027 17.4645 8.03553C17.6597 8.2308 17.9763 8.2308 18.1716 8.03553L21.3536 4.85355ZM1 5H21V4H1V5Z"
+                          fill="black"/>
+                </svg>
+            </a>
+        </h5>
+    </div>
+
+-->
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header" data-md-state="shadow">
+
+
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://iotdevzone.avsystem.com/docs/"
+      title="IoT Developer Zone"
+      class="md-header-nav__button md-logo"
+      aria-label="IoT Developer Zone"
+    >
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+
+
+      <svg class="logoMobile" width="150px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 221 48">
+        <g>
+          <path style="fill: #FFD600;" d="M47.5,16.4c-3-7.2-10.1-12.3-18.3-12.3C18.2,4.1,9.3,13,9.3,23.9c0,1.8,0.2,3.5,0.7,5.1h2.2
+                  c0.6,0,1.4-0.7,1.6-1.2l3.9-9.8c0.5-1.2,1.7-2.1,3-2.1c1.3,0,2.5,0.8,3,2.1l6.2,15.6c0.3,0.7,1.1,1.2,1.7,1.2h1.3
+                  c0.3,0,0.6,0.2,0.8,0.5l0.5,1.4c0.1,0.3,0,0.5-0.3,0.5h-4.2c-1.8,0-3.9-1.5-4.6-3.3L20.7,23c-0.4-1.1-0.8-2.2-1.1-3.3
+                  c-0.3,1.1-0.6,2.2-1.1,3.3l-2.1,5.4c-0.7,1.7-2.6,3.1-4.4,3.1h-1.3c3,7.2,10.1,12.3,18.3,12.3c10.9,0,19.8-8.9,19.8-19.8
+                  c0-1.8-0.2-3.5-0.7-5.1h-2.2c-0.6,0-1.4,0.7-1.6,1.2l-3.9,9.8c-0.5,1.2-1.7,2.1-3,2.1c-1.3,0-2.5-0.8-3-2.1l-6.2-15.6
+                  c-0.3-0.7-1.1-1.2-1.7-1.2h-1.3c-0.3,0-0.6-0.2-0.8-0.5L24,11c-0.1-0.3,0-0.5,0.3-0.5h4.2c1.8,0,3.9,1.5,4.6,3.3l4.4,11.1
+                  c0.4,1.1,0.8,2.2,1.1,3.3c0.3-1.1,0.6-2.2,1.1-3.3l2.1-5.4c0.7-1.7,2.6-3.1,4.4-3.1H47.5z"/>
+        </g>
+      </svg>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title" data-md-state="active">
+
+      <div class="md-header-nav__ellipsis">
+
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            IoT Developer Zone
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              v2023.29
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+  </nav>
+
+</header>
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LwM2M_Client/Getting_started/" class="md-tabs__link">
+        LwM2M Client
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../introduction/" class="md-tabs__link md-tabs__link--active">
+        Coiote IoT DM
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Demo_Projects/Tracking_tutorial/" class="md-tabs__link">
+        Demo Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../academy/" class="md-tabs__link">
+        LwM2M Academy
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IoT Developer Zone" class="md-nav__button md-logo" aria-label="IoT Developer Zone">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    IoT Developer Zone
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+      
+      <label class="md-nav__link" for="nav-1">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="nav-1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.avsystem.com/" class="md-nav__link">
+        Join Discord Community
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        LwM2M Client
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LwM2M Client" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          LwM2M Client
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/Getting_started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+      
+      <label class="md-nav__link" for="nav-2-2">
+        Raspberry Pi boards
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Raspberry Pi boards" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Raspberry Pi boards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W/" class="md-nav__link">
+        Raspberry Pi Pico W
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
+      
+      <label class="md-nav__link" for="nav-2-3">
+        STMicroelectronics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="STMicroelectronics" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          STMicroelectronics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay/" class="md-nav__link">
+        Building LwM2M applications for STM boards with I-CUBE-Anjay
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/STMicroelectronics/STM32L496G-DISCOBG96/" class="md-nav__link">
+        STM32L496G-DISCO/BG96
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/STMicroelectronics/B-L462E-CELL1-TYPE1SC/" class="md-nav__link">
+        B-L462E-CELL1/TYPE1SC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/STMicroelectronics/B-L475E-IOT01A/" class="md-nav__link">
+        B-L475E-IOT01A
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/STMicroelectronics/B-U585I-IOT02A-BG96/" class="md-nav__link">
+        B-U585I-IOT02A/BG96
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/STMicroelectronics/Runtime_certificate/" class="md-nav__link">
+        Runtime Certificate and Private Key Configuration
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+      
+      <label class="md-nav__link" for="nav-2-4">
+        Nordic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Nordic" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          Nordic
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/Nordic/Thingy91/" class="md-nav__link">
+        Thingy:91
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/Nordic/nRF9160DK/" class="md-nav__link">
+        nRF9160 DK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/Nordic/nRF7002DK/" class="md-nav__link">
+        nRF7002 DK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/Nordic/Device_Provisioning/" class="md-nav__link">
+        Automated Provisioning for Nordic boards
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/Nordic/Runtime_certificate/" class="md-nav__link">
+        Runtime Certificate and Private Key Configuration
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" >
+      
+      <label class="md-nav__link" for="nav-2-5">
+        ESP32
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ESP32" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-5">
+          <span class="md-nav__icon md-icon"></span>
+          ESP32
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/ESP32/M5Stick/" class="md-nav__link">
+        M5StickC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/ESP32/M5StickBG96/" class="md-nav__link">
+        M5StickC with BG96
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/ESP32/ESP32-DevKitCBG96/" class="md-nav__link">
+        ESP32-DevKitC with BG96
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
+      
+      <label class="md-nav__link" for="nav-2-6">
+        OpenThread
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenThread" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-6">
+          <span class="md-nav__icon md-icon"></span>
+          OpenThread
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/OpenThread/Adding_device/" class="md-nav__link">
+        Adding nRF board to OpenThread
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LwM2M_Client/OpenThread/OTBR_with_svetovid/" class="md-nav__link">
+        OpenThread Border Router configurable through LwM2M server
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
+        Coiote IoT DM
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Coiote IoT DM" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Coiote IoT DM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
+        Cloud integration tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cloud integration tutorials" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud integration tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-1" type="checkbox" id="nav-3-2-1" >
+      
+      <label class="md-nav__link" for="nav-3-2-1">
+        Data Integration Center
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Integration Center" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-1">
+          <span class="md-nav__icon md-icon"></span>
+          Data Integration Center
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Device_Integration_Center/influx/" class="md-nav__link">
+        InfluxDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Device_Integration_Center/datacake/" class="md-nav__link">
+        Datacake
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Device_Integration_Center/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Device_Integration_Center/slack/" class="md-nav__link">
+        Slack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Device_Integration_Center/atlas/" class="md-nav__link">
+        Atlas
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
+      
+      <label class="md-nav__link" for="nav-3-2-2">
+        Azure IoT Hub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT Hub" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT Hub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT_Hub/Upgrading_firmware/" class="md-nav__link">
+        Upgrade device firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT_Hub/Perform_Read_Write/" class="md-nav__link">
+        Perform LwM2M Read and Write
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT_Hub/Perform_Execute/" class="md-nav__link">
+        Perform LwM2M Execute
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT_Hub/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" >
+      
+      <label class="md-nav__link" for="nav-3-2-3">
+        Azure IoT Central
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Azure IoT Central" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure IoT Central
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_integrations/Azure_IoT_Central/Set_an_Observation/" class="md-nav__link">
+        Set an Observation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3">
+        Video tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Video tutorials" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Video tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_videos/How_to_simply_onboard_and_provision_IoT_devices/" class="md-nav__link">
+        How to simply onboard and provision IoT devices?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_videos/How_to_remotely_configure_IoT_devices/" class="md-nav__link">
+        How to remotely configure IoT devices?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_videos/How_to_perform_secure_Over-the-Air_updates/" class="md-nav__link">
+        How to perform secure Over-the-Air (OTA) updates? (nRF9160 DK)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_videos/How_to_remotely_monitor_IoT_devices_and_diagnose_issues/" class="md-nav__link">
+        How to remotely monitor IoT devices and diagnose issues?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coiote_videos/What_types_of_IoT_data_are_collected_and_stored_in_the_Coiote/" class="md-nav__link">
+        What types of IoT data are collected and stored in the Coiote?
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+      
+      <label class="md-nav__link" for="nav-3-4">
+        API documentation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API documentation" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-4">
+          <span class="md-nav__icon md-icon"></span>
+          API documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-1" type="checkbox" id="nav-3-4-1" >
+      
+      <label class="md-nav__link" for="nav-3-4-1">
+        Overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Overview" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Overview/About_Coiote_API/" class="md-nav__link">
+        About API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Overview/Getting_access/" class="md-nav__link">
+        Getting access
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Overview/Using_the_API/" class="md-nav__link">
+        Using the API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-2" type="checkbox" id="nav-3-4-2" >
+      
+      <label class="md-nav__link" for="nav-3-4-2">
+        Guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Guides" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Guides/Basic_onboarding/" class="md-nav__link">
+        How to make basic onboarding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Guides/Create_a_domain_and_add_users/" class="md-nav__link">
+        How to create a domain and add users
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Guides/Make_firmware_upgrade/" class="md-nav__link">
+        How to make firmware upgrade (FOTA)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Guides/Send_data_outside_application/" class="md-nav__link">
+        How to send data outside the application with event handlers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/Guides/Use_device_monitoring/" class="md-nav__link">
+        How to use Device monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API_documentation/api_reference/" class="md-nav__link">
+        API reference
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" checked>
+      
+      <label class="md-nav__link" for="nav-3-5">
+        Release Notes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-5">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-1" type="checkbox" id="nav-3-5-1" >
+      
+      <label class="md-nav__link" for="nav-3-5-1">
+        2024
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2024" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-5-1">
+          <span class="md-nav__icon md-icon"></span>
+          2024
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2024.5.0/" class="md-nav__link">
+        v2024.5.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2024.4.0/" class="md-nav__link">
+        v2024.4.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2024.3.0/" class="md-nav__link">
+        v2024.3.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2024.2.0/" class="md-nav__link">
+        v2024.2.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2024.1.0/" class="md-nav__link">
+        v2024.1.0
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-2" type="checkbox" id="nav-3-5-2" checked>
+      
+      <label class="md-nav__link" for="nav-3-5-2">
+        2023
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2023" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-5-2">
+          <span class="md-nav__icon md-icon"></span>
+          2023
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.34.0/" class="md-nav__link">
+        v2023.34.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.33/" class="md-nav__link">
+        v2023.33
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.32/" class="md-nav__link">
+        v2023.32
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.31/" class="md-nav__link">
+        v2023.31
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.30.0/" class="md-nav__link">
+        v2023.30.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          v2023.29
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        v2023.29
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-explanations-to-operation-center-cards" class="md-nav__link">
+    Add explanations to Operation Center cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implement-state-storage-in-tts-creator" class="md-nav__link">
+    Implement state storage in TTS creator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix-issue-with-dmc-panel-opened-in-new-window" class="md-nav__link">
+    Fix issue with DMC panel opened in new window
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fix-gateway-device-addition-via-bootstrap" class="md-nav__link">
+    Fix gateway device addition via bootstrap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.28/" class="md-nav__link">
+        v2023.28
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.27/" class="md-nav__link">
+        v2023.27
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.26.1/" class="md-nav__link">
+        v2023.26.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.25.2/" class="md-nav__link">
+        v2023.25.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.24.0/" class="md-nav__link">
+        v2023.24.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.22.0/" class="md-nav__link">
+        v2023.22.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.19.0/" class="md-nav__link">
+        v2023.19.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.17.0/" class="md-nav__link">
+        v2023.17.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.16.0/" class="md-nav__link">
+        v2023.16.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.15.0/" class="md-nav__link">
+        v2023.15.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.14.0/" class="md-nav__link">
+        v2023.14.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.12.0/" class="md-nav__link">
+        v2023.12.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.11.0/" class="md-nav__link">
+        v2023.11.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.10.0/" class="md-nav__link">
+        v2023.10.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.9.0/" class="md-nav__link">
+        v2023.9.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.7.0/" class="md-nav__link">
+        v2023.7.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.6.0/" class="md-nav__link">
+        v2023.6.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.5.0/" class="md-nav__link">
+        v2023.5.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.4.0/" class="md-nav__link">
+        v2023.4.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2023.3.0/" class="md-nav__link">
+        v2023.3.0
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-3" type="checkbox" id="nav-3-5-3" >
+      
+      <label class="md-nav__link" for="nav-3-5-3">
+        2022
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2022" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-5-3">
+          <span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.27.0/" class="md-nav__link">
+        v2022.27.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.26.0/" class="md-nav__link">
+        v2022.26.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.25.20/" class="md-nav__link">
+        v2022.25.20
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.24.14/" class="md-nav__link">
+        v2022.24.14
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.23.11/" class="md-nav__link">
+        v2022.23.11
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.22.0/" class="md-nav__link">
+        v2022.22.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.21.6/" class="md-nav__link">
+        v2022.21.6
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.20.4/" class="md-nav__link">
+        v2022.20.4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.19.2/" class="md-nav__link">
+        v2022.19.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.18.3/" class="md-nav__link">
+        v2022.18.3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.17.0/" class="md-nav__link">
+        v2022.17.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.16.0/" class="md-nav__link">
+        v2022.16.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.13.5/" class="md-nav__link">
+        v2022.13.5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.9.2/" class="md-nav__link">
+        v2022.9.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.8.2/" class="md-nav__link">
+        v2022.8.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.7.3/" class="md-nav__link">
+        v2022.7.3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.5.3/" class="md-nav__link">
+        v2022.5.3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2022.3.2/" class="md-nav__link">
+        v2022.3.2
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-4" type="checkbox" id="nav-3-5-4" >
+      
+      <label class="md-nav__link" for="nav-3-5-4">
+        2021
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2021" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-5-4">
+          <span class="md-nav__icon md-icon"></span>
+          2021
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2021.24.5/" class="md-nav__link">
+        v2021.24.5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2021.23.0/" class="md-nav__link">
+        v2021.23.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2021.22.1/" class="md-nav__link">
+        v2021.22.1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        Demo Projects
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Demo Projects" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Demo Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Demo_Projects/Tracking_tutorial/" class="md-nav__link">
+        Asset Tracking using Thingy:91 and Power BI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.hackster.io/ferre111/iot-solution-for-co2-measurement-in-the-office-f3b213" class="md-nav__link">
+        CO2 office sensor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Demo_Projects/Edge_Impulse_demo/" class="md-nav__link">
+        Motion detection using Edge Impulse and Thingy:91
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Demo_Projects/Implementing_LwM2M_objects_on_RaspberryPi/" class="md-nav__link">
+        LwM2M on a Raspberry Pi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Demo_Projects/Air_quality_monitoring_tutorial/" class="md-nav__link">
+        Air quality monitoring using Azure IoT Hub and Power BI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
+        LwM2M Academy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LwM2M Academy" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          LwM2M Academy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2" >
+      
+      <label class="md-nav__link" for="nav-5-2">
+        Module 1 - Introduction to LwM2M
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Module 1 - Introduction to LwM2M" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-2">
+          <span class="md-nav__icon md-icon"></span>
+          Module 1 - Introduction to LwM2M
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/module1/" class="md-nav__link">
+        Theory Module 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise1/" class="md-nav__link">
+        Exercise 1 - Connect the RPI to a LwM2M Server
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3" >
+      
+      <label class="md-nav__link" for="nav-5-3">
+        Module 2 - Getting started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Module 2 - Getting started" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-3">
+          <span class="md-nav__icon md-icon"></span>
+          Module 2 - Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/module2/" class="md-nav__link">
+        Theory Module 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise2a/" class="md-nav__link">
+        Exercise 2A - Analyze Mandatory Objects
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise2b/" class="md-nav__link">
+        Exercise 2B - Pre-Shared Key
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4" >
+      
+      <label class="md-nav__link" for="nav-5-4">
+        Module 3 - Building applications
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Module 3 - Building applications" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-4">
+          <span class="md-nav__icon md-icon"></span>
+          Module 3 - Building applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/module3/" class="md-nav__link">
+        Theory Module 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise3a/" class="md-nav__link">
+        Exercise 3A - Implement Time Object
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise3b/" class="md-nav__link">
+        Exercise 3B - Implement Temperature Object
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5" >
+      
+      <label class="md-nav__link" for="nav-5-5">
+        Module 4 - Device management
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Module 4 - Device management" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-5">
+          <span class="md-nav__icon md-icon"></span>
+          Module 4 - Device management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/module4/" class="md-nav__link">
+        Theory Module 4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise4a/" class="md-nav__link">
+        Exercise 4A - Read & Observe
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise4b/" class="md-nav__link">
+        Exercise 4B - LwM2M Send
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-6" type="checkbox" id="nav-5-6" >
+      
+      <label class="md-nav__link" for="nav-5-6">
+        Module 5 - Firmware updates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Module 5 - Firmware updates" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-6">
+          <span class="md-nav__icon md-icon"></span>
+          Module 5 - Firmware updates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/module5/" class="md-nav__link">
+        Theory Module 5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/exercise5/" class="md-nav__link">
+        Exercise 5 - Implement Firmware Update
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../academy/gradproject/" class="md-nav__link">
+        Graduation Project
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-explanations-to-operation-center-cards" class="md-nav__link">
+    Add explanations to Operation Center cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implement-state-storage-in-tts-creator" class="md-nav__link">
+    Implement state storage in TTS creator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix-issue-with-dmc-panel-opened-in-new-window" class="md-nav__link">
+    Fix issue with DMC panel opened in new window
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fix-gateway-device-addition-via-bootstrap" class="md-nav__link">
+    Fix gateway device addition via bootstrap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+<!-- Edit button -->
+
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Markdown content -->
+<h1 id="v202329">v2023.29<a class="headerlink" href="#v202329" title="Permanent link">#</a></h1>
+<p>Previous version: <a href="../v2023.28/">v2023.28</a></p>
+<h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
+<h3 id="add-explanations-to-operation-center-cards">Add explanations to Operation Center cards<a class="headerlink" href="#add-explanations-to-operation-center-cards" title="Permanent link">#</a></h3>
+<p>We have added tooltips with explanations to <strong>Operation Center</strong> cards. The tooltips explain what is included in the count of devices and alerts.</p>
+<h3 id="implement-state-storage-in-tts-creator">Implement state storage in TTS creator<a class="headerlink" href="#implement-state-storage-in-tts-creator" title="Permanent link">#</a></h3>
+<p>We have implemented state storing in the TTS LoRa device creators. After a page refresh, the input fields retain the entered values. </p>
+<h2 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">#</a></h2>
+<h3 id="fix-issue-with-dmc-panel-opened-in-new-window">Fix issue with DMC panel opened in new window<a class="headerlink" href="#fix-issue-with-dmc-panel-opened-in-new-window" title="Permanent link">#</a></h3>
+<p>We have fixed an issue with missing UI elements when opening a DMC panel in a new window. The panel opened in the new tab now displays properly the top navigation bar. </p>
+<h3 id="fix-gateway-device-addition-via-bootstrap">Fix gateway device addition via bootstrap<a class="headerlink" href="#fix-gateway-device-addition-via-bootstrap" title="Permanent link">#</a></h3>
+<p>We have fixed issues with adding a gateway device via Bootstrap. The URL is now correct and the PSK security mode works properly.</p>
+
+<!-- Link to previous and/or next page -->
+
+<nav
+  class="md-navbottom__inner md-grid"
+  aria-label="Footer"
+>
+
+  <!-- Link to previous page -->
+  
+    <a
+      href="../v2023.30.0/"
+      class="md-navbottom__link md-navbottom__link--prev"
+      rel="prev"
+    >
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </div>
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Previous
+          </span>
+          v2023.30.0
+        </div>
+      </div>
+    </a>
+  
+
+  <!-- Link to next page -->
+  
+    <a
+      href="../v2023.28/"
+      class="md-navbottom__link md-navbottom__link--next"
+      rel="next"
+    >
+      <div class="md-navbottom__title">
+        <div class="md-ellipsis">
+          <span class="md-navbottom__direction">
+            Next
+          </span>
+          v2023.28
+        </div>
+      </div>
+      <div class="md-navbottom__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+      </div>
+    </a>
+  
+</nav>
+
+
+<!-- Last update of source file -->
+
+  
+    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2024</span>
+    
+  </small>
+</div>
+  
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+  <footer class="md-footer">
+    
+      <div class="md-footer-nav">
+        <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+          
+            <a href="../v2023.30.0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Previous
+                  </span>
+                  v2023.30.0
+                </div>
+              </div>
+            </a>
+          
+          
+            <a href="../v2023.28/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction">
+                    Next
+                  </span>
+                  v2023.28
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      </div>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid ">
+        <div class="md-footer-copyright">
+           &copy; Copyright 2022 <a href="https://www.avsystem.com/" target="_blank">AVSystem</a>
+        </div>
+        <div class="md-footer-meta__linksBox">
+          <a class="md-footer-meta__link" href="https://www.avsystem.com/tags/dev-topics/" target="_blank">
+              Our blog
+          </a>
+          <a class="md-footer-meta__link" href="https://iotdevzone.avsystem.com/" target="_blank">
+              IoT Developer Zone
+          </a>
+          <a class="md-footer-meta__link" href="https://www.avsystem.com/products/coiote-iot-device-management-platform/" target="_blank">
+              Coiote IoT DM Home
+          </a>
+          <a class="md-footer-meta__link" href="https://discord.avsystem.com/" target="_blank">
+            Join our Discord
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+  
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/139620700.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}</script>
+      
+    
+
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs', 'content.code.annotate', 'content.code.copy'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
