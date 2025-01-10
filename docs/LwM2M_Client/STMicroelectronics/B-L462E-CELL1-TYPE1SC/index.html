@@ -3012,6 +3012,15 @@ It will be useful when performing FOTA to distinguish the firmware images from e
 <h3 id="flash-the-board-with-sbsfu-binary">Flash the board with SBSFU binary<a class="headerlink" href="#flash-the-board-with-sbsfu-binary" title="Permanent link">#</a></h3>
 <p>Use <strong>STM32CubeProgrammer</strong> application with <code>SBSFU_Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.bin</code> file to program the board (it is advisable to perform <strong>Full chip erase</strong> first). You can open serial port to change default credentials in order to connect to Coiote IoT DM.</p>
 <p>After that, you can use Coiote IoT DM to perform firmware update with <code>Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb</code> file.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Disable Secure Protection</p>
+<p>When flashed board with Secure Boot you will need to switch off secure protection to be able to flash the board again. To deactivate secure application please run <strong>STM32_Programmer_CLI</strong> (Program provided with STM32CubeProgrammer) tool with specific options:</p>
+<div class="highlight"><pre><span></span><code>./&lt; path_to_STM32_Programmer_CLI &gt; -c port=SWD mode=UR -ob RDP=0xAA \
+    WRP1A_STRT=0xFF WRP1A_END=0x0 WRP1B_STRT=0xFF WRP1B_END=0x0 \
+    -ob displ
+</code></pre></div>
+</div>
 <h3 id="perform-firmware-update">Perform firmware update<a class="headerlink" href="#perform-firmware-update" title="Permanent link">#</a></h3>
 <p>In order to perform firmware update:</p>
 <ol>
@@ -3089,7 +3098,7 @@ It will be useful when performing FOTA to distinguish the firmware images from e
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 3, 2025</span>
     
   </small>
 </div>
