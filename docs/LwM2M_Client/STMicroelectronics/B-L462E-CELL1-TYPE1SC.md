@@ -141,6 +141,17 @@ Use **STM32CubeProgrammer** application with `SBSFU_Anjay-freertos-client-B-L462
 
 After that, you can use {{ coiote_short_name }} to perform firmware update with `Anjay-freertos-client-B-L462E-CELL1-TYPE1SC.sfb` file.
 
+!!! important
+    Disable Secure Protection
+
+    When flashed board with Secure Boot you will need to switch off secure protection to be able to flash the board again. To deactivate secure application please run **STM32_Programmer_CLI** (Program provided with STM32CubeProgrammer) tool with specific options:
+
+    ```
+    ./< path_to_STM32_Programmer_CLI > -c port=SWD mode=UR -ob RDP=0xAA \
+        WRP1A_STRT=0xFF WRP1A_END=0x0 WRP1B_STRT=0xFF WRP1B_END=0x0 \
+        -ob displ
+    ```
+
 ### Perform firmware update
 
 In order to perform firmware update:

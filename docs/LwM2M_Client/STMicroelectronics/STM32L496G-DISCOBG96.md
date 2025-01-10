@@ -158,7 +158,11 @@ After that, you can use {{ coiote_short_name }} to perform firmware update with 
     When flashed board with Secure Boot you will need to switch off secure protection to be able to flash the board again. To deactivate secure application please run **STM32_Programmer_CLI** (Program provided with STM32CubeProgrammer) tool with specific options:
 
     ```
-    ./< path_to_STM32_Programmer_CLI > -c port=SWD mode=UR -ob RDP=0xBB -ob RDP=0xAA WRP1A_STRT=0xFF WRP1A_END=0x0 -ob displ
+    ./< path_to_STM32_Programmer_CLI > -c port=SWD mode=UR -ob RDP=0xAA \
+        WRP1A_STRT=0xFF WRP1A_END=0x0 WRP1B_STRT=0xFF WRP1B_END=0x0 \
+        WRP2A_STRT=0xFF WRP2A_END=0x0 WRP2B_STRT=0xFF WRP2B_END=0x0 \
+        BFB2=0x0 \
+        -ob displ
     ```
 
 ### Perform firmware update
