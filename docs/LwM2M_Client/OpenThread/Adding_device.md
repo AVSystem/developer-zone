@@ -87,7 +87,7 @@ Set West manifest path to *Anjay-zephyr-client/demo*, and manifest file to *west
 0. Now in Anjay-zephyr-client/demo directory you can compile the project.
 
     ```
-        west build -b nrf52840dk_nrf52840
+        west build -b nrf52840dk/nrf52840
     ```
 
 0. After successful build you can flash the target.

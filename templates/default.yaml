@@ -16,9 +16,15 @@ zephyr_repository_step:
 nRF9160DK_binary_step:
   0. Download the `demo_nrf9160dk_merged.hex` file.
 nRF9160DK_updating_dk_firmware_step:
-  0. You may need to update your DK firmware. To do this download new DK firmware from [nRF9160 DK Downloads page](https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download#infotabs) and follow [Updating the modem firmware](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/device_guides/working_with_nrf/nrf91/nrf9160.html#updating-the-modem-firmware) steps.
+  0. You may need to update your DK firmware. To do this download new DK firmware from [nRF9160 DK Downloads page](https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download#infotabs) and follow [Updating the modem firmware](https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/app_dev/device_guides/nrf91/nrf91_dk_updating_fw_programmer.html#updating_the_modem_firmware) steps.
 nRF9160DK_flash_downloaded_binary_step:
-  0. Use the nRF Connect Programmer and execute steps from the [Updating the application firmware](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/device_guides/working_with_nrf/nrf91/nrf9160.html#updating-the-application-firmware) section. Skip the point 6 and at the point 7 select already downloaded `demo_nrf9160dk_merged.hex` file.
+  0. Use the nRF Connect Programmer and execute steps from the [Updating the application firmware](https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/app_dev/device_guides/nrf91/nrf91_dk_updating_fw_programmer.html#updating_the_application_firmware) section. Skip the point 6 and at the point 7 select already downloaded `demo_nrf9160dk_merged.hex` file.
+nRF9151DK_binary_step:
+  0. Download the `demo_nrf9151dk_merged.hex` file.
+nRF9151DK_updating_dk_firmware_step:
+  0. You may need to update your DK firmware. To do this download new DK firmware from [nRF9151 DK Downloads page](https://www.nordicsemi.com/Products/Development-hardware/nRF9151-DK/Download#infotabs) and follow [Updating the modem firmware](https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/app_dev/device_guides/nrf91/nrf91_dk_updating_fw_programmer.html#updating_the_modem_firmware) steps.
+nRF9151DK_flash_downloaded_binary_step:
+  0. Use the nRF Connect Programmer and execute steps from the [Updating the application firmware](https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/app_dev/device_guides/nrf91/nrf91_dk_updating_fw_programmer.html#updating_the_application_firmware) section. Skip the point 6 and at the point 7 select already downloaded `demo_nrf9151dk_merged.hex` file.
 nRF7002DK_binary_step:
   0. Download the `demo_nrf7002dk.hex` file.
 nRF7002DK_flash_downloaded_binary_step:
