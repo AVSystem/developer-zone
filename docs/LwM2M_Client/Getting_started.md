@@ -72,7 +72,7 @@ Integrate your Thingy:91 board using our Anjay LwM2M Client based on Zephyr OS.
 
 Integrate your nRF9151 DK board using our Anjay LwM2M Client based on Zephyr OS.
 
-![nRF9151 DK](images/nRF9160.png "nRF9151 DK"){ width=70% }
+![nRF9151 DK](images/nRF9151.png "nRF9151 DK"){ width=70% }
 
 [Start integration](./Nordic/nRF9151DK.md){: .md-button .md-button--big }
 
