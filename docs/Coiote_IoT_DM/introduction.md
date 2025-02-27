@@ -58,9 +58,6 @@ This feature allows efficient firmware updates across your entire device fleet. 
 The administration section provides tools for configuring platform settings, including **Billing**, **User management**, and **Domain management**.
 
 
-!!! Info
-    A comprehensive and detailed description of all platform features, can be found in the user documentation available after logging into the platform. 
-
 ### LwM2M Gateway
 
 Coiote DM includes a LwM2M Gateway implementation enabling IoT devices without native LwM2M support to communicate with an LwM2M Server. It facilitates message routing, device representation, and security management while ensuring seamless integration with the server.
@@ -71,3 +68,6 @@ When a device operates as an LwM2M Gateway, the End IoT Devices tab appears in t
 - Search for end devices by Device ID or End IoT Device Objects.
 - View device details, including instance, prefix, and last operation time.
 - Navigate to the End IoT Device’s management view or its instance in the gateway Data model tab.
+
+!!! Info
+    A comprehensive and detailed description of all platform features, can be found in the user documentation available after logging into the platform. 
