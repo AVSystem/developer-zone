@@ -629,6 +629,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../LwM2M_Client/Nordic/nRF9151DK/" class="md-nav__link">
+        nRF9151 DK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../LwM2M_Client/Nordic/nRF9160DK/" class="md-nav__link">
         nRF9160 DK
       </a>
@@ -2863,7 +2875,7 @@
 </div>
 <p>The Endpoint Name and PSK can be configured using <em>menuconfig</em>.</p>
 <p>To open <em>menuconfig</em>, run the following command:
-<div class="highlight"><pre><span></span><code>west<span class="w"> </span>build<span class="w"> </span>-b<span class="w"> </span>thingy91_nrf9160_ns<span class="w"> </span>-p<span class="w"> </span>-t<span class="w"> </span>menuconfig
+<div class="highlight"><pre><span></span><code>west<span class="w"> </span>build<span class="w"> </span>-b<span class="w"> </span>thingy91/nrf9160/ns<span class="w"> </span>-p<span class="w"> </span>-t<span class="w"> </span>menuconfig
 </code></pre></div></p>
 <p>Open up the folder <code>anjay-zephyr-client ---&gt;</code></p>
 <p><img alt="menuconfig1.png" src="../images/menuconfig_ei1.png" /></p>
@@ -2872,7 +2884,7 @@
 <p>After making the changes, press <code>Q</code> to close the config menu and <code>Y</code> to save.</p>
 <h3 id="compile-the-project">Compile the project<a class="headerlink" href="#compile-the-project" title="Permanent link">#</a></h3>
 <p>Go to the <code>ei_demo</code> directory and compile the project for the Thingy:91:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">west</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="o">-</span><span class="nx">b</span><span class="w"> </span><span class="nx">thingy91_nrf9160_ns</span>
+<div class="highlight"><pre><span></span><code><span class="nx">west</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="o">-</span><span class="nx">b</span><span class="w"> </span><span class="nx">thingy91</span><span class="o">/</span><span class="nx">nrf9160</span><span class="o">/</span><span class="nx">ns</span>
 </code></pre></div>
 <h2 id="write-the-firmware-to-the-thingy91">Write the firmware to the Thingy:91<a class="headerlink" href="#write-the-firmware-to-the-thingy91" title="Permanent link">#</a></h2>
 <ol>
@@ -3038,7 +3050,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
     
   </small>
 </div>

@@ -631,6 +631,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../nRF9151DK/" class="md-nav__link">
+        nRF9151 DK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -2808,8 +2820,8 @@
 <ol>
 <li>Go to <a href="https://github.com/AVSystem/Anjay-zephyr-client/releases">Anjay-zephyr-client</a>.</li>
 <li>Download the <code>demo_nrf9160dk_merged.hex</code> file.</li>
-<li>You may need to update your DK firmware. To do this download new DK firmware from <a href="https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download#infotabs">nRF9160 DK Downloads page</a> and follow <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/device_guides/working_with_nrf/nrf91/nrf9160.html#updating-the-modem-firmware">Updating the modem firmware</a> steps.</li>
-<li>Use the nRF Connect Programmer and execute steps from the <a href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/device_guides/working_with_nrf/nrf91/nrf9160.html#updating-the-application-firmware">Updating the application firmware</a> section. Skip the point 6 and at the point 7 select already downloaded <code>demo_nrf9160dk_merged.hex</code> file.</li>
+<li>You may need to update your DK firmware. To do this download new DK firmware from <a href="https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download#infotabs">nRF9160 DK Downloads page</a> and follow <a href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/app_dev/device_guides/nrf91/nrf91_dk_updating_fw_programmer.html#updating_the_modem_firmware">Updating the modem firmware</a> steps.</li>
+<li>Use the nRF Connect Programmer and execute steps from the <a href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/app_dev/device_guides/nrf91/nrf91_dk_updating_fw_programmer.html#updating_the_application_firmware">Updating the application firmware</a> section. Skip the point 6 and at the point 7 select already downloaded <code>demo_nrf9160dk_merged.hex</code> file.</li>
 </ol>
 <p>Go to the <a href="#connect-to-the-lwm2m-server">Connect to the LwM2M Server</a>.</p>
 <h3 id="start-development-using-samples">Start development using samples<a class="headerlink" href="#start-development-using-samples" title="Permanent link">#</a></h3>
@@ -2836,7 +2848,7 @@ west update
 <li>
 <p>Compile and flash the project for <strong>nRF9160 DK</strong>:</p>
 <div class="highlight"><pre><span></span><code>cd Anjay-zephyr-client/demo
-west build -b nrf9160dk_nrf9160_ns
+west build -b nrf9160dk/nrf9160/ns
 west flash
 </code></pre></div>
 </li>
@@ -2918,7 +2930,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
   <!-- Link to previous page -->
   
     <a
-      href="../Thingy91/"
+      href="../nRF9151DK/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -2930,7 +2942,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
           <span class="md-navbottom__direction">
             Previous
           </span>
-          Thingy:91
+          nRF9151 DK
         </div>
       </div>
     </a>
@@ -2968,7 +2980,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
     
   </small>
 </div>
@@ -2991,7 +3003,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../Thingy91/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../nRF9151DK/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -3000,7 +3012,7 @@ offline mode and reconnects when the first fix is acquired and LTE is enabled ba
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  Thingy:91
+                  nRF9151 DK
                 </div>
               </div>
             </a>
