@@ -57,14 +57,14 @@ Open the command line interface on your machine, then paste and run the followin
 0. Compile the project for **Thingy:91** using the command:
 
     ```
-    west build -b thingy91_nrf9160ns
+    west build -b thingy91/nrf9160/ns
     ```
 
     !!! Note
         [Optional] Configuration of the Anjay client can be done using **menuconfig**. This allows you, among others, to enable the **GPS** and **cell-based location services**. To open the configuration menu, run the command:
 
         ```
-        west build -b thingy91_nrf9160ns -p -t menuconfig
+        west build -b thingy91/nrf9160/ns -p -t menuconfig
         ```
 
         A config screen will open:

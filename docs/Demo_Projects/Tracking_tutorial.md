@@ -69,7 +69,7 @@ Open the command line interface on your machine and clone the Anjay Zephyr repos
     **Menuconfig** allows for, among others, enabling the **GPS** and **cell-based location services**. To open the configuration menu, run the command:
 
     ```
-    west build -b thingy91_nrf9160ns -p -t menuconfig
+    west build -b thingy91/nrf9160/ns -p -t menuconfig
     ```
 
     In the config screen:

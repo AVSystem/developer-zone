@@ -59,7 +59,7 @@ The Endpoint Name and PSK can be configured using *menuconfig*.
 
 To open *menuconfig*, run the following command:
 ```bash
-west build -b thingy91_nrf9160_ns -p -t menuconfig
+west build -b thingy91/nrf9160/ns -p -t menuconfig
 ```
 
 Open up the folder `anjay-zephyr-client --->`
@@ -77,7 +77,7 @@ After making the changes, press `Q` to close the config menu and `Y` to save.
 Go to the `ei_demo` directory and compile the project for the Thingy:91:
 
 ```jsx
-west build -b thingy91_nrf9160_ns
+west build -b thingy91/nrf9160/ns
 ```
 
 ## Write the firmware to the Thingy:91

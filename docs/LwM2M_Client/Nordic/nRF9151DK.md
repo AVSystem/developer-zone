@@ -1,10 +1,10 @@
-# nRF9160 DK
+# nRF9151 DK
 
-Integrate your Nordic nRF9160 DK board.
+Integrate your Nordic nRF9151 DK board.
 
 ## Prerequisites
 
-- The nRF9160 DK board with a USB cable.
+- The nRF9151 DK board with a USB cable.
 - Installed **minicom** (for Linux) or RealTerm or PuTTy (for Windows) or other serial communication program.
 - Installed **nRF Connect** from [Nordic Semiconductor page](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop).
 - A user with access to the {{ coiote_long_name }}.
@@ -16,9 +16,9 @@ Integrate your Nordic nRF9160 DK board.
 To get the latest binary file and flash the board:
 
 {{ zephyr_repository_step }}
-{{ nRF9160DK_binary_step }}
-{{ nRF9160DK_updating_dk_firmware_step}}
-{{ nRF9160DK_flash_downloaded_binary_step }}
+{{ nRF9151DK_binary_step }}
+{{ nRF9151DK_updating_dk_firmware_step}}
+{{ nRF9151DK_flash_downloaded_binary_step }}
 
 Go to the [Connect to the LwM2M Server](#connect-to-the-lwm2m-server).
 
@@ -41,7 +41,7 @@ Enter the command line interface on your machine and change the directory to the
 
 #### Part 3: Compiling the example
 
-0. Connect the nRF9160 DK board to a USB port of your machine.
+0. Connect the nRF9151 DK board to a USB port of your machine.
 0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and do `west update`:
 
     ```
@@ -50,12 +50,12 @@ Enter the command line interface on your machine and change the directory to the
     west update
     ```
 
-0. Compile and flash the project for **nRF9160 DK**:
+0. Compile and flash the project for **nRF9151 DK**:
 
 
     ```
     cd Anjay-zephyr-client/demo
-    west build -b nrf9160dk/nrf9160/ns
+    west build -b nrf9151dk/nrf9151/ns
     west flash
     ```
 
@@ -111,7 +111,7 @@ To connect the board:
     ![Registered device](images/registered_device.png "Registered device")
 
 !!! note
-    **nRF9160 DK** uses the same radio for GPS and LTE connectivity. GPS signal is
+    **nRF9151 DK** uses the same radio for GPS and LTE connectivity. GPS signal is
     caught between LTE transmissions and in case GPS "cold" fix acquisition takes
     too much time, Anjay turns off LTE transmissions for the time of fix acquisition.
     It can be seen by the following warning: `gps_nrf: GPS was interrupted multiple

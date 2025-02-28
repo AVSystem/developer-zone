@@ -50,7 +50,7 @@ Enter the command line interface on your machine and change the directory to the
 0. Compile and flash the project for **nRF7002 DK**:
     ```
     cd Anjay-zephyr-client/demo
-    west build -b nrf7002dk_nrf5340_cpuapp
+    west build -b nrf7002dk/nrf5340/cpuapp
     west flash
     ```
 

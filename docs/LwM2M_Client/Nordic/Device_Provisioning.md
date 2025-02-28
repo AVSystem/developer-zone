@@ -72,7 +72,7 @@ This section shows how to provision your device using a pre-shared key (PSK).
     Run:
         ```
         cd Anjay-zephyr-client/demo
-        ./../tools/provisioning-tool/ptool.py -b nrf9160dk_nrf9160_ns -s <SERIAL> \
+        ./../tools/provisioning-tool/ptool.py -b nrf9160dk/nrf9160/ns -s <SERIAL> \
             -c ../tools/provisioning-tool/configs/endpoint_cfg -t <TOKEN> \
             -S ../tools/provisioning-tool/configs/lwm2m_server.json \
         ```
@@ -121,7 +121,7 @@ Now we will show how to provision the device using certificates. This method is 
 
     ```
     cd Anjay-zephyr-client/demo
-    ./../tools/provisioning-tool/ptool.py -b nrf9160dk_nrf9160_ns -s <SERIAL> \
+    ./../tools/provisioning-tool/ptool.py -b nrf9160dk/nrf9160/ns -s <SERIAL> \
         -c ../tools/provisioning-tool/configs/endpoint_cfg_cert -t <TOKEN> \
         -S ../tools/provisioning-tool/configs/lwm2m_server.json \
         -C ../tools/provisioning-tool/configs/cert_info.json -p /tmp/server.der

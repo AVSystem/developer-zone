@@ -68,6 +68,7 @@ nav:
                 - 'LwM2M_Client/STMicroelectronics//Runtime_certificate.md'
             - 'Nordic':
                 - 'LwM2M_Client/Nordic/Thingy91.md'
+                - 'LwM2M_Client/Nordic/nRF9151DK.md'
                 - 'LwM2M_Client/Nordic/nRF9160DK.md'
                 - 'LwM2M_Client/Nordic/nRF7002DK.md'
                 - 'LwM2M_Client/Nordic/Device_Provisioning.md'

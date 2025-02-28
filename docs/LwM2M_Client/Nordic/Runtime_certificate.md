@@ -1,7 +1,7 @@
 # Runtime Certificate and Private Key Configuration
 
 ## Introduction
-Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [nRF9160 DK](nRF9160DK.md), [nRF7002 DK](nRF7002DK.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
+Anjay library supports secure connection between device and server. Encryption can be achieved with the use of Pre-Shared Key as it was described in [nRF9151 DK](nRF9151DK.md), [nRF9160 DK](nRF9160DK.md), [nRF7002 DK](nRF7002DK.md) and [Thingy:91](Thingy91.md) pages or with certificate-based cryptography.
 
 In **Certificate Mode** an asymmetrical algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
 
@@ -39,11 +39,11 @@ You can read more about secure communication on [Anjay's documentation](https://
     In order to build application using software cryptography, build using following command:
 
     ```
-    west build -b nrf9160dk_nrf9160_ns -p -- -DEXTRA_CONF_FILE="overlay_nrf_mbedtls.conf"
+    west build -b nrf9160dk/nrf9160/ns -p -- -DEXTRA_CONF_FILE="overlay_nrf_mbedtls.conf"
     ```
 
     !!! Note
-        This feature works with nRF9160 DK starting from revision v0.14.0, which is used by default for `nrf9160dk_nrf9160_ns` target, but you can pass revision explicitly in order to protect against further NCS updates.
+        This feature works with nRF9160 DK starting from revision v0.14.0, which is used by default for `nrf9160dk/nrf9160/ns` target, but you can pass revision explicitly in order to protect against further NCS updates.
 
 0. Flash the board with `west flash` command.
 
