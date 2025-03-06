@@ -17,7 +17,7 @@
 
     
       
-        <title>v2023.28 - IoT Developer Zone</title>
+        <title>v2025.4.0 - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v202328" class="md-skip">
+        <a href="#v202540" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              v2023.28
+              v2025.4.0
             
           </span>
         </div>
@@ -1390,12 +1390,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-1" type="checkbox" id="nav-3-5-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-1" type="checkbox" id="nav-3-5-1" checked>
       
       <label class="md-nav__link" for="nav-3-5-1">
         2025
@@ -1412,11 +1414,63 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../v2025.4.0/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          v2025.4.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         v2025.4.0
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1518,14 +1572,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-3" type="checkbox" id="nav-3-5-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-3" type="checkbox" id="nav-3-5-3" >
       
       <label class="md-nav__link" for="nav-3-5-3">
         2023
@@ -1614,56 +1666,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          v2023.28
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../v2023.28/" class="md-nav__link">
         v2023.28
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="In this article">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      In this article
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
-    Enhancements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    Bug Fixes
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2689,6 +2696,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enhancements" class="md-nav__link">
     Enhancements
   </a>
@@ -2725,18 +2739,35 @@
 
 
 <!-- Markdown content -->
-<h1 id="v202328">v2023.28<a class="headerlink" href="#v202328" title="Permanent link">#</a></h1>
-<p>Previous version: <a href="../v2023.27/">v2023.27</a></p>
+<h1 id="v202540">v2025.4.0<a class="headerlink" href="#v202540" title="Permanent link">#</a></h1>
+<p>Previous version: <a href="../v2024.5.0/">v2024.5.0</a></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h2>
+<p><strong>Support for Notifications after device address change</strong>   </p>
+<p>Introduced a new <code>allowNotificationAddressChange</code> flag in the LwM2M dialect to support devices that change IP addresses without performing a full registration. This prevents notifications from being rejected while maintaining security with IPsec and CoAP token validation.</p>
+<p><strong>Retry action in FOTA campaign device list</strong>    </p>
+<p>Added a retry action button for devices in the FOTA campaign details view. The action allows restarting the FOTA task for a selected device, if its FOTA update has failed. This improvement enhances campaign management by providing an easy way to retry failed updates directly from the device list.</p>
 <h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
-<p><strong>Remove unused table column in User account</strong>   </p>
-<p>We have removed the <em>Last activity</em> column from the Sessions table in the <strong>User account</strong> panel. The information provided in the column was unnecessary.</p>
-<p><strong>Add refresh button in User account</strong>    </p>
-<p>We have added a refresh button in the top right corner of the <strong>User account</strong> panel. The button reloads the data displayed in the panel.</p>
-<p><strong>Apply error checking in TTS creators</strong>   </p>
-<p>We have implemented error checking in TTS LoRa device creators. The errors are checked in both management and bootstrap creator views. </p>
+<p><strong>Improved FOTA campaign update information</strong>    </p>
+<p>Added columns for versions before and after update in the <strong>Updates Started</strong> tab of FOTA campaign details. The target version column in Device Center now also includes a tooltip for multi-component FOTA campaigns.</p>
+<p><strong>Double confirmation for self-account deletion</strong>   </p>
+<p>Added a double confirmation panel when deleting the currently logged-in user to prevent accidental account removal. This update includes UI improvements for a clearer and safer account deletion process.</p>
+<p><strong>Improved API documentation for XML tasks</strong>     </p>
+<p>Added an API documentation section in the user documentation introducing new API guides: <em>Read Latest Data from a Device</em> and <em>Schedule Deferred Firmware Upgrade</em>. Additionally, enhanced Tasks API documentation in Swagger with more detailed descriptions and examples.</p>
+<p><strong>Improved FOTA tab in Device Center</strong>      </p>
+<p>Enhanced the <strong>Firmware Update</strong> tab in <strong>Device Center</strong> by adding the latest update status to the summary card and four new columns in the updates table: FOTA error type, Version before update, Target version, and Retries for failed updates. These changes provide clearer insights into update history and status.</p>
+<p><strong>Documented common XML task use cases</strong>    </p>
+<p>Introduced how-to-guides on task usage in the user documentation to assist users with common task use cases. The guides include instruction on handling LwM2M notifications with retries, performing advanced JSON operations in device configurations, and forwarding device data in batches.</p>
+<p><strong>Target firmware version in FOTA creator</strong>    </p>
+<p>Added an optional <em>Target version</em> input in the Basic FOTA and Basic FOTA configuration creators. The provided expected version is now saved and displayed in the FOTA and FOTA configuration details.</p>
+<p><strong>Adjustments to FOTA campaigns list</strong>     </p>
+<p>Updated the FOTA campaigns list view introducing minor error indicators and version details for better clarity.</p>
+<p><strong>New info in FOTA campaign sidebar</strong>      </p>
+<p>The FOTA campaign sidebar now displays additional details, including FOTA type, target version, and version before update. If multiple versions are present, a button allows navigation to the information tab. Alerts and highlights indicate whether the target version matches reported FOTA progress statuses.</p>
 <h2 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">#</a></h2>
-<p><strong>Fix device batch removal</strong>      </p>
-<p>We have fixed an issue with removing devices in batches when using the <em>Select All</em> option in <strong>Device inventory</strong>. Now, it is not possible to delete more than 100 devices at once without proper permissions.</p>
+<p><strong>Fix for task execution failures</strong>   </p>
+<p>Fixed an issue causing failures in certain task executions. The expressions library was updated to the latest version. Additionally, strict validation for task variable names was introduced, with configuration options adjusted to prevent similar issues in the future.</p>
+<p><strong>Fixed incorrect FOTA status display</strong>    </p>
+<p>Resolved an issue where in a few corner cases FOTA updates appeared In Progress even after being Canceled due to a timeout. Now, any steps still marked as ongoing during cancellation are correctly updated to Canceled.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2748,7 +2779,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../v2023.29/"
+      href="../../API_documentation/api_reference/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -2760,7 +2791,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          v2023.29
+          API reference
         </div>
       </div>
     </a>
@@ -2769,7 +2800,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../v2023.27/"
+      href="../v2024.5.0/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -2778,7 +2809,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          v2023.27
+          v2024.5.0
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -2808,7 +2839,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../v2023.29/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../../API_documentation/api_reference/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -2817,19 +2848,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  v2023.29
+                  API reference
                 </div>
               </div>
             </a>
           
           
-            <a href="../v2023.27/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../v2024.5.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  v2023.27
+                  v2024.5.0
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
