@@ -116,6 +116,7 @@ nav:
                     - API reference: 'Coiote_IoT_DM/API_documentation/api_reference.md'
             - 'Release Notes':
                         - 2025:
+                            - 'Coiote_IoT_DM/Release_Notes/v2025.5.0.md'                        
                             - 'Coiote_IoT_DM/Release_Notes/v2025.4.0.md'
                         - 2024:
                             - 'Coiote_IoT_DM/Release_Notes/v2024.5.0.md'
