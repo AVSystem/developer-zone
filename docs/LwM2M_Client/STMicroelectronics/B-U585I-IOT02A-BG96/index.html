@@ -667,6 +667,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2832,6 +2839,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2918,27 +2932,7 @@
  <br />
  In Pack_BG96MAR02A08M1G_01.012.01.012 you will find step-by-step instruction. Step 2 and step 4 in this instruction doesn't work. For that reason you will need to download Quectel_LTE_Windows_USB_Driver_V2.0 file, as a required file for step 2, and QFlash_V4.10 file, as a required file for step 4.</p>
 </div>
-<p>To connect the board:</p>
-<ol>
-<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
-<li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
-<li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
-       <img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /><ol>
-<li>In the <strong>Device credentials</strong> step:<ul>
-<li>In the <strong>Device ID</strong> enter your board endpoint name, e.g. <code>test_device</code>.
-     <img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-<li>In the <strong>Security mode</strong> section, select the <strong>PSK (Pre-Shared Key)</strong> mode:<ul>
-<li>In the <strong>Key identity</strong> field, type the same name as in the <code>Endpoint name</code> field</li>
-<li>In the <strong>Key</strong> field, type the shared secret used in the device-server authentication.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>In the <strong>Connect your device</strong> step, follow the next <a href="#configure-the-client">section</a> to run the client and connect it to the server.</li>
-</ol>
-</li>
-</ol>
+<p>To connect the board, log in to the platform and follow <a href="https://eu.iot.avsystem.cloud/doc/user/getting-started/onboard-your-first-device/">onboarding guide</a>.</p>
 <h2 id="configure-the-client">Configure the Client<a class="headerlink" href="#configure-the-client" title="Permanent link">#</a></h2>
 <ol>
 <li>With the board still connected to a serial port interface, open your serial communication program.</li>
@@ -2967,6 +2961,8 @@
 <p><img alt="Registered device" src="../images/registered_device.png" title="Registered device" /></p>
 </li>
 </ol>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<p>If you want to develop your own LwM2M-enabled application based on STM32 B-U585I-IOT02A, check <a href="https://github.com/AVSystem/Anjay-freertos-client">Anjay-freertos-client</a> and start prototyping!</p>
 
 <!-- Link to previous and/or next page -->
 

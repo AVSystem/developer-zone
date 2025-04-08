@@ -820,6 +820,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2834,6 +2841,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2915,23 +2929,7 @@ python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
 <p><img alt="Client configuration" src="../images/nvs_config.png" style="float: left;margin-right: 1177px;margin-top: 17px;" title="Client configuration" /></p>
 <h2 id="step-3-add-device-to-coiote-iot-dm">Step 3: Add device to Coiote IoT DM<a class="headerlink" href="#step-3-add-device-to-coiote-iot-dm" title="Permanent link">#</a></h2>
 <p>To connect your M5StickC to the Coiote IoT Device Management platform, use your access to a Coiote IoT DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.</p>
-<p>To connect the board:</p>
-<ol>
-<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
-<li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
-<li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
-<img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
-<li>In the <strong>Device credentials</strong> step:<ul>
-<li>In the <strong>Device ID</strong> field, type the endpoint name provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
-<li>In the <strong>Security mode</strong> section, select the <strong>PSK</strong> mode.</li>
-<li>In the <strong>Key identity</strong> field, type the name provided in the <code>nvs_config.csv</code>, e.g. <code>ESP32_test</code>.</li>
-<li>In the <strong>Key</strong> field, type the <code>psk</code> key provided in the <code>nvs_config.csv</code>.
-<img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-</ul>
-</li>
-<li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>In the <strong>Connect your device</strong> step, the server is waiting for the board to connect. You can now start connecting the device.</li>
-</ol>
+<p>To connect the board, log in to the platform and follow <a href="https://eu.iot.avsystem.cloud/doc/user/getting-started/onboard-your-first-device/">onboarding guide</a>.</p>
 <h2 id="step-4-flash-the-board-and-run-device">Step 4: Flash the board and run device<a class="headerlink" href="#step-4-flash-the-board-and-run-device" title="Permanent link">#</a></h2>
 <p>Connect the M5Stick board to a USB port of your machine and open ESP-IDF command line application.</p>
 <p>Use pre-built binaries to flash the board and provide credentials by flashing the NVS partition binary.</p>
@@ -3037,6 +3035,8 @@ python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
     <img alt="Current firware" src="../images/current_firmware.png" title="Current firware" /></p>
 </li>
 </ol>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<p>If you want to develop your own LwM2M-enabled application based on M5Stick, check <a href="https://github.com/AVSystem/Anjay-esp32-client">Anjay-esp32-client</a> and start prototyping!</p>
 
 <!-- Link to previous and/or next page -->
 

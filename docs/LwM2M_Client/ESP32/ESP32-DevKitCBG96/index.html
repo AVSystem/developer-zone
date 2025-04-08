@@ -810,6 +810,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2766,6 +2773,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2826,27 +2840,13 @@
 </ol>
 <h2 id="step-3-add-device-to-coiote-iot-dm">Step 3: Add device to Coiote IoT DM<a class="headerlink" href="#step-3-add-device-to-coiote-iot-dm" title="Permanent link">#</a></h2>
 <p>To connect your ESP32-DevKitC to the Coiote IoT Device Management platform, use your access to a Coiote IoT DM installation, or register at https://eu.iot.avsystem.cloud/ to get access.</p>
-<p>To connect the board:</p>
-<ol>
-<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
-<li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
-<li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
-<img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
-<li>In the <strong>Device credentials</strong> step:<ul>
-<li>In the <strong>Device ID</strong> field, type the endpoint name provided in the IDF menuconfig <strong>Client options</strong>, e.g. <code>ESP32_test</code>.</li>
-<li>In the <strong>Security mode</strong> section, select the <strong>PSK</strong> mode.</li>
-<li>In the <strong>Key identity</strong> field, type the identity provided in the IDF menuconfig <strong>Client options</strong>, e.g. <code>ESP32_test</code>.</li>
-<li>In the <strong>Key</strong> field, type the <code>psk</code> key provided in the IDF menuconfig <strong>Client options</strong>.
-<img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-</ul>
-</li>
-<li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>In the <strong>Connect your device</strong> step, the server is waiting for the board to connect. You can now start connecting the device.</li>
-</ol>
+<p>To connect the board, log in to the platform and follow <a href="https://eu.iot.avsystem.cloud/doc/user/getting-started/onboard-your-first-device/">onboarding guide</a>.</p>
 <h2 id="step-4-flash-esp32-devkitc">Step 4: Flash ESP32-DevKitC<a class="headerlink" href="#step-4-flash-esp32-devkitc" title="Permanent link">#</a></h2>
 <ol>
 <li>Open the command line interface, go to your project directory, and run <code>idf.py flash monitor</code>.</li>
 </ol>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<p>If you want to develop your own LwM2M-enabled application based on ESP32, check <a href="https://github.com/AVSystem/Anjay-esp32-client">Anjay-esp32-client</a> and start prototyping!</p>
 
 <!-- Link to previous and/or next page -->
 

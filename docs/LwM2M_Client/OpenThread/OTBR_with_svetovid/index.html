@@ -2930,23 +2930,7 @@ After flashing, you must switch the physical USB port called <code>MCU USB</code
 </ol>
 <h2 id="connecting-to-the-lwm2m-server">Connecting to the LwM2M Server<a class="headerlink" href="#connecting-to-the-lwm2m-server" title="Permanent link">#</a></h2>
 <p>To connect to Coiote IoT Device Management platform, please register at <a href="https://eu.iot.avsystem.cloud">https://eu.iot.avsystem.cloud</a>.</p>
-<p>To connect the device:</p>
-<ol>
-<li>Log in to Coiote IoT DM and from the left side menu, select <strong>Device Inventory</strong>.</li>
-<li>In <strong>Device Inventory</strong>, click <strong>Add device</strong>.</li>
-<li>Select the <strong>Connect your LwM2M device directly via the Management server</strong> tile.
-<img alt="Add via Mgmt" src="../images/mgmt_tile.png" title="Add via Mgmt" /></li>
-<li>In the <strong>Device credentials</strong> step:<ul>
-<li>In the <strong>Device ID</strong> field, type your board endpoint name, e.g. <code>test_device</code>.</li>
-<li>In the <strong>Security mode</strong> section, select the <strong>PSK (Pre-Shared Key)</strong> mode.</li>
-<li>In the <strong>Key identity</strong> field, type the same name as in the <code>Endpoint name</code> field.</li>
-<li>In the <strong>Key</strong> field, type the shared secret used in the device-server authentication.
-<img alt="Device credentials step" src="../images/add_mgmt_quick.png" title="Device credentials step" /></li>
-</ul>
-</li>
-<li>Click the <strong>Add device</strong> button and <strong>Confirm</strong> in the confirmation pop-up.</li>
-<li>In the <strong>Connect your device</strong> step, follow the next sections to run the client and connect it to the server.</li>
-</ol>
+<p>To connect the board, log in to the platform and follow <a href="https://eu.iot.avsystem.cloud/doc/user/getting-started/onboard-your-first-device/">onboarding guide</a>.</p>
 <h2 id="switch-to-the-target-device">Switch to the target device<a class="headerlink" href="#switch-to-the-target-device" title="Permanent link">#</a></h2>
 <p>If you haven't worked on your target device thus far, it's time to switch to it, in our case it is the <code>Raspberry Pi 3B</code>. Connect the RCP to the target device and continue this tutorial while working on the target device.</p>
 <h2 id="downloading-docker-image">Downloading Docker image<a class="headerlink" href="#downloading-docker-image" title="Permanent link">#</a></h2>
