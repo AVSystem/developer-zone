@@ -117,3 +117,8 @@ To connect the board:
     It can be seen by the following warning: `gps_nrf: GPS was interrupted multiple
     times by the LTE modem when producing a fix`. Anjay is notified by it, enters
     offline mode and reconnects when the first fix is acquired and LTE is enabled back.
+
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on Nordic nRF9160 DK, check [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client) and start prototyping!

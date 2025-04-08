@@ -19,9 +19,10 @@ Get started by <a href="{{ coiote_site_link }}" target="_blank">**signing up**</
 
 ## Run Anjay LwM2M Client Demo
 
-Anjay LwM2M SDK is a set of tools that enables device vendors and IoT developers to easily implement a LwM2M client on their hardware. It is available both in an advanced commercial version as well as in the open-source model you can find on <a href="https://github.com/AVSystem/Anjay" target="_blank">GitHub</a>.
+Anjay LwM2M SDK is a set of tools that enables device vendors and IoT developers to easily implement a LwM2M client on their hardware. It is available both in an advanced commercial version and in the open-source model, you can find it on <a href="https://github.com/AVSystem/Anjay" target="_blank">GitHub</a>.
 
 Start by running the Anjay client on your **Linux**, **Mac** or **Windows** machine and simulate LwM2M telemetry data.
+Try [Anjay demo client](https://github.com/AVSystem/Anjay?tab=readme-ov-file#running-the-demo-client) to onboard your first simulated device.
 
 !!! note
     If preferred, you can directly jump to the Getting Started guides of the popular hardware platforms:
@@ -29,87 +30,12 @@ Start by running the Anjay client on your **Linux**, **Mac** or **Windows** mach
     * [Nordic](./LwM2M_Client/Nordic/Thingy91.md)
     * [STMicroelectronics](./LwM2M_Client/STMicroelectronics/Building_LwM2M_applications/Building_LwM2M_applications_with_I-CUBE-Anjay.md)
     * [ESP32](./LwM2M_Client/ESP32/ESP32-DevKitCBG96.md)
-    * [Raspberry Pi](./LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md)
+    * [Raspberry Pi Pico W](./LwM2M_Client/RaspberryPi/RaspberryPi-Pico-W.md)
 
 
 !!! Info
     For more information about the Anjay LwM2M Client, visit the <a href="https://avsystem.github.io/Anjay-doc/index.html" target="_blank">**Anjay Library Documentation**</a>.
 
-
-### Compile the Anjay demo client:
-
-=== "Linux"
-    Open up your command line interface and install the required dependencies:
-
-    ```
-    sudo apt-get install git build-essential cmake libmbedtls-dev zlib1g-dev
-    ```
-
-    Create a new directory, e.g. called `AVSystem`:
-
-    ```
-    mkdir ~/AVSystem \
-        && cd AVSystem
-    ```
-
-    Clone the Anjay GitHub repository and compile the Anjay demo client using Cmake:
-
-    ```
-    git clone https://github.com/AVSystem/Anjay.git \
-        && cd Anjay \
-        && git submodule update --init \
-        && cmake . \
-        && make -j
-    ```
-
-=== "Mac"
-    Open up your terminal and install the required dependencies using [Homebrew](https://brew.sh/):
-
-    ```
-    brew install cmake mbedtls openssl
-    ```
-
-    Create a new directory, e.g. called `AVSystem`:
-
-    ```
-    mkdir ~/AVSystem \
-        && cd AVSystem
-    ```
-
-    Clone the Anjay GitHub repository and compile the Anjay demo client using Cmake:
-
-    ```
-    git clone https://github.com/AVSystem/Anjay.git \
-        && cd Anjay \
-        && git submodule update --init \
-        && cmake . \
-        && make -j
-    ```
-
-=== "Windows"
-    **Install the required dependencies**
-
-    1. Install [MSYS2](http://www.msys2.org/)
-
-    1. Install [Git for Windows](https://gitforwindows.org/)
-
-        !!! Note
-            You can also install these using [Chocolatey](https://chocolatey.org/): `choco install git msys2` but make sure to follow the instructions to update MSYS2 after installing it.
-
-    1. Open the appropriate MINGW shell (e.g., `C:\msys64\mingw32.exe` or `C:\msys64\mingw64.exe`, depending on whether you want to build 32- or 64-bit binaries) and install the compile-time dependencies:
-
-        ```
-        pacman -Sy make ${MINGW_PACKAGE_PREFIX}-gcc ${MINGW_PACKAGE_PREFIX}-cmake ${MINGW_PACKAGE_PREFIX}-mbedtls
-        ```
-
-    **Compile the project**
-
-    Run the following commands in the MINGW shell, after navigating to the directory created using Git above:
-
-    ```
-    cmake -G"MSYS Makefiles" -DDTLS_BACKEND="mbedtls" .
-    make
-    ```
 
 ## Add a new device in {{ coiote_short_name }}
 

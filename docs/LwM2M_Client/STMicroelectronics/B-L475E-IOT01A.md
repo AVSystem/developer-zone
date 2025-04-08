@@ -102,3 +102,7 @@ To connect the board:
 
 !!! tip
     LwM2M Server URI, endpoint name and other information can be found in the **Configuration** tab.
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on STM32 B-L475E-IOT01A, check [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client) and start prototyping!

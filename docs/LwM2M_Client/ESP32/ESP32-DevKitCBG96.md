@@ -48,3 +48,8 @@ To connect the board:
 
 ## Step 4: Flash ESP32-DevKitC
 0. Open the command line interface, go to your project directory, and run `idf.py flash monitor`.
+
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on ESP32, check [Anjay-esp32-client](https://github.com/AVSystem/Anjay-esp32-client) and start prototyping!

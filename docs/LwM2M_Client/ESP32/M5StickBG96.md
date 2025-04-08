@@ -59,3 +59,8 @@ To connect the board:
 
 0. Connect the M5Stick board to a USB port of your machine.
 0. Open the command line interface, go to your project directory, and run `idf.py -b 750000 flash monitor`.
+
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on M5Stick, check [Anjay-esp32-client](https://github.com/AVSystem/Anjay-esp32-client) and start prototyping!

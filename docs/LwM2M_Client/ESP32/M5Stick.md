@@ -164,3 +164,8 @@ To perform a FOTA upgrade, you need an established connection between the M5Stic
 
 0. Once the upgrade is finished, you can check the new version of the firmware under **Current firmware**.
     ![Current firware](images/current_firmware.png "Current firware")
+
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on M5Stick, check [Anjay-esp32-client](https://github.com/AVSystem/Anjay-esp32-client) and start prototyping!

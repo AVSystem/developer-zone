@@ -106,3 +106,8 @@ To connect the board:
 
 0. Use the `anjay start` command to run the Client.
 0. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You should see your device registered.
+
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on Nordic nRF7002 DK, check [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client) and start prototyping!

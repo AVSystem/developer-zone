@@ -104,3 +104,7 @@ To connect the board:
 4. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
 
     ![Registered device](images/registered_device.png "Registered device")
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on STM32 B-U585I-IOT02A, check [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client) and start prototyping!

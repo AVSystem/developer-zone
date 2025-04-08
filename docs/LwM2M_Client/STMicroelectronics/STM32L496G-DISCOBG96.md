@@ -184,3 +184,7 @@ In order to perform firmware update:
     Firmware updated from version 'v1.0' to 'v2.0'
     ```
     where `v1.0` and `v2.0` will be set to firmware versions you set earlier.
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on STM32 L496G-DISCO, check [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client) and start prototyping!
