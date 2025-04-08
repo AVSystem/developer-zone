@@ -89,24 +89,7 @@ After successful flashing, reboot the board and go to the next step.
 
 To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}/).
 
-To connect the board:
-
-0. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
-0. In **Device Inventory**, click **Add device**.
-0. Select the **Connect your LwM2M device directly via the Management server** tile.
-    ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-0. In the **Device credentials** step:
-     - In the **Endpoint name** field, enter your board endpoint name e.g. `test_device` (remember to set the same name in the [next section](#configure-the-client)).
-         ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-     - In the **Security mode** section, select the **Pre-Shared Key** mode:
-         - In the **Key identity** field, type the same name as in the `Endpoint name` field.
-         - In the **Key** field, type a shared secret used for the device-server authentication.
-
-            !!! Note
-                This is your password which you create yourself, you will need it in the next steps.
-
-0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. While in the **Connect your device** step, follow the [next section](#configure-the-client) to run the client and connect it to the server.
+To connect the board, log in to the platform and follow [onboarding guide]({{ coiote_device_onboarding_link }}).
 
 ## Configure the Client
 
@@ -187,3 +170,8 @@ After configuring the Anjay Client, you can use the **nRF Cloud Location Service
     It can be seen by the following warning: `gps_nrf: GPS was interrupted multiple
     times by the LTE modem when producing a fix`. Anjay is notified by it, enters
     offline mode and reconnects when the first fix is acquired and LTE is enabled back.
+
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on Nordic Thingy:91, check [Anjay-zephyr-client](https://github.com/AVSystem/Anjay-zephyr-client) and start prototyping!

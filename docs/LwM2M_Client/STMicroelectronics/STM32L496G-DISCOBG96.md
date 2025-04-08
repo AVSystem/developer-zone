@@ -64,20 +64,7 @@ To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}
      <br />
      Then, follow a step-by-step instruction in `Pack_BG96MAR02A08M1G_01.012.01.012`. Mind that links from steps 2 and 4 of this instruction don't work correctly. For this reason you will need to use the downloaded `Quectel_LTE_Windows_USB_Driver_V2.0` file for step 2 and `QFlash_V4.10` file for step 4.
 
-To connect the board:
-
-1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
-2. In **Device Inventory**, click **Add device**.
-3. Select the **Connect your LwM2M device directly via the Management server** tile.
-       ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-    1. In the **Device credentials** step:
-         - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
-             ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-         - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
-              - In the **Key identity** field, type the same name as in the `Endpoint name` field.
-              - In the **Key** field, type the shared secret used in the device-server authentication.
-    2. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    3. In the **Connect your device** step, follow the next [section](#configure-the-client) to run the client and connect it to the server.
+To connect the board, log in to the platform and follow [onboarding guide]({{ coiote_device_onboarding_link }}).
 
 ## Configure the Client
 
@@ -184,3 +171,7 @@ In order to perform firmware update:
     Firmware updated from version 'v1.0' to 'v2.0'
     ```
     where `v1.0` and `v2.0` will be set to firmware versions you set earlier.
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on STM32 L496G-DISCO, check [Anjay-freertos-client](https://github.com/AVSystem/Anjay-freertos-client) and start prototyping!

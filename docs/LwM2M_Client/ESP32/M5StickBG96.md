@@ -40,22 +40,14 @@ Connect the Tx, Rx and GND pins, respectively, to the M5StickC pins selected in 
 ## Step 3: Add device to {{ coiote_short_name }}
 To connect your M5StickC to the {{ coiote_long_name }}, use your access to a {{ coiote_short_name }} installation, or register at {{ coiote_site_link }}/ to get access.
 
-To connect the board:
-
-0. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
-0. In **Device Inventory**, click **Add device**.
-0. Select the **Connect your LwM2M device directly via the Management server** tile.
-![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-0. In the **Device credentials** step:
-    - In the **Device ID** field, type the endpoint name provided in the IDF menuconfig **Client options**, e.g. `ESP32BG96`.
-    - In the **Security mode** section, select the **PSK** mode.
-    - In the **Key identity** field, type the identity provided in the IDF menuconfig **Client options**, e.g. `ESP32BG96`.
-    - In the **Key** field, type the `psk` key provided in the IDF menuconfig **Client options**.
-    ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. In the **Connect your device** step, the server is waiting for the board to connect. You can now start connecting the device.
+To connect the board, log in to the platform and follow [onboarding guide]({{ coiote_device_onboarding_link }}).
 
 ## Step 4: Flash M5StickC
 
 0. Connect the M5Stick board to a USB port of your machine.
 0. Open the command line interface, go to your project directory, and run `idf.py -b 750000 flash monitor`.
+
+
+## Next steps
+
+If you want to develop your own LwM2M-enabled application based on M5Stick, check [Anjay-esp32-client](https://github.com/AVSystem/Anjay-esp32-client) and start prototyping!
