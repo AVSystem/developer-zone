@@ -63,20 +63,7 @@ Enter the command line interface on your machine and change the directory to the
 
 To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
-To connect the board:
-
-1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
-2. In **Device Inventory**, click **Add device**.
-3. Select the **Connect your LwM2M device directly via the Management server** tile.
-       ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-    3. In the **Device credentials** step:
-         - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
-             ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-         - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
-              - In the **Key identity** field, type the same name as in the `Endpoint name` field
-              - In the **Key** field, type the shared secret used in the device-server authentication.
-    4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, follow the [next section](#configuring-the-client) to run the client and connect it to the server.
+To connect the board, log in to the platform and follow [onboarding guide]({{ coiote_device_onboarding_link }}).
 
 ## Configuring the Client
 

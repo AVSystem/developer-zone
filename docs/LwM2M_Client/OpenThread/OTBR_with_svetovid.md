@@ -93,20 +93,7 @@ Now we will build and flash image for Radio Co-Processor.
 
 To connect to {{ coiote_long_name }}, please register at [{{ coiote_site_link }}]({{ coiote_site_link }}).
 
-To connect the device:
-
-0. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
-0. In **Device Inventory**, click **Add device**.
-0. Select the **Connect your LwM2M device directly via the Management server** tile.
-![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-0. In the **Device credentials** step:
-    - In the **Device ID** field, type your board endpoint name, e.g. `test_device`.
-    - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode.
-    - In the **Key identity** field, type the same name as in the `Endpoint name` field.
-    - In the **Key** field, type the shared secret used in the device-server authentication.
-    ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-0. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-0. In the **Connect your device** step, follow the next sections to run the client and connect it to the server.
+To connect the board, log in to the platform and follow [onboarding guide]({{ coiote_device_onboarding_link }}).
 
 ## Switch to the target device
 

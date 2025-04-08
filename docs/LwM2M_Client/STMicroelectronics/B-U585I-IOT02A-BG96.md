@@ -66,20 +66,7 @@ To connect to {{ coiote_long_name }}, please register [here]({{ coiote_site_link
      <br />
      In Pack_BG96MAR02A08M1G_01.012.01.012 you will find step-by-step instruction. Step 2 and step 4 in this instruction doesn't work. For that reason you will need to download Quectel_LTE_Windows_USB_Driver_V2.0 file, as a required file for step 2, and QFlash_V4.10 file, as a required file for step 4.
 
-To connect the board:
-
-1. Log in to {{ coiote_short_name }} and from the left side menu, select **Device Inventory**.
-2. In **Device Inventory**, click **Add device**.
-3. Select the **Connect your LwM2M device directly via the Management server** tile.
-       ![Add via Mgmt](images/mgmt_tile.png "Add via Mgmt")
-    3. In the **Device credentials** step:
-         - In the **Device ID** enter your board endpoint name, e.g. `test_device`.
-             ![Device credentials step](images/add_mgmt_quick.png "Device credentials step")
-         - In the **Security mode** section, select the **PSK (Pre-Shared Key)** mode:
-              - In the **Key identity** field, type the same name as in the `Endpoint name` field
-              - In the **Key** field, type the shared secret used in the device-server authentication.
-    4. Click the **Add device** button and **Confirm** in the confirmation pop-up.
-    5. In the **Connect your device** step, follow the next [section](#configure-the-client) to run the client and connect it to the server.
+To connect the board, log in to the platform and follow [onboarding guide]({{ coiote_device_onboarding_link }}).
 
 ## Configure the Client
 
