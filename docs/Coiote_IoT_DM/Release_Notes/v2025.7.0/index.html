@@ -17,7 +17,7 @@
 
     
       
-        <title>v2023.31 - IoT Developer Zone</title>
+        <title>v2025.7.0 - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v202331" class="md-skip">
+        <a href="#v202570" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              v2023.31
+              v2025.7.0
             
           </span>
         </div>
@@ -1390,12 +1390,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-1" type="checkbox" id="nav-3-5-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-1" type="checkbox" id="nav-3-5-1" checked>
       
       <label class="md-nav__link" for="nav-3-5-1">
         2025
@@ -1412,11 +1414,63 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../v2025.7.0/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          v2025.7.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         v2025.7.0
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="In this article">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      In this article
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1554,14 +1608,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-3" type="checkbox" id="nav-3-5-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-3" type="checkbox" id="nav-3-5-3" >
       
       <label class="md-nav__link" for="nav-3-5-3">
         2023
@@ -1614,63 +1666,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          v2023.31
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../v2023.31/" class="md-nav__link">
         v2023.31
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="In this article">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      In this article
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
-    Enhancements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    Bug Fixes
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2775,35 +2775,23 @@
 
 
 <!-- Markdown content -->
-<h1 id="v202331">v2023.31<a class="headerlink" href="#v202331" title="Permanent link">#</a></h1>
-<p>Previous version: <a href="../v2023.30.0/">v2023.30.0</a></p>
+<h1 id="v202570">v2025.7.0<a class="headerlink" href="#v202570" title="Permanent link">#</a></h1>
+<p>Previous version: <a href="../v2025.6.0/">v2025.6.0</a></p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h2>
-<p><strong>Implemented API throttling</strong>     </p>
-<p>We have implemented an API request rate throttling mechanism. The throttling mechanism prevents the platform from serving excessive traffic from a single user that could exhaust the platform's computing resources. The functionality can be found under <strong>Domain management &gt; Properties &gt; Shared</strong>.</p>
-<p><strong>Introduce "Send SMS wakeup" option</strong>  </p>
-<p>We have implemented a new action for single devices in <strong>Device Center</strong>. The option <em>Send SMS wakeup</em> sends an SMS to the device to trigger its registration update.</p>
+<p><strong>Canceling FOTA via API</strong></p>
+<p>Added the ability to cancel an ongoing FOTA update using the API. This feature mirrors the cancellation flow available in the GUI and improves automation support.</p>
 <h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
-<p><strong>Introduce retention period for FotaConfig entities</strong>   </p>
-<p>We have introduced a retention mechanism for <em>FotaConfig</em> and <em>DeviceFotaProgress</em> entities. The time before entity deletion is configurable. By default, it is set to 6 months.</p>
-<p><strong>Implement tags in event handler headers</strong>      </p>
-<p>We have introduced replaceable tags for event handler headers. Variables with header values can be now used to configure headers in event handler creators.</p>
-<p><strong>Implement event handler payload templates</strong>      </p>
-<p>We have introduced templates for event handler payloads. Variables with reusable values can be now used to configure payloads in event handler creators.</p>
+<p><strong>Improved tracking of data updates in Data model</strong></p>
+<p>Introduced a new metric to help track device-reported values, offering clearer insight into when updates are based on recent or historical data. This makes it easier to monitor device behavior and ensure accurate data visibility.</p>
+<p><strong>Domain validation for task creation and reports</strong></p>
+<p>Updated task creation rules to prevent assigning tasks to domains lower than the device or group's domain, ensuring stricter and more predictable domain visibility. The domain picker dynamically adjusts based on the selected target, and REST API enforces these constraints. Task reports also retain their original domain when a device is moved across domains.</p>
+<p><strong>Automatic removal of domain-inaccessible tasks</strong></p>
+<p>The system now automatically removes tasks that no longer have access to the device due to domain changes. This enhancement helps maintain data relevance by leveraging the existing task retention mechanism.</p>
+<p><strong>Improved visibility in FOTA campaign statistics</strong></p>
+<p>Enhanced the FOTA campaign <em>Overview</em> tab by including in the statistics the devices marked as "Retrying" and displaying them in a new card. </p>
 <h2 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">#</a></h2>
-<p><strong>Required CSV import data</strong>    <br />
-We have fixed an issue with CSV import in <strong>Hyperscaler Integrations Center</strong> requiring <em>deviceId</em> in the template. Now, it requires <em>endpointName</em>.</p>
-<p><strong>Unauthorized user is not logged out</strong>      </p>
-<p>We have fixed an issue with an unauthorized user not being logged out from the platform. Unauthorized users are now redirected to the login page.</p>
-<p><strong>Fix error in settingValues API</strong>      </p>
-<p>We have fixed an error that occurred when trying to retrieve settingValues via API endpoint <em>/settingValues/deviceProfile/{deviceId}</em>. Now the results are retrieved correctly.</p>
-<p><strong>Fix the "Refresh data" option</strong>      </p>
-<p>We have fixed the "Refresh data" option in <strong>Device Center</strong>. After clicking the refresh button device information refreshes properly.</p>
-<p><strong>Firmware update fix</strong>      </p>
-<p>We have fixed an issue with a single firmware update performed from the <strong>Device Center</strong>. The process did not proceed past the "Initializing" step because of a missing acquiring quota status. Single-device firmware update now works properly. </p>
-<p><strong>Make hiding columns consistent</strong>      </p>
-<p>We have unified the behavior of hiding and displaying columns across the platform. After selecting a column from the column list, the list remains displayed. Selecting or clearing multiple columns at once is possible.</p>
-<p><strong>Remove possibility to change namespace</strong>      </p>
-<p>We have removed the possibility of changing the namespace in the <em>Domain Management</em> edit panel. Instead of the <em>Inherited</em> and <em>Set own</em> options, the inherited namespace is displayed.</p>
+<p><strong>Fixed validation for FOTA API parameters</strong></p>
+<p>Fixed a small issue where invalid values in FOTA configurations and campaigns were not always properly validated. The API now correctly returns errors when unsupported values are provided.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2815,7 +2803,7 @@ We have fixed an issue with CSV import in <strong>Hyperscaler Integrations Cente
   <!-- Link to previous page -->
   
     <a
-      href="../v2023.32/"
+      href="../../API_documentation/api_reference/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -2827,7 +2815,7 @@ We have fixed an issue with CSV import in <strong>Hyperscaler Integrations Cente
           <span class="md-navbottom__direction">
             Previous
           </span>
-          v2023.32
+          API reference
         </div>
       </div>
     </a>
@@ -2836,7 +2824,7 @@ We have fixed an issue with CSV import in <strong>Hyperscaler Integrations Cente
   <!-- Link to next page -->
   
     <a
-      href="../v2023.30.0/"
+      href="../v2025.6.0/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -2845,7 +2833,7 @@ We have fixed an issue with CSV import in <strong>Hyperscaler Integrations Cente
           <span class="md-navbottom__direction">
             Next
           </span>
-          v2023.30.0
+          v2025.6.0
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -2875,7 +2863,7 @@ We have fixed an issue with CSV import in <strong>Hyperscaler Integrations Cente
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../v2023.32/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../../API_documentation/api_reference/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -2884,19 +2872,19 @@ We have fixed an issue with CSV import in <strong>Hyperscaler Integrations Cente
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  v2023.32
+                  API reference
                 </div>
               </div>
             </a>
           
           
-            <a href="../v2023.30.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../v2025.6.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  v2023.30.0
+                  v2025.6.0
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
