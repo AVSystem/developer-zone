@@ -117,10 +117,12 @@ nav:
             - 'Release Notes':
                         - 2025:
                             - 'Coiote_IoT_DM/Release_Notes/v2025.9.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2025.8.0.md'                            
                             - 'Coiote_IoT_DM/Release_Notes/v2025.7.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2025.6.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2025.5.0.md'                        
                             - 'Coiote_IoT_DM/Release_Notes/v2025.4.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2025.3.0.md'                            
                         - 2024:
                             - 'Coiote_IoT_DM/Release_Notes/v2024.5.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2024.4.0.md'
