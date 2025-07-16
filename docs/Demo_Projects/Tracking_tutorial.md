@@ -31,79 +31,12 @@ This tutorial uses the **Thingy:91** prototyping platform in combination with th
 
 ## Part 1 - Connect the Thingy:91 to {{ coiote_short_name }} using the LwM2M Anjay client
 
-### Set up the Anjay Zephyr Client
+### Program the device
 
-#### Get Zephyr and Python dependencies
+Follow guide for [programming Thingy:91 with already built binaries](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/Thingy91/#use-an-already-built-binary) to get an application running Anjay LwM2M Client
+on your device.
 
-To get the Zephyr SDK and dependencies follow the first 4 steps of the instruction provided by [the Zephyr Project](https://docs.zephyrproject.org/latest/getting_started/index.html).
-
-0. [Select and update OS](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#select-and-update-os)
-0. [Install dependencies](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-dependencies)
-0. [Get Zephyr and install Python dependencies](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#get-zephyr-and-install-python-dependencies)
-0. [Install Zephyr SDK](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-zephyr-sdk)
-
-
-#### Clone the Anjay Zephyr repository
-
-Open the command line interface on your machine and clone the Anjay Zephyr repository using [Git](https://formulae.brew.sh/formula/git):
-
-   ```
-   git clone https://github.com/AVSystem/Anjay-zephyr-client
-   ```
-
-### Compile the demo project
-
-0. Connect the Thingy:91 board to a USB port of your machine.
-0. Set West manifest path to `Anjay-zephyr-client/demo`, manifest file to `west-nrf.yml`, and run `west update` using the following commands:
-
-    ```
-    west config manifest.path Anjay-zephyr-client/demo
-    west config manifest.file west-nrf.yml
-    west update
-    ```
-
-    *For more information about the west build commands, see the [Zephyr Project documentation](https://docs.zephyrproject.org/3.0.0/guides/west/build-flash-debug.html).*
-
-0. Go to the directory `Anjay-zephyr-client/demo` and configure the client using **menuconfig**.
-
-    **Menuconfig** allows for, among others, enabling the **GPS** and **cell-based location services**. To open the configuration menu, run the command:
-
-    ```
-    west build -b thingy91/nrf9160/ns -p -t menuconfig
-    ```
-
-    In the config screen:
-
-    - Open the folder: `anjay-zephyr-client --->`
-        - Select: `Enable manual requests for cell-based location`
-        - Open the folder: `Enable GPS on nRF9160-based devices --->`
-            - Select `Enable A-GPS using Nordic Location Services over LwM2M`
-
-
-    ![menuconfig](images/menuconfig1.png "Anjay menuconfig")
-
-    After making the configuration changes, close the config menu by pressing `Q` and save it by pressing `Y`.
-
-    **Build the project** using the updated configuration by running:
-    ```
-    west build
-    ```
-
-0. Find the `app_signed.hex` file under the `build/zephyr` directory in the project folder.
-
-### Write the firmware to the Thingy:91
-
-- When using the Thingy:91, use the `app_signed.hex` file which you can find in the `build/zephyr` directory.
-- Flash it using **Programmer** application in **nRF Cloud for Desktop** via **MCUboot**.
-
-    *For more information on flashing the Thingy:91 using MCU Boot, see [link](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application)*
-
-![nrf - write.png](images/nrf-write_done.png)
-
-- Powercycle the Thingy:91 to activate the application.
-
-
-## Connect the Thingy:91 to {{ coiote_long_name }}
+### Connect the Thingy:91 to {{ coiote_long_name }}
 
 To connect the board:
 
@@ -111,7 +44,7 @@ To connect the board:
 1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
 
-    ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
+    ![Add via Management server](images/mgmt_tile.png)
 
 1. In the **Device credentials** step:
     - Think of a unique **Endpoint name**.
@@ -119,9 +52,8 @@ To connect the board:
     - Create a **Key** and store it somewhere to retrieve later when configuring your device.
     - Click the **Add device** button and click **Confirm** in the confirmation pop-up.
 
-    ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
 
-## Configure the Client
+### Configure the Client
 
 0. With the Thingy:91 still connected to a serial port interface, connect to your device using a serial communication program (e.g. Minicom, RealTerm or PuTTY).
 
