@@ -99,15 +99,13 @@ To connect the board:
 1. In **Device Inventory**, select **Add device**.
 1. Select the **Connect your LwM2M device directly via the Management server** tile.
 
-    ![Add via Management server](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/mgmt_tile.png)
+    ![Add via Management server](images/mgmt_tile.png)
 
 1. In the **Device credentials** step:
     - Add the **Endpoint name**, the default endpoint name is: `Anjay-zephyr-client`
     - **Key Identity** is the same as the endpoint name
     - Add the **Key**, the default key is: `test`
     - Click **Add device** and then **Confirm** in the confirmation pop-up
-
-    ![Add Management quick](https://iotdevzone.avsystem.com/docs/LwM2M_Client/Nordic/images/add_mgmt_quick.png)
 
 
 ## Add the Pattern Detection Object to {{ coiote_short_name }}

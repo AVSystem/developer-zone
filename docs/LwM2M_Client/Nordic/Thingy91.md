@@ -81,7 +81,7 @@ Open the command line interface on your machine, then paste and run the followin
 0. Find the `app_signed.hex` file under the `build/zephyr` directory in the project folder.
 
 ## Flash the binaries
-To program the board, go through the process of **flashing Thingy:91**. Use the nRF Connect Programmer with the downloaded `.hex` file and follow the [program the nRF9160 SiP application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#program-the-nrf9160-sip-application) section.
+To program the board, go through the process of **flashing Thingy:91**. Use the nRF Connect Programmer with the downloaded `.hex` file and follow the [Flash instructions for the Thingy:91](https://academy.nordicsemi.com/flash-instructions-for-the-thingy91/) guide.
 
 After successful flashing, reboot the board and go to the next step.
 
