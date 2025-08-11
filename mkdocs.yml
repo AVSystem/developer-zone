@@ -43,8 +43,8 @@ plugins:
       include_yaml:
         - templates/default.yaml
 
-hooks:
-  - main.py
+# hooks:
+#   - main.py
 
 google_analytics:
   - UA-25246208-6
@@ -116,6 +116,7 @@ nav:
                     - API reference: 'Coiote_IoT_DM/API_documentation/api_reference.md'
             - 'Release Notes':
                         - 2025:
+                            - 'Coiote_IoT_DM/Release_Notes/v2025.16.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2025.15.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2025.14.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2025.12.0.md'
