@@ -83,6 +83,7 @@ nav:
         - 'Coiote IoT DM':
             - 'Introduction': 'Coiote_IoT_DM/introduction.md'
             - 'Cloud integration tutorials':
+                - Cloud integrations overview: 'Coiote_IoT_DM/Cloud_integrations/cloud-integrations.md'
                 - 'Data Integration Center':
                     - InfluxDB: 'Coiote_IoT_DM/Cloud_integrations/Device_Integration_Center/influx.md'
                     - Datacake: 'Coiote_IoT_DM/Cloud_integrations/Device_Integration_Center/datacake.md'

@@ -13,16 +13,16 @@ In this section, you learn how to:
 1. An active Azure IoT Hub with hub owner access permissions.
 2. A {{ coiote_short_name }} user account with permissions to use the integration extension.
 3. A device group created in {{ coiote_short_name }}.
-4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](../Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md).
-5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](../Configure_integration_templates/Azure_integration_templates.md).
-5. [A connected device](../../../Coiote_IoT_DM/Onboarding/connect.md).
+4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/).
+5. [A connected device](https://{{coiote_server}}/doc/user/getting-started/onboard-your-first-device/).
 
 ## Perform EXECUTE
 
 Let’s perform an EXECUTE operation on the **Factory Reset** resource with ID **3/0/5**.
 
 !!! note
-    From the Azure IoT integration standpoint, **Factory Reset** is interpreted as a *Command*. Read more about how LwM2M data model is mapped to Azure IoT Hub mechanisms in [Concepts](../Concepts/LwM2M_mappings_Hub.md).
+    From the Azure IoT integration standpoint, **Factory Reset** is interpreted as a *Command*. Read more about how LwM2M data model is mapped to Azure IoT Hub mechanisms in [LwM2M mappings - Azure IoT Hub](https://{{coiote_server}}/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/) in the Coiote DM User Documentation.
 
 1. In your Azure IoT Hub account, go to **Devices** from the left pane.
 

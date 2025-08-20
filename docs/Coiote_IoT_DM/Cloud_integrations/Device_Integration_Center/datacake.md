@@ -93,7 +93,7 @@ This decoder does several things required to ingest device data into the Datacak
 
 ## Monitor events in Datacake
 
-After activating the event handler, go to your Datacake account and open the Dashboard of your device. If you have already [set an observation on the Temperature object](../../../Coiote_IoT_DM/Device_Center.md), you should see that the **Last update** field of your device in Datacake changed to the time when Datacake received last information from {{ coiote_short_name }}.
+After activating the event handler, go to your Datacake account and open the Dashboard of your device. If you have already set an observation on the Temperature object, you should see that the **Last update** field of your device in Datacake changed to the time when Datacake received last information from {{ coiote_short_name }}.
 
 ![Last update time of the device in Datacake](../images/datacake-last-update.webp "Last update time of the device in Datacake")
 
