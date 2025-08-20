@@ -4,7 +4,7 @@ If you would like to upgrade the firmware of devices using the Azure IoT Hub, fo
 
 ## Prerequisites
 
- - At least one [synchronized](../Synchronize_devices_with_Azure_IoT_Hub) {{ coiote_short_name }} - Azure IoT Hub device.
+ - At least one [synchronized](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/synchronize-devices-with-azure-iot-hub/) {{ coiote_short_name }} - Azure IoT Hub device.
  - A firmware file hosted on an HTTP server that is reachable by the {{ coiote_short_name }} server.
 
 !!! note
@@ -148,4 +148,4 @@ To cancel the firmware upgrade procedure, follow these steps:
 
 ## See also
 
-See the relevant section of [LwM2M mappings](https://iotdevzone.avsystem.com/docs/Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub/) to learn the details of how Azure IoT Hub Direct Methods are mapped in {{ coiote_short_name }}.
+See [LwM2M mappings - Azure IoT Hub](https://{{coiote_server}}/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/) in the Coiote DM User Documentation to learn the details of how Azure IoT Hub Direct Methods are mapped in {{ coiote_short_name }}.

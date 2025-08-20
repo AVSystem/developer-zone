@@ -111,7 +111,7 @@ To connect the board:
 
 ## Part 2 - Enable nRF Cloud integration
 
-Follow [**the instructions listed here**](../../Cloud_integrations/nRF_Cloud_Location_services/Configure_nRF_Cloud_integration/) to enable the nRF Location Service integration.
+Follow [**the instructions in Coiote DM User Documentation**](https://{{coiote_server}}/doc/user/integrations/how-to-guides/configure-nrf-cloud-integration/) to enable the nRF Location Service integration.
 
 If the connection to nRF Cloud Locator was successful, you will see the device location as a widget in the {{ coiote_short_name }} Device Center.
 
@@ -122,7 +122,7 @@ If the connection to nRF Cloud Locator was successful, you will see the device l
 
 1. Start by logging into your Azure account. [Create a new **IoT Hub**](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) and a new **storage account**.
 
-1. Get the **IoT Hub connection** string and **Azure Blob storage** string from your Azure account. For information on how to retrieve these details, see [Get the IoT hub connection string](../../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration/#get-the-iot-hub-connection-string).
+1. Get the **IoT Hub connection** string and **Azure Blob storage** string from your Azure account. For information on how to retrieve these details, see [Get the IoT hub connection string](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/#get-the-azure-storage-account-connection-string) in the Coiote DM User Documentation.
 
 1. In {{ coiote_short_name }}, click **Integrations** from the left-side menu and select **Hyperscaler Integration Center**.
 

@@ -2,7 +2,7 @@
 
 This section describes how to set an Observation in your Azure IoT Hub.
 
-Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](../Concepts/LwM2M_mappings_Hub.md): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to {{ coiote_short_name }}, which in turn will transfer it to Azure IoT Hub.
+Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the [data model](https://{{coiote_server}}/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/): objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to {{ coiote_short_name }}, which in turn will transfer it to Azure IoT Hub.
 
 In this section, you learn how to:
 
@@ -15,15 +15,15 @@ In this section, you learn how to:
 1. An active Azure IoT Hub with hub owner access permissions.
 2. A {{ coiote_short_name }} user account with permissions to use the integration extension.
 3. A device group created in {{ coiote_short_name }}.
-4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](../Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md).
-5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](../Configure_integration_templates/Azure_integration_templates.md).
-5. [A connected device](../../../Coiote_IoT_DM/Onboarding/connect.md).
+4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/).
+5. [A connected device](https://{{coiote_server}}/doc/user/getting-started/onboard-your-first-device/).
 
 ## Set an Observation and define its attributes
 
 Let’s set two Observations: one on the whole object with ID **1/1 (1 LwM2M Server, 1 Lifetime)** and on the resource with ID **3/0/13** (3 Device, 13 Current time). Both of them are Properties.
 
-In Azure IoT Hub, value changes for both Telemetry and Property are stored in [Device twin](../Concepts/LwM2M_mappings_Hub.md), because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:
+In Azure IoT Hub, value changes for both Telemetry and Property are stored in [Device twin](https://{{coiote_server}}/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/#lwm2m-readable-and-writable-resources), because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:
 
 1. In your Azure IoT Hub account, go to **Devices** from the left pane.
 

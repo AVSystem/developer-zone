@@ -31,7 +31,7 @@ This tutorial explains how to use **Data Integration Center** to send e.g. a mut
 
 !!! Info
 
-    For detailed instructions on how to create webhooks, see the [Webhook](../webhooks.md) and [Overview](../overview.md) chapters.
+    For detailed instructions on how to create webhooks, see [Create a webhook event handler](https://{{coiote_server}}/doc/user/integrations/how-to-guides/data-integration-center/create-webhook-event-handler/) in the Coiote DM User Documentation.
 
 ![graphql-configuration](../images/graphql-configuration.webp)
 

@@ -56,7 +56,7 @@ While your new IoT hub is deploying, you can add a new storage account:
 ## Configuring the Azure IoT Hub integration extension
 
 Once the deployments are complete, go to {{ coiote_short_name }} to set up the Azure IoT Hub extension.
-If you haven't done this yet, please follow the [instruction for the Azure IoT Hub integration configuration](../Cloud_integrations/Azure_IoT/Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md).
+If you haven't done this yet, please follow the [instruction for the Azure IoT Hub integration configuration](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/) in the Coiote DM User Documentation.
 
 ## Adding and connecting LwM2M air quality meter simulators to {{ coiote_short_name }} and Azure IoT Hub
 1. Go to your Azure IoT Hub and add new devices:
@@ -76,7 +76,7 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
 3. Go to your command line and register the device simulators:
     - Paste and run the following command to create a container group:
         ```
-         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS={{ coiote_server }} OPEN_WEATHER_API_TOKEN=exampletoken
+         az container create -g coiote-dm-experiments --name air-quality-meter-example-0 --image avsystemcom/air-quality-meter-example --environment-variables DEVICEID=air-quality-meter-example-0 SERVER_ADDRESS={{coiote_server}} OPEN_WEATHER_API_TOKEN=exampletoken
 
         ```
 
@@ -108,7 +108,7 @@ If you haven't done this yet, please follow the [instruction for the Azure IoT H
 ### From Azure IoT Hub to {{ coiote_short_name }}
 
 !!! note
-    To read more about how the Device Twins work in the {{ coiote_short_name }} - Azure IoT Hub integration, please refer to [the LwM2M Mappings section](../Cloud_integrations/Azure_IoT/Concepts/LwM2M_mappings_Hub.md).
+    To read more about how the Device Twins work in the {{ coiote_short_name }} - Azure IoT Hub integration, please refer to [the LwM2M Mappings document](https://{{coiote_server}}/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/) in the Coiote DM User Documentation.
 
 1. In your Azure IoT hub, select **IoT devices**, click one of your added devices and select the **Device Twin** panel.
 2. To change the ``Lifetime`` resource in {{ coiote_short_name }}, you need to modify the relevant Device Twin desired property.

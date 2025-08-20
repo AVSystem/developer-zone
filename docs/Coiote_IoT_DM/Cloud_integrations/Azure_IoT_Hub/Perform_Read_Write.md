@@ -2,7 +2,7 @@
 
 This section describes how to perform a LwM2M WRITE and READ operations in your Azure IoT Hub and {{ coiote_short_name }}.
 
-A WRITE operation lets you change the current value on the given [data model](../Concepts/LwM2M_mappings_Hub.md) component: object, object instance, and resource. The READ enables you to see the updated value of an object, object instance, or resource.
+A WRITE operation lets you change the current value on the given data model component: object, object instance, and resource. The READ enables you to see the updated value of an object, object instance, or resource.
 
 In this section, you learn how to:
 
@@ -15,15 +15,15 @@ In this section, you learn how to:
 1. An active Azure IoT Hub with hub owner access permissions.
 2. A {{ coiote_short_name }} user account with permissions to use the integration extension.
 3. A device group created in {{ coiote_short_name }}.
-4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](../Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md).
-5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](../Configure_integration_templates/Azure_integration_templates.md).
-5. [A connected device](../../../Coiote_IoT_DM/Onboarding/connect.md).
+4. [A configured extension between {{ coiote_short_name }} and Azure Iot Hub](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/).
+5. [A configured integration template in {{ coiote_short_name }}, assigned to the device group](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/).
+5. [A connected device](https://{{coiote_server}}/doc/user/getting-started/onboard-your-first-device/).
 
 ## Perform WRITE
 
 Let’s perform a WRITE operation on the **Lifetime** resource with ID **1/1/1**. From the Azure IoT integration standpoint, **Lifetime** it is interpreted as a *Property*.
 
-In Azure IoT Hub, value changes for both *Telemetry* and *Property* are stored in the [Device twin](https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-readable-and-writable-resources). To perform a WRITE operation, do the following:
+In Azure IoT Hub, value changes for both *Telemetry* and *Property* are stored in the [Device twin](https://{{coiote_server}}/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/#lwm2m-readable-and-writable-resources). To perform a WRITE operation, do the following:
 
 1. In your Azure IoT Hub account, go to **Devices** from the left pane.
 
@@ -88,9 +88,9 @@ You have successfully performed a LwM2M WRITE on a resource.
 
 ## Perform READ
 
-Let’s perform a READ operation on the **Temperature** object's **Sensor Value** resource with ID **3303/0/5700** defined as a *Property* in the [integration template in {{ coiote_short_name }}](../Configure_integration_templates/Azure_integration_templates.md).
+Let’s perform a READ operation on the **Temperature** object's **Sensor Value** resource with ID **3303/0/5700** defined as a *Property* in the [integration template in {{ coiote_short_name }}](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/).
 
-To learn more about reading value changes for both *Telemetry* and *Property*, refer to [LwM2M mappings for Azure IoT Hub](../Concepts/LwM2M_mappings_Hub.md). To perform a READ operation, do the following:
+To learn more about reading value changes for both *Telemetry* and *Property*, refer to [LwM2M mappings for Azure IoT Hub](https://{{coiote_server}}/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/). To perform a READ operation, do the following:
 
 1. In {{ coiote_short_name }}, go to your device and select the **Data model** tab.
 2. Expand the **Temperature** object, and find the **Sensor Value (3303/0/5700)** resource in the list.

@@ -81,7 +81,7 @@ Find [more information](https://www.avsystem.com/coiote-iot-device-management-pl
 ## Intro to {{ coiote_short_name }}
 {{ coiote_long_name }} is built around the LwM2M standard. It acts as a LwM2M Server and is designed as a scalable platform to manage large numbers of devices. The platform comes with tools to monitor groups of devices, manage device configurations, and perform firmware updates. In addition, it supports cloud integrations with platforms such as AWS IoT Core or Azure IoT Hub.
 
-{{ coiote_short_name }} has a developer version, allowing you to connect up to 10 devices free of charge. To create a developer account, visit [**{{ coiote_server }}**]({{ coiote_site_link }}/)
+{{ coiote_short_name }} has a developer version, allowing you to connect up to 10 devices free of charge. To create a developer account, visit [**{{coiote_server}}**]({{ coiote_site_link }}/)
 
 **{{ coiote_short_name }} features**
 
