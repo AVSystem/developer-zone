@@ -879,18 +879,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../cloud-integrations/" class="md-nav__link">
+        Cloud integrations overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-1" type="checkbox" id="nav-3-2-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
       
-      <label class="md-nav__link" for="nav-3-2-1">
+      <label class="md-nav__link" for="nav-3-2-2">
         Data Integration Center
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Data Integration Center" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-1">
+        <label class="md-nav__title" for="nav-3-2-2">
           <span class="md-nav__icon md-icon"></span>
           Data Integration Center
         </label>
@@ -973,14 +985,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" checked>
       
-      <label class="md-nav__link" for="nav-3-2-2">
+      <label class="md-nav__link" for="nav-3-2-3">
         Azure IoT Hub
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Azure IoT Hub" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-2">
+        <label class="md-nav__title" for="nav-3-2-3">
           <span class="md-nav__icon md-icon"></span>
           Azure IoT Hub
         </label>
@@ -1148,14 +1160,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4" >
       
-      <label class="md-nav__link" for="nav-3-2-3">
+      <label class="md-nav__link" for="nav-3-2-4">
         Azure IoT Central
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Azure IoT Central" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-3">
+        <label class="md-nav__title" for="nav-3-2-4">
           <span class="md-nav__icon md-icon"></span>
           Azure IoT Central
         </label>
@@ -2979,7 +2991,7 @@
 <!-- Markdown content -->
 <h1 id="perform-lwm2m-read-and-write">Perform LwM2M Read and Write<a class="headerlink" href="#perform-lwm2m-read-and-write" title="Permanent link">#</a></h1>
 <p>This section describes how to perform a LwM2M WRITE and READ operations in your Azure IoT Hub and Coiote IoT DM.</p>
-<p>A WRITE operation lets you change the current value on the given <a href="../Concepts/LwM2M_mappings_Hub.md">data model</a> component: object, object instance, and resource. The READ enables you to see the updated value of an object, object instance, or resource.</p>
+<p>A WRITE operation lets you change the current value on the given data model component: object, object instance, and resource. The READ enables you to see the updated value of an object, object instance, or resource.</p>
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Perform WRITE on resources</li>
@@ -2991,13 +3003,13 @@
 <li>An active Azure IoT Hub with hub owner access permissions.</li>
 <li>A Coiote IoT DM user account with permissions to use the integration extension.</li>
 <li>A device group created in Coiote IoT DM.</li>
-<li><a href="../Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md">A configured extension between Coiote IoT DM and Azure Iot Hub</a>.</li>
-<li><a href="../Configure_integration_templates/Azure_integration_templates.md">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
-<li><a href="../../../Coiote_IoT_DM/Onboarding/connect.md">A connected device</a>.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/">A configured extension between Coiote IoT DM and Azure Iot Hub</a>.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/getting-started/onboard-your-first-device/">A connected device</a>.</li>
 </ol>
 <h2 id="perform-write">Perform WRITE<a class="headerlink" href="#perform-write" title="Permanent link">#</a></h2>
 <p>Let’s perform a WRITE operation on the <strong>Lifetime</strong> resource with ID <strong>1/1/1</strong>. From the Azure IoT integration standpoint, <strong>Lifetime</strong> it is interpreted as a <em>Property</em>.</p>
-<p>In Azure IoT Hub, value changes for both <em>Telemetry</em> and <em>Property</em> are stored in the <a href="https://https://iotdevzone.avsystem.com/docs/Azure_IoT_Integration_Guide/Concepts/LwM2M_mappings_Hub/#lwm2m-readable-and-writable-resources">Device twin</a>. To perform a WRITE operation, do the following:</p>
+<p>In Azure IoT Hub, value changes for both <em>Telemetry</em> and <em>Property</em> are stored in the <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/#lwm2m-readable-and-writable-resources">Device twin</a>. To perform a WRITE operation, do the following:</p>
 <ol>
 <li>
 <p>In your Azure IoT Hub account, go to <strong>Devices</strong> from the left pane.</p>
@@ -3055,8 +3067,8 @@
 </ol>
 <p>You have successfully performed a LwM2M WRITE on a resource.</p>
 <h2 id="perform-read">Perform READ<a class="headerlink" href="#perform-read" title="Permanent link">#</a></h2>
-<p>Let’s perform a READ operation on the <strong>Temperature</strong> object's <strong>Sensor Value</strong> resource with ID <strong>3303/0/5700</strong> defined as a <em>Property</em> in the <a href="../Configure_integration_templates/Azure_integration_templates.md">integration template in Coiote IoT DM</a>.</p>
-<p>To learn more about reading value changes for both <em>Telemetry</em> and <em>Property</em>, refer to <a href="../Concepts/LwM2M_mappings_Hub.md">LwM2M mappings for Azure IoT Hub</a>. To perform a READ operation, do the following:</p>
+<p>Let’s perform a READ operation on the <strong>Temperature</strong> object's <strong>Sensor Value</strong> resource with ID <strong>3303/0/5700</strong> defined as a <em>Property</em> in the <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/">integration template in Coiote IoT DM</a>.</p>
+<p>To learn more about reading value changes for both <em>Telemetry</em> and <em>Property</em>, refer to <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/">LwM2M mappings for Azure IoT Hub</a>. To perform a READ operation, do the following:</p>
 <ol>
 <li>In Coiote IoT DM, go to your device and select the <strong>Data model</strong> tab.</li>
 <li>Expand the <strong>Temperature</strong> object, and find the <strong>Sensor Value (3303/0/5700)</strong> resource in the list.</li>

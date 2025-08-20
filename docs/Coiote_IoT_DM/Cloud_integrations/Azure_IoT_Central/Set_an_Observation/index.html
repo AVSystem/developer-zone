@@ -879,18 +879,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../cloud-integrations/" class="md-nav__link">
+        Cloud integrations overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-1" type="checkbox" id="nav-3-2-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
       
-      <label class="md-nav__link" for="nav-3-2-1">
+      <label class="md-nav__link" for="nav-3-2-2">
         Data Integration Center
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Data Integration Center" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-1">
+        <label class="md-nav__title" for="nav-3-2-2">
           <span class="md-nav__icon md-icon"></span>
           Data Integration Center
         </label>
@@ -971,14 +983,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" >
       
-      <label class="md-nav__link" for="nav-3-2-2">
+      <label class="md-nav__link" for="nav-3-2-3">
         Azure IoT Hub
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Azure IoT Hub" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-2">
+        <label class="md-nav__title" for="nav-3-2-3">
           <span class="md-nav__icon md-icon"></span>
           Azure IoT Hub
         </label>
@@ -1049,14 +1061,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4" checked>
       
-      <label class="md-nav__link" for="nav-3-2-3">
+      <label class="md-nav__link" for="nav-3-2-4">
         Azure IoT Central
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Azure IoT Central" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-3">
+        <label class="md-nav__title" for="nav-3-2-4">
           <span class="md-nav__icon md-icon"></span>
           Azure IoT Central
         </label>
@@ -3009,7 +3021,7 @@
 <!-- Markdown content -->
 <h1 id="set-an-observation">Set an Observation<a class="headerlink" href="#set-an-observation" title="Permanent link">#</a></h1>
 <p>This section describes how to set an Observation in your Azure IoT Central application.</p>
-<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="../Concepts/LwM2M_mappings_Central.md">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Central.</p>
+<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Central.</p>
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Assign a device template that acts as a translator between Coiote IoT DM and Azure IoT Central.</li>
@@ -3022,12 +3034,12 @@
 <li>An active Azure IoT Central with hub owner access permissions.</li>
 <li>A Coiote IoT DM user account with permissions to use the Azure IoT Central integration.</li>
 <li>A device group created in Coiote IoT DM.</li>
-<li><a href="Configure_Azure_IoT_Central_integration.md">A configured integration between Coiote IoT DM and Azure Iot Central</a>.</li>
-<li><a href="../Configure_integration_templates/Azure_integration_templates.md">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
-<li>A connected device in Coiote IoT DM that has been <a href="./Configure_Azure_IoT_Central_integration.md">exported to</a> or <a href="./Configure_Azure_IoT_Central_integration.md">imported from</a> Azure IoT Central.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-central/integrate-with-azure-iot-central/">A configured integration between Coiote IoT DM and Azure Iot Central</a>.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
+<li>A connected device in Coiote IoT DM that has been <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-central/synchronize-devices-with-azure-iot-central/">exported to or imported from</a> Azure IoT Central.</li>
 </ol>
 <h2 id="assign-a-device-template">Assign a device template<a class="headerlink" href="#assign-a-device-template" title="Permanent link">#</a></h2>
-<p>To enable correct communication between Coiote IoT DM and Azure IoT Central, you need two templates. The first template configures the Coiote IoT DM integration with Azure. (<a href="../Configure_integration_templates/Azure_integration_templates.md">Follow the instruction</a> to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.</p>
+<p>To enable correct communication between Coiote IoT DM and Azure IoT Central, you need two templates. The first template configures the Coiote IoT DM integration with Azure. (<a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/">Follow the instruction</a> in the Coiote DM User Documentation to learn how to configure it.) The second template builds on the first one and allows to provide information that is used only in Azure IoT Central. For example: a given resource is temperature and is measured in Celsius.</p>
 <h3 id="download-lwm2m-template-in-coiote-iot-dm">Download LwM2M template in Coiote IoT DM<a class="headerlink" href="#download-lwm2m-template-in-coiote-iot-dm" title="Permanent link">#</a></h3>
 <ol>
 <li>In Coiote IoT DM, go to <strong>Administration → Hyperscaler Integration Center</strong> and select the <strong>Templates</strong> tab.</li>

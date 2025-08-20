@@ -879,18 +879,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../cloud-integrations/" class="md-nav__link">
+        Cloud integrations overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-1" type="checkbox" id="nav-3-2-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
       
-      <label class="md-nav__link" for="nav-3-2-1">
+      <label class="md-nav__link" for="nav-3-2-2">
         Data Integration Center
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Data Integration Center" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-1">
+        <label class="md-nav__title" for="nav-3-2-2">
           <span class="md-nav__icon md-icon"></span>
           Data Integration Center
         </label>
@@ -973,14 +985,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" checked>
       
-      <label class="md-nav__link" for="nav-3-2-2">
+      <label class="md-nav__link" for="nav-3-2-3">
         Azure IoT Hub
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Azure IoT Hub" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-2">
+        <label class="md-nav__title" for="nav-3-2-3">
           <span class="md-nav__icon md-icon"></span>
           Azure IoT Hub
         </label>
@@ -1135,14 +1147,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4" >
       
-      <label class="md-nav__link" for="nav-3-2-3">
+      <label class="md-nav__link" for="nav-3-2-4">
         Azure IoT Central
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Azure IoT Central" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-3">
+        <label class="md-nav__title" for="nav-3-2-4">
           <span class="md-nav__icon md-icon"></span>
           Azure IoT Central
         </label>
@@ -2953,7 +2965,7 @@
 <!-- Markdown content -->
 <h1 id="set-an-observation">Set an Observation<a class="headerlink" href="#set-an-observation" title="Permanent link">#</a></h1>
 <p>This section describes how to set an Observation in your Azure IoT Hub.</p>
-<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="../Concepts/LwM2M_mappings_Hub.md">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Hub.</p>
+<p>Setting an Observation lets your devices know what value changes and for what particular resources they need to notify you about. An Observation can be set for any or all the components of the <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/">data model</a>: objects, objects instances, and resources. Whenever there is a change in values, a device will send a Notify message to Coiote IoT DM, which in turn will transfer it to Azure IoT Hub.</p>
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Set an Observation on objects and resources</li>
@@ -2965,13 +2977,13 @@
 <li>An active Azure IoT Hub with hub owner access permissions.</li>
 <li>A Coiote IoT DM user account with permissions to use the integration extension.</li>
 <li>A device group created in Coiote IoT DM.</li>
-<li><a href="../Azure_IoT_Hub/Configure_Azure_IoT_Hub_integration.md">A configured extension between Coiote IoT DM and Azure Iot Hub</a>.</li>
-<li><a href="../Configure_integration_templates/Azure_integration_templates.md">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
-<li><a href="../../../Coiote_IoT_DM/Onboarding/connect.md">A connected device</a>.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/">A configured extension between Coiote IoT DM and Azure Iot Hub</a>.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/hyperscaler-integrations/configure-integration-templates/">A configured integration template in Coiote IoT DM, assigned to the device group</a>.</li>
+<li><a href="https://eu.iot.avsystem.cloud/doc/user/getting-started/onboard-your-first-device/">A connected device</a>.</li>
 </ol>
 <h2 id="set-an-observation-and-define-its-attributes">Set an Observation and define its attributes<a class="headerlink" href="#set-an-observation-and-define-its-attributes" title="Permanent link">#</a></h2>
 <p>Let’s set two Observations: one on the whole object with ID <strong>1/1 (1 LwM2M Server, 1 Lifetime)</strong> and on the resource with ID <strong>3/0/13</strong> (3 Device, 13 Current time). Both of them are Properties.</p>
-<p>In Azure IoT Hub, value changes for both Telemetry and Property are stored in <a href="../Concepts/LwM2M_mappings_Hub.md">Device twin</a>, because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:</p>
+<p>In Azure IoT Hub, value changes for both Telemetry and Property are stored in <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/topic-guides/lwm2m-mappings-azure-iot-hub/#lwm2m-readable-and-writable-resources">Device twin</a>, because Observation is a Property in itself and it does not keep track of historical changes in values. To set an Observation, do the following:</p>
 <ol>
 <li>
 <p>In your Azure IoT Hub account, go to <strong>Devices</strong> from the left pane.</p>
