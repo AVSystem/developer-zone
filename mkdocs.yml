@@ -80,6 +80,15 @@ nav:
             - 'OpenThread':
                 - 'LwM2M_Client/OpenThread/Adding_device.md'
                 - 'LwM2M_Client/OpenThread/OTBR_with_svetovid.md'
+            - 'Svetovid':
+                - 'LwM2M_Client/Svetovid/Intro.md'
+                - 'LwM2M_Client/Svetovid/Client_Configuration.md'
+                - 'LwM2M_Client/Svetovid/FSDM.md'
+                - 'Supported Platforms':
+                  - 'LwM2M_Client/Svetovid/Supported_Platforms/generic.md'
+                  - 'LwM2M_Client/Svetovid/Supported_Platforms/moxa.md'
+                  - 'LwM2M_Client/Svetovid/Supported_Platforms/raspberry.md'
+                  - 'LwM2M_Client/Svetovid/Supported_Platforms/yocto.md'
         - 'Coiote IoT DM':
             - 'Introduction': 'Coiote_IoT_DM/introduction.md'
             - 'Cloud integration tutorials':
