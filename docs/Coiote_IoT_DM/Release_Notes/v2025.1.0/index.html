@@ -17,7 +17,7 @@
 
     
       
-        <title>v2024.5.0 - IoT Developer Zone</title>
+        <title>v2025.1.0 - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v202450" class="md-skip">
+        <a href="#v202510" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              v2024.5.0
+              v2025.1.0
             
           </span>
         </div>
@@ -1402,12 +1402,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-1" type="checkbox" id="nav-3-5-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-1" type="checkbox" id="nav-3-5-1" checked>
       
       <label class="md-nav__link" for="nav-3-5-1">
         2025
@@ -1604,48 +1606,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../v2025.1.0/" class="md-nav__link">
-        v2025.1.0
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-2" type="checkbox" id="nav-3-5-2" checked>
-      
-      <label class="md-nav__link" for="nav-3-5-2">
-        2024
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="2024" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-5-2">
-          <span class="md-nav__icon md-icon"></span>
-          2024
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
     
   
   
@@ -1657,12 +1617,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          v2024.5.0
+          v2025.1.0
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        v2024.5.0
+        v2025.1.0
       </a>
       
         
@@ -1679,6 +1639,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enhancements" class="md-nav__link">
     Enhancements
   </a>
@@ -1689,6 +1656,46 @@
   
 </nav>
       
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-2" type="checkbox" id="nav-3-5-2" >
+      
+      <label class="md-nav__link" for="nav-3-5-2">
+        2024
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2024" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-5-2">
+          <span class="md-nav__icon md-icon"></span>
+          2024
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2024.5.0/" class="md-nav__link">
+        v2024.5.0
+      </a>
     </li>
   
 
@@ -2874,6 +2881,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enhancements" class="md-nav__link">
     Enhancements
   </a>
@@ -2903,11 +2917,22 @@
 
 
 <!-- Markdown content -->
-<h1 id="v202450">v2024.5.0<a class="headerlink" href="#v202450" title="Permanent link">#</a></h1>
-<p>Previous version: <a href="../v2024.4.0/">v2024.4.0</a></p>
+<h1 id="v202510">v2025.1.0<a class="headerlink" href="#v202510" title="Permanent link">#</a></h1>
+<p>Previous version: <a href="../v2024.5.0/">v2024.5.0</a></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h2>
+<p><strong>Automatic retry for FOTA in campaigns</strong>  </p>
+<p>A new option allows firmware updates in campaigns to retry automatically when specific errors occur. Retries can be configured with a maximum number of attempts and a list of retryable errors, helping campaigns complete more reliably.</p>
+<p><strong>Domain-level control of XML tag access</strong></p>
+<p>Highly privileged users can now configure which XML tags are allowed within a domain through domain properties. These restrictions apply across XML task editors, providing finer control and security while still allowing raw XML editing</p>
 <h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
-<p><strong>Enhanced Connection Failure Logs</strong>   </p>
-<p>Improved logging for connection failures related to DTLS/TLS certificates. Logs now identify issues with denylisted certificates or certificates from invalid CAs, aiding in troubleshooting.</p>
+<p><strong>Improvements to FOTA approval</strong>   </p>
+<p>The FOTA approval property configuration in Domain management has now clearer wording, indicating when manager review is required.</p>
+<p><strong>Multicomponent FOTA eligibility tracking</strong>    </p>
+<p>Devices are now flagged as eligible for multicomponent FOTA if they report the required firmware update object <code>/33629</code>. This makes it easier to identify which devices can participate in multicomponent update campaigns.</p>
+<p><strong>Custom object instance IDs in bootstrap</strong></p>
+<p>Added optional parameters to configure custom instance IDs for Security and Server objects during bootstrap. This allows better compatibility with devices that reject default instance settings.</p>
+<p><strong>Removed unused field from REST API</strong></p>
+<p>Cleaned up the REST API <code>GET /users/{username}</code> endpoint by removing the ambiguous <code>staff</code> field from user details. This simplifies the API and avoids confusion over unused fields.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -2919,7 +2944,7 @@
   <!-- Link to previous page -->
   
     <a
-      href="../v2025.1.0/"
+      href="../v2025.2.0/"
       class="md-navbottom__link md-navbottom__link--prev"
       rel="prev"
     >
@@ -2931,7 +2956,7 @@
           <span class="md-navbottom__direction">
             Previous
           </span>
-          v2025.1.0
+          v2025.2.0
         </div>
       </div>
     </a>
@@ -2940,7 +2965,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../v2024.4.0/"
+      href="../v2024.5.0/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -2949,7 +2974,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          v2024.4.0
+          v2024.5.0
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -2979,7 +3004,7 @@
       <div class="md-footer-nav">
         <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
           
-            <a href="../v2025.1.0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <a href="../v2025.2.0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
               <div class="md-footer-nav__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
               </div>
@@ -2988,19 +3013,19 @@
                   <span class="md-footer-nav__direction">
                     Previous
                   </span>
-                  v2025.1.0
+                  v2025.2.0
                 </div>
               </div>
             </a>
           
           
-            <a href="../v2024.4.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../v2024.5.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  v2024.4.0
+                  v2024.5.0
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
