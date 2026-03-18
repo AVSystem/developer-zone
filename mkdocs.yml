@@ -116,7 +116,14 @@ nav:
                     - How to use Device monitoring: 'Coiote_IoT_DM/API_documentation/Guides/Use_device_monitoring.md'
                     - API reference: 'Coiote_IoT_DM/API_documentation/api_reference.md'
             - 'Release Notes':
+                        - 2026:
+                            - 'Coiote_IoT_DM/Release_Notes/v2026.4.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2026.3.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2026.1.0.md'
                         - 2025:
+                            - 'Coiote_IoT_DM/Release_Notes/v2025.27.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2025.26.0.md'
+                            - 'Coiote_IoT_DM/Release_Notes/v2025.25.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2025.24.0.md'                        
                             - 'Coiote_IoT_DM/Release_Notes/v2025.23.0.md'
                             - 'Coiote_IoT_DM/Release_Notes/v2025.22.0.md'
