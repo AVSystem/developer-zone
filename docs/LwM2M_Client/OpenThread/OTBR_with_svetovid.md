@@ -103,7 +103,7 @@ If you haven't worked on your target device thus far, it's time to switch to it,
 
 Download the newest version of `svetovid-with-otbr` docker image:
 ```
-    docker pull avsystemcom/svetovid-with-otbr
+    docker pull registry.avsystem.com/embedded-public/svetovid-with-otbr
 ```
 
 ## Shell variables
@@ -146,7 +146,7 @@ Before you run docker container you need to add `ip6table_filter` module to Linu
 
 After that you can run your image in a new container:
 ```
-    docker run --sysctl "net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI avsystemcom/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
+    docker run --sysctl "net.ipv6.conf.all.disable_ipv6=0 net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" -p 8080:80 -p 8081:8081 --dns=127.0.0.1 -it --volume $RCP_PATH:$RCP_PATH --privileged -e DNS64_ONLY=1 -e EP=$ENDPOINT_NAME -e PSK=$PSK -e SERVER_HOST=$SERVER_URI registry.avsystem.com/embedded-public/svetovid-with-otbr --radio-url spinel+hdlc+uart://$RCP_PATH
 ```
 
 ## Configure your Border Router through {{ coiote_short_name }}
