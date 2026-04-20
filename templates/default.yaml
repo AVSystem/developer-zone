@@ -32,3 +32,4 @@ nRF7002DK_flash_downloaded_binary_step:
   0. Run `nrfjprog -f NRF53 --program demo_nrf7002dk.hex --verify --reset`
 Thingy91_binary_step:
   0. Download the `demo_thingy91_app_signed.hex` file.
+svetovid_devzone_doc_prefix: ""
