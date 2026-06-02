@@ -32,7 +32,7 @@ Before you generate code for your application, you need to configure it as per t
      - In the **Mode** window that appears, check all the boxes next to the LwM2M Stack, Device LwM2M Client example, Board Support LwM2M, Board Support X STMOD PLUS MODEMS, Cellular Middleware STM32 Cellular options.
      ![Mode boxes](images/mode_settings.png "mode_settings")
      - In the **Configuration** window:
-         - Go to the **Parameter Settings** tab and configure your Anjay Library. For a detailed description of all Anjay library configuration options, see [here](https://avsystem.github.io/Anjay-doc/api/anjay__config_8h.html).
+         - Go to the **Parameter Settings** tab and configure your Anjay Library. For a detailed description of all Anjay library configuration options, see [here](https://docs.avsystem.com/hubfs/Anjay_Docs/api/api_generated/structanjay__configuration.html#_CPPv419anjay_configuration).
          ![Parameter settings](images/parameter_settings.png "parameter_settings")
          - Go to the **Client Settings** tab and configure your LwM2M Client parameters like Endpoint name, PSK, PSK identity, server URI and others.
          ![Client settings](images/client_settings.png "client_settings")

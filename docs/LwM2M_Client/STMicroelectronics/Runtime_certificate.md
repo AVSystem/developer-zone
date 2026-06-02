@@ -5,7 +5,7 @@ Anjay library supports secure connection between device and server. Encryption c
 
 In **Certificate Mode** an asymmetrical algorithm is used to authenticate the connection endpoints and initialize payload encryption. Appropriate certificates need to be generated for both the LwM2M Client and the LwM2M Server. Public certificates of both parties are mutually available, and each party also has access to its corresponding private key.
 
-You can read more about secure communication on [Anjay's documentation](https://avsystem.github.io/Anjay-doc/BasicClient/BC-Security.html) page.
+You can read more about secure communication on [Anjay's documentation](https://docs.avsystem.com/hubfs/Anjay_Docs/BasicClient/BC-Security.html) page.
 
 
 ## Prerequisites

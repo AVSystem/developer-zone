@@ -34,7 +34,7 @@ Try [Anjay demo client](https://github.com/AVSystem/Anjay?tab=readme-ov-file#run
 
 
 !!! Info
-    For more information about the Anjay LwM2M Client, visit the <a href="https://avsystem.github.io/Anjay-doc/index.html" target="_blank">**Anjay Library Documentation**</a>.
+    For more information about the Anjay LwM2M Client, visit the <a href="https://docs.avsystem.com/hubfs/Anjay_Docs/index.html" target="_blank">**Anjay Library Documentation**</a>.
 
 
 ## Add a new device in {{ coiote_short_name }}
