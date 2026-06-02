@@ -86,7 +86,7 @@ temperature_sensor_get_value(anjay_iid_t iid, void *_ctx, double *value) {
 }
 ```
 
-In the `temperature_sensor_install()` function, we describe the initialization of the LM35 sensor, the installation of the `ipso_basic_sensor` parameters using sensor-friendly Anjay API, and the creation of the Instance parameters. To install an Anjay IPSO Object we can use [anjay_ipso_basic_sensor_install](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a8a95f45e84db077652f65d272ccbf730). For Instance parameters we need to describe the proper temperature unit which is degrees Celsius (as defined in [SenML RFC](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#a8a95f45e84db077652f65d272ccbf730)), and our sensor measures temperatures which are between 0 and 100 degrees Celsius. Knowing this we can prepare an Instance and pass it to the `anjay_ipso_basic_sensor_instance_add()` function.
+In the `temperature_sensor_install()` function, we describe the initialization of the LM35 sensor, the installation of the `ipso_basic_sensor` parameters using sensor-friendly Anjay API, and the creation of the Instance parameters. To install an Anjay IPSO Object we can use [anjay_ipso_basic_sensor_install](https://docs.avsystem.com/hubfs/Anjay_Docs/api/api_generated/function_ipso__objects_8h_1a8a95f45e84db077652f65d272ccbf730.html#function-anjay-ipso-basic-sensor-install). For Instance parameters we need to describe the proper temperature unit which is degrees Celsius (as defined in [SenML RFC](https://docs.avsystem.com/hubfs/Anjay_Docs/api/api_generated/structanjay__ipso__basic__sensor__impl__struct.html#_CPPv435anjay_ipso_basic_sensor_impl_struct)), and our sensor measures temperatures which are between 0 and 100 degrees Celsius. Knowing this we can prepare an Instance and pass it to the `anjay_ipso_basic_sensor_instance_add()` function.
 
 Let’s look at the `temperature_sensor_install()` function implementation:
 
@@ -177,7 +177,7 @@ This function can be divided into a three sections:
     ```
 
 
-Let's add the functions `temperature_sensor_update()`, and `temperature_sensor_release()`. To update the Instance we can use [`anjay_ipso_basic_sensor_instance_update`](https://avsystem.github.io/Anjay-doc/api/ipso__objects_8h.html#adb1d4d64c728ad7e77f35c8c28eb74bf).
+Let's add the functions `temperature_sensor_update()`, and `temperature_sensor_release()`. To update the Instance we can use [`anjay_ipso_basic_sensor_update`](https://docs.avsystem.com/hubfs/Anjay_Docs/api/api_generated/function_ipso__objects_8h_1adb1d4d64c728ad7e77f35c8c28eb74bf.html#exhale-function-ipso-objects-8h-1adb1d4d64c728ad7e77f35c8c28eb74bf).
 
 <p style="text-align: center;">temperature_sensor.c</p>
 ```

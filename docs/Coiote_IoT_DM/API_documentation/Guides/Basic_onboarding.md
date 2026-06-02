@@ -168,7 +168,7 @@ To create observations for a device, send a `POST` request to the endpoint `/obs
 In the request body provide observation attributes (name and value pair) and specify if you want to create ensureObservationTask. Use one of the valid observation attributes: 'pmin', 'pmax', 'gt', 'lt', and 'st'. 
 
 !!! Note
-    To learn more about observation attributes, see [Attributes](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
+    To learn more about observation attributes, see [Attributes](https://docs.avsystem.com/hubfs/Anjay_Docs/LwM2M.html#attributes).
 
 If you create ensureObservationTask, the system automatically checks if the observations are enabled on the device, during every provisioning session. 
 

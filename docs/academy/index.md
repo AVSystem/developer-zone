@@ -76,7 +76,7 @@ The project was created and is actively maintained by [AVSystem](https://avsyste
 * Device management mechanisms to update configurations over time
 vStandard implementations available for many hardware platforms
 
-Find [more information](https://www.avsystem.com/coiote-iot-device-management-platform/) about Anjay and its features, or visit the [official documentation](https://avsystem.github.io/Anjay-doc/index.html) website directly.
+Find [more information](https://avsystem.com/anjay-iot-sdk/) about Anjay and its features, or visit the [official documentation](https://docs.avsystem.com/hubfs/Anjay_Docs/index.html) website directly.
 
 ## Intro to {{ coiote_short_name }}
 {{ coiote_long_name }} is built around the LwM2M standard. It acts as a LwM2M Server and is designed as a scalable platform to manage large numbers of devices. The platform comes with tools to monitor groups of devices, manage device configurations, and perform firmware updates. In addition, it supports cloud integrations with platforms such as AWS IoT Core or Azure IoT Hub.

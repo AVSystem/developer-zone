@@ -1,6 +1,6 @@
 # Thingy:91
 
-Integrate your Nordic **Thingy:91** board with **{{ coiote_short_name }}** using the [**Anjay LwM2M client**](https://avsystem.github.io/Anjay-doc/index.html).
+Integrate your Nordic **Thingy:91** board with **{{ coiote_short_name }}** using the [**Anjay LwM2M client**](https://docs.avsystem.com/hubfs/Anjay_Docs/index.html).
 
 ![Thingy:91](images/NordicThingy91.jpeg "Nordic Thingy:91")
 

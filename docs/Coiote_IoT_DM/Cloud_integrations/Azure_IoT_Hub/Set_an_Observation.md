@@ -64,7 +64,7 @@ The line with `“observed”: true` sets an Observation. The line with `“attr
     * **pmin** - the minimum time in seconds between two notifications.
     * **pmax** - the maximum time in seconds between two notifications. The notification is sent even if the value didn't change.
 
-    Read more about other attributes in our [Brief description of OMA LwM2M](https://avsystem.github.io/Anjay-doc/LwM2M.html#attributes).
+    Read more about other attributes in our [Brief description of OMA LwM2M](https://docs.avsystem.com/hubfs/Anjay_Docs/LwM2M.html#attributes).
 
 Click **Save**.
 

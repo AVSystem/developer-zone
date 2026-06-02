@@ -36,7 +36,7 @@ Let’s get started by going to the **Anjay-pico-client** directory and creating
     Copy and paste the *main.c* and *CMakeLists.txt* files from the **Anjay-pico-client/secure_communication** directory to the **Anjay-pico-client/time_object** directory.
 
 ## Generate base source code
-To generate a layout of the Object’s implementation, we will use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts which are bundled with the Anjay library. The script downloads the LwM2M Object Definition and generates a skeleton of the LwM2M Object code, requiring you to only fill in actual Object logic. For more information about the script, visit the [Anjay documentation](https://avsystem.github.io/Anjay-doc/Tools/StubGenerator.html).
+To generate a layout of the Object’s implementation, we will use the `anjay_codegen.py` and `lwm2m_object_registry.py` scripts which are bundled with the Anjay library. The script downloads the LwM2M Object Definition and generates a skeleton of the LwM2M Object code, requiring you to only fill in actual Object logic. For more information about the script, visit the [Anjay documentation](https://docs.avsystem.com/hubfs/Anjay_Docs/Tools/StubGenerator.html).
 
 If you’re using **Linux** or **MacOS** go to the **Anjay-pico-client** directory, and run the following commands in your command line:
 
