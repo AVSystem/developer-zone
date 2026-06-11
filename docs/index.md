@@ -55,7 +55,7 @@ The guides will take you on a step-by-step journey to seamlessly activate the in
 
 **Take a deep-dive into the LwM2M standard by following the LwM2M Academy**. A comprehensive online course designed to provide you with both the theoretical understanding and hands-on skills necessary to utilize the powerful LwM2M standard.
 
-[Join course](/docs/academy/exercise1.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
+[Join course](academy/index.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
 
 
 ## Join our community on Discord
