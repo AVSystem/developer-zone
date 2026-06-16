@@ -17,7 +17,7 @@
 
     
       
-        <title>v2026.10.0 - IoT Developer Zone</title>
+        <title>v2026.12.0 - IoT Developer Zone</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v2026100" class="md-skip">
+        <a href="#v2026120" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              v2026.10.0
+              v2026.12.0
             
           </span>
         </div>
@@ -1437,12 +1437,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          v2026.10.0
+          v2026.12.0
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        v2026.10.0
+        v2026.12.0
       </a>
       
         
@@ -1459,15 +1459,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
-    Enhancements
+  <a href="#features" class="md-nav__link">
+    Features
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    Bug Fixes
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
   </a>
   
 </li>
@@ -1476,6 +1476,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2026.11.0/" class="md-nav__link">
+        v2026.11.0
+      </a>
     </li>
   
 
@@ -3113,15 +3125,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
-    Enhancements
+  <a href="#features" class="md-nav__link">
+    Features
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    Bug Fixes
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
   </a>
   
 </li>
@@ -3149,24 +3161,20 @@
 
 
 <!-- Markdown content -->
-<h1 id="v2026100">v2026.10.0<a class="headerlink" href="#v2026100" title="Permanent link">#</a></h1>
-<p>Previous version: <a href="../v2026.9.0/">v2026.9.0</a></p>
+<h1 id="v2026120">v2026.12.0<a class="headerlink" href="#v2026120" title="Permanent link">#</a></h1>
+<p>Previous version: <a href="../v2026.11.0/">v2026.11.0</a></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h2>
+<p><strong>New FOTA progress error types</strong></p>
+<p>Added new error types with clearer messages for FOTA progress issues. This helps users better understand why a timeout or interruption occurred during a firmware update.</p>
 <h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h2>
-<p><strong>Added new FOTA status error messages</strong></p>
-<p>Added more FOTA device progress error messages to better reflect the current update status on the device.</p>
-<p><strong>New valid FOTA states</strong></p>
-<p>Added new valid FOTA states during the waiting stage to make the update process more flexible and allow FOTA finish successfully for custom cases.</p>
-<p><strong>Improved LwM2M Bootstrap tab interface</strong></p>
-<p>Improved the LwM2M Bootstrap tab in the domain management panel for a better user experience.</p>
-<p><strong>User activity logs documentation</strong></p>
-<p>Added a user guide section for user activity logs. The new documentation describes available functions and is available under: <a href="https://eu.iot.avsystem.cloud/doc/user/platform-administration/how-to-guides/users-and-access/review-user-activity-logs.md">User activity logs</a></p>
-<h2 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">#</a></h2>
-<p><strong>User filters</strong></p>
-<p>Fixed an issue that caused an error when filtering users if some accounts in the domain had not logged in to the platform after creation.</p>
-<p><strong>Report generation freeze</strong></p>
-<p>Fixed an issue that could cause the report generation process to freeze.</p>
-<p><strong>Multicomponent FOTA improvement</strong></p>
-<p>Fixed an issue that could cause the non-blocking version of Multicomponent FOTA to fail due to observations.</p>
+<p><strong>nRF Cloud integration update</strong></p>
+<p>Updated the nRF Cloud location services integration to use Organization Auth Tokens. Service Tokens are no longer supported due to changes introduced by nRF Cloud.</p>
+<p><strong>Improved nRF Cloud API communication</strong></p>
+<p>Updated communication with nRF Cloud endpoints to match recent API changes. More details are available in the guide: <a href="https://eu.iot.avsystem.cloud/doc/user/integrations/how-to-guides/configure-nrf-cloud-integration.md">nRF Cloud</a></p>
+<p><strong>Monitoring and Data Integration Center telemetry improvements</strong></p>
+<p>Improved processing of telemetry collection and forwarding in Monitoring and Data Integration Center features.</p>
+<p><strong>Improved CSV device import</strong></p>
+<p>Improved CSV device import to handle larger batches of devices reliably. The import process now also provides more meaningful log messages.</p>
 
 <!-- Link to previous and/or next page -->
 
@@ -3199,7 +3207,7 @@
   <!-- Link to next page -->
   
     <a
-      href="../v2026.9.0/"
+      href="../v2026.11.0/"
       class="md-navbottom__link md-navbottom__link--next"
       rel="next"
     >
@@ -3208,7 +3216,7 @@
           <span class="md-navbottom__direction">
             Next
           </span>
-          v2026.9.0
+          v2026.11.0
         </div>
       </div>
       <div class="md-navbottom__button md-icon">
@@ -3253,13 +3261,13 @@
             </a>
           
           
-            <a href="../v2026.9.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <a href="../v2026.11.0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
               <div class="md-footer-nav__title">
                 <div class="md-ellipsis">
                   <span class="md-footer-nav__direction">
                     Next
                   </span>
-                  v2026.9.0
+                  v2026.11.0
                 </div>
               </div>
               <div class="md-footer-nav__button md-icon">
