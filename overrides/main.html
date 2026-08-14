@@ -12,15 +12,6 @@
     <meta name="theme-color" content="#ffffff">
     <!-- end favicon -->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1572272-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-1572272-2');
-    </script>
 {% endblock %}
 
 
@@ -120,6 +111,7 @@
 
 <!-- Add OpenGraph image -->
 {% block site_meta %}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-JwTqtIT4e7LB6Y5kTgViobFlnoLQCpMqXc3vZ/B4w3s=' 'sha256-NQL3qWGSgdiWL8VxFi0VRIJ9GX96g2jtPZbkWcycbNU=' 'sha256-TNpu/MoiMxhnOJTYB9OyTq+OyVmbWnczNrAZVkm6PtI=' 'sha256-V+Y6nhx83iyunLSs+LNZmAQKHMpXZyi5jEBym8IixDk=' 'sha256-Vx4j317zP65zcHvm0oDCH71RfjVU08BkU0HdTGJk8fA=' 'sha256-kdrKfx78CitG3qPSAdURgUmgYEGwAYTwjCtRcSGVzxM='; script-src-attr 'none'; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-+17AcPK/e5AtiK52Z2vnx3uG3BMzyzRr4Qv5UQsEbDU=' 'sha256-6HSHsKBMUo5p1tyOM1tZ7XlMfW3Mg63/P0SHhSjlbkM=' 'sha256-PjAT9Xrh6xM2sFDPksqOyr8p7HLWEKyH473Fn29HZOk=' 'sha256-TSNypIttKZKWuIyHovnHASEYqnfbslFIpBkhRM2boko=' 'sha256-UuTrggTL1nc8BaRJmlKO75nKSaFmu5VXjiC/0L6Nv2w=' 'sha256-b3y7ZTADltMxSat1ssd4f5JQHdkz4GxlsWf6sIsjPaU=' 'sha256-eC+jXvbVSsG0J4zQfR5fWxxUCqpaa5DZLbINjWNCu48=' 'sha256-iGGEsp6HYRNfdpiKqFg2Y8M+E0xXD5IpUR10EQYD9AE=' 'sha256-prTua5Tv6Xo64NElKgUXoHuJI+z0eDuJ4YYzF1UrLb8=' 'sha256-uZrowBFwhOfSI7mhTbKF5bhNbNCjn8LviGDnEYzoiO0='; img-src 'self' data:; frame-src https://www.youtube.com; form-action 'self'">
   {{ super() }}
   <meta content="https://iotdevzone.avsystem.com/docs/img/AVSystem-social.png" property="og:image" />
 {% endblock %}

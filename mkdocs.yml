@@ -2,6 +2,7 @@ site_name: IoT Developer Zone
 theme:
   name: material
   custom_dir: overrides
+  font: false
   logo: assets/images/logo.svg
   favicon: assets/favicon/favicon-32x32.png
   features:
@@ -46,9 +47,6 @@ plugins:
 hooks:
   - main.py
 
-google_analytics:
-  - UA-25246208-6
-  - auto
 
 nav:
         - 'Getting Started':
