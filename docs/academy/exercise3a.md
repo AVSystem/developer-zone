@@ -62,7 +62,7 @@ Start by adding some variables responsible for the state of our Time Object Inst
 !!! Note
     There is also a second array for keeping a backup of the Application Type - this will be required for the implementation of transactions. We will get back to it at the end of this exercise.
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 typedef struct time_instance_struct {
     anjay_iid_t iid;
@@ -90,7 +90,7 @@ In this case, all we have to do is initialize the Application Type with some val
     - rid - Resource ID
     - riid - Resource Instance ID
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 static int init_instance(time_instance_t *inst, anjay_iid_t iid) {
     assert(iid != ANJAY_ID_INVALID);
@@ -103,7 +103,7 @@ static int init_instance(time_instance_t *inst, anjay_iid_t iid) {
 
 The next function to implement is `instance_reset()` which resets the Instance to its default state. In our case, this means we clear the Application Type.
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 static int instance_reset(anjay_t *anjay,
                         const anjay_dm_object_def_t *const *obj_ptr,
@@ -121,7 +121,7 @@ static int instance_reset(anjay_t *anjay,
 
 We can also disable the presence of one of the Resources in the `list_resources()` function. It is done by changing `ANJAY_DM_RES_PRESENT` to `ANJAY_DM_RES_ABSENT` in the `anjay_dm_emit_res()` call. This change will simplify the implementation of the Read Handler and Observe/Notifications support in the next section.
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 static int list_resources(anjay_t *anjay,
                         const anjay_dm_object_def_t *const *obj_ptr,
@@ -155,7 +155,7 @@ Now we are ready to implement `resource_read()` and `resource_write()` handlers.
 
 The `resource_read()` operation on Current Time resource should return current time in seconds since January 1, 1970, UTC. To get this value, we can use the preimplemented `avs_time_real_now()` function. The same operation on Application Type resource should return the `time_instance_t::application_type` string. Because we’ve made the Fractional Time resource absent, we won’t perform any actions on this resource during `resource_read()` operation.
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 static int resource_read(anjay_t *anjay,
                         const anjay_dm_object_def_t *const *obj_ptr,
@@ -191,7 +191,7 @@ static int resource_read(anjay_t *anjay,
 
 As discussed, we only implement the Read operation on the Current Time Resource, so the Write operation is only implemented on the Application Type Resource.
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 static int resource_write(anjay_t *anjay,
                         const anjay_dm_object_def_t *const *obj_ptr,
@@ -221,7 +221,7 @@ static int resource_write(anjay_t *anjay,
 ## Initialize the Object
 There is one function left to implement: `time_object_create()`. This function uses `add_instance()` to create an Object Instance, allowing data to be read by the LwM2M Server.
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 const anjay_dm_object_def_t **time_object_create(void) {
     time_object_t *obj = (time_object_t *) avs_calloc(1, sizeof(time_object_t));
@@ -245,7 +245,7 @@ const anjay_dm_object_def_t **time_object_create(void) {
 
 The last thing to do is to create the header file `time_object.h` for the implemented object, include the header file in the **main.c** and update the **CMakeLists.txt** file.
 
-<p style="text-align: center;">time_object.h</p>
+<p class="text-center">time_object.h</p>
 ```
 #pragma once
 
@@ -256,7 +256,7 @@ void time_object_release(const anjay_dm_object_def_t **def);
 ```
 
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 void anjay_task(__unused void *params) {
     init_wifi();
@@ -289,7 +289,7 @@ void anjay_task(__unused void *params) {
 
 Include the `time_object.h` file on the top of the *main.c* file.
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 #include <avsystem/commons/avs_list.h>
 #include <avsystem/commons/avs_log.h>
@@ -303,7 +303,7 @@ Include the `time_object.h` file on the top of the *main.c* file.
 #endif
 ```
 
-<p style="text-align: center;">CMakeLists.txt</p>
+<p class="text-center">CMakeLists.txt</p>
 ```
 cmake_minimum_required(VERSION 3.13)
 
@@ -339,7 +339,7 @@ pico_add_extra_outputs(time_object)
 At the end of the file add the mention about subdirectory to the general *CMakeLists.txt*.
 
 
-<p style="text-align: center;">Anjay-pico-client/CMakeLists.txt</p>
+<p class="text-center">Anjay-pico-client/CMakeLists.txt</p>
 ```
 add_subdirectory(time_object)
 ```
@@ -354,7 +354,7 @@ By default, transaction handlers are set to `anjay_dm_transaction_NOOP` and do n
 
 Go back to the *time_object.c* file and update the file using the following code block:
 
-<p style="text-align: center;">time_object.c</p>
+<p class="text-center">time_object.c</p>
 ```
 static int transaction_begin(anjay_t *anjay,
                              const anjay_dm_object_def_t *const *obj_ptr) {

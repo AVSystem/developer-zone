@@ -39,7 +39,7 @@ In the *lm35.c* file we need two functions:
 - The `lm35_init()` for the initialization of the ADC (Analog to Digital Converter) and the ADC GPIO pin.
 - The `temperature_get_data()` for computing the temperature value from the sensor. This function will be called from the *temperature_sensor.c* file.
 
-<p style="text-align: center;">lm35.c</p>
+<p class="text-center">lm35.c</p>
 ```
 #include <hardware/adc.h>
 #include <hardware/gpio.h>
@@ -74,7 +74,7 @@ To generate a layout of the Object’s implementation, we need a few functions t
 
 The most important function is responsible for getting the temperature value from the sensor. For this, we create `temperature_sensor_get_value()` function where we call the `temperature_get_data()` function (this function was created in lm35.c file).
 
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 static int
 temperature_sensor_get_value(anjay_iid_t iid, void *_ctx, double *value) {
@@ -90,7 +90,7 @@ In the `temperature_sensor_install()` function, we describe the initialization o
 
 Let’s look at the `temperature_sensor_install()` function implementation:
 
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 void temperature_sensor_install(anjay_t *anjay) {
     if (lm35_init()) {
@@ -179,7 +179,7 @@ This function can be divided into a three sections:
 
 Let's add the functions `temperature_sensor_update()`, and `temperature_sensor_release()`. To update the Instance we can use [`anjay_ipso_basic_sensor_update`](https://docs.avsystem.com/hubfs/Anjay_Docs/api/api_generated/function_ipso__objects_8h_1adb1d4d64c728ad7e77f35c8c28eb74bf.html#exhale-function-ipso-objects-8h-1adb1d4d64c728ad7e77f35c8c28eb74bf).
 
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 void temperature_sensor_update(anjay_t *anjay) {
     anjay_ipso_basic_sensor_update(anjay, 3303, 0);
@@ -191,7 +191,7 @@ void temperature_sensor_release(void) {
 ```
 
 Add on top the necessary paths to the libraries used in the *temperature_sensor.c* and defined constant. In file you should include:
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 #include <assert.h>
 #include <stdbool.h>
@@ -212,7 +212,7 @@ Add on top the necessary paths to the libraries used in the *temperature_sensor.
 ## Register the Object in Anjay
 The last things to do is creating the header files (*temperature_sensor.h* and *lm35.h*) for the implemented Object, registering the temperature sensor in Anjay by updating the main.c file, and updating CMakeLists.txt file.
 
-<p style="text-align: center;">temperature_sensor.h</p>
+<p class="text-center">temperature_sensor.h</p>
 ```
 #pragma once
 
@@ -223,7 +223,7 @@ void temperature_sensor_update(anjay_t *anjay);
 void temperature_sensor_release(void);
 ```
 
-<p style="text-align: center;">lm35.h</p>
+<p class="text-center">lm35.h</p>
 ```
 #pragma once
 
@@ -237,7 +237,7 @@ int lm35_init(void);
 int temperature_get_data(double *sensor_data);
 ```
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 void temperature_sensor_update_task(__unused void *params) {
     const TickType_t delay = 2000 / portTICK_PERIOD_MS;
@@ -280,7 +280,7 @@ void anjay_task(__unused void *params) {
 
 
 Add on top the necessary paths to the libraries used in the main.c file you should include:
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 #include "temperature_sensor.h"
 
@@ -302,7 +302,7 @@ static StackType_t temp_update_stack[TEMP_UPDATE_TASK_SIZE];
 static StaticTask_t temp_update_task_buffer;
 ```
 
-<p style="text-align: center;">CMakeLists.txt</p>
+<p class="text-center">CMakeLists.txt</p>
 ```
 cmake_minimum_required(VERSION 3.13)
 
@@ -337,7 +337,7 @@ pico_add_extra_outputs(temperature_object_lm35)
 ```
 
 At the end of the file add the mention about subdirectory to the general CMakeLists.txt.
-<p style="text-align: center;">Anjay-pico-client/CMakeLists.txt</p>
+<p class="text-center">Anjay-pico-client/CMakeLists.txt</p>
 ```
 add_subdirectory(temperature_object_lm35)
 ```

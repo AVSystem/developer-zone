@@ -38,7 +38,7 @@ The Resources which are configured for the Security Object are:
 - **Resource `/0/x/0`**: **LwM2M Server URI**. This Resource defines the address of the LwM2M Server.
 - **Resource `/0/x/2`**: **Security Mode**. This Resource defines the security mode. In this application, the NoSec (no security) mode is used. By changing this parameter, other security modes can be used, including Pre-Shared Key mode and Certificate mode.
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 // Installs Security Object and adds an instance of it.
 // An instance of Security Object provides information needed to connect // to LwM2M server.
@@ -81,7 +81,7 @@ The Resources which are configured for the Server Object are:
 - **Resource `/1/x/5`**: **Disable Timeout** - This Resource controls the time period after which, the LwM2M Client will re-register to the server. In this application, we use “-1” which means the Disable Timeout is disabled. When this Resource is not set, the default timeout value of 86400 seconds (1 day) is used.
 - **Resource `/1/x/7`**: **Binding** - This Resource sets the preferred transport method. In this application, it is set to UDP. The LwM2M standard provides the option to set the binding to TCP, SMS, LoRaWAN, CIoT, or WebSockets.
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 // Installs Server Object and adds an instance of it.
 // An instance of Server Object provides the data related to a LwM2M
@@ -128,7 +128,7 @@ It is also used for invoking a device **Resource `/3/x/4`**: **Reboot** or **Res
 
 After the `setup_server_object()` and the `setup_security_object()` have been added to the **main.c** file, these Objects need to be initiated using `anjay_task()`. This is done using the code below.
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 
 void anjay_task(__unused void *params) {

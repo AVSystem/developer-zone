@@ -47,7 +47,7 @@ We're constantly working on improving the LwM2M Academy. Please share with us yo
 ## Intro to the hardware used in this course
 Throughout this course, we will be using the [Raspberry Pi Pico W](https://www.raspberrypi.com/products/raspberry-pi-pico/), Raspberry Pi's first wireless microcontroller board. It has been designed as a tiny and low-cost yet flexible development platform for the RP2040 MCU.
 
-![Raspberry Pi Pico](images/module1_RPI Pico.png){: style="width:300px"}
+![Raspberry Pi Pico](images/module1_RPI Pico.png){: .academy-hardware-image}
 
 The 21 mm × 51 mm board comes with a 2.4GHz wireless LAN interface (802.11n). It provides 26 GPIO pins, three of which can function as analog inputs. Four RP2040 I/O pins are used for internal functions: driving an LED, on-board switch mode power supply power control, and sensing the system voltages.
 
@@ -60,7 +60,7 @@ In this course, we will be using the **LM35** analog temperature sensor.
 
 **Purchase the sensor** via [Kiwi electronics](https://www.kiwi-electronics.com/en/lm35dz-analog-temperature-sensor-10530) (EU), [Amazon](https://www.amazon.com/Bridgold-Analogue-Precision-Centigrade-Temperature/dp/B07Y7FCZYB) (US) or [Mouser](https://www.mouser.com/ProductDetail/Texas-Instruments/LM35DZ-LFT4?qs=QbsRYf82W3FEZkSvxC%252BtOg%3D%3D) (EU/US)
 
-![module1_lm35](images/module1_lm35.jpeg){: style="width:300px"}
+![module1_lm35](images/module1_lm35.jpeg){: .academy-hardware-image}
 
 ## Intro to Anjay LwM2M Client
 
