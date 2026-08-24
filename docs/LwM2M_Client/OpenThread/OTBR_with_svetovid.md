@@ -152,7 +152,7 @@ After that you can run your image in a new container:
 ## Configure your Border Router through {{ coiote_short_name }}
 
 After a while (about 10 minutes) you should see that your Border Router successfully connected to server. Now you can click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view.
-![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+![Registered device](images/registered_device.png "Registered device"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 Now you can switch to **Data model** tab. Here you can find objects related to **OpenThread Border Router**:
 

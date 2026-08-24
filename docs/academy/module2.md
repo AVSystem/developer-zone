@@ -15,7 +15,7 @@ Welcome to the second module of the LwM2M Academy. In the previous module, we in
 <iframe width="640" height="360" src="https://www.youtube.com/embed/LSEIyz7F8_A" title="Getting started with LwM2M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ![Smart objects](images/module2_smart-objects.png)
-*<p style="text-align: center;">Mandatory Objects are: Security `/0`, Server Object `/1` & Device `/3`</p>*
+*<p class="text-center">Mandatory Objects are: Security `/0`, Server Object `/1` & Device `/3`</p>*
 
 ## Mandatory Objects
 
@@ -55,7 +55,7 @@ Two layers of security are implemented when using LwM2M. The transport layer is 
 DTLS and OSCORE can work together to provide end-to-end security. DTLS/TLS is used to establish a secure channel between the client and server, and OSCORE is used to encrypt and protect messages exchanged within that channel. This approach provides multiple layers of security, ensuring that the communication channel and the data being exchanged within that channel are both protected against unauthorized access and tampering.
 
 ![Security](images/module2_security.png)
-*<p style="text-align: center;">The transport layer is secured using DTLS or TLS. The application layer is protected using OSCORE.</p>*
+*<p class="text-center">The transport layer is secured using DTLS or TLS. The application layer is protected using OSCORE.</p>*
 
 
 ## Security modes

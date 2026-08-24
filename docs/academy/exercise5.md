@@ -23,7 +23,7 @@ Anjay comes with a built-in Firmware Update module, which simplifies FOTA implem
 
 In our code, firmware update module installation will be taken by the function declared in **firmware_update.h**:
 
-<p style="text-align: center;">firmware_update.h</p>
+<p class="text-center">firmware_update.h</p>
 ``` c
 #pragma once
 
@@ -34,7 +34,7 @@ int fw_update_install(anjay_t *anjay);
 
 In the main.c file the installation of the Firmware Update module takes place in the *anjay_task()* funktion:
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ``` c
 void anjay_task(__unused void *params) {
     init_wifi();
@@ -73,7 +73,7 @@ The Firmware Update module consists of user-implemented callbacks of various sor
 
 - `stream_open` is called whenever a new firmware download is started by the server. Its main responsibility is to prepare client for receiving firmware chunks - e.g. by opening a file or getting flash storage ready, etc.
 
-    <p style="text-align: center;">firmware_update.c</p>
+    <p class="text-center">firmware_update.c</p>
     ``` c
     static int fw_stream_open(void *user_ptr,
                               const char *package_uri,
@@ -97,7 +97,7 @@ The Firmware Update module consists of user-implemented callbacks of various sor
 
 - `stream_write` is called whenever there is a next firmware chunk received, ready to be stored. Its responsibility is to append the chunk to the storage.
 
-    <p style="text-align: center;">firmware_update.c</p>
+    <p class="text-center">firmware_update.c</p>
     ``` c
     static int fw_stream_write(void *user_ptr, const void *data, size_t length) {
         (void) user_ptr;
@@ -119,7 +119,7 @@ The Firmware Update module consists of user-implemented callbacks of various sor
 
 - `stream_finish` is called whenever the writing process is finished and the stored data can now be thought of as a complete firmware image. It may be a good moment here to verify if the entire firmware image is valid.
 
-    <p style="text-align: center;">firmware_update.c</p>
+    <p class="text-center">firmware_update.c</p>
     ``` c
     static int fw_stream_finish(void *user_ptr) {
         (void) user_ptr;
@@ -148,7 +148,7 @@ The Firmware Update module consists of user-implemented callbacks of various sor
 
 - `reset` is called whenever there is an error during firmware download, or if the Server decides to not pursue firmware update with downloaded firmware (e.g. because it was notified that firmware verification failed).
 
-    <p style="text-align: center;">firmware_update.c</p>
+    <p class="text-center">firmware_update.c</p>
     ``` c
     static void fw_reset(void *user_ptr) {
         (void) user_ptr;
@@ -168,7 +168,7 @@ The Firmware Update module consists of user-implemented callbacks of various sor
 
 - `perform_upgrade` is called whenever the download is finished, the firmware is successfully verified on the Client and the Server decides to upgrade the device.
 
-    <p style="text-align: center;">firmware_update.c</p>
+    <p class="text-center">firmware_update.c</p>
     ``` c
     static int fw_perform_upgrade(void *anjay) {
         pfb_mark_download_slot_as_valid();
@@ -183,7 +183,7 @@ The Firmware Update module consists of user-implemented callbacks of various sor
 
 To install the module, we are going to use the *fw_update_install()* function which is called in the main.c file:
 
-<p style="text-align: center;">firmware_update.c</p>
+<p class="text-center">firmware_update.c</p>
 ``` c
 static const anjay_fw_update_handlers_t handlers = {
     .stream_open = fw_stream_open,
@@ -214,7 +214,7 @@ Flash APIs require that the length of data to write will be a multiple of 256 by
 
 - flash_aligned_writer.c
 
-    <p style="text-align: center;">flash_aligned_writer.c</p>
+    <p class="text-center">flash_aligned_writer.c</p>
     ``` c
     #include <assert.h>
     #include <stddef.h>
@@ -286,7 +286,7 @@ Flash APIs require that the length of data to write will be a multiple of 256 by
 
 - flash_aligned_writer.h
 
-    <p style="text-align: center;">flash_aligned_writer.h</p>
+    <p class="text-center">flash_aligned_writer.h</p>
     ``` c
     #pragma once
 
