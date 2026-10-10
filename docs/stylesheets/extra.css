@@ -1,5 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
+body,
+input {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+}
+
+code,
+kbd,
+pre {
+  font-family: "Roboto Mono", SFMono-Regular, Consolas, Menlo, monospace;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.button-row-item {
+  float: left;
+  margin-right: 30px;
+}
+
+.academy-hardware-image {
+  width: 300px;
+}
+
+.content-image-float {
+  float: left;
+  margin-top: 17px;
+}
+
+.content-image-float--narrow {
+  margin-right: 817px;
+}
+
+.content-image-float--release-note {
+  margin-right: 1077px;
+}
+
+.content-image-float--wide {
+  margin-right: 1177px;
+}
+
+.content-image-float--compact {
+  margin-top: 7px;
+}
+
+.content-image-float--spaced {
+  margin-bottom: 17px;
+}
+
 
 .topLinePageInfo {
   padding: 10px 15px;

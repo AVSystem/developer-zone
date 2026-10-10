@@ -8,7 +8,7 @@ These guides will take you on a step-by-step journey to seamlessly activate the 
 
 See guides in Coiote DM User Documentation to learn how you can get started with the {{ coiote_short_name }} – Azure IoT integration:
 
-[Azure IoT Hub](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} [Azure IoT Central](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-central/integrate-with-azure-iot-central/){: .md-button .md-button--big :style="float: left;margin-right: 30px;"} [Azure DPS](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/integrate-with-azure-dps/){: .md-button .md-button--big }
+[Azure IoT Hub](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-hub/integrate-with-azure-iot-hub/){: .md-button .md-button--big .button-row-item} [Azure IoT Central](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/azure-iot-central/integrate-with-azure-iot-central/){: .md-button .md-button--big .button-row-item} [Azure DPS](https://{{coiote_server}}/doc/user/integrations/how-to-guides/hyperscaler-integrations/integrate-with-azure-dps/){: .md-button .md-button--big }
 
 ## AWS integration
 

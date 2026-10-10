@@ -47,7 +47,7 @@ Open the **main.c** file in a code editor (e.g. VS Code).
 
 In this file, modify the `setup_security_object()` function to change Anjay’s security settings and add the configuration of PSK-based encryption. This can be done using the code below.
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 static int setup_security_object() {
     if (anjay_security_object_install(g_anjay)) {
@@ -78,7 +78,7 @@ static int setup_security_object() {
 
 Next, open the **CMakeLists.txt**, change the file names and add the required information about the PSK mode.
 
-<p style="text-align: center;">CMakeLists.txt</p>
+<p class="text-center">CMakeLists.txt</p>
 ```
 cmake_minimum_required(VERSION 3.13)
 
@@ -112,7 +112,7 @@ pico_add_extra_outputs(psk-mode)
 ```
 
 At the end of the file add the mention about subdirectory to the general CMakeLists.txt.
-<p style="text-align: center;"> Anjay-pico-client/CMakeLists.txt</p>
+<p class="text-center"> Anjay-pico-client/CMakeLists.txt</p>
 
 ```
 add_subdirectory(psk-mode)

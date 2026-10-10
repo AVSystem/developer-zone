@@ -50,7 +50,7 @@ In this interface, the Server holds the ability to define the behavior of the de
 * **OBSERVE**: When the Observe operation is invoked, the Client starts sending NOTIFY messages to the Server about its data or state at configurable intervals. The OBSERVE operation is canceled when sending **CANCEL OBSERVE**.
 
 ![Set Observations](images/module4_Observation.png)
-*<p style="text-align: center;">Set Observation in {{ coiote_long_name }}</p>*
+*<p class="text-center">Set Observation in {{ coiote_long_name }}</p>*
 
 
 **Client Operations**

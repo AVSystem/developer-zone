@@ -80,7 +80,7 @@ To connect the board, log in to the platform and follow [onboarding guide]({{ co
     !!! tip
         LwM2M Server URI, endpoint name and other information you can be found in the **configuration** tab.
 
-    ![Client configuration](images/config_menu1.png "Client configuration"){:style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
+    ![Client configuration](images/config_menu1.png "Client configuration"){: .content-image-float .content-image-float--wide .content-image-float--spaced}
 
     !!! important
         APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use a built-in Truphone eSIM card, change the APN to **iot.truphone.com**.

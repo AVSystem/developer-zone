@@ -26,9 +26,9 @@ When you are connected you should see the OpenThread main page:
 
 ### Creating an OpenThread network
 
-On the left side, select the ***Form*** option, and a new page will be displayed for the network creation. After providing required credentials, click the **FORM** button and a message should pop up to let you know about the operation's success. ![Form Network](images/form_network.png "Form Network"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+On the left side, select the ***Form*** option, and a new page will be displayed for the network creation. After providing required credentials, click the **FORM** button and a message should pop up to let you know about the operation's success. ![Form Network](images/form_network.png "Form Network"){: .content-image-float .content-image-float--wide .content-image-float--spaced}
 
-On the left-side menu, click ***Topology*** to see the role of Border Router. ![Border Router topology](images/border1.png "Border Router topology"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+On the left-side menu, click ***Topology*** to see the role of Border Router. ![Border Router topology](images/border1.png "Border Router topology"){: .content-image-float .content-image-float--wide .content-image-float--spaced}
 
 ### Commissioning process
 
@@ -46,7 +46,7 @@ To start the commissioning process click ***Commission*** on the left-side menu 
     <br />
     For more information check [here](https://openthread.io/guides/border-router/external-commissioning/prepare?hl=en#prepare_the_joiner_device).
 
-Click **START COMMISSION** button, and a message should pop up to inform you about the operation's success. ![Start commission](images/commision.png "Start commission"){:style="float: left;margin-right: 1177px;margin-top: 17px; margin-bottom: 17px;"}
+Click **START COMMISSION** button, and a message should pop up to inform you about the operation's success. ![Start commission](images/commision.png "Start commission"){: .content-image-float .content-image-float--wide .content-image-float--spaced}
 
 ### Device configuration
 
@@ -122,32 +122,32 @@ To connect the board, log in to the platform and follow [onboarding guide]({{ co
 0. Use the `anjay stop` command to stop LwM2M Client and change credentials.
 
 0. Check your default credentials by following the instructions in the program:
-    ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
+    ![Anjay configuration](images/anjay_config.png "Anjay configuration"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 
     !!! note
         If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
         <br/>
-        ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+        ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 
 0. Use the `anjay start` command to run the Client.
 
 0. In logs, you can find information about status of the device. There will be information about success or failure in joining the connection and the current role of your device in the OpenThread network.
 
-    ![Connected as a child role](images/connected_child.PNG "Connected as a child role"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+    ![Connected as a child role](images/connected_child.PNG "Connected as a child role"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 0. Go to OpenThread main web page, on the left-side menu click ***Topology*** to see connected device.
 
-    ![Connected device as a child](images/border2.png "Connected device as a child"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+    ![Connected device as a child](images/border2.png "Connected device as a child"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
     !!! Note
         The node should join the OTBR Thread network automatically. Within two minutes its state should change to `router`.
 
-        ![Connected device as a router](images/border3.png "Connected device as a router"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+        ![Connected device as a router](images/border3.png "Connected device as a router"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 0. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You will see your Device Center view:
-    ![Registered device](images/registered_device.png "Registered device"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+    ![Registered device](images/registered_device.png "Registered device"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 !!! note
     When Anjay has no connection with the server or network for a long time, warning

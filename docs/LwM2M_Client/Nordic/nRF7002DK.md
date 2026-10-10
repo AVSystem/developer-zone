@@ -78,18 +78,18 @@ To connect the board, log in to the platform and follow [onboarding guide]({{ co
         To show available subcommands, use the **Tab** key.
 
 0. Check your default credentials by following the instructions in the program:
-    ![Anjay configuration](images/anjay_config.png "Anjay configuration"){:style="float: left;margin-right: 1177px; margin-top: 7px; margin-bottom: 17px;"}
+    ![Anjay configuration](images/anjay_config.png "Anjay configuration"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
     !!! note
         Use the `anjay stop` command to stop LwM2M Client if you are going to change credentials.
 
     If your default credentials are different from device credentials provided in {{ coiote_short_name }}, change them using the `anjay config set <possible_option> <value>` command.
     <br/>
-    ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+    ![Anjay set configuration](images/anjay_config_set.PNG "Anjay set configuration"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 
 0. The **nRF7002 DK** connects to the Internet via a Wi-Fi network. Remember to set the credentials of your network using `anjay config set wifi_ssid <value>` and `anjay config set wifi_password <value>`.
-        ![Set WiFi credentials](images/set_wifi_credentials.png "Anjay set configuration"){:style="float: left;margin-right: 1177px;margin-top: 7px; margin-bottom: 17px;"}
+        ![Set WiFi credentials](images/set_wifi_credentials.png "Anjay set configuration"){: .content-image-float .content-image-float--wide .content-image-float--compact .content-image-float--spaced}
 
 0. Use the `anjay start` command to run the Client.
 0. Go to {{ coiote_short_name }} to check if your device is connected. Click **Next**, then **Go to Summary**, then **Finish**. You should see your device registered.

@@ -39,7 +39,7 @@ Find in the **Operations** column three different icons representing three diffe
 ## Read Operation
 The Server can perform a LwM2M Read operation on a Resource, Object Instance or a whole Object. To do this, click the circular icon in the **Operations** column (or use the 3 vertical dots menu in case of Objects and Object Instances).
 
-![Read](images/read_resource.gif "Read"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
+![Read](images/read_resource.gif "Read"){: .content-image-float .content-image-float--narrow .content-image-float--spaced}
 
 You can see that each time you perform a Read Operation on a specific Resource, its value is updated because the Client has been instructed to send the newest value to the server.
 
@@ -52,7 +52,7 @@ The Server can set observations on a Resource, Object Instance or a whole Object
 ![Observe Operation](images/module4_Observation.png)
 To set an observation on an Object or Object Instance, click on the 3 vertical dots menu and select **Set observation**.
 
-![Set observation on object](images/module4_observation_object_CLICK.png "Set observation on object"){:style="float: left;margin-right: 817px;margin-top: 17px;margin-bottom: 17px;"}
+![Set observation on object](images/module4_observation_object_CLICK.png "Set observation on object"){: .content-image-float .content-image-float--narrow .content-image-float--spaced}
 
 You can see that after each time interval which you set in the observation menu, the value is changed as a result of the Client sending an update.
 

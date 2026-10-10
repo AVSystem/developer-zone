@@ -45,17 +45,17 @@ With the {{ coiote_long_name }}, you can easily integrate your LwM2M data with p
 
 The guides will take you on a step-by-step journey to seamlessly activate the integrations.
 
-[Webhooks](Coiote_IoT_DM/API_documentation/Guides/Send_data_outside_application.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
-[Kafka](Coiote_IoT_DM/API_documentation/Guides/Send_data_outside_application.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
-[Azure IoT](Coiote_IoT_DM/Cloud_integrations/cloud-integrations.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
-[AWS](Coiote_IoT_DM/Cloud_integrations/cloud-integrations.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
-[nRF Cloud](Coiote_IoT_DM/Cloud_integrations/cloud-integrations.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
+[Webhooks](Coiote_IoT_DM/API_documentation/Guides/Send_data_outside_application.md){: .md-button .md-button--big .button-row-item}
+[Kafka](Coiote_IoT_DM/API_documentation/Guides/Send_data_outside_application.md){: .md-button .md-button--big .button-row-item}
+[Azure IoT](Coiote_IoT_DM/Cloud_integrations/cloud-integrations.md){: .md-button .md-button--big .button-row-item}
+[AWS](Coiote_IoT_DM/Cloud_integrations/cloud-integrations.md){: .md-button .md-button--big .button-row-item}
+[nRF Cloud](Coiote_IoT_DM/Cloud_integrations/cloud-integrations.md){: .md-button .md-button--big .button-row-item}
 
 ## LwM2M Academy
 
 **Take a deep-dive into the LwM2M standard by following the LwM2M Academy**. A comprehensive online course designed to provide you with both the theoretical understanding and hands-on skills necessary to utilize the powerful LwM2M standard.
 
-[Join course](academy/index.md){: .md-button .md-button--big :style="float: left;margin-right: 30px;"}
+[Join course](academy/index.md){: .md-button .md-button--big .button-row-item}
 
 
 ## Join our community on Discord

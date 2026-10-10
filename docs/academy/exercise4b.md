@@ -17,7 +17,7 @@ Let’s start by going to the **Anjay-pico-client/temperature_object_lm35** dire
 ## Temperature_sensor files
 Let’s start with the *temperature_sensor.c* file where we define the Temperature Object’s Resources and add two functions: `send_finished_handler()` and `temperature_object_lm35_send()`. Let’s start by defining all available Resources in *temperature_sensor.c*.
 
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 #include "lm35.h"
 #include "temperature_sensor.h"
@@ -75,7 +75,7 @@ Let’s start with the *temperature_sensor.c* file where we define the Temperatu
 
 Next, at the end of the *temperature_sensor.c* file, add a handler which is called automatically each time a Send operation finishes, to send logs to the serial communication program about the operation result.
 
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 static void send_finished_handler(anjay_t *anjay,
                                   anjay_ssid_t ssid,
@@ -97,7 +97,7 @@ static void send_finished_handler(anjay_t *anjay,
 
 It’s time to create a function with the Send Operation itself. Data messages are created using `anjay_send_batch_builder` which builds the payload to be sent to the LwM2M Server. The payload can consist of multiple values from different resources. Calling the `temperature_object_lm35_send()` function does not send a batch immediately, but schedules a task to be run on the next iteration of the Anjay’s event loop.
 
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 void temperature_object_lm35_send(anjay_t *anjay) {
     if (!anjay) {
@@ -156,7 +156,7 @@ void temperature_object_lm35_send(anjay_t *anjay) {
 ```
 
 Add on top the necessary paths to the libraries used in the *temperature_sensor.c* and defined constant.
-<p style="text-align: center;">temperature_sensor.c</p>
+<p class="text-center">temperature_sensor.c</p>
 ```
 #include <assert.h>
 #include <stdbool.h>
@@ -178,7 +178,7 @@ Add on top the necessary paths to the libraries used in the *temperature_sensor.
 
 Declare the function in the *temperature_sensor.h* file.
 
-<p style="text-align: center;">temperature_sensor.h</p>
+<p class="text-center">temperature_sensor.h</p>
 ```
 #pragma once
 
@@ -196,7 +196,7 @@ Next up is updating the *main.c* file. We need to create a `temperature_object s
 !!! Note
     Optionally update the time interval from 10 seconds to any interval you prefer.
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 #define ANJAY_TASK_SIZE (4000U)
 #define TEMP_UPDATE_TASK_SIZE (1000U)
@@ -226,7 +226,7 @@ static void send_job(avs_sched_t *sched, const void *args_ptr) {
 
 Now let’s call the `send_job()` function in `anjay_task()`.
 
-<p style="text-align: center;">main.c</p>
+<p class="text-center">main.c</p>
 ```
 void anjay_task(__unused void *params) {
     init_wifi();

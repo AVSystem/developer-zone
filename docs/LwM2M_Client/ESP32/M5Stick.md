@@ -52,7 +52,7 @@ Integrate your ESP32-based device to manage it via {{ coiote_short_name }}.
     python nvs_partition_gen.py generate nvs_config.csv nvs_config.bin 0x4000
     ```
 
-![Client configuration](images/nvs_config.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;"}
+![Client configuration](images/nvs_config.png "Client configuration"){: .content-image-float .content-image-float--wide}
 
 ## Step 3: Add device to {{ coiote_short_name }}
 

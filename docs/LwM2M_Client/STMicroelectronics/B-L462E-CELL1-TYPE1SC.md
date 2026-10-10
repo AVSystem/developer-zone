@@ -63,7 +63,7 @@ To connect the board, log in to the platform and follow [onboarding guide]({{ co
     ``Press any key in 3 seconds to enter config menu...``
 
 3. Press any key and in the configuration menu, change the default credentials to your data by following the instructions presented in the program and save it.
-      ![Client configuration](images/config_menu1.png "Client configuration"){: style="float: left;margin-right: 1177px;margin-top: 17px;margin-bottom: 17px;"}
+      ![Client configuration](images/config_menu1.png "Client configuration"){: .content-image-float .content-image-float--wide .content-image-float--spaced}
 
     !!! important
         APN (Access Point Name) is the name of a gateway between a GSM, GPRS, 3G and 4G mobile network and another computer network. If you use built-in eSIM card Truphone then change APN to **iot.truphone.com**.
